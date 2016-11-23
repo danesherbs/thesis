@@ -17,10 +17,8 @@ ale = ALEInterface()
 # Get & Set the desired settings
 ale.setInt(b'random_seed', random.randint(0, 999))
 
-# Turn show screen on
+# Show screen and turn on sound
 ale.setBool("display_screen", True)
-
-# Turn sound on
 ale.setBool("sound", True)
 
 # Set USE_SDL to true to display the screen. ALE must be compilied
