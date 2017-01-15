@@ -48,7 +48,7 @@ encoder = Model(autoencoder.input, autoencoder.get_layer('encoded').output)
 autoencoder.compile(optimizer='adadelta', loss='binary_crossentropy', metrics=['accuracy'])
 
 # fit model on training data
-autoencoder.fit(X_train, X_train, nb_epoch=10, verbose=1)
+autoencoder.fit(X_train, X_train, nb_epoch=1, verbose=1)
  
 # evaluate model on test data
 score = autoencoder.evaluate(X_test, X_test, verbose=0)	

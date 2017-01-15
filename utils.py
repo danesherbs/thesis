@@ -20,13 +20,22 @@ def image_to_array(image_path, rgb=False):
         image = image.convert('1')  # convert to black and white
     return np.asarray(image, dtype=np.uint8)  # uint8 \in [0,255]
 
+def __example_image_to_array():
+    '''
+    Takes random screen-grab in RECORD_PATH and shows image
+    '''
+    image_path = './atari_agents/record/020377.png'
+    image_array = image_to_array(image_path)
+    print image_to_array(image_path).shape
+    Image.fromarray(np.uint8(image_to_array(image_path))).show()
+
 def load_data():
     '''
     Makes (X_train, X_test, y_train, y_test) from images in RECORD_PATH
     '''
     X = []
     print 'Loading training data...',
-    for filename in os.listdir(RECORD_PATH)[::20]:
+    for filename in os.listdir(RECORD_PATH)[::200]:
         if not filename.endswith('.png'):
             continue  # skip non-png files
         X.append(image_to_array(os.path.join(RECORD_PATH, filename)))
@@ -35,14 +44,6 @@ def load_data():
     y = np.asarray([-1]*len(X))  # psuedo labels
     return train_test_split(X, y, test_size=0.10)
 
-def __show_sample_image():
-    '''
-    Takes random screen-grab in RECORD_PATH and shows image
-    '''
-    image_path = './atari_agents/record/020377.png'
-    print image_to_array(image_path).shape
-    Image.fromarray(np.uint8(image_to_array(image_path))).show()
-    
 def show_subplot(images):
     '''
     Plots images in a subplot figure
@@ -57,11 +58,14 @@ def show_subplot(images):
     plt.tight_layout()
     plt.show()
 
+def __example_show_subplot():
+    import cPickle as pickle
+    imgs = pickle.load(open('encoded_imgs.pickle', 'rb'))
+    show_subplot(imgs)
+
 
 '''
 MAIN
 '''
 if __name__ == '__main__':
-    import cPickle as pickle
-    imgs = pickle.load(open('encoded_imgs.pickle', 'rb'))
-    show_subplot(imgs)
+    __example_image_to_array()
