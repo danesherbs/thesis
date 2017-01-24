@@ -13,10 +13,6 @@ from keras.datasets import mnist
 from utils import load_data
 X_train, X_test, _, _ = load_data()
 
-print X_test.shape
-plt.imshow(X_test[0])
-plt.show()
-
 # specify depth for Theano
 X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
 X_test = X_test.reshape(X_test.shape[0], 1, X_test.shape[1], X_test.shape[2])
@@ -29,12 +25,12 @@ X_test = X_test.astype('float32')
 X_train /= np.max(X_train)
 X_test /= np.max(X_test)
 
-
-batch_size = 100
+# set constants
 original_dim = X_train.shape[1:]
 intermediate_dim = 100
-latent_dim = 16
-nb_epoch = 1
+latent_dim_sqrt = 4  # < sqrt(intermediate_dim) else not an autoencoder
+latent_dim = latent_dim_sqrt**2
+nb_epoch = 75
 
 # define architecture
 input_img = Input(shape=original_dim)
@@ -76,13 +72,18 @@ def vae_loss(input_img, output_img):
 vae = Model(input_img, decoded_img)
 # vae.compile(optimizer='rmsprop', loss=vae_loss, metrics=['accuracy'])
 vae.compile(optimizer='adadelta', loss='binary_crossentropy', metrics=['accuracy'])
-print vae.summary()
+vae.summary()
 vae.fit(X_train, X_train, shuffle=True, nb_epoch=nb_epoch, verbose=1)
 
-# decoded_imgs = vae.predict(X_test)
-# plt.imshow(decoded_imgs[0][0])
-# plt.show()
-
+# show encoded images
+encoder = Model(input_img, z)
+encoded_imgs = encoder.predict(X_test)
 print X_test.shape
-plt.imshow(X_test[0][0])
+print encoded_imgs.shape
+plt.matshow(encoded_imgs[0].reshape(latent_dim_sqrt,latent_dim_sqrt))
+plt.show()
+
+# show decoded images
+decoded_imgs = vae.predict(X_test)
+plt.imshow(decoded_imgs[0][0])
 plt.show()

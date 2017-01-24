@@ -8,6 +8,10 @@ from PIL import Image
 import numpy as np
 import os
 
+
+'''
+Contains screen-grabs from most recent run of ALE
+'''
 RECORD_PATH = './atari_agents/record/'
 
 
@@ -17,17 +21,32 @@ def image_to_array(image_path, rgb=False):
     '''
     image = Image.open(image_path)
     if not rgb:
-        image = image.convert('1')  # convert to black and white
+        image = image.convert('L')  # convert to black and white
     return np.asarray(image, dtype=np.uint8)  # uint8 \in [0,255]
 
 def __example_image_to_array():
     '''
-    Takes random screen-grab in RECORD_PATH and shows image
+    Takes random screen-grab in RECORD_PATH and shows array and image
     '''
     image_path = './atari_agents/record/020377.png'
-    image_array = image_to_array(image_path)
-    print image_to_array(image_path).shape
+    image_array = image_to_array(image_path, rgb=False)
+    print image_array
     Image.fromarray(np.uint8(image_to_array(image_path))).show()
+
+def array_to_image(image_array):
+    '''
+    Converts numpy array to image
+    '''
+    return Image.fromarray(np.uint8(image_array))
+
+def __example_array_to_image():
+    '''
+    Shows output of array_to_image for random screen-grab from RECORD_PATH
+    '''
+    image_path = './atari_agents/record/020377.png'
+    image_array = image_to_array(image_path, rgb=False)
+    image = array_to_image(image_array)
+    image.show()
 
 def load_data():
     '''
@@ -46,7 +65,7 @@ def load_data():
 
 def show_subplot(images):
     '''
-    Plots images in a subplot figure
+    Plots monochrome images in a subplot figure
     '''
     nrows = 4
     ncols = len(images) / nrows
@@ -68,4 +87,5 @@ def __example_show_subplot():
 MAIN
 '''
 if __name__ == '__main__':
-    __example_image_to_array()
+    # __example_image_to_array()
+    __example_array_to_image()

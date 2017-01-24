@@ -48,20 +48,23 @@ encoder = Model(autoencoder.input, autoencoder.get_layer('encoded').output)
 autoencoder.compile(optimizer='adadelta', loss='binary_crossentropy', metrics=['accuracy'])
 
 # fit model on training data
-autoencoder.fit(X_train, X_train, nb_epoch=1, verbose=1)
+autoencoder.fit(X_train, X_train, shuffle=True, nb_epoch=50, verbose=1)
  
-# evaluate model on test data
-score = autoencoder.evaluate(X_test, X_test, verbose=0)	
+# # evaluate model on test data
+# score = autoencoder.evaluate(X_test, X_test, verbose=0)	
 
 # use matplotlib
 encoded_imgs = encoder.predict(X_test)
 decoded_imgs = autoencoder.predict(X_test)
 
-# plot encoded images
-from utils import show_subplot
-show_subplot(encoded_imgs[1])
+# # plot encoded images
+# from utils import show_subplot
+# show_subplot(encoded_imgs[1])
 
-# plot decoded image
+# # plot decoded image
 from matplotlib import pyplot as plt
-plt.imshow(decoded_imgs[1][0])
+plt.imshow(decoded_imgs[0][0])
+plt.show()
+
+plt.imshow(X_test[0][0])
 plt.show()
