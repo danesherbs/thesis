@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  24 JAN 2017 23:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  25 JAN 2017 18:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1439,32 +1439,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--70
  []
 
 
+Overfull \hbox (9.69193pt too wide) in paragraph at lines 71--72
+\OT1/bch/m/n/12 pu-ta-tion-ally ex-pen-sive, mo-ti-vat-ing the in-tro-duc-tion 
+of the prob-a-bilis-tic en-coder $\OML/jkp/m/it/12 q[]\OT1/jkp/m/n/12 ([]\OMS/j
+kp/m/n/12 j[]\OT1/jkp/m/n/12 )$
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
  []
 
@@ -1473,66 +1470,82 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 176.
+(hyperref)                removing `math shift' on input line 188.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\beta' on input line 176.
+(hyperref)                removing `\beta' on input line 188.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 176.
+(hyperref)                removing `math shift' on input line 188.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
+[8]
+LaTeX Font Info:    Try loading font information for TS1+bch on input line 213.
 
-Underfull \vbox (badness 3312) has occurred while \output is active []
-
- [8]
-LaTeX Font Info:    Try loading font information for TS1+bch on input line 201.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1bch.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1bch.fd
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
 )
 Missing character: There is no â in font bchr7t!
@@ -1551,38 +1564,40 @@ Missing character: There is no ™ in font bchr7t!
 \openout9 = `coursework.thm'.
 
  [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 225.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 237.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 237.
  (./coursework.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 225.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 237.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 237.
 Package rerunfilecheck Info: File `coursework.out' has not changed.
-(rerunfilecheck)             Checksum: 1CF28857508A9174E7B5EECF8FC57A25;2510.
+(rerunfilecheck)             Checksum: 8097B8338E92B8D314C122C2C76B3290;2510.
 Package rerunfilecheck Info: File `coursework.brf' has not changed.
-(rerunfilecheck)             Checksum: C56C55B7A83B751A07D9F18F1B6A7941;1436.
+(rerunfilecheck)             Checksum: D4D74B654D28916C4562325AEB8904B8;1533.
  ) 
 Here is how much of TeX's memory you used:
- 23280 strings out of 494902
- 424503 string characters out of 6179891
+ 23284 strings out of 494902
+ 424557 string characters out of 6179891
  486503 words of memory out of 5000000
- 25981 multiletter control sequences out of 15000+600000
- 64450 words of font info for 137 fonts, out of 8000000 for 9000
+ 25984 multiletter control sequences out of 15000+600000
+ 67504 words of font info for 140 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 64i,12n,73p,921b,419s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,12n,73p,939b,419s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /bitstrea/charter/bchri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /kpfonts/jkpbmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/j
-kpbn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/kpfonts/jkpsyb.pfb>
-Output written on coursework.pdf (10 pages, 129625 bytes).
+kpbn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmia.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/kpfonts/jkpsy.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/kpfonts/jkpsyb.pfb>
+Output written on coursework.pdf (10 pages, 148741 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 328 compressed objects within 4 object streams
- 80 named destinations out of 1000 (max. 500000)
+ 378 PDF objects out of 1000 (max. 8388607)
+ 337 compressed objects within 4 object streams
+ 81 named destinations out of 1000 (max. 500000)
  274 words of extra memory for PDF output out of 10000 (max. 10000000)
 
