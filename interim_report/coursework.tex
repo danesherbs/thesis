@@ -24,7 +24,7 @@
 \bibliographystyle{unsrt} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Main document
-\section{Introduction (1-3 pages)}
+\section{Introduction}
 A long term goal of artificial intelligence (AI) is the development of artificial general intelligence (AGI). A number of theoretical frameworks have been presented to formalize what it means to achieve AGI, notably by \cite{Hutter2005}.\\
 
 Reinforcement learning is fundamental in this framework. It's therefore quite exciting that deep reinforcement learning (DRL) systems have recently been able to master a wide range of tasks, including Atari games and Go. Though DRL systems have been remarkably successful, they still have a number of drawbacks \cite{Garnelo2016} \cite{Chollet2015}:
@@ -48,7 +48,7 @@ The aim of this project is to investigate compositional representations and eval
 \item Finally we can evaluate the value of a compositional structured latent space in a deep symbolic reinforcement system. We'll do this by exploring how well the compositional representation embodies common sense priors, such as object persistence and causality. We will also assess its ability to facilitate high-level cognitive processes, such as transfer learning and look-ahead.
 \end{enumerate}
 
-\section{Background (10- 20 pages)}
+\section{Background}
 The background section of the report should set the project into context by relating it to existing published work which you read at the start of the project when your approach and methods were being considered. There are usually many ways of solving a given problem, and you shouldn't just pick one at random. Describe and evaluate as many alternative approaches as possible. The published work may be in the form of research papers, articles, text books, technical manuals, or even existing software or hardware of which you have had hands-on experience.
 
 Why we chose this approach (refer to lots of papers that offer alternatives. Why did you pick this one?)\\
@@ -99,11 +99,17 @@ It's been suggested by \cite{Bengio2013} that a crucial factor in what makes a g
 
 To provide some intuition of what a disentangled representation is, we'll consider an example using the Frey Face data set.\\
 
-Include Figure 4a found in \cite{Kingma2014} [need to ask author for permission]. Caption: A learned Frey Face manifold with two latent variables: one sensitive to the orientation and one to the expression.\\
+\begin{figure}
+\includegraphics[scale=0.3]{figures/kingma_2014_4a.png}
+\centering
+\captionsetup{justification=centering}
+\caption{A learned Frey Face manifold with two latent variables: one sensitive to the expression and one to the orientation. \cite{Kingma2014}}
+\label{frey_face_disentangled}
+\end{figure}
 
 The Frey Face data set consists of almost two-thousand $28\times20$ pictures of Brendan Frey, a Canadian machine learning researcher. The samples include Frey with varying facial expressions and orientations.\\
 
-Shown in Figure 4a is a learned Frey Face manifold with two latent variables. One latent variable is sensitive to changes in the expression and one to changes in orientation, making the manifold a highly disentangled representation. In an entangled representation, changing one latent variable would change both the expression and the orientation.\\
+Shown in Figure (\ref{frey_face_disentangled}) is a learned Frey Face manifold with two latent variables. One latent variable is sensitive to changes in the expression and one to changes in orientation, making the manifold a highly disentangled representation. In an entangled representation, changing one latent variable would change both the expression and the orientation.\\
 
 Disentangled representations facilitate the reuse of previously learnt factors, called \textit{knowledge transfer}; and the extreme case, \textit{zero-shot inference} \cite{IanGoodfellowYoshuaBengio2015,Higgins2016}.
 
@@ -116,12 +122,23 @@ Transfer learning is the reuse of learnt factors from a previous task when learn
 \item Final performance
 \end{enumerate}
 
-These improvements are shown on a performance-training graph in Figure 2.\\
+These improvements are shown on a performance-training graph in Figure \ref{transfer_learning_three_ways}.\\
 
-Include Figure 2 found in \cite{Torrey2009} [need to ask author for permission]. Caption: An illustration of the three ways in which transfer learning may improve the learning of a new task.\\
+\begin{figure}
+\includegraphics[scale=0.3]{figures/torrey_2009_2.png}
+\centering
+\captionsetup{justification=centering}
+\caption{An illustration of the three ways in which transfer learning may improve the learning of a new task. \cite{Torrey2009}}
+\label{transfer_learning_three_ways}
+\end{figure}
 
-
-Include Figure 15.2 found in \cite{IanGoodfellowYoshuaBengio2015} [need to ask author for permission]. Caption: An illustration of how tasks may be translated into intermediate representations, then into a shared representation. The representation of different tasks in terms of common concepts is key to transfer learning.\\
+\begin{figure}
+\includegraphics[scale=0.3]{figures/goodfellow_2015_15_2.png}
+\centering
+\captionsetup{justification=centering}
+\caption{An illustration of how tasks may be translated into intermediate representations, then into a shared representation. The representation of different tasks in terms of common concepts is key to transfer learning. \cite{IanGoodfellowYoshuaBengio2015}}
+\label{transfer_learning_graph_intuition}
+\end{figure}
 
 \begin{enumerate}
 \item Summarising quote by \cite{Whitney2016} below
@@ -134,8 +151,6 @@ Include Figure 15.2 found in \cite{IanGoodfellowYoshuaBengio2015} [need to ask a
 \subsubsection{Data continuity}
 
 \subsubsection{Statistical independence}
-
-\subsubsection{Sparsity}
 
 \subsubsection{Manifolds}
 
@@ -181,7 +196,7 @@ An overview of unsupervised algorithms learning disentangled representations is 
 
 Suppose we're given a set $X$ of images $\vec{x}\in\mathbb{R}^N$ and ground truth data generative factors (that is, factors observed directly from the data as opposed to being inferred). We'll partition these factors into two sets, $V$ and $W$, where vectors $\vec{v}\in\mathbb{R}^K$ are independent and $\vec{w}\in\mathbb{R}^H$ are dependent.\\
 
-The aim of $\beta$-VAE is to factorise the latent space $\vec{z}\in\mathbb{R}^M$ into disentangled factors $\vec{v}$ and the rest. Here we must include that $M\geq K$, since we'd like the latent representation to be capable of learning all independent ground truth data factors of $X$.\\
+The aim of $\beta$-VAE is to factorise the latent space $\vec{z}\in\mathbb{R}^M$ into disentangled factors $\vec{v}$ and the rest. This enforces $M\geq K$, since we'd like the latent representation to be capable of learning all independent ground truth data factors of $X$.\\
 
 $\beta$-VAE achieves this by adding an important multiplicative factor $\beta$ to the KL-divergence term, making the objective:
 
@@ -219,10 +234,10 @@ The Arcade Learning Environment (ALE) is a framework built on top of the Atari 2
 \item A Python wrapper for the entire framework is provided, so our agents developed in Keras interact seamlessly
 \end{itemize}
 
-\section{Project Plan (1-2 pages)}
+\section{Project Plan}
 You should explain what needs to be done in order to complete the project and roughly what you expect the timetable to be. Don’t forget to include the project write-up (the final report), as this is a major part of the exercise. It’s important to identify key milestones and also fall-back positions, in case you run out of time.  You should also identify what extensions could be added if time permits.  The plan should be complete and should include those parts that you have already addressed (make it clear how far you have progressed at the time of writing).  This material will not appear in the final report.
 
-\section{Evaluation plan (1-2 pages)}
+\section{Evaluation plan}
 Project evaluation is very important, so it's important to think now about how you plan to measure success. For example, what functionality do you need to demonstrate?  What experiments to you need to undertake and what outcome(s) would constitute success?  What benchmarks should you use? How has your project extended the state of the art?  How do you measure qualitative aspects, such as ease of use?  These are the sort of questions that your project evaluation should address; this section should outline your plan.
 
 \bibliography{library}
