@@ -22,11 +22,11 @@
 \BOOKMARK [3][]{subsubsection.45}{2.4.3 Unsupervised algorithms}{subsection.32}% 22
 \BOOKMARK [2][]{subsection.46}{2.5 Deeper investigation of -VAE}{section.10}% 23
 \BOOKMARK [3][]{subsubsection.47}{2.5.1 Framework}{subsection.46}% 24
-\BOOKMARK [3][]{subsubsection.51}{2.5.2 Disentanglement metric}{subsection.46}% 25
-\BOOKMARK [3][]{subsubsection.52}{2.5.3 Quantitative performance}{subsection.46}% 26
-\BOOKMARK [3][]{subsubsection.53}{2.5.4 Qualitative performance}{subsection.46}% 27
-\BOOKMARK [2][]{subsection.54}{2.6 Libraries}{section.10}% 28
-\BOOKMARK [3][]{subsubsection.55}{2.6.1 Keras}{subsection.54}% 29
-\BOOKMARK [3][]{subsubsection.56}{2.6.2 Arcade Learning Environment}{subsection.54}% 30
-\BOOKMARK [1][]{section.57}{3 Project Plan \(1-2 pages\)}{}% 31
-\BOOKMARK [1][]{section.58}{4 Evaluation plan \(1-2 pages\)}{}% 32
+\BOOKMARK [3][]{subsubsection.49}{2.5.2 Disentanglement metric}{subsection.46}% 25
+\BOOKMARK [3][]{subsubsection.50}{2.5.3 Quantitative performance}{subsection.46}% 26
+\BOOKMARK [3][]{subsubsection.51}{2.5.4 Qualitative performance}{subsection.46}% 27
+\BOOKMARK [2][]{subsection.52}{2.6 Libraries}{section.10}% 28
+\BOOKMARK [3][]{subsubsection.53}{2.6.1 Keras}{subsection.52}% 29
+\BOOKMARK [3][]{subsubsection.54}{2.6.2 Arcade Learning Environment}{subsection.52}% 30
+\BOOKMARK [1][]{section.55}{3 Project Plan \(1-2 pages\)}{}% 31
+\BOOKMARK [1][]{section.56}{4 Evaluation plan \(1-2 pages\)}{}% 32

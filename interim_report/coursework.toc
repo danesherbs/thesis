@@ -10,7 +10,7 @@
 \contentsline {subsubsection}{\numberline {2.2.2}Symbolic artificial intelligence}{5}{subsubsection.18}
 \contentsline {subsubsection}{\numberline {2.2.3}Deep symbolic reinforcement learning}{5}{subsubsection.19}
 \contentsline {subsection}{\numberline {2.3}Representation learning}{5}{subsection.20}
-\contentsline {subsubsection}{\numberline {2.3.1}Disentangled representations}{6}{subsubsection.21}
+\contentsline {subsubsection}{\numberline {2.3.1}Disentangled representations}{5}{subsubsection.21}
 \contentsline {subsubsection}{\numberline {2.3.2}Transfer learning}{6}{subsubsection.22}
 \contentsline {subsubsection}{\numberline {2.3.3}Zero-shot understanding}{7}{subsubsection.27}
 \contentsline {subsubsection}{\numberline {2.3.4}Data continuity}{7}{subsubsection.28}
@@ -19,15 +19,15 @@
 \contentsline {subsubsection}{\numberline {2.3.7}Manifolds}{7}{subsubsection.31}
 \contentsline {subsection}{\numberline {2.4}Finding disentangled representations}{7}{subsection.32}
 \contentsline {subsubsection}{\numberline {2.4.1}Supervised algorithms}{7}{subsubsection.33}
-\contentsline {subsubsection}{\numberline {2.4.2}Semi-supervised algorithms}{8}{subsubsection.44}
+\contentsline {subsubsection}{\numberline {2.4.2}Semi-supervised algorithms}{7}{subsubsection.44}
 \contentsline {subsubsection}{\numberline {2.4.3}Unsupervised algorithms}{8}{subsubsection.45}
 \contentsline {subsection}{\numberline {2.5}Deeper investigation of $\beta $-VAE}{8}{subsection.46}
 \contentsline {subsubsection}{\numberline {2.5.1}Framework}{8}{subsubsection.47}
-\contentsline {subsubsection}{\numberline {2.5.2}Disentanglement metric}{9}{subsubsection.51}
-\contentsline {subsubsection}{\numberline {2.5.3}Quantitative performance}{9}{subsubsection.52}
-\contentsline {subsubsection}{\numberline {2.5.4}Qualitative performance}{9}{subsubsection.53}
-\contentsline {subsection}{\numberline {2.6}Libraries}{9}{subsection.54}
-\contentsline {subsubsection}{\numberline {2.6.1}Keras}{9}{subsubsection.55}
-\contentsline {subsubsection}{\numberline {2.6.2}Arcade Learning Environment}{9}{subsubsection.56}
-\contentsline {section}{\numberline {3}Project Plan (1-2 pages)}{9}{section.57}
-\contentsline {section}{\numberline {4}Evaluation plan (1-2 pages)}{10}{section.58}
+\contentsline {subsubsection}{\numberline {2.5.2}Disentanglement metric}{9}{subsubsection.49}
+\contentsline {subsubsection}{\numberline {2.5.3}Quantitative performance}{9}{subsubsection.50}
+\contentsline {subsubsection}{\numberline {2.5.4}Qualitative performance}{9}{subsubsection.51}
+\contentsline {subsection}{\numberline {2.6}Libraries}{9}{subsection.52}
+\contentsline {subsubsection}{\numberline {2.6.1}Keras}{9}{subsubsection.53}
+\contentsline {subsubsection}{\numberline {2.6.2}Arcade Learning Environment}{9}{subsubsection.54}
+\contentsline {section}{\numberline {3}Project Plan (1-2 pages)}{9}{section.55}
+\contentsline {section}{\numberline {4}Evaluation plan (1-2 pages)}{10}{section.56}
