@@ -28,5 +28,5 @@
 \contentsline {subsection}{\numberline {2.6}Libraries}{9}{subsection.54}
 \contentsline {subsubsection}{\numberline {2.6.1}Keras}{9}{subsubsection.55}
 \contentsline {subsubsection}{\numberline {2.6.2}Arcade Learning Environment}{10}{subsubsection.56}
-\contentsline {section}{\numberline {3}Project Plan}{10}{section.57}
-\contentsline {section}{\numberline {4}Evaluation plan}{10}{section.58}
+\contentsline {section}{\numberline {3}Project Plan}{11}{section.57}
+\contentsline {section}{\numberline {4}Evaluation plan}{12}{section.59}

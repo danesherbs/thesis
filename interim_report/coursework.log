@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.24)  25 JAN 2017 20:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.24)  25 JAN 2017 22:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1227,52 +1227,72 @@ Package: ntheorem 2011/08/15 1.33
 \c@definition=\count164
 \c@proof=\count165
 \c@elimination@steps=\count166
-) (./notation.tex) (./coursework.aux)
+) (./notation.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen259
+\lightrulewidth=\dimen260
+\cmidrulewidth=\dimen261
+\belowrulesep=\dimen262
+\belowbottomsep=\dimen263
+\aboverulesep=\dimen264
+\abovetopsep=\dimen265
+\cmidrulesep=\dimen266
+\cmidrulekern=\dimen267
+\defaultaddspace=\dimen268
+\@cmidla=\count167
+\@cmidlb=\count168
+\@aboverulesep=\dimen269
+\@belowrulesep=\dimen270
+\@thisruleclass=\count169
+\@lastruleclass=\count170
+\@thisrulewidth=\dimen271
+)
+(./coursework.aux)
 \openout1 = `coursework.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 14.
-LaTeX Font Info:    Try loading font information for OML+jkp on input line 14.
-
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omljkp.fd
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 17.
+LaTeX Font Info:    Try loading font information for OML+jkp on input line 17.
+ (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 14.
-LaTeX Font Info:    Try loading font information for OMS+jkp on input line 14.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 17.
+LaTeX Font Info:    Try loading font information for OMS+jkp on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 14.
-LaTeX Font Info:    Try loading font information for OMX+jkp on input line 14.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 17.
+LaTeX Font Info:    Try loading font information for OMX+jkp on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 14.
-LaTeX Font Info:    Try loading font information for U+jkpexa on input line 14.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 17.
+LaTeX Font Info:    Try loading font information for U+jkpexa on input line 17.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 14.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Try loading font information for OT1+bch on input line 14.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Try loading font information for OT1+bch on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1bch.fd
 File: ot1bch.fd 2004/10/18 font definitions for OT1/bch.
@@ -1318,21 +1338,21 @@ Package caption Info: hypcap package is loaded.
 Package caption Info: End \AtBeginDocument code.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count167
-\scratchdimen=\dimen259
+\scratchcounter=\count171
+\scratchdimen=\dimen272
 \scratchbox=\box58
-\nofMPsegments=\count168
-\nofMParguments=\count169
+\nofMPsegments=\count172
+\nofMParguments=\count173
 \everyMPshowfont=\toks62
-\MPscratchCnt=\count170
-\MPscratchDim=\dimen260
-\MPnumerator=\count171
-\makeMPintoPDFobject=\count172
+\MPscratchCnt=\count174
+\MPscratchDim=\dimen273
+\MPnumerator=\count175
+\makeMPintoPDFobject=\count176
 \everyMPtoPDFconversion=\toks63
 ) ABD: EveryShipout initializing macros
-Package backref Info: ** backref set up for natbib ** on input line 14.
+Package backref Info: ** backref set up for natbib ** on input line 17.
 \AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring ON on input line 14.
+Package hyperref Info: Link coloring ON on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1340,18 +1360,18 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count173
+\c@section@level=\count177
 )
-LaTeX Info: Redefining \ref on input line 14.
-LaTeX Info: Redefining \pageref on input line 14.
-LaTeX Info: Redefining \nameref on input line 14.
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+LaTeX Info: Redefining \nameref on input line 17.
 
 (./coursework.out) (./coursework.out)
 \@outlinefile=\write6
 \openout6 = `coursework.out'.
 
  (./titlepage.tex
-<./figures/imperial.pdf, id=135, 362.35374pt x 96.36pt>
+<./figures/imperial.pdf, id=131, 362.35374pt x 96.36pt>
 File: ./figures/imperial.pdf Graphic file (type pdf)
 
 <use ./figures/imperial.pdf>
@@ -1397,152 +1417,152 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 \tf@toc=\write7
 \openout7 = `coursework.toc'.
 
-LaTeX Font Info:    Try loading font information for OT1+jkpss on input line 21
+LaTeX Font Info:    Try loading font information for OT1+jkpss on input line 24
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ot1jkpss.fd
 File: ot1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for OT1/jkpss.
 ) [2]
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 69.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 69.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 72.
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
 
-Overfull \hbox (9.69193pt too wide) in paragraph at lines 71--72
+Overfull \hbox (9.69193pt too wide) in paragraph at lines 74--75
 \OT1/bch/m/n/12 pu-ta-tion-ally ex-pen-sive, mo-ti-vat-ing the in-tro-duc-tion 
 of the prob-a-bilis-tic en-coder $\OML/jkp/m/it/12 q[]\OT1/jkp/m/n/12 ([]\OMS/j
 kp/m/n/12 j[]\OT1/jkp/m/n/12 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-<figures/kingma_2014_4a.png, id=246, 585.18625pt x 817.0525pt>
+<figures/kingma_2014_4a.png, id=241, 585.18625pt x 817.0525pt>
 File: figures/kingma_2014_4a.png Graphic file (type png)
 
 <use figures/kingma_2014_4a.png>
-Package pdftex.def Info: figures/kingma_2014_4a.png used on input line 103.
+Package pdftex.def Info: figures/kingma_2014_4a.png used on input line 106.
 (pdftex.def)             Requested size: 175.55722pt x 245.11765pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--113
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
 
-<figures/torrey_2009_2.png, id=265, 917.4275pt x 476.78125pt>
+<figures/torrey_2009_2.png, id=260, 917.4275pt x 476.78125pt>
 File: figures/torrey_2009_2.png Graphic file (type png)
 
 <use figures/torrey_2009_2.png>
-Package pdftex.def Info: figures/torrey_2009_2.png used on input line 128.
+Package pdftex.def Info: figures/torrey_2009_2.png used on input line 131.
 (pdftex.def)             Requested size: 275.23038pt x 143.03548pt.
 
-<figures/goodfellow_2015_15_2.png, id=268, 616.3025pt x 733.74126pt>
+<figures/goodfellow_2015_15_2.png, id=263, 616.3025pt x 733.74126pt>
 File: figures/goodfellow_2015_15_2.png Graphic file (type png)
 
 <use figures/goodfellow_2015_15_2.png>
 Package pdftex.def Info: figures/goodfellow_2015_15_2.png used on input line 13
-6.
+9.
 (pdftex.def)             Requested size: 184.89217pt x 220.12407pt.
  [6 <./figures/kingma_2014_4a.png>]
 [7 <./figures/torrey_2009_2.png> <./figures/goodfellow_2015_15_2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 194.
+(hyperref)                removing `math shift' on input line 197.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\beta' on input line 194.
+(hyperref)                removing `\beta' on input line 197.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 194.
+(hyperref)                removing `math shift' on input line 197.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
 
-Overfull \hbox (10.55437pt too wide) in paragraph at lines 201--202
+Overfull \hbox (10.55437pt too wide) in paragraph at lines 204--205
 []$\OML/jkp/m/it/12 ^^L$\OT1/bch/m/n/12 -VAE achieves this by adding an im-por-
 tant mul-ti-plica-tive fac-tor $\OML/jkp/m/it/12 ^^L$ \OT1/bch/m/n/12 to the KL
 -divergence
  []
 
-LaTeX Font Info:    Try loading font information for TS1+bch on input line 221.
+LaTeX Font Info:    Try loading font information for TS1+bch on input line 224.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1bch.fd
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
-) [9]
+) [9] [10]
 Missing character: There is no â in font bchr7t!
 Missing character: There is no € in font bchr7t!
 Missing character: There is no ™ in font bchr7t!
@@ -1550,93 +1570,52 @@ Missing character: There is no â in font bchr7t!
 Missing character: There is no € in font bchr7t!
 Missing character: There is no ™ in font bchr7t!
 
-(./coursework.bbl (./coursework.brf)
+Overfull \hbox (18.29524pt too wide) in paragraph at lines 250--265
+ [][] 
+ []
+
+[11] (./coursework.bbl (./coursework.brf)
 \tf@brf=\write8
 \openout8 = `coursework.brf'.
 
- [10])
+)
 \tf@thm=\write9
 \openout9 = `coursework.thm'.
 
- [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 245.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 245.
+ [12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 273.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 273.
  (./coursework.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 245.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 245.
-
-
-Package rerunfilecheck Warning: File `coursework.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `coursework.out':
-(rerunfilecheck)             Before: 17F49E389278ECE87C2FD0E9395D9ACF;2451
-(rerunfilecheck)             After:  1375CE435E4165FFD198AE9244DC2E90;2382.
-
-Package rerunfilecheck Warning: File `coursework.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `coursework.brf':
-(rerunfilecheck)             Before: 46AC14F824E966ED84A4D91615074151;1497
-(rerunfilecheck)             After:  DEA4CC3773BD2362E0F82F3E4AF5729D;1496.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 273.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 273.
+Package rerunfilecheck Info: File `coursework.out' has not changed.
+(rerunfilecheck)             Checksum: 72071E9CF8B60EA62E223771EBDEC8A8;2382.
+Package rerunfilecheck Info: File `coursework.brf' has not changed.
+(rerunfilecheck)             Checksum: F17413ACA585763F2248D496C0200692;1598.
  ) 
 Here is how much of TeX's memory you used:
- 23286 strings out of 494353
- 424607 string characters out of 6170043
- 486484 words of memory out of 5000000
- 25986 multiletter control sequences out of 15000+600000
+ 23334 strings out of 494353
+ 425243 string characters out of 6170043
+ 487323 words of memory out of 5000000
+ 26038 multiletter control sequences out of 15000+600000
  71166 words of font info for 144 fonts, out of 8000000 for 9000
  452 hyphenation exceptions out of 8191
  64i,12n,77p,939b,503s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section.59} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.57} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.55} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.54} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.50} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.49} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.48} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.36} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.35} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.34} has been referenced but does not 
-exist, replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
-texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/b
-itstrea/charter/bchri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/k
-pfonts/jkpbmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkp
-bn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/kpfonts/jkpsyb.pfb>
-Output written on coursework.pdf (11 pages, 724788 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/bitstrea/charter/bchri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/kpfonts/jkpbmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/j
+kpbn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/kpfonts/jkpsyb.pfb>
+Output written on coursework.pdf (12 pages, 725968 bytes).
 PDF statistics:
- 397 PDF objects out of 1000 (max. 8388607)
- 350 compressed objects within 4 object streams
- 92 named destinations out of 1000 (max. 500000)
- 289 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 388 PDF objects out of 1000 (max. 8388607)
+ 340 compressed objects within 4 object streams
+ 84 named destinations out of 1000 (max. 500000)
+ 281 words of extra memory for PDF output out of 10000 (max. 10000000)
 

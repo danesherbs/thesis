@@ -9,6 +9,9 @@
 \input{includes} % various packages needed for maths etc.
 \input{notation} % short-hand notation and macros
 
+% custom packages
+\usepackage{booktabs}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -114,7 +117,7 @@ Shown in Figure (\ref{frey_face_disentangled}) is a learned Frey Face manifold w
 Disentangled representations facilitate the reuse of previously learnt factors, called \textit{knowledge transfer}; and the extreme case, \textit{zero-shot inference} \cite{IanGoodfellowYoshuaBengio2015,Higgins2016}.
 
 \subsubsection{Transfer learning}
-Transfer learning is the reuse of learnt factors from a previous task when learning a new one \cite{IanGoodfellowYoshuaBengio2015}. If the tasks are sufficiently similar, there are three ways learning of the new task may be improved \cite{Torrey2009}:
+Transfer learning is the reuse of learnt factors from a previous task when learning a new one \cite{IanGoodfellowYoshuaBengio2015}. If the tasks are sufficiently similar, there are three ways the learning may be improved \cite{Torrey2009}:
 
 \begin{enumerate}
 \item Initial performance
@@ -234,9 +237,34 @@ The Arcade Learning Environment (ALE) is a framework built on top of the Atari 2
 \item A Python wrapper for the entire framework is provided, so our agents developed in Keras interact seamlessly
 \end{itemize}
 
+\newpage
 \section{Project Plan}
 You should explain what needs to be done in order to complete the project and roughly what you expect the timetable to be. Don’t forget to include the project write-up (the final report), as this is a major part of the exercise. It’s important to identify key milestones and also fall-back positions, in case you run out of time.  You should also identify what extensions could be added if time permits.  The plan should be complete and should include those parts that you have already addressed (make it clear how far you have progressed at the time of writing).  This material will not appear in the final report.
 
+% uses \usepackage{booktabs}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\begin{table}[h!]
+\centering
+\caption{Project plan in terms of remaining months.}
+\label{tab:project_plan}
+\begin{tabular}{@{}lll@{}}
+\toprule
+                  & \textbf{Milestones}                 & \textbf{Fallbacks}             \\ \midrule
+\textbf{February} & \tabitem Implement $\beta$-VAE      & \tabitem Implement $\beta$-VAE \\
+                  & \tabitem Reproduce results from \cite{Higgins2016} & \tabitem Reproduce results from \cite{Higgins2016}\\
+                  & \tabitem Finish formal justification of VAE &  \\
+\textbf{March}    & \tabitem Disentanglement metric script & \tabitem Disentanglement metric script \\
+                  & \tabitem Test script with simple data & \tabitem Test script with simple data   \\
+\textbf{April}    & \tabitem Find suitable $\beta$ for Pong & \tabitem Find suitable $\beta$ for Pong \\
+                  & \tabitem Find suitable $\beta$ for Space Invaders & \tabitem Find suitable $\beta$ for Space Invaders \\
+                  & \tabitem Graph latent vs output &                    \\                  
+\textbf{May}      & \tabitem Complete report background & \\
+                  & \tabitem Complete report related work &                    \\                  
+\textbf{June}     & \tabitem Complete report results      &                    \\ \bottomrule
+\end{tabular}
+\end{table}
+
+\newpage
 \section{Evaluation plan}
 Project evaluation is very important, so it's important to think now about how you plan to measure success. For example, what functionality do you need to demonstrate?  What experiments to you need to undertake and what outcome(s) would constitute success?  What benchmarks should you use? How has your project extended the state of the art?  How do you measure qualitative aspects, such as ease of use?  These are the sort of questions that your project evaluation should address; this section should outline your plan.
 
