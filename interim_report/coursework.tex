@@ -147,38 +147,6 @@ These improvements are shown on a performance-training graph in Figure \ref{tran
 
 \subsubsection{Zero-shot understanding}
 
-\subsubsection{Data continuity}
-
-\subsubsection{Statistical independence}
-
-\subsubsection{Manifolds}
-
-% Finding disentangled representations
-\subsection{Finding disentangled representations}
-
-\subsubsection{Supervised algorithms}
-
-\begin{enumerate}
-\item SIFT
-\item Spin image
-\item HoG
-\item RIFT
-\item Textons
-\item GLOH
-\end{enumerate}
-
-\subsubsection{Semi-supervised algorithms}
-
-\begin{enumerate}
-\item DC-IGN
-\end{enumerate}
-
-\subsubsection{Unsupervised algorithms}
-
-An overview of unsupervised algorithms learning disentangled representations is given in \cite{Bengio2013}. These include deep representations, such as deep Boltzmann machines and deep belief networks, in greedy layerwise unsupervised pre-training; graphical models; autoencoders; and manifold learning. The vast majority of approaches using these techniques (and an unmentioned approach, InfoGAN) assume the number of generative factors, priors and/or do not scale well. As far as we know, $\beta$-VAE is the only approach which has been shown to quantitatively outperform alternatives with respect to its ability to disentangle data, its stability in training and the relatively few assumptions about the data \cite{Higgins2016}.\\
-
-[Perhaps more research is needed here. Do we need to look harder for more unsupervised alternatives? Is more justification for using $\beta$-VAE needed? Currently we're relying solely on the survey of unsupervised algorithms by \cite{Higgins2016}]\\
-
 % Deeper investigation of $\beta$-VAE
 \subsection{Deeper investigation of $\beta$-VAE}
 \subsubsection{Framework}
@@ -222,6 +190,16 @@ The Arcade Learning Environment (ALE) is a framework built on top of the Atari 2
 \item Frames can be saved during game play, which is used to collect training data
 \item A Python wrapper for the entire framework is provided, so our agents developed in Keras interact seamlessly
 \end{itemize}
+
+\section{Results}
+
+\begin{figure}
+\includegraphics[scale=0.3]{figures/goodfellow_2015_15_2.png}
+\centering
+\captionsetup{justification=centering}
+\caption{An illustration of how tasks may be translated into intermediate representations, then into a shared representation. The representation of different tasks in terms of common concepts is key to transfer learning. \cite{IanGoodfellowYoshuaBengio2015}}
+\label{transfer_learning_graph_intuition}
+\end{figure}
 
 \newpage
 \section{Project Plan}

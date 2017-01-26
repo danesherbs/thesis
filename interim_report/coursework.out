@@ -12,20 +12,13 @@
 \BOOKMARK [3][]{subsubsection.21}{2.3.1 Disentangled representations}{subsection.20}% 12
 \BOOKMARK [3][]{subsubsection.23}{2.3.2 Transfer learning}{subsection.20}% 13
 \BOOKMARK [3][]{subsubsection.30}{2.3.3 Zero-shot understanding}{subsection.20}% 14
-\BOOKMARK [3][]{subsubsection.31}{2.3.4 Data continuity}{subsection.20}% 15
-\BOOKMARK [3][]{subsubsection.32}{2.3.5 Statistical independence}{subsection.20}% 16
-\BOOKMARK [3][]{subsubsection.33}{2.3.6 Manifolds}{subsection.20}% 17
-\BOOKMARK [2][]{subsection.34}{2.4 Finding disentangled representations}{section.10}% 18
-\BOOKMARK [3][]{subsubsection.35}{2.4.1 Supervised algorithms}{subsection.34}% 19
-\BOOKMARK [3][]{subsubsection.42}{2.4.2 Semi-supervised algorithms}{subsection.34}% 20
-\BOOKMARK [3][]{subsubsection.44}{2.4.3 Unsupervised algorithms}{subsection.34}% 21
-\BOOKMARK [2][]{subsection.45}{2.5 Deeper investigation of -VAE}{section.10}% 22
-\BOOKMARK [3][]{subsubsection.46}{2.5.1 Framework}{subsection.45}% 23
-\BOOKMARK [3][]{subsubsection.48}{2.5.2 Disentanglement metric}{subsection.45}% 24
-\BOOKMARK [3][]{subsubsection.49}{2.5.3 Quantitative performance}{subsection.45}% 25
-\BOOKMARK [3][]{subsubsection.50}{2.5.4 Qualitative performance}{subsection.45}% 26
-\BOOKMARK [2][]{subsection.51}{2.6 Libraries}{section.10}% 27
-\BOOKMARK [3][]{subsubsection.52}{2.6.1 Keras}{subsection.51}% 28
-\BOOKMARK [3][]{subsubsection.53}{2.6.2 Arcade Learning Environment}{subsection.51}% 29
-\BOOKMARK [1][]{section.54}{3 Project Plan}{}% 30
-\BOOKMARK [1][]{section.56}{4 Evaluation plan}{}% 31
+\BOOKMARK [2][]{subsection.31}{2.4 Deeper investigation of -VAE}{section.10}% 15
+\BOOKMARK [3][]{subsubsection.32}{2.4.1 Framework}{subsection.31}% 16
+\BOOKMARK [3][]{subsubsection.34}{2.4.2 Disentanglement metric}{subsection.31}% 17
+\BOOKMARK [3][]{subsubsection.35}{2.4.3 Quantitative performance}{subsection.31}% 18
+\BOOKMARK [3][]{subsubsection.36}{2.4.4 Qualitative performance}{subsection.31}% 19
+\BOOKMARK [2][]{subsection.37}{2.5 Libraries}{section.10}% 20
+\BOOKMARK [3][]{subsubsection.38}{2.5.1 Keras}{subsection.37}% 21
+\BOOKMARK [3][]{subsubsection.39}{2.5.2 Arcade Learning Environment}{subsection.37}% 22
+\BOOKMARK [1][]{section.40}{3 Project Plan}{}% 23
+\BOOKMARK [1][]{section.42}{4 Evaluation plan}{}% 24
