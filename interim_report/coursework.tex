@@ -28,9 +28,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Main document
 \section{Introduction}
-A long term goal of artificial intelligence (AI) is the development of artificial general intelligence (AGI). A number of theoretical frameworks have been presented to formalize what it means to achieve AGI, notably by \cite{Hutter2005}.\\
+A long term goal of artificial intelligence (AI) is the development of artificial general intelligence (AGI). A number of theoretical frameworks have been presented to formalize what it means to achieve AGI, notably by Hutter \cite{Hutter2005}.\\
 
-Reinforcement learning is fundamental in this framework. It's therefore quite exciting that deep reinforcement learning (DRL) systems have recently been able to master a wide range of tasks, including Atari games and Go. Though DRL systems have been remarkably successful, they still have a number of drawbacks \cite{Garnelo2016} \cite{Chollet2015}:
+Reinforcement learning is fundamental in this framework. It's therefore quite exciting that deep reinforcement learning (DRL) systems have recently been able to master a wide range of tasks, including Atari games and Go. Though DRL systems have been remarkably successful, they still have a number of drawbacks \cite{Garnelo2016}:
 
 \begin{enumerate}
 \item \textbf{Slow to learn}. Deep neural networks require large data sets and are therefore slow to learn.
@@ -39,24 +39,20 @@ Reinforcement learning is fundamental in this framework. It's therefore quite ex
 \item \textbf{Hard to reason about.} It's often troublesome to understand why the DRL system chose the action it did.
 \end{enumerate}
 
-Deep symbolic reinforcement learning (DSRL) is a recent advance which seeks to overcome all of these drawbacks at once without the drawbacks from classical symbolic AI, namely the symbol grounding problem \cite{Garnelo2016}.\\
+Deep symbolic reinforcement learning (DSRL) is a recent advance which overcomes all of these drawbacks at once without the drawbacks from classical symbolic AI, namely the symbol grounding problem \cite{Garnelo2016}.\\
 
-This novel architecture relies on the representation of its input data to facilitate conceptual abstraction, allowing for transfer learning and high-level cognitive processes. Low-dimensional representations where single latent \cite{Garnelo2016}. However, the unsupervised extraction of features from a wide range of scenes is still a challenge in AI research \cite{Bengio2013}.\\
+This novel architecture relies on the unsupervised extraction of compositional features, allowing for transfer learning and high-level cognitive processes. However, the unsupervised extraction of features from a wide range of scenes is still a challenge in AI research \cite{Bengio2013}. Fortunately methods are getting better, and the first unsupervised scalable model $\beta$-VAE was developed recently. \\
 
-The aim of this project is to investigate compositional representations and evaluate their effectiveness in deep symbolic reinforcement systems. We plan to achieve this as follows:
+The aim of this project is to investigate compositional representations using $\beta$-VAE and evaluate their effectiveness in deep symbolic reinforcement systems. We plan to achieve this as follows:
 
 \begin{enumerate}
 \item Implement many flavours of autoencoders, including mixing and matchings of standard, convolutional and variational autoencoders, and investigate the relationship between the latent space and their final reconstructions. This will hopefully convey some intuition about the way scenes are typically represented in the latent space, their relevance in transfer learning and the significance of the problem we're trying to solve.
-\item Next we focus our attention on convolutional variational autoencoders. We'll try to encourage the latent space to assume a compositional structure by tuning a hyperparameter $\beta$ in a $\beta$-VAE (to be introduced in Chapter X) through heuristic visual inspection. All experiments will be on a range of Atari 2600 games using the Atari Learning Environment.
-\item Finally we can evaluate the value of a compositional structured latent space in a deep symbolic reinforcement system. We'll do this by exploring how well the compositional representation embodies common sense priors, such as object persistence and causality. We will also assess its ability to facilitate high-level cognitive processes, such as transfer learning and look-ahead.
+\item Next we focus our attention on convolutional variational autoencoders. We'll experiment with different values of $\beta$ two ways: through heuristic visual inspection, and by comparing the disentanglement metric and reconstruction error. All experiments will be on a range of Atari 2600 games using the Atari Learning Environment.
+\item Finally we can evaluate the value of a compositional structured latent space in a deep symbolic reinforcement system. We'll do this by training a number of reinforcement agents on the latent space and compare their performance to training on the on the original space. We can also train the one agent on multiple games to assess how well this compositional structure facilitates transfer learning.
 \end{enumerate}
 
 \section{Background}
-The background section of the report should set the project into context by relating it to existing published work which you read at the start of the project when your approach and methods were being considered. There are usually many ways of solving a given problem, and you shouldn't just pick one at random. Describe and evaluate as many alternative approaches as possible. The published work may be in the form of research papers, articles, text books, technical manuals, or even existing software or hardware of which you have had hands-on experience.
-
-Why we chose this approach (refer to lots of papers that offer alternatives. Why did you pick this one?)\\
-
-This chapter will contain the material necessary to understand later chapters and provide the context for our contributions in Chapter X.\\
+This chapter will contain the material necessary to understand later chapters and provide the context for our contributions.\\
 
 We will introduce deep symbolic reinforcement learning which will motivate our interest in unsupervised disentangled representations. Here we'll explore state-of-the-art approaches to finding such representations, which will also require a brief introduction to autoencoders. Finally we'll mention less theoretical matters, including libraries used and the Arcade Learning Environment.
 
@@ -162,17 +158,6 @@ These improvements are shown on a performance-training graph in Figure \ref{tran
 
 \subsubsection{Supervised algorithms}
 
-Supervised learning of disentangled representations of images.
-
-\begin{enumerate}
-\item State the some prominent supervised algorithms for learning disentangled representations
-\item Show the impressive achievements of a few (particularly one with Atari Breakout)
-\item Explain how this gives something to aim for in unsupervised methods
-\item Explain how unless modified, these class of algorithms do not suit our purpose of end-to-end learning in DSRL.
-\end{enumerate}
-
-Some supervised methods used are:
-
 \begin{enumerate}
 \item SIFT
 \item Spin image
@@ -184,12 +169,13 @@ Some supervised methods used are:
 
 \subsubsection{Semi-supervised algorithms}
 
-A summary of useful techniques in \cite{IanGoodfellowYoshuaBengio2015}
-
+\begin{enumerate}
+\item DC-IGN
+\end{enumerate}
 
 \subsubsection{Unsupervised algorithms}
 
-An overview of unsupervised algorithms learning disentangled representations is given in \cite{Bengio2013}. These include deep representations, such as deep Boltzmann machines and deep belief networks, in greedy layerwise unsupervised pre-training; graphical models; autoencoders; and manifold learning. The vast majority of approaches using these techniques (and unmentioned approaches, DC-IGN and InfoGAN) assume the number of generative factors, priors and/or do not scale well. As far as we know, $\beta$-VAE is the only approach which has been shown to quantitatively outperform alternatives with respect to its ability to disentangle data, its stability in training and the relatively few assumptions about the data \cite{Higgins2016}.\\
+An overview of unsupervised algorithms learning disentangled representations is given in \cite{Bengio2013}. These include deep representations, such as deep Boltzmann machines and deep belief networks, in greedy layerwise unsupervised pre-training; graphical models; autoencoders; and manifold learning. The vast majority of approaches using these techniques (and an unmentioned approach, InfoGAN) assume the number of generative factors, priors and/or do not scale well. As far as we know, $\beta$-VAE is the only approach which has been shown to quantitatively outperform alternatives with respect to its ability to disentangle data, its stability in training and the relatively few assumptions about the data \cite{Higgins2016}.\\
 
 [Perhaps more research is needed here. Do we need to look harder for more unsupervised alternatives? Is more justification for using $\beta$-VAE needed? Currently we're relying solely on the survey of unsupervised algorithms by \cite{Higgins2016}]\\
 
