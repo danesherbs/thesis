@@ -1,0 +1,26 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.2}
+\contentsline {section}{\numberline {2}Background}{4}{section.10}
+\contentsline {subsection}{\numberline {2.1}Autoencoders}{4}{subsection.11}
+\contentsline {subsubsection}{\numberline {2.1.1}Architecture}{4}{subsubsection.12}
+\contentsline {subsubsection}{\numberline {2.1.2}Convolutional autoencoders}{4}{subsubsection.15}
+\contentsline {subsubsection}{\numberline {2.1.3}Variational autoencoders}{4}{subsubsection.16}
+\contentsline {subsection}{\numberline {2.2}Deep symbolic reinforcement learning}{6}{subsection.18}
+\contentsline {subsubsection}{\numberline {2.2.1}Reinforcement learning}{6}{subsubsection.19}
+\contentsline {subsubsection}{\numberline {2.2.2}Symbolic artificial intelligence}{6}{subsubsection.20}
+\contentsline {subsubsection}{\numberline {2.2.3}Deep symbolic reinforcement learning}{6}{subsubsection.21}
+\contentsline {subsection}{\numberline {2.3}Representation learning}{6}{subsection.22}
+\contentsline {subsubsection}{\numberline {2.3.1}Disentangled representations}{6}{subsubsection.23}
+\contentsline {subsubsection}{\numberline {2.3.2}Transfer learning}{7}{subsubsection.25}
+\contentsline {subsubsection}{\numberline {2.3.3}Zero-shot understanding}{9}{subsubsection.31}
+\contentsline {subsection}{\numberline {2.4}Deeper investigation of $\beta $-VAE}{9}{subsection.32}
+\contentsline {subsubsection}{\numberline {2.4.1}Framework}{9}{subsubsection.33}
+\contentsline {subsubsection}{\numberline {2.4.2}Disentanglement metric}{9}{subsubsection.35}
+\contentsline {subsubsection}{\numberline {2.4.3}Quantitative performance}{9}{subsubsection.36}
+\contentsline {subsubsection}{\numberline {2.4.4}Qualitative performance}{9}{subsubsection.37}
+\contentsline {subsection}{\numberline {2.5}Libraries}{9}{subsection.38}
+\contentsline {subsubsection}{\numberline {2.5.1}Keras}{9}{subsubsection.39}
+\contentsline {subsubsection}{\numberline {2.5.2}Arcade Learning Environment}{10}{subsubsection.40}
+\contentsline {section}{\numberline {3}Results}{10}{section.41}
+\contentsline {section}{\numberline {4}Project Plan}{12}{section.44}
+\contentsline {section}{\numberline {5}Evaluation plan}{14}{section.46}

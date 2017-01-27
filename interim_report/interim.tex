@@ -68,9 +68,9 @@ We will introduce deep symbolic reinforcement learning which will motivate our i
 
 \subsubsection{Architecture}
 
-Autoencoders are feed-forward neural networks with a ``bottleneck" in a hidden layer, shown in Figure (\ref{fig:autoencoder_encoder_decoder}). Autoencoders learn an approximation to the identity function $f(\vec{x})=\vec{x}$, which may seem pointless at first. However, if the autoencoder closely approximates the identity function, the decoder is actually computing a reconstruction of the original image $\widetilde{\vec{x}}$ from a lower-dimensional representation $\vec{z}$, called the \textit{latent space}. So for any given $\vec{x}$, we can compute a compressed version, $\vec{z}$, by submitting $\vec{x}$ to first half of the network, the \textit{encoder}. This compression technique is data-specific and, at present, isn't scalable \cite{Chollet2016}. However, they are very effective at denoising images and likely to play an important role in reverse Google image searches \cite{Krizhevsky2011}.\\
+Autoencoders are standard feed-forward networks with a ``bottleneck" in a hidden layer, shown in Figure (\ref{fig:autoencoder_encoder_decoder}). Autoencoders learn the identity function $f(\vec{x})=\vec{x}$, which may seem pointless at first. However, if the autoencoder closely approximates the identity function, the decoder is actually computing a reconstruction of the original image $\widetilde{\vec{x}}$ from a lower-dimensional representation $\vec{z}$, called the \textit{latent space}. So for any given $\vec{x}$, we can compute a compressed version, $\vec{z}$, by submitting $\vec{x}$ to the encoder. This compression technique is data-specific and, at present, isn't scalable \cite{Chollet2016}. However, they are very effective at denoising images and likely to play an important role in reverse Google image searches \cite{Krizhevsky2011}.\\
 
-The type of feed-forward network chosen for the encoder and decoder depends on the nature of the data. We'll be using images as our input data, so the natural choice is to use convolutional neural networks. Our encoder will include convolutional and pooling layers to learn relevant features and downsample the data respectively, and our decoder will include deconvolutional and upsampling layers (as they're natural inverses).
+The type of feed-forward network chosen depends on the nature of the data. We'll be using images as our input data, so the natural choice is to use convolutional neural networks. Our encoder will include convolutional and pooling layers to learn relevant features and downsample the data respectively, and our decoder will include deconvolutional and upsampling layers (as they're natural inverses).
 
 \begin{figure}
 \includegraphics[scale=0.5]{figures/autoencoder_encoder_decoder.png}
@@ -167,7 +167,7 @@ These improvements are shown on a performance-training graph in Figure \ref{tran
 \label{transfer_learning_graph_intuition}
 \end{figure}
 
-In summary, entangled representations make it difficult to learn common generative factors among different tasks, as no one latent factor has meaning itself \cite{Whitney2016}.
+Entangled representations make it difficult to learn common generative factors among different tasks, as no one latent factor has meaning itself \cite{Whitney2016}.
 
 \subsubsection{Zero-shot understanding}
 

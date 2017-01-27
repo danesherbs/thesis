@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  27 JAN 2017 18:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  27 JAN 2017 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**coursework.tex
-(./coursework.tex
+**interim.tex
+(./interim.tex
 LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 5 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1250,12 +1250,12 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \@lastruleclass=\count170
 \@thisrulewidth=\dimen271
 )
-(./coursework.aux)
-\openout1 = `coursework.aux'.
+No file interim.aux.
+\openout1 = `interim.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 23.
 LaTeX Font Info:    Try loading font information for OML+jkp on input line 23.
- (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omljkp.fd
+(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    ... okay on input line 23.
@@ -1367,15 +1367,13 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 23.
 LaTeX Info: Redefining \pageref on input line 23.
 LaTeX Info: Redefining \nameref on input line 23.
-
-(./coursework.out) (./coursework.out)
 \@outlinefile=\write6
-\openout6 = `coursework.out'.
+\openout6 = `interim.out'.
 
- (./titlepage.tex
+
+(./titlepage.tex
 LaTeX Font Info:    Try loading font information for OT1+jkp on input line 34.
-
-(/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
 LaTeX Font Info:    Try loading font information for U+jkpmia on input line 34.
@@ -1408,9 +1406,9 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 34.
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./coursework.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write7
-\openout7 = `coursework.toc'.
+\openout7 = `interim.toc'.
 
 LaTeX Font Info:    Try loading font information for OT1+jkpss on input line 31
 .
@@ -1418,14 +1416,31 @@ LaTeX Font Info:    Try loading font information for OT1+jkpss on input line 31
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ot1jkpss.fd
 File: ot1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for OT1/jkpss.
 ) [2]
+
+Package natbib Warning: Citation `Hutter2005' on page 3 undefined on input line
+ 38.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
  []
 
 
+Package natbib Warning: Citation `Garnelo2016' on page 3 undefined on input lin
+e 40.
+
+
+Package natbib Warning: Citation `Garnelo2016' on page 3 undefined on input lin
+e 49.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
+
+
+Package natbib Warning: Citation `Bengio2013' on page 3 undefined on input line
+ 51.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 51--52
@@ -1437,16 +1452,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
+
+LaTeX Warning: Reference `fig:autoencoder_encoder_decoder' on page 4 undefined 
+on input line 71.
+
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 71.
 
+Package natbib Warning: Citation `Chollet2016' on page 4 undefined on input lin
+e 71.
+
+
+Package natbib Warning: Citation `Krizhevsky2011' on page 4 undefined on input 
+line 71.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
-<figures/autoencoder_encoder_decoder.png, id=166, 679.53876pt x 507.8975pt>
+<figures/autoencoder_encoder_decoder.png, id=32, 679.53876pt x 507.8975pt>
 File: figures/autoencoder_encoder_decoder.png Graphic file (type png)
 
 <use figures/autoencoder_encoder_decoder.png>
@@ -1458,7 +1485,7 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8.3> not available
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 79.
 
-<figures/autoencoder_black_box.jpg, id=168, 168.63pt x 52.998pt>
+<figures/autoencoder_black_box.jpg, id=34, 168.63pt x 52.998pt>
 File: figures/autoencoder_black_box.jpg Graphic file (type jpg)
 
 <use figures/autoencoder_black_box.jpg>
@@ -1466,12 +1493,30 @@ Package pdftex.def Info: figures/autoencoder_black_box.jpg used on input line 8
 4.
 (pdftex.def)             Requested size: 337.25916pt x 105.99573pt.
 
+
+Package natbib Warning: Citation `Chollet2016' on page 4 undefined on input lin
+e 87.
+
+
+Package natbib Warning: Citation `Chollet2016' on page 4 undefined on input lin
+e 87.
+
+
+Package natbib Warning: Citation `Doersch2016' on page 4 undefined on input lin
+e 95.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
 [4] [5 <./figures/autoencoder_encoder_decoder.png> <./figures/autoencoder_black
 _box.jpg>]
+
+Package natbib Warning: Citation `Kingma2014' on page 6 undefined on input line
+ 97.
+
+
 Overfull \hbox (9.69193pt too wide) in paragraph at lines 97--98
 \OT1/bch/m/n/12 pu-ta-tion-ally ex-pen-sive, mo-ti-vat-ing the in-tro-duc-tion 
 of the prob-a-bilis-tic en-coder $\OML/jkp/m/it/12 q[]\OT1/jkp/m/n/12 ([]\OMS/j
@@ -1484,9 +1529,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--98
  []
 
 
+Package natbib Warning: Citation `IanGoodfellowYoshuaBengio2015' on page 6 unde
+fined on input line 118.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
+
+
+Package natbib Warning: Citation `IanGoodfellowYoshuaBengio2015' on page 6 unde
+fined on input line 120.
+
+
+Package natbib Warning: Citation `Bengio2013' on page 6 undefined on input line
+ 124.
+
+
+Package natbib Warning: Citation `Higgins2016' on page 6 undefined on input lin
+e 124.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 124--125
@@ -1498,43 +1559,104 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
-<figures/kingma_2014_4a.png, id=196, 585.18625pt x 817.0525pt>
+<figures/kingma_2014_4a.png, id=56, 585.18625pt x 817.0525pt>
 File: figures/kingma_2014_4a.png Graphic file (type png)
 
 <use figures/kingma_2014_4a.png>
 Package pdftex.def Info: figures/kingma_2014_4a.png used on input line 129.
 (pdftex.def)             Requested size: 175.55722pt x 245.11765pt.
 
+
+Package natbib Warning: Citation `Kingma2014' on page 6 undefined on input line
+ 132.
+
+
+Package natbib Warning: Citation `Kingma2014' on page 6 undefined on input line
+ 132.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
 [6]
+
+LaTeX Warning: Reference `frey_face_disentangled' on page 7 undefined on input 
+line 138.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
+
+
+Package natbib Warning: Citation `IanGoodfellowYoshuaBengio2015' on page 7 unde
+fined on input line 140.
+
+
+Package natbib Warning: Citation `Higgins2016' on page 7 undefined on input lin
+e 140.
+
+
+Package natbib Warning: Citation `IanGoodfellowYoshuaBengio2015' on page 7 unde
+fined on input line 144.
+
+
+Package natbib Warning: Citation `Torrey2009' on page 7 undefined on input line
+ 144.
+
+
+LaTeX Warning: Reference `transfer_learning_three_ways' on page 7 undefined on 
+input line 152.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
-<figures/torrey_2009_2.png, id=216, 917.4275pt x 476.78125pt>
+<figures/torrey_2009_2.png, id=70, 917.4275pt x 476.78125pt>
 File: figures/torrey_2009_2.png Graphic file (type png)
 
 <use figures/torrey_2009_2.png>
 Package pdftex.def Info: figures/torrey_2009_2.png used on input line 155.
 (pdftex.def)             Requested size: 275.23038pt x 143.03548pt.
 
-<figures/goodfellow_2015_15_2.png, id=219, 616.3025pt x 733.74126pt>
+
+Package natbib Warning: Citation `Torrey2009' on page 7 undefined on input line
+ 158.
+
+
+Package natbib Warning: Citation `Torrey2009' on page 7 undefined on input line
+ 158.
+
+<figures/goodfellow_2015_15_2.png, id=71, 616.3025pt x 733.74126pt>
 File: figures/goodfellow_2015_15_2.png Graphic file (type png)
 
 <use figures/goodfellow_2015_15_2.png>
 Package pdftex.def Info: figures/goodfellow_2015_15_2.png used on input line 16
 3.
 (pdftex.def)             Requested size: 184.89217pt x 220.12407pt.
- [7 <./figures/kingma_2014_4a.png>]
-[8 <./figures/torrey_2009_2.png> <./figures/goodfellow_2015_15_2.png>]
+
+
+Package natbib Warning: Citation `IanGoodfellowYoshuaBengio2015' on page 7 unde
+fined on input line 166.
+
+
+Package natbib Warning: Citation `IanGoodfellowYoshuaBengio2015' on page 7 unde
+fined on input line 166.
+
+
+Package natbib Warning: Citation `Whitney2016' on page 7 undefined on input lin
+e 170.
+
+
+Overfull \hbox (5.05925pt too wide) in paragraph at lines 170--171
+[]\OT1/bch/m/n/12 Entangled rep-re-sen-ta-tions make it dif-fi-cult to learn co
+m-mon gen-er-a-tive fac-tors among
+ []
+
+[7 <./figures/kingma_2014_4a.png>] [8 <./figures/torrey_2009_2.png> <./figures/
+goodfellow_2015_15_2.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 175.
@@ -1564,21 +1686,42 @@ tant mul-ti-plica-tive fac-tor $\OML/jkp/m/it/12 ^^L$ \OT1/bch/m/n/12 to the KL
 -divergence
  []
 
+
+Package natbib Warning: Citation `Higgins2016' on page 9 undefined on input lin
+e 189.
+
+
+Package natbib Warning: Citation `Chollet2015' on page 9 undefined on input lin
+e 199.
+
 LaTeX Font Info:    Try loading font information for TS1+bch on input line 202.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1bch.fd
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
-) [9]
+)
+
+Package natbib Warning: Citation `Bellemare2015' on page 9 undefined on input l
+ine 210.
+
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
+
+
+LaTeX Warning: Reference `fig:space_invaders_original' on page 10 undefined on 
+input line 223.
+
+
+LaTeX Warning: Reference `tab:latent_vs_reconstruction_grid' on page 10 undefin
+ed on input line 223.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 223--224
 
  []
 
-<figures/space_invaders_original.png, id=252, 578.16pt x 433.62pt>
+<figures/space_invaders_original.png, id=102, 578.16pt x 433.62pt>
 File: figures/space_invaders_original.png Graphic file (type png)
 
 <use figures/space_invaders_original.png>
@@ -1589,7 +1732,15 @@ Package pdftex.def Info: figures/space_invaders_original.png used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/latent_space_latent_16_epochs_10.pdf, id=255, 578.16pt x 433.62pt>
+
+LaTeX Warning: Reference `fig:space_invaders_original' on page 10 undefined on 
+input line 238.
+
+
+LaTeX Warning: Reference `fig:space_invaders_original' on page 10 undefined on 
+input line 238.
+
+<figures/latent_space_latent_16_epochs_10.pdf, id=103, 578.16pt x 433.62pt>
 File: figures/latent_space_latent_16_epochs_10.pdf Graphic file (type pdf)
 
 <use figures/latent_space_latent_16_epochs_10.pdf>
@@ -1597,7 +1748,7 @@ Package pdftex.def Info: figures/latent_space_latent_16_epochs_10.pdf used on i
 nput line 243.
 (pdftex.def)             Requested size: 163.80688pt x 122.85876pt.
 
-<figures/reconstruction_latent_16_epochs_10.pdf, id=256, 578.16pt x 433.62pt>
+<figures/reconstruction_latent_16_epochs_10.pdf, id=104, 578.16pt x 433.62pt>
 File: figures/reconstruction_latent_16_epochs_10.pdf Graphic file (type pdf)
 
 <use figures/reconstruction_latent_16_epochs_10.pdf>
@@ -1605,7 +1756,7 @@ Package pdftex.def Info: figures/reconstruction_latent_16_epochs_10.pdf used on
  input line 243.
 (pdftex.def)             Requested size: 240.90234pt x 180.67499pt.
 
-<figures/latent_space_latent_16_epochs_50.pdf, id=257, 578.16pt x 433.62pt>
+<figures/latent_space_latent_16_epochs_50.pdf, id=105, 578.16pt x 433.62pt>
 File: figures/latent_space_latent_16_epochs_50.pdf Graphic file (type pdf)
 
 <use figures/latent_space_latent_16_epochs_50.pdf>
@@ -1613,7 +1764,7 @@ Package pdftex.def Info: figures/latent_space_latent_16_epochs_50.pdf used on i
 nput line 244.
 (pdftex.def)             Requested size: 163.80688pt x 122.85876pt.
 
-<figures/reconstruction_latent_16_epochs_50.pdf, id=258, 578.16pt x 433.62pt>
+<figures/reconstruction_latent_16_epochs_50.pdf, id=106, 578.16pt x 433.62pt>
 File: figures/reconstruction_latent_16_epochs_50.pdf Graphic file (type pdf)
 
 <use figures/reconstruction_latent_16_epochs_50.pdf>
@@ -1621,7 +1772,7 @@ Package pdftex.def Info: figures/reconstruction_latent_16_epochs_50.pdf used on
  input line 244.
 (pdftex.def)             Requested size: 240.90234pt x 180.67499pt.
 
-<figures/latent_space_latent_16_epochs_100.pdf, id=259, 578.16pt x 433.62pt>
+<figures/latent_space_latent_16_epochs_100.pdf, id=107, 578.16pt x 433.62pt>
 File: figures/latent_space_latent_16_epochs_100.pdf Graphic file (type pdf)
 
 <use figures/latent_space_latent_16_epochs_100.pdf>
@@ -1629,7 +1780,7 @@ Package pdftex.def Info: figures/latent_space_latent_16_epochs_100.pdf used on
 input line 245.
 (pdftex.def)             Requested size: 163.80688pt x 122.85876pt.
 
-<figures/reconstruction_latent_16_epochs_100.pdf, id=260, 578.16pt x 433.62pt>
+<figures/reconstruction_latent_16_epochs_100.pdf, id=108, 578.16pt x 433.62pt>
 File: figures/reconstruction_latent_16_epochs_100.pdf Graphic file (type pdf)
 
 <use figures/reconstruction_latent_16_epochs_100.pdf>
@@ -1663,16 +1814,45 @@ pdfTeX warning: pdflatex (file ./figures/latent_space_latent_16_epochs_100.pdf)
 pdfTeX warning: pdflatex (file ./figures/reconstruction_latent_16_epochs_100.pd
 f): PDF inclusion: multiple pdfs with page group included in a single page
 >]
+
+LaTeX Warning: Reference `tab:project_plan' on page 12 undefined on input line 
+252.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 252--253
 
  []
+
+
+Package natbib Warning: Citation `Higgins2016' on page 12 undefined on input li
+ne 264.
+
+
+Package natbib Warning: Citation `Higgins2016' on page 12 undefined on input li
+ne 264.
 
 
 Overfull \hbox (18.29524pt too wide) in paragraph at lines 260--275
  [][] 
  []
 
-[12 <./figures/space_invaders_original.png>] [13]
+
+LaTeX Warning: Reference `sec:results' on page 12 undefined on input line 277.
+
+[12 <./figures/space_invaders_original.png>]
+
+LaTeX Warning: Reference `subsec:transfer_learning' on page 13 undefined on inp
+ut line 280.
+
+
+LaTeX Warning: Reference `sec:evaluation_plan' on page 13 undefined on input li
+ne 281.
+
+
+Package natbib Warning: Citation `Ji2013' on page 13 undefined on input line 28
+4.
+
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 292--293
 
  []
@@ -1683,41 +1863,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 294--295
  []
 
 
+Package natbib Warning: Citation `Higgins2016' on page 14 undefined on input li
+ne 296.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 296--297
 
  []
 
-[14] (./coursework.bbl (./coursework.brf)
-\tf@brf=\write8
-\openout8 = `coursework.brf'.
+[14]
+No file interim.bbl.
 
-)
+Package natbib Warning: There were undefined citations.
+
 
 Package caption Warning: Unused \captionsetup[subfigure] on input line 18.
 See the caption package documentation for explanation.
 
-\tf@thm=\write9
-\openout9 = `coursework.thm'.
+\tf@thm=\write8
+\openout8 = `interim.thm'.
 
-[15]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 303.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 303.
- (./coursework.aux)
+(./interim.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 303.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 303.
-Package rerunfilecheck Info: File `coursework.out' has not changed.
-(rerunfilecheck)             Checksum: 5A0193DA2B2E16F3B86A8FAED5C0F376;1854.
-Package rerunfilecheck Info: File `coursework.brf' has not changed.
-(rerunfilecheck)             Checksum: ED0A50B0E1D023A2260B8EAE31058302;1504.
+
+
+Package rerunfilecheck Warning: File `interim.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `interim.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  5A0193DA2B2E16F3B86A8FAED5C0F376;1854.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 23493 strings out of 494902
- 429326 string characters out of 6179891
- 488711 words of memory out of 5000000
- 26175 multiletter control sequences out of 15000+600000
+ 23366 strings out of 494902
+ 427127 string characters out of 6179891
+ 487353 words of memory out of 5000000
+ 26077 multiletter control sequences out of 15000+600000
  95223 words of font info for 204 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 64i,13n,77p,959b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,13n,77p,936b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fon
@@ -1729,10 +1923,10 @@ kpbn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb>
 /texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/kpfonts/jkpsyb.pfb>
-Output written on coursework.pdf (15 pages, 2206029 bytes).
+Output written on interim.pdf (14 pages, 2195100 bytes).
 PDF statistics:
- 450 PDF objects out of 1000 (max. 8388607)
- 348 compressed objects within 4 object streams
- 77 named destinations out of 1000 (max. 500000)
- 273 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 282 PDF objects out of 1000 (max. 8388607)
+ 188 compressed objects within 2 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 
