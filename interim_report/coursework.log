@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  27 JAN 2017 16:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  27 JAN 2017 17:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1441,37 +1441,30 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 71.
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+
+ []
+
 <figures/autoencoder_encoder_decoder.png, id=166, 679.53876pt x 507.8975pt>
 File: figures/autoencoder_encoder_decoder.png Graphic file (type png)
 
 <use figures/autoencoder_encoder_decoder.png>
 Package pdftex.def Info: figures/autoencoder_encoder_decoder.png used on input 
-line 74.
+line 76.
 (pdftex.def)             Requested size: 339.76855pt x 253.94814pt.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8.3> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 77.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 79.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 77.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 79.
 
 <figures/autoencoder_black_box.jpg, id=168, 168.63pt x 52.998pt>
 File: figures/autoencoder_black_box.jpg Graphic file (type jpg)
 
 <use figures/autoencoder_black_box.jpg>
 Package pdftex.def Info: figures/autoencoder_black_box.jpg used on input line 8
-2.
+4.
 (pdftex.def)             Requested size: 337.25916pt x 105.99573pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
-
- []
-
-
-Overfull \hbox (9.69193pt too wide) in paragraph at lines 95--96
-\OT1/bch/m/n/12 pu-ta-tion-ally ex-pen-sive, mo-ti-vat-ing the in-tro-duc-tion 
-of the prob-a-bilis-tic en-coder $\OML/jkp/m/it/12 q[]\OT1/jkp/m/n/12 ([]\OMS/j
-kp/m/n/12 j[]\OT1/jkp/m/n/12 )$
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
@@ -1479,12 +1472,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
 [4] [5 <./figures/autoencoder_encoder_decoder.png> <./figures/autoencoder_black
 _box.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
+Overfull \hbox (9.69193pt too wide) in paragraph at lines 97--98
+\OT1/bch/m/n/12 pu-ta-tion-ally ex-pen-sive, mo-ti-vat-ing the in-tro-duc-tion 
+of the prob-a-bilis-tic en-coder $\OML/jkp/m/it/12 q[]\OT1/jkp/m/n/12 ([]\OMS/j
+kp/m/n/12 j[]\OT1/jkp/m/n/12 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
@@ -1493,88 +1493,94 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-<figures/kingma_2014_4a.png, id=198, 585.18625pt x 817.0525pt>
-File: figures/kingma_2014_4a.png Graphic file (type png)
 
-<use figures/kingma_2014_4a.png>
-Package pdftex.def Info: figures/kingma_2014_4a.png used on input line 127.
-(pdftex.def)             Requested size: 175.55722pt x 245.11765pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
+<figures/kingma_2014_4a.png, id=196, 585.18625pt x 817.0525pt>
+File: figures/kingma_2014_4a.png Graphic file (type png)
+
+<use figures/kingma_2014_4a.png>
+Package pdftex.def Info: figures/kingma_2014_4a.png used on input line 129.
+(pdftex.def)             Requested size: 175.55722pt x 245.11765pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
-<figures/torrey_2009_2.png, id=217, 917.4275pt x 476.78125pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+<figures/torrey_2009_2.png, id=216, 917.4275pt x 476.78125pt>
 File: figures/torrey_2009_2.png Graphic file (type png)
 
 <use figures/torrey_2009_2.png>
-Package pdftex.def Info: figures/torrey_2009_2.png used on input line 153.
+Package pdftex.def Info: figures/torrey_2009_2.png used on input line 155.
 (pdftex.def)             Requested size: 275.23038pt x 143.03548pt.
 
-<figures/goodfellow_2015_15_2.png, id=220, 616.3025pt x 733.74126pt>
+<figures/goodfellow_2015_15_2.png, id=219, 616.3025pt x 733.74126pt>
 File: figures/goodfellow_2015_15_2.png Graphic file (type png)
 
 <use figures/goodfellow_2015_15_2.png>
 Package pdftex.def Info: figures/goodfellow_2015_15_2.png used on input line 16
-1.
+3.
 (pdftex.def)             Requested size: 184.89217pt x 220.12407pt.
 
-Overfull \hbox (5.05925pt too wide) in paragraph at lines 168--169
+Overfull \hbox (5.05925pt too wide) in paragraph at lines 170--171
 []\OT1/bch/m/n/12 Entangled rep-re-sen-ta-tions make it dif-fi-cult to learn co
 m-mon gen-er-a-tive fac-tors among
  []
 
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 173.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\beta' on input line 173.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 173.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
-
- []
-
 [7 <./figures/kingma_2014_4a.png>] [8 <./figures/torrey_2009_2.png> <./figures/
 goodfellow_2015_15_2.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 175.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\beta' on input line 175.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 175.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
 
-Overfull \hbox (10.55437pt too wide) in paragraph at lines 180--181
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
+
+ []
+
+
+Overfull \hbox (10.55437pt too wide) in paragraph at lines 182--183
 []$\OML/jkp/m/it/12 ^^L$\OT1/bch/m/n/12 -VAE achieves this by adding an im-por-
 tant mul-ti-plica-tive fac-tor $\OML/jkp/m/it/12 ^^L$ \OT1/bch/m/n/12 to the KL
 -divergence
  []
 
-LaTeX Font Info:    Try loading font information for TS1+bch on input line 200.
+LaTeX Font Info:    Try loading font information for TS1+bch on input line 202.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1bch.fd
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
 ) [9]
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
 
  []
 
@@ -1583,7 +1589,7 @@ File: figures/space_invaders_original.png Graphic file (type png)
 
 <use figures/space_invaders_original.png>
 Package pdftex.def Info: figures/space_invaders_original.png used on input line
- 226.
+ 228.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
 
 
@@ -1594,7 +1600,7 @@ File: figures/latent_space_latent_16_epochs_10.pdf Graphic file (type pdf)
 
 <use figures/latent_space_latent_16_epochs_10.pdf>
 Package pdftex.def Info: figures/latent_space_latent_16_epochs_10.pdf used on i
-nput line 241.
+nput line 243.
 (pdftex.def)             Requested size: 163.80688pt x 122.85876pt.
 
 <figures/reconstruction_latent_16_epochs_10.pdf, id=256, 578.16pt x 433.62pt>
@@ -1602,7 +1608,7 @@ File: figures/reconstruction_latent_16_epochs_10.pdf Graphic file (type pdf)
 
 <use figures/reconstruction_latent_16_epochs_10.pdf>
 Package pdftex.def Info: figures/reconstruction_latent_16_epochs_10.pdf used on
- input line 241.
+ input line 243.
 (pdftex.def)             Requested size: 240.90234pt x 180.67499pt.
 
 <figures/latent_space_latent_16_epochs_50.pdf, id=257, 578.16pt x 433.62pt>
@@ -1610,7 +1616,7 @@ File: figures/latent_space_latent_16_epochs_50.pdf Graphic file (type pdf)
 
 <use figures/latent_space_latent_16_epochs_50.pdf>
 Package pdftex.def Info: figures/latent_space_latent_16_epochs_50.pdf used on i
-nput line 242.
+nput line 244.
 (pdftex.def)             Requested size: 163.80688pt x 122.85876pt.
 
 <figures/reconstruction_latent_16_epochs_50.pdf, id=258, 578.16pt x 433.62pt>
@@ -1618,7 +1624,7 @@ File: figures/reconstruction_latent_16_epochs_50.pdf Graphic file (type pdf)
 
 <use figures/reconstruction_latent_16_epochs_50.pdf>
 Package pdftex.def Info: figures/reconstruction_latent_16_epochs_50.pdf used on
- input line 242.
+ input line 244.
 (pdftex.def)             Requested size: 240.90234pt x 180.67499pt.
 
 <figures/latent_space_latent_16_epochs_100.pdf, id=259, 578.16pt x 433.62pt>
@@ -1626,7 +1632,7 @@ File: figures/latent_space_latent_16_epochs_100.pdf Graphic file (type pdf)
 
 <use figures/latent_space_latent_16_epochs_100.pdf>
 Package pdftex.def Info: figures/latent_space_latent_16_epochs_100.pdf used on 
-input line 243.
+input line 245.
 (pdftex.def)             Requested size: 163.80688pt x 122.85876pt.
 
 <figures/reconstruction_latent_16_epochs_100.pdf, id=260, 578.16pt x 433.62pt>
@@ -1634,10 +1640,10 @@ File: figures/reconstruction_latent_16_epochs_100.pdf Graphic file (type pdf)
 
 <use figures/reconstruction_latent_16_epochs_100.pdf>
 Package pdftex.def Info: figures/reconstruction_latent_16_epochs_100.pdf used o
-n input line 243.
+n input line 245.
 (pdftex.def)             Requested size: 240.90234pt x 180.67499pt.
 
-Overfull \hbox (2.53699pt too wide) in paragraph at lines 238--245
+Overfull \hbox (2.53699pt too wide) in paragraph at lines 240--247
  [][] 
  []
 
@@ -1663,27 +1669,27 @@ pdfTeX warning: pdflatex (file ./figures/latent_space_latent_16_epochs_100.pdf)
 pdfTeX warning: pdflatex (file ./figures/reconstruction_latent_16_epochs_100.pd
 f): PDF inclusion: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
 
  []
 
 
-Overfull \hbox (18.29524pt too wide) in paragraph at lines 258--273
+Overfull \hbox (18.29524pt too wide) in paragraph at lines 260--275
  [][] 
  []
 
 [12 <./figures/space_invaders_original.png>] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 290--291
 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 292--293
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
 
  []
 
@@ -1700,20 +1706,20 @@ See the caption package documentation for explanation.
 \openout9 = `coursework.thm'.
 
 [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 299.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 299.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 301.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 301.
  (./coursework.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 299.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 299.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 301.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 301.
 Package rerunfilecheck Info: File `coursework.out' has not changed.
 (rerunfilecheck)             Checksum: 5A0193DA2B2E16F3B86A8FAED5C0F376;1854.
 Package rerunfilecheck Info: File `coursework.brf' has not changed.
-(rerunfilecheck)             Checksum: 4EF045CF32B594EB2F3C7460734056FA;1458.
+(rerunfilecheck)             Checksum: 1CBFF238B226DA5F8E75D05A12FEC66F;1458.
  ) 
 Here is how much of TeX's memory you used:
  23486 strings out of 494902
  429243 string characters out of 6179891
- 489695 words of memory out of 5000000
+ 488695 words of memory out of 5000000
  26169 multiletter control sequences out of 15000+600000
  95223 words of font info for 204 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
@@ -1729,7 +1735,7 @@ kpbn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpex.pfb>
 /texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/kpfonts/jkpsyb.pfb>
-Output written on coursework.pdf (15 pages, 2204856 bytes).
+Output written on coursework.pdf (15 pages, 2205119 bytes).
 PDF statistics:
  448 PDF objects out of 1000 (max. 8388607)
  346 compressed objects within 4 object streams
