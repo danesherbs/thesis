@@ -279,7 +279,9 @@ The achievements to date are covered in Chapter \ref{sec:results}, and the miles
 \begin{itemize}
 \item Train an agent on multiple similar games (Pong and Space Invaders, for instance) to demonstrate the ability of a disentangled representation to facilitate transfer learning, as listed in Subsection \ref{subsec:transfer_learning}.
 \item A \textit{generative adversarial network} could be used as the anomoly detection network (described in Chapter \ref{sec:evaluation_plan}), instead of a regular feed-forward network.
-\item Explore the possibility of the agent performing offline-exploration (imagination)
+\item We could investigate the way the variational autoencoder explores its statespace. To explore its statespace, the autoencoder can endlessly recombine combinations of disentangled factors to produce new samples that may or may not occur in the real worl. For instance, we know not all things that are red and yellow are strawberries and bananas. We can therefore pry apart these two generative factors into a colour and an object. We can then imagine a red banana and a yellow strawberry even though we've never seen either before.
+\item Using the previous concept, we could experiment with the agent performing offline-exploration or ``look ahead" in an Atari game.
+\item Try using 3D convolutions in encoder and decoder to see how temporal information could be encoded \cite{Ji2013}. It may also be worthwhile to see if this improves any elements in reconstruction error or learning rate. 
 \end{itemize}
 
 

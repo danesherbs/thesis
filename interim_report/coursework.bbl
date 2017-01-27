@@ -16,15 +16,15 @@ Y~Bengio, A~Courville, and P~Vincent.
 \newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
   on}, 35(8):1798--1828, 2013.
 
+\bibitem{Chollet2016}
+Fran{\c{c}}ois Chollet.
+\newblock {Building Autoencoders in Keras}, 2016.
+
 \bibitem{Krizhevsky2011}
 Alex Krizhevsky and Ge~Hinton.
 \newblock {Using Very Deep Autoencoders for Content-Based Image Retrieval}.
 \newblock {\em Proceedings of the European Symposium on Artificial Neural
   Networks (ESANN)}, pages 1--7, 2011.
-
-\bibitem{Chollet2016}
-Fran{\c{c}}ois Chollet.
-\newblock {Building Autoencoders in Keras}, 2016.
 
 \bibitem{Doersch2016}
 Carl Doersch.
@@ -67,5 +67,11 @@ Marc~G. Bellemare, Yavar Naddaf, Joel Veness, and Michael Bowling.
   agents}.
 \newblock In {\em IJCAI International Joint Conference on Artificial
   Intelligence}, volume 2015-Janua, pages 4148--4152, 2015.
+
+\bibitem{Ji2013}
+Shuiwang Ji, Ming Yang, Kai Yu, and Wei Xu.
+\newblock {3D convolutional neural networks for human action recognition}.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  35(1):221--31, 2013.
 
 \end{thebibliography}

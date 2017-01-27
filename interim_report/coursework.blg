@@ -6,45 +6,45 @@ Database file #1: library.bib
 Warning--can't use both volume and number fields in Hutter2005
 Warning--empty publisher in Hutter2005
 Warning--there's a number but no volume in Kingma2014
-You've used 13 entries,
+You've used 14 entries,
             1791 wiz_defined-function locations,
-            528 strings with 5430 characters,
-and the built_in function-call counts, 3110 in all, are:
-= -- 284
-> -- 120
+            534 strings with 5625 characters,
+and the built_in function-call counts, 3367 in all, are:
+= -- 307
+> -- 134
 < -- 8
-+ -- 46
-- -- 33
-* -- 187
-:= -- 470
-add.period$ -- 37
-call.type$ -- 13
-change.case$ -- 12
++ -- 51
+- -- 37
+* -- 210
+:= -- 512
+add.period$ -- 40
+call.type$ -- 14
+change.case$ -- 13
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 148
-empty$ -- 300
-format.name$ -- 33
-if$ -- 708
+cite$ -- 17
+duplicate$ -- 157
+empty$ -- 323
+format.name$ -- 37
+if$ -- 762
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 12
-newline$ -- 66
-num.names$ -- 13
-pop$ -- 47
+int.to.str$ -- 14
+missing$ -- 13
+newline$ -- 71
+num.names$ -- 14
+pop$ -- 48
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 88
+skip$ -- 91
 stack$ -- 0
-substring$ -- 201
-swap$ -- 53
+substring$ -- 223
+swap$ -- 54
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 37
-width$ -- 15
-write$ -- 138
+while$ -- 40
+width$ -- 16
+write$ -- 149
 (There were 3 warnings)
