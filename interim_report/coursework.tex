@@ -9,8 +9,14 @@
 \input{includes} % various packages needed for maths etc.
 \input{notation} % short-hand notation and macros
 
-% custom packages
+% for minimalistic tables
 \usepackage{booktabs}
+
+% for plotting subfigures
+%\usepackage[demo]{graphicx}
+%\usepackage{subcaption}%  http://ctan.org/pkg/subcaption   
+\captionsetup[subfigure]{labelformat = parens, labelsep = space, font = small}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -18,6 +24,7 @@
 
 % front page
 \input{titlepage}
+\newpage
 
 % table of contents
 \tableofcontents
@@ -60,6 +67,24 @@ We will introduce deep symbolic reinforcement learning which will motivate our i
 \subsection{Autoencoders}
 
 \subsubsection{Architecture}
+
+Autoencoders are standard feed-forward networks with a ``bottleneck" in a hidden layer, shown in Figure (\ref{fig:autoencoder_encoder_decoder}). Autoencoders learn the identity function $f(\vec{x})=\vec{x}$, which may seem pointless at first. However, if the autoencoder closely approximates the identity function, the decoder is actually computing a reconstruction of the original image $\widetilde{\vec{x}}$ from a lower-dimensional representation $\vec{z}$, called the \textit{latent space}. So for any given $\vec{x}$, we can compute a compressed version, $\vec{z}$, by submitting $\vec{x}$ to the encoder. This compression technique is data-specific and, at present, isn't scalable \cite{Chollet2016}. However, they are very effective at denoising images and likely to play an important role in reverse Google image searches \cite{Krizhevsky2011}.
+
+\begin{figure}
+\includegraphics[scale=0.5]{figures/autoencoder_encoder_decoder.png}
+\centering
+\captionsetup{justification=centering}
+\caption{Autoencoders can be split into the encoder, which takes input $\vec{x}$ and outputs the low-dimensional $\vec{z}$, and the decoder, which takes input $\vec{z}$ and tries to reconstruct $\vec{x}$.}
+\label{fig:autoencoder_encoder_decoder}
+\end{figure}
+
+\begin{figure}
+\includegraphics[scale=2.0]{figures/autoencoder_black_box.jpg}
+\centering
+\captionsetup{justification=centering}
+\caption{A black-box view of the autoencoder showing the relationship between the encoder and decoder. The latent space shown in the center is clearly of a lower dimension than the input, acting as a code. \cite{Chollet2016}}
+\label{fig:autoencoder_black_box}
+\end{figure}
 
 \subsubsection{Convolutional autoencoders}
 
@@ -113,6 +138,7 @@ Shown in Figure (\ref{frey_face_disentangled}) is a learned Frey Face manifold w
 Disentangled representations facilitate the reuse of previously learnt factors, called \textit{knowledge transfer}; and the extreme case, \textit{zero-shot inference} \cite{IanGoodfellowYoshuaBengio2015,Higgins2016}.
 
 \subsubsection{Transfer learning}
+\label{subsec:transfer_learning}
 Transfer learning is the reuse of learnt factors from a previous task when learning a new one \cite{IanGoodfellowYoshuaBengio2015}. If the tasks are sufficiently similar, there are three ways the learning may be improved \cite{Torrey2009}:
 
 \begin{enumerate}
@@ -139,11 +165,7 @@ These improvements are shown on a performance-training graph in Figure \ref{tran
 \label{transfer_learning_graph_intuition}
 \end{figure}
 
-\begin{enumerate}
-\item Summarising quote by \cite{Whitney2016} below
-\end{enumerate}
-
-"Without disentangled representations, it is difficult to interpret or re-use representations across tasks as no single component of the representation vector has a semantic meaning by itself" \cite{Whitney2016}.
+Entangled representations make it difficult to learn common generative factors among different tasks, as no one latent factor has meaning itself \cite{Whitney2016}.
 
 \subsubsection{Zero-shot understanding}
 
@@ -192,18 +214,40 @@ The Arcade Learning Environment (ALE) is a framework built on top of the Atari 2
 \end{itemize}
 
 \section{Results}
+\label{sec:results}
 
-\begin{figure}
-\includegraphics[scale=0.3]{figures/goodfellow_2015_15_2.png}
+The ALE was used to capture frames from the emulator Stella at regular intervals, which were dumped into a common location, forming the training set. A convolutional variational autoencoder was then implemented in Keras to train on this data. A number of scripts (that partition the data into training, validation and test sets, for instance) were used in creating generic data sets that are easily loaded into Keras.\\
+
+The VAE was used to generate new samples from the test set using a sample input, shown in Figure (\ref{fig:space_invaders_original}). The sampled latent space and its reconstruction are shown in Figure (\ref{tab:latent_vs_reconstruction_grid}) for different epochs. As expected, the reconstruction improves with the number of epochs.\\
+
+Interestingly, the VAE has already learnt that the upper triangler section of the enemies is more dense than the lower half. It also has picked up on persistent objects, like the three barriers in the center and the floor.
+
+\begin{figure}[h!]
+\includegraphics[scale=0.6]{figures/space_invaders_original.png}
+\centering
+\caption{A screenshot from Space Invaders running in the ALE.}
+\label{fig:space_invaders_original}
+\end{figure}
+
+\newcommand\cincludegraphics[2][]{\raisebox{-0.3\height}{\includegraphics[#1]{#2}}}
+\begin{table}[]
 \centering
 \captionsetup{justification=centering}
-\caption{An illustration of how tasks may be translated into intermediate representations, then into a shared representation. The representation of different tasks in terms of common concepts is key to transfer learning. \cite{IanGoodfellowYoshuaBengio2015}}
-\label{transfer_learning_graph_intuition}
-\end{figure}
+\caption{The latent space and reconstruction for $10$, $50$ and $100$ epochs given Figure (\ref{fig:space_invaders_original}) as input.}
+\label{tab:latent_vs_reconstruction_grid}
+\begin{tabular}{lll}
+\toprule
+\hspace{0.8cm} Latent space & \hspace{1cm} Reconstruction \\ \midrule
+\cincludegraphics[height=1.7in]{figures/latent_space_latent_16_epochs_10.pdf} & \cincludegraphics[height=2.5in]{figures/reconstruction_latent_16_epochs_10.pdf} &  \\
+\cincludegraphics[height=1.7in]{figures/latent_space_latent_16_epochs_50.pdf} & \cincludegraphics[height=2.5in]{figures/reconstruction_latent_16_epochs_50.pdf} &  \\
+\cincludegraphics[height=1.7in]{figures/latent_space_latent_16_epochs_100.pdf} & \cincludegraphics[height=2.5in]{figures/reconstruction_latent_16_epochs_100.pdf} &  \\
+\end{tabular}
+\end{table}
+
 
 \newpage
 \section{Project Plan}
-You should explain what needs to be done in order to complete the project and roughly what you expect the timetable to be. Don’t forget to include the project write-up (the final report), as this is a major part of the exercise. It’s important to identify key milestones and also fall-back positions, in case you run out of time.  You should also identify what extensions could be added if time permits.  The plan should be complete and should include those parts that you have already addressed (make it clear how far you have progressed at the time of writing).  This material will not appear in the final report.
+The rough plan for the project is given in Table (\ref{tab:project_plan}). Since the method we will use to evaluate the disentangled representations is still in development, it's not yet possible to assign specific tasks for its implementation. However, the key milestones not dependent on the evaluation have been included as a skeleton to build on in the coming months.\\
 
 % uses \usepackage{booktabs}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
@@ -228,10 +272,28 @@ You should explain what needs to be done in order to complete the project and ro
 \end{tabular}
 \end{table}
 
+The achievements to date are covered in Chapter \ref{sec:results}, and the milestones set out for (at least the immediate months) are a feasible goals. If we are ahead of schedule, the following extensions would be interesting to explore:
+
+\begin{itemize}
+\item Train an agent on multiple similar games (Pong and Space Invaders, for instance) to demonstrate the ability of a disentangled representation to facilitate transfer learning, as listed in Subsection \ref{subsec:transfer_learning}.
+\item A \textit{generative adversarial network} could be used as the anomoly detection network (described in Chapter \ref{sec:evaluation_plan}), instead of a regular feed-forward network.
+\item Explore the possibility of the agent performing offline-exploration (imagination)
+\end{itemize}
+
+
+
 \newpage
 \section{Evaluation plan}
-Project evaluation is very important, so it's important to think now about how you plan to measure success. For example, what functionality do you need to demonstrate?  What experiments to you need to undertake and what outcome(s) would constitute success?  What benchmarks should you use? How has your project extended the state of the art?  How do you measure qualitative aspects, such as ease of use?  These are the sort of questions that your project evaluation should address; this section should outline your plan.
+\label{sec:evaluation_plan}
+There are two ways in which the representations found may be evaluated: how realistic the generations seem and the degree in which the latent space is disentangled.\\
 
+The decoded images from the sampled disentangled latent space should be as realistic as possible. However the task of visually examining multiple decoded images from multiple alternative latent spaces is time consuming. To automate this process, we could implement an anomoly detection network, which is trained on the whole space of input images. This can be used in the following procedure: train a VAE for a given $\beta$, then generate unseen samples from the dataset and run each through the anomoly detection network. The more images that pass, the higher the score. Performing exponential search on $\beta>1$ would find a suitable disentangled representation without the need for time-consuming visual inspection.\\
+
+As well as using the disentanglement metric introduced in \cite{Higgins2016}, we may quantify how disentangled the latent space is by the following procedure: create an artificial data set varying one generative factor (the paddle in Pong, for instance), and measure the change in latent variables for each of these as inputs. We'd expect a perfectly disentangled latent space to have exactly one latent variable changing value, and remain constant for other data sets changing other generative factors (the ball in Pong, for instance). The changes may be averaged over the number of inputs to give a final disentanglement score.\\
+
+The project would be a success if a suitable range of values of $\beta$ were found such that the generative features in multiple Atari agents were captured, and the benefits of this representation were demonstraed by an agent being able to re-use the same concept in a range of games.
+
+\newpage
 \bibliography{library}
 
 \end{document}

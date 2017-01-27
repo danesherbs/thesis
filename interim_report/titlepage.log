@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  26 JAN 2017 13:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  27 JAN 2017 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -13,15 +13,34 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2 \begin{titlepage}
+l.1 \begin{titlepage}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \center
+            % Center everything on the page
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 5--5
+[] 
+ []
+
 ! Undefined control sequence.
-l.11 \includegraphics
-                     [width = 4cm]{./figures/imperial}\\[0.5cm]
+<recently read> \LARGE 
+                       
+l.11 ...llege of Science, Technology and Medicine}
+                                                  \\[1.5cm] % Name of your u...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -29,73 +48,65 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.11 \includegraphics[
-                      width = 4cm]{./figures/imperial}\\[0.5cm]
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Missing character: There is no [ in font nullfont!
-Missing character: There is no w in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no = in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 11--12
-[]
+Overfull \hbox (42.98863pt too wide) in paragraph at lines 11--11
+ \OT1/cmr/m/sc/10 Imperial 
  []
 
 
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.13 \begin{center}
-                    % Center remainder of the page
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \hbox (23.12761pt too wide) in paragraph at lines 11--11
+ \OT1/cmr/m/sc/10 Col- 
+ []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 13--13
-[] 
+Overfull \hbox (22.69986pt too wide) in paragraph at lines 11--11
+ \OT1/cmr/m/sc/10 lege 
+ []
+
+
+Overfull \hbox (11.71107pt too wide) in paragraph at lines 11--11
+ \OT1/cmr/m/sc/10 of 
+ []
+
+
+Overfull \hbox (18.82205pt too wide) in paragraph at lines 11--11
+ \OT1/cmr/m/sc/10 Sci- 
+ []
+
+
+Overfull \hbox (26.39427pt too wide) in paragraph at lines 11--11
+ \OT1/cmr/m/sc/10 ence, 
+ []
+
+
+Overfull \hbox (29.26091pt too wide) in paragraph at lines 11--11
+ \OT1/cmr/m/sc/10 Tech- 
+ []
+
+
+Overfull \hbox (21.39989pt too wide) in paragraph at lines 11--11
+ \OT1/cmr/m/sc/10 nol- 
+ []
+
+
+Overfull \hbox (18.89992pt too wide) in paragraph at lines 11--11
+ \OT1/cmr/m/sc/10 ogy 
+ []
+
+
+Overfull \hbox (18.51106pt too wide) in paragraph at lines 11--11
+ \OT1/cmr/m/sc/10 and 
+ []
+
+
+Overfull \hbox (45.37749pt too wide) in paragraph at lines 11--11
+ \OT1/cmr/m/sc/10 Medicine 
  []
 
 ! Undefined control sequence.
 <recently read> \Large 
                        
-l.19 \textsc{\Large Imperial College London}
-                                            \\[0.5cm]
+l.12 \textsc{\Large Department of Computing}
+                                            \\[0.5cm] % Major heading such a...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -103,35 +114,35 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (42.98863pt too wide) in paragraph at lines 19--19
- \OT1/cmr/m/sc/10 Imperial 
+Overfull \hbox (61.26906pt too wide) in paragraph at lines 12--12
+ []\OT1/cmr/m/sc/10 Department 
  []
 
 
-Overfull \hbox (23.12761pt too wide) in paragraph at lines 19--19
- \OT1/cmr/m/sc/10 Col- 
+Overfull \hbox (11.71107pt too wide) in paragraph at lines 12--12
+ \OT1/cmr/m/sc/10 of 
  []
 
 
-Overfull \hbox (22.69986pt too wide) in paragraph at lines 19--19
- \OT1/cmr/m/sc/10 lege 
+Overfull \hbox (25.46094pt too wide) in paragraph at lines 12--12
+ \OT1/cmr/m/sc/10 Com- 
  []
 
 
-Overfull \hbox (23.09985pt too wide) in paragraph at lines 19--19
- \OT1/cmr/m/sc/10 Lon- 
+Overfull \hbox (21.39987pt too wide) in paragraph at lines 12--12
+ \OT1/cmr/m/sc/10 put- 
  []
 
 
-Overfull \hbox (18.73328pt too wide) in paragraph at lines 19--19
- \OT1/cmr/m/sc/10 don 
+Overfull \hbox (15.56659pt too wide) in paragraph at lines 12--12
+ \OT1/cmr/m/sc/10 ing 
  []
 
 ! Undefined control sequence.
 <recently read> \large 
                        
-l.20 \textsc{\large Department of Computing}
-                                            \\[0.5cm]
+l.13 ...rge MEng Mathematics and Computer Science}
+                                                  \\[0.5cm] % Minor heading ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -139,33 +150,152 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (61.26906pt too wide) in paragraph at lines 20--20
- []\OT1/cmr/m/sc/10 Department 
+Overfull \hbox (29.84975pt too wide) in paragraph at lines 13--13
+ []\OT1/cmr/m/sc/10 MEng 
  []
 
 
-Overfull \hbox (11.71107pt too wide) in paragraph at lines 20--20
- \OT1/cmr/m/sc/10 of 
+Overfull \hbox (31.17754pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/m/sc/10 Math- 
  []
 
 
-Overfull \hbox (25.46094pt too wide) in paragraph at lines 20--20
+Overfull \hbox (9.35548pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/m/sc/10 e- 
+ []
+
+
+Overfull \hbox (22.62207pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/m/sc/10 mat- 
+ []
+
+
+Overfull \hbox (13.51103pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/m/sc/10 ics 
+ []
+
+
+Overfull \hbox (18.51106pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/m/sc/10 and 
+ []
+
+
+Overfull \hbox (25.46094pt too wide) in paragraph at lines 13--13
  \OT1/cmr/m/sc/10 Com- 
  []
 
 
-Overfull \hbox (21.39987pt too wide) in paragraph at lines 20--20
- \OT1/cmr/m/sc/10 put- 
+Overfull \hbox (29.22208pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/m/sc/10 puter 
  []
 
 
-Overfull \hbox (15.56659pt too wide) in paragraph at lines 20--20
- \OT1/cmr/m/sc/10 ing 
+Overfull \hbox (18.82205pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/m/sc/10 Sci- 
+ []
+
+
+Overfull \hbox (23.19987pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/m/sc/10 ence 
  []
 
 ! Undefined control sequence.
-l.26 { \huge
-             \bfseries \reporttitle}\\ % Title of your document
+l.20 { \huge
+             \bfseries Project Interim Report}\\[0.4cm] % Title of your docu...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (37.35399pt too wide) in paragraph at lines 20--20
+ []\OT1/cmr/bx/n/10 Project 
+ []
+
+
+Overfull \hbox (14.58325pt too wide) in paragraph at lines 20--20
+ \OT1/cmr/bx/n/10 In- 
+ []
+
+
+Overfull \hbox (27.25682pt too wide) in paragraph at lines 20--20
+ \OT1/cmr/bx/n/10 terim 
+ []
+
+
+Overfull \hbox (17.72908pt too wide) in paragraph at lines 20--20
+ \OT1/cmr/bx/n/10 Re- 
+ []
+
+
+Overfull \hbox (21.66656pt too wide) in paragraph at lines 20--20
+ \OT1/cmr/bx/n/10 port 
+ []
+
+! Undefined control sequence.
+l.28 \begin{flushleft} \large
+                             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no D in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 8 in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 9 in font nullfont!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 34.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 34.
+! Undefined control sequence.
+l.37 \begin{flushright} \large
+                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no P in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no M in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+
+Overfull \hbox (3276.74998pt too wide) in paragraph at lines 27--42
+ []$[]$ 
+ []
+
+
+Overfull \hbox (4095.99998pt too wide) in paragraph at lines 27--42
+ []$ 
+ []
+
+! Undefined control sequence.
+l.48 {\large
+             \today}\\[0.5cm] % Date, change the \today to a set date if you...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -173,8 +303,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.26 { \huge \bfseries \reporttitle
-                                   }\\ % Title of your document
+l.48 {\large \today
+                   }\\[0.5cm] % Date, change the \today to a set date if you...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -188,73 +318,12 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.26 { \huge \bfseries \reporttitle}\\
-                                       % Title of your document
+l.48 {\large \today}\\
+                      [0.5cm] % Date, change the \today to a set date if you...
+
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 34--34
-[] 
- []
-
-! Undefined control sequence.
-l.34 \begin{flushleft} \large
-                             
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (33.95393pt too wide) in paragraph at lines 35--35
-\OT1/cmr/m/it/10 Author:  
- []
-
-! Undefined control sequence.
-<recently read> \reportauthor 
-                              
-l.36 \reportauthor
-                  ~\\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (22.20956pt too wide) in paragraph at lines 38--38
-[]\OT1/cmr/m/it/10 CID:  
- []
-
-! Undefined control sequence.
-<recently read> \cid 
-                     
-l.39 \cid
-          % Your name
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no D in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no : in font nullfont!
-! Undefined control sequence.
-\@date ->\today 
-                
-l.43 Date: \@date
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 
 ! LaTeX Error: \begin{document} ended by \end{titlepage}.
@@ -263,7 +332,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.52 \end{titlepage}
+l.53 \end{titlepage}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -277,11 +346,11 @@ or  <return>  to continue without it.
 
  
 Here is how much of TeX's memory you used:
- 19 strings out of 494902
- 261 string characters out of 6179891
- 46483 words of memory out of 5000000
- 3418 multiletter control sequences out of 15000+600000
+ 20 strings out of 494902
+ 279 string characters out of 6179891
+ 47483 words of memory out of 5000000
+ 3419 multiletter control sequences out of 15000+600000
  4595 words of font info for 17 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 13i,1n,10p,139b,130s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 20i,3n,18p,143b,221s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

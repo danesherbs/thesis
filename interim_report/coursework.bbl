@@ -10,20 +10,31 @@ Marta Garnelo, Kai Arulkumaran, and Murray Shanahan.
 \newblock {Towards Deep Symbolic Reinforcement Learning}.
 \newblock {\em arXiv Preprint}, pages 1--13, 2016.
 
-\bibitem{Chollet2015}
-Fran{\c{c}}ois Chollet.
-\newblock {Keras: Deep Learning library for Theano and TensorFlow}, 2015.
-
 \bibitem{Bengio2013}
 Y~Bengio, A~Courville, and P~Vincent.
 \newblock {Representation Learning: A Review and New Perspectives}.
 \newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions
   on}, 35(8):1798--1828, 2013.
 
+\bibitem{Krizhevsky2011}
+Alex Krizhevsky and Ge~Hinton.
+\newblock {Using Very Deep Autoencoders for Content-Based Image Retrieval}.
+\newblock {\em Proceedings of the European Symposium on Artificial Neural
+  Networks (ESANN)}, pages 1--7, 2011.
+
+\bibitem{Chollet2016}
+Fran{\c{c}}ois Chollet.
+\newblock {Building Autoencoders in Keras}, 2016.
+
 \bibitem{Doersch2016}
 Carl Doersch.
 \newblock {Tutorial on Variational Autoencoders}.
 \newblock {\em arXiv}, pages 1--23, 2016.
+
+\bibitem{Kingma2014}
+Diederik~P Kingma and Max Welling.
+\newblock {Auto-Encoding Variational Bayes}.
+\newblock {\em Iclr}, (Ml):1--14, 2014.
 
 \bibitem{IanGoodfellowYoshuaBengio2015}
 Aaron~Courville {Ian Goodfellow, Yoshua Bengio}.
@@ -36,11 +47,6 @@ Irina Higgins, Loic Matthey, Xavier Glorot, Arka Pal, Benigno Uria, Charles
 \newblock {Early Visual Concept Learning with Unsupervised Deep Learning}.
 \newblock {\em arXiv}, 2016.
 
-\bibitem{Kingma2014}
-Diederik~P Kingma and Max Welling.
-\newblock {Auto-Encoding Variational Bayes}.
-\newblock {\em Iclr}, (Ml):1--14, 2014.
-
 \bibitem{Torrey2009}
 Lisa Torrey and Jude Shavlik.
 \newblock {Transfer Learning}.
@@ -50,6 +56,10 @@ Lisa Torrey and Jude Shavlik.
 William~F Whitney, Michael Chang, Tejas Kulkarni, and Joshua~B Tenenbaum.
 \newblock {Understanding Visual Concepts with Continuation Learning}.
 \newblock {\em arXiv}, pages 1--4, 2016.
+
+\bibitem{Chollet2015}
+Fran{\c{c}}ois Chollet.
+\newblock {Keras: Deep Learning library for Theano and TensorFlow}, 2015.
 
 \bibitem{Bellemare2015}
 Marc~G. Bellemare, Yavar Naddaf, Joel Veness, and Michael Bowling.
