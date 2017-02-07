@@ -7,7 +7,7 @@ from keras.models import Model
 from keras import backend as K
 from keras import objectives
 from keras.datasets import mnist
-
+from keras.callbacks import TensorBoard
 
 # load data
 from utils import load_data
@@ -30,7 +30,10 @@ original_dim = X_train.shape[1:]
 intermediate_dim = 100
 latent_dim_sqrt = 4  # < sqrt(intermediate_dim) else not an autoencoder
 latent_dim = latent_dim_sqrt**2
-nb_epoch = 75
+nb_epoch = 100
+
+# set beta (for beta-VAE)
+beta = 1.5
 
 # define architecture
 input_img = Input(shape=original_dim)
@@ -64,26 +67,73 @@ x_decoded_mean = decoder_mean(h_decoded)
 decoded_img = Reshape(original_dim)(x_decoded_mean)
 
 def vae_loss(input_img, output_img):
-    xent_loss = np.prod(original_dim) * objectives.binary_crossentropy(input_img, output_img)
+    # compute the reconstruction loss
+    # reconstruction loss is given by cross entropy 
+    reconstruction_loss = objectives.binary_crossentropy(input_img.flatten(), output_img.flatten())
+    # compute the KL divergence between approximate and latent posteriors
+    # KL(q,p) = -0.5 * sum( 1 + log(var_z) - mu_z^2 - var_z)
     kl_loss = - 0.5 * K.sum(1 + z_log_var - K.square(z_mean) - K.exp(z_log_var), axis=-1)
-    return xent_loss + kl_loss
+    return reconstruction_loss + beta * kl_loss
 
 # build model and train
 vae = Model(input_img, decoded_img)
-# vae.compile(optimizer='rmsprop', loss=vae_loss, metrics=['accuracy'])
-vae.compile(optimizer='adadelta', loss='binary_crossentropy', metrics=['accuracy'])
+optimizer = 'rmsprop'
+loss = 'vae_loss'
+vae.compile(optimizer=optimizer, loss=vae_loss, metrics=['accuracy'])
+# vae.compile(optimizer=optimizer, loss=loss, metrics=['accuracy'])
 vae.summary()
-vae.fit(X_train, X_train, shuffle=True, nb_epoch=nb_epoch, verbose=1)
+# history = vae.fit(X_train, X_train, shuffle=True, nb_epoch=nb_epoch, verbose=1, validation_data=(X_test, X_test), callbacks=[TensorBoard(log_dir='/tmp/autoencoder')])
+history = vae.fit(X_train, X_train, shuffle=True, nb_epoch=nb_epoch, verbose=1, validation_data=(X_test, X_test))
+
+print history.history.keys()
+
+# use LaTeX for labels in plots
+# plt.rc('text', usetex=True)
+
+# path to saved images
+figures = './results/beta-VAE_space_invaders/'
+
+# plot description
+description = 'latent variables = ' + str(latent_dim) + ', optimizer = ' + optimizer + ', loss = ' + loss + ' and beta = ' + str(beta)
 
 # show encoded images
 encoder = Model(input_img, z)
 encoded_imgs = encoder.predict(X_test)
-print X_test.shape
-print encoded_imgs.shape
-plt.matshow(encoded_imgs[0].reshape(latent_dim_sqrt,latent_dim_sqrt))
-plt.show()
+fig, ax = plt.subplots()
+fig.colorbar(ax.matshow(encoded_imgs[0].reshape(latent_dim_sqrt,latent_dim_sqrt)))
+title = r'Latent space for ' + description
+plt.title(title)
+plt.savefig(figures + title, bbox_inches='tight')
 
 # show decoded images
 decoded_imgs = vae.predict(X_test)
+plt.figure(2)
 plt.imshow(decoded_imgs[0][0])
-plt.show()
+title = r'Reconstruction for ' + description
+plt.title(title)
+plt.savefig(figures + title, bbox_inches='tight')
+
+# summarize history for accuracy
+plt.figure(3)
+plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.ylabel('Accuracy')
+plt.xlabel('Epoch')
+plt.legend(['Train', 'Test'], loc='upper left')
+title = r'Model accuracy for ' + description
+plt.title(title)
+plt.savefig(figures + title, bbox_inches='tight')
+
+# summarize history for loss
+plt.figure(4)
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+plt.ylabel('Loss')
+plt.xlabel('Epoch')
+plt.legend(['Train', 'Test'], loc='upper left')
+title = r'Model loss for ' + description
+plt.title(title)
+plt.savefig(figures + title, bbox_inches='tight')
+
+# show all images
+# plt.show()
