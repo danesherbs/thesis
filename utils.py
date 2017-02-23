@@ -3,7 +3,10 @@ Utilities package for autoencoders
 '''
 
 from sklearn.model_selection import train_test_split
+from skimage.measure import block_reduce
 from matplotlib import pyplot as plt
+from keras import backend as K
+from keras import objectives
 from PIL import Image
 import numpy as np
 import os
@@ -48,20 +51,26 @@ def __example_array_to_image():
     image = array_to_image(image_array)
     image.show()
 
-def load_data():
+def load_data(down_sample=False):
     '''
     Makes (X_train, X_test, y_train, y_test) from images in RECORD_PATH
     '''
     X = []
     print 'Loading training data...',
-    for filename in os.listdir(RECORD_PATH)[::200]:
+    for filename in os.listdir(RECORD_PATH):
+    # for filename in os.listdir(RECORD_PATH)[::100]:
         if not filename.endswith('.png'):
             continue  # skip non-png files
-        X.append(image_to_array(os.path.join(RECORD_PATH, filename)))
+        image_array = image_to_array(os.path.join(RECORD_PATH, filename))
+        if down_sample:
+            down_sampled = block_reduce(image_array, block_size=(5, 5), func=np.max)
+            X.append(down_sampled)
+        else:
+            X.append(image)
     print 'done.'
     X = np.asarray(X, dtype='uint8')
-    y = np.asarray([-1]*len(X))  # psuedo labels
-    return train_test_split(X, y, test_size=0.10)
+    Y = np.asarray([-1]*len(X))  # psuedo labels
+    return train_test_split(X, Y, test_size=0.10)
 
 def show_subplot(images):
     '''
@@ -82,10 +91,27 @@ def __example_show_subplot():
     imgs = pickle.load(open('encoded_imgs.pickle', 'rb'))
     show_subplot(imgs)
 
+def vae_loss(input_img, output_img, mean, log_var, beta=1.0):
+        # compute the reconstruction loss (binary cross entropy)
+        reconstruction_loss = objectives.binary_crossentropy(input_img.flatten(), output_img.flatten())
+        # compute the KL divergence between approximate and latent posteriors
+        kl_loss = - 0.5 * K.sum(1 + log_var - K.square(mean) - K.exp(log_var), axis=-1)
+        return reconstruction_loss + beta * kl_loss
+
+def sampling(args, latent_dim):
+        '''
+        Inputs: mean and std vectors
+        Output: sampled vector
+        '''
+        z_mean, z_log_var = args  # unpack args
+        epsilon = K.random_normal(shape=(latent_dim,), mean=0.0, std=1.0)  # sample from standard normal
+        return z_mean + K.exp(z_log_var / 2) * epsilon
 
 '''
 MAIN
 '''
 if __name__ == '__main__':
-    # __example_image_to_array()
-    __example_array_to_image()
+    # input_img = image_to_array('./atari_agents/record/020377.png', rgb=False)
+    # output_img = image_to_array('./atari_agents/record/000170.png', rgb=False)
+    # print vae_loss(input_img, output_img)
+    load_data()
