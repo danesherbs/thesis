@@ -27,14 +27,12 @@ def vae_loss(input_img, output_img):
 '''
 Define parameters
 '''
-batch_size = 32
-nb_epoch = 1
+batch_size = 64
+nb_epoch = 20
 nb_filters = 8
-pool_size = (2, 2)
+latent_features = 1
 kernal_size = (7, 7)
-intermediate_dim = 500
-latent_dim = 36
-beta = 1.0
+beta = 0.0
 
 
 '''
@@ -65,12 +63,12 @@ input_img = Input(shape=input_shape)
 conv = Convolution2D(nb_filters, kernal_size[0], kernal_size[1], border_mode='valid', input_shape=input_shape)(input_img)
 
 # separate dense layers for mu and log(sigma), both of size latent_dim
-z_mean = Convolution2D(nb_filters*2, kernal_size[0], kernal_size[1], border_mode='valid')(conv)
-z_log_var = Convolution2D(nb_filters*2, kernal_size[0], kernal_size[1], border_mode='valid')(conv)
+z_mean = Convolution2D(latent_features, kernal_size[0], kernal_size[1], border_mode='valid')(conv)
+z_log_var = Convolution2D(latent_features, kernal_size[0], kernal_size[1], border_mode='valid')(conv)
 
 # sample from normal with z_mean and z_log_var
-z_output_shape = output_shape=(nb_filters*2, 30, 52)
-z = Lambda(sampling, output_shape=z_output_shape)([z_mean, z_log_var])
+z_output_shape = output_shape=(latent_features, 30, 52)
+z = Lambda(sampling, output_shape=z_output_shape, name='latent_space')([z_mean, z_log_var])
 
 # 'kernal_size' transposed convolution with 'nb_filters' output filters and stride 1x1
 deconv = Deconvolution2D(nb_filters, kernal_size[0], kernal_size[1], output_shape=(None, 8, 36, 58), border_mode='valid', input_shape=z_output_shape)(z)
@@ -82,13 +80,23 @@ decoded_img = Deconvolution2D(1, kernal_size[0], kernal_size[1], output_shape=(N
 '''
 Train model
 '''
-encoder = Model(input_img, z)
 vae = Model(input_img, decoded_img)
+encoder = Model(input=vae.input, output=vae.get_layer('latent_space').output)
 vae.summary()
 
-vae.compile(loss=vae_loss, optimizer='adam')
-earlyStopping = EarlyStopping(monitor='val_loss', patience=0, verbose=0, mode='auto')
-vae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, nb_epoch=nb_epoch, shuffle=True, callbacks=[earlyStopping])
+# save models
+saved_models = 'saved_models/'
+description = '_epoch=' + str(nb_epoch) + '_beta=' + str(int(beta)) + '_latent=' + str(latent_features)
+vae.save(saved_models + 'cvae' + description + '.h5')
+encoder.save(saved_models + 'encoder' + description + '.h5')
+
+vae.compile(loss=vae_loss, optimizer='adam', metrics=['binary_crossentropy'])
+earlyStopping = EarlyStopping(monitor='val_loss', patience=1, verbose=0, mode='auto')
+vae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, nb_epoch=nb_epoch, callbacks=[earlyStopping])
+
+# save model weights
+vae.save_weights(saved_models + 'cvae' + description + '_weights' + '.h5')
+encoder.save_weights(saved_models + 'encoder' + description + '_weights' + '.h5')
 
 
 '''
