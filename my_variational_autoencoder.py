@@ -1,165 +1,102 @@
-def main(beta):
-    import numpy as np
-    import matplotlib.pyplot as plt
-    from scipy.stats import norm
-
-    from keras.layers import Input, Dense, Lambda, Flatten, Convolution2D, MaxPooling2D, Reshape
-    from keras.models import Model
-    from keras import backend as K
-    from keras import objectives
-    from keras.datasets import mnist
-    from keras.callbacks import EarlyStopping
-
-    # load data
-    from utils import load_data
-    X_train, X_test, _, _ = load_data(down_sample=True)
-
-    # specify depth for Theano
-    X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
-    X_test = X_test.reshape(X_test.shape[0], 1, X_test.shape[1], X_test.shape[2])
-
-    # cast to float32
-    X_train = X_train.astype('float32')
-    X_test = X_test.astype('float32')
-
-    # normalise values
-    X_train /= np.max(X_train)
-    X_test /= np.max(X_test)
-
-    # trim
-    # X_train = X_train[::100]
-    # X_test = X_test[::100]
-
-    print 'X_train.shape', X_train.shape
-    print 'X_test.shape', X_test.shape
-
-    # set constants
-    original_dim = X_train.shape[1:]
-    intermediate_dim = 100
-    latent_dim_sqrt = 4  # < sqrt(intermediate_dim) else not an autoencoder
-    latent_dim = latent_dim_sqrt**2
-    nb_epoch = 10
-    batch_size = 128
-
-    # set beta (for beta-VAE)
-    # beta = 1
-
-    # define architecture
-    input_img = Input(shape=original_dim)
-
-    y = Convolution2D(16, 3, 3, activation='relu', border_mode='valid', input_shape=X_train.shape[1:])(input_img)
-    y = MaxPooling2D((2, 2), border_mode='valid', name='encoded')(y)
-    y = Flatten()(y)
-
-    h = Dense(intermediate_dim, activation='relu')(y)
-    z_mean = Dense(latent_dim)(h)
-    z_log_var = Dense(latent_dim)(h)
+import numpy as np
+import matplotlib.pyplot as plt
+from keras.layers import Input, Dense, Lambda, Flatten, Convolution2D, Deconvolution2D, Reshape
+from keras.models import Model
+from keras.datasets import mnist
+from keras import backend as K
+from keras import objectives
+import utils
 
 
-    def sampling(args):
-        '''
-        Inputs: mean and std vectors
-        Output: sampled vector
-        '''
-        z_mean, z_log_var = args  # unpack args
-        epsilon = K.random_normal(shape=(latent_dim,), mean=0.0, std=1.0)  # sample from standard normal
-        return z_mean + K.exp(z_log_var / 2) * epsilon
 
-    # note that "output_shape" isn't necessary with the TensorFlow backend
-    z = Lambda(sampling, output_shape=(latent_dim,))([z_mean, z_log_var])
+'''
+Required functions for latent space and training
+'''
+def sampling(args):
+    z_mean, z_log_var = args  # unpack args
+    epsilon = K.random_normal(shape=(1, 30, 52), mean=0.0, std=1.0)  # sample from standard normal
+    return z_mean + K.exp(z_log_var / 2) * epsilon
 
-    # we instantiate these layers separately so as to reuse them later
-    decoder_h = Dense(intermediate_dim, activation='relu')
-    decoder_mean = Dense(np.prod(original_dim), activation='sigmoid')
-    h_decoded = decoder_h(z)
-    x_decoded_mean = decoder_mean(h_decoded)
-    decoded_img = Reshape(original_dim)(x_decoded_mean)
+def vae_loss(input_img, output_img):
+    reconstruction_loss = objectives.binary_crossentropy(input_img.flatten(), output_img.flatten())
+    kl_loss = - 0.5 * K.sum(1 + z_log_var - K.square(z_mean) - K.exp(z_log_var), axis=-1)
+    return reconstruction_loss + beta * kl_loss
 
-    def vae_loss(input_img, output_img):
-        # compute the reconstruction loss
-        # reconstruction loss is given by cross entropy 
-        reconstruction_loss = objectives.binary_crossentropy(input_img.flatten(), output_img.flatten())
-        # compute the KL divergence between approximate and latent posteriors
-        # KL(q,p) = -0.5 * sum( 1 + log(var_z) - mu_z^2 - var_z)
-        kl_loss = - 0.5 * K.sum(1 + z_log_var - K.square(z_mean) - K.exp(z_log_var), axis=-1)
-        return reconstruction_loss + beta * kl_loss
 
-    # build model and train
-    vae = Model(input_img, decoded_img)
-    optimizer = 'rmsprop'
-    loss = 'vae_loss'
-    vae.compile(optimizer=optimizer, loss=vae_loss, metrics=['binary_crossentropy'])
-    # vae.compile(optimizer=optimizer, loss=loss, metrics=['accuracy'])
-    vae.summary()
-    # history = vae.fit(X_train, X_train, shuffle=True, nb_epoch=nb_epoch, verbose=1, validation_data=(X_test, X_test), callbacks=[TensorBoard(log_dir='/tmp/autoencoder')])
-    earlyStopping = EarlyStopping(monitor='val_loss', patience=0, verbose=0, mode='auto')
-    history = vae.fit(X_train, X_train, shuffle=True, nb_epoch=nb_epoch, batch_size=batch_size, verbose=1, validation_data=(X_test, X_test), callbacks=[earlyStopping])
+'''
+Define parameters
+'''
+batch_size = 32
+nb_epoch = 10
+nb_filters = 8
+pool_size = (2, 2)
+kernal_size = (7, 7)
+intermediate_dim = 500
+latent_dim = 36
+beta = 1.0
 
-    # use LaTeX for labels in plots
-    # plt.rc('text', usetex=True)
 
-    # path to saved images
-    figures = './results/beta-VAE_space_invaders/'
-    save_files = False
+'''
+Load data
+'''
+X_train, X_test, _, _ = utils.load_data(down_sample=True)
 
-    # plot description
-    description = 'beta = ' + str(beta).replace(".", "-") + ', nb_epoch = ' + str(nb_epoch) + ', optimizer = ' + optimizer + ', loss = ' + loss
+X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
+X_test = X_test.reshape(X_test.shape[0], 1, X_test.shape[1], X_test.shape[2])
+input_shape = X_train.shape[1:]
 
-    # # show encoded images
-    # encoder = Model(input_img, z)
-    # encoded_imgs = encoder.predict(X_test)
-    # fig, ax = plt.subplots()
-    # fig.colorbar(ax.matshow(np.abs(encoded_imgs[0]).reshape(latent_dim_sqrt,latent_dim_sqrt), cmap='YlOrRd'))
-    # title = r'Latent space for ' + description
-    # plt.title(title)
-    # if save_files:
-    #     plt.savefig(figures + title, bbox_inches='tight')
+X_train = X_train.astype('float32')
+X_test = X_test.astype('float32')
+X_train /= 255
+X_test /= 255
 
-    # show original
-    plt.figure()
-    plt.matshow(X_test[0][0])
-    title = r'Original for ' + description
-    plt.title(title)
+print('X_train shape:', X_train.shape)
+print(X_train.shape[0], 'train samples')
+print(X_test.shape[0], 'test samples')
 
-    # show decoded images
-    decoded_imgs = vae.predict(X_test)
-    plt.figure()
-    plt.matshow(decoded_imgs[0][0])
-    title = r'Reconstruction for ' + description
-    plt.title(title)
-    if save_files:
-        plt.savefig(figures + title, bbox_inches='tight')
 
-    # summarize history for reconstruction error
-    plt.figure()
-    plt.plot(history.history['binary_crossentropy'])
-    plt.plot(history.history['val_binary_crossentropy'])
-    plt.ylabel('Binary cross entropy')
-    plt.xlabel('Epoch')
-    plt.legend(['Train', 'Test'], loc='upper left')
-    title = r'Binary cross entropy for ' + description
-    plt.title(title)
-    if save_files:
-        plt.savefig(figures + title, bbox_inches='tight')
+'''
+Define model
+'''
+input_img = Input(shape=input_shape)
 
-    # summarize history for loss
-    plt.figure()
-    plt.plot(history.history['loss'])
-    plt.plot(history.history['val_loss'])
-    plt.ylabel('Loss')
-    plt.xlabel('Epoch')
-    plt.legend(['Train', 'Test'], loc='upper left')
-    title = r'Model loss for ' + description
-    plt.title(title)
-    if save_files:
-        plt.savefig(figures + title, bbox_inches='tight')
+# 'kernal_size' convolution with 'nb_filters' output filters and stride 1x1 on a ?x? image
+conv = Convolution2D(nb_filters, kernal_size[0], kernal_size[1], border_mode='valid', input_shape=input_shape)(input_img)
 
-    if save_files:
-        from keras.utils.visualize_util import plot
-        plot(vae, to_file=figures + 'Model for ' + description, show_shapes=True)
+# separate dense layers for mu and log(sigma), both of size latent_dim
+z_mean = Convolution2D(1, kernal_size[0], kernal_size[1], border_mode='valid')(conv)
+z_log_var = Convolution2D(1, kernal_size[0], kernal_size[1], border_mode='valid')(conv)
 
-    # show all images
-    plt.show()
+# sample from normal with z_mean and z_log_var
+z = Lambda(sampling, output_shape=(1, 30, 52))([z_mean, z_log_var])
 
-if __name__ == '__main__':
-    main(1)
+# 'kernal_size' transposed convolution with 32 output filters and stride 1x1 on a 8 16x16 images
+deconv = Deconvolution2D(nb_filters, kernal_size[0], kernal_size[1], output_shape=(None, 8, 36, 58), border_mode='valid', input_shape=(1, 30, 52))(z)
+
+# 'kernal_size' transposed convolution with 1 output filter and stride 1x1 on a 32 22x22 images
+decoded_img = Deconvolution2D(1, kernal_size[0], kernal_size[1], output_shape=(None, 1, 42, 64), border_mode='valid', input_shape=(8, 36, 58))(deconv)
+
+# define model
+encoder = Model(input_img, z)
+vae = Model(input_img, decoded_img)
+
+vae.summary()
+
+
+'''
+Compile and fit
+'''
+vae.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['binary_crossentropy'])
+vae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, nb_epoch=nb_epoch)
+
+
+'''
+Compare reconstruction
+'''
+latent_imgs = encoder.predict(X_test)
+decoded_imgs = vae.predict(X_test)
+import matplotlib.pyplot as plt
+plt.matshow(X_test[0][0])
+plt.matshow(latent_imgs[0][0])
+plt.matshow(decoded_imgs[0][0])
+plt.show()
