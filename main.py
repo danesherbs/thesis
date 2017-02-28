@@ -1,15 +1,16 @@
 from keras.models import load_model
+import matplotlib.pyplot as plt
 import utils
 
 
 '''
 Load models and weights
 '''
-vae = load_model('saved_models/cvae_epoch=10_beta=1_latent=1.h5')
-vae.load_weights('saved_models/cvae_epoch=10_beta=1_latent=1_weights.h5')
+vae = load_model('saved_models/cvae_epoch=100_beta=1_latent=4.h5')
+vae.load_weights('saved_models/cvae_epoch=100_beta=1_latent=4_weights.h5')
 
-encoder = load_model('saved_models/encoder_epoch=10_beta=1_latent=16.h5')
-encoder.load_weights('saved_models/encoder_epoch=10_beta=1_latent=16_weights.h5')
+encoder = load_model('saved_models/encoder_epoch=100_beta=1_latent=4.h5')
+encoder.load_weights('saved_models/encoder_epoch=100_beta=1_latent=4_weights.h5')
 
 
 '''
@@ -31,12 +32,20 @@ Main
 latent_imgs = encoder.predict(X_test)
 decoded_imgs = vae.predict(X_test)
 
-import matplotlib.pyplot as plt
 plt.matshow(X_test[0][0])
 plt.title('Original image')
-# utils.show_subplot(latent_imgs[0])
+
+# sample from latent space
+for i in xrange(5):
+	print 'sample', i+1
+	latent_imgs += encoder.predict(X_test)
+latent_imgs /= 255
 plt.matshow(latent_imgs[0][0])
 plt.title('Latent feature maps')
+
 plt.matshow(decoded_imgs[0][0])
 plt.title('Reconstructed image')
 plt.show()
+
+# from keras.utils.visualize_util import plot
+# plot(vae, to_file='CVAE_' + 'epoch=50_beta=0_latent=16', show_shapes=True)
