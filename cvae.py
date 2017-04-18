@@ -6,8 +6,6 @@ from keras import losses
 from keras import optimizers
 from keras import initializers
 from keras.callbacks import EarlyStopping
-# import utils
-# import cPickle
 
 
 '''
@@ -102,7 +100,7 @@ decoded_img = conv2DT_2
 Train model
 '''
 # define and save models
-vae = Model(input_img, conv2DT_2)
+vae = Model(input_img, decoded_img)
 
 # print model summary
 vae.summary()
