@@ -13,19 +13,12 @@ from keras.callbacks import EarlyStopping
 '''
 Required functions for latent space and training
 '''
-# def sampling(args):
-#     z_mean, z_log_sigma = args  # unpack args
-#     assert z_mean.shape[1:] == z_log_sigma.shape[1:]  # need mean and std for each point
-#     output_shape = z_mean.shape[1:]  # same shape as mean and log_var
-#     epsilon = K.random_normal(shape=output_shape, mean=0.0, stddev=1.0)  # sample from standard normal
-#     return z_mean + K.exp(z_log_sigma / 2) * epsilon  # reparameterization trick
-
 def sampling(args):
     z_mean, z_log_sigma = args  # unpack args
     assert z_mean.shape[1:] == z_log_sigma.shape[1:]  # need mean and std for each point
     output_shape = z_mean.shape[1:]  # same shape as mean and log_var
     epsilon = K.random_normal(shape=output_shape, mean=0.0, stddev=1.0)  # sample from standard normal
-    return z_mean + K.exp(z_log_sigma) * epsilon
+    return z_mean + K.exp(z_log_sigma) * epsilon  # reparameterization trick
 
 # def vae_loss(input_img, output_img):
 #     reconstruction_loss = objectives.binary_crossentropy(input_img.flatten(), output_img.flatten())
@@ -36,9 +29,6 @@ def vae_loss(x, x_decoded_mean):
     xent_loss = objectives.binary_crossentropy(x, x_decoded_mean)
     kl_loss = - 0.5 * K.mean(1 + z_log_sigma - K.square(z_mean) - K.exp(z_log_sigma), axis=-1)
     return xent_loss + kl_loss
-
-def my_loss_function(y_true, y_pred):
-    return 1.0
 
 
 '''
@@ -89,21 +79,20 @@ bias_initializer = initializers.TruncatedNormal(mean=1.0, stddev=0.5, seed=weigh
 input_img = Input(shape=input_shape)
 
 # 'kernal_size' convolution with 'filters' output filters, stride 1x1 and 'valid' border_mode
-conv2D_1 = Conv2D(filters, kernal_size, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_img)
+conv2D_1 = Conv2D(filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_img)
 max_pooling_1 = MaxPooling2D(pool_size, name='encoder_max_pooling_1')(conv2D_1)
 
 # separate dense layers for mu and log(sigma), both of size latent_dim
-z_mean = Conv2D(latent_filters, kernal_size, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(max_pooling_1)
-z_log_sigma = Conv2D(latent_filters, kernal_size, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_sigma')(max_pooling_1)
+z_mean = Conv2D(latent_filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(max_pooling_1)
+z_log_sigma = Conv2D(latent_filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_sigma')(max_pooling_1)
 
 # sample from normal with z_mean and z_log_sigma
-# z_output_shape = output_shape=(latent_filters, 30, 52)
 z = Lambda(sampling, name='latent_space')([z_mean, z_log_sigma])
 
 # 'kernal_size' transposed convolution with 'filters' output filters and stride 1x1
-conv2DT_1 = Conv2DTranspose(filters, kernal_size, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(z)
+conv2DT_1 = Conv2DTranspose(filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(z)
 up_sampling_1 = UpSampling2D(pool_size, name='decoder_up_sampling_1')(conv2DT_1)
-conv2DT_2 = Conv2DTranspose(1, kernal_size, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_2')(up_sampling_1)
+conv2DT_2 = Conv2DTranspose(1, kernal_size, activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_2')(up_sampling_1)
 
 # define decoded image to be image in last layer
 decoded_img = conv2DT_2
@@ -113,7 +102,7 @@ decoded_img = conv2DT_2
 Train model
 '''
 # define and save models
-vae = Model(input_img, decoded_img)
+vae = Model(input_img, conv2DT_2)
 
 # print model summary
 vae.summary()
