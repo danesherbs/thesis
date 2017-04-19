@@ -114,7 +114,7 @@ cvae.compile(loss=losses.binary_crossentropy, optimizer='adadelta')
 
 # define callbacks
 tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
-checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:02d}-{val_loss:.2f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1)
+checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:02d}-{val_loss:.2f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
 
 # fit model and record in TensorBoard
 cvae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, epochs=epochs, shuffle=True, verbose=1, callbacks=[tensorboard, checkpointer])
