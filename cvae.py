@@ -30,7 +30,7 @@ def vae_loss(x, x_decoded_mean):
 Define constants
 '''
 weight_seed = None
-batch_size = 128
+batch_size = 64
 epochs = 10
 filters = 8
 latent_filters = 4
@@ -38,7 +38,7 @@ kernal_size = (3, 3)
 pool_size = (2, 2)
 beta = 1.0
 
-log_dir = './summaries/cvae9/'
+log_dir = './summaries/cvae10/'
 
 
 '''
@@ -115,6 +115,7 @@ cvae.compile(loss=losses.binary_crossentropy, optimizer='adadelta')
 # define callbacks
 tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
 checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:02d}-{val_loss:.2f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
+callbacks = [tensorboard, checkpointer]
 
 # fit model and record in TensorBoard
-cvae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, epochs=epochs, shuffle=True, verbose=1, callbacks=[tensorboard, checkpointer])
+cvae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, epochs=epochs, shuffle=True, verbose=1, callbacks=callbacks)
