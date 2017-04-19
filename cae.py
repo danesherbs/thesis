@@ -1,46 +1,24 @@
 from keras.layers import Input, Dense, Lambda, Conv2D, MaxPooling2D, Conv2DTranspose, UpSampling2D
 from keras.models import Model
 from keras import backend as K
-from keras import objectives
 from keras import losses
 from keras import optimizers
 from keras import initializers
 from keras.callbacks import EarlyStopping
-from tkinter import *
 import matplotlib.pyplot as plt
-
-'''
-Required functions for latent space and training
-'''
-def sampling(args):
-    z_mean, z_log_sigma = args  # unpack args
-    assert z_mean.shape[1:] == z_log_sigma.shape[1:]  # need mean and std for each point
-    output_shape = z_mean.shape[1:]  # same shape as mean and log_var
-    epsilon = K.random_normal(shape=output_shape, mean=0.0, stddev=1.0)  # sample from standard normal
-    return z_mean + K.exp(z_log_sigma) * epsilon  # reparameterization trick
-
-# def vae_loss(input_img, output_img):
-#     reconstruction_loss = objectives.binary_crossentropy(input_img.flatten(), output_img.flatten())
-#     kl_loss = - 0.5 * K.sum(1 + z_log_sigma - K.square(z_mean) - K.exp(z_log_sigma), axis=-1)
-#     return reconstruction_loss + beta * kl_loss
-
-def vae_loss(x, x_decoded_mean):
-    xent_loss = objectives.binary_crossentropy(x, x_decoded_mean)
-    kl_loss = - 0.5 * K.mean(1 + z_log_sigma - K.square(z_mean) - K.exp(z_log_sigma), axis=-1)
-    return xent_loss + kl_loss
 
 
 '''
 Define parameters
 '''
 weight_seed = 123
-batch_size = 128
-epochs = 1
-filters = 8
-latent_filters = 4
+batch_size = 64
+epochs = 5
+filters = 16
+intermediate_filters = 8
+latent_filters = 2
 kernal_size = (3, 3)
 pool_size = (2, 2)
-beta = 1.0
 
 
 '''
@@ -49,7 +27,8 @@ Load data
 # import dataset
 from keras.datasets import mnist
 (X_train, _), (X_test, _) = mnist.load_data()
-# X_train, X_test, _, _ = utils.load_data(down_sample=True)
+# X_train = X_train[::20]
+# X_test = X_test[::20]
 
 # reshape into (num_samples, num_channels, width, height)
 X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
@@ -77,53 +56,52 @@ bias_initializer = initializers.TruncatedNormal(mean=1.0, stddev=0.5, seed=weigh
 # define input with 'channels_first'
 input_img = Input(shape=input_shape)
 
-# 'kernal_size' convolution with 'filters' output filters, stride 1x1 and 'valid' border_mode
-conv2D_1 = Conv2D(filters, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_img)
-max_pooling_1 = MaxPooling2D(pool_size, name='encoder_max_pooling_1')(conv2D_1)
+# encoder
+x = Conv2D(filters, kernal_size, activation='relu', padding='same', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_img)
+x = MaxPooling2D(pool_size, padding='same', name='encoder_max_pooling_1')(x)
+x = Conv2D(intermediate_filters, kernal_size, activation='relu', padding='same', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
+x = MaxPooling2D(pool_size, padding='same', name='encoder_max_pooling_2')(x)
+x = Conv2D(intermediate_filters, kernal_size, activation='relu', padding='same', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_3')(x)
+x = MaxPooling2D(pool_size, padding='same', name='encoder_max_pooling_3')(x)
 
-# 'kernal_size' transposed convolution with 'filters' output filters and stride 1x1
-up_sampling_1 = UpSampling2D(pool_size, name='decoder_up_sampling_1')(max_pooling_1)
-conv2DT_1 = Conv2DTranspose(1, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(up_sampling_1)
+# decoder
+x = Conv2D(intermediate_filters, kernal_size, activation='relu', padding='same', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2D_1')(x)
+x = UpSampling2D(pool_size, name='decoder_up_sampling_1')(x)
+x = Conv2D(intermediate_filters, kernal_size, activation='relu', padding='same', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2D_2')(x)
+x = UpSampling2D(pool_size, name='decoder_up_sampling_2')(x)
+x = Conv2D(filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2D_3')(x)
+x = UpSampling2D(pool_size, name='decoder_up_sampling_3')(x)
+x = Conv2D(1, kernal_size, activation='sigmoid', padding='same', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2D_4')(x)
 
 # define decoded image to be image in last layer
-decoded_img = conv2DT_1
+decoded_img = x
 
 
 '''
 Train model
 '''
 # define and save models
-vae = Model(input_img, decoded_img)
+cae = Model(input_img, decoded_img)
 
 # print model summary
-vae.summary()
+cae.summary()
 
 # compile and train
-vae.compile(loss=losses.mean_squared_error, optimizer='rmsprop')
-vae.fit(X_train, X_train, validation_data=(X_test, X_test), shuffle=True, batch_size=batch_size, epochs=epochs)
+cae.compile(loss=losses.mean_squared_error, optimizer='adam')
+cae.fit(X_train, X_train, validation_data=(X_test, X_test), shuffle=True, batch_size=batch_size, epochs=epochs)
 
 
 '''
 Test output
 '''
-import matplotlib.pyplot as plt
+decoded_imgs = cae.predict(X_test)
 
-decoded_imgs = autoencoder.predict(X_test)
+plt.figure(1)
+plt.imshow(X_test[0][0])
+plt.gray()
 
-n = 10
-plt.figure(figsize=(20, 4))
-for i in range(n):
-    # display original
-    ax = plt.subplot(2, n, i)
-    plt.imshow(X_test[i].reshape(28, 28))
-    plt.gray()
-    ax.get_xaxis().set_visible(False)
-    ax.get_yaxis().set_visible(False)
+plt.figure(2)
+plt.imshow(decoded_imgs[0][0])
+plt.gray()
 
-    # display reconstruction
-    ax = plt.subplot(2, n, i + n)
-    plt.imshow(decoded_imgs[i].reshape(28, 28))
-    plt.gray()
-    ax.get_xaxis().set_visible(False)
-    ax.get_yaxis().set_visible(False)
 plt.show()
