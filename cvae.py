@@ -110,6 +110,5 @@ cvae.summary()
 cvae.compile(loss=losses.binary_crossentropy, optimizer='adadelta')
 
 # fit model and record in TensorBoard
-from keras.callbacks import TensorBoard
-tensor_board_callback = TensorBoard(log_dir='/tmp/cvae5', histogram_freq=1, write_graph=True, write_images=True)
+tensor_board_callback = keras.callbacks.TensorBoard(log_dir='/tmp/cvae5', histogram_freq=1, write_graph=True, write_images=True)
 cvae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, epochs=epochs, shuffle=True, verbose=1, callbacks=[tensor_board_callback])
