@@ -1,51 +1,72 @@
-from keras.models import load_model
+import numpy as np
 import matplotlib.pyplot as plt
-import utils
+from keras.models import model_from_json
+
+
+'''
+Constants
+'''
+log_dir = './summaries/cvae12/'
 
 
 '''
 Load models and weights
 '''
-vae = load_model('saved_models/cvae_epoch=100_beta=1_latent=4.h5')
-vae.load_weights('saved_models/cvae_epoch=100_beta=1_latent=4_weights.h5')
+# load model json file
+json_file = open(log_dir + 'model.json', 'r')
+loaded_model_json = json_file.read()
+json_file.close()
 
-encoder = load_model('saved_models/encoder_epoch=100_beta=1_latent=4.h5')
-encoder.load_weights('saved_models/encoder_epoch=100_beta=1_latent=4_weights.h5')
+# load model and weights
+cvae = model_from_json(loaded_model_json)
+cvae.load_weights(log_dir + 'weights.39-0.07.hdf5')
 
 
 '''
 Load data
 '''
-X_train, X_test, _, _ = utils.load_data(down_sample=True)
+# X_train, X_test, _, _ = utils.load_data(down_sample=True)
+
+# import dataset
+from keras.datasets import mnist
+(X_train, _), (X_test, _) = mnist.load_data()
+
+# reshape into (num_samples, num_channels, width, height)
 X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
 X_test = X_test.reshape(X_test.shape[0], 1, X_test.shape[1], X_test.shape[2])
+
+# record input shape
 input_shape = X_train.shape[1:]
+
+# cast pixel values to floats
 X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
-X_train /= 255
-X_test /= 255
+
+# normalise pixel values
+X_train /= 255.0
+X_test /= 255.0
 
 
 '''
-Main
+View test image
 '''
-latent_imgs = encoder.predict(X_test)
-decoded_imgs = vae.predict(X_test)
+# choose sample number of dataset
+sample_number = 2
 
-plt.matshow(X_test[0][0])
-plt.title('Original image')
+# predict a sample
+decoded_imgs = cvae.predict(np.asarray([[X_test[sample_number][0]]]))
 
-# sample from latent space
-for i in xrange(5):
-	print 'sample', i+1
-	latent_imgs += encoder.predict(X_test)
-latent_imgs /= 255
-plt.matshow(latent_imgs[0][0])
-plt.title('Latent feature maps')
+# plot actual
+plt.figure(1)
+plt.title('Original')
+plt.imshow(X_test[sample_number][0])
+plt.gray()
 
-plt.matshow(decoded_imgs[0][0])
-plt.title('Reconstructed image')
+# plot predicted
+plt.figure(2)
+plt.title('Reconstructed')
+plt.imshow(decoded_imgs[0][0])
+plt.gray()
+
+# show both at same time
 plt.show()
-
-# from keras.utils.visualize_util import plot
-# plot(vae, to_file='CVAE_' + 'epoch=50_beta=0_latent=16', show_shapes=True)
