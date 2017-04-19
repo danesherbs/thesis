@@ -10,7 +10,7 @@ from keras.callbacks import EarlyStopping
 '''
 Define parameters
 '''
-weight_seed = 123
+weight_seed = None
 batch_size = 64
 epochs = 5
 filters = 16
