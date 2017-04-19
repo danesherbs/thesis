@@ -6,6 +6,7 @@ from keras import losses
 from keras import optimizers
 from keras import initializers
 from keras.callbacks import EarlyStopping
+import numpy as np
 
 
 '''
@@ -43,7 +44,8 @@ Load data
 # import dataset
 from keras.datasets import mnist
 (X_train, _), (X_test, _) = mnist.load_data()
-# X_train, X_test, _, _ = utils.load_data(down_sample=True)
+X_train = X_train[::20]
+X_test = X_test[::20]
 
 # reshape into (num_samples, num_channels, width, height)
 X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
@@ -107,11 +109,7 @@ cvae.summary()
 # compile and train
 cvae.compile(loss=losses.binary_crossentropy, optimizer='adadelta')
 
+# fit model and record in TensorBoard
 from keras.callbacks import TensorBoard
-cvae.fit(X_train, X_train, validation_data=(X_test, X_test), shuffle=True, batch_size=batch_size, epochs=epochs, callbacks=[TensorBoard(log_dir='/tmp/cvae1')])
-
-
-'''
-Clear session for next time
-'''
-K.clear_session()
+tensor_board_callback = TensorBoard(log_dir='/tmp/cvae5', histogram_freq=1, write_graph=True, write_images=True)
+cvae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, epochs=epochs, shuffle=True, verbose=1, callbacks=[tensor_board_callback])
