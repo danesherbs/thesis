@@ -1,3 +1,4 @@
+import keras
 from keras.layers import Input, Dense, Lambda, Conv2D, MaxPooling2D, Conv2DTranspose, UpSampling2D
 from keras.models import Model
 from keras import backend as K
@@ -26,7 +27,7 @@ def vae_loss(x, x_decoded_mean):
 
 
 '''
-Define parameters
+Define constants
 '''
 weight_seed = None
 batch_size = 128
@@ -36,6 +37,8 @@ latent_filters = 4
 kernal_size = (3, 3)
 pool_size = (2, 2)
 beta = 1.0
+
+log_dir = './summaries/cvae9/'
 
 
 '''
@@ -109,7 +112,9 @@ cvae.summary()
 # compile and train
 cvae.compile(loss=losses.binary_crossentropy, optimizer='adadelta')
 
+# define callbacks
+tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
+checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:02d}-{val_loss:.2f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1)
+
 # fit model and record in TensorBoard
-from keras.callbacks import TensorBoard
-tensor_board_callback = TensorBoard(log_dir='/tmp/cvae5', histogram_freq=1, write_graph=True, write_images=True)
-cvae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, epochs=epochs, shuffle=True, verbose=1, callbacks=[tensor_board_callback])
+cvae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, epochs=epochs, shuffle=True, verbose=1, callbacks=[tensorboard, checkpointer])
