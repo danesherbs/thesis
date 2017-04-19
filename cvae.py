@@ -31,14 +31,14 @@ Define constants
 '''
 weight_seed = None
 batch_size = 64
-epochs = 10
+epochs = 40
 filters = 8
 latent_filters = 4
 kernal_size = (3, 3)
 pool_size = (2, 2)
 beta = 1.0
 
-log_dir = './summaries/cvae10/'
+log_dir = './summaries/cvae13/'
 
 
 '''
@@ -47,8 +47,8 @@ Load data
 # import dataset
 from keras.datasets import mnist
 (X_train, _), (X_test, _) = mnist.load_data()
-X_train = X_train[::20]
-X_test = X_test[::20]
+# X_train = X_train[::20]
+# X_test = X_test[::20]
 
 # reshape into (num_samples, num_channels, width, height)
 X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
@@ -119,3 +119,11 @@ callbacks = [tensorboard, checkpointer]
 
 # fit model and record in TensorBoard
 cvae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, epochs=epochs, shuffle=True, verbose=1, callbacks=callbacks)
+
+
+'''
+Save model
+'''
+model_json = cvae.to_json()
+with open(log_dir + 'model.json', 'w') as json_file:
+	json_file.write(model_json)
