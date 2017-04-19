@@ -18,21 +18,16 @@ def sampling(args):
     epsilon = K.random_normal(shape=output_shape, mean=0.0, stddev=1.0)  # sample from standard normal
     return z_mean + K.exp(z_log_sigma) * epsilon  # reparameterization trick
 
-# def vae_loss(input_img, output_img):
-#     reconstruction_loss = objectives.binary_crossentropy(input_img.flatten(), output_img.flatten())
-#     kl_loss = - 0.5 * K.sum(1 + z_log_sigma - K.square(z_mean) - K.exp(z_log_sigma), axis=-1)
-#     return reconstruction_loss + beta * kl_loss
-
 def vae_loss(x, x_decoded_mean):
-    xent_loss = objectives.binary_crossentropy(x, x_decoded_mean)
+    xent_loss = losses.binary_crossentropy(x, x_decoded_mean)
     kl_loss = - 0.5 * K.mean(1 + z_log_sigma - K.square(z_mean) - K.exp(z_log_sigma), axis=-1)
-    return xent_loss + kl_loss
+    return xent_loss + beta*kl_loss
 
 
 '''
 Define parameters
 '''
-weight_seed = 123
+weight_seed = None
 batch_size = 128
 epochs = 1
 filters = 8
@@ -57,9 +52,13 @@ X_test = X_test.reshape(X_test.shape[0], 1, X_test.shape[1], X_test.shape[2])
 # record input shape
 input_shape = X_train.shape[1:]
 
-# normalise data to interval [0, 255]
-X_train = X_train.astype('uint8')
-X_test = X_test.astype('uint8')
+# cast pixel values to floats
+X_train = X_train.astype('float32')
+X_test = X_test.astype('float32')
+
+# normalise pixel values
+X_train /= 255.0
+X_test /= 255.0
 
 # print data information
 print('X_train shape:', X_train.shape)
@@ -106,5 +105,5 @@ vae = Model(input_img, decoded_img)
 vae.summary()
 
 # compile and train
-vae.compile(loss=losses.mean_squared_error, optimizer='rmsprop')
+vae.compile(loss=losses.binary_crossentropy, optimizer='adadelta')
 vae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, epochs=epochs)
