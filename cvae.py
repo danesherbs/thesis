@@ -29,7 +29,7 @@ Define parameters
 '''
 weight_seed = None
 batch_size = 128
-epochs = 1
+epochs = 10
 filters = 8
 latent_filters = 4
 kernal_size = (3, 3)
@@ -99,11 +99,19 @@ decoded_img = conv2DT_2
 Train model
 '''
 # define and save models
-vae = Model(input_img, decoded_img)
+cvae = Model(input_img, decoded_img)
 
 # print model summary
-vae.summary()
+cvae.summary()
 
 # compile and train
-vae.compile(loss=losses.binary_crossentropy, optimizer='adadelta')
-vae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, epochs=epochs)
+cvae.compile(loss=losses.binary_crossentropy, optimizer='adadelta')
+
+from keras.callbacks import TensorBoard
+cvae.fit(X_train, X_train, validation_data=(X_test, X_test), shuffle=True, batch_size=batch_size, epochs=epochs, callbacks=[TensorBoard(log_dir='/tmp/cvae1')])
+
+
+'''
+Clear session for next time
+'''
+K.clear_session()
