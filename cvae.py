@@ -28,9 +28,9 @@ def vae_loss(x, x_decoded_mean):
 
 
 '''
-Define hyperparameters
+Initialisation
 '''
-weight_seed = None
+# constants
 batch_size = 64
 epochs = 5
 filters = 8
@@ -40,6 +40,11 @@ pool_size = (2, 2)
 beta = 1.0
 loss_function = 'binary_crossentropy'
 optimizer = 'adadelta'
+
+# initialisers
+weight_seed = None
+kernel_initializer = initializers.TruncatedNormal(mean=0.0, stddev=0.5, seed=weight_seed)
+bias_initializer = initializers.TruncatedNormal(mean=1.0, stddev=0.5, seed=weight_seed)
 
 
 '''
@@ -91,17 +96,13 @@ print('X_test shape:', X_test.shape)
 
 
 '''
-Define model
+Encoder
 '''
-# weight initaliser
-kernel_initializer = initializers.TruncatedNormal(mean=0.0, stddev=0.5, seed=weight_seed)
-bias_initializer = initializers.TruncatedNormal(mean=1.0, stddev=0.5, seed=weight_seed)
-
 # define input with 'channels_first'
-input_img = Input(shape=input_shape)
+input_encoder = Input(shape=input_shape)
 
 # 'kernal_size' convolution with 'filters' output filters, stride 1x1 and 'valid' border_mode
-conv2D_1 = Conv2D(filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_img)
+conv2D_1 = Conv2D(filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
 max_pooling_1 = MaxPooling2D(pool_size, name='encoder_max_pooling_1')(conv2D_1)
 
 # separate dense layers for mu and log(sigma), both of size latent_dim
@@ -111,9 +112,19 @@ z_log_sigma = Conv2D(latent_filters, kernal_size, activation='relu', kernel_init
 # sample from normal with z_mean and z_log_sigma
 z = Lambda(sampling, name='latent_space')([z_mean, z_log_sigma])
 
-# 'kernal_size' transposed convolution with 'filters' output filters and stride 1x1
-conv2DT_1 = Conv2DTranspose(filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(z)
+
+'''
+Decoder
+'''
+# define input with 'channels_first'
+encoder_out_shape = tuple(z.get_shape().as_list())
+input_decoder = Input(shape=(encoder_out_shape[1], encoder_out_shape[2], encoder_out_shape[3]))
+
+# transposed convolution and up sampling
+conv2DT_1 = Conv2DTranspose(filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(input_decoder)
 up_sampling_1 = UpSampling2D(pool_size, name='decoder_up_sampling_1')(conv2DT_1)
+
+# transposed convolution
 conv2DT_2 = Conv2DTranspose(1, kernal_size, activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_2')(up_sampling_1)
 
 # define decoded image to be image in last layer
@@ -124,9 +135,13 @@ decoded_img = conv2DT_2
 Train model
 '''
 # define and save models
-cvae = Model(input_img, decoded_img)
+encoder = Model(input_encoder, z)
+decoder = Model(input_decoder, decoded_img)
+cvae = Model(input_encoder, decoder(encoder(input_encoder)))
 
 # print model summary
+encoder.summary()
+decoder.summary()
 cvae.summary()
 
 # compile and train
@@ -134,7 +149,7 @@ cvae.compile(loss=losses.binary_crossentropy, optimizer='adadelta')
 
 # define callbacks
 tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
-checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:02d}-{val_loss:.2f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
+checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:03d}-{val_loss:.4f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
 callbacks = [tensorboard, checkpointer]
 
 # fit model and record in TensorBoard
@@ -142,8 +157,21 @@ cvae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_si
 
 
 '''
-Save model
+Save model architectures and weights of encoder/decoder
 '''
+# model architectures
 model_json = cvae.to_json()
 with open(log_dir + 'model.json', 'w') as json_file:
 	json_file.write(model_json)
+
+encoder_json = encoder.to_json()
+with open(log_dir + 'encoder.json', 'w') as json_file:
+	json_file.write(encoder_json)
+
+decoder_json = decoder.to_json()
+with open(log_dir + 'decoder.json', 'w') as json_file:
+	json_file.write(decoder_json)
+
+# weights of encoder and decoder
+encoder.save_weights(log_dir + "encoder_weights.hdf5")
+decoder.save_weights(log_dir + "decoder_weights.hdf5")
