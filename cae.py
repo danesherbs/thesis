@@ -1,3 +1,4 @@
+import keras
 from keras.layers import Input, Dense, Lambda, Conv2D, MaxPooling2D, Conv2DTranspose, UpSampling2D
 from keras.models import Model
 from keras import backend as K
@@ -12,12 +13,14 @@ Define parameters
 '''
 weight_seed = None
 batch_size = 64
-epochs = 5
+epochs = 50
 filters = 16
 intermediate_filters = 8
 latent_filters = 2
 kernal_size = (3, 3)
 pool_size = (2, 2)
+
+log_dir = './summaries/cae1/'
 
 
 '''
@@ -89,8 +92,21 @@ cae = Model(input_img, decoded_img)
 # print model summary
 cae.summary()
 
-# compile and train
+# compile
 cae.compile(loss=losses.binary_crossentropy, optimizer='adadelta')
 
-from keras.callbacks import TensorBoard
-cae.fit(X_train, X_train, validation_data=(X_test, X_test), shuffle=True, batch_size=batch_size, epochs=epochs, callbacks=[TensorBoard(log_dir='/tmp/autoencoder')])
+# define callbacks
+tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
+checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:02d}-{val_loss:.2f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
+callbacks = [tensorboard, checkpointer]
+
+# fit model and record in TensorBoard
+cae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, epochs=epochs, shuffle=True, verbose=1, callbacks=callbacks)
+
+
+'''
+Save model
+'''
+model_json = cae.to_json()
+with open(log_dir + 'model.json', 'w') as json_file:
+	json_file.write(model_json)
