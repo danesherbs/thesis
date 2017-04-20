@@ -98,8 +98,8 @@ z = Lambda(sampling, name='latent_space')([z_mean, z_log_sigma])
 Decoder
 '''
 # define input with 'channels_first'
-encoder_output_shape = z.get_shape()[1:] 
-input_decoder = Input(shape=encoder_output_shape)
+encoder_out_shape = tuple(z.get_shape().as_list())
+input_decoder = Input(shape=(encoder_out_shape[1], encoder_out_shape[2], encoder_out_shape[3]))
 
 # transposed convolution and up sampling
 conv2DT_1 = Conv2DTranspose(filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(input_decoder)
@@ -121,6 +121,8 @@ decoder = Model(input_decoder, decoded_img)
 cvae = Model(input_encoder, decoder(encoder(input_encoder)))
 
 # print model summary
+encoder.summary()
+decoder.summary()
 cvae.summary()
 
 # compile and train
