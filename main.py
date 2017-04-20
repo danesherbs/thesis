@@ -63,7 +63,7 @@ X_test /= 255.0
 
 
 '''
-Deco
+Sampling functions
 '''
 def __decode_prior_samples(num_samples, latent_shape=(1, 4, 11, 11)):
 	# take num_sample samples
@@ -99,3 +99,12 @@ def __encode_decode_sample(sample_number=0):
 
 	# show both at same time
 	plt.show()
+
+
+'''
+Main
+'''
+if __name__ == '__main__':
+	num_samples = 5
+	latent_shape = (1, 4, 11, 11)
+	__decode_prior_samples(num_samples, latent_shape=latent_shape)
