@@ -6,27 +6,42 @@ from keras.models import model_from_json
 '''
 Constants
 '''
-log_dir = './summaries/cvae12/'
+log_dir = './summaries/cvae15/'
 
 
 '''
-Load models and weights
+Load models
 '''
 # load model json file
 json_file = open(log_dir + 'model.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
+model = model_from_json(loaded_model_json)
 
-# load model and weights
-cvae = model_from_json(loaded_model_json)
-cvae.load_weights(log_dir + 'weights.39-0.07.hdf5')
+# load encoder json file
+json_file = open(log_dir + 'encoder.json', 'r')
+loaded_encoder_json = json_file.read()
+json_file.close()
+encoder = model_from_json(loaded_encoder_json)
+
+# load decoder json file
+json_file = open(log_dir + 'decoder.json', 'r')
+loaded_decoder_json = json_file.read()
+json_file.close()
+decoder = model_from_json(loaded_decoder_json)
+
+
+'''
+Load weights
+'''
+model.load_weights(log_dir + 'weights.004-0.8409.hdf5')
+encoder.load_weights(log_dir + 'encoder_weights.hdf5')
+decoder.load_weights(log_dir + 'decoder_weights.hdf5')
 
 
 '''
 Load data
 '''
-# X_train, X_test, _, _ = utils.load_data(down_sample=True)
-
 # import dataset
 from keras.datasets import mnist
 (X_train, _), (X_test, _) = mnist.load_data()
@@ -54,7 +69,7 @@ View test image
 sample_number = 2
 
 # predict a sample
-decoded_imgs = cvae.predict(np.asarray([[X_test[sample_number][0]]]))
+decoded_imgs = model.predict(np.asarray([[X_test[sample_number][0]]]))
 
 # plot actual
 plt.figure(1)

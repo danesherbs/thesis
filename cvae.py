@@ -138,16 +138,21 @@ cvae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_si
 
 
 '''
-Save model
+Save model architectures and weights of encoder/decoder
 '''
+# model architectures
 model_json = cvae.to_json()
 with open(log_dir + 'model.json', 'w') as json_file:
 	json_file.write(model_json)
 
-# encoder_json = cvae.to_json()
-# with open(log_dir + 'encoder.json', 'w') as json_file:
-# 	json_file.write(encoder_json)
+encoder_json = encoder.to_json()
+with open(log_dir + 'encoder.json', 'w') as json_file:
+	json_file.write(encoder_json)
 
-# decoder_json = cvae.to_json()
-# with open(log_dir + 'decoder.json', 'w') as json_file:
-# 	json_file.write(decoder_json)
+decoder_json = decoder.to_json()
+with open(log_dir + 'decoder.json', 'w') as json_file:
+	json_file.write(decoder_json)
+
+# weights of encoder and decoder
+encoder.save_weights(log_dir + "encoder_weights.hdf5")
+decoder.save_weights(log_dir + "decoder_weights.hdf5")
