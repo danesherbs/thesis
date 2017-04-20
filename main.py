@@ -63,25 +63,39 @@ X_test /= 255.0
 
 
 '''
-View test image
+Deco
 '''
-# choose sample number of dataset
-sample_number = 2
+def __decode_prior_samples(num_samples, latent_shape=(1, 4, 11, 11)):
+	# take num_sample samples
+	for i in range(num_samples):
+		# sample from prior
+		prior_sample = np.random.normal(size=latent_shape)  # sample from standard normal
+		# decode sample
+		sample_decoded = decoder.predict(prior_sample)
+		# plot decoded sample
+		plt.figure(i)
+		plt.title("Sample " + str(i))
+		plt.imshow(sample_decoded[0][0])
+		plt.gray()
+	# show all plots at once
+	plt.show()
 
-# predict a sample
-decoded_imgs = model.predict(np.asarray([[X_test[sample_number][0]]]))
 
-# plot actual
-plt.figure(1)
-plt.title('Original')
-plt.imshow(X_test[sample_number][0])
-plt.gray()
+def __encode_decode_sample(sample_number=0):
+	# predict a sample
+	decoded_imgs = model.predict(np.asarray([[X_test[sample_number][0]]]))
 
-# plot predicted
-plt.figure(2)
-plt.title('Reconstructed')
-plt.imshow(decoded_imgs[0][0])
-plt.gray()
+	# plot actual
+	plt.figure(1)
+	plt.title('Original')
+	plt.imshow(X_test[sample_number][0])
+	plt.gray()
 
-# show both at same time
-plt.show()
+	# plot predicted
+	plt.figure(2)
+	plt.title('Reconstructed')
+	plt.imshow(decoded_imgs[0][0])
+	plt.gray()
+
+	# show both at same time
+	plt.show()
