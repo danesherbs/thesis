@@ -8,6 +8,7 @@ from keras import optimizers
 from keras import initializers
 from keras.callbacks import EarlyStopping
 import numpy as np
+import utils
 
 
 '''
@@ -27,18 +28,37 @@ def vae_loss(x, x_decoded_mean):
 
 
 '''
-Define constants
+Define hyperparameters
 '''
 weight_seed = None
 batch_size = 64
-epochs = 40
+epochs = 5
 filters = 8
 latent_filters = 4
 kernal_size = (3, 3)
 pool_size = (2, 2)
 beta = 1.0
+loss_function = 'binary_crossentropy'
+optimizer = 'adadelta'
 
-log_dir = './summaries/cvae13/'
+
+'''
+Define filename
+'''
+# define name of run
+name = 'cvae14'
+
+# builder hyperparameter dictionary
+hp_dictionary = {
+	'batch_size': batch_size,
+	'epochs': epochs,
+	'beta': beta,
+	'loss': loss_function,
+	'optimizer': optimizer
+}
+
+# define log directory
+log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
 
 '''
@@ -47,8 +67,8 @@ Load data
 # import dataset
 from keras.datasets import mnist
 (X_train, _), (X_test, _) = mnist.load_data()
-# X_train = X_train[::20]
-# X_test = X_test[::20]
+X_train = X_train[::20]
+X_test = X_test[::20]
 
 # reshape into (num_samples, num_channels, width, height)
 X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
