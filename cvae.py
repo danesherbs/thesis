@@ -15,15 +15,28 @@ import utils
 Required functions for latent space and training
 '''
 def sampling(args):
-    z_mean, z_log_sigma = args  # unpack args
-    assert z_mean.shape[1:] == z_log_sigma.shape[1:]  # need mean and std for each point
-    output_shape = z_mean.shape[1:]  # same shape as mean and log_var
-    epsilon = K.random_normal(shape=output_shape, mean=0.0, stddev=1.0)  # sample from standard normal
-    return z_mean + K.exp(z_log_sigma) * epsilon  # reparameterization trick
+    # unpack arguments
+    z_mean, z_log_sigma = args
+    # need mean and std for each point
+    assert z_mean.shape[1:] == z_log_sigma.shape[1:]
+    # output shape is same as mean and log_var
+    output_shape = z_mean.shape[1:]
+    # sample from standard normal
+    epsilon = K.random_normal(shape=output_shape, mean=0.0, stddev=1.0)
+    # reparameterization trick
+    return z_mean + K.exp(z_log_sigma) * epsilon
 
 def vae_loss(x, x_decoded_mean):
-    xent_loss = losses.binary_crossentropy(x, x_decoded_mean)
+    # input image dimensions
+    img_rows, img_cols = input_shape[1], input_shape[2]
+    # flatten tensors
+    x = K.flatten(x)
+    x_decoded_mean = K.flatten(x_decoded_mean)
+    # compute binary crossentropy
+    xent_loss = img_rows * img_cols * losses.binary_crossentropy(x, x_decoded_mean)
+    # compute KL divergence
     kl_loss = - 0.5 * K.mean(1 + z_log_sigma - K.square(z_mean) - K.exp(z_log_sigma), axis=-1)
+    # return linear combination of losses
     return xent_loss + beta*kl_loss
 
 
@@ -32,13 +45,13 @@ Initialisation
 '''
 # constants
 batch_size = 64
-epochs = 40
+epochs = 3
 filters = 8
 latent_filters = 4
 kernal_size = (3, 3)
 pool_size = (2, 2)
 beta = 1.0
-loss_function = 'binary_crossentropy'
+loss_function = 'vae_loss'
 optimizer = 'adadelta'
 
 # initialisers
@@ -51,7 +64,7 @@ bias_initializer = initializers.TruncatedNormal(mean=1.0, stddev=0.5, seed=weigh
 Define filename
 '''
 # define name of run
-name = 'cvae14'
+name = 'cvae17'
 
 # builder hyperparameter dictionary
 hp_dictionary = {
@@ -72,8 +85,8 @@ Load data
 # import dataset
 from keras.datasets import mnist
 (X_train, _), (X_test, _) = mnist.load_data()
-# X_train = X_train[::20]
-# X_test = X_test[::20]
+X_train = X_train[::20]
+X_test = X_test[::20]
 
 # reshape into (num_samples, num_channels, width, height)
 X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
@@ -145,7 +158,7 @@ decoder.summary()
 cvae.summary()
 
 # compile and train
-cvae.compile(loss=losses.binary_crossentropy, optimizer='adadelta')
+cvae.compile(loss=vae_loss, optimizer='adadelta')
 
 # define callbacks
 tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
