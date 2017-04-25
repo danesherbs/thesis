@@ -1,16 +1,8 @@
 '''
 Utilities package for autoencoders
 '''
-
-from sklearn.model_selection import train_test_split
-# from skimage.measure import block_reduce
-from matplotlib import pyplot as plt
-from keras import backend as K
-from keras import objectives
 from PIL import Image
 import numpy as np
-import os
-
 
 
 '''
@@ -56,6 +48,9 @@ def load_data(down_sample=False):
     '''
     Makes (X_train, X_test, y_train, y_test) from images in RECORD_PATH
     '''
+    from skimage.measure import block_reduce
+    from sklearn.model_selection import train_test_split
+    import os
     X = []
     print('Loading training data...'),
     for filename in os.listdir(RECORD_PATH):
@@ -93,6 +88,7 @@ def show_subplot(images):
     '''
     Plots monochrome images in a subplot figure
     '''
+    from matplotlib import pyplot as plt
     nrows = 4
     ncols = len(images) / nrows
     fig, axs = plt.subplots(nrows=nrows, ncols=ncols)
