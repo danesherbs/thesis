@@ -39,6 +39,18 @@ def vae_loss(x, x_decoded_mean):
     # return linear combination of losses
     return xent_loss + beta*kl_loss
 
+def vae_loss_unweighted(x, x_decoded_mean):
+    # input image dimensions
+    img_rows, img_cols = input_shape[1], input_shape[2]
+    # flatten tensors
+    x = K.flatten(x)
+    x_decoded_mean = K.flatten(x_decoded_mean)
+    # compute binary crossentropy
+    xent_loss = losses.binary_crossentropy(x, x_decoded_mean)
+    # compute KL divergence
+    kl_loss = - 0.5 * K.mean(1 + z_log_sigma - K.square(z_mean) - K.exp(z_log_sigma), axis=-1)
+    # return linear combination of losses
+    return xent_loss + beta*kl_loss
 
 '''
 Initialisation
@@ -51,8 +63,8 @@ latent_filters = 4
 kernal_size = (3, 3)
 pool_size = (2, 2)
 beta = 1.0
-loss_function = 'vae_loss'
-optimizer = 'adadelta'
+loss_function = 'vae_loss_unweighted'
+optimizer = 'rmsprop'
 
 # initialisers
 weight_seed = None
@@ -64,7 +76,7 @@ bias_initializer = initializers.TruncatedNormal(mean=1.0, stddev=0.5, seed=weigh
 Define filename
 '''
 # define name of run
-name = 'cvae17'
+name = 'cvae18'
 
 # builder hyperparameter dictionary
 hp_dictionary = {
@@ -112,7 +124,7 @@ print('X_test shape:', X_test.shape)
 Encoder
 '''
 # define input with 'channels_first'
-input_encoder = Input(shape=input_shape)
+input_encoder = Input(shape=input_shape, name='encoder_input')
 
 # 'kernal_size' convolution with 'filters' output filters, stride 1x1 and 'valid' border_mode
 conv2D_1 = Conv2D(filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
@@ -131,7 +143,7 @@ Decoder
 '''
 # define input with 'channels_first'
 encoder_out_shape = tuple(z.get_shape().as_list())
-input_decoder = Input(shape=(encoder_out_shape[1], encoder_out_shape[2], encoder_out_shape[3]))
+input_decoder = Input(shape=(encoder_out_shape[1], encoder_out_shape[2], encoder_out_shape[3]), name='decoder_input')
 
 # transposed convolution and up sampling
 conv2DT_1 = Conv2DTranspose(filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(input_decoder)
@@ -158,7 +170,7 @@ decoder.summary()
 cvae.summary()
 
 # compile and train
-cvae.compile(loss=vae_loss, optimizer='adadelta')
+cvae.compile(loss=vae_loss_unweighted, optimizer=optimizer)
 
 # define callbacks
 tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
