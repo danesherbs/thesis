@@ -74,11 +74,15 @@ Hyperparameter searching
 '''
 def build_hyperparameter_string(name, hp_dictionary):
     hyperparameters = sorted(hp_dictionary.keys())
-    out_string = name
+    out_string = name + '_' + __date_and_time_string()
     for hp in hyperparameters:
         hp_value = hp_dictionary[hp]
         out_string += "_" + str(hp) + "_" + str(hp_value)
     return out_string
+
+def __date_and_time_string():
+    from time import gmtime, strftime
+    return strftime("%d_%b_%H_%M_%S", gmtime())
 
 
 '''
