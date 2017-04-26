@@ -16,15 +16,15 @@ Required functions for latent space and training
 '''
 def sampling(args):
     # unpack arguments
-    z_mean, z_log_sigma = args
+    z_mean, z_log_var = args
     # need mean and std for each point
-    assert z_mean.shape[1:] == z_log_sigma.shape[1:]
+    assert z_mean.shape[1:] == z_log_var.shape[1:]
     # output shape is same as mean and log_var
     output_shape = z_mean.shape[1:]
     # sample from standard normal
     epsilon = K.random_normal(shape=output_shape, mean=0.0, stddev=1.0)
     # reparameterization trick
-    return z_mean + K.exp(z_log_sigma) * epsilon
+    return z_mean + K.exp(z_log_var) * epsilon
 
 def vae_loss(x, x_decoded_mean):
     # input image dimensions
@@ -35,35 +35,37 @@ def vae_loss(x, x_decoded_mean):
     # compute binary crossentropy
     xent_loss = img_rows * img_cols * losses.binary_crossentropy(x, x_decoded_mean)
     # compute KL divergence
-    kl_loss = - 0.5 * K.mean(1 + z_log_sigma - K.square(z_mean) - K.exp(z_log_sigma), axis=-1)
+    kl_loss = - 0.5 * K.mean(1 + z_log_var - K.square(z_mean) - K.exp(z_log_var), axis=-1)
     # return linear combination of losses
     return xent_loss + beta*kl_loss
 
-def vae_loss_unweighted(x, x_decoded_mean):
+def vae_loss_challot(x, x_decoded_mean):
     # input image dimensions
     img_rows, img_cols = input_shape[1], input_shape[2]
     # flatten tensors
     x = K.flatten(x)
     x_decoded_mean = K.flatten(x_decoded_mean)
     # compute binary crossentropy
-    xent_loss = losses.binary_crossentropy(x, x_decoded_mean)
+    xent_loss = img_rows * img_cols * losses.binary_crossentropy(x, x_decoded_mean)
     # compute KL divergence
-    kl_loss = - 0.5 * K.mean(1 + z_log_sigma - K.square(z_mean) - K.exp(z_log_sigma), axis=-1)
+    # kl_loss = - 0.5 * K.mean(1 + z_log_var - K.square(z_mean) - K.exp(z_log_var), axis=-1)
+    # kl_loss = - 0.5 * K.sum(484 + 2*z_log_var - K.square(z_mean) - K.exp(2*z_log_var), axis=-1)
+    kl_loss = - 0.5 * K.mean(1 + z_log_var - K.square(z_mean) - K.exp(z_log_var), axis=-1)
     # return linear combination of losses
-    return xent_loss + beta*kl_loss
+    return K.mean(xent_loss + beta*kl_loss)
 
 '''
 Initialisation
 '''
 # constants
-batch_size = 64
-epochs = 50
+batch_size = 128
+epochs = 70
 filters = 8
 latent_filters = 4
 kernal_size = (3, 3)
 pool_size = (2, 2)
 beta = 1.0
-loss_function = 'vae_loss_unweighted'
+loss_function = 'vae_loss_challot'
 optimizer = 'rmsprop'
 
 # initialisers
@@ -135,11 +137,11 @@ conv2D_2 = Conv2D(filters, kernal_size, activation='relu', kernel_initializer=ke
 max_pooling_2 = MaxPooling2D(pool_size, name='encoder_max_pooling_2')(conv2D_2)
 
 # separate dense layers for mu and log(sigma), both of size latent_dim
-z_mean = Conv2D(latent_filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(max_pooling_2)
-z_log_sigma = Conv2D(latent_filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_sigma')(max_pooling_2)
+z_mean = Conv2D(latent_filters, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(max_pooling_2)
+z_log_var = Conv2D(latent_filters, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(max_pooling_2)
 
-# sample from normal with z_mean and z_log_sigma
-z = Lambda(sampling, name='latent_space')([z_mean, z_log_sigma])
+# sample from normal with z_mean and z_log_var
+z = Lambda(sampling, name='latent_space')([z_mean, z_log_var])
 
 
 '''
@@ -178,7 +180,7 @@ decoder.summary()
 cvae.summary()
 
 # compile and train
-cvae.compile(loss=vae_loss_unweighted, optimizer=optimizer)
+cvae.compile(loss=vae_loss_challot, optimizer=optimizer)
 
 # define callbacks
 tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
