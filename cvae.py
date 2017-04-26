@@ -35,22 +35,12 @@ def vae_loss(x, x_decoded_mean):
     # compute binary crossentropy
     xent_loss = img_rows * img_cols * losses.binary_crossentropy(x, x_decoded_mean)
     # compute KL divergence
-    kl_loss = - 0.5 * K.mean(1 + z_log_sigma - K.square(z_mean) - K.exp(z_log_sigma), axis=-1)
+    # kl_loss = - 0.5 * K.mean(1 + z_log_sigma - K.square(z_mean) - K.exp(z_log_sigma), axis=-1)
+    # kl_loss = - 0.5 * K.sum(484 + 2*z_log_sigma - K.square(z_mean) - K.exp(2*z_log_sigma), axis=-1)
+    kl_loss = - 0.5 * K.mean(1 + 2*z_log_sigma - K.square(z_mean) - K.exp(2*z_log_sigma), axis=-1)
     # return linear combination of losses
-    return xent_loss + beta*kl_loss
+    return K.mean(xent_loss + beta*kl_loss)
 
-def vae_loss_unweighted(x, x_decoded_mean):
-    # input image dimensions
-    img_rows, img_cols = input_shape[1], input_shape[2]
-    # flatten tensors
-    x = K.flatten(x)
-    x_decoded_mean = K.flatten(x_decoded_mean)
-    # compute binary crossentropy
-    xent_loss = losses.binary_crossentropy(x, x_decoded_mean)
-    # compute KL divergence
-    kl_loss = - 0.5 * K.mean(1 + z_log_sigma - K.square(z_mean) - K.exp(z_log_sigma), axis=-1)
-    # return linear combination of losses
-    return xent_loss + beta*kl_loss
 
 '''
 Initialisation
@@ -63,7 +53,7 @@ latent_filters = 4
 kernal_size = (3, 3)
 pool_size = (2, 2)
 beta = 1.0
-loss_function = 'vae_loss_unweighted'
+loss_function = 'vae_loss'
 optimizer = 'rmsprop'
 
 # initialisers
@@ -170,7 +160,7 @@ decoder.summary()
 cvae.summary()
 
 # compile and train
-cvae.compile(loss=vae_loss_unweighted, optimizer=optimizer)
+cvae.compile(loss=vae_loss, optimizer=optimizer)
 
 # define callbacks
 tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
