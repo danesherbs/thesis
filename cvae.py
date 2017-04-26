@@ -121,8 +121,8 @@ conv2D_1 = Conv2D(filters, kernal_size, activation='relu', kernel_initializer=ke
 max_pooling_1 = MaxPooling2D(pool_size, name='encoder_max_pooling_1')(conv2D_1)
 
 # separate dense layers for mu and log(sigma), both of size latent_dim
-z_mean = Conv2D(latent_filters, kernal_size, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(max_pooling_1)
-z_log_var = Conv2D(latent_filters, kernal_size, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(max_pooling_1)
+z_mean = Conv2D(latent_filters, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(max_pooling_1)
+z_log_var = Conv2D(latent_filters, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(max_pooling_1)
 
 # sample from normal with z_mean and z_log_var
 z = Lambda(sampling, name='latent_space')([z_mean, z_log_var])
