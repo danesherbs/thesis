@@ -16,15 +16,15 @@ Required functions for latent space and training
 '''
 def sampling(args):
     # unpack arguments
-    z_mean, z_log_sigma = args
+    z_mean, z_log_var = args
     # need mean and std for each point
-    assert z_mean.shape[1:] == z_log_sigma.shape[1:]
+    assert z_mean.shape[1:] == z_log_var.shape[1:]
     # output shape is same as mean and log_var
     output_shape = z_mean.shape[1:]
     # sample from standard normal
     epsilon = K.random_normal(shape=output_shape, mean=0.0, stddev=1.0)
     # reparameterization trick
-    return z_mean + K.exp(z_log_sigma) * epsilon
+    return z_mean + K.exp(z_log_var) * epsilon
 
 def vae_loss(x, x_decoded_mean):
     # input image dimensions
@@ -35,9 +35,9 @@ def vae_loss(x, x_decoded_mean):
     # compute binary crossentropy
     xent_loss = img_rows * img_cols * losses.binary_crossentropy(x, x_decoded_mean)
     # compute KL divergence
-    # kl_loss = - 0.5 * K.mean(1 + z_log_sigma - K.square(z_mean) - K.exp(z_log_sigma), axis=-1)
-    # kl_loss = - 0.5 * K.sum(484 + 2*z_log_sigma - K.square(z_mean) - K.exp(2*z_log_sigma), axis=-1)
-    kl_loss = - 0.5 * K.mean(1 + 2*z_log_sigma - K.square(z_mean) - K.exp(2*z_log_sigma), axis=-1)
+    # kl_loss = - 0.5 * K.mean(1 + z_log_var - K.square(z_mean) - K.exp(z_log_var), axis=-1)
+    # kl_loss = - 0.5 * K.sum(484 + 2*z_log_var - K.square(z_mean) - K.exp(2*z_log_var), axis=-1)
+    kl_loss = - 0.5 * K.mean(1 + z_log_var - K.square(z_mean) - K.exp(z_log_var), axis=-1)
     # return linear combination of losses
     return K.mean(xent_loss + beta*kl_loss)
 
@@ -121,11 +121,11 @@ conv2D_1 = Conv2D(filters, kernal_size, activation='relu', kernel_initializer=ke
 max_pooling_1 = MaxPooling2D(pool_size, name='encoder_max_pooling_1')(conv2D_1)
 
 # separate dense layers for mu and log(sigma), both of size latent_dim
-z_mean = Conv2D(latent_filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(max_pooling_1)
-z_log_sigma = Conv2D(latent_filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_sigma')(max_pooling_1)
+z_mean = Conv2D(latent_filters, kernal_size, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(max_pooling_1)
+z_log_var = Conv2D(latent_filters, kernal_size, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(max_pooling_1)
 
-# sample from normal with z_mean and z_log_sigma
-z = Lambda(sampling, name='latent_space')([z_mean, z_log_sigma])
+# sample from normal with z_mean and z_log_var
+z = Lambda(sampling, name='latent_space')([z_mean, z_log_var])
 
 
 '''
