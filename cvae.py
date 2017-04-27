@@ -11,6 +11,7 @@ import numpy as np
 import utils
 
 
+
 '''
 Required functions for latent space and training
 '''
@@ -46,7 +47,7 @@ def vae_loss(x, x_decoded_mean):
 Initialisation
 '''
 # constants
-batch_size = 64
+batch_size = 128
 epochs = 50
 filters = 8
 latent_filters = 4
@@ -66,7 +67,7 @@ bias_initializer = initializers.TruncatedNormal(mean=1.0, stddev=0.5, seed=weigh
 Define filename
 '''
 # define name of run
-name = 'cvae18'
+name = 'cvae'
 
 # builder hyperparameter dictionary
 hp_dictionary = {
