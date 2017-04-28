@@ -44,40 +44,35 @@ def __example_array_to_image():
     image = array_to_image(image_array)
     image.show()
 
-def load_data(down_sample=False):
+def load_data(down_scale_factor=0.5):
     '''
     Makes (X_train, X_test, y_train, y_test) from images in RECORD_PATH
     '''
-    from skimage.measure import block_reduce
+    from scipy.misc import imresize
     from sklearn.model_selection import train_test_split
     import os
     X = []
     print('Loading training data...', end=' ')
-    for filename in os.listdir(RECORD_PATH):
-    # for filename in os.listdir(RECORD_PATH)[::100]:
+    for filename in os.listdir(RECORD_PATH)[::100]:
         if not filename.endswith('.png'):
             continue  # skip non-png files
         image_array = image_to_array(os.path.join(RECORD_PATH, filename))
-        if down_sample:
-            down_sampled = block_reduce(image_array, block_size=(5, 5), func=np.max)
-            X.append(down_sampled)
-        else:
-            X.append(image_array)
+        down_sampled = imresize(image_array, down_scale_factor)
+        X.append(down_sampled)
     print('done.')
     X = np.asarray(X, dtype='uint8')
-    X = X.reshape((-1, 1, X.shape[1], X.shape[2]))
     y = np.asarray([-1]*len(X))  # psuedo labels
     X_train, X_test, _, _ = train_test_split(X, y, test_size=0.10, random_state=42)
     return (X_train, None), (X_test, None)
 
 def __demo_plot_data():
     # load data and print shape
-    (X_train, _), (X_test, _) = load_data()
+    (X_train, _), (X_test, _) = load_data(down_scale_factor=0.5)
     print(X_train.shape)
     # plot sample image
     import matplotlib.pyplot as plt
     plt.figure()
-    plt.imshow(X_train[1][0], cmap='inferno')
+    plt.imshow(X_train[1], cmap='inferno')
     plt.show()
 
 

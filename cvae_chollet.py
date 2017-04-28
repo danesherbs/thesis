@@ -64,7 +64,7 @@ Initialisation
 # constants
 batch_size = 128
 epochs = 20
-filters = 64
+filters = 32
 latent_filters = 4
 kernal_size = (3, 3)
 pool_size = (2, 2)
@@ -101,10 +101,16 @@ log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary
 Load data
 '''
 # import dataset
-from keras.datasets import mnist
-(X_train, _), (X_test, _) = mnist.load_data()
-# X_train = X_train[::20]
-# X_test = X_test[::20]
+custom_data = True
+if custom_data:
+    (X_train, _), (X_test, _) = utils.load_data(down_scale_factor=0.5)
+else:
+    from keras.datasets import mnist
+    (X_train, _), (X_test, _) = mnist.load_data()
+
+# downsample data
+X_train = X_train[::20]
+X_test = X_test[::20]
 
 # reshape into (num_samples, num_channels, width, height)
 X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
