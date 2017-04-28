@@ -1,12 +1,8 @@
 import keras
 from keras.layers import Input, Dense, Lambda, Conv2D, MaxPooling2D, Conv2DTranspose, UpSampling2D
+from keras import initializers
 from keras.models import Model
 from keras import backend as K
-from keras import objectives
-from keras import losses
-from keras import optimizers
-from keras import initializers
-from keras.callbacks import EarlyStopping
 import numpy as np
 import utils
 
