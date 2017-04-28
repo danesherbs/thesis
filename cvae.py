@@ -31,8 +31,8 @@ def vae_loss(y_true, y_pred):
 
     # Flatten y_true and y_pred of shape (batch_size, 1, 28, 28) to (batch_size, 1 * 28 * 28).
     # Elements are in the interval [0, 1], which can be interpreted as probabilities.
-    y_true = K.reshape(y_true, (batch_size, np.prod(input_shape)))
-    y_pred = K.reshape(y_pred, (batch_size, np.prod(input_shape)))
+    y_true = K.reshape(y_true, (-1, np.prod(input_shape)))
+    y_pred = K.reshape(y_pred, (-1, np.prod(input_shape)))
 
     # Take the sum of the binary cross entropy for each image in the batch.
     # Reconstruction loss is of the shape (batch_size, 1).
@@ -42,8 +42,8 @@ def vae_loss(y_true, y_pred):
     # Get latent shape
     latent_shape = z.get_shape().as_list()[1:]
     # Flatten latent space into shape (batch_size,) + flattened_latent_space
-    z_mean_flat = K.reshape(z_mean, (batch_size, np.prod(latent_shape)))
-    z_log_var_flat = K.reshape(z_log_var, (batch_size, np.prod(latent_shape)))
+    z_mean_flat = K.reshape(z_mean, (-1, np.prod(latent_shape)))
+    z_log_var_flat = K.reshape(z_log_var, (-1, np.prod(latent_shape)))
     # Take the KL divergence between q(z|x) and the standard multivariate Gaussian
     # for each image in the batch. KL loss is of the shape (batch_size, 1).
     kl_loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_flat) - K.exp(z_log_var_flat), axis=-1)
@@ -97,8 +97,8 @@ Load data
 # import dataset
 from keras.datasets import mnist
 (X_train, _), (X_test, _) = mnist.load_data()
-# X_train = X_train[::20]
-# X_test = X_test[::20]
+X_train = X_train[::20]
+X_test = X_test[::20]
 
 # reshape into (num_samples, num_channels, width, height)
 X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
