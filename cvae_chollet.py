@@ -103,8 +103,8 @@ Load data
 # import dataset
 from keras.datasets import mnist
 (X_train, _), (X_test, _) = mnist.load_data()
-X_train = X_train[::20]
-X_test = X_test[::20]
+# X_train = X_train[::20]
+# X_test = X_test[::20]
 
 # reshape into (num_samples, num_channels, width, height)
 X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
