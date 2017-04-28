@@ -15,7 +15,7 @@ import utils
 '''
 Required functions for latent space and training
 '''
-def vae_loss(x, x_decoded_mean):
+def vae_loss_chollet(x, x_decoded_mean):
     # input image dimensions
     img_rows, img_cols = input_shape[1], input_shape[2]
     # flatten tensors
@@ -30,13 +30,40 @@ def vae_loss(x, x_decoded_mean):
     # return linear combination of losses
     return K.mean(xent_loss + beta*kl_loss)
 
+def vae_loss(y_true, y_pred):
+    # y_true is of shape (batch_size,) + input_shape
+    # y_pred is of shape (batch_size,) + output_shape
+    # For example, training an autoencoder on MNIST with batch_size = 64 gives
+    # y_true and y_pred both a shape of of shape (64, 1, 28, 28).
+
+    # Flatten y_true and y_pred of shape (batch_size, 1, 28, 28) to (batch_size, 1 * 28 * 28).
+    # Elements are in the interval [0, 1], which can be interpreted as probabilities.
+    y_true = K.reshape(y_true, (-1, np.prod(input_shape)))
+    y_pred = K.reshape(y_pred, (-1, np.prod(input_shape)))
+
+    # Take the sum of the binary cross entropy for each image in the batch.
+    # Reconstruction loss is of the shape (batch_size, 1).
+    reconstruction_loss = K.sum(K.binary_crossentropy(y_pred, y_true), axis=-1)
+    # reconstruction_loss = K.mean(np.prod(input_shape) * K.binary_crossentropy(y_pred, y_true), axis=-1)
+
+    # Get latent shape
+    latent_shape = z.get_shape().as_list()[1:]
+    # Flatten latent space into shape (batch_size,) + flattened_latent_space
+    z_mean_flat = K.reshape(z_mean, (-1, np.prod(latent_shape)))
+    z_log_var_flat = K.reshape(z_log_var, (-1, np.prod(latent_shape)))
+    # Take the KL divergence between q(z|x) and the standard multivariate Gaussian
+    # for each image in the batch. KL loss is of the shape (batch_size, 1).
+    kl_loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_flat) - K.exp(z_log_var_flat), axis=-1)
+
+    # return the mean weighted sum of reconstruction loss and KL divergence across the
+    return reconstruction_loss + beta * kl_loss
 
 '''
 Initialisation
 '''
 # constants
 batch_size = 128
-epochs = 1
+epochs = 20
 filters = 64
 latent_filters = 4
 kernal_size = (3, 3)
