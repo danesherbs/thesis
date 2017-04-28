@@ -52,7 +52,7 @@ def load_data(down_sample=False):
     from sklearn.model_selection import train_test_split
     import os
     X = []
-    print('Loading training data...'),
+    print('Loading training data...', end=' ')
     for filename in os.listdir(RECORD_PATH):
     # for filename in os.listdir(RECORD_PATH)[::100]:
         if not filename.endswith('.png'):
@@ -62,11 +62,23 @@ def load_data(down_sample=False):
             down_sampled = block_reduce(image_array, block_size=(5, 5), func=np.max)
             X.append(down_sampled)
         else:
-            X.append(image)
+            X.append(image_array)
     print('done.')
     X = np.asarray(X, dtype='uint8')
-    Y = np.asarray([-1]*len(X))  # psuedo labels
-    return train_test_split(X, Y, test_size=0.10)
+    X = X.reshape((-1, 1, X.shape[1], X.shape[2]))
+    y = np.asarray([-1]*len(X))  # psuedo labels
+    X_train, X_test, _, _ = train_test_split(X, y, test_size=0.10, random_state=42)
+    return (X_train, None), (X_test, None)
+
+def __demo_plot_data():
+    # load data and print shape
+    (X_train, _), (X_test, _) = load_data()
+    print(X_train.shape)
+    # plot sample image
+    import matplotlib.pyplot as plt
+    plt.figure()
+    plt.imshow(X_train[1][0], cmap='inferno')
+    plt.show()
 
 
 '''
@@ -114,6 +126,4 @@ MAIN
 if __name__ == '__main__':
     # input_img = image_to_array('./atari_agents/record/020377.png', rgb=False)
     # output_img = image_to_array('./atari_agents/record/000170.png', rgb=False)
-    # print vae_loss(input_img, output_img)
-    # load_data()
-    pass
+    __demo_plot_data()
