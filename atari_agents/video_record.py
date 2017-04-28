@@ -18,8 +18,8 @@ ale = ALEInterface()
 ale.setInt(b'random_seed', random.randint(0, 999))
 
 # Show screen and turn on sound
-#ale.setBool("display_screen", True)
-ale.setBool("sound", True)
+ale.setBool("display_screen", False)
+ale.setBool("sound", False)
 
 # Record screen path
 record_path = 'record'
@@ -62,7 +62,7 @@ p = 0.15
 a = random.choice(range(len(legal_actions)))
 
 # Play 10 episodes
-for episode in range(10):
+for episode in range(30):
   total_reward = ale.act(a)
   while not ale.game_over():
     if np.random.binomial(1, p):  # change action with probability p
