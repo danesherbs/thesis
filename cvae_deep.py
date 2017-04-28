@@ -60,7 +60,7 @@ Initialisation
 # constants
 batch_size = 128
 epochs = 50
-filters = 4
+filters = 16
 latent_filters = 16
 kernal_size = (3, 3)
 pool_size = (2, 2)
@@ -114,12 +114,12 @@ x = Conv2D(filters, kernal_size, activation='relu', kernel_initializer=kernel_in
 x = MaxPooling2D(pool_size, name='encoder_max_pooling_1')(x)
 
 # 'kernal_size' convolution with 'filters' output filters, stride 1x1 and 'valid' border_mode
-x = Conv2D(filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, padding='same', name='encoder_conv2D_2')(x)
+x = Conv2D(2*filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, padding='same', name='encoder_conv2D_2')(x)
 x = MaxPooling2D(pool_size, name='encoder_max_pooling_2')(x)
 
 # separate dense layers for mu and log(sigma), both of size latent_dim
-z_mean = Conv2D(filters, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
-z_log_var = Conv2D(filters, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
+z_mean = Conv2D(4*filters, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
+z_log_var = Conv2D(4*filters, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
 
 # sample from normal with z_mean and z_log_var
 z = Lambda(sampling, name='latent_space')([z_mean, z_log_var])
@@ -133,7 +133,7 @@ encoder_out_shape = tuple(z.get_shape().as_list())
 input_decoder = Input(shape=(encoder_out_shape[1], encoder_out_shape[2], encoder_out_shape[3]), name='decoder_input')
 
 # transposed convolution and up sampling
-x = Conv2DTranspose(filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(input_decoder)
+x = Conv2DTranspose(2*filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(input_decoder)
 x = UpSampling2D(pool_size, name='decoder_up_sampling_1')(x)
 
 # transposed convolution and up sampling
