@@ -1,5 +1,5 @@
 import keras
-from keras.layers import Input, Dense, Lambda, Conv2D, MaxPooling2D, Conv2DTranspose, UpSampling2D
+from keras.layers import Input, Dense, Lambda, Conv2D, MaxPooling2D, Conv2DTranspose, UpSampling2D, BatchNormalization
 from keras.models import Model
 from keras import backend as K
 from keras import objectives
@@ -40,7 +40,7 @@ def vae_loss(y_true, y_pred):
     # Take the sum of the binary cross entropy for each image in the batch.
     # Reconstruction loss is of the shape (batch_size, 1).
     reconstruction_loss = K.sum(K.binary_crossentropy(y_pred, y_true), axis=-1)
-    # reconstruction_loss = K.mean(np.prod(input_shape) * K.binary_crossentropy(y_pred, y_true), axis=-1)
+    # reconstruction_loss = K.mean(np.prod(input_shape) * K.mean(K.binary_crossentropy(y_pred, y_true), axis=-1)
 
     # Get latent shape
     latent_shape = z.get_shape().as_list()[1:]
@@ -136,13 +136,9 @@ x = MaxPooling2D(pool_size, name='encoder_max_pooling_1')(x)
 x = Conv2D(2*filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, padding='same', name='encoder_conv2D_2')(x)
 x = MaxPooling2D(pool_size, name='encoder_max_pooling_2')(x)
 
-# # 'kernal_size' convolution with 'filters' output filters, stride 1x1 and 'valid' border_mode
-# x = Conv2D(4*filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, padding='same', name='encoder_conv2D_3')(x)
-# x = MaxPooling2D(pool_size, name='encoder_max_pooling_3')(x)
-
 # separate dense layers for mu and log(sigma), both of size latent_dim
-z_mean = Conv2D(2*filters, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
-z_log_var = Conv2D(2*filters, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
+z_mean = Conv2D(4*filters, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
+z_log_var = Conv2D(4*filters, kernal_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
 
 # sample from normal with z_mean and z_log_var
 z = Lambda(sampling, name='latent_space')([z_mean, z_log_var])
@@ -156,18 +152,15 @@ encoder_out_shape = tuple(z.get_shape().as_list())
 input_decoder = Input(shape=(encoder_out_shape[1], encoder_out_shape[2], encoder_out_shape[3]), name='decoder_input')
 
 # transposed convolution and up sampling
-conv2DT_1 = Conv2DTranspose(2*filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(input_decoder)
-up_sampling_1 = UpSampling2D(pool_size, name='decoder_up_sampling_1')(conv2DT_1)
+x = Conv2DTranspose(4*filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(input_decoder)
+x = UpSampling2D(pool_size, name='decoder_up_sampling_1')(x)
 
 # transposed convolution and up sampling
-conv2DT_2 = Conv2DTranspose(filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, padding='same',name='decoder_conv2DT_2')(up_sampling_1)
-up_sampling_2 = UpSampling2D(pool_size, name='decoder_up_sampling_2')(conv2DT_2)
+x = Conv2DTranspose(2*filters, kernal_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, padding='same',name='decoder_conv2DT_2')(x)
+x = UpSampling2D(pool_size, name='decoder_up_sampling_2')(x)
 
 # transposed convolution
-conv2DT_3 = Conv2DTranspose(1, kernal_size, activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, padding='same',name='decoder_conv2DT_3')(up_sampling_2)
-
-# define decoded image to be image in last layer
-decoded_img = conv2DT_3
+decoded_img = Conv2DTranspose(1, kernal_size, activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, padding='same',name='decoder_conv2DT_3')(x)
 
 
 '''
