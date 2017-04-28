@@ -63,7 +63,7 @@ Initialisation
 '''
 # constants
 batch_size = 128
-epochs = 1
+epochs = 20
 filters = 64
 latent_filters = 4
 kernal_size = (3, 3)
