@@ -62,7 +62,7 @@ def vae_loss(y_true, y_pred):
 Initialisation
 '''
 # constants
-batch_size = 128
+batch_size = 32
 epochs = 20
 filters = 32
 latent_filters = 4
@@ -112,6 +112,12 @@ X_test /= 255.0
 # print data information
 print('X_train shape:', X_train.shape)
 print('X_test shape:', X_test.shape)
+
+# initialise data generator
+train_generator = ImageDataGenerator()
+train_generator.fit(X_train)
+test_generator = ImageDataGenerator()
+test_generator.fit(X_test)
 
 
 '''
@@ -252,26 +258,36 @@ tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, wri
 checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:03d}-{val_loss:.4f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
 callbacks = [tensorboard, checkpointer]
 
-# fit model and record in TensorBoard
-cvae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, epochs=epochs, shuffle=True, verbose=1, callbacks=callbacks)
+print("\nSteps per epoch =", int(len(X_train)/batch_size), sep=' ')
+print("Validation steps =", int(len(X_test)/batch_size), '\n', sep=' ')
+
+# fit model using generators and record in TensorBoard
+cvae.fit_generator(train_generator.flow(X_train, X_train, batch_size=batch_size),
+                   validation_data=test_generator.flow(X_test, X_test, batch_size=batch_size),
+                   validation_steps=len(X_test)/batch_size,
+                   steps_per_epoch=len(X_train)/batch_size,
+                   epochs=epochs)
 
 
 '''
 Save model architectures and weights of encoder/decoder
 '''
-# model architectures
+# make log directory
+os.makedirs(log_dir)
+
+# write model architectures to log directory
 model_json = cvae.to_json()
 with open(log_dir + 'model.json', 'w') as json_file:
-	json_file.write(model_json)
+    json_file.write(model_json)
 
 encoder_json = encoder.to_json()
 with open(log_dir + 'encoder.json', 'w') as json_file:
-	json_file.write(encoder_json)
+    json_file.write(encoder_json)
 
 decoder_json = decoder.to_json()
 with open(log_dir + 'decoder.json', 'w') as json_file:
-	json_file.write(decoder_json)
+    json_file.write(decoder_json)
 
-# weights of encoder and decoder
+# write weights of encoder and decoder to log directory
 encoder.save_weights(log_dir + "encoder_weights.hdf5")
 decoder.save_weights(log_dir + "decoder_weights.hdf5")
