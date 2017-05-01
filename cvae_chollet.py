@@ -122,19 +122,21 @@ input_encoder = Input(shape=input_shape, name='encoder_input')
 
 conv_1 = Conv2D(1,
                 kernel_size=(2, 2),
-                padding='same', activation='relu')(input_encoder)
+                padding='same',
+                activation='relu')(input_encoder)
 conv_2 = Conv2D(filters,
                 kernel_size=(2, 2),
-                padding='same', activation='relu',
-                strides=(2, 2))(conv_1)
+                padding='same',
+                activation='relu')(conv_1)
 conv_3 = Conv2D(filters,
                 kernel_size=(3, 3),
-                padding='same', activation='relu',
+                padding='same',
+                activation='relu',
                 strides=1)(conv_2)
 conv_4 = Conv2D(filters,
                 kernel_size=(3, 3),
-                padding='same', activation='relu',
-                strides=1)(conv_3)
+                padding='same',
+                activation='relu')(conv_3)
 conv4_out_shape = tuple(conv_4.get_shape().as_list())
 flat = Flatten()(conv_4)
 
@@ -173,21 +175,19 @@ decoder_reshape = Reshape(output_shape[1:])
 decoder_deconv_1 = Conv2DTranspose(filters,
                                    kernel_size=(3, 3),
                                    padding='same',
-                                   strides=1,
                                    activation='relu')
-decoder_deconv_2 = Conv2DTranspose(filters, (3, 3),
+decoder_deconv_2 = Conv2DTranspose(filters,
+                                   kernel_size=(3, 3),
                                    padding='same',
-                                   strides=1,
                                    activation='relu')
 
 decoder_deconv_3_upsamp = Conv2DTranspose(filters,
-                                          kernel_size=(3, 3),
-                                          strides=(2, 2),
-                                          padding='valid',
+                                          kernel_size=(2, 2),
+                                          padding='same',
                                           activation='relu')
 decoder_mean_squash = Conv2D(1,
                              kernel_size=(2, 2),
-                             padding='valid',
+                             padding='same',
                              activation='sigmoid')
 
 hid_decoded = decoder_hid(z)
