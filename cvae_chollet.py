@@ -1,5 +1,6 @@
 import keras
 from keras.layers import Input, Dense, Lambda, Flatten, Reshape, Conv2D, MaxPooling2D, Conv2DTranspose, UpSampling2D
+from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Model
 from keras import backend as K
 from keras import objectives
@@ -9,7 +10,7 @@ from keras import initializers
 from keras.callbacks import EarlyStopping
 import numpy as np
 import utils
-
+import os
 
 
 '''
@@ -63,7 +64,7 @@ Initialisation
 '''
 # constants
 batch_size = 32
-epochs = 20
+epochs = 1
 filters = 32
 latent_filters = 4
 kernal_size = (3, 3)
