@@ -266,7 +266,8 @@ cvae.fit_generator(train_generator.flow(X_train, X_train, batch_size=batch_size)
                    validation_data=test_generator.flow(X_test, X_test, batch_size=batch_size),
                    validation_steps=len(X_test)/batch_size,
                    steps_per_epoch=len(X_train)/batch_size,
-                   epochs=epochs)
+                   epochs=epochs,
+                   callbacks=callbacks)
 
 
 '''
