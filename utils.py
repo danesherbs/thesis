@@ -52,14 +52,13 @@ def load_data(down_scale_factor=0.5):
     from sklearn.model_selection import train_test_split
     import os
     X = []
-    print('Loading training data...', end=' ')
-    for filename in os.listdir(RECORD_PATH)[::100]:
+    print('Loading training data...')
+    for filename in os.listdir(RECORD_PATH):
         if not filename.endswith('.png'):
             continue  # skip non-png files
         image_array = image_to_array(os.path.join(RECORD_PATH, filename))
         down_sampled = imresize(image_array, down_scale_factor)
         X.append(down_sampled)
-    print('done.')
     X = np.asarray(X, dtype='uint8')
     y = np.asarray([-1]*len(X))  # psuedo labels
     X_train, X_test, _, _ = train_test_split(X, y, test_size=0.10, random_state=42)
