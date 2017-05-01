@@ -69,6 +69,7 @@ latent_filters = 4
 kernal_size = (3, 3)
 pool_size = (2, 2)
 beta = 1.0
+
 loss_function = 'vae_loss'
 optimizer = 'rmsprop'
 
@@ -76,25 +77,6 @@ optimizer = 'rmsprop'
 weight_seed = None
 kernel_initializer = initializers.TruncatedNormal(mean=0.0, stddev=0.5, seed=weight_seed)
 bias_initializer = initializers.TruncatedNormal(mean=1.0, stddev=0.5, seed=weight_seed)
-
-
-'''
-Define filename
-'''
-# define name of run
-name = 'cvae_chollet'
-
-# builder hyperparameter dictionary
-hp_dictionary = {
-	'batch_size': batch_size,
-	'epochs': epochs,
-	'beta': beta,
-	'loss': loss_function,
-	'optimizer': optimizer
-}
-
-# define log directory
-log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
 
 '''
@@ -153,7 +135,9 @@ conv_4 = Conv2D(filters,
                 kernel_size=(3, 3),
                 padding='same', activation='relu',
                 strides=1)(conv_3)
+conv4_out_shape = tuple(conv_4.get_shape().as_list())
 flat = Flatten()(conv_4)
+
 hidden = Dense(128, activation='relu')(flat)
 
 z_mean = Dense(16)(hidden)
@@ -173,16 +157,18 @@ def sampling(args):
 
 # sample from normal with z_mean and z_log_var
 z = Lambda(sampling, name='latent_space')([z_mean, z_log_var])
-
+encoder_out_shape = tuple(z.get_shape().as_list())
 
 '''
 Decoder
 '''
 # we instantiate these layers separately so as to reuse them later
 decoder_hid = Dense(128, activation='relu')
-decoder_upsample = Dense(filters * 14 * 14, activation='relu')
-output_shape = (batch_size, filters, 14, 14)
+print(conv4_out_shape)
+decoder_upsample = Dense(np.prod(conv4_out_shape[1:]), activation='relu')
+output_shape = (batch_size, filters, conv4_out_shape[2], conv4_out_shape[3])
 
+print(output_shape[1:])
 decoder_reshape = Reshape(output_shape[1:])
 decoder_deconv_1 = Conv2DTranspose(filters,
                                    kernel_size=(3, 3),
@@ -193,8 +179,6 @@ decoder_deconv_2 = Conv2DTranspose(filters, (3, 3),
                                    padding='same',
                                    strides=1,
                                    activation='relu')
-
-output_shape = (batch_size, filters, 29, 29)
 
 decoder_deconv_3_upsamp = Conv2DTranspose(filters,
                                           kernel_size=(3, 3),
@@ -215,6 +199,25 @@ x_decoded_relu = decoder_deconv_3_upsamp(deconv_2_decoded)
 x_decoded_mean = decoder_mean_squash(x_decoded_relu)
 
 
+'''
+Define filename
+'''
+# define name of run
+name = 'cvae_chollet'
+
+# builder hyperparameter dictionary
+hp_dictionary = {
+    'batch_size': batch_size,
+    'epochs': epochs,
+    'beta': beta,
+    'loss': loss_function,
+    'optimizer': optimizer,
+    'latent_size': np.prod(encoder_out_shape[1:])
+}
+
+# define log directory
+log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
+
 
 '''
 Train model
@@ -223,7 +226,7 @@ Train model
 encoder = Model(input_encoder, z)
 
 # decoder
-decoder_input = Input(shape=(16,))
+decoder_input = Input(shape=encoder_out_shape[1:],)
 _hid_decoded = decoder_hid(decoder_input)
 _up_decoded = decoder_upsample(_hid_decoded)
 _reshape_decoded = decoder_reshape(_up_decoded)
