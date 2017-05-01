@@ -1,10 +1,12 @@
 import keras
 from keras.layers import Input, Dense, Lambda, Conv2D, MaxPooling2D, Conv2DTranspose, UpSampling2D
+from keras.preprocessing.image import ImageDataGenerator
 from keras import initializers
 from keras.models import Model
 from keras import backend as K
 import numpy as np
 import utils
+import os
 
 
 
@@ -37,7 +39,7 @@ def vae_loss(y_true, y_pred):
     # Take the sum of the binary cross entropy for each image in the batch.
     # Reconstruction loss is of the shape (batch_size, 1).
     reconstruction_loss = K.sum(K.binary_crossentropy(y_pred, y_true), axis=-1)
-    # reconstruction_loss = K.mean(np.prod(input_shape) * K.binary_crossentropy(y_pred, y_true), axis=-1)
+    # reconstruction_loss = np.prod(input_shape) * K.mean(K.binary_crossentropy(y_pred, y_true), axis=-1)
 
     # Get latent shape
     latent_shape = z.get_shape().as_list()[1:]
@@ -48,16 +50,17 @@ def vae_loss(y_true, y_pred):
     # for each image in the batch. KL loss is of the shape (batch_size, 1).
     kl_loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_flat) - K.exp(z_log_var_flat), axis=-1)
 
-    # return the mean weighted sum of reconstruction loss and KL divergence across the
-    return reconstruction_loss + beta * kl_loss
+    # Return the mean weighted sum of reconstruction loss and KL divergence.
+    # The output loss is therefore scalar after taking the mean of vector of shape (batch_size,).
+    return K.mean(reconstruction_loss + beta * kl_loss)
 
 
 '''
 Initialisation
 '''
 # constants
-batch_size = 128
-epochs = 50
+batch_size = 32
+epochs = 1
 filters = 8
 latent_filters = 4
 kernal_size = (3, 3)
@@ -73,32 +76,19 @@ bias_initializer = initializers.TruncatedNormal(mean=1.0, stddev=0.5, seed=weigh
 
 
 '''
-Define filename
-'''
-# define name of run
-name = 'cvae'
-
-# builder hyperparameter dictionary
-hp_dictionary = {
-	'batch_size': batch_size,
-	'epochs': epochs,
-	'beta': beta,
-	'loss': loss_function,
-	'optimizer': optimizer
-}
-
-# define log directory
-log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
-
-
-'''
 Load data
 '''
 # import dataset
-from keras.datasets import mnist
-(X_train, _), (X_test, _) = mnist.load_data()
-X_train = X_train[::20]
-X_test = X_test[::20]
+custom_data = True
+if custom_data:
+	(X_train, _), (X_test, _) = utils.load_data(down_scale_factor=0.4)
+else:
+	from keras.datasets import mnist
+	(X_train, _), (X_test, _) = mnist.load_data()
+
+# # downsample data
+# X_train = X_train[::20]
+# X_test = X_test[::20]
 
 # reshape into (num_samples, num_channels, width, height)
 X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
@@ -118,6 +108,12 @@ X_test /= 255.0
 # print data information
 print('X_train shape:', X_train.shape)
 print('X_test shape:', X_test.shape)
+
+# initialise data generator
+train_generator = ImageDataGenerator()
+train_generator.fit(X_train)
+test_generator = ImageDataGenerator()
+test_generator.fit(X_test)
 
 
 '''
@@ -157,7 +153,7 @@ decoded_img = conv2DT_2
 
 
 '''
-Train model
+Initialise models
 '''
 # define and save models
 encoder = Model(input_encoder, z)
@@ -172,19 +168,53 @@ cvae.summary()
 # compile and train
 cvae.compile(loss=vae_loss, optimizer=optimizer)
 
+
+'''
+Define filename
+'''
+# define name of run
+name = 'cvae'
+
+# builder hyperparameter dictionary
+hp_dictionary = {
+    'batch_size': batch_size,
+    'epochs': epochs,
+    'beta': beta,
+    'loss': loss_function,
+    'optimizer': optimizer,
+    'latent_size': np.prod(encoder_out_shape[1:])
+}
+
+# define log directory
+log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
+
+
+'''
+Train model
+'''
 # define callbacks
 tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
 checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:03d}-{val_loss:.4f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
 callbacks = [tensorboard, checkpointer]
 
-# fit model and record in TensorBoard
-cvae.fit(X_train, X_train, validation_data=(X_test, X_test), batch_size=batch_size, epochs=epochs, shuffle=True, verbose=1, callbacks=callbacks)
+print("\nSteps per epoch =", int(len(X_train)/batch_size), sep=' ')
+print("Validation steps =", int(len(X_test)/batch_size), '\n', sep=' ')
+
+# fit model using generators and record in TensorBoard
+cvae.fit_generator(train_generator.flow(X_train, X_train, batch_size=batch_size),
+				   validation_data=test_generator.flow(X_test, X_test, batch_size=batch_size),
+				   validation_steps=len(X_test)/batch_size,
+				   steps_per_epoch=len(X_train)/batch_size,
+				   epochs=epochs)
 
 
 '''
 Save model architectures and weights of encoder/decoder
 '''
-# model architectures
+# make log directory
+os.makedirs(log_dir)
+
+# write model architectures to log directory
 model_json = cvae.to_json()
 with open(log_dir + 'model.json', 'w') as json_file:
 	json_file.write(model_json)
@@ -197,6 +227,6 @@ decoder_json = decoder.to_json()
 with open(log_dir + 'decoder.json', 'w') as json_file:
 	json_file.write(decoder_json)
 
-# weights of encoder and decoder
+# write weights of encoder and decoder to log directory
 encoder.save_weights(log_dir + "encoder_weights.hdf5")
 decoder.save_weights(log_dir + "decoder_weights.hdf5")
