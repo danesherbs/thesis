@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # python_example.py
-# Author: Ben Goodrich
 #
 # This is a direct port to python of the shared library example from
 # ALE provided in doc/examples/sharedLibraryInterfaceExample.cpp
 import sys
-from random import randrange
+import random
 from ale_python_interface import ALEInterface
+import numpy as np
 
 if len(sys.argv) < 2:
   print('Usage: %s rom_file' % sys.argv[0])
@@ -15,7 +15,25 @@ if len(sys.argv) < 2:
 ale = ALEInterface()
 
 # Get & Set the desired settings
-ale.setInt(b'random_seed', 123)
+ale.setInt(b'random_seed', random.randint(0, 999))
+
+# Show screen and turn on sound
+ale.setBool("display_screen", False)
+ale.setBool("sound", False)
+
+# Record screen path
+record_path = 'record'
+
+# Make recording directory
+import os
+if not os.path.exists(record_path):
+    os.makedirs(record_path)
+
+# Set directories
+ale.setString("record_screen_dir", record_path)
+ale.setString("record_sound_filename", record_path + "/sound.wav")
+# Set fragsize to ensure proper sync
+ale.setInt("fragsize", 64)
 
 # Set USE_SDL to true to display the screen. ALE must be compilied
 # with SDL enabled for this to work. On OSX, pygame init is used to
@@ -37,25 +55,20 @@ ale.loadROM(rom_file)
 # Get the list of legal actions
 legal_actions = ale.getLegalActionSet()
 
-# make recording directory
-import os
-if not os.path.exists('record'):
-    os.makedirs('record')
+# Probability p of changing action
+p = 0.15
 
-# initialise screenshot number
-iter = 0
-import matplotlib.pyplot as plt
+# Choose initial action
+a = random.choice(range(len(legal_actions)))
 
 # Play 10 episodes
-for episode in range(10):
-  total_reward = 0
+for episode in range(5):
+  total_reward = ale.act(a)
   while not ale.game_over():
-    screenshot = ale.getScreenRGB()
-    plt.imsave('record/' + str(iter), screenshot)
-    a = legal_actions[randrange(len(legal_actions))]
+    if np.random.binomial(1, p):  # change action with probability p
+        a = random.choice(range(len(legal_actions)))
     # Apply an action and get the resulting reward
     reward = ale.act(a);
     total_reward += reward
-    iter += 1
   print('Episode %d ended with score: %d' % (episode, total_reward))
   ale.reset_game()
