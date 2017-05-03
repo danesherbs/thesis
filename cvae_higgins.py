@@ -45,7 +45,7 @@ def vae_loss(y_true, y_pred):
 Initialisation
 '''
 # constants
-batch_size = 16
+batch_size = 1
 epochs = 20
 filters = 32
 kernal_size = (6, 6)
@@ -59,6 +59,8 @@ optimizer = 'adagrad'
 weight_seed = None
 kernel_initializer = initializers.TruncatedNormal(mean=0.0, stddev=0.5, seed=weight_seed)
 bias_initializer = initializers.TruncatedNormal(mean=1.0, stddev=0.5, seed=weight_seed)
+kernel_initializer_latent = initializers.TruncatedNormal(mean=0.0, stddev=0.5, seed=weight_seed)
+bias_initializer_latent = initializers.TruncatedNormal(mean=0.0, stddev=0.5, seed=weight_seed)
 
 
 '''
@@ -107,18 +109,18 @@ Encoder
 '''
 # define input with 'channels_first'
 input_encoder = Input(shape=input_shape, name='encoder_input')
-x = Conv2D(filters, kernal_size, strides=(2, 2), activation='tanh', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
+x = Conv2D(filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
 # x = ZeroPadding2D(padding=(1, 1), data_format='channels_first')(x)
-x = Conv2D(2*filters, kernal_size, strides=(2, 2), activation='tanh', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
+x = Conv2D(2*filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
 # x = ZeroPadding2D(padding=(1, 1), data_format='channels_first')(x)
-x = Conv2D(2*filters, kernal_size, strides=(2, 2), activation='tanh', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_3')(x)
+x = Conv2D(2*filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_3')(x)
 before_flatten_shape = tuple(x.get_shape().as_list())
 x = Flatten()(x)
 x = Dense(pre_latent_size, activation='tanh', name='encoder_dense_1')(x)
 
 # separate dense layers for mu and log(sigma), both of size latent_dim
-z_mean = Dense(latent_size, activation=None, name='encoder_z_mean')(x)
-z_log_var = Dense(latent_size, activation=None, name='encoder_z_log_var')(x)
+z_mean = Dense(latent_size, activation=None, kernel_initializer=kernel_initializer_latent, bias_initializer=bias_initializer_latent, name='encoder_z_mean')(x)
+z_log_var = Dense(latent_size, activation=None, kernel_initializer=kernel_initializer_latent, bias_initializer=bias_initializer_latent, name='encoder_z_log_var')(x)
 
 def sampling(args):
     # unpack arguments
@@ -143,11 +145,11 @@ Decoder
 encoder_out_shape = tuple(z.get_shape().as_list())
 # define rest of model
 input_decoder = Input(shape=encoder_out_shape[1:], name='decoder_input')
-x = Dense(pre_latent_size, activation='tanh')(input_decoder)
-x = Dense(np.prod(before_flatten_shape[1:]), activation='tanh')(x)
+x = Dense(pre_latent_size, activation='relu')(input_decoder)
+x = Dense(np.prod(before_flatten_shape[1:]), activation='relu')(x)
 x = Reshape(before_flatten_shape[1:])(x)
-x = Conv2DTranspose(2*filters, kernal_size, strides=(2, 2), padding='valid', activation='tanh', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_1')(x)
-x = Conv2DTranspose(filters, kernal_size, strides=(2, 2), activation='tanh', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_2')(x)
+x = Conv2DTranspose(2*filters, kernal_size, strides=(2, 2), padding='valid', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_1')(x)
+x = Conv2DTranspose(filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_2')(x)
 decoded_img = Conv2DTranspose(1, kernal_size, strides=(2, 2), activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
 
 
@@ -172,7 +174,7 @@ cvae.compile(loss=vae_loss, optimizer=optimizer)
 Define filename
 '''
 # define name of run
-name = 'cvae'
+name = 'cvae_higgins'
 
 # builder hyperparameter dictionary
 hp_dictionary = {
