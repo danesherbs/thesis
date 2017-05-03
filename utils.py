@@ -52,8 +52,8 @@ def load_data():
     from sklearn.model_selection import train_test_split
     import os
     X = []
-    print('Loading training data...')
-    for filename in os.listdir(RECORD_PATH):
+    print('Loading training data...', end=' ')
+    for filename in os.listdir(RECORD_PATH)[::100]:
         if not filename.endswith('.png'):
             continue  # skip non-png files
         image = Image.open(os.path.join(RECORD_PATH, filename))
@@ -63,6 +63,7 @@ def load_data():
     X = np.asarray(X)
     y = np.asarray([-1]*len(X))  # psuedo labels
     X_train, X_test, _, _ = train_test_split(X, y, test_size=0.10, random_state=42)
+    print('done.')
     return (X_train, None), (X_test, None)
 
 def __demo_plot_data():
@@ -75,6 +76,9 @@ def __demo_plot_data():
     plt.imshow(X_train[30], cmap='inferno')
     plt.show()
 
+def get_data_directory():
+    return RECORD_PATH
+    
 
 '''
 Hyperparameter searching

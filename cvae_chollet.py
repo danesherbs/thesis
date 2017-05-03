@@ -67,17 +67,17 @@ batch_size = 32
 epochs = 1
 filters = 32
 latent_filters = 4
-kernal_size = (3, 3)
+kernel_size = (6, 6)
 pool_size = (2, 2)
 beta = 1.0
 
 loss_function = 'vae_loss'
-optimizer = 'rmsprop'
+optimizer = 'adam'
 
 # initialisers
 weight_seed = None
-kernel_initializer = initializers.TruncatedNormal(mean=0.0, stddev=0.5, seed=weight_seed)
-bias_initializer = initializers.TruncatedNormal(mean=1.0, stddev=0.5, seed=weight_seed)
+kernel_initializer = initializers.glorot_uniform(seed = weight_seed)
+bias_initializer = initializers.glorot_uniform(seed = weight_seed)
 
 
 '''
@@ -86,7 +86,7 @@ Load data
 # import dataset
 custom_data = True
 if custom_data:
-    (X_train, _), (X_test, _) = utils.load_data(down_scale_factor=0.5)
+    (X_train, _), (X_test, _) = utils.load_data()
 else:
     from keras.datasets import mnist
     (X_train, _), (X_test, _) = mnist.load_data()
@@ -107,8 +107,8 @@ X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
 
 # normalise pixel values
-X_train /= 255.0
-X_test /= 255.0
+X_train = (X_train - np.min(X_train)) / np.max(X_train)
+X_test = (X_test - np.min(X_test)) / np.max(X_test)
 
 # print data information
 print('X_train shape:', X_train.shape)
@@ -128,20 +128,20 @@ Encoder
 input_encoder = Input(shape=input_shape, name='encoder_input')
 
 conv_1 = Conv2D(1,
-                kernel_size=(2, 2),
+                kernel_size=kernel_size,
                 padding='same',
                 activation='relu')(input_encoder)
 conv_2 = Conv2D(filters,
-                kernel_size=(2, 2),
+                kernel_size=kernel_size,
                 padding='same',
                 activation='relu')(conv_1)
 conv_3 = Conv2D(filters,
-                kernel_size=(3, 3),
+                kernel_size=kernel_size,
                 padding='same',
                 activation='relu',
                 strides=1)(conv_2)
 conv_4 = Conv2D(filters,
-                kernel_size=(3, 3),
+                kernel_size=kernel_size,
                 padding='same',
                 activation='relu')(conv_3)
 conv4_out_shape = tuple(conv_4.get_shape().as_list())
@@ -180,20 +180,20 @@ output_shape = (batch_size, filters, conv4_out_shape[2], conv4_out_shape[3])
 print(output_shape[1:])
 decoder_reshape = Reshape(output_shape[1:])
 decoder_deconv_1 = Conv2DTranspose(filters,
-                                   kernel_size=(3, 3),
+                                   kernel_size=kernel_size,
                                    padding='same',
                                    activation='relu')
 decoder_deconv_2 = Conv2DTranspose(filters,
-                                   kernel_size=(3, 3),
+                                   kernel_size=kernel_size,
                                    padding='same',
                                    activation='relu')
 
 decoder_deconv_3_upsamp = Conv2DTranspose(filters,
-                                          kernel_size=(2, 2),
+                                          kernel_size=kernel_size,
                                           padding='same',
                                           activation='relu')
 decoder_mean_squash = Conv2D(1,
-                             kernel_size=(2, 2),
+                             kernel_size=kernel_size,
                              padding='same',
                              activation='sigmoid')
 
@@ -252,7 +252,7 @@ decoder.summary()
 cvae.summary()
 
 # compile and train
-cvae.compile(loss=vae_loss, optimizer=optimizer)
+cvae.compile(loss=vae_loss, optimizer=keras.optimizers.Adam(lr=1e-3))
 
 # define callbacks
 tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)

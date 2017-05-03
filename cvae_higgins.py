@@ -50,17 +50,15 @@ epochs = 20
 filters = 32
 kernal_size = (6, 6)
 pre_latent_size = 512
-latent_size = 30
+latent_size = 10
 beta = 1.0
 loss_function = 'vae_loss'
-optimizer = 'adagrad'
+optimizer = 'adam'
 
 # initialisers
 weight_seed = None
-kernel_initializer = initializers.TruncatedNormal(mean=0.0, stddev=0.5, seed=weight_seed)
-bias_initializer = initializers.TruncatedNormal(mean=1.0, stddev=0.5, seed=weight_seed)
-kernel_initializer_latent = initializers.TruncatedNormal(mean=0.0, stddev=0.5, seed=weight_seed)
-bias_initializer_latent = initializers.TruncatedNormal(mean=0.0, stddev=0.5, seed=weight_seed)
+kernel_initializer = initializers.glorot_uniform(seed = weight_seed)
+bias_initializer = initializers.glorot_uniform(seed = weight_seed)
 
 
 '''
@@ -116,11 +114,11 @@ x = Conv2D(2*filters, kernal_size, strides=(2, 2), activation='relu', kernel_ini
 x = Conv2D(2*filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_3')(x)
 before_flatten_shape = tuple(x.get_shape().as_list())
 x = Flatten()(x)
-x = Dense(pre_latent_size, activation='tanh', name='encoder_dense_1')(x)
+x = Dense(pre_latent_size, activation='relu', name='encoder_dense_1')(x)
 
 # separate dense layers for mu and log(sigma), both of size latent_dim
-z_mean = Dense(latent_size, activation=None, kernel_initializer=kernel_initializer_latent, bias_initializer=bias_initializer_latent, name='encoder_z_mean')(x)
-z_log_var = Dense(latent_size, activation=None, kernel_initializer=kernel_initializer_latent, bias_initializer=bias_initializer_latent, name='encoder_z_log_var')(x)
+z_mean = Dense(latent_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
+z_log_var = Dense(latent_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
 
 def sampling(args):
     # unpack arguments
@@ -167,7 +165,7 @@ decoder.summary()
 cvae.summary()
 
 # compile and train
-cvae.compile(loss=vae_loss, optimizer=optimizer)
+cvae.compile(loss=vae_loss, optimizer=keras.optimizers.Adam(lr=1e-3))
 
 
 '''

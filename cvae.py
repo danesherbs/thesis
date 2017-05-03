@@ -6,8 +6,6 @@ from keras.models import Model
 from keras import backend as K
 import numpy as np
 import utils
-import os
-
 
 
 '''
@@ -59,7 +57,7 @@ def vae_loss(y_true, y_pred):
 Initialisation
 '''
 # constants
-batch_size = 32
+batch_size = 1
 epochs = 1
 filters = 8
 latent_filters = 4
@@ -71,8 +69,8 @@ optimizer = 'rmsprop'
 
 # initialisers
 weight_seed = None
-kernel_initializer = initializers.TruncatedNormal(mean=0.0, stddev=0.5, seed=weight_seed)
-bias_initializer = initializers.TruncatedNormal(mean=1.0, stddev=0.5, seed=weight_seed)
+kernel_initializer = initializers.glorot_uniform(seed = weight_seed)
+bias_initializer = initializers.glorot_uniform(seed = weight_seed)
 
 
 '''
@@ -81,7 +79,7 @@ Load data
 # import dataset
 custom_data = True
 if custom_data:
-	(X_train, _), (X_test, _) = utils.load_data(down_scale_factor=0.4)
+	(X_train, _), (X_test, _) = utils.load_data()
 else:
 	from keras.datasets import mnist
 	(X_train, _), (X_test, _) = mnist.load_data()
@@ -102,8 +100,8 @@ X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
 
 # normalise pixel values
-X_train /= 255.0
-X_test /= 255.0
+X_train = (X_train - np.min(X_train)) / np.max(X_train)
+X_test = (X_test - np.min(X_test)) / np.max(X_test)
 
 # print data information
 print('X_train shape:', X_train.shape)
@@ -205,15 +203,13 @@ cvae.fit_generator(train_generator.flow(X_train, X_train, batch_size=batch_size)
 				   validation_data=test_generator.flow(X_test, X_test, batch_size=batch_size),
 				   validation_steps=len(X_test)/batch_size,
 				   steps_per_epoch=len(X_train)/batch_size,
-				   epochs=epochs)
+				   epochs=epochs,
+				   callbacks=callbacks)
 
 
 '''
 Save model architectures and weights of encoder/decoder
 '''
-# make log directory
-os.makedirs(log_dir)
-
 # write model architectures to log directory
 model_json = cvae.to_json()
 with open(log_dir + 'model.json', 'w') as json_file:

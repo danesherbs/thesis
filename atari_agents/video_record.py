@@ -7,10 +7,11 @@
 import sys
 from random import randrange
 from ale_python_interface import ALEInterface
+import numpy as np
 
 if len(sys.argv) < 2:
-  print('Usage: %s rom_file' % sys.argv[0])
-  sys.exit()
+    print('Usage: %s rom_file' % sys.argv[0])
+    sys.exit()
 
 ale = ALEInterface()
 
@@ -22,13 +23,13 @@ ale.setInt(b'random_seed', 123)
 # proxy-call SDL_main.
 USE_SDL = False
 if USE_SDL:
-  if sys.platform == 'darwin':
-    import pygame
-    pygame.init()
-    ale.setBool('sound', False) # Sound doesn't work on OSX
-  elif sys.platform.startswith('linux'):
-    ale.setBool('sound', True)
-  ale.setBool('display_screen', True)
+    if sys.platform == 'darwin':
+        import pygame
+        pygame.init()
+        ale.setBool('sound', False) # Sound doesn't work on OSX
+    elif sys.platform.startswith('linux'):
+        ale.setBool('sound', True)
+    ale.setBool('display_screen', True)
 
 # Load the ROM file
 rom_file = str.encode(sys.argv[1])
@@ -37,25 +38,35 @@ ale.loadROM(rom_file)
 # Get the list of legal actions
 legal_actions = ale.getLegalActionSet()
 
-# make recording directory
+# make recording directories
 import os
 if not os.path.exists('record'):
     os.makedirs('record')
+
+# if not os.path.exists('record/train/'):
+#     os.makedirs('record/train/')
+
+# if not os.path.exists('record/test/'):
+#     os.makedirs('record/test/')
 
 # initialise screenshot number
 iter = 0
 import matplotlib.pyplot as plt
 
-# Play 10 episodes
-for episode in range(10):
-  total_reward = 0
-  while not ale.game_over():
-    screenshot = ale.getScreenRGB()
-    plt.imsave('record/' + str(iter), screenshot)
-    a = legal_actions[randrange(len(legal_actions))]
-    # Apply an action and get the resulting reward
-    reward = ale.act(a);
-    total_reward += reward
-    iter += 1
-  print('Episode %d ended with score: %d' % (episode, total_reward))
-  ale.reset_game()
+# play game
+for episode in range(1):
+    total_reward = 0
+    while not ale.game_over():
+        screenshot = ale.getScreenRGB()
+        # if np.mod(iter, 10) == 0:
+        #     plt.imsave('./record/test/' + str(iter), screenshot)
+        # else:
+        #     plt.imsave('./record/train/' + str(iter), screenshot)
+        plt.imsave('./record/' + str(iter), screenshot)
+        a = legal_actions[randrange(len(legal_actions))]
+        # Apply an action and get the resulting reward
+        reward = ale.act(a);
+        total_reward += reward
+        iter += 1
+    print('Episode %d ended with score: %d' % (episode, total_reward))
+    ale.reset_game()
