@@ -13,7 +13,6 @@ class VAE():
     """
     def __init__(self, input_shape=(1, 84, 84), latent_dim=32, hidden_dim=256, filters=32):
         """
-        Setting up everything.
         Parameters
         ----------
         input_shape : Array of shape (num_rows, num_cols, num_channels)
@@ -55,6 +54,14 @@ class VAE():
                         nb_epoch=self.num_epochs,
                         batch_size=self.batch_size,
                         validation_split=val_split)
+
+    def fit_generator(self, train_generator, test_generator, steps_per_epoch, validation_steps, epochs=10):
+        self.model.fit_generator(train_generator.flow(X_train, X_train, batch_size=batch_size),
+                   validation_data=test_generator.flow(X_test, X_test, batch_size=batch_size),
+                   validation_steps=len(X_test)/batch_size,
+                   steps_per_epoch=len(X_train)/batch_size,
+                   epochs=epochs,
+                   callbacks=callbacks)
 
     def __set_model(self):
         """
@@ -134,30 +141,11 @@ class VAE():
         return z_mean + K.exp(z_log_var) * epsilon
 
     def __vae_loss(y_true, y_pred):
-        # y_true is of shape (batch_size,) + input_shape
-        # y_pred is of shape (batch_size,) + output_shape
-        # For example, training an autoencoder on MNIST with batch_size = 64 gives
-        # y_true and y_pred both a shape of of shape (64, 1, 28, 28).
-
-        # Flatten y_true and y_pred of shape (batch_size, 1, 28, 28) to (batch_size, 1 * 28 * 28).
-        # Elements are in the interval [0, 1], which can be interpreted as probabilities.
         y_true = K.reshape(y_true, (-1, np.prod(input_shape)))
         y_pred = K.reshape(y_pred, (-1, np.prod(input_shape)))
-
-        # Take the sum of the binary cross entropy for each image in the batch.
-        # Reconstruction loss is of the shape (batch_size, 1).
         reconstruction_loss = K.sum(K.binary_crossentropy(y_pred, y_true), axis=-1)
-        # reconstruction_loss = np.prod(input_shape) * K.mean(K.binary_crossentropy(y_pred, y_true), axis=-1)
-
-        # Get latent shape
         latent_shape = self.z.get_shape().as_list()[1:]
-        # Flatten latent space into shape (batch_size,) + flattened_latent_space
         z_mean_flat = K.reshape(self.z_mean, (-1, np.prod(latent_shape)))
         z_log_var_flat = K.reshape(self.z_log_var, (-1, np.prod(latent_shape)))
-        # Take the KL divergence between q(z|x) and the standard multivariate Gaussian
-        # for each image in the batch. KL loss is of the shape (batch_size, 1).
         kl_loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_flat) - K.exp(z_log_var_flat), axis=-1)
-
-        # Return the mean weighted sum of reconstruction loss and KL divergence.
-        # The output loss is therefore scalar after taking the mean of vector of shape (batch_size,).
         return K.mean(reconstruction_loss + beta * kl_loss)
