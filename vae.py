@@ -1,6 +1,6 @@
 import numpy as np
-from keras.layers import Input, Dense, Lambda, Flatten, Reshape, merge
-from keras.layers import Convolution2D, Deconvolution2D
+from keras.layers import Input, Conv2D, Flatten, Dense, Lambda, Reshape, Conv2DTranspose
+from keras import initializers
 from keras.models import Model
 from keras.optimizers import Adam
 from keras import backend as K
@@ -33,7 +33,7 @@ class VAE():
         self.latent_dim = latent_dim
         self.filters = filters
 
-    def fit(self, x_train, num_epochs=1, batch_size=100, val_split=.1,
+    def fit(self, x_train, num_epochs=1, batch_size=1, val_split=.1,
             learning_rate=1e-3, reset_model=True):
         """
         Training model
@@ -69,10 +69,17 @@ class VAE():
         """
         print("Setting up model...", end=' ')
 
+        kernal_size = (6, 6)
+
+        # initialisers
+        weight_seed = None
+        kernel_initializer = initializers.glorot_uniform(seed = weight_seed)
+        bias_initializer = initializers.glorot_uniform(seed = weight_seed)
+
         # Encoder layers
-        encoder_conv2D_1 = Conv2D(filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')
-        encoder_conv2D_2 = Conv2D(2*filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')
-        encoder_conv2D_3 = Conv2D(2*filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_3')
+        encoder_conv2D_1 = Conv2D(self.filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')
+        encoder_conv2D_2 = Conv2D(2*self.filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')
+        encoder_conv2D_3 = Conv2D(2*self.filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_3')
         encoder_flatten_1 = Flatten()
         encoder_dense_1 = Dense(self.hidden_dim, activation='relu', name='encoder_dense_1')
         encoder_z_mean = Dense(self.latent_dim, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='z_mean')
@@ -80,12 +87,12 @@ class VAE():
         encoder_z = Lambda(self.__sampling, name='z')
 
         # Connect encoder layers
-        input_encoder = Input(shape=(self.batch_size,) + self.input_shape, name='encoder_input')
+        input_encoder = Input(shape=self.input_shape, name='encoder_input')
         x = encoder_conv2D_1(input_encoder)
         x = encoder_conv2D_2(x)
         x = encoder_conv2D_3(x)
-        x = encoder_flatten_1(x)
-        x = encoder_dense_1(x)
+        x_flattened = encoder_flatten_1(x)
+        x = encoder_dense_1(x_flattened)
         z_mean = encoder_z_mean(x)
         z_log_var = encoder_z_log_var(x)
         z = encoder_z([z_mean, z_log_var])
@@ -93,13 +100,18 @@ class VAE():
         # Define encoder model
         self.encoder = Model(input_encoder, z)
 
+        # Define useful shapes for decoder (for symmetry)
+        before_flatten_shape = tuple(x_flattened.get_shape().as_list())
+        print('before_flatten_shape')
+        print(before_flatten_shape)
+
         # Decoder layers
-        decoder_dense_1 = Dense(pre_latent_size, activation='relu', name="decoder_dense_1")
-        decoder_dense_2 = Dense(self.hidden_dim, activation='relu', name="decoder_dense_2")
-        decoder_reshape_1 = Reshape(before_flatten_shape[1:], name="decoder_reshape_1")
-        decoder_conv2DT_1 = Conv2DTranspose(2*filters, kernal_size, strides=(2, 2), padding='valid', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')
-        decoder_conv2DT_2 = Conv2DTranspose(filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_2')
-        decoder_conv2DT_3 = Conv2DTranspose(1, kernal_size, strides=(2, 2), activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_3')(x)
+        decoder_dense_1 = Dense(self.hidden_dim, activation='relu', name="decoder_dense_1")
+        decoder_dense_2 = Dense(np.prod((64, 7, 7)), activation='relu', name="decoder_dense_2")
+        decoder_reshape_1 = Reshape((64, 7, 7), name="decoder_reshape_1")
+        decoder_conv2DT_1 = Conv2DTranspose(2*self.filters, kernal_size, strides=(2, 2), padding='valid', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')
+        decoder_conv2DT_2 = Conv2DTranspose(self.filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_2')
+        decoder_conv2DT_3 = Conv2DTranspose(1, kernal_size, strides=(2, 2), activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_3')
 
         # Connect decoder layers
         input_decoder = Input(shape=(self.latent_dim,), name='decoder_input')
@@ -126,9 +138,15 @@ class VAE():
         self.model.compile(optimizer=self.optimizer, loss=self.__vae_loss)
 
         print("done.")
+
+        # print model summary
+        self.encoder.summary()
+        self.decoder.summary()
+        self.model.summary()
+
         return None
 
-    def __sampling(args):
+    def __sampling(self, args):
         # unpack arguments
         z_mean, z_log_var = args
         # need mean and std for each point
@@ -140,9 +158,10 @@ class VAE():
         # reparameterization trick
         return z_mean + K.exp(z_log_var) * epsilon
 
-    def __vae_loss(y_true, y_pred):
-        y_true = K.reshape(y_true, (-1, np.prod(input_shape)))
-        y_pred = K.reshape(y_pred, (-1, np.prod(input_shape)))
+    def __vae_loss(self, y_true, y_pred):
+        beta = 1.0
+        y_true = K.reshape(y_true, (-1, np.prod(self.input_shape)))
+        y_pred = K.reshape(y_pred, (-1, np.prod(self.input_shape)))
         reconstruction_loss = K.sum(K.binary_crossentropy(y_pred, y_true), axis=-1)
         latent_shape = self.z.get_shape().as_list()[1:]
         z_mean_flat = K.reshape(self.z_mean, (-1, np.prod(latent_shape)))
