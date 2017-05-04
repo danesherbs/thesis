@@ -1,13 +1,14 @@
-#!/usr/bin/env python
-# python_example.py
-# Author: Ben Goodrich
-#
-# This is a direct port to python of the shared library example from
-# ALE provided in doc/examples/sharedLibraryInterfaceExample.cpp
+'''
+Script originally written by Ben Goodrich from ALE as a direct
+port of example provided in doc/examples/sharedLibraryInterfaceExample.cpp
+'''
+
 import sys
 from random import randrange
 from ale_python_interface import ALEInterface
+import matplotlib.pyplot as plt
 import numpy as np
+
 
 if len(sys.argv) < 2:
     print('Usage: %s rom_file' % sys.argv[0])
@@ -43,30 +44,22 @@ import os
 if not os.path.exists('record'):
     os.makedirs('record')
 
-# if not os.path.exists('record/train/'):
-#     os.makedirs('record/train/')
-
-# if not os.path.exists('record/test/'):
-#     os.makedirs('record/test/')
-
-# initialise screenshot number
+# initialise iteration counter
 iter = 0
-import matplotlib.pyplot as plt
 
 # play game
-for episode in range(1):
+for episode in range(10):
     total_reward = 0
     while not ale.game_over():
+        # capture screenshot
         screenshot = ale.getScreenRGB()
-        # if np.mod(iter, 10) == 0:
-        #     plt.imsave('./record/test/' + str(iter), screenshot)
-        # else:
-        #     plt.imsave('./record/train/' + str(iter), screenshot)
+        # every 1/10 gets put in test set
         plt.imsave('./record/' + str(iter), screenshot)
         a = legal_actions[randrange(len(legal_actions))]
-        # Apply an action and get the resulting reward
+        # apply an action and get the resulting reward
         reward = ale.act(a);
         total_reward += reward
+        # increment iteration counter
         iter += 1
     print('Episode %d ended with score: %d' % (episode, total_reward))
     ale.reset_game()

@@ -47,6 +47,11 @@ def __example_array_to_image():
 def load_data():
     '''
     Makes (X_train, X_test, y_train, y_test) from images in RECORD_PATH
+    
+    Implements pre-processing function phi as described in "Human-level control through deep reinforcement learning"
+    https://www.nature.com/nature/journal/v518/n7540/full/nature14236.html
+
+    Takes images in dataset (all of shape (3, 210, 160)) and returns Y channel resized to (1, 84, 84).
     '''
     from scipy.misc import imresize
     from sklearn.model_selection import train_test_split
