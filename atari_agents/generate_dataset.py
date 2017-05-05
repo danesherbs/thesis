@@ -67,7 +67,7 @@ def make_dataset(num_games, pre_processing=True, split_into_train_test=True):
                 if pre_processing:
                     screenshot = __pre_process(screenshot)
                 # save screenshot in appropriate directory
-                __save_screenshot(screenshot, split_into_train_test, iter)
+                __save_screenshot(screenshot, split_into_train_test, iter/2)
             # select random action
             a = legal_actions[randrange(len(legal_actions))]
             # apply an action and get the resulting reward
@@ -107,5 +107,5 @@ def __save_screenshot(screenshot, split_into_train_test, iter):
 if __name__ == '__main__':
     num_games = 1
     pre_processing = True
-    split_into_train_test = False
+    split_into_train_test = True
     make_dataset(1, pre_processing=pre_processing, split_into_train_test=split_into_train_test)
