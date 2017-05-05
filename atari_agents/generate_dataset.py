@@ -11,6 +11,9 @@ import numpy as np
 from PIL import Image
 
 
+'''
+Recording functions
+'''
 def make_dataset(num_games, pre_processing=True, split_into_train_test=True):
     if len(sys.argv) < 2:
         print('Usage: %s rom_file' % sys.argv[0])
@@ -104,8 +107,9 @@ def __save_screenshot(screenshot, split_into_train_test, iter):
         plt.imsave('./record/' + str(iter), screenshot, cmap='gray')
     return None
 
+
+'''
+Main function
+'''
 if __name__ == '__main__':
-    num_games = 1
-    pre_processing = True
-    split_into_train_test = True
-    make_dataset(1, pre_processing=pre_processing, split_into_train_test=split_into_train_test)
+    make_dataset(30, pre_processing=True, split_into_train_test=True)

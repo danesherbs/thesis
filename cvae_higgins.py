@@ -68,10 +68,10 @@ Load data
 # import dataset
 custom_data = True
 if custom_data:
-	(X_train, _), (X_test, _) = utils.load_data()
+    (X_train, _), (X_test, _) = utils.load_data()
 else:
-	from keras.datasets import mnist
-	(X_train, _), (X_test, _) = mnist.load_data()
+    from keras.datasets import mnist
+    (X_train, _), (X_test, _) = mnist.load_data()
 
 # # downsample data
 # X_train = X_train[::20]
@@ -190,6 +190,28 @@ log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary
 
 
 '''
+Save model architectures and weights of encoder/decoder
+'''
+# make recording directories
+import os
+if not os.path.exists(log_dir):
+    os.makedirs(log_dir)
+
+# write model architectures to log directory
+model_json = cvae.to_json()
+with open(log_dir + 'model.json', 'w') as json_file:
+    json_file.write(model_json)
+
+encoder_json = encoder.to_json()
+with open(log_dir + 'encoder.json', 'w') as json_file:
+    json_file.write(encoder_json)
+
+decoder_json = decoder.to_json()
+with open(log_dir + 'decoder.json', 'w') as json_file:
+    json_file.write(decoder_json)
+
+
+'''
 Train model
 '''
 # define callbacks
@@ -202,28 +224,12 @@ print("Validation steps =", int(len(X_test)/batch_size), '\n', sep=' ')
 
 # fit model using generators and record in TensorBoard
 cvae.fit_generator(train_generator.flow(X_train, X_train, batch_size=batch_size),
-				   validation_data=test_generator.flow(X_test, X_test, batch_size=batch_size),
-				   validation_steps=len(X_test)/batch_size,
-				   steps_per_epoch=len(X_train)/batch_size,
-				   epochs=epochs,
-				   callbacks=callbacks)
+                   validation_data=test_generator.flow(X_test, X_test, batch_size=batch_size),
+                   validation_steps=len(X_test)/batch_size,
+                   steps_per_epoch=len(X_train)/batch_size,
+                   epochs=epochs,
+                   callbacks=callbacks)
 
-
-'''
-Save model architectures and weights of encoder/decoder
-'''
-# write model architectures to log directory
-model_json = cvae.to_json()
-with open(log_dir + 'model.json', 'w') as json_file:
-	json_file.write(model_json)
-
-encoder_json = encoder.to_json()
-with open(log_dir + 'encoder.json', 'w') as json_file:
-	json_file.write(encoder_json)
-
-decoder_json = decoder.to_json()
-with open(log_dir + 'decoder.json', 'w') as json_file:
-	json_file.write(decoder_json)
 
 # write weights of encoder and decoder to log directory
 encoder.save_weights(log_dir + "encoder_weights.hdf5")
