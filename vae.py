@@ -140,13 +140,14 @@ class VAE():
         print("done.")
 
         # print model summary
-        self.encoder.summary()
-        self.decoder.summary()
-        self.model.summary()
+        self.print_model_summaries()
 
         return None
 
     def __sampling(self, args):
+        '''
+        Sampling function used in encoder
+        '''
         # unpack arguments
         z_mean, z_log_var = args
         # need mean and std for each point
@@ -159,6 +160,9 @@ class VAE():
         return z_mean + K.exp(z_log_var) * epsilon
 
     def __vae_loss(self, y_true, y_pred):
+        '''
+        Variational autoencoder loss function
+        '''
         beta = 1.0
         y_true = K.reshape(y_true, (-1, np.prod(self.input_shape)))
         y_pred = K.reshape(y_pred, (-1, np.prod(self.input_shape)))
@@ -168,3 +172,18 @@ class VAE():
         z_log_var_flat = K.reshape(self.z_log_var, (-1, np.prod(latent_shape)))
         kl_loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_flat) - K.exp(z_log_var_flat), axis=-1)
         return K.mean(reconstruction_loss + beta * kl_loss)
+
+    def print_model_summaries(self):
+        '''
+        Prints model summaries of encoder, decoder and entire model
+        '''
+        self.__print_model_summary(self.encoder)
+        self.__print_model_summary(self.decoder)
+        self.__print_model_summary(self.model)
+
+    def __print_model_summary(self, model):
+        '''
+        Helper for print_model_summaries
+        '''
+        if model is not None:
+            model.summary()
