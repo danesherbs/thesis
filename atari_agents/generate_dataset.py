@@ -95,13 +95,13 @@ def __save_screenshot(screenshot, split_into_train_test, iter):
     if split_into_train_test:
         # every 1/10 gets put in test set
         if np.mod(iter, 10) == 0:
-            plt.imsave('./record/test/' + str(iter), screenshot)
+            plt.imsave('./record/test/' + str(iter), screenshot, cmap='gray')
         # rest go into train set
         else:
-            plt.imsave('./record/train/' + str(iter), screenshot)
+            plt.imsave('./record/train/' + str(iter), screenshot, cmap='gray')
     else:
         # everything goes in record directory
-        plt.imsave('./record/' + str(iter), screenshot)
+        plt.imsave('./record/' + str(iter), screenshot, cmap='gray')
     return None
 
 if __name__ == '__main__':
