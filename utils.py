@@ -3,6 +3,7 @@ Utilities package for autoencoders
 '''
 from PIL import Image
 import numpy as np
+import os
 
 
 '''
@@ -76,9 +77,34 @@ def __demo_plot_data():
     plt.imshow(X_train[30], cmap='inferno')
     plt.show()
 
-def get_data_directory():
-    return RECORD_PATH
-    
+def data_generator(directory, batch_size=64):
+    image_names = os.listdir(directory)
+    dataset_size = len(image_names)
+    counter = 0
+    # yield data forever
+    while True:
+        # extract next batch of images
+        counter = np.mod(counter, dataset_size)
+        counter_max = min(counter + batch_size, dataset_size)
+        batch_image_names = image_names[counter : counter_max]
+        X = []
+        for batch_image_name in batch_image_names:
+            batch_image = Image.open(os.path.join(directory, batch_image_name))
+            batch_array = np.asarray(batch_image)
+            X.append(batch_array)
+        # reshape and normalise data
+        X = np.asarray(X)
+        X = X.reshape(X.shape[0], 1, X.shape[1], X.shape[2])
+        X = X.astype('float32')
+        X = (X - np.min(X)) / np.max(X)
+        # yield next batch
+        yield (X, X)
+        # increment counter for next call
+        counter += batch_size
+
+def count_images(directory):
+    return len(os.listdir(directory))
+
 
 '''
 Hyperparameter searching
@@ -101,9 +127,13 @@ MAIN
 '''
 if __name__ == '__main__':
 
-    __demo_plot_data()
+    # __demo_plot_data()
 
     # image_path = './atari_agents/record/100.png'
     # image_array = image_to_array(image_path, rgb=False)
     # print(np.min(image_array))
     # print(np.max(image_array))
+
+    directory = './atari_agents/record/test/'
+    data_generator(directory, batch_size=5)
+
