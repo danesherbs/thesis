@@ -1,4 +1,5 @@
 import keras
+import tensorflow as tf
 from keras.layers import Input, Conv2D, ZeroPadding2D, Flatten, Dense, Lambda, Reshape, Conv2DTranspose
 from keras.preprocessing.image import ImageDataGenerator
 from keras import initializers
@@ -7,6 +8,7 @@ from keras import backend as K
 import numpy as np
 import utils
 import tensorflow as tf
+
 
 
 '''
@@ -47,7 +49,7 @@ Initialisation
 '''
 # constants
 batch_size = 1
-epochs = 20
+epochs = 8
 filters = 32
 kernal_size = (6, 6)
 pre_latent_size = 512
@@ -66,41 +68,27 @@ bias_initializer = initializers.glorot_uniform(seed = weight_seed)
 Load data
 '''
 # import dataset
-custom_data = True
+custom_data = False
 if custom_data:
     (X_train, _), (X_test, _) = utils.load_data()
 else:
     from keras.datasets import mnist
     (X_train, _), (X_test, _) = mnist.load_data()
 
-# # downsample data
-# X_train = X_train[::20]
-# X_test = X_test[::20]
-
-# reshape into (num_samples, num_channels, width, height)
-X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
-X_test = X_test.reshape(X_test.shape[0], 1, X_test.shape[1], X_test.shape[2])
-
 # record input shape
-input_shape = X_train.shape[1:]
+input_shape = (1, 84, 84)
 
-# cast pixel values to floats
-X_train = X_train.astype('float32')
-X_test = X_test.astype('float32')
+train_directory = './atari_agents/record/train/'
+test_directory = './atari_agents/record/test/'
 
-# normalise pixel values
-X_train = (X_train - np.min(X_train)) / np.max(X_train)
-X_test = (X_test - np.min(X_test)) / np.max(X_test)
+train_generator = utils.atari_data_generator(train_directory, batch_size=batch_size)
+test_generator = utils.atari_data_generator(test_directory, batch_size=batch_size)
 
-# print data information
-print('X_train shape:', X_train.shape)
-print('X_test shape:', X_test.shape)
-
-# initialise data generator
-train_generator = ImageDataGenerator()
-train_generator.fit(X_train)
-test_generator = ImageDataGenerator()
-test_generator.fit(X_test)
+#
+# TODO: currently train/test_size must be a multiple of batch_size
+#
+train_size = utils.count_images(train_directory)
+test_size = utils.count_images(test_directory)
 
 
 '''
@@ -219,18 +207,21 @@ tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, wri
 checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:03d}-{val_loss:.4f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
 callbacks = [tensorboard, checkpointer]
 
-print("\nSteps per epoch =", int(len(X_train)/batch_size), sep=' ')
-print("Validation steps =", int(len(X_test)/batch_size), '\n', sep=' ')
+steps_per_epoch = int(train_size / batch_size)
+validation_steps = int(test_size / batch_size)
+print("\nSteps per epoch =", steps_per_epoch, sep=' ')
+print("Validation steps =", validation_steps, '\n', sep=' ')
 
 # fit model using generators and record in TensorBoard
-cvae.fit_generator(train_generator.flow(X_train, X_train, batch_size=batch_size),
-                   validation_data=test_generator.flow(X_test, X_test, batch_size=batch_size),
-                   validation_steps=len(X_test)/batch_size,
-                   steps_per_epoch=len(X_train)/batch_size,
-                   epochs=epochs,
-                   callbacks=callbacks)
+cvae.fit_generator(train_generator,
+				   validation_data=test_generator,
+				   validation_steps=steps_per_epoch,
+				   steps_per_epoch=validation_steps,
+				   epochs=epochs)
 
 
-# write weights of encoder and decoder to log directory
+'''
+Save model weights of encoder/decoder
+'''
 encoder.save_weights(log_dir + "encoder_weights.hdf5")
 decoder.save_weights(log_dir + "decoder_weights.hdf5")

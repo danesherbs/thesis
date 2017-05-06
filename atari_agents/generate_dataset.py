@@ -14,7 +14,7 @@ from PIL import Image
 '''
 Recording functions
 '''
-def make_dataset(num_games, pre_processing=True, split_into_train_test=True):
+def make_dataset(num_games):
     if len(sys.argv) < 2:
         print('Usage: %s rom_file' % sys.argv[0])
         sys.exit()
@@ -48,11 +48,10 @@ def make_dataset(num_games, pre_processing=True, split_into_train_test=True):
     import os
     if not os.path.exists('./record/'):
         os.makedirs('./record/')
-    if split_into_train_test:
-        if not os.path.exists('./record/train'):
-            os.makedirs('./record/train')
-        if not os.path.exists('record/test'):
-            os.makedirs('./record/test')
+    if not os.path.exists('./record/train/'):
+        os.makedirs('./record/train/')
+    if not os.path.exists('record/test/'):
+        os.makedirs('./record/test/')
 
     # initialise iteration counter
     iter = 0
@@ -66,11 +65,10 @@ def make_dataset(num_games, pre_processing=True, split_into_train_test=True):
             else:
                 # take current screenshot as the maximum of last two
                 screenshot = np.maximum(ale.getScreenRGB(), screenshot_odd)
-                # pre-process image if needed
-                if pre_processing:
-                    screenshot = __pre_process(screenshot)
+                # pre-process image
+                screenshot = __pre_process(screenshot)
                 # save screenshot in appropriate directory
-                __save_screenshot(screenshot, split_into_train_test, iter/2)
+                __save_image(screenshot, iter/2)
             # select random action
             a = legal_actions[randrange(len(legal_actions))]
             # apply an action and get the resulting reward
@@ -90,21 +88,17 @@ def __pre_process(image_array):
     image = Image.fromarray(image_array)
     image = image.convert('L')
     image = image.resize((84, 84), Image.ANTIALIAS)
-    image_array = np.asarray(image)
-    return image_array
+    return image
 
-def __save_screenshot(screenshot, split_into_train_test, iter):
-    # save screenshot in appropriate directory
-    if split_into_train_test:
-        # every 1/10 gets put in test set
-        if np.mod(iter, 10) == 0:
-            plt.imsave('./record/test/' + str(iter), screenshot, cmap='gray')
-        # rest go into train set
-        else:
-            plt.imsave('./record/train/' + str(iter), screenshot, cmap='gray')
+def __save_image(image, iter, extension='.png'):
+    # every 1/10 gets put in test set
+    if np.mod(iter, 10) == 0:
+        # image.save('./record/test/test/' + str(iter) + extension)
+        image.save('./record/test/' + str(iter) + extension)
+    # rest go into train set
     else:
-        # everything goes in record directory
-        plt.imsave('./record/' + str(iter), screenshot, cmap='gray')
+        # image.save('./record/train/train/' + str(iter) + extension)
+        image.save('./record/train/' + str(iter) + '.png')
     return None
 
 
@@ -112,4 +106,5 @@ def __save_screenshot(screenshot, split_into_train_test, iter):
 Main function
 '''
 if __name__ == '__main__':
-    make_dataset(30, pre_processing=True, split_into_train_test=True)
+    num_games = 50
+    make_dataset(num_games)
