@@ -77,39 +77,20 @@ Load data
 # import dataset
 custom_data = True
 if custom_data:
-	(X_train, _), (X_test, _) = utils.load_data()
+	# record input shape
+    input_shape = (1, 84, 84)
+    train_directory = './atari_agents/record/train/'
+    test_directory = './atari_agents/record/test/'
+    train_generator = utils.atari_data_generator(train_directory, batch_size=batch_size)
+    test_generator = utils.atari_data_generator(test_directory, batch_size=batch_size)
+    #
+    # TODO: currently train/test_size must be a multiple of batch_size
+    #
+    train_size = utils.count_images(train_directory)
+    test_size = utils.count_images(test_directory)
 else:
 	from keras.datasets import mnist
 	(X_train, _), (X_test, _) = mnist.load_data()
-
-# # downsample data
-# X_train = X_train[::20]
-# X_test = X_test[::20]
-
-# reshape into (num_samples, num_channels, width, height)
-X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
-X_test = X_test.reshape(X_test.shape[0], 1, X_test.shape[1], X_test.shape[2])
-
-# record input shape
-input_shape = X_train.shape[1:]
-
-# cast pixel values to floats
-X_train = X_train.astype('float32')
-X_test = X_test.astype('float32')
-
-# normalise pixel values
-X_train = (X_train - np.min(X_train)) / np.max(X_train)
-X_test = (X_test - np.min(X_test)) / np.max(X_test)
-
-# print data information
-print('X_train shape:', X_train.shape)
-print('X_test shape:', X_test.shape)
-
-# initialise data generator
-train_generator = ImageDataGenerator()
-train_generator.fit(X_train)
-test_generator = ImageDataGenerator()
-test_generator.fit(X_test)
 
 
 '''
@@ -123,8 +104,8 @@ x = Conv2D(filters, kernal_size, padding='valid', strides=(2,2), activation='rel
 x = Conv2D(2*filters, kernal_size, padding='valid', strides=(2,2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
 
 # separate dense layers for mu and log(sigma), both of size latent_dim
-z_mean = Conv2D(2*filters, kernal_size, padding='valid', strides=(2,2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
-z_log_var = Conv2D(2*filters, kernal_size, padding='valid', strides=(2,2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
+z_mean = Conv2D(1, kernal_size, padding='valid', strides=(2,2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
+z_log_var = Conv2D(1, kernal_size, padding='valid', strides=(2,2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
 
 # sample from normal with z_mean and z_log_var
 z = Lambda(sampling, name='latent_space')([z_mean, z_log_var])
@@ -138,7 +119,7 @@ encoder_out_shape = tuple(z.get_shape().as_list())
 input_decoder = Input(shape=(encoder_out_shape[1], encoder_out_shape[2], encoder_out_shape[3]), name='decoder_input')
 
 # transposed convolution and up sampling
-x = Conv2DTranspose(2*filters, kernal_size, padding='valid', strides=(2,2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(input_decoder)
+x = Conv2DTranspose(1, kernal_size, padding='valid', strides=(2,2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(input_decoder)
 x = Conv2DTranspose(filters, kernal_size, padding='valid', strides=(2,2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_2')(x)
 x = Conv2DTranspose(1, kernal_size, padding='valid', strides=(2,2), activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_3')(x)
 
@@ -184,6 +165,28 @@ log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary
 
 
 '''
+Save model architectures and weights of encoder/decoder
+'''
+# make recording directories
+import os
+if not os.path.exists(log_dir):
+    os.makedirs(log_dir)
+
+# write model architectures to log directory
+model_json = cvae.to_json()
+with open(log_dir + 'model.json', 'w') as json_file:
+    json_file.write(model_json)
+
+encoder_json = encoder.to_json()
+with open(log_dir + 'encoder.json', 'w') as json_file:
+    json_file.write(encoder_json)
+
+decoder_json = decoder.to_json()
+with open(log_dir + 'decoder.json', 'w') as json_file:
+    json_file.write(decoder_json)
+
+
+'''
 Train model
 '''
 # define callbacks
@@ -191,34 +194,22 @@ tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, wri
 checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:03d}-{val_loss:.4f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
 callbacks = [tensorboard, checkpointer]
 
-print("\nSteps per epoch =", int(len(X_train)/batch_size), sep=' ')
-print("Validation steps =", int(len(X_test)/batch_size), '\n', sep=' ')
+steps_per_epoch = int(train_size / batch_size)
+validation_steps = int(test_size / batch_size)
+print("\nSteps per epoch =", steps_per_epoch, sep=' ')
+print("Validation steps =", validation_steps, '\n', sep=' ')
 
 # fit model using generators and record in TensorBoard
-cvae.fit_generator(train_generator.flow(X_train, X_train, batch_size=batch_size),
-				   validation_data=test_generator.flow(X_test, X_test, batch_size=batch_size),
-				   validation_steps=len(X_test)/batch_size,
-				   steps_per_epoch=len(X_train)/batch_size,
-				   epochs=epochs,
-				   callbacks=callbacks)
+cvae.fit_generator(train_generator,
+                   validation_data=test_generator,
+                   validation_steps=steps_per_epoch,
+                   steps_per_epoch=validation_steps,
+                   epochs=epochs,
+                   callbacks=callbacks)
 
 
 '''
-Save model architectures and weights of encoder/decoder
+Save model weights of encoder/decoder
 '''
-# write model architectures to log directory
-model_json = cvae.to_json()
-with open(log_dir + 'model.json', 'w') as json_file:
-	json_file.write(model_json)
-
-encoder_json = encoder.to_json()
-with open(log_dir + 'encoder.json', 'w') as json_file:
-	json_file.write(encoder_json)
-
-decoder_json = decoder.to_json()
-with open(log_dir + 'decoder.json', 'w') as json_file:
-	json_file.write(decoder_json)
-
-# write weights of encoder and decoder to log directory
 encoder.save_weights(log_dir + "encoder_weights.hdf5")
 decoder.save_weights(log_dir + "decoder_weights.hdf5")

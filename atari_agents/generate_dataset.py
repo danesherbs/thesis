@@ -14,7 +14,7 @@ from PIL import Image
 '''
 Recording functions
 '''
-def make_dataset(num_games):
+def make_dataset(num_games, extension='.png'):
     if len(sys.argv) < 2:
         print('Usage: %s rom_file' % sys.argv[0])
         sys.exit()
@@ -68,7 +68,7 @@ def make_dataset(num_games):
                 # pre-process image
                 screenshot = __pre_process(screenshot)
                 # save screenshot in appropriate directory
-                __save_image(screenshot, iter/2)
+                __save_image(screenshot, iter/2, extension=extension)
             # select random action
             a = legal_actions[randrange(len(legal_actions))]
             # apply an action and get the resulting reward
@@ -93,12 +93,10 @@ def __pre_process(image_array):
 def __save_image(image, iter, extension='.png'):
     # every 1/10 gets put in test set
     if np.mod(iter, 10) == 0:
-        # image.save('./record/test/test/' + str(iter) + extension)
         image.save('./record/test/' + str(iter) + extension)
     # rest go into train set
     else:
-        # image.save('./record/train/train/' + str(iter) + extension)
-        image.save('./record/train/' + str(iter) + '.png')
+        image.save('./record/train/' + str(iter) + extension)
     return None
 
 
@@ -106,5 +104,5 @@ def __save_image(image, iter, extension='.png'):
 Main function
 '''
 if __name__ == '__main__':
-    num_games = 50
-    make_dataset(num_games)
+    num_games = 1
+    make_dataset(num_games, extension='.jpg')

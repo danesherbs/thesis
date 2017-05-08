@@ -49,11 +49,11 @@ Initialisation
 '''
 # constants
 batch_size = 1
-epochs = 8
+epochs = 1
 filters = 32
 kernal_size = (6, 6)
 pre_latent_size = 512
-latent_size = 10
+latent_size = 1
 beta = 1.0
 loss_function = 'vae_loss'
 optimizer = 'adam'
@@ -68,27 +68,24 @@ bias_initializer = initializers.glorot_uniform(seed = weight_seed)
 Load data
 '''
 # import dataset
-custom_data = False
+custom_data = True
 if custom_data:
-    (X_train, _), (X_test, _) = utils.load_data()
+    # record input shape
+    input_shape = (1, 84, 84)
+    train_directory = './atari_agents/record/train/'
+    test_directory = './atari_agents/record/test/'
+    train_generator = utils.atari_data_generator(train_directory, batch_size=batch_size)
+    test_generator = utils.atari_data_generator(test_directory, batch_size=batch_size)
+    #
+    # TODO: currently train/test_size must be a multiple of batch_size
+    #
+    train_size = utils.count_images(train_directory)
+    test_size = utils.count_images(test_directory)
 else:
     from keras.datasets import mnist
     (X_train, _), (X_test, _) = mnist.load_data()
 
-# record input shape
-input_shape = (1, 84, 84)
 
-train_directory = './atari_agents/record/train/'
-test_directory = './atari_agents/record/test/'
-
-train_generator = utils.atari_data_generator(train_directory, batch_size=batch_size)
-test_generator = utils.atari_data_generator(test_directory, batch_size=batch_size)
-
-#
-# TODO: currently train/test_size must be a multiple of batch_size
-#
-train_size = utils.count_images(train_directory)
-test_size = utils.count_images(test_directory)
 
 
 '''
@@ -217,7 +214,8 @@ cvae.fit_generator(train_generator,
 				   validation_data=test_generator,
 				   validation_steps=steps_per_epoch,
 				   steps_per_epoch=validation_steps,
-				   epochs=epochs)
+				   epochs=epochs,
+                   callbacks=callbacks)
 
 
 '''
