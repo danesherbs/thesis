@@ -4,6 +4,8 @@ Utilities package for autoencoders
 from PIL import Image
 import numpy as np
 import os
+from keras.datasets import mnist
+
 
 
 '''
@@ -12,58 +14,30 @@ Loading ALE data
 # Contains screen-grabs from most recent run of ALE
 RECORD_PATH = './atari_agents/record/'
 
-def image_to_array(image_path, rgb=False):
-    '''
-    Converts image to numpy array
-    '''
-    image = Image.open(image_path)
-    if not rgb:
-        image = image.convert('L')  # extract luminance
-    return np.asarray(image)
+'''
+Dataset loaders
+'''
 
-def __example_image_to_array():
+# General Atari loader
+def atari_generator(directory, batch_size=64):
     '''
-    Takes random screen-grab in RECORD_PATH and shows array and image
+    Takes directory of Atari 2600 images (3, 210, 160)
+    and returns a generator of (1, 84, 84) images.
     '''
-    image_path = './atari_agents/record/0.png'
-    image_array = image_to_array(image_path, rgb=False)
-    print(image_array)
-    Image.fromarray(np.uint8(image_to_array(image_path))).show()
-
-def array_to_image(image_array):
-    '''
-    Converts numpy array to image
-    '''
-    return Image.fromarray(np.uint8(image_array))
-
-def __example_array_to_image():
-    '''
-    Shows output of array_to_image for random screen-grab from RECORD_PATH
-    '''
-    image_path = './atari_agents/record/020377.png'
-    image_array = image_to_array(image_path, rgb=False)
-    image = array_to_image(image_array)
-    image.show()
-
-def __demo_plot_data():
-    # load data and print shape
-    (X_train, _), (X_test, _) = load_data()
-    print(X_train.shape)
-    # plot sample image
-    import matplotlib.pyplot as plt
-    plt.figure()
-    plt.imshow(X_train[30], cmap='inferno')
-    plt.show()
-
-def atari_data_generator(directory, batch_size=64):
     image_names = os.listdir(directory)
     dataset_size = len(image_names)
     counter = 0
     # yield data forever
     while True:
-        # extract next batch of images
+        # calculate new counter
         counter = np.mod(counter, dataset_size)
-        counter_max = min(counter + batch_size, dataset_size)
+        counter_max = counter + batch_size
+        # reset counter if end extends over end of dataset
+        if counter_max > dataset_size:
+            print("Reached end of dataset. Re-setting counter.")
+            counter = 0
+            counter_max = batch_size
+        # extract next batch of images
         batch_image_names = image_names[counter : counter_max]
         X = []
         for batch_image_name in batch_image_names:
@@ -77,11 +51,14 @@ def atari_data_generator(directory, batch_size=64):
         X = (X - np.min(X)) / np.max(X)
         # yield next batch
         yield (X, X)
-        # increment counter for next call
+        # slide counter by batch_size
         counter += batch_size
 
 def count_images(directory):
     return len(os.listdir(directory))
+
+def mnist_generator(batch_size=64):
+    (X_train, _), (X_test, _) = mnist.load_data()
 
 
 '''
@@ -113,5 +90,6 @@ if __name__ == '__main__':
     # print(np.max(image_array))
 
     directory = './atari_agents/record/test/'
-    data_generator(directory, batch_size=5)
+    test_generator = atari_generator(directory, batch_size=64)
+    [x for x in test_generator]
 
