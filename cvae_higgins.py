@@ -74,8 +74,8 @@ if custom_data:
     input_shape = (1, 84, 84)
     train_directory = './atari_agents/record/train/'
     test_directory = './atari_agents/record/test/'
-    train_generator = utils.atari_data_generator(train_directory, batch_size=batch_size)
-    test_generator = utils.atari_data_generator(test_directory, batch_size=batch_size)
+    train_generator = utils.atari_generator(train_directory, batch_size=batch_size)
+    test_generator = utils.atari_generator(test_directory, batch_size=batch_size)
     #
     # TODO: currently train/test_size must be a multiple of batch_size
     #
@@ -211,10 +211,10 @@ print("Validation steps =", validation_steps, '\n', sep=' ')
 
 # fit model using generators and record in TensorBoard
 cvae.fit_generator(train_generator,
-				   validation_data=test_generator,
-				   validation_steps=steps_per_epoch,
-				   steps_per_epoch=validation_steps,
 				   epochs=epochs,
+                   steps_per_epoch=steps_per_epoch,
+                   validation_data=test_generator,
+                   validation_steps=validation_steps,
                    callbacks=callbacks)
 
 

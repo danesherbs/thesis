@@ -119,7 +119,7 @@ encoder_out_shape = tuple(z.get_shape().as_list())
 input_decoder = Input(shape=(encoder_out_shape[1], encoder_out_shape[2], encoder_out_shape[3]), name='decoder_input')
 
 # transposed convolution and up sampling
-x = Conv2DTranspose(1, kernal_size, padding='valid', strides=(2,2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(input_decoder)
+x = Conv2DTranspose(2*filters, kernal_size, padding='valid', strides=(2,2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(input_decoder)
 x = Conv2DTranspose(filters, kernal_size, padding='valid', strides=(2,2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_2')(x)
 x = Conv2DTranspose(1, kernal_size, padding='valid', strides=(2,2), activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_3')(x)
 
@@ -201,10 +201,10 @@ print("Validation steps =", validation_steps, '\n', sep=' ')
 
 # fit model using generators and record in TensorBoard
 cvae.fit_generator(train_generator,
-                   validation_data=test_generator,
-                   validation_steps=steps_per_epoch,
-                   steps_per_epoch=validation_steps,
                    epochs=epochs,
+                   steps_per_epoch=steps_per_epoch,
+                   validation_data=test_generator,
+                   validation_steps=validation_steps,
                    callbacks=callbacks)
 
 
