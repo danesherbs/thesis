@@ -45,7 +45,6 @@ def atari_generator(directory, batch_size=64, shuffle=True):
             counter_max = batch_size
         # extract next batch of images
         batch_image_names = image_names[counter : counter_max]
-        print(sorted(batch_image_names))
         X = []
         for batch_image_name in batch_image_names:
             batch_image = Image.open(os.path.join(directory, batch_image_name))

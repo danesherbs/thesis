@@ -9,18 +9,17 @@ from keras.models import Model
 
 class HigginsVAE(VAE):
 
-    def __init__(self, input_shape, log_dir):
+    def __init__(self, input_shape, log_dir, filters=32, kernel_size=2, pre_latent_size=64, latent_size=2):
+        # initialise HigginsVAE specific variables
+        self.filters = filters
+        self.kernel_size = kernel_size
+        self.pre_latent_size = pre_latent_size
+        self.latent_size = latent_size
+        # call parent constructor
         VAE.__init__(self, input_shape, log_dir)
 
-    def set_model(self):
-        '''
-        Constants
-        '''
-        filters = 32
-        kernel_size = (6, 6)
-        pre_latent_size = 512
-        latent_size = 16
 
+    def set_model(self):
         '''
         Initialisers
         '''
@@ -86,25 +85,38 @@ if __name__ == '__main__':
     epochs = 10
     batch_size = 1
     beta = 1.0
+    filters = 32
+    kernel_size = 6
+    pre_latent_size = 512
+    latent_size = 16
     
     # define filename
     name = 'cvae_higgins'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
-        'batch_size': batch_size,
         'epochs': epochs,
+        'batch_size': batch_size,
         'beta': beta,
+        'filters': filters,
+        'kernel_size': kernel_size,
+        'pre_latent_size': pre_latent_size,
+        'latent_size': latent_size,
         'loss': 'vae_loss',
-        'optimizer': 'adam',
-        'latent_size': 16
+        'optimizer': 'adam'
     }
 
     # define log directory
     log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
-    vae = HigginsVAE(input_shape, log_dir)
+    vae = HigginsVAE(input_shape, 
+                log_dir,
+                filters=filters,
+                kernel_size=kernel_size,
+                pre_latent_size=pre_latent_size,
+                latent_size=latent_size)
+    
     
     # compile VAE
     from keras import optimizers

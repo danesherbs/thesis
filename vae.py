@@ -11,12 +11,11 @@ class VAE(metaclass=ABCMeta):
     Class to handle helper and training functions of VAEs.
     '''
 
-    def __init__(self, input_shape, optimizer, log_dir, beta=1.0):
+    def __init__(self, input_shape, log_dir, beta=1.0):
         '''
         input_shape : (num_channels, num_rows, num_cols)
         '''
         self.input_shape = input_shape
-        self.optimizer = optimizer
         self.log_dir = log_dir
         self.__define_callbacks(log_dir)
         self.set_model()
@@ -54,8 +53,7 @@ class VAE(metaclass=ABCMeta):
         Compiles Keras model
         '''
         loss = kwargs.get('loss', self.vae_loss)  # default loss
-        optimizer = kwargs.get('optimizer', self.optimizer)  # default optimizer
-        self.model.compile(loss=loss, optimizer=optimizer)
+        self.model.compile(loss=loss, **kwargs)
 
     def sampling(self, args):
         '''
@@ -120,10 +118,16 @@ class VAE(metaclass=ABCMeta):
             json_file.write(model_json)
 
     def save_weights(self):
+        '''
+        Saves weights of encoder and decoder
+        '''
         self.encoder.save_weights(self.log_dir + "encoder_weights.hdf5")
         self.decoder.save_weights(self.log_dir + "decoder_weights.hdf5")
 
     def __define_callbacks(self, log_dir):
+        '''
+        Helper for __init__
+        '''
         tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
         checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:03d}-{val_loss:.4f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
         self.callbacks = [tensorboard, checkpointer]
