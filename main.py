@@ -7,8 +7,8 @@ import utils
 '''
 Inputs
 '''
-name = 'cvae_higgins_07_May_10_47_56_batch_size_1_beta_1.0_epochs_20_latent_size_10_loss_vae_loss_optimizer_adam'
-model_weights = 'weights.018-953.9656.hdf5'
+name = 'cvae_frey_09_May_21_52_18_batch_size_1_beta_1.0_epochs_10_latent_size_2_loss_vae_loss_optimizer_adam'
+model_weights = 'weights.004-351.7898.hdf5'
 
 
 '''
@@ -50,24 +50,20 @@ decoder.load_weights(log_dir + 'decoder_weights.hdf5')
 '''
 Load data
 '''
-custom_data = True
-if custom_data:
+dataset = 'frey'
+if dataset == 'atari':
 	test_directory = './atari_agents/record/test/'
-	test_generator = utils.atari_data_generator(test_directory, batch_size=1)
+	test_generator = utils.atari_generator(test_directory, batch_size=1)
 	X_test_size = 100
 	X_test = np.asarray([next(test_generator)[0][0] for i in range(X_test_size)])
-else:
+elif dataset == 'mnist':
 	# import dataset
-	from keras.datasets import mnist
-	(_, _), (X_test, _) = mnist.load_data()
-	# reshape into (num_samples, num_channels, width, height)
-	X_test = X_test.reshape(X_test.shape[0], 1, X_test.shape[1], X_test.shape[2])
-	# record input shape
-	input_shape = X_train.shape[1:]
-	# cast pixel values to floats
-	X_test = X_test.astype('float32')
-	# normalise pixel values
-	X_test /= 255.0
+	(_, _), (X_test, _) = utils.load_keras()
+elif dataset == 'frey':
+	# import dataset
+	(_, _), (X_test, _) = utils.load_frey()
+else:
+	print("Dataset not found.")
 
 '''
 Sampling functions
@@ -120,15 +116,15 @@ def __sample_posterior(num_iter, show_every=1, init_sample_num=0):
 			plt.show()
 
 def __demo_sample_posterior():
-	num_iter = 1000
-	show_every = 100
-	init_sample_num = 99
+	num_iter = 500
+	show_every = 5
+	init_sample_num = 0
 	__sample_posterior(num_iter, show_every=show_every, init_sample_num=init_sample_num)
 
 '''
 Main
 '''
 if __name__ == '__main__':
-	# __decode_prior_samples(5, latent_shape=(1, 10))
+	__decode_prior_samples(5, latent_shape=(1, 2))
 	# __encode_decode_sample(sample_number=0)
-	__demo_sample_posterior()
+	# __demo_sample_posterior()

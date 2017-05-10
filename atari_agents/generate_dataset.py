@@ -104,5 +104,5 @@ def __save_image(image, iter, extension='.png'):
 Main function
 '''
 if __name__ == '__main__':
-    num_games = 1
+    num_games = 5
     make_dataset(num_games, extension='.jpg')

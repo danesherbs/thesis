@@ -76,16 +76,15 @@ if custom_data:
     test_directory = './atari_agents/record/test/'
     train_generator = utils.atari_generator(train_directory, batch_size=batch_size)
     test_generator = utils.atari_generator(test_directory, batch_size=batch_size)
-    #
-    # TODO: currently train/test_size must be a multiple of batch_size
-    #
     train_size = utils.count_images(train_directory)
     test_size = utils.count_images(test_directory)
 else:
-    from keras.datasets import mnist
-    (X_train, _), (X_test, _) = mnist.load_data()
-
-
+    input_shape = (1, 28, 28)
+    (X_train, _), (X_test, _) = utils.load_mnist()
+    train_generator = utils.make_generator(X_train, batch_size=batch_size)
+    test_generator = utils.make_generator(X_test, batch_size=batch_size)
+    train_size = len(X_train)
+    test_size = len(X_test)
 
 
 '''
@@ -214,7 +213,7 @@ cvae.fit_generator(train_generator,
 				   epochs=epochs,
                    steps_per_epoch=steps_per_epoch,
                    validation_data=test_generator,
-                   validation_steps=validation_steps,
+                   validation_steps=validation_steps,,
                    callbacks=callbacks)
 
 

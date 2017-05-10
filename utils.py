@@ -10,6 +10,7 @@ from keras.datasets import mnist
 from urllib.request import urlopen
 from urllib.error import URLError, HTTPError
 from scipy.io import loadmat
+import matplotlib.pyplot as plt
 
 
 '''
@@ -80,7 +81,7 @@ def load_frey(shuffle=True):
     '''
     Adapted script from http://dohmatob.github.io/research/2016/10/22/VAE.html.
     '''
-    url =  "http://www.cs.nyu.edu/~roweis/data/frey_rawface.mat"
+    url = "http://www.cs.nyu.edu/~roweis/data/frey_rawface.mat"
     data_filename = os.path.basename(url)
     if not os.path.exists(data_filename):
         __fetch_file(url)
@@ -92,8 +93,8 @@ def load_frey(shuffle=True):
     ff = ff["ff"].T.reshape((-1, img_rows, img_cols))
     X_train = ff[:1800]
     X_test = ff[1800:1900]
-    X_train = X_train.astype('float32') / 255.
-    X_test = X_test.astype('float32') / 255.
+    X_train = X_train.astype('float32') / 255.0
+    X_test = X_test.astype('float32') / 255.0
     X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
     X_test = X_test.reshape(X_test.shape[0], 1, X_test.shape[1], X_test.shape[2])
     if shuffle:
@@ -110,7 +111,6 @@ def count_images(directory):
 
 def make_generator(X, batch_size=64):
     counter = 0
-    print(X.shape)
     dataset_size = len(X)
     while True:
         # calculate new counter
@@ -147,6 +147,12 @@ def __fetch_file(url):
     except URLError as e:
         print("URL Error:", e.reason, url)
 
+def __show_image(X, sample_num=0):
+    x = X[sample_num][0]
+    plt.imshow(x)
+    plt.gray()
+    plt.show()
+
 '''
 Hyperparameter searching
 '''
@@ -176,5 +182,4 @@ if __name__ == '__main__':
     # [x for x in test_generator]
 
     (X_train, _), (X_test, _) = load_frey()
-    train_generator = make_generator(X_train, batch_size=128)
-    [x for x in train_generator]
+    __show_image(X_train, sample_num=0)

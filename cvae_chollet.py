@@ -57,7 +57,7 @@ def vae_loss(y_true, y_pred):
     kl_loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_flat) - K.exp(z_log_var_flat), axis=-1)
 
     # return the mean weighted sum of reconstruction loss and KL divergence across the
-    return reconstruction_loss + beta * kl_loss
+    return K.mean(reconstruction_loss + beta * kl_loss)
 
 '''
 Initialisation
@@ -84,41 +84,14 @@ bias_initializer = initializers.glorot_uniform(seed = weight_seed)
 Load data
 '''
 # import dataset
-custom_data = True
-if custom_data:
-    (X_train, _), (X_test, _) = utils.load_data()
-else:
-    from keras.datasets import mnist
-    (X_train, _), (X_test, _) = mnist.load_data()
-
-# # downsample data
-# X_train = X_train[::20]
-# X_test = X_test[::20]
-
-# reshape into (num_samples, num_channels, width, height)
-X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
-X_test = X_test.reshape(X_test.shape[0], 1, X_test.shape[1], X_test.shape[2])
-
-# record input shape
-input_shape = X_train.shape[1:]
-
-# cast pixel values to floats
-X_train = X_train.astype('float32')
-X_test = X_test.astype('float32')
-
-# normalise pixel values
-X_train = (X_train - np.min(X_train)) / np.max(X_train)
-X_test = (X_test - np.min(X_test)) / np.max(X_test)
-
-# print data information
-print('X_train shape:', X_train.shape)
-print('X_test shape:', X_test.shape)
-
-# initialise data generator
-train_generator = ImageDataGenerator()
-train_generator.fit(X_train)
-test_generator = ImageDataGenerator()
-test_generator.fit(X_test)
+input_shape = (1, 28, 28)
+(X_train, _), (X_test, _) = utils.load_mnist()
+X_train = X_train[::100]
+X_test = X_test[::100]
+train_generator = utils.make_generator(X_train, batch_size=batch_size)
+test_generator = utils.make_generator(X_test, batch_size=batch_size)
+train_size = len(X_train)
+test_size = len(X_test)
 
 
 '''
@@ -207,6 +180,34 @@ x_decoded_mean = decoder_mean_squash(x_decoded_relu)
 
 
 '''
+Initialise models
+'''
+# define and save models
+# encoder
+encoder = Model(input_encoder, z)
+# decoder
+decoder_input = Input(shape=encoder_out_shape[1:],)
+_hid_decoded = decoder_hid(decoder_input)
+_up_decoded = decoder_upsample(_hid_decoded)
+_reshape_decoded = decoder_reshape(_up_decoded)
+_deconv_1_decoded = decoder_deconv_1(_reshape_decoded)
+_deconv_2_decoded = decoder_deconv_2(_deconv_1_decoded)
+_x_decoded_relu = decoder_deconv_3_upsamp(_deconv_2_decoded)
+_x_decoded_mean_squash = decoder_mean_squash(_x_decoded_relu)
+decoder = Model(decoder_input, _x_decoded_mean_squash)
+# full model
+cvae = Model(input_encoder, x_decoded_mean)
+
+# print model summary
+encoder.summary()
+decoder.summary()
+cvae.summary()
+
+# compile and train
+cvae.compile(loss=vae_loss, optimizer=keras.optimizers.Adam(lr=1e-3))
+
+
+'''
 Define filename
 '''
 # define name of run
@@ -227,55 +228,12 @@ log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary
 
 
 '''
-Train model
-'''
-# encoder
-encoder = Model(input_encoder, z)
-
-# decoder
-decoder_input = Input(shape=encoder_out_shape[1:],)
-_hid_decoded = decoder_hid(decoder_input)
-_up_decoded = decoder_upsample(_hid_decoded)
-_reshape_decoded = decoder_reshape(_up_decoded)
-_deconv_1_decoded = decoder_deconv_1(_reshape_decoded)
-_deconv_2_decoded = decoder_deconv_2(_deconv_1_decoded)
-_x_decoded_relu = decoder_deconv_3_upsamp(_deconv_2_decoded)
-_x_decoded_mean_squash = decoder_mean_squash(_x_decoded_relu)
-decoder = Model(decoder_input, _x_decoded_mean_squash)
-
-# full model
-cvae = Model(input_encoder, x_decoded_mean)
-
-# print model summary
-encoder.summary()
-decoder.summary()
-cvae.summary()
-
-# compile and train
-cvae.compile(loss=vae_loss, optimizer=keras.optimizers.Adam(lr=1e-3))
-
-# define callbacks
-tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
-checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:03d}-{val_loss:.4f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
-callbacks = [tensorboard, checkpointer]
-
-print("\nSteps per epoch =", int(len(X_train)/batch_size), sep=' ')
-print("Validation steps =", int(len(X_test)/batch_size), '\n', sep=' ')
-
-# fit model using generators and record in TensorBoard
-cvae.fit_generator(train_generator.flow(X_train, X_train, batch_size=batch_size),
-                   validation_data=test_generator.flow(X_test, X_test, batch_size=batch_size),
-                   validation_steps=len(X_test)/batch_size,
-                   steps_per_epoch=len(X_train)/batch_size,
-                   epochs=epochs,
-                   callbacks=callbacks)
-
-
-'''
 Save model architectures and weights of encoder/decoder
 '''
-# make log directory
-os.makedirs(log_dir)
+# make recording directories
+import os
+if not os.path.exists(log_dir):
+    os.makedirs(log_dir)
 
 # write model architectures to log directory
 model_json = cvae.to_json()
@@ -290,6 +248,31 @@ decoder_json = decoder.to_json()
 with open(log_dir + 'decoder.json', 'w') as json_file:
     json_file.write(decoder_json)
 
-# write weights of encoder and decoder to log directory
+
+'''
+Train model
+'''
+# define callbacks
+tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
+checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:03d}-{val_loss:.4f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
+callbacks = [tensorboard, checkpointer]
+
+steps_per_epoch = int(train_size / batch_size)
+validation_steps = int(test_size / batch_size)
+print("\nSteps per epoch =", steps_per_epoch, sep=' ')
+print("Validation steps =", validation_steps, '\n', sep=' ')
+
+# fit model using generators and record in TensorBoard
+cvae.fit_generator(train_generator,
+                   epochs=epochs,
+                   steps_per_epoch=steps_per_epoch,
+                   validation_data=test_generator,
+                   validation_steps=validation_steps,
+                   callbacks=callbacks)
+
+
+'''
+Save model weights of encoder/decoder
+'''
 encoder.save_weights(log_dir + "encoder_weights.hdf5")
 decoder.save_weights(log_dir + "decoder_weights.hdf5")
