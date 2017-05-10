@@ -1,4 +1,6 @@
 import numpy as np
+import os
+import keras
 from keras import backend as K
 from keras.objectives import binary_crossentropy
 from abc import ABCMeta, abstractmethod
@@ -9,13 +11,14 @@ class VAE(metaclass=ABCMeta):
     Class to handle helper and training functions of VAEs.
     '''
 
-    def __init__(self, input_shape, optimizer, beta=1.0):
+    def __init__(self, input_shape, optimizer, log_dir, beta=1.0):
         '''
         input_shape : (num_channels, num_rows, num_cols)
         '''
-        self.optimizer = optimizer
         self.input_shape = input_shape
-        self.callbacks = None  # TODO: define callbacks
+        self.optimizer = optimizer
+        self.log_dir = log_dir
+        self.__define_callbacks(log_dir)
         self.set_model()
 
     @abstractmethod
@@ -37,21 +40,23 @@ class VAE(metaclass=ABCMeta):
         Wrapper for Keras fit method
         '''
         self.print_model_summaries()
-        self.model.fit(X_train, X_train, **kwargs)
+        callbacks = kwargs.get('callbacks', self.callbacks)  # default callback
+        self.model.fit(X_train, X_train, callbacks=callbacks, **kwargs)
 
     def fit_generator(self, train_generator, **kwargs):
         '''
         Wrapper for Keras fit_generator method
         '''
         self.print_model_summaries()
-        self.model.fit_generator(train_generator, **kwargs)
+        callbacks = kwargs.get('callbacks', self.callbacks)
+        self.model.fit_generator(train_generator, callbacks=callbacks, **kwargs)
 
     def compile(self, **kwargs):
         '''
         Compiles Keras model
         '''
-        loss = kwargs.get('loss', self.vae_loss)
-        optimizer = kwargs.get('optimizer', self.optimizer)
+        loss = kwargs.get('loss', self.vae_loss)  # default loss
+        optimizer = kwargs.get('optimizer', self.optimizer)  # default optimizer
         self.model.compile(loss=loss, optimizer=optimizer)
 
     def sampling(self, args):
@@ -97,3 +102,27 @@ class VAE(metaclass=ABCMeta):
         '''
         if model is not None:
             model.summary()
+
+    def save_model_architecture(self):
+        '''
+        Saves model architecture of encoder, decoder and entire model
+        '''
+        if not os.path.exists(self.log_dir):
+            os.makedirs(self.log_dir)
+        self.__save_model_architecture(self.model, 'model')
+        self.__save_model_architecture(self.encoder, 'encoder')
+        self.__save_model_architecture(self.decoder, 'decoder')
+
+    def __save_model_architecture(self, model, name):
+        '''
+        Helper for save_model_architecture
+        '''
+        model_json = model.to_json()
+        with open(self.log_dir + name + '.json', 'w') as json_file:
+            json_file.write(model_json)
+
+
+    def __define_callbacks(self, log_dir):
+        tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
+        checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:03d}-{val_loss:.4f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
+        self.callbacks = [tensorboard, checkpointer]

@@ -3,13 +3,12 @@ import numpy as np
 from keras import initializers
 from keras.layers import Input, Conv2D, Flatten, Dense, Lambda, Reshape, Conv2DTranspose
 from keras.models import Model
-from keras.preprocessing.image import ImageDataGenerator
 
 
-class myVAE(VAE):
+class CholletVAE(VAE):
 
-    def __init__(self, input_shape, optimizer):
-        VAE.__init__(self, input_shape, optimizer)
+    def __init__(self, input_shape, optimizer, log_dir):
+        VAE.__init__(self, input_shape, optimizer, log_dir)
 
     def set_model(self):
         # constants
@@ -108,19 +107,19 @@ if __name__ == '__main__':
     from keras import optimizers
     optimizer = optimizers.Adam(lr=1e-3)
     # make VAE
-    vae = myVAE(input_shape, optimizer)
+    vae = CholletVAE(input_shape, optimizer, './summaries/test_dir/')
     # compile VAE
     vae.compile()
     # get dataset
-    from keras.datasets import mnist
-    (X_train, _), (X_test, _) = mnist.load_data()
-    X_train = X_train.reshape(X_train.shape[0], 1, X_train.shape[1], X_train.shape[2])
-    X_test = X_test.reshape(X_test.shape[0], 1, X_test.shape[1], X_test.shape[2])
-    input_shape = X_train.shape[1:]
-    X_train = X_train.astype('float32')
-    X_test = X_test.astype('float32')
-    X_train = (X_train - np.min(X_train)) / np.max(X_train)
-    X_test = (X_test - np.min(X_test)) / np.max(X_test)
-    X_train = X_train[::100]
-    X_test = X_test[::100]
-    vae.fit(X_train, validation_data=X_test)
+    import utils
+    (X_train, _), (X_test, _) = utils.load_mnist()
+    train_generator = utils.make_generator(X_train, batch_size=1)
+    test_generator = utils.make_generator(X_test, batch_size=1)
+    # save architecure
+    vae.save_model_architecture()
+    # fit VAE
+    vae.fit_generator(train_generator,
+                   epochs=1,
+                   steps_per_epoch=100,
+                   validation_data=test_generator,
+                   validation_steps=10)
