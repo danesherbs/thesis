@@ -3,6 +3,7 @@ import numpy as np
 from keras import initializers
 from keras.layers import Input, Conv2D, Flatten, Dense, Lambda, Reshape, Conv2DTranspose
 from keras.models import Model
+from keras.preprocessing.image import ImageDataGenerator
 
 
 class myVAE(VAE):
@@ -11,6 +12,15 @@ class myVAE(VAE):
         VAE.__init__(self, input_shape, optimizer)
 
     def set_model(self):
+        # constants
+        batch_size = 32
+        epochs = 1
+        filters = 32
+        latent_filters = 4
+        kernel_size = (6, 6)
+        pool_size = (2, 2)
+        beta = 1.0
+
         '''
         Encoder
         '''
@@ -43,10 +53,11 @@ class myVAE(VAE):
         z_log_var = Dense(16)(hidden)
 
         # sample from normal with z_mean and z_log_var
-        z = Lambda(sampling, name='latent_space')([z_mean, z_log_var])
+        z = Lambda(self.sampling, name='latent_space')([z_mean, z_log_var])
         encoder_out_shape = tuple(z.get_shape().as_list())
 
         # we instantiate these layers separately so as to reuse them later
+        input_decoder = Input(shape=encoder_out_shape[1:])
         decoder_hid = Dense(128, activation='relu')
         print(conv4_out_shape)
         decoder_upsample = Dense(np.prod(conv4_out_shape[1:]), activation='relu')
@@ -72,7 +83,7 @@ class myVAE(VAE):
                                      padding='same',
                                      activation='sigmoid')
 
-        hid_decoded = decoder_hid(z)
+        hid_decoded = decoder_hid(input_decoder)
         up_decoded = decoder_upsample(hid_decoded)
         reshape_decoded = decoder_reshape(up_decoded)
         deconv_1_decoded = decoder_deconv_1(reshape_decoded)
@@ -82,7 +93,7 @@ class myVAE(VAE):
 
         # For parent fitting function
         self.encoder = Model(input_encoder, z)
-        self.decoder = Model(input_decoder, x)
+        self.decoder = Model(input_decoder, x_decoded_mean)
         self.model = Model(input_encoder, self.decoder(self.encoder(input_encoder)))
         # For parent loss function
         self.z_mean = z_mean
@@ -110,5 +121,6 @@ if __name__ == '__main__':
     X_test = X_test.astype('float32')
     X_train = (X_train - np.min(X_train)) / np.max(X_train)
     X_test = (X_test - np.min(X_test)) / np.max(X_test)
-    # fit VAE
-    vae.fit(X_train)
+    X_train = X_train[::100]
+    X_test = X_test[::100]
+    vae.fit(X_train, validation_data=X_test)

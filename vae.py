@@ -9,7 +9,7 @@ class VAE(metaclass=ABCMeta):
     Class to handle helper and training functions of VAEs.
     '''
 
-    def __init__(self, input_shape, optimizer):
+    def __init__(self, input_shape, optimizer, beta=1.0):
         '''
         input_shape : (num_channels, num_rows, num_cols)
         '''
@@ -37,14 +37,14 @@ class VAE(metaclass=ABCMeta):
         Wrapper for Keras fit method
         '''
         self.print_model_summaries()
-        self.model.fit(X_train, X_train, kwargs)
+        self.model.fit(X_train, X_train, **kwargs)
 
-    def fit_generator(self, train_generator, test_generator, **kwargs):
+    def fit_generator(self, train_generator, **kwargs):
         '''
         Wrapper for Keras fit_generator method
         '''
         self.print_model_summaries()
-        self.model.fit_generator(train_generator, kwargs)
+        self.model.fit_generator(train_generator, **kwargs)
 
     def compile(self, **kwargs):
         '''
