@@ -1,3 +1,4 @@
+import numpy as np
 from keras import backend as K
 from keras.objectives import binary_crossentropy
 from abc import ABCMeta, abstractmethod
@@ -5,7 +6,7 @@ from abc import ABCMeta, abstractmethod
 
 class VAE(metaclass=ABCMeta):
     '''
-    Class to handle building and training VAE models.
+    Class to handle helper and training functions of VAEs.
     '''
 
     def __init__(self, input_shape, optimizer):
@@ -35,7 +36,6 @@ class VAE(metaclass=ABCMeta):
         '''
         Wrapper for Keras fit method
         '''
-        self.set_model()
         self.print_model_summaries()
         self.model.fit(X_train, X_train, kwargs)
 
@@ -43,7 +43,6 @@ class VAE(metaclass=ABCMeta):
         '''
         Wrapper for Keras fit_generator method
         '''
-        self.set_model()
         self.print_model_summaries()
         self.model.fit_generator(train_generator, kwargs)
 
@@ -51,7 +50,7 @@ class VAE(metaclass=ABCMeta):
         '''
         Compiles Keras model
         '''
-        loss = kwargs.get('loss', self.loss)
+        loss = kwargs.get('loss', self.vae_loss)
         optimizer = kwargs.get('optimizer', self.optimizer)
         self.model.compile(loss=loss, optimizer=optimizer)
 
