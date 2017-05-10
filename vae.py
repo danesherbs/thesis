@@ -5,71 +5,125 @@ from keras.models import Model
 from keras.optimizers import Adam
 from keras import backend as K
 from keras.objectives import binary_crossentropy
+from abc import ABCMeta, abstractmethod
 
 
-class VAE():
-    """
+class VAE(metaclass=ABCMeta):
+    '''
     Class to handle building and training VAE models.
-    """
-    def __init__(self, input_shape=(1, 84, 84), latent_dim=32, hidden_dim=256, filters=32):
-        """
+    '''
+
+    def __init__(self, input_shape, optimizer):
+        '''
         Parameters
         ----------
-        input_shape : Array of shape (num_rows, num_cols, num_channels)
-            Shape of image.
-        latent_dim : int
-            Dimension of latent distribution.
-        latent_disc_dim : int
-            Dimension of discrete latent distribution.
-        hidden_dim : int
-            Dimension of hidden layer.
-        filters : Array-like, shape (num_filters, num_filters, num_filters)
-            Number of filters for each convolution in increasing order of depth.
-        """
-        self.optimizer = None
-        self.model = None
+        input_shape : (num_channels, num_rows, num_cols)
+        '''
+        self.optimizer = optimizer
         self.input_shape = input_shape
-        self.hidden_dim = hidden_dim
-        self.latent_dim = latent_dim
-        self.filters = filters
 
-    def fit(self, x_train, num_epochs=1, batch_size=1, val_split=.1,
+    def fit(self, x_train, epochs=1, batch_size=1, val_split=.1,
             learning_rate=1e-3, reset_model=True):
         """
         Training model
         """
         self.batch_size = batch_size
-        self.num_epochs = num_epochs
-        if reset_model:
-            self.__set_model()
+        self.epochs = epochs
+        print('Setting up model...', end=' ')
+        self.set_model()
+        print('done.')
+        self.print_model_summaries()
 
         if x_train.shape[0] % batch_size != 0:
             raise(RuntimeError("Training data shape {} is not divisible by batch size {}".format(x_train.shape[0], self.batch_size)))
 
-        # Update parameters
-        K.set_value(self.optimizer.lr, learning_rate)
-        self.model.compile(optimizer=self.optimizer, loss=self.__vae_loss)
+        # compile parameters
+        self.model.compile(optimizer=self.optimizer, loss=self.vae_loss)
 
         self.model.fit(x_train, x_train,
-                        nb_epoch=self.num_epochs,
+                        nb_epoch=self.epochs,
                         batch_size=self.batch_size,
                         validation_split=val_split)
 
     def fit_generator(self, train_generator, test_generator, steps_per_epoch, validation_steps, epochs=10):
-        self.model.fit_generator(train_generator.flow(X_train, X_train, batch_size=batch_size),
-                   validation_data=test_generator.flow(X_test, X_test, batch_size=batch_size),
-                   validation_steps=len(X_test)/batch_size,
-                   steps_per_epoch=len(X_train)/batch_size,
+        self.model.fit_generator(train_generator,
                    epochs=epochs,
+                   steps_per_epoch=int(len(X_train)/batch_size),
+                   validation_data=test_generator,
+                   validation_steps=int(len(X_test)/batch_size),
                    callbacks=callbacks)
 
-    def __set_model(self):
-        """
-        Setup model (method should only be called in self.fit())
-        """
-        print("Setting up model...", end=' ')
+    @abstractmethod
+    def set_model(self):
+        '''
+        Must define the following for training:
+            - self.encoder
+            - self.decoder
+            - self.model
+        and the following for the loss function:
+            - self.z_mean
+            - self.z_log_var
+            - self.z
+        '''
+        pass
 
+    def sampling(self, args):
+        '''
+        Sampling function used in encoder
+        '''
+        # unpack arguments
+        z_mean, z_log_var = args
+        # need mean and std for each point
+        assert z_mean.shape[1:] == z_log_var.shape[1:]
+        # output shape is same as mean and log_var
+        output_shape = z_mean.shape[1:]
+        # sample from standard normal
+        epsilon = K.random_normal(shape=output_shape, mean=0.0, stddev=1.0)
+        # reparameterization trick
+        return z_mean + K.exp(z_log_var) * epsilon
+
+    def vae_loss(self, y_true, y_pred):
+        '''
+        Variational autoencoder loss function
+        '''
+        beta = 1.0
+        y_true = K.reshape(y_true, (-1, np.prod(self.input_shape)))
+        y_pred = K.reshape(y_pred, (-1, np.prod(self.input_shape)))
+        reconstruction_loss = K.sum(K.binary_crossentropy(y_pred, y_true), axis=-1)
+        latent_shape = self.z.get_shape().as_list()[1:]
+        z_mean_flat = K.reshape(self.z_mean, (-1, np.prod(latent_shape)))
+        z_log_var_flat = K.reshape(self.z_log_var, (-1, np.prod(latent_shape)))
+        kl_loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_flat) - K.exp(z_log_var_flat), axis=-1)
+        return K.mean(reconstruction_loss + beta * kl_loss)
+
+    def print_model_summaries(self):
+        '''
+        Prints model summaries of encoder, decoder and entire model
+        '''
+        self.__print_model_summary(self.encoder)
+        self.__print_model_summary(self.decoder)
+        self.__print_model_summary(self.model)
+
+    def __print_model_summary(self, model):
+        '''
+        Helper for print_model_summaries
+        '''
+        if model is not None:
+            model.summary()
+
+
+class myVAE(VAE):
+
+    def __init__(self, input_shape, optimizer):
+        # call parent constructor
+        VAE.__init__(self, input_shape, optimizer)
+
+    def set_model(self):
+        # initalise important parameters
         kernal_size = (6, 6)
+        filters = 32
+        hidden_dim = 256
+        latent_dim = 32
 
         # initialisers
         weight_seed = None
@@ -84,7 +138,7 @@ class VAE():
         encoder_dense_1 = Dense(self.hidden_dim, activation='relu', name='encoder_dense_1')
         encoder_z_mean = Dense(self.latent_dim, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='z_mean')
         encoder_z_log_var = Dense(self.latent_dim, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='z_log_var')
-        encoder_z = Lambda(self.__sampling, name='z')
+        encoder_z = Lambda(self.sampling, name='z')
 
         # Connect encoder layers
         input_encoder = Input(shape=self.input_shape, name='encoder_input')
@@ -102,8 +156,6 @@ class VAE():
 
         # Define useful shapes for decoder (for symmetry)
         before_flatten_shape = tuple(x_flattened.get_shape().as_list())
-        print('before_flatten_shape')
-        print(before_flatten_shape)
 
         # Decoder layers
         decoder_dense_1 = Dense(self.hidden_dim, activation='relu', name="decoder_dense_1")
@@ -133,57 +185,10 @@ class VAE():
         self.z_log_var = z_log_var
         self.z = z
 
-        # Compile model
-        self.optimizer = Adam()
-        self.model.compile(optimizer=self.optimizer, loss=self.__vae_loss)
 
-        print("done.")
-
-        # print model summary
-        self.print_model_summaries()
-
-        return None
-
-    def __sampling(self, args):
-        '''
-        Sampling function used in encoder
-        '''
-        # unpack arguments
-        z_mean, z_log_var = args
-        # need mean and std for each point
-        assert z_mean.shape[1:] == z_log_var.shape[1:]
-        # output shape is same as mean and log_var
-        output_shape = z_mean.shape[1:]
-        # sample from standard normal
-        epsilon = K.random_normal(shape=output_shape, mean=0.0, stddev=1.0)
-        # reparameterization trick
-        return z_mean + K.exp(z_log_var) * epsilon
-
-    def __vae_loss(self, y_true, y_pred):
-        '''
-        Variational autoencoder loss function
-        '''
-        beta = 1.0
-        y_true = K.reshape(y_true, (-1, np.prod(self.input_shape)))
-        y_pred = K.reshape(y_pred, (-1, np.prod(self.input_shape)))
-        reconstruction_loss = K.sum(K.binary_crossentropy(y_pred, y_true), axis=-1)
-        latent_shape = self.z.get_shape().as_list()[1:]
-        z_mean_flat = K.reshape(self.z_mean, (-1, np.prod(latent_shape)))
-        z_log_var_flat = K.reshape(self.z_log_var, (-1, np.prod(latent_shape)))
-        kl_loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_flat) - K.exp(z_log_var_flat), axis=-1)
-        return K.mean(reconstruction_loss + beta * kl_loss)
-
-    def print_model_summaries(self):
-        '''
-        Prints model summaries of encoder, decoder and entire model
-        '''
-        self.__print_model_summary(self.encoder)
-        self.__print_model_summary(self.decoder)
-        self.__print_model_summary(self.model)
-
-    def __print_model_summary(self, model):
-        '''
-        Helper for print_model_summaries
-        '''
-        if model is not None:
-            model.summary()
+if __name__ == '__main__':
+    input_shape = (1, 84, 84)
+    from keras import optimizers
+    optimizer = optimizers.Adam(lr=1e-3)
+    vae = myVAE(input_shape, optimizer)
+    vae.set_model()
