@@ -1,210 +1,133 @@
-import keras
-import tensorflow as tf
-from keras.layers import Input, Conv2D, ZeroPadding2D, Flatten, Dense, Lambda, Reshape, Conv2DTranspose, BatchNormalization, Dropout
-from keras.preprocessing.image import ImageDataGenerator
-from keras import initializers
-from keras.models import Model
-from keras import backend as K
+from vae import VAE
 import numpy as np
 import utils
-import tensorflow as tf
+from keras import initializers
+from keras.layers import Input, Conv2D, Flatten, Dense, Lambda, Reshape, Conv2DTranspose
+from keras.models import Model
 
 
 
-'''
-Required functions for latent space and training
-'''
-def vae_loss(y_true, y_pred):
-    # y_true is of shape (batch_size,) + input_shape
-    # y_pred is of shape (batch_size,) + output_shape
-    # For example, training an autoencoder on MNIST with batch_size = 64 gives
-    # y_true and y_pred both a shape of of shape (64, 1, 28, 28).
+class FreyVAE(VAE):
 
-    # Flatten y_true and y_pred of shape (batch_size, 1, 28, 28) to (batch_size, 1 * 28 * 28).
-    # Elements are in the interval [0, 1], which can be interpreted as probabilities.
-    y_true = K.reshape(y_true, (-1, np.prod(input_shape)))
-    y_pred = K.reshape(y_pred, (-1, np.prod(input_shape)))
+    def __init__(self, input_shape, log_dir):
+        VAE.__init__(self, input_shape, log_dir)
 
-    # Take the sum of the binary cross entropy for each image in the batch.
-    # Reconstruction loss is of the shape (batch_size, 1).
-    reconstruction_loss = K.sum(K.binary_crossentropy(y_pred, y_true), axis=-1)
-    # reconstruction_loss = np.prod(input_shape) * K.mean(K.binary_crossentropy(y_pred, y_true), axis=-1)
+    def set_model(self):
+        '''
+        Constants
+        '''
+        filters = 32
+        kernel_size = 2
+        pre_latent_size = 64
+        latent_size = 2
 
-    # Get latent shape
-    latent_shape = z.get_shape().as_list()[1:]
-    # Flatten latent space into shape (batch_size,) + flattened_latent_space
-    z_mean_flat = K.reshape(z_mean, (-1, np.prod(latent_shape)))
-    z_log_var_flat = K.reshape(z_log_var, (-1, np.prod(latent_shape)))
-    # Take the KL divergence between q(z|x) and the standard multivariate Gaussian
-    # for each image in the batch. KL loss is of the shape (batch_size, 1).
-    kl_loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_flat) - K.exp(z_log_var_flat), axis=-1)
+        '''
+        Initialisers
+        '''
+        weight_seed = None
+        kernel_initializer = initializers.glorot_uniform(seed = weight_seed)
+        bias_initializer = initializers.glorot_uniform(seed = weight_seed)
 
-    # Return the mean weighted sum of reconstruction loss and KL divergence.
-    # The output loss is therefore scalar after taking the mean of vector of shape (batch_size,).
-    return K.mean(reconstruction_loss + beta * kl_loss)
+        '''
+        Encoder
+        '''
+        # define input with 'channels_first'
+        input_encoder = Input(shape=input_shape, name='encoder_input')
+        x = Conv2D(filters, kernel_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
+        x = Conv2D(2*filters, kernel_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_3')(x)
+        before_flatten_shape = tuple(x.get_shape().as_list())
+        x = Flatten()(x)
+        x = Dense(pre_latent_size, activation='relu', name='encoder_dense_1')(x)
 
+        # separate dense layers for mu and log(sigma), both of size latent_dim
+        z_mean = Dense(latent_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
+        z_log_var = Dense(latent_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
 
-'''
-Initialisation
-'''
-# constants
-batch_size = 1
-epochs = 10
-filters = 32
-kernal_size = (6, 6)
-pre_latent_size = 64
-latent_size = 2
-beta = 1.0
-loss_function = 'vae_loss'
-optimizer = 'adam'
+        # sample from normal with z_mean and z_log_var
+        z = Lambda(self.sampling, name='encoder_z')([z_mean, z_log_var])
 
-# initialisers
-weight_seed = None
-kernel_initializer = initializers.glorot_uniform(seed = weight_seed)
-bias_initializer = initializers.glorot_uniform(seed = weight_seed)
+        '''
+        Decoder
+        '''
+        # take encoder output shape
+        encoder_out_shape = tuple(z.get_shape().as_list())
+        # define rest of model
+        input_decoder = Input(shape=encoder_out_shape[1:], name='decoder_input')
+        x = Dense(pre_latent_size, activation='relu')(input_decoder)
+        x = Dense(np.prod(before_flatten_shape[1:]), activation='relu')(x)
+        x = Reshape(before_flatten_shape[1:])(x)
+        x = Conv2DTranspose(filters, kernel_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_2')(x)
+        decoded_img = Conv2DTranspose(1, kernel_size, strides=(2, 2), activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
 
-
-'''
-Load data
-'''
-# import dataset
-input_shape = (1, 28, 20)
-(X_train, _), (X_test, _) = utils.load_frey()
-train_generator = utils.make_generator(X_train, batch_size=batch_size)
-test_generator = utils.make_generator(X_test, batch_size=batch_size)
-train_size = len(X_train)
-test_size = len(X_test)
-
-
-'''
-Encoder
-'''
-# define input with 'channels_first'
-input_encoder = Input(shape=input_shape, name='encoder_input')
-x = Conv2D(filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
-x = Conv2D(2*filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_3')(x)
-before_flatten_shape = tuple(x.get_shape().as_list())
-x = Flatten()(x)
-x = Dense(pre_latent_size, activation='relu', name='encoder_dense_1')(x)
-x = Dropout(0.1)(x)
-
-# separate dense layers for mu and log(sigma), both of size latent_dim
-z_mean = Dense(latent_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
-z_log_var = Dense(latent_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
-
-def sampling(args):
-    # unpack arguments
-    z_mean, z_log_var = args
-    # need mean and std for each point
-    assert z_mean.shape[1:] == z_log_var.shape[1:]
-    # output shape is same as mean and log_var
-    output_shape = z_mean.shape[1:]
-    # sample from standard normal
-    epsilon = K.random_normal(shape=output_shape, mean=0.0, stddev=1.0)
-    # reparameterization trick
-    return z_mean + K.exp(z_log_var) * epsilon
-
-# sample from normal with z_mean and z_log_var
-z = Lambda(sampling, name='encoder_z')([z_mean, z_log_var])
+        '''
+        Necessary definitions
+        '''
+        # For parent fitting function
+        self.encoder = Model(input_encoder, z)
+        self.decoder = Model(input_decoder, decoded_img)
+        self.model = Model(input_encoder, self.decoder(self.encoder(input_encoder)))
+        # For parent loss function
+        self.z_mean = z_mean
+        self.z_log_var = z_log_var
+        self.z = z
 
 
 '''
-Decoder
+Main function
 '''
-# take encoder output shape
-encoder_out_shape = tuple(z.get_shape().as_list())
-# define rest of model
-input_decoder = Input(shape=encoder_out_shape[1:], name='decoder_input')
-x = Dense(pre_latent_size, activation='relu')(input_decoder)
-x = Dense(np.prod(before_flatten_shape[1:]), activation='relu')(x)
-x = Reshape(before_flatten_shape[1:])(x)
-x = Conv2DTranspose(filters, kernal_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_2')(x)
-decoded_img = Conv2DTranspose(1, kernal_size, strides=(2, 2), activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
+if __name__ == '__main__':
+    
+    # inputs
+    input_shape = (1, 28, 20)
+    epochs = 10
+    batch_size = 1
+    beta = 1.0
+    
+    # define filename
+    name = 'cvae_frey'
 
+    # builder hyperparameter dictionary
+    hp_dictionary = {
+        'batch_size': batch_size,
+        'epochs': epochs,
+        'beta': beta,
+        'loss': 'vae_loss',
+        'optimizer': 'adam',
+        'latent_size': 2
+    }
 
-'''
-Initialise models
-'''
-# define and save models
-encoder = Model(input_encoder, z)
-decoder = Model(input_decoder, decoded_img)
-cvae = Model(input_encoder, decoder(encoder(input_encoder)))
+    # define log directory
+    log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
-# print model summary
-encoder.summary()
-decoder.summary()
-cvae.summary()
+    # make VAE
+    vae = HigginsVAE(input_shape, log_dir)
+    
+    # compile VAE
+    from keras import optimizers
+    optimizer = optimizers.Adam(lr=1e-3)
+    vae.compile(optimizer=optimizer)
+    
+    # get dataset
+    (X_train, _), (X_test, _) = utils.load_frey()
+    train_generator = utils.make_generator(X_train, batch_size=batch_size)
+    test_generator = utils.make_generator(X_test, batch_size=batch_size)
+    train_size = len(X_train)
+    test_size = len(X_test)
 
-# compile and train
-cvae.compile(loss=vae_loss, optimizer=keras.optimizers.Adam(lr=1e-3))
-
-
-'''
-Define filename
-'''
-# define name of run
-name = 'cvae_frey'
-
-# builder hyperparameter dictionary
-hp_dictionary = {
-    'batch_size': batch_size,
-    'epochs': epochs,
-    'beta': beta,
-    'loss': loss_function,
-    'optimizer': optimizer,
-    'latent_size': np.prod(encoder_out_shape[1:])
-}
-
-# define log directory
-log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
-
-
-'''
-Save model architectures and weights of encoder/decoder
-'''
-# make recording directories
-import os
-if not os.path.exists(log_dir):
-    os.makedirs(log_dir)
-
-# write model architectures to log directory
-model_json = cvae.to_json()
-with open(log_dir + 'model.json', 'w') as json_file:
-    json_file.write(model_json)
-
-encoder_json = encoder.to_json()
-with open(log_dir + 'encoder.json', 'w') as json_file:
-    json_file.write(encoder_json)
-
-decoder_json = decoder.to_json()
-with open(log_dir + 'decoder.json', 'w') as json_file:
-    json_file.write(decoder_json)
-
-
-'''
-Train model
-'''
-# define callbacks
-tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
-checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:02d}-{val_loss:.4f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
-callbacks = [tensorboard, checkpointer]
-
-steps_per_epoch = int(train_size / batch_size)
-validation_steps = int(test_size / batch_size)
-print("\nSteps per epoch =", steps_per_epoch, sep=' ')
-print("Validation steps =", validation_steps, '\n', sep=' ')
-
-# fit model using generators and record in TensorBoard
-cvae.fit_generator(train_generator,
-				   epochs=epochs,
+    # save architecure
+    vae.save_model_architecture()
+    
+    # print summaries
+    vae.print_model_summaries()
+    
+    # fit VAE
+    steps_per_epoch = int(train_size / batch_size)
+    validation_steps = int(test_size / batch_size)
+    vae.fit_generator(train_generator,
+                   epochs=epochs,
                    steps_per_epoch=steps_per_epoch,
                    validation_data=test_generator,
-                   validation_steps=validation_steps,
-                   callbacks=callbacks)
-
-
-'''
-Save model weights of encoder/decoder
-'''
-encoder.save_weights(log_dir + "encoder_weights.hdf5")
-decoder.save_weights(log_dir + "decoder_weights.hdf5")
+                   validation_steps=validation_steps)
+    
+    # save encoder and decoder weights
+    vae.save_weights()
