@@ -7,9 +7,9 @@ from keras.models import Model
 
 
 
-class ConvolutionalLatentVAE(VAE):
+class ConvolutionalLatentDeepVAE(VAE):
 
-    def __init__(self, input_shape, log_dir, filters=8, latent_filters=4, kernel_size=3, pool_size=2):
+    def __init__(self, input_shape, log_dir, filters=32, latent_filters=64, kernel_size=6, pool_size=2):
         # initialise ConvolutionalLatentVAE specific variables
         self.filters = filters
         self.latent_filters = latent_filters
@@ -31,12 +31,15 @@ class ConvolutionalLatentVAE(VAE):
         '''
         # define input with 'channels_first'
         input_encoder = Input(shape=input_shape, name='encoder_input')
-        conv2D_1 = Conv2D(self.filters, self.kernel_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
-        max_pooling_1 = MaxPooling2D(self.pool_size, name='encoder_max_pooling_1')(conv2D_1)
+
+        # 'kernel_size' convolution with 'filters' output filters, stride 1x1 and 'valid' border_mode
+        x = Conv2D(self.filters, self.kernel_size, padding='valid', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
+        x = MaxPooling2D(self.pool_size, name='encoder_max_pooling_1')(x)
+        x = Conv2D(2*self.filters, self.kernel_size, padding='valid', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
 
         # separate dense layers for mu and log(sigma), both of size latent_dim
-        z_mean = Conv2D(self.latent_filters, self.kernel_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(max_pooling_1)
-        z_log_var = Conv2D(self.latent_filters, self.kernel_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(max_pooling_1)
+        z_mean = Conv2D(self.latent_filters, self.kernel_size, padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
+        z_log_var = Conv2D(self.latent_filters, self.kernel_size, padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
 
         # sample from normal with z_mean and z_log_var
         z = Lambda(self.sampling, name='latent_space')([z_mean, z_log_var])
@@ -49,14 +52,13 @@ class ConvolutionalLatentVAE(VAE):
         input_decoder = Input(shape=(encoder_out_shape[1], encoder_out_shape[2], encoder_out_shape[3]), name='decoder_input')
 
         # transposed convolution and up sampling
-        conv2DT_1 = Conv2DTranspose(self.filters, kernel_size, activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(input_decoder)
-        up_sampling_1 = UpSampling2D(self.pool_size, name='decoder_up_sampling_1')(conv2DT_1)
-
-        # transposed convolution
-        conv2DT_2 = Conv2DTranspose(1, self.kernel_size, activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_2')(up_sampling_1)
+        x = Conv2DTranspose(2*self.filters, self.kernel_size, padding='valid', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_1')(input_decoder)
+        x = Conv2DTranspose(self.filters, self.kernel_size, padding='valid', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_2')(x)
+        x = UpSampling2D(self.pool_size, name='decoder_up_sampling_1')(x)
+        x = Conv2DTranspose(1, self.kernel_size, padding='valid', activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='decoder_conv2DT_3')(x)
 
         # define decoded image to be image in last layer
-        decoded_img = conv2DT_2
+        decoded_img = x
 
         '''
         Necessary definitions
@@ -106,7 +108,7 @@ if __name__ == '__main__':
     log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
-    vae = ConvolutionalLatentVAE(input_shape, 
+    vae = ConvolutionalLatentDeepVAE(input_shape, 
                 log_dir,
                 filters=filters,
                 latent_filters=latent_filters,

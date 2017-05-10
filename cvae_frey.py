@@ -106,11 +106,11 @@ if __name__ == '__main__':
 
     # make VAE
     vae = FreyVAE(input_shape, 
-                    log_dir,
-                    filters=filters,
-                    kernel_size=kernel_size,
-                    pre_latent_size=pre_latent_size,
-                    latent_size=latent_size)
+                log_dir,
+                filters=filters,
+                kernel_size=kernel_size,
+                pre_latent_size=pre_latent_size,
+                latent_size=latent_size)
     
     # compile VAE
     from keras import optimizers
