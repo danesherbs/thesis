@@ -39,7 +39,6 @@ class VAE(metaclass=ABCMeta):
         '''
         Wrapper for Keras fit method
         '''
-        self.print_model_summaries()
         callbacks = kwargs.get('callbacks', self.callbacks)  # default callback
         self.model.fit(X_train, X_train, callbacks=callbacks, **kwargs)
 
@@ -47,7 +46,6 @@ class VAE(metaclass=ABCMeta):
         '''
         Wrapper for Keras fit_generator method
         '''
-        self.print_model_summaries()
         callbacks = kwargs.get('callbacks', self.callbacks)
         self.model.fit_generator(train_generator, callbacks=callbacks, **kwargs)
 
@@ -121,6 +119,9 @@ class VAE(metaclass=ABCMeta):
         with open(self.log_dir + name + '.json', 'w') as json_file:
             json_file.write(model_json)
 
+    def save_weights(self):
+        self.encoder.save_weights(self.log_dir + "encoder_weights.hdf5")
+        self.decoder.save_weights(self.log_dir + "decoder_weights.hdf5")
 
     def __define_callbacks(self, log_dir):
         tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)

@@ -112,14 +112,19 @@ if __name__ == '__main__':
     vae.compile()
     # get dataset
     import utils
+    batch_size = 1
     (X_train, _), (X_test, _) = utils.load_mnist()
-    train_generator = utils.make_generator(X_train, batch_size=1)
-    test_generator = utils.make_generator(X_test, batch_size=1)
+    train_generator = utils.make_generator(X_train, batch_size=batch_size)
+    test_generator = utils.make_generator(X_test, batch_size=batch_size)
     # save architecure
     vae.save_model_architecture()
+    # print summaries
+    vae.print_model_summaries()
     # fit VAE
     vae.fit_generator(train_generator,
-                   epochs=1,
-                   steps_per_epoch=100,
+                   epochs=3,
+                   steps_per_epoch=10,
                    validation_data=test_generator,
-                   validation_steps=10)
+                   validation_steps=5)
+    # save encoder and decoder weights
+    vae.save_weights()
