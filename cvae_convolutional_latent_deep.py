@@ -89,7 +89,7 @@ if __name__ == '__main__':
     beta = 1.0
     
     # define filename
-    name = 'cvae_convolutional_latent'
+    name = 'cvae_convolutional_latent_deep'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
