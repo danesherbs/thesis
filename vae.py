@@ -34,13 +34,6 @@ class VAE(metaclass=ABCMeta):
         '''
         pass
 
-    def fit(self, X_train, **kwargs):
-        '''
-        Wrapper for Keras fit method
-        '''
-        callbacks = kwargs.get('callbacks', self.callbacks)  # default callback
-        self.model.fit(X_train, X_train, callbacks=callbacks, **kwargs)
-
     def fit_generator(self, train_generator, **kwargs):
         '''
         Wrapper for Keras fit_generator method

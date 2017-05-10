@@ -18,7 +18,6 @@ class HigginsVAE(VAE):
         # call parent constructor
         VAE.__init__(self, input_shape, log_dir)
 
-
     def set_model(self):
         '''
         Initialisers
