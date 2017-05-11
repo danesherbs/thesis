@@ -16,7 +16,7 @@ def run_dense_latent_space():
 
     # inputs
     input_shape = (1, 28, 20)
-    epochs = 10
+    epochs = 30
     batch_size = 1
     beta = 1.0
     filters = 32
@@ -88,7 +88,7 @@ def run_convolutional_latent_space_with_same_number_of_parameters():
 
     # inputs
     input_shape = (1, 28, 20)
-    epochs = 10
+    epochs = 30
     batch_size = 1
     beta = 1.0
     filters = 32
@@ -160,7 +160,7 @@ def run_convolutional_latent_space_with_same_number_of_neurons():
 
     # inputs
     input_shape = (1, 28, 20)
-    epochs = 10
+    epochs = 30
     batch_size = 1
     beta = 1.0
     filters = 32
