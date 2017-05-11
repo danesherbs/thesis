@@ -7,44 +7,29 @@ import utils
 '''
 Inputs
 '''
-name = 'cvae_frey_11_May_10_08_48_batch_size_1_beta_2.0_epochs_10_filters_32_kernel_size_2_latent_size_8_loss_vae_loss_optimizer_adam_pre_latent_size_64'
-model_weights = 'weights.007-351.1501.hdf5'
-
-
-'''
-Log directory
-'''
+name = 'cvae_frey_11_May_20_03_39_batch_size_1_beta_4.0_epochs_30_filters_32_kernel_size_2_latent_size_2_loss_vae_loss_optimizer_adam_pre_latent_size_64'
 log_dir = './summaries/' + name + '/'
 
 
 '''
 Load models
 '''
-# load model json file
-json_file = open(log_dir + 'model.json', 'r')
-loaded_model_json = json_file.read()
-json_file.close()
-model = model_from_json(loaded_model_json)
+# import model class
+from cvae_frey import FreyVAE
 
-# load encoder json file
-json_file = open(log_dir + 'encoder.json', 'r')
-loaded_encoder_json = json_file.read()
-json_file.close()
-encoder = model_from_json(loaded_encoder_json)
+# define model
+vae = FreyVAE((1, 28, 20), log_dir)
 
-# load decoder json file
-json_file = open(log_dir + 'decoder.json', 'r')
-loaded_decoder_json = json_file.read()
-json_file.close()
-decoder = model_from_json(loaded_decoder_json)
+# load architecture and weights
+encoder = vae.load_model()
 
+# extract models
+model = vae.get_model()
+encoder = vae.get_encoder()
+decoder = vae.get_decoder()
 
-'''
-Load weights
-'''
-model.load_weights(log_dir + model_weights)
-encoder.load_weights(log_dir + 'encoder_weights.hdf5')
-decoder.load_weights(log_dir + 'decoder_weights.hdf5')
+# print summaries
+vae.print_model_summaries()
 
 
 '''
@@ -81,7 +66,7 @@ def traverse_latent_space(latent_size):
 	for latent_variable in range(latent_size):
 		for std in range(-stddevs, stddevs+1):
 			# construct latent sample
-			encoded_sample = np.zeros((1, latent_size))
+			encoded_sample = np.zeros((1, 2))
 			encoded_sample[0][latent_variable] = std
 			# decode latent sample
 			decoded_sample = decoder.predict(encoded_sample)
@@ -96,13 +81,6 @@ def traverse_latent_space(latent_size):
 			fig_counter += 1
 	plt.show()
 	plt.gray()
-
-# def plot_manifold():
-# 	width = 5
-# 	height = 5
-# 	for i in range(width):
-# 		for j in range(height):
-
 
 
 '''

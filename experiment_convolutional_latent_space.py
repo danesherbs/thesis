@@ -231,6 +231,6 @@ def run_experiments():
 
 
 if __name__ == '__main__':
-    # run experiments 10 times
+    # run experiments 5 times
     for _ in range(5):
         run_experiments()
