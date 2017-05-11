@@ -1,7 +1,11 @@
 import utils
-from cvae_frey import FreyVAE
-from cvae_frey_convolutional_latent import FreyConvolutionalLatentVAE
+from cvae_frey import FreyDenseLatentVAE, FreyConvolutionalLatentVAE
 
+
+'''
+All experiments run with:
+        earlystopping = keras.callbacks.EarlyStopping(monitor='val_loss', min_delta=0.5, patience=6, mode='auto', verbose=0)
+'''
 
 
 '''
@@ -16,7 +20,7 @@ def run_dense_latent_space():
 
     # inputs
     input_shape = (1, 28, 20)
-    epochs = 30
+    epochs = 1
     batch_size = 1
     beta = 1.0
     filters = 32
@@ -25,7 +29,7 @@ def run_dense_latent_space():
     latent_size = 15
     
     # define filename
-    name = 'cvae_frey_dense_latent_space'
+    name = 'cvae_frey_dense_latent'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
@@ -41,10 +45,10 @@ def run_dense_latent_space():
     }
 
     # define log directory
-    log_dir = './summaries/experiment_convolutional_latent_space/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
+    log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
-    vae = FreyVAE(input_shape, 
+    vae = FreyDenseLatentVAE(input_shape, 
                 log_dir,
                 filters=filters,
                 kernel_size=kernel_size,
@@ -88,7 +92,7 @@ def run_convolutional_latent_space_with_same_number_of_parameters():
 
     # inputs
     input_shape = (1, 28, 20)
-    epochs = 30
+    epochs = 1
     batch_size = 1
     beta = 1.0
     filters = 32
@@ -97,7 +101,7 @@ def run_convolutional_latent_space_with_same_number_of_parameters():
     pool_size = 2
     
     # define filename
-    name = 'cvae_frey_convolutional_latent_space'
+    name = 'cvae_frey_convolutional_latent'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
@@ -113,7 +117,7 @@ def run_convolutional_latent_space_with_same_number_of_parameters():
     }
 
     # define log directory
-    log_dir = './summaries/experiment_convolutional_latent_space/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
+    log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
     vae = FreyConvolutionalLatentVAE(input_shape, 
@@ -160,7 +164,7 @@ def run_convolutional_latent_space_with_same_number_of_neurons():
 
     # inputs
     input_shape = (1, 28, 20)
-    epochs = 30
+    epochs = 1
     batch_size = 1
     beta = 1.0
     filters = 32
@@ -185,7 +189,7 @@ def run_convolutional_latent_space_with_same_number_of_neurons():
     }
 
     # define log directory
-    log_dir = './summaries/experiment_convolutional_latent_space/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
+    log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
     vae = FreyConvolutionalLatentVAE(input_shape, 
