@@ -30,7 +30,7 @@ class FreyVAE(VAE):
         Encoder
         '''
         # define input with 'channels_first'
-        input_encoder = Input(shape=input_shape, name='encoder_input')
+        input_encoder = Input(shape=self.input_shape, name='encoder_input')
         x = Conv2D(self.filters, self.kernel_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
         x = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_3')(x)
         before_flatten_shape = tuple(x.get_shape().as_list())
@@ -69,7 +69,6 @@ class FreyVAE(VAE):
         self.z_log_var = z_log_var
         self.z = z
 
-
 '''
 Main function
 '''
@@ -79,7 +78,7 @@ if __name__ == '__main__':
     input_shape = (1, 28, 20)
     epochs = 10
     batch_size = 1
-    beta = 1.0
+    beta = 2.0
     filters = 32
     kernel_size = 2
     pre_latent_size = 64
@@ -116,6 +115,9 @@ if __name__ == '__main__':
     from keras import optimizers
     optimizer = optimizers.Adam(lr=1e-3)
     vae.compile(optimizer=optimizer)
+
+    # print summaries
+    vae.print_model_summaries()
     
     # get dataset
     (X_train, _), (X_test, _) = utils.load_frey()
@@ -124,12 +126,6 @@ if __name__ == '__main__':
     train_size = len(X_train)
     test_size = len(X_test)
 
-    # save architecure
-    vae.save_model_architecture()
-    
-    # print summaries
-    vae.print_model_summaries()
-    
     # fit VAE
     steps_per_epoch = int(train_size / batch_size)
     validation_steps = int(test_size / batch_size)
@@ -138,6 +134,3 @@ if __name__ == '__main__':
                    steps_per_epoch=steps_per_epoch,
                    validation_data=test_generator,
                    validation_steps=validation_steps)
-    
-    # save encoder and decoder weights
-    vae.save_weights()

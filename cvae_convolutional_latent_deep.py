@@ -128,9 +128,6 @@ if __name__ == '__main__':
     train_size = len(X_train)
     test_size = len(X_test)
     
-    # save architecure
-    vae.save_model_architecture()
-    
     # print summaries
     vae.print_model_summaries()
     
@@ -142,6 +139,3 @@ if __name__ == '__main__':
                    steps_per_epoch=steps_per_epoch,
                    validation_data=test_generator,
                    validation_steps=validation_steps)
-    
-    # save encoder and decoder weights
-    vae.save_weights()

@@ -2,6 +2,7 @@ import pickle
 import numpy as np
 import os
 import keras
+from keras.models import load_model
 from keras import backend as K
 from keras.objectives import binary_crossentropy
 from keras.models import model_from_json
@@ -19,8 +20,8 @@ class VAE(object, metaclass=ABCMeta):
         '''
         self.input_shape = input_shape
         self.log_dir = log_dir
-        self.__define_callbacks(log_dir)
         self.set_model()
+        self.__define_callbacks()
 
     @abstractmethod
     def set_model(self):
@@ -130,37 +131,34 @@ class VAE(object, metaclass=ABCMeta):
         model = model_from_json(loaded_model_json, {'sampling': self.sampling})
         return model
 
-    def save_weights(self):
-        '''
-        Saves weights of encoder and decoder
-        '''
-        self.__save_weights(self.encoder, 'encoder')
-        self.__save_weights(self.decoder, 'decoder')
+    def load_model(self):
+        self.encoder = load_model(self.log_dir + 'encoder.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
+        self.decoder = load_model(self.log_dir + 'decoder.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
+        self.model = load_model(self.log_dir + 'model.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
 
-    def __save_weights(self, model, name):
-        '''
-        Helper for save_weights
-        '''
-        if not os.path.exists(self.log_dir):
-            os.makedirs(self.log_dir)
-        model.save_weights(self.log_dir + name + "_weights.hdf5")
-
-    def load_weights(self, model_weights):
-        '''
-        Loads model weights
-        '''
-        self.model.load_weights(self.log_dir + model_weights)
-        self.encoder.load_weights(self.log_dir + 'encoder_weights.hdf5')
-        self.decoder.load_weights(self.log_dir + 'decoder_weights.hdf5')
-
-    def __define_callbacks(self, log_dir):
+    def __define_callbacks(self):
         '''
         Helper for __init__
         '''
-        tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
-        checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:03d}-{val_loss:.4f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
+        tensorboard = keras.callbacks.TensorBoard(log_dir=self.log_dir, histogram_freq=1, write_graph=True, write_images=False)
         earlystopping = keras.callbacks.EarlyStopping(monitor='val_loss', min_delta=1.0, patience=2, mode='auto', verbose=0)
-        self.callbacks = [tensorboard, checkpointer, earlystopping]
+        model_checkpointer = self.__model_checkpointer(self.model, 'model')
+        encoder_checkpointer = self.__model_checkpointer(self.encoder, 'encoder')
+        decoder_checkpointer = self.__model_checkpointer(self.decoder, 'decoder')
+        self.callbacks = [tensorboard, earlystopping, model_checkpointer, encoder_checkpointer, decoder_checkpointer]
+
+    def __model_checkpointer(self, model, name):
+        '''
+        Helper for __define_callbacks
+        '''
+        model_checkpointer = keras.callbacks.ModelCheckpoint(filepath=self.log_dir + name + '.hdf5',
+                                                            verbose=1,
+                                                            monitor='val_loss',
+                                                            mode='auto',
+                                                            period=1,
+                                                            save_best_only=True)
+        model_checkpointer.set_model(model)
+        return model_checkpointer
 
     '''
     Getters

@@ -5,46 +5,28 @@ import utils
 
 
 '''
-Inputs
-'''
-name = 'cvae_frey_09_May_21_52_18_batch_size_1_beta_1.0_epochs_10_latent_size_2_loss_vae_loss_optimizer_adam'
-model_weights = 'weights.004-351.7898.hdf5'
-
-
-'''
 Log directory
 '''
+name = 'cvae_frey_11_May_14_57_52_batch_size_1_beta_2.0_epochs_10_filters_32_kernel_size_2_latent_size_8_loss_vae_loss_optimizer_adam_pre_latent_size_64'
 log_dir = './summaries/' + name + '/'
 
 
 '''
 Load models
 '''
-# load model json file
-json_file = open(log_dir + 'model.json', 'r')
-loaded_model_json = json_file.read()
-json_file.close()
-model = model_from_json(loaded_model_json)
+# import model class
+from cvae_frey import FreyVAE
 
-# load encoder json file
-json_file = open(log_dir + 'encoder.json', 'r')
-loaded_encoder_json = json_file.read()
-json_file.close()
-encoder = model_from_json(loaded_encoder_json)
+# define model
+vae = FreyVAE((1, 28, 20), log_dir)
 
-# load decoder json file
-json_file = open(log_dir + 'decoder.json', 'r')
-loaded_decoder_json = json_file.read()
-json_file.close()
-decoder = model_from_json(loaded_decoder_json)
+# load weights
+encoder = vae.load_model()
 
-
-'''
-Load weights
-'''
-model.load_weights(log_dir + model_weights)
-encoder.load_weights(log_dir + 'encoder_weights.hdf5')
-decoder.load_weights(log_dir + 'decoder_weights.hdf5')
+# extract models
+model = vae.get_model()
+decoder = vae.get_decoder()
+encoder = vae.get_encoder()
 
 
 '''
@@ -125,6 +107,6 @@ def __demo_sample_posterior():
 Main
 '''
 if __name__ == '__main__':
-	__decode_prior_samples(5, latent_shape=(1, 2))
+	# __decode_prior_samples(5, latent_shape=(1, 8))
 	# __encode_decode_sample(sample_number=0)
-	# __demo_sample_posterior()
+	__demo_sample_posterior()
