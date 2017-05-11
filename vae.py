@@ -1,12 +1,14 @@
+import pickle
 import numpy as np
 import os
 import keras
 from keras import backend as K
 from keras.objectives import binary_crossentropy
+from keras.models import model_from_json
 from abc import ABCMeta, abstractmethod
 
 
-class VAE(metaclass=ABCMeta):
+class VAE(object, metaclass=ABCMeta):
     '''
     Class to handle helper and training functions of VAEs.
     '''
@@ -110,6 +112,24 @@ class VAE(metaclass=ABCMeta):
         with open(self.log_dir + name + '.json', 'w') as json_file:
             json_file.write(model_json)
 
+    def load_model_architecture(self):
+        '''
+        Loads model architectures
+        '''
+        self.model = self.__load_model_architecture('model')
+        self.encoder = self.__load_model_architecture('encoder')
+        self.decoder = self.__load_model_architecture('decoder')
+
+    def __load_model_architecture(self, name):
+        '''
+        Helper for load_model_architecture
+        '''
+        json_file = open(self.log_dir + name + '.json', 'r')
+        loaded_model_json = json_file.read()
+        json_file.close()
+        model = model_from_json(loaded_model_json, {'sampling': self.sampling})
+        return model
+
     def save_weights(self):
         '''
         Saves weights of encoder and decoder
@@ -118,9 +138,20 @@ class VAE(metaclass=ABCMeta):
         self.__save_weights(self.decoder, 'decoder')
 
     def __save_weights(self, model, name):
+        '''
+        Helper for save_weights
+        '''
         if not os.path.exists(self.log_dir):
             os.makedirs(self.log_dir)
         model.save_weights(self.log_dir + name + "_weights.hdf5")
+
+    def load_weights(self, model_weights):
+        '''
+        Loads model weights
+        '''
+        self.model.load_weights(self.log_dir + model_weights)
+        self.encoder.load_weights(self.log_dir + 'encoder_weights.hdf5')
+        self.decoder.load_weights(self.log_dir + 'decoder_weights.hdf5')
 
     def __define_callbacks(self, log_dir):
         '''
@@ -128,4 +159,17 @@ class VAE(metaclass=ABCMeta):
         '''
         tensorboard = keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1, write_graph=True, write_images=False)
         checkpointer = keras.callbacks.ModelCheckpoint(filepath=log_dir + 'weights.{epoch:03d}-{val_loss:.4f}.hdf5', verbose=1, monitor='val_loss', mode='auto', period=1, save_best_only=True)
-        self.callbacks = [tensorboard, checkpointer]
+        earlystopping = keras.callbacks.EarlyStopping(monitor='val_loss', min_delta=1.0, patience=2, mode='auto', verbose=0)
+        self.callbacks = [tensorboard, checkpointer, earlystopping]
+
+    '''
+    Getters
+    '''
+    def get_encoder(self):
+        return self.encoder
+
+    def get_decoder(self):
+        return self.decoder
+    
+    def get_model(self):
+        return self.model
