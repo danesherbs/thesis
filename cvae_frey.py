@@ -35,7 +35,7 @@ class FreyVAE(VAE):
         x = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_3')(x)
         before_flatten_shape = tuple(x.get_shape().as_list())
         x = Flatten()(x)
-        # x = Dense(self.pre_latent_size, activation='relu', name='encoder_dense_1')(x)
+        x = Dense(self.pre_latent_size, activation='relu', name='encoder_dense_1')(x)
 
         # separate dense layers for mu and log(sigma), both of size latent_dim
         z_mean = Dense(self.latent_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
@@ -51,8 +51,8 @@ class FreyVAE(VAE):
         encoder_out_shape = tuple(z.get_shape().as_list())
         # define rest of model
         input_decoder = Input(shape=encoder_out_shape[1:], name='decoder_input')
-        # x = Dense(self.pre_latent_size, activation='relu')(input_decoder)
-        x = Dense(np.prod(before_flatten_shape[1:]), activation='relu')(input_decoder)
+        x = Dense(self.pre_latent_size, activation='relu')(input_decoder)
+        x = Dense(np.prod(before_flatten_shape[1:]), activation='relu')(x)
         x = Reshape(before_flatten_shape[1:])(x)
         x = Conv2DTranspose(self.filters, self.kernel_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_2')(x)
         decoded_img = Conv2DTranspose(1, self.kernel_size, strides=(2, 2), activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
@@ -68,10 +68,10 @@ class FreyVAE(VAE):
         self.z_mean = z_mean
         self.z_log_var = z_log_var
         self.z = z
-        
+
 
 '''
-For convolutional latent space experiment
+For convolutional latent space experiment: experiment_convolutional_latent_space.py
 '''
 class FreyDenseLatentVAE(VAE):
 
@@ -137,7 +137,7 @@ class FreyDenseLatentVAE(VAE):
 
 
 '''
-For convolutional latent space experiment
+For convolutional latent space experiment: experiment_convolutional_latent_space.py
 '''
 class FreyConvolutionalLatentVAE(VAE):
 
@@ -211,13 +211,13 @@ if __name__ == '__main__':
     
     # inputs
     input_shape = (1, 28, 20)
-    epochs = 10
+    epochs = 30
     batch_size = 1
-    beta = 2.0
+    beta = 4.0
     filters = 32
     kernel_size = 2
     pre_latent_size = 64
-    latent_size = 8
+    latent_size = 2
     
     # define filename
     name = 'cvae_frey'
