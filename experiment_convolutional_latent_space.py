@@ -220,11 +220,13 @@ def run_convolutional_latent_space_with_same_number_of_neurons():
                    validation_steps=validation_steps)
 
 
-def main():
+def run_experiments():
     run_dense_latent_space()
     run_convolutional_latent_space_with_same_number_of_parameters()
     run_convolutional_latent_space_with_same_number_of_neurons()
 
 
 if __name__ == '__main__':
-    main()
+    # run experiments 10 times
+    for _ in range(5):
+        run_experiments()
