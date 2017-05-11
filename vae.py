@@ -43,7 +43,7 @@ class VAE(metaclass=ABCMeta):
 
     def compile(self, **kwargs):
         '''
-        Compiles Keras model
+        Wrapper for Keras compile method
         '''
         loss = kwargs.get('loss', self.vae_loss)  # default loss
         self.model.compile(loss=loss, **kwargs)
