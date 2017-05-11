@@ -25,7 +25,7 @@ def run_dense_latent_space():
     latent_size = 15
     
     # define filename
-    name = 'cvae_frey'
+    name = 'cvae_frey_dense_latent_space'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
@@ -97,7 +97,7 @@ def run_convolutional_latent_space_with_same_number_of_parameters():
     pool_size = 2
     
     # define filename
-    name = 'cvae_frey'
+    name = 'cvae_frey_convolutional_latent_space'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
@@ -169,7 +169,7 @@ def run_convolutional_latent_space_with_same_number_of_neurons():
     pool_size = 2
     
     # define filename
-    name = 'cvae_frey'
+    name = 'cvae_frey_convolutional_latent_space'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
