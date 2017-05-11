@@ -7,6 +7,7 @@ from keras import backend as K
 from keras.objectives import binary_crossentropy
 from keras.models import model_from_json
 from abc import ABCMeta, abstractmethod
+from custom_callbacks import CustomModelCheckpoint
 
 
 class VAE(object, metaclass=ABCMeta):
@@ -132,9 +133,9 @@ class VAE(object, metaclass=ABCMeta):
         return model
 
     def load_model(self):
+        self.model = load_model(self.log_dir + 'model.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
         self.encoder = load_model(self.log_dir + 'encoder.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
         self.decoder = load_model(self.log_dir + 'decoder.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
-        self.model = load_model(self.log_dir + 'model.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
 
     def __define_callbacks(self):
         '''
@@ -142,23 +143,14 @@ class VAE(object, metaclass=ABCMeta):
         '''
         tensorboard = keras.callbacks.TensorBoard(log_dir=self.log_dir, histogram_freq=1, write_graph=True, write_images=False)
         earlystopping = keras.callbacks.EarlyStopping(monitor='val_loss', min_delta=0.5, patience=6, mode='auto', verbose=0)
-        model_checkpointer = self.__model_checkpointer(self.model, 'model')
-        encoder_checkpointer = self.__model_checkpointer(self.encoder, 'encoder')
-        decoder_checkpointer = self.__model_checkpointer(self.decoder, 'decoder')
-        self.callbacks = [tensorboard, earlystopping, model_checkpointer, encoder_checkpointer, decoder_checkpointer]
-
-    def __model_checkpointer(self, model, name):
-        '''
-        Helper for __define_callbacks
-        '''
-        model_checkpointer = keras.callbacks.ModelCheckpoint(filepath=self.log_dir + name + '.hdf5',
-                                                            verbose=1,
-                                                            monitor='val_loss',
-                                                            mode='auto',
-                                                            period=1,
-                                                            save_best_only=True)
-        model_checkpointer.set_model(model)
-        return model_checkpointer
+        model_checkpointer = CustomModelCheckpoint(filepath=self.log_dir + 'model' + '.hdf5',
+                                                verbose=1,
+                                                monitor='val_loss',
+                                                mode='auto',
+                                                period=1,
+                                                save_best_only=True,
+                                                other_models={'encoder': self.encoder, 'decoder': self.decoder})
+        self.callbacks = [tensorboard, earlystopping, model_checkpointer]
 
     '''
     Getters
