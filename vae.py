@@ -38,7 +38,7 @@ class VAE(metaclass=ABCMeta):
         '''
         Wrapper for Keras fit_generator method
         '''
-        callbacks = kwargs.get('callbacks', self.callbacks)
+        callbacks = kwargs.get('callbacks', self.callbacks)  # default callbacks
         self.model.fit_generator(train_generator, callbacks=callbacks, **kwargs)
 
     def compile(self, **kwargs):
@@ -96,8 +96,6 @@ class VAE(metaclass=ABCMeta):
         '''
         Saves model architecture of encoder, decoder and entire model
         '''
-        if not os.path.exists(self.log_dir):
-            os.makedirs(self.log_dir)
         self.__save_model_architecture(self.model, 'model')
         self.__save_model_architecture(self.encoder, 'encoder')
         self.__save_model_architecture(self.decoder, 'decoder')
@@ -106,6 +104,8 @@ class VAE(metaclass=ABCMeta):
         '''
         Helper for save_model_architecture
         '''
+        if not os.path.exists(self.log_dir):
+            os.makedirs(self.log_dir)
         model_json = model.to_json()
         with open(self.log_dir + name + '.json', 'w') as json_file:
             json_file.write(model_json)
@@ -114,8 +114,13 @@ class VAE(metaclass=ABCMeta):
         '''
         Saves weights of encoder and decoder
         '''
-        self.encoder.save_weights(self.log_dir + "encoder_weights.hdf5")
-        self.decoder.save_weights(self.log_dir + "decoder_weights.hdf5")
+        self.__save_weights(self.encoder, 'encoder')
+        self.__save_weights(self.decoder, 'decoder')
+
+    def __save_weights(self, model, name):
+        if not os.path.exists(self.log_dir):
+            os.makedirs(self.log_dir)
+        model.save_weights(self.log_dir + name + "_weights.hdf5")
 
     def __define_callbacks(self, log_dir):
         '''
