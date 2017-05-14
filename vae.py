@@ -51,7 +51,8 @@ class VAE(object, metaclass=ABCMeta):
         Wrapper for Keras compile method
         '''
         loss = kwargs.get('loss', self.vae_loss)  # default loss
-        self.model.compile(loss=loss, **kwargs)
+        metrics = kwargs.get('metrics', [self.kl_loss, self.reconstruction_loss])  # default metrics
+        self.model.compile(loss=loss, metrics=metrics, **kwargs)
 
     def sampling(self, args):
         '''
@@ -72,14 +73,27 @@ class VAE(object, metaclass=ABCMeta):
         '''
         Variational autoencoder loss function
         '''
+        return self.reconstruction_loss(y_true, y_pred) + self.beta * self.kl_loss(y_true, y_pred)
+
+    def kl_loss(self, y_true, y_pred):
+        '''
+        KL divergence
+        '''
         y_true = K.reshape(y_true, (-1, np.prod(self.input_shape)))
         y_pred = K.reshape(y_pred, (-1, np.prod(self.input_shape)))
-        reconstruction_loss = K.sum(K.binary_crossentropy(y_pred, y_true), axis=-1)
         latent_shape = self.z.get_shape().as_list()[1:]
         z_mean_flat = K.reshape(self.z_mean, (-1, np.prod(latent_shape)))
         z_log_var_flat = K.reshape(self.z_log_var, (-1, np.prod(latent_shape)))
         kl_loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_flat) - K.exp(z_log_var_flat), axis=-1)
-        return K.mean(reconstruction_loss + self.beta * kl_loss)
+        return K.mean(kl_loss)
+
+    def reconstruction_loss(self, y_true, y_pred):
+        '''
+        Binary cross-entropy
+        '''
+        y_true = K.reshape(y_true, (-1, np.prod(self.input_shape)))
+        y_pred = K.reshape(y_pred, (-1, np.prod(self.input_shape)))
+        return K.sum(K.binary_crossentropy(y_pred, y_true), axis=-1)
 
     def print_model_summaries(self):
         '''
@@ -96,50 +110,20 @@ class VAE(object, metaclass=ABCMeta):
         if model is not None:
             model.summary()
 
-    def save_model_architecture(self):
-        '''
-        Saves model architecture of encoder, decoder and entire model
-        '''
-        self.__save_model_architecture(self.model, 'model')
-        self.__save_model_architecture(self.encoder, 'encoder')
-        self.__save_model_architecture(self.decoder, 'decoder')
-
-    def __save_model_architecture(self, model, name):
-        '''
-        Helper for save_model_architecture
-        '''
-        if not os.path.exists(self.log_dir):
-            os.makedirs(self.log_dir)
-        model_json = model.to_json()
-        with open(self.log_dir + name + '.json', 'w') as json_file:
-            json_file.write(model_json)
-
-    def load_model_architecture(self):
-        '''
-        Loads model architectures
-        '''
-        self.model = self.__load_model_architecture('model')
-        self.encoder = self.__load_model_architecture('encoder')
-        self.decoder = self.__load_model_architecture('decoder')
-
-    def __load_model_architecture(self, name):
-        '''
-        Helper for load_model_architecture
-        '''
-        json_file = open(self.log_dir + name + '.json', 'r')
-        loaded_model_json = json_file.read()
-        json_file.close()
-        model = model_from_json(loaded_model_json, {'sampling': self.sampling})
-        return model
-
     def load_model(self):
         '''
         Loads encoder, decoder and entire model.
         Expects files to be named 'encoder', 'decoder' and 'model'.
         '''
-        self.encoder = load_model(self.log_dir + 'encoder.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
-        self.decoder = load_model(self.log_dir + 'decoder.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
-        self.model = load_model(self.log_dir + 'model.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
+        # specify location of custom functions to properly load serialized model
+        custom_functions = {'sampling': self.sampling,
+                            'vae_loss': self.vae_loss,
+                            'kl_loss': self.kl_loss,
+                            'reconstruction_loss': self.reconstruction_loss}
+        # load relevant models
+        self.encoder = load_model(self.log_dir + 'encoder.hdf5', custom_functions)
+        self.decoder = load_model(self.log_dir + 'decoder.hdf5', custom_functions)
+        self.model = load_model(self.log_dir + 'model.hdf5', custom_functions)
 
     def __define_callbacks(self):
         '''

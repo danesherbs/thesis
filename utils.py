@@ -117,7 +117,9 @@ def make_generator(X, batch_size=64):
         counter_max = counter + batch_size
         # reset counter if end extends over end of dataset        
         if counter_max > dataset_size:
-            # print("Reached end of dataset. Re-setting counter.")
+            print("")
+            print("Reached end of dataset. Re-setting counter.")
+            print("")
             counter = 0
             counter_max = batch_size
         # yield next batch
