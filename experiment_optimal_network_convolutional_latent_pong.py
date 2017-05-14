@@ -71,34 +71,34 @@ def train_pong_network():
 	               validation_steps=validation_steps)
 
 
-'''
-Main
-'''
+# '''
+# Main
+# '''
 
-if __name__ == '__main__':
-	# log directory
-	name = 'cvae_atari_pong_14_May_12_43_49_batch_size_1_beta_0.0_epochs_10_filters_32_kernel_size_6_loss_vae_loss_optimizer_adam'
-	log_dir = './summaries/experiment_optimal_network_convolutional_latent_pong/' + name + '/'
+# if __name__ == '__main__':
+# 	# log directory
+# 	name = 'cvae_atari_pong_14_May_12_43_49_batch_size_1_beta_0.0_epochs_10_filters_32_kernel_size_6_loss_vae_loss_optimizer_adam'
+# 	log_dir = './summaries/experiment_optimal_network_convolutional_latent_pong/' + name + '/'
 
-	# define model
-	vae = PongEntangledConvolutionalLatentVAE(input_shape, 
-	            log_dir,
-	            filters=filters,
-	            kernel_size=kernel_size)    
+# 	# define model
+# 	vae = PongEntangledConvolutionalLatentVAE(input_shape, 
+# 	            log_dir,
+# 	            filters=filters,
+# 	            kernel_size=kernel_size)    
 
-	# load weights
-	vae.load_model()
+# 	# load weights
+# 	vae.load_model()
 
-	# extract models
-	model = vae.get_model()
-	decoder = vae.get_decoder()
-	encoder = vae.get_encoder()
+# 	# extract models
+# 	model = vae.get_model()
+# 	decoder = vae.get_decoder()
+# 	encoder = vae.get_encoder()
 
-	# load testing data
-	test_directory = './atari_agents/record/test/'
-	test_generator = utils.atari_generator(test_directory, batch_size=1)
-	X_test_size = 100
-	X_test = np.asarray([next(test_generator)[0][0] for i in range(X_test_size)])
+# 	# load testing data
+# 	test_directory = './atari_agents/record/test/'
+# 	test_generator = utils.atari_generator(test_directory, batch_size=1)
+# 	X_test_size = 100
+# 	X_test = np.asarray([next(test_generator)[0][0] for i in range(X_test_size)])
 
-	# plot a sample and its reconstruction
-	encode_decode_sample(X_test, model)
+# 	# plot a sample and its reconstruction
+# 	encode_decode_sample(X_test, model)
