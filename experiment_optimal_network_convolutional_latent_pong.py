@@ -47,7 +47,7 @@ def train_pong_network():
 
 	# compile VAE
 	from keras import optimizers
-	optimizer = optimizers.Adam(lr=1e-2)
+	optimizer = optimizers.Adam(lr=1e-1)
 	vae.compile(optimizer=optimizer)
 
 	# get dataset
@@ -72,7 +72,7 @@ def train_pong_network():
 
 def main():
 	# log directory
-	name = 'cvae_atari_pong_14_May_17_10_42_batch_size_1_beta_0.0_epochs_10_filters_32_kernel_size_6_loss_vae_loss_optimizer_adam'
+	name = 'cvae_atari_pong_14_May_18_06_23_batch_size_1_beta_0.0_epochs_10_filters_32_kernel_size_6_loss_vae_loss_optimizer_adam'
 	log_dir = './summaries/experiment_optimal_network_convolutional_latent_pong/' + name + '/'
 
 	# define model
@@ -100,12 +100,12 @@ def main():
 	sampling.encode_decode_sample(X_test, model)
 
 	# plot filters
-	sampling.show_convolutional_layers(X_test, encoder)
+	# sampling.show_convolutional_layers(X_test, encoder)
 
 
 '''
 Main
 '''
 if __name__ == '__main__':
-	train_pong_network()
-	# main()
+	# train_pong_network()
+	main()

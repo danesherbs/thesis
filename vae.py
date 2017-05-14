@@ -161,9 +161,9 @@ class VAE(object, metaclass=ABCMeta):
                                                 period=1,
                                                 save_best_only=True,
                                                 other_models={'encoder': self.encoder, 'decoder': self.decoder})
-        csv_logger = keras.callbacks.CSVLogger('log.csv',
+        csv_logger = keras.callbacks.CSVLogger(self.log_dir + 'log.csv',
                                                 separator=',',
-                                                append=False)
+                                                append=True)
         self.callbacks = [tensorboard, earlystopping, model_checkpointer, csv_logger]
 
     '''
