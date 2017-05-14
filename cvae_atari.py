@@ -80,9 +80,13 @@ For optimal Pong network experiment: experiment_optimal_network_convolutional_la
 '''
 class PongEntangledConvolutionalLatentVAE(VAE):
 
-    def __init__(self, input_shape, log_dir, filters=32, kernel_size=2, beta=1.0):
+    def __init__(self, input_shape, log_dir, filters=32, latent_filters=None, kernel_size=2, beta=1.0):
         # initialise HigginsVAE specific variables
         self.filters = filters
+        if latent_filters is None:
+            self.latent_filters = 2*self.filters
+        else:
+            self.latent_filters = latent_filters
         self.kernel_size = kernel_size
         # call parent constructor
         VAE.__init__(self, input_shape, log_dir, beta=beta)
@@ -108,10 +112,10 @@ class PongEntangledConvolutionalLatentVAE(VAE):
         x = Activation('relu')(x)
 
         # separate dense layers for mu and log(sigma), both of size latent_dim
-        z_mean = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
+        z_mean = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
         z_mean = BatchNormalization()(z_mean)
         z_mean = Activation('relu')(z_mean) 
-        z_log_var = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
+        z_log_var = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
         z_log_var = BatchNormalization()(z_log_var)
         z_log_var = Activation('relu')(z_log_var) 
 
