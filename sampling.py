@@ -50,20 +50,23 @@ def sample_posterior(num_iter, show_every=1, init_sample_num=0):
 			plt.gray()
 			plt.show()
 
-def show_convolutional_layers(X, encoder, init_sample_num=0):
+def show_convolutional_layers(X, encoder, rows, columns, init_sample_num=0):
 	'''
 	Takes x_encoded volume of shape (num_filters, width, height)
 	and plots activations of each (num_filters in total).
 	'''
+	# encode image
 	x_encoded = encoder.predict(np.asarray([[X[init_sample_num][0]]]))  # shape (1, num_filters, width, height)
 	x_encoded = x_encoded[0]  # shape (num_filters, width, height)
-	num_filters, _, _ = x_encoded.shape
-	
-	plt.figure()
-	for filter in range(num_filters):
-		plt.title('Filter ' + str(filter+1))
-		plt.imshow(x_encoded[filter])
-		plt.show()
+
+	# plot in grid of shape (rows, columns)
+	filter = 0
+	for row in range(rows):
+		for column in range(columns):
+			ax = plt.subplot2grid((rows, columns), (row, column))
+			ax.imshow(x_encoded[filter])
+			filter += 1
+	plt.show()
 
 
 def __demo_sample_posterior():
