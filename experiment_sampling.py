@@ -41,7 +41,7 @@ Load data
 '''
 Sampling functions
 '''
-def __decode_prior_samples(num_samples, latent_shape=(1, 4, 11, 11)):
+def __decode_prior_samples(num_samples, latent_shape=(1, 2)):
 	# take num_sample samples
 	for i in range(num_samples):
 		# sample from prior
@@ -72,15 +72,11 @@ def traverse_latent_space(latent_size):
 			decoded_sample = decoder.predict(encoded_sample)
 			# plot reconstruction
 			subplot_number = int(str(subplot_height) + str(subplot_width) + str(fig_counter))
-			print(subplot_number)
-			print('Figure', subplot_number)
 			ax = fig.add_subplot(330 + fig_counter)
-			# ax.title('Latent variable = ' + str(latent_variable) + ', std = ' + str(std))
 			ax.imshow(decoded_sample[0][0])
 			# increment fig_counter
 			fig_counter += 1
 	plt.show()
-	plt.gray()
 
 
 '''
@@ -89,3 +85,5 @@ Main
 if __name__ == '__main__':
 	latent_size = 2
 	traverse_latent_space(latent_size)
+
+	# __decode_prior_samples(5, latent_shape=(1, 2))

@@ -141,8 +141,15 @@ class VAE(object, metaclass=ABCMeta):
         '''
         Helper for __init__
         '''
-        tensorboard = keras.callbacks.TensorBoard(log_dir=self.log_dir, histogram_freq=1, write_graph=True, write_images=False)
-        earlystopping = keras.callbacks.EarlyStopping(monitor='val_loss', min_delta=0.5, patience=6, mode='auto', verbose=0)
+        tensorboard = keras.callbacks.TensorBoard(log_dir=self.log_dir,
+                                                histogram_freq=1,
+                                                write_graph=True,
+                                                write_images=False)
+        earlystopping = keras.callbacks.EarlyStopping(monitor='val_loss',
+                                                min_delta=0.5,
+                                                patience=6,
+                                                mode='auto',
+                                                verbose=0)
         model_checkpointer = CustomModelCheckpoint(filepath=self.log_dir + 'model' + '.hdf5',
                                                 verbose=1,
                                                 monitor='val_loss',
