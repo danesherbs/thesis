@@ -84,9 +84,8 @@ class PongEntangledConvolutionalLatentVAE(VAE):
         # initialise HigginsVAE specific variables
         self.filters = filters
         self.kernel_size = kernel_size
-        self.beta = beta
         # call parent constructor
-        VAE.__init__(self, input_shape, log_dir)
+        VAE.__init__(self, input_shape, log_dir, beta=beta)
 
     def set_model(self):
         '''
@@ -103,18 +102,18 @@ class PongEntangledConvolutionalLatentVAE(VAE):
         input_encoder = Input(shape=self.input_shape, name='encoder_input')
         x = Conv2D(self.filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
         x = BatchNormalization()(x)
-        x = Activation('tanh')(x)
+        x = Activation('relu')(x)
         x = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
         x = BatchNormalization()(x)
-        x = Activation('tanh')(x)
+        x = Activation('relu')(x)
 
         # separate dense layers for mu and log(sigma), both of size latent_dim
         z_mean = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
         z_mean = BatchNormalization()(z_mean)
-        z_mean = Activation('tanh')(z_mean) 
+        z_mean = Activation('relu')(z_mean) 
         z_log_var = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
         z_log_var = BatchNormalization()(z_log_var)
-        z_log_var = Activation('tanh')(z_log_var) 
+        z_log_var = Activation('relu')(z_log_var) 
 
         # sample from normal with z_mean and z_log_var
         z = Lambda(self.sampling, name='encoder_z')([z_mean, z_log_var])
@@ -128,10 +127,10 @@ class PongEntangledConvolutionalLatentVAE(VAE):
         input_decoder = Input(shape=encoder_out_shape[1:], name='decoder_input')
         x = Conv2DTranspose(2*self.filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_1')(input_decoder)
         x = BatchNormalization()(x)
-        x = Activation('tanh')(x)
+        x = Activation('relu')(x)
         x = Conv2DTranspose(self.filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
         x = BatchNormalization()(x)
-        x = Activation('tanh')(x)
+        x = Activation('relu')(x)
         x = Conv2DTranspose(1, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_4')(x)
         x = BatchNormalization()(x)
         decoded_img = Activation('sigmoid')(x)

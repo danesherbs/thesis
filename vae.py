@@ -21,8 +21,9 @@ class VAE(object, metaclass=ABCMeta):
         '''
         self.input_shape = input_shape
         self.log_dir = log_dir
+        self.beta = beta
         self.set_model()
-        self.__define_callbacks()
+        self.__define_callbacks()  # call after set_model()
 
     @abstractmethod
     def set_model(self):
@@ -71,7 +72,6 @@ class VAE(object, metaclass=ABCMeta):
         '''
         Variational autoencoder loss function
         '''
-        beta = 1.0
         y_true = K.reshape(y_true, (-1, np.prod(self.input_shape)))
         y_pred = K.reshape(y_pred, (-1, np.prod(self.input_shape)))
         reconstruction_loss = K.sum(K.binary_crossentropy(y_pred, y_true), axis=-1)
@@ -79,7 +79,7 @@ class VAE(object, metaclass=ABCMeta):
         z_mean_flat = K.reshape(self.z_mean, (-1, np.prod(latent_shape)))
         z_log_var_flat = K.reshape(self.z_log_var, (-1, np.prod(latent_shape)))
         kl_loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_flat) - K.exp(z_log_var_flat), axis=-1)
-        return K.mean(reconstruction_loss + beta * kl_loss)
+        return K.mean(reconstruction_loss + self.beta * kl_loss)
 
     def print_model_summaries(self):
         '''
@@ -133,9 +133,13 @@ class VAE(object, metaclass=ABCMeta):
         return model
 
     def load_model(self):
-        self.model = load_model(self.log_dir + 'model.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
+        '''
+        Loads encoder, decoder and entire model.
+        Expects files to be named 'encoder', 'decoder' and 'model'.
+        '''
         self.encoder = load_model(self.log_dir + 'encoder.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
         self.decoder = load_model(self.log_dir + 'decoder.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
+        self.model = load_model(self.log_dir + 'model.hdf5', {'sampling': self.sampling, 'vae_loss': self.vae_loss})
 
     def __define_callbacks(self):
         '''
@@ -147,7 +151,7 @@ class VAE(object, metaclass=ABCMeta):
                                                 write_images=False)
         earlystopping = keras.callbacks.EarlyStopping(monitor='val_loss',
                                                 min_delta=0.5,
-                                                patience=6,
+                                                patience=2,
                                                 mode='auto',
                                                 verbose=0)
         model_checkpointer = CustomModelCheckpoint(filepath=self.log_dir + 'model' + '.hdf5',
@@ -157,7 +161,10 @@ class VAE(object, metaclass=ABCMeta):
                                                 period=1,
                                                 save_best_only=True,
                                                 other_models={'encoder': self.encoder, 'decoder': self.decoder})
-        self.callbacks = [tensorboard, earlystopping, model_checkpointer]
+        csv_logger = keras.callbacks.CSVLogger('log.csv',
+                                                separator=',',
+                                                append=False)
+        self.callbacks = [tensorboard, earlystopping, model_checkpointer, csv_logger]
 
     '''
     Getters

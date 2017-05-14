@@ -7,18 +7,18 @@ Dataset: 300,000 screenshots of Pong, 10% used for validation.
 '''
 
 from cvae_atari import PongEntangledConvolutionalLatentVAE
-from sampling import encode_decode_sample
+import sampling
 import utils
 import numpy as np
 
 
 # inputs
 input_shape = (1, 84, 84)
-epochs = 10
-batch_size = 1
-beta = 0.0  # entangled latent space
 filters = 32
 kernel_size = 6
+beta = 0.0  # entangled latent space
+epochs = 10
+batch_size = 1
 
 def train_pong_network():
 	# define filename
@@ -40,14 +40,14 @@ def train_pong_network():
 
 	# make VAE
 	vae = PongEntangledConvolutionalLatentVAE(input_shape, 
-	            log_dir,
-	            filters=filters,
-	            kernel_size=kernel_size,
-	            beta=beta)
+								            log_dir,
+								            filters=filters,
+								            kernel_size=kernel_size,
+								            beta=beta)
 
 	# compile VAE
 	from keras import optimizers
-	optimizer = optimizers.Adam(lr=1e-3)
+	optimizer = optimizers.Adam(lr=1e-2)
 	vae.compile(optimizer=optimizer)
 
 	# get dataset
@@ -70,35 +70,42 @@ def train_pong_network():
 	               validation_data=test_generator,
 	               validation_steps=validation_steps)
 
+def main():
+	# log directory
+	name = 'cvae_atari_pong_14_May_17_10_42_batch_size_1_beta_0.0_epochs_10_filters_32_kernel_size_6_loss_vae_loss_optimizer_adam'
+	log_dir = './summaries/experiment_optimal_network_convolutional_latent_pong/' + name + '/'
 
-# '''
-# Main
-# '''
+	# define model
+	vae = PongEntangledConvolutionalLatentVAE(input_shape, 
+								            log_dir,
+								            filters=filters,
+								            kernel_size=kernel_size,
+								            beta=beta)
 
-# if __name__ == '__main__':
-# 	# log directory
-# 	name = 'cvae_atari_pong_14_May_12_43_49_batch_size_1_beta_0.0_epochs_10_filters_32_kernel_size_6_loss_vae_loss_optimizer_adam'
-# 	log_dir = './summaries/experiment_optimal_network_convolutional_latent_pong/' + name + '/'
+	# load weights
+	vae.load_model()
 
-# 	# define model
-# 	vae = PongEntangledConvolutionalLatentVAE(input_shape, 
-# 	            log_dir,
-# 	            filters=filters,
-# 	            kernel_size=kernel_size)    
+	# extract models
+	model = vae.get_model()
+	decoder = vae.get_decoder()
+	encoder = vae.get_encoder()
 
-# 	# load weights
-# 	vae.load_model()
+	# load testing data
+	test_directory = './atari_agents/record/test/'
+	test_generator = utils.atari_generator(test_directory, batch_size=1)
+	X_test_size = 100
+	X_test = np.asarray([next(test_generator)[0][0] for i in range(X_test_size)])
 
-# 	# extract models
-# 	model = vae.get_model()
-# 	decoder = vae.get_decoder()
-# 	encoder = vae.get_encoder()
+	# show original and reconstruction
+	sampling.encode_decode_sample(X_test, model)
 
-# 	# load testing data
-# 	test_directory = './atari_agents/record/test/'
-# 	test_generator = utils.atari_generator(test_directory, batch_size=1)
-# 	X_test_size = 100
-# 	X_test = np.asarray([next(test_generator)[0][0] for i in range(X_test_size)])
+	# plot filters
+	sampling.show_convolutional_layers(X_test, encoder)
 
-# 	# plot a sample and its reconstruction
-# 	encode_decode_sample(X_test, model)
+
+'''
+Main
+'''
+if __name__ == '__main__':
+	train_pong_network()
+	# main()
