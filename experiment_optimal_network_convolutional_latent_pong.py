@@ -142,7 +142,7 @@ def train_entangled_pong_network_with_image_latent_space():
 	batch_size = 1
 
 	# define filename
-	name = 'cvae_atari_entangled_pong'
+	name = 'cvae_atari_entangled_pong_with_latent_image'
 
 	# builder hyperparameter dictionary
 	hp_dictionary = {
@@ -169,7 +169,7 @@ def train_entangled_pong_network_with_image_latent_space():
 
 	# compile VAE
 	from keras import optimizers
-	optimizer = optimizers.Adam(lr=1e-1)
+	optimizer = optimizers.Adam(lr=1e0)
 	vae.compile(optimizer=optimizer)
 
 	# get dataset
