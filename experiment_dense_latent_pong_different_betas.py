@@ -12,6 +12,9 @@ import utils
 import numpy as np
 
 
+experiment = 'experiment_dense_latent_pong_different_betas'
+
+
 
 def train_dense_latent_pong_no_batchnorm(beta):
     # inputs
@@ -38,7 +41,7 @@ def train_dense_latent_pong_no_batchnorm(beta):
     }
 
     # define log directory
-    log_dir = './summaries/experiment_optimal_network_dense_latent_pong/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
+    log_dir = './summaries/' + experiment + '/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
     vae = DenseLatentPongNoBatchNorm(input_shape, 
