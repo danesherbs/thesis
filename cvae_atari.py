@@ -113,11 +113,7 @@ class PongEntangledConvolutionalLatentVAE(VAE):
 
         # separate dense layers for mu and log(sigma), both of size latent_dim
         z_mean = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
-        z_mean = BatchNormalization()(z_mean)
-        z_mean = Activation('relu')(z_mean) 
         z_log_var = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
-        z_log_var = BatchNormalization()(z_log_var)
-        z_log_var = Activation('relu')(z_log_var) 
 
         # sample from normal with z_mean and z_log_var
         z = Lambda(self.sampling, name='encoder_z')([z_mean, z_log_var])
@@ -150,6 +146,77 @@ class PongEntangledConvolutionalLatentVAE(VAE):
         self.z_mean = z_mean
         self.z_log_var = z_log_var
         self.z = z
+
+
+'''
+For experiment_optimal_network_dense_latent_pong.py
+'''
+class DenseLatentPong(VAE):
+
+    def __init__(self, input_shape, log_dir, filters=32, kernel_size=2, pre_latent_size=64, latent_size=2):
+        # initialise HigginsVAE specific variables
+        self.filters = filters
+        self.kernel_size = kernel_size
+        self.pre_latent_size = pre_latent_size
+        self.latent_size = latent_size
+        # call parent constructor
+        VAE.__init__(self, input_shape, log_dir)
+
+    def set_model(self):
+        '''
+        Initialisers
+        '''
+        weight_seed = None
+        kernel_initializer = initializers.glorot_uniform(seed = weight_seed)
+        bias_initializer = initializers.glorot_uniform(seed = weight_seed)
+
+        '''
+        Encoder
+        '''
+        # define input with 'channels_first'
+        input_encoder = Input(shape=input_shape, name='encoder_input')
+        x = Conv2D(filters, kernel_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
+        # x = ZeroPadding2D(padding=(1, 1), data_format='channels_first')(x)
+        x = Conv2D(2*filters, kernel_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
+        # x = ZeroPadding2D(padding=(1, 1), data_format='channels_first')(x)
+        x = Conv2D(2*filters, kernel_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_3')(x)
+        before_flatten_shape = tuple(x.get_shape().as_list())
+        x = Flatten()(x)
+        x = Dense(pre_latent_size, activation='relu', name='encoder_dense_1')(x)
+
+        # separate dense layers for mu and log(sigma), both of size latent_dim
+        z_mean = Dense(latent_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
+        z_log_var = Dense(latent_size, activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
+
+        # sample from normal with z_mean and z_log_var
+        z = Lambda(self.sampling, name='encoder_z')([z_mean, z_log_var])
+
+        '''
+        Decoder
+        '''
+        # take encoder output shape
+        encoder_out_shape = tuple(z.get_shape().as_list())
+        # define rest of model
+        input_decoder = Input(shape=encoder_out_shape[1:], name='decoder_input')
+        x = Dense(pre_latent_size, activation='relu')(input_decoder)
+        x = Dense(np.prod(before_flatten_shape[1:]), activation='relu')(x)
+        x = Reshape(before_flatten_shape[1:])(x)
+        x = Conv2DTranspose(2*filters, kernel_size, strides=(2, 2), padding='valid', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_1')(x)
+        x = Conv2DTranspose(filters, kernel_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_2')(x)
+        decoded_img = Conv2DTranspose(1, kernel_size, strides=(2, 2), activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
+
+        '''
+        Necessary definitions
+        '''
+        # For parent fitting function
+        self.encoder = Model(input_encoder, z)
+        self.decoder = Model(input_decoder, decoded_img)
+        self.model = Model(input_encoder, self.decoder(self.encoder(input_encoder)))
+        # For parent loss function
+        self.z_mean = z_mean
+        self.z_log_var = z_log_var
+        self.z = z
+
 
 
 '''

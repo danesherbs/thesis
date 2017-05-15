@@ -4,7 +4,7 @@ from keras.models import model_from_json
 import utils
 
 
-def decode_prior_samples(num_samples, latent_shape=(1, 4, 11, 11)):
+def decode_prior_samples(num_samples, decoder, latent_shape=(1, 4, 11, 11)):
 	# take num_sample samples
 	for i in range(num_samples):
 		# sample from prior
@@ -35,9 +35,9 @@ def encode_decode_sample(X, model, sample_number=0):
 	# show both at same time
 	plt.show()
 
-def sample_posterior(num_iter, show_every=1, init_sample_num=0):
+def sample_posterior(X, model, num_iter, show_every=1, init_sample_num=0):
 	# seed with initial sample
-	x = np.asarray([[X_test[init_sample_num][0]]])
+	x = np.asarray([[X[init_sample_num][0]]])
 	# MCMC samlping from P^(Z)
 	for iter in range(num_iter):
 		# pass through CVAE

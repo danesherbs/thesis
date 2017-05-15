@@ -6,24 +6,26 @@ This is done so that we may see if objects may be recognised by the existing met
 Dataset: 300,000 screenshots of Pong, 10% used for validation.
 '''
 
-from cvae_atari import PongEntangledConvolutionalLatentVAE
+from cvae_atari import DenseLatentPong
 import sampling
 import utils
 import numpy as np
 
 
 
-def train_only_reconstruction_loss_pong_network():
+def train_dense_latent_pong_reconstruction_only():
 	# inputs
-	input_shape = (1, 84, 84)
-	filters = 32
-	kernel_size = 6
-	beta = 0.0  # only reconstruction loss
-	epochs = 10
-	batch_size = 1
+    input_shape = (1, 84, 84)
+    epochs = 20
+    batch_size = 1
+    beta = 0.0
+    filters = 32
+    kernel_size = 6
+    pre_latent_size = 512
+    latent_size = 32
 
 	# define filename
-	name = 'cvae_atari_only_reconstruction_loss_pong'
+	name = 'cvae_atari_dense_latent_pong_reconstruction_only'
 
 	# builder hyperparameter dictionary
 	hp_dictionary = {
@@ -37,18 +39,20 @@ def train_only_reconstruction_loss_pong_network():
 	}
 
 	# define log directory
-	log_dir = './summaries/experiment_optimal_network_convolutional_latent_pong/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
+	log_dir = './summaries/experiment_optimal_network_dense_latent_pong/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
 	# make VAE
-	vae = PongEntangledConvolutionalLatentVAE(input_shape, 
-								            log_dir,
-								            filters=filters,
-								            kernel_size=kernel_size,
-								            beta=beta)
+	vae = DenseLatentPong(input_shape, 
+			            log_dir,
+			            filters=filters,
+			            kernel_size=kernel_size,
+			            pre_latent_size=pre_latent_size,
+			            latent_size=latent_size,
+			            beta=beta)
 
 	# compile VAE
 	from keras import optimizers
-	optimizer = optimizers.Adam(lr=1e-1)
+	optimizer = optimizers.Adam(lr=1e-3)
 	vae.compile(optimizer=optimizer)
 
 	# get dataset
@@ -72,17 +76,20 @@ def train_only_reconstruction_loss_pong_network():
 	               validation_steps=validation_steps)
 
 
-def train_entangled_pong_network():
+
+def train_dense_latent_pong_entangled():
 	# inputs
-	input_shape = (1, 84, 84)
-	filters = 32
-	kernel_size = 6
-	beta = 1.0  # entangled latent space
-	epochs = 10
-	batch_size = 1
+    input_shape = (1, 84, 84)
+    epochs = 20
+    batch_size = 1
+    beta = 1.0
+    filters = 32
+    kernel_size = 6
+    pre_latent_size = 512
+    latent_size = 32
 
 	# define filename
-	name = 'cvae_atari_entangled_pong'
+	name = 'cvae_atari_dense_latent_pong_entangled'
 
 	# builder hyperparameter dictionary
 	hp_dictionary = {
@@ -96,18 +103,20 @@ def train_entangled_pong_network():
 	}
 
 	# define log directory
-	log_dir = './summaries/experiment_optimal_network_convolutional_latent_pong/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
+	log_dir = './summaries/experiment_optimal_network_dense_latent_pong/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
 	# make VAE
-	vae = PongEntangledConvolutionalLatentVAE(input_shape, 
-								            log_dir,
-								            filters=filters,
-								            kernel_size=kernel_size,
-								            beta=beta)
+	vae = DenseLatentPong(input_shape, 
+			            log_dir,
+			            filters=filters,
+			            kernel_size=kernel_size,
+			            pre_latent_size=pre_latent_size,
+			            latent_size=latent_size,
+			            beta=beta)
 
 	# compile VAE
 	from keras import optimizers
-	optimizer = optimizers.Adam(lr=1e-1)
+	optimizer = optimizers.Adam(lr=1e-3)
 	vae.compile(optimizer=optimizer)
 
 	# get dataset
@@ -129,69 +138,6 @@ def train_entangled_pong_network():
 	               steps_per_epoch=steps_per_epoch,
 	               validation_data=test_generator,
 	               validation_steps=validation_steps)
-
-
-def train_entangled_pong_network_with_image_latent_space():
-	# inputs
-	input_shape = (1, 84, 84)
-	filters = 32
-	latent_filters = 1
-	kernel_size = 6
-	beta = 1.0  # entangled latent space
-	epochs = 100
-	batch_size = 1
-
-	# define filename
-	name = 'cvae_atari_entangled_pong_with_latent_image'
-
-	# builder hyperparameter dictionary
-	hp_dictionary = {
-	    'epochs': epochs,
-	    'batch_size': batch_size,
-	    'beta': beta,
-	    'filters': filters,
-	    'latent_filters': latent_filters,
-	    'kernel_size': kernel_size,
-	    'loss': 'vae_loss',
-	    'optimizer': 'adam'
-	}
-
-	# define log directory
-	log_dir = './summaries/experiment_optimal_network_convolutional_latent_pong/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
-
-	# make VAE
-	vae = PongEntangledConvolutionalLatentVAE(input_shape, 
-								            log_dir,
-								            filters=filters,
-								            latent_filters=latent_filters,
-								            kernel_size=kernel_size,
-								            beta=beta)
-
-	# compile VAE
-	from keras import optimizers
-	optimizer = optimizers.Adam(lr=1e-1)
-	vae.compile(optimizer=optimizer)
-
-	# get dataset
-	train_directory = './atari_agents/record/train/'
-	test_directory = './atari_agents/record/test/'
-	train_generator = utils.atari_generator(train_directory, batch_size=batch_size)
-	test_generator = utils.atari_generator(test_directory, batch_size=batch_size)
-	train_size = utils.count_images(train_directory)
-	test_size = utils.count_images(test_directory)
-
-	# print summaries
-	vae.print_model_summaries()
-
-	# fit VAE
-	steps_per_epoch = int(train_size / batch_size)
-	validation_steps = int(test_size / batch_size)
-	vae.fit_generator(train_generator,
-	               epochs=epochs,
-	               steps_per_epoch=steps_per_epoch,
-	               validation_data=test_generator,
-	               validation_steps=validation_steps)
-
 
 
 
@@ -239,7 +185,6 @@ def main():
 Main
 '''
 if __name__ == '__main__':
-	# train_only_reconstruction_loss_pong_network()
-	# train_entangled_pong_network()
-	# train_entangled_pong_network_with_image_latent_space()
-	main()
+	train_dense_latent_pong_reconstruction_only()
+	train_dense_latent_pong_entangled()
+	# main()
