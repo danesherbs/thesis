@@ -138,7 +138,7 @@ def train_entangled_pong_network_with_image_latent_space():
 	latent_filters = 1
 	kernel_size = 6
 	beta = 1.0  # entangled latent space
-	epochs = 10
+	epochs = 100
 	batch_size = 1
 
 	# define filename
@@ -169,7 +169,7 @@ def train_entangled_pong_network_with_image_latent_space():
 
 	# compile VAE
 	from keras import optimizers
-	optimizer = optimizers.Adam(lr=1e0)
+	optimizer = optimizers.Adam(lr=1e-1)
 	vae.compile(optimizer=optimizer)
 
 	# get dataset
@@ -204,7 +204,7 @@ def main():
 	batch_size = 1
 
 	# log directory
-	name = 'cvae_atari_entangled_pong_14_May_19_45_31_batch_size_1_beta_1.0_epochs_10_filters_32_kernel_size_6_loss_vae_loss_optimizer_adam'
+	name = 'cvae_atari_entangled_pong_with_latent_image_14_May_23_39_29_batch_size_1_beta_1.0_epochs_10_filters_32_kernel_size_6_latent_filters_1_loss_vae_loss_optimizer_adam'
 	log_dir = './summaries/experiment_optimal_network_convolutional_latent_pong/' + name + '/'
 
 	# define model

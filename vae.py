@@ -2,12 +2,15 @@ import pickle
 import numpy as np
 import os
 import keras
+
 from keras.models import load_model
 from keras import backend as K
 from keras.objectives import binary_crossentropy
 from keras.models import model_from_json
-from abc import ABCMeta, abstractmethod
 from custom_callbacks import CustomModelCheckpoint
+
+from abc import ABCMeta, abstractmethod
+
 
 
 class VAE(object, metaclass=ABCMeta):
@@ -133,9 +136,9 @@ class VAE(object, metaclass=ABCMeta):
                                                 histogram_freq=1,
                                                 write_graph=True,
                                                 write_images=False)
-        earlystopping = keras.callbacks.EarlyStopping(monitor='val_loss',
+        early_stopping = keras.callbacks.EarlyStopping(monitor='val_loss',
                                                 min_delta=0.5,
-                                                patience=2,
+                                                patience=6,
                                                 mode='auto',
                                                 verbose=0)
         model_checkpointer = CustomModelCheckpoint(filepath=self.log_dir + 'model' + '.hdf5',
@@ -148,7 +151,15 @@ class VAE(object, metaclass=ABCMeta):
         csv_logger = keras.callbacks.CSVLogger(self.log_dir + 'log.csv',
                                                 separator=',',
                                                 append=True)
-        self.callbacks = [tensorboard, earlystopping, model_checkpointer, csv_logger]
+        reduce_lr_on_plateau = keras.callbacks.ReduceLROnPlateau(monitor='val_loss',
+                                                factor=0.1,
+                                                patience=2,
+                                                verbose=1,
+                                                mode='auto',
+                                                epsilon=1.0,
+                                                cooldown=0,
+                                                min_lr=0)
+        self.callbacks = [tensorboard, early_stopping, model_checkpointer, csv_logger, reduce_lr_on_plateau]
 
     '''
     Getters
