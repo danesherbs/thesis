@@ -10,7 +10,8 @@ from cvae_atari import DenseLatentPong, \
                        DenseLatentPongBatchNormBeforeLatent, \
                        DenseLatentPongBatchNormAfterLatent, \
                        DenseLatentPongBatchNormBeforeAndAfterLatent, \
-                       DenseLatentPongNoBatchNorm
+                       DenseLatentPongNoBatchNorm, \
+                       DenseLatentPongBatchNormEverywhereLatent
 import sampling
 import utils
 import numpy as np
@@ -335,20 +336,19 @@ def train_dense_latent_pong_reconstruction_only_no_batchnorm_at_all():
                    validation_steps=validation_steps)
 
 
-
-def train_dense_latent_pong_entangled():
+def train_dense_latent_pong_reconstruction_only_batchnorm_everywhere():
     # inputs
     input_shape = (1, 84, 84)
     epochs = 10
     batch_size = 1
-    beta = 1.0
+    beta = 0.0
     filters = 32
     kernel_size = 6
-    pre_latent_size = 512
+    pre_latent_size = 128
     latent_size = 32
 
     # define filename
-    name = 'cvae_atari_dense_latent_pong_entangled'
+    name = 'cvae_atari_dense_latent_pong_reconstruction_only_batchnorm_everywhere'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
@@ -365,17 +365,17 @@ def train_dense_latent_pong_entangled():
     log_dir = './summaries/experiment_optimal_network_dense_latent_pong/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
-    vae = DenseLatentPong(input_shape, 
-                        log_dir,
-                        filters=filters,
-                        kernel_size=kernel_size,
-                        pre_latent_size=pre_latent_size,
-                        latent_size=latent_size,
-                        beta=beta)
+    vae = DenseLatentPongBatchNormEverywhereLatent(input_shape, 
+                                                log_dir,
+                                                filters=filters,
+                                                kernel_size=kernel_size,
+                                                pre_latent_size=pre_latent_size,
+                                                latent_size=latent_size,
+                                                beta=beta)
 
     # compile VAE
     from keras import optimizers
-    optimizer = optimizers.Adam(lr=1e-1)
+    optimizer = optimizers.Adam(lr=1e-3)
     vae.compile(optimizer=optimizer)
 
     # get dataset
@@ -452,8 +452,9 @@ Main
 if __name__ == '__main__':
     # train_dense_latent_pong_reconstruction_only_batchnorm_before_latent()
     # train_dense_latent_pong_reconstruction_only_batchnorm_after_latent()
-    train_dense_latent_pong_reconstruction_only_batchnorm_before_and_after_latent()
+    # train_dense_latent_pong_reconstruction_only_batchnorm_before_and_after_latent()
     # train_dense_latent_pong_reconstruction_only_no_batchnorm_before_or_after_latent()
-    train_dense_latent_pong_reconstruction_only_no_batchnorm_at_all()
+    # train_dense_latent_pong_reconstruction_only_no_batchnorm_at_all()
     # train_dense_latent_pong_entangled()
+    train_dense_latent_pong_reconstruction_only_batchnorm_everywhere()
     # main()
