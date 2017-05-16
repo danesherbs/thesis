@@ -16,7 +16,7 @@ experiment = 'experiment_dense_latent_space_invaders_different_betas'
 
 
 
-def train_dense_latent_pong_no_batchnorm(beta):
+def train_dense_latent_space_invaders_no_batchnorm(beta):
     # inputs
     input_shape = (1, 84, 84)
     epochs = 10
