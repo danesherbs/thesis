@@ -14,9 +14,9 @@ from PIL import Image
 '''
 Recording functions
 '''
-def make_dataset(num_games, extension='.png'):
-    if len(sys.argv) < 2:
-        print('Usage: %s rom_file' % sys.argv[0])
+def make_dataset(extension='.png'):
+    if len(sys.argv) < 3:
+        print('Usage: %s rom_file num_games' % sys.argv[0])
         sys.exit()
 
     ale = ALEInterface()
@@ -40,6 +40,9 @@ def make_dataset(num_games, extension='.png'):
     # load the ROM file
     rom_file = str.encode(sys.argv[1])
     ale.loadROM(rom_file)
+
+    # get number of runs
+    num_games = int(sys.argv[2])
 
     # get the list of legal actions
     legal_actions = ale.getLegalActionSet()
@@ -104,5 +107,4 @@ def __save_image(image, iter, extension='.png'):
 Main function
 '''
 if __name__ == '__main__':
-    num_games = 5
-    make_dataset(num_games, extension='.jpg')
+    make_dataset(extension='.gif')
