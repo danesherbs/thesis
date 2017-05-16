@@ -262,7 +262,7 @@ def train_pong_network_no_batch_norm(beta):
     input_shape = (1, 84, 84)
     filters = 32
     kernel_size = 6
-    epochs = 20
+    epochs = 10
     batch_size = 1
     lr = 1e-4
 
@@ -355,10 +355,10 @@ def main():
     sampling.encode_decode_sample(X_test, model)
 
     # plot filters
-    # sampling.show_convolutional_layers(X_test, encoder, 8, 8)
+    sampling.show_convolutional_layers(X_test, encoder, 8, 8)
 
     # sample from prior
-    sampling.decode_prior_samples(5, decoder, latent_shape=(1, 64, 7, 7))
+    # sampling.decode_prior_samples(5, decoder, latent_shape=(1, 64, 7, 7))
 
     # sample from posterior
     # num_iter = 100
@@ -377,5 +377,6 @@ if __name__ == '__main__':
     # train_entangled_pong_network()
     # train_entangled_pong_network_with_image_latent_space()
     # train_only_reconstruction_loss_pong_network_no_batch_norm()
-    # train_pong_network_no_batch_norm(1)
-    main()
+    for beta in range(1, 5):
+        train_pong_network_no_batch_norm(beta)
+    # main()
