@@ -262,7 +262,7 @@ def train_pong_network_no_batch_norm(beta):
     input_shape = (1, 84, 84)
     filters = 32
     kernel_size = 6
-    epochs = 10
+    epochs = 20
     batch_size = 1
     lr = 1e-4
 
