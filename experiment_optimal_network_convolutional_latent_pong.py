@@ -328,7 +328,7 @@ def main():
     batch_size = 1
 
     # log directory
-    run = 'cvae_atari_only_reconstruction_loss_pong_no_batch_norm_16_May_14_53_56_batch_size_1_beta_1_epochs_10_filters_32_kernel_size_6_loss_vae_loss_lr_0.0001_optimizer_adam'
+    run = 'cvae_atari_pong_no_batch_norm_16_May_17_15_27_batch_size_1_beta_1_epochs_20_filters_32_kernel_size_6_loss_vae_loss_lr_0.0001_optimizer_adam'
     log_dir = './summaries/' + experiment + '/' + run + '/'
 
     # define model
@@ -352,17 +352,17 @@ def main():
     X_test = np.asarray([next(test_generator)[0][0] for i in range(X_test_size)])
 
     # show original and reconstruction
-    # sampling.encode_decode_sample(X_test, model)
+    sampling.encode_decode_sample(X_test, model)
 
     # plot filters
     # sampling.show_convolutional_layers(X_test, encoder, 8, 8)
 
     # sample from prior
-    # sampling.decode_prior_samples(5, decoder, latent_shape=(1, 64, 7, 7))
+    sampling.decode_prior_samples(5, decoder, latent_shape=(1, 64, 7, 7))
 
     # sample from posterior
-    num_iter = 100
-    sampling.sample_posterior(X_test, model, num_iter, show_every=1)
+    # num_iter = 100
+    # sampling.sample_posterior(X_test, model, num_iter, show_every=1)
 
     # change latent variable
     # latent_shape = (1, 64, 7, 7)
@@ -377,5 +377,5 @@ if __name__ == '__main__':
     # train_entangled_pong_network()
     # train_entangled_pong_network_with_image_latent_space()
     # train_only_reconstruction_loss_pong_network_no_batch_norm()
-    train_pong_network_no_batch_norm(1)
-    # main()
+    # train_pong_network_no_batch_norm(1)
+    main()

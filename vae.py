@@ -138,7 +138,7 @@ class VAE(object, metaclass=ABCMeta):
                                                 write_images=False)
         early_stopping = keras.callbacks.EarlyStopping(monitor='val_loss',
                                                 min_delta=0.5,
-                                                patience=6,
+                                                patience=8,
                                                 mode='auto',
                                                 verbose=0)
         model_checkpointer = CustomModelCheckpoint(filepath=self.log_dir + 'model' + '.hdf5',
@@ -152,8 +152,8 @@ class VAE(object, metaclass=ABCMeta):
                                                 separator=',',
                                                 append=True)
         reduce_lr_on_plateau = keras.callbacks.ReduceLROnPlateau(monitor='val_loss',
-                                                factor=0.1,
-                                                patience=2,
+                                                factor=0.5,
+                                                patience=0,
                                                 verbose=1,
                                                 mode='auto',
                                                 epsilon=1.0,
