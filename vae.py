@@ -157,7 +157,7 @@ class VAE(object, metaclass=ABCMeta):
                                                 verbose=1,
                                                 mode='auto',
                                                 epsilon=0.5,
-                                                cooldown=2,
+                                                cooldown=1,
                                                 min_lr=1e-7)
         self.callbacks = [tensorboard, early_stopping, model_checkpointer, csv_logger, reduce_lr_on_plateau]
 
