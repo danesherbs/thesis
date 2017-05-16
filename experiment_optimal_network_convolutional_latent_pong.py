@@ -264,6 +264,7 @@ def train__pong_network_no_batch_norm(beta):
     kernel_size = 6
     epochs = 10
     batch_size = 1
+    lr = 1e-4
 
     # define filename
     name = 'cvae_atari_only_reconstruction_loss_pong_no_batch_norm'
@@ -275,6 +276,7 @@ def train__pong_network_no_batch_norm(beta):
         'beta': beta,
         'filters': filters,
         'kernel_size': kernel_size,
+        'lr': lr,
         'loss': 'vae_loss',
         'optimizer': 'adam'
     }
@@ -291,7 +293,7 @@ def train__pong_network_no_batch_norm(beta):
 
     # compile VAE
     from keras import optimizers
-    optimizer = optimizers.Adam(lr=1e-1)
+    optimizer = optimizers.Adam(lr=lr)
     vae.compile(optimizer=optimizer)
 
     # get dataset
