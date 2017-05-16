@@ -377,6 +377,6 @@ if __name__ == '__main__':
     # train_entangled_pong_network()
     # train_entangled_pong_network_with_image_latent_space()
     # train_only_reconstruction_loss_pong_network_no_batch_norm()
-    for beta in range(1, 5):
+    for beta in range(2, 5):
         train_pong_network_no_batch_norm(beta)
     # main()
