@@ -257,7 +257,7 @@ def train_only_reconstruction_loss_pong_network_no_batch_norm():
 
 
 
-def train__pong_network_no_batch_norm(beta):
+def train_pong_network_no_batch_norm(beta):
     # inputs
     input_shape = (1, 84, 84)
     filters = 32
@@ -267,7 +267,7 @@ def train__pong_network_no_batch_norm(beta):
     lr = 1e-4
 
     # define filename
-    name = 'cvae_atari_only_reconstruction_loss_pong_no_batch_norm'
+    name = 'cvae_atari_pong_no_batch_norm'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
@@ -324,15 +324,15 @@ def main():
     input_shape = (1, 84, 84)
     filters = 32
     kernel_size = 6
-    epochs = 10
+    epochs = 20
     batch_size = 1
 
     # log directory
-    run = 'cvae_atari_only_reconstruction_loss_pong_no_batch_norm_16_May_12_54_28_batch_size_1_beta_0.0_epochs_10_filters_32_kernel_size_6_loss_vae_loss_optimizer_adam'
+    run = 'cvae_atari_only_reconstruction_loss_pong_no_batch_norm_16_May_14_53_56_batch_size_1_beta_1_epochs_10_filters_32_kernel_size_6_loss_vae_loss_lr_0.0001_optimizer_adam'
     log_dir = './summaries/' + experiment + '/' + run + '/'
 
     # define model
-    vae = PongEntangledConvolutionalLatentVAE(input_shape, 
+    vae = PongEntangledConvolutionalLatentNoBatchNormVAE(input_shape, 
                                             log_dir,
                                             filters=filters,
                                             kernel_size=kernel_size)
@@ -352,17 +352,22 @@ def main():
     X_test = np.asarray([next(test_generator)[0][0] for i in range(X_test_size)])
 
     # show original and reconstruction
-    sampling.encode_decode_sample(X_test, model)
+    # sampling.encode_decode_sample(X_test, model)
 
     # plot filters
     # sampling.show_convolutional_layers(X_test, encoder, 8, 8)
 
     # sample from prior
-    # sampling.decode_prior_samples(5, decoder, latent_shape=(1, 32))
+    # sampling.decode_prior_samples(5, decoder, latent_shape=(1, 64, 7, 7))
 
     # sample from posterior
-    # num_iter = 100
-    # sampling.sample_posterior(X_test, model, num_iter, show_every=1)
+    num_iter = 100
+    sampling.sample_posterior(X_test, model, num_iter, show_every=1)
+
+    # change latent variable
+    # latent_shape = (1, 64, 7, 7)
+    # filter_index = 30
+    # sampling.change_latent_filter(X_test, latent_shape, filter_index, encoder, decoder, num_samples=5, init_sample_num=0, noise_factor=15)
 
 '''
 Main
@@ -372,5 +377,5 @@ if __name__ == '__main__':
     # train_entangled_pong_network()
     # train_entangled_pong_network_with_image_latent_space()
     # train_only_reconstruction_loss_pong_network_no_batch_norm()
-    train__pong_network_no_batch_norm(1)
+    train_pong_network_no_batch_norm(1)
     # main()
