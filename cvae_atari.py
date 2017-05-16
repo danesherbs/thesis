@@ -153,10 +153,11 @@ For experiment_optimal_network_dense_latent_pong.py
 '''
 class DenseLatentPong(VAE):
 
-    def __init__(self, input_shape, log_dir, filters=32, kernel_size=6, pre_latent_size=64, latent_size=2, beta=1.0):
+    def __init__(self, input_shape, log_dir, filters=32, kernel_size=6, strides=(2,2), pre_latent_size=64, latent_size=2, beta=1.0):
         # initialise HigginsVAE specific variables
         self.filters = filters
         self.kernel_size = kernel_size
+        self.strides = strides
         self.pre_latent_size = pre_latent_size
         self.latent_size = latent_size
         # call parent constructor
@@ -177,7 +178,7 @@ class DenseLatentPong(VAE):
         input_encoder = Input(shape=self.input_shape, name='encoder_input')
         x = Conv2D(self.filters,
                 self.kernel_size,
-                strides=(2, 2),
+                strides=self.strides,
                 activation=None,
                 kernel_initializer=kernel_initializer,
                 bias_initializer=bias_initializer,
@@ -186,7 +187,7 @@ class DenseLatentPong(VAE):
         x = Activation('relu')(x)
         x = Conv2D(2*self.filters,
                 self.kernel_size,
-                strides=(2, 2),
+                strides=self.strides,
                 activation=None,
                 kernel_initializer=kernel_initializer,
                 bias_initializer=bias_initializer,
@@ -195,7 +196,7 @@ class DenseLatentPong(VAE):
         x = Activation('relu')(x)
         x = Conv2D(2*self.filters,
                 self.kernel_size,
-                strides=(2, 2),
+                strides=self.strides,
                 activation=None,
                 kernel_initializer=kernel_initializer,
                 bias_initializer=bias_initializer,
@@ -245,7 +246,7 @@ class DenseLatentPong(VAE):
         x = Reshape(before_flatten_shape[1:])(x)
         x = Conv2DTranspose(2*self.filters,
                 self.kernel_size,
-                strides=(2, 2),
+                strides=self.strides,
                 padding='valid',
                 activation=None,
                 kernel_initializer=kernel_initializer,
@@ -255,7 +256,7 @@ class DenseLatentPong(VAE):
         x = Activation('relu')(x)
         x = Conv2DTranspose(self.filters,
                 self.kernel_size,
-                strides=(2, 2),
+                strides=self.strides,
                 activation=None,
                 kernel_initializer=kernel_initializer,
                 bias_initializer=bias_initializer,
@@ -264,7 +265,7 @@ class DenseLatentPong(VAE):
         x = Activation('relu')(x)
         x = Conv2DTranspose(1,
                 self.kernel_size,
-                strides=(2, 2),
+                strides=self.strides,
                 activation=None,
                 kernel_initializer=kernel_initializer,
                 bias_initializer=bias_initializer,
