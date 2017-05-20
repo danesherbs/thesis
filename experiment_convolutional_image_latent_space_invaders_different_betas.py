@@ -12,7 +12,7 @@ import utils
 import numpy as np
 
 
-experiment = 'experiment_convolutional_latent_space_invaders_different_betas'
+experiment = 'experiment_convolutional_image_latent_space_invaders_different_betas'
 
 
 def train_space_invaders_network_no_batch_norm(beta):
