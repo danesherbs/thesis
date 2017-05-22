@@ -1,8 +1,16 @@
-\begin{thebibliography}{Hut05}
+\begin{thebibliography}{1}
 
-\bibitem[Hut05]{Hutter2005}
-Marcus Hutter.
+\bibitem{Hutter2005}
+M.~Hutter.
 \newblock {\em {Universal Artificial Intelligence}}, volume~1.
 \newblock 2005.
+
+\bibitem{Mnih2015}
+V.~Mnih, K.~Kavukcuoglu, D.~Silver, A.~A. Rusu, J.~Veness, M.~G. Bellemare,
+  A.~Graves, M.~Riedmiller, A.~K. Fidjeland, G.~Ostrovski, S.~Petersen,
+  C.~Beattie, A.~Sadik, I.~Antonoglou, H.~King, D.~Kumaran, D.~Wierstra,
+  S.~Legg, and D.~Hassabis.
+\newblock {Human-level control through deep reinforcement learning}.
+\newblock {\em Nature}, 518(7540):529--533, 2015.
 
 \end{thebibliography}
