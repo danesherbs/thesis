@@ -1,6 +1,6 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces May 1997: Gary Kasparov makes his first move against IBM's Deep Blue. Deep Blue would later emerge the victor in the best of six games; the first defeat of a reigning world chess champion by computer. \cite {Rosen2012}}}{2}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces March 2016: Lee Sedol plays the first move of game three against AlphaGo. AlphaGo won gour of five games. \cite {Ormerod2016}}}{2}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces March 2016: Lee Sedol plays the first move of game three against AlphaGo. AlphaGo won four of five games. \cite {Ormerod2016}}}{2}
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Overview of deep symbolic reinforcement learning system architecture. \textbf {A}: The neural back end maps high-dimensional raw input data to a low-dimensional compositionally structured symbolic representation. \textbf {B}: The low-dimensional compositionally structured symbolic representation. \textbf {C}: Reinforcement learning of mapping from symbolic representation to action with maximum expected reward over time. \textit {Source: Garnelo et al.} \cite {Garnelo2016}.}}{2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
