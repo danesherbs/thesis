@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{Darrach}
+B.~Darrach.
+\newblock {Meet Shakey, the First Electronic Person}.
+\newblock {\em Life}, pages 58--68, 1970.
+
 \bibitem{Garnelo2016}
 M.~Garnelo, K.~Arulkumaran, and M.~Shanahan.
 \newblock {Towards Deep Symbolic Reinforcement Learning}.
@@ -9,6 +14,11 @@ M.~Garnelo, K.~Arulkumaran, and M.~Shanahan.
 M.~Hutter.
 \newblock {\em {Universal Artificial Intelligence}}, volume~1.
 \newblock 2005.
+
+\bibitem{Knight2016}
+W.~Knight.
+\newblock {AI Winter Isn't Coming}.
+\newblock {\em MIT Technology Review}, 2016.
 
 \bibitem{Mnih2015}
 V.~Mnih, K.~Kavukcuoglu, D.~Silver, A.~A. Rusu, J.~Veness, M.~G. Bellemare,
@@ -20,8 +30,11 @@ V.~Mnih, K.~Kavukcuoglu, D.~Silver, A.~A. Rusu, J.~Veness, M.~G. Bellemare,
 
 \bibitem{Ormerod2016}
 D.~Ormerod.
-\newblock {Lee Sedol plays the first move of game three against AlphaGo.},
-  2016.
+\newblock {Lee Sedol plays the first move of game three against AlphaGo}, 2016.
+
+\bibitem{Reingold2001}
+E.~U. o.~T. Reingold.
+\newblock {PSY371F Higher Cognitive Processes}, 2001.
 
 \bibitem{Rosen2012}
 R.~Rosen.
