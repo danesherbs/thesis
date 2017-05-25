@@ -4,4 +4,5 @@
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Overview of deep symbolic reinforcement learning system architecture. \textbf {A}: The neural back end maps high-dimensional raw input data to a compositionally structured symbolic representation. \textbf {B}: The compositionally structured symbolic representation. \textbf {C}: Reinforcement learning of mapping from symbolic representation to action with maximum expected reward over time. \textit {Source: Garnelo et al.} \cite {Garnelo2016}.}}{4}
 \contentsline {figure}{\numberline {1.4}{\ignorespaces A toy example of a raw high-dimensional input.}}{4}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Architecture of an autoencoder.}}{9}
 \addvspace {10\p@ }
