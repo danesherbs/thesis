@@ -22,7 +22,7 @@ def train_average_filter(beta):
     filters = 32
     latent_filters = 8
     kernel_size = 6
-    epochs = 10
+    epochs = 20
     batch_size = 1
     lr = 1e-4
 
@@ -169,6 +169,6 @@ def main():
 Main
 '''
 if __name__ == '__main__':
-    # for beta in range(1, 5):
-    #     train_average_filter(beta)
-    main()
+    for beta in range(1, 20):
+        train_average_filter(beta)
+    # main()
