@@ -30,7 +30,9 @@ To see how we may use this as a similarity measure among images, consider a $1\t
 
 \section{Autoencoders}
 
-An autoencoder is a neural network that approximates the identity function.
+An autoencoder is a neural network that learns a compression algorithm for its input data in an unsupervised manner \cite{Liou2008}. This is achieved by placing constraints on a hidden layer, called the latent space, and setting the target values to the input, effectively learning the identity function. Since the network is trying to reconstruct the original input from the constrained latent space, over time the latent space corresponds to a meaningful compression of the network's input.
+
+There are a number of architectures implementing the same concept
 
 \subsection{Fully-Connected Autoencoders}
 
