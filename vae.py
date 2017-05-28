@@ -82,13 +82,11 @@ class VAE(object, metaclass=ABCMeta):
         '''
         KL divergence
         '''
-        y_true = K.reshape(y_true, (-1, np.prod(self.input_shape)))
-        y_pred = K.reshape(y_pred, (-1, np.prod(self.input_shape)))
         latent_shape = self.z.get_shape().as_list()[1:]
         z_mean_flat = K.reshape(self.z_mean, (-1, np.prod(latent_shape)))
         z_log_var_flat = K.reshape(self.z_log_var, (-1, np.prod(latent_shape)))
-        kl_loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_flat) - K.exp(z_log_var_flat), axis=-1)
-        return K.mean(kl_loss)
+        loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_flat) - K.exp(z_log_var_flat), axis=-1)
+        return K.mean(loss)
 
     def reconstruction_loss(self, y_true, y_pred):
         '''
@@ -152,13 +150,13 @@ class VAE(object, metaclass=ABCMeta):
                                                 separator=',',
                                                 append=True)
         reduce_lr_on_plateau = keras.callbacks.ReduceLROnPlateau(monitor='val_loss',
-                                                factor=0.5,
+                                                factor=0.7,
                                                 patience=0,
                                                 verbose=1,
                                                 mode='auto',
-                                                epsilon=0.5,
-                                                cooldown=1,
-                                                min_lr=1e-7)
+                                                epsilon=0.3,
+                                                cooldown=2,
+                                                min_lr=1e-6)
         self.callbacks = [tensorboard, early_stopping, model_checkpointer, csv_logger, reduce_lr_on_plateau]
 
     '''

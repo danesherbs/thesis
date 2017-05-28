@@ -6,14 +6,14 @@ This is done so that we may see if objects may be recognised by the existing met
 Dataset: 300,000 screenshots of Pong, 10% used for validation.
 '''
 
-from cvae_atari import ConvolutionalLatentAverageFilterVAE
+from cvae_atari import ConvolutionalLatentAverageFilterShallowVAE
 import sampling
 import utils
 import numpy as np
 import matplotlib.pyplot as plt
 
 
-experiment = 'experiment_different_loss_functions'
+experiment = 'experiment_different_filter_sizes_and_strides'
 
 
 def train_average_filter(beta):
@@ -21,13 +21,13 @@ def train_average_filter(beta):
     input_shape = (1, 84, 84)
     filters = 32
     latent_filters = 8
-    kernel_size = 6
-    epochs = 20
+    kernel_size = 7
+    epochs = 12
     batch_size = 1
     lr = 1e-4
 
     # define filename
-    name = 'cvae_atari_average_filter'
+    name = 'cvae_atari'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
@@ -46,7 +46,7 @@ def train_average_filter(beta):
     log_dir = './summaries/' + experiment + '/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
-    vae = ConvolutionalLatentAverageFilterVAE(input_shape, 
+    vae = ConvolutionalLatentAverageFilterShallowVAE(input_shape, 
                                             log_dir,
                                             filters=filters,
                                             latent_filters=latent_filters,
@@ -93,11 +93,11 @@ def main():
     beta = 1.0
 
     # log directory
-    run = 'cvae_atari_average_filter_27_May_17_57_01_batch_size_1_beta_1_epochs_20_filters_32_kernel_size_6_latent_filters_8_loss_vae_loss_lr_0.0001_optimizer_adam'
+    run = 'cvae_atari_28_May_16_14_52_batch_size_1_beta_1_epochs_12_filters_32_kernel_size_7_latent_filters_8_loss_vae_loss_lr_0.0001_optimizer_adam'
     log_dir = './summaries/' + experiment + '/' + run + '/'
 
     # make VAE
-    vae = ConvolutionalLatentAverageFilterVAE(input_shape, 
+    vae = ConvolutionalLatentAverageFilterShallowVAE(input_shape, 
                                             log_dir,
                                             filters=filters,
                                             latent_filters=latent_filters,
@@ -114,17 +114,17 @@ def main():
 
     # load testing data
     test_directory = './atari_agents/record/test/'
-    test_generator = utils.atari_generator(test_directory, batch_size=1)
-    X_test_size = 3214
+    test_generator = utils.atari_generator(test_directory, batch_size=1, shuffle=False)
+    X_test_size = 330
     X_test = np.asarray([next(test_generator)[0][0] for i in range(X_test_size)])
 
     # show original and reconstruction
     sampling.encode_decode_sample(X_test, model)
-    # plt.show()
+    plt.show()
 
     # plot filters
-    sampling.show_convolutional_layers(X_test, encoder, 4, 2, threshold=True, threshold_val=0.0)
-    plt.show()
+    # sampling.show_convolutional_layers(X_test, encoder, 4, 2, threshold=True, threshold_val=0.0)
+    # plt.show()
 
     # sample from prior
     # sampling.decode_prior_samples(5, decoder, latent_shape=(1, 8, 7, 7))
@@ -135,8 +135,8 @@ def main():
     # sampling.sample_posterior(X_test, model, num_iter, show_every=1)
 
     # change latent variable
-    # latent_shape = (1, 8, 7, 7)
-    # filter_index = 1
+    # latent_shape = (1, 8, 8, 8)
+    # filter_index = 6
     # sampling.change_latent_filter(X_test,
     #                             latent_shape,
     #                             filter_index,
@@ -158,7 +158,7 @@ def main():
     # range_values = np.arange(0, 4, 0.1)
     # sampling.change_latent_variable_over_range(X_test, latent_variable_pos, encoder, decoder, range_values)
 
-    # latent_variable_pos = (0, 5, 6, 2)
+    # latent_variable_pos = (0, 4, 7, 3)
     # utils.make_slider(lambda val: sampling.change_latent_variable(X_test,
     #                                                             latent_variable_pos,
     #                                                             encoder,
@@ -171,6 +171,6 @@ def main():
 Main
 '''
 if __name__ == '__main__':
-    # for beta in range(1, 20):
+    # for beta in range(1, 4):
     #     train_average_filter(beta)
     main()
