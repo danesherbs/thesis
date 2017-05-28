@@ -5,45 +5,46 @@ The style file: abbrv.bst
 Database file #1: library.bib
 Warning--can't use both volume and number fields in Hutter2005
 Warning--empty publisher in Hutter2005
-You've used 9 entries,
+Warning--can't use both volume and number fields in Liou2008
+You've used 10 entries,
             2118 wiz_defined-function locations,
-            554 strings with 5381 characters,
-and the built_in function-call counts, 3536 in all, are:
-= -- 309
-> -- 261
-< -- 3
-+ -- 105
-- -- 96
-* -- 280
-:= -- 616
-add.period$ -- 24
-call.type$ -- 9
-change.case$ -- 74
+            563 strings with 5536 characters,
+and the built_in function-call counts, 4074 in all, are:
+= -- 364
+> -- 279
+< -- 5
++ -- 112
+- -- 102
+* -- 317
+:= -- 689
+add.period$ -- 27
+call.type$ -- 10
+change.case$ -- 80
 chr.to.int$ -- 0
-cite$ -- 11
-duplicate$ -- 99
-empty$ -- 216
-format.name$ -- 96
-if$ -- 693
+cite$ -- 13
+duplicate$ -- 124
+empty$ -- 260
+format.name$ -- 102
+if$ -- 816
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 7
-newline$ -- 45
-num.names$ -- 18
-pop$ -- 89
+int.to.str$ -- 10
+missing$ -- 8
+newline$ -- 50
+num.names$ -- 20
+pop$ -- 96
 preamble$ -- 1
-purify$ -- 66
+purify$ -- 71
 quote$ -- 0
-skip$ -- 81
+skip$ -- 104
 stack$ -- 0
-substring$ -- 138
-swap$ -- 23
-text.length$ -- 3
+substring$ -- 183
+swap$ -- 38
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 34
-warning$ -- 2
-while$ -- 28
-width$ -- 10
-write$ -- 90
-(There were 2 warnings)
+type$ -- 38
+warning$ -- 3
+while$ -- 33
+width$ -- 12
+write$ -- 102
+(There were 3 warnings)

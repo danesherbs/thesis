@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Darrach}
 B.~Darrach.
@@ -19,6 +19,11 @@ M.~Hutter.
 W.~Knight.
 \newblock {AI Winter Isn't Coming}.
 \newblock {\em MIT Technology Review}, 2016.
+
+\bibitem{Liou2008}
+C.~Y. Liou, J.~C. Huang, and W.~C. Yang.
+\newblock {Modeling word perception using the Elman network}.
+\newblock In {\em Neurocomputing}, volume~71, pages 3150--3157, 2008.
 
 \bibitem{Mnih2015}
 V.~Mnih, K.~Kavukcuoglu, D.~Silver, A.~A. Rusu, J.~Veness, M.~G. Bellemare,
