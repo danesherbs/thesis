@@ -44,6 +44,10 @@ def make_dataset(extension='.png'):
     # get number of runs
     num_games = int(sys.argv[2])
 
+    # set RGB flag
+    if len(sys.argv) == 4:
+        rgb = bool(sys.argv[3])
+
     # get the list of legal actions
     legal_actions = ale.getLegalActionSet()
 
@@ -69,7 +73,7 @@ def make_dataset(extension='.png'):
                 # take current screenshot as the maximum of last two
                 screenshot = np.maximum(ale.getScreenRGB(), screenshot_odd)
                 # pre-process image
-                screenshot = __pre_process(screenshot)
+                screenshot = __pre_process(screenshot, rgb=rgb)
                 # save screenshot in appropriate directory
                 __save_image(screenshot, iter/2, extension=extension)
             # select random action
@@ -83,13 +87,16 @@ def make_dataset(extension='.png'):
         print('Episode %d ended with score: %d' % (episode, total_reward))
         ale.reset_game()
 
-def __pre_process(image_array):
+def __pre_process(image_array, rgb=False):
     '''
     Takes numpy array and returns processed numpy array.
     Processing extracts luminance and rescales to 84x84.
     '''
     image = Image.fromarray(image_array)
-    image = image.convert('L')
+    if rgb:
+        image = image.convert('RGB')
+    else:
+        image = image.convert('L')
     image = image.resize((84, 84), Image.ANTIALIAS)
     return image
 
@@ -107,4 +114,4 @@ def __save_image(image, iter, extension='.png'):
 Main function
 '''
 if __name__ == '__main__':
-    make_dataset(extension='.gif')
+    make_dataset(extension='.png')
