@@ -1,4 +1,5 @@
 from vae import VAE
+from cae import CAE
 import numpy as np
 import utils
 from keras import backend as K
@@ -6,6 +7,7 @@ from keras import initializers
 from keras.layers import Input, Conv2D, Flatten, Dense, Lambda, Reshape, Conv2DTranspose, Activation
 from keras.layers.normalization import BatchNormalization
 from keras.models import Model
+import tensorflow as tf
 
 
 
@@ -1127,7 +1129,7 @@ class ConvolutionalLatentNoBatchNormVAE(VAE):
 '''
 For experiment_different_loss_functions.py
 '''
-class ConvolutionalLatentAverageFilterVAE(VAE):
+class ConvolutionalLatentShallowAverageFilterVAE(VAE):
 
     def __init__(self, input_shape, log_dir, filters=32, latent_filters=8, kernel_size=2, beta=1.0):
         # initialise HigginsVAE specific variables
@@ -1150,17 +1152,18 @@ class ConvolutionalLatentAverageFilterVAE(VAE):
         '''
         # define input with 'channels_first'
         input_encoder = Input(shape=self.input_shape, name='encoder_input')
-        x = Conv2D(self.filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
+        x = Conv2D(self.filters, self.kernel_size, strides=(2, 2), padding='same', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
         x = Activation('relu')(x)
-        x = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
+        x = Conv2D(2*self.filters, self.kernel_size, strides=(1, 1), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
         x = Activation('relu')(x)
 
         # separate dense layers for mu and log(sigma), both of size latent_dim
-        z_mean = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
-        z_log_var = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
+        z_mean = Conv2D(self.latent_filters, self.kernel_size, strides=(1, 1), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
+        z_log_var = Conv2D(self.latent_filters, self.kernel_size, strides=(1, 1), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
 
         # sample from normal with z_mean and z_log_var
-        z = Lambda(self.sampling, name='encoder_z')([z_mean, z_log_var])
+        z_layer = Lambda(self.sampling, name='encoder_z')
+        z = z_layer([z_mean, z_log_var])
 
         '''
         Decoder
@@ -1169,11 +1172,11 @@ class ConvolutionalLatentAverageFilterVAE(VAE):
         encoder_out_shape = tuple(z.get_shape().as_list())
 
         input_decoder = Input(shape=encoder_out_shape[1:], name='decoder_input')
-        x = Conv2DTranspose(2*self.filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_1')(input_decoder)
+        x = Conv2DTranspose(2*self.filters, self.kernel_size, strides=(1, 1), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_1')(input_decoder)
         x = Activation('relu')(x)
-        x = Conv2DTranspose(self.filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
+        x = Conv2DTranspose(self.filters, self.kernel_size, strides=(1, 1), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
         x = Activation('relu')(x)
-        x = Conv2DTranspose(1, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_4')(x)
+        x = Conv2DTranspose(1, self.kernel_size, strides=(2, 2), padding='same', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_4')(x)
         decoded_img = Activation('sigmoid')(x)
 
         '''
@@ -1186,6 +1189,7 @@ class ConvolutionalLatentAverageFilterVAE(VAE):
         # For parent loss function
         self.z_mean = z_mean
         self.z_log_var = z_log_var
+        self.z_layer = z_layer
         self.z = z
 
     def kl_loss(self, y_true, y_pred):
@@ -1194,10 +1198,199 @@ class ConvolutionalLatentAverageFilterVAE(VAE):
         '''
         z_mean_average_filters = K.mean(self.z_mean, axis=(2, 3))  # (batch_size, filters)
         z_log_var_average_filters = K.mean(self.z_log_var, axis=(2, 3))  # (batch_size, filters)
-        loss = -0.5 * K.sum(1 + z_mean_average_filters - K.square(z_mean_average_filters) - K.exp(z_mean_average_filters), axis=1)  # (batch_size,)
+        loss = -0.5 * K.sum(1 + z_log_var_average_filters - K.square(z_mean_average_filters) - K.exp(z_log_var_average_filters), axis=1)  # (batch_size,)
         return K.mean(loss)  # float
 
 
+
+'''
+For experiment_different_loss_functions.py
+'''
+class ConvolutionalLatentShallowWeightedAverageFilterVAE(VAE):
+
+    def __init__(self, input_shape, log_dir, filters=32, latent_filters=8, kernel_size=2, beta=1.0):
+        # initialise HigginsVAE specific variables
+        self.filters = filters
+        self.latent_filters = latent_filters
+        self.kernel_size = kernel_size
+        # call parent constructor
+        VAE.__init__(self, input_shape, log_dir, beta=beta)
+
+    def set_model(self):
+        '''
+        Initialisers
+        '''
+        weight_seed = None
+        kernel_initializer = initializers.glorot_uniform(seed = weight_seed)
+        bias_initializer = initializers.glorot_uniform(seed = weight_seed)
+
+        '''
+        Encoder
+        '''
+        # define input with 'channels_first'
+        input_encoder = Input(shape=self.input_shape, name='encoder_input')
+        x = Conv2D(self.filters, self.kernel_size, strides=(2, 2), padding='same', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
+        x = Activation('relu')(x)
+        x = Conv2D(2*self.filters, self.kernel_size, strides=(1, 1), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
+        x = Activation('relu')(x)
+
+        # separate dense layers for mu and log(sigma), both of size latent_dim
+        z_mean = Conv2D(self.latent_filters, self.kernel_size, strides=(1, 1), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
+        z_log_var = Conv2D(self.latent_filters, self.kernel_size, strides=(1, 1), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
+
+        # sample from normal with z_mean and z_log_var
+        z_layer = Lambda(self.sampling, name='encoder_z')
+        z = z_layer([z_mean, z_log_var])
+
+        '''
+        Decoder
+        '''
+        # take encoder output shape
+        encoder_out_shape = tuple(z.get_shape().as_list())
+
+        input_decoder = Input(shape=encoder_out_shape[1:], name='decoder_input')
+        x = Conv2DTranspose(2*self.filters, self.kernel_size, strides=(1, 1), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_1')(input_decoder)
+        x = Activation('relu')(x)
+        x = Conv2DTranspose(self.filters, self.kernel_size, strides=(1, 1), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
+        x = Activation('relu')(x)
+        x = Conv2DTranspose(1, self.kernel_size, strides=(2, 2), padding='same', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_4')(x)
+        decoded_img = Activation('sigmoid')(x)
+
+        '''
+        Necessary definitions
+        '''
+        # For parent fitting function
+        self.encoder = Model(input_encoder, z)
+        self.decoder = Model(input_decoder, decoded_img)
+        self.model = Model(input_encoder, self.decoder(self.encoder(input_encoder)))
+        # For parent loss function
+        self.z_mean = z_mean
+        self.z_log_var = z_log_var
+        self.z_layer = z_layer
+        self.z = z
+
+    def kl_loss(self, y_true, y_pred):
+        '''
+        Override KL-loss function to be KL-loss over average activations in each filter
+        '''
+        weight = np.prod(self.z_mean.shape[2:])  # float = width * height
+        z_mean_average_filters = K.mean(self.z_mean, axis=(2, 3))  # (batch_size, filters)
+        z_log_var_average_filters = K.mean(self.z_log_var, axis=(2, 3))  # (batch_size, filters)
+        loss = -0.5 * K.sum(1 + z_log_var_flat - K.square(z_mean_average_filters) - K.exp(z_log_var_average_filters), axis=1)  # (batch_size,)
+        return K.mean(loss)  # float
+
+
+'''
+For experiment_different_loss_functions.py
+'''
+class ConvolutionalLatentShallowOrthoRegCAE(CAE):
+
+    def __init__(self, input_shape, log_dir, filters=32, latent_filters=8, kernel_size=2, beta=1.0):
+        # initialise HigginsVAE specific variables
+        self.filters = filters
+        self.latent_filters = latent_filters
+        self.kernel_size = kernel_size
+        # call parent constructor
+        CAE.__init__(self, input_shape, log_dir)
+
+    def set_model(self):
+        '''
+        Initialisers
+        '''
+        weight_seed = None
+        kernel_initializer = initializers.glorot_uniform(seed = weight_seed)
+        bias_initializer = initializers.glorot_uniform(seed = weight_seed)
+
+        '''
+        Encoder
+        '''
+        # define input with 'channels_first'
+        input_encoder = Input(shape=self.input_shape, name='encoder_input')
+        x = Conv2D(self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
+        x = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
+        z_layer = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_3')
+        z = z_layer(x)
+
+        '''
+        Decoder
+        '''
+        # take encoder output shape
+        encoder_out_shape = tuple(z.get_shape().as_list())
+
+        input_decoder = Input(shape=encoder_out_shape[1:], name='decoder_input')
+        x = Conv2DTranspose(2*self.filters, self.kernel_size, strides=(2, 2), activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_1')(input_decoder)
+        x = Conv2DTranspose(self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_2')(x)
+        decoded_img = Conv2DTranspose(1, self.kernel_size, strides=(2, 2), padding='same', activation='sigmoid', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
+
+        '''
+        Necessary definitions
+        '''
+        # For parent fitting function
+        self.encoder = Model(input_encoder, z)
+        self.decoder = Model(input_decoder, decoded_img)
+        self.model = Model(input_encoder, self.decoder(self.encoder(input_encoder)))
+        # For OrthoReg
+        self.z_layer = z_layer
+
+    # def cae_loss(self, y_pred, y_true):
+    #     return self.reconstruction_loss(y_true, y_pred) + self.ortho_reg(self.z_layer.get_weights())
+
+
+# import keras
+# from keras.regularizers import Regularizer
+
+# class OrthoReg(Regularizer):
+#     """
+#     Regularizer convolutional weights
+#     """
+
+#     """Regularizer for L1 and L2 regularization.
+
+#     # Arguments
+#         l1: Float; L1 regularization factor.
+#         l2: Float; L2 regularization factor.
+#     """
+
+#     def __init__(self, l1=0., l2=0.):
+#         self.l1 = K.cast_to_floatx(l1)
+#         self.l2 = K.cast_to_floatx(l2)
+
+#     def __call__(self, x):
+#         regularization = 0.
+#         if self.l1:
+#             regularization += K.sum(self.l1 * K.abs(x))
+#         if self.l2:
+#             regularization += K.sum(self.l2 * K.square(x))
+#         return regularization
+
+#     def get_config(self):
+#         return {'l1': float(self.l1),
+#                 'l2': float(self.l2)}
+
+    # def __call__(self, w):
+    #     # regularise w to be orthogonal
+    #     # L = sum_{w,w'} log(1 + exp( l * (cos(w,w') - 1) ))  (see eq. 7)
+    #     # set  l = 10
+
+    #     w_new = tf.reshape(w, [-1, self.latent_filters])
+
+    #     # normalized w
+    #     norm = tf.sqrt(tf.reduce_sum(tf.square(w_new), 0, keep_dims=True))
+    #     w_new = w_new / ( norm + 1e-10 )
+
+    #     # compute product
+    #     prod = tf.matmul( K.transpose(w_new), w_new )
+       
+    #     l = 10
+    #     L = tf.log( 1 + tf.exp(l * (prod - 1) ))
+    #     diag_mat = tf.diag(tf.diag_part(L))
+    #     L = L - diag_mat
+    #     Loss = tf.reduce_sum( tf.reduce_sum(L) )
+
+    #     return Loss
+
+    # def get_config(self):
+    #         return {'name': self.__class__.__name__}
 
 
 '''
@@ -1272,7 +1465,6 @@ class ConvolutionalLatentAverageFilterShallowVAE(VAE):
         z_log_var_average_filters = K.mean(self.z_log_var, axis=(2, 3))  # (batch_size, filters)
         loss = -0.5 * K.sum(1 + z_mean_average_filters - K.square(z_mean_average_filters) - K.exp(z_mean_average_filters), axis=1)  # (batch_size,)
         return K.mean(loss)  # float
-
 
 
 
