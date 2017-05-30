@@ -1398,11 +1398,12 @@ For experiment_different_filter_sizes_and_strides.py
 '''
 class ConvolutionalLatentAverageFilterShallowVAE(VAE):
 
-    def __init__(self, input_shape, log_dir, filters=32, latent_filters=8, kernel_size=2, beta=1.0):
+    def __init__(self, input_shape, log_dir, filters=32, latent_filters=8, kernel_size=2, img_channels=1, beta=1.0):
         # initialise HigginsVAE specific variables
         self.filters = filters
         self.latent_filters = latent_filters
         self.kernel_size = kernel_size
+        self.img_channels = img_channels
         # call parent constructor
         VAE.__init__(self, input_shape, log_dir, beta=beta)
 
@@ -1419,14 +1420,12 @@ class ConvolutionalLatentAverageFilterShallowVAE(VAE):
         '''
         # define input with 'channels_first'
         input_encoder = Input(shape=self.input_shape, name='encoder_input')
-        x = Conv2D(self.filters, self.kernel_size, strides=(2, 2), padding='same', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
-        x = Activation('relu')(x)
-        x = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), padding='same', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
-        x = Activation('relu')(x)
+        x = Conv2D(self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
+        x = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
 
         # separate dense layers for mu and log(sigma), both of size latent_dim
-        z_mean = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
-        z_log_var = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
+        z_mean = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
+        z_log_var = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
 
         # sample from normal with z_mean and z_log_var
         z = Lambda(self.sampling, name='encoder_z')([z_mean, z_log_var])
@@ -1438,11 +1437,9 @@ class ConvolutionalLatentAverageFilterShallowVAE(VAE):
         encoder_out_shape = tuple(z.get_shape().as_list())
 
         input_decoder = Input(shape=encoder_out_shape[1:], name='decoder_input')
-        x = Conv2DTranspose(2*self.filters, self.kernel_size, strides=(2, 2), activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_1')(input_decoder)
-        x = Activation('relu')(x)
-        x = Conv2DTranspose(self.filters, self.kernel_size, strides=(2, 2), padding='same', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
-        x = Activation('relu')(x)
-        x = Conv2DTranspose(1, self.kernel_size, strides=(2, 2), padding='same', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_4')(x)
+        x = Conv2DTranspose(2*self.filters, self.kernel_size, strides=(2, 2), padding='valid', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_1')(input_decoder)
+        x = Conv2DTranspose(self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
+        x = Conv2DTranspose(self.img_channels, self.kernel_size, strides=(2, 2), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_4')(x)
         decoded_img = Activation('sigmoid')(x)
 
         '''
@@ -1465,7 +1462,6 @@ class ConvolutionalLatentAverageFilterShallowVAE(VAE):
         z_log_var_average_filters = K.mean(self.z_log_var, axis=(2, 3))  # (batch_size, filters)
         loss = -0.5 * K.sum(1 + z_log_var_average_filters - K.square(z_mean_average_filters) - K.exp(z_log_var_average_filters), axis=1)  # (batch_size,)
         return K.mean(loss)  # float
-
 
 
 '''

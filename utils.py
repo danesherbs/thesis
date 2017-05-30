@@ -23,7 +23,7 @@ RECORD_PATH = './atari_agents/record/'
 Dataset loaders
 '''
 # General Atari loader
-def atari_generator(directory, batch_size=64, shuffle=True):
+def atari_generator(directory, batch_size=64, shuffle=True, img_channels=1):
     '''
     Takes directory of Atari 2600 images (3, 210, 160)
     and returns a generator of (1, 84, 84) images.
@@ -52,7 +52,8 @@ def atari_generator(directory, batch_size=64, shuffle=True):
             X.append(batch_array)
         # reshape and normalise data
         X = np.asarray(X)
-        X = X.reshape(X.shape[0], 1, X.shape[1], X.shape[2])
+        X = X.reshape(-1, img_channels, 84, 84)
+        print('X.shape', X.shape)
         X = X.astype('float32')
         X = (X - np.min(X)) / np.max(X)
         # yield next batch
@@ -169,6 +170,39 @@ def __date_and_time_string():
     return strftime("%d_%b_%H_%M_%S", gmtime())
 
 
+
+'''
+Plotting
+'''
+from tkinter import Tk, DoubleVar, IntVar, Scale, Label, HORIZONTAL, Button, CENTER
+def make_slider(func):
+
+    root = Tk()
+    var = DoubleVar()
+
+    scale = Scale(root,
+                from_=-5.0,
+                to=5.0,
+                width=30,
+                length=600,
+                tickinterval=1.0,
+                resolution=-1,
+                orient=HORIZONTAL,
+                variable=var)
+    scale.pack()
+
+    def f():
+        func(scale.get())
+
+    button = Button(root,
+                    text="Decode",
+                    command=f)
+    button.pack(anchor=CENTER)
+
+    root.mainloop()
+
+
+
 '''
 MAIN
 '''
@@ -182,5 +216,11 @@ if __name__ == '__main__':
     # test_generator = atari_generator(directory, batch_size=64)
     # [x for x in test_generator]
 
-    (X_train, _), (X_test, _) = load_frey()
-    __show_image(X_train, sample_num=0)
+    # (X_train, _), (X_test, _) = load_frey()
+    # __show_image(X_train, sample_num=0)
+
+    # make_slider()
+
+    convolutional_space = np.random.randint(2, size=(1, 8, 8, 8))
+    print(convolutional_space)
+
