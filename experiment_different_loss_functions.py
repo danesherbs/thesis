@@ -18,13 +18,14 @@ experiment = 'experiment_different_loss_functions'
 
 def train_average_filter(beta):
     # inputs
-    input_shape = (1, 84, 84)
+    input_shape = (3, 84, 84)
     filters = 32
     latent_filters = 8
-    kernel_size = 7
+    kernel_size = 6
     epochs = 5
     batch_size = 1
     lr = 1e-4
+    img_channels = 3
 
     # define filename
     name = 'cvae_atari_average_filter'
@@ -37,6 +38,7 @@ def train_average_filter(beta):
         'filters': filters,
         'latent_filters': latent_filters,
         'kernel_size': kernel_size,
+        'img_channels': img_channels,
         'lr': lr,
         'loss': 'vae_loss',
         'optimizer': 'adam'
@@ -51,6 +53,7 @@ def train_average_filter(beta):
                                             filters=filters,
                                             latent_filters=latent_filters,
                                             kernel_size=kernel_size,
+                                            img_channels=img_channels,
                                             beta=beta)
 
     # compile VAE
@@ -61,8 +64,8 @@ def train_average_filter(beta):
     # get dataset
     train_directory = './atari_agents/record/train/'
     test_directory = './atari_agents/record/test/'
-    train_generator = utils.atari_generator(train_directory, batch_size=batch_size)
-    test_generator = utils.atari_generator(test_directory, batch_size=batch_size)
+    train_generator = utils.atari_generator(train_directory, batch_size=batch_size, img_channels=img_channels)
+    test_generator = utils.atari_generator(test_directory, batch_size=batch_size, img_channels=img_channels)
     train_size = utils.count_images(train_directory)
     test_size = utils.count_images(test_directory)
 
@@ -150,14 +153,14 @@ def main():
     input_shape = (1, 84, 84)
     filters = 32
     latent_filters = 8
-    kernel_size = 6
+    kernel_size = 7
     epochs = 10
     batch_size = 1
     lr = 1e-4
     beta = 1.0
 
     # log directory
-    run = 'cvae_atari_average_filter_29_May_20_28_33_batch_size_1_beta_1_epochs_13_filters_32_kernel_size_7_latent_filters_8_loss_vae_loss_lr_0.0001_optimizer_adam'
+    run = 'cvae_atari_average_filter_30_May_20_46_38_batch_size_1_beta_128_epochs_5_filters_32_kernel_size_7_latent_filters_8_loss_vae_loss_lr_0.0001_optimizer_adam'
     log_dir = './summaries/' + experiment + '/' + run + '/'
 
     # make VAE
@@ -183,7 +186,7 @@ def main():
     X_test = np.asarray([next(test_generator)[0][0] for i in range(X_test_size)])
 
     # show original and reconstruction
-    sampling.encode_decode_sample(X_test, model)
+    # sampling.encode_decode_sample(X_test, model)
     # plt.show()
 
     # plot filters
@@ -213,8 +216,8 @@ def main():
     #                             mean=0.0)
 
     # plot mean activation over latent space
-    # sampling.plot_mean_latent_activation(X_test, encoder, 4, 2, threshold=True, threshold_val=0.0)
-    # plt.show()
+    sampling.plot_mean_latent_activation(X_test, encoder, 4, 2, threshold=True, threshold_val=0.0)
+    plt.show()
 
     # change single latent neuron
     # latent_shape = (1, 8, 7, 7)
@@ -222,14 +225,14 @@ def main():
     # range_values = np.arange(0, 4, 0.1)
     # sampling.change_latent_variable_over_range(X_test, latent_variable_pos, encoder, decoder, range_values)
 
-    latent_variable_pos = (0, 1, 0, 3)
-    utils.make_slider(lambda val: sampling.change_latent_variable(X_test,
-                                                                latent_variable_pos,
-                                                                encoder,
-                                                                decoder,
-                                                                val,
-                                                                init_sample_num=0,
-                                                                show=True))
+    # latent_variable_pos = (0, 1, 0, 3)
+    # utils.make_slider(lambda val: sampling.change_latent_variable(X_test,
+    #                                                             latent_variable_pos,
+    #                                                             encoder,
+    #                                                             decoder,
+    #                                                             val,
+    #                                                             init_sample_num=0,
+    #                                                             show=True))
 
 '''
 Main
