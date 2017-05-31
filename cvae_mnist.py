@@ -127,7 +127,7 @@ class DenseAutoencoder(Autoencoder):
         '''
         input_decoder = Input(shape=(latent_size,), name='decoder_input')
 
-        x = Dense(input_size, name='decoder_dense_2')(input_decoder)
+        x = Dense(input_size, activation='sigmoid', name='decoder_dense_1')(input_decoder)
         x = Reshape(self.input_shape)(x)
 
         '''
