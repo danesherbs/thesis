@@ -10,7 +10,7 @@ def train_dense_autoencoder():
 
     # inputs
     input_shape = (1, 28, 28)
-    epochs = 10
+    epochs = 15
     batch_size = 1
     lr = 1e-4
 
