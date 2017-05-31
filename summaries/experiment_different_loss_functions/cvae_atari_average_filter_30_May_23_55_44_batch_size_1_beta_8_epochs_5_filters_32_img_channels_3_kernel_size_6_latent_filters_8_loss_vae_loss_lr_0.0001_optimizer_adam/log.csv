@@ -1,0 +1,2 @@
+epoch,kl_loss,loss,reconstruction_loss,val_kl_loss,val_loss,val_reconstruction_loss
+0,0.726708260764,2329.14027272,2323.32660664,0.344662778115,2234.84013577,2232.08283398
