@@ -112,7 +112,7 @@ class DenseAutoencoder(Autoencoder):
         Constants
         '''
         input_size = np.prod(self.input_shape)
-        latent_size = 16
+        latent_size = 32
 
         '''
         Encoder
@@ -120,16 +120,14 @@ class DenseAutoencoder(Autoencoder):
         input_encoder = Input(shape=(self.input_shape), name='encoder_input')
 
         x = Flatten(name='encoder_flatten_1')(input_encoder)
-        x = Dense(512, activation='relu', name='encoder_dense_1')(x)
-        z = Dense(latent_size, activation='relu', name='encoder_dense_3')(x)
+        z = Dense(latent_size, activation='relu', name='encoder_dense_1')(x)
 
         '''
         Decoder
         '''
         input_decoder = Input(shape=(latent_size,), name='decoder_input')
 
-        x = Dense(512, activation='relu', name='decoder_dense_2')(input_decoder)
-        x = Dense(input_size, name='decoder_dense_3')(x)
+        x = Dense(input_size, name='decoder_dense_2')(input_decoder)
         x = Reshape(self.input_shape)(x)
 
         '''
