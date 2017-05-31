@@ -53,7 +53,6 @@ def atari_generator(directory, batch_size=64, shuffle=True, img_channels=1):
         # reshape and normalise data
         X = np.asarray(X)
         X = X.reshape(-1, img_channels, 84, 84)
-        print('X.shape', X.shape)
         X = X.astype('float32')
         X = (X - np.min(X)) / np.max(X)
         # yield next batch
