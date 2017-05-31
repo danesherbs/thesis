@@ -1,4 +1,5 @@
 from vae import VAE
+from autoencoder import Autoencoder
 import numpy as np
 from keras import initializers
 from keras.layers import Input, Conv2D, Flatten, Dense, Lambda, Reshape, Conv2DTranspose
@@ -99,6 +100,44 @@ class CholletVAE(VAE):
         self.z_log_var = z_log_var
         self.z = z
 
+
+class DenseAutoencoder(Autoencoder):
+    def __init__(self, input_shape, log_dir):
+        self.input_shape = input_shape
+        self.log_dir = log_dir
+        Autoencoder.__init__(self, input_shape, log_dir)
+
+    def set_model(self):
+        '''
+        Constants
+        '''
+        input_size = np.prod(self.input_shape)
+        latent_size = 16
+
+        '''
+        Encoder
+        '''
+        input_encoder = Input(shape=(self.input_shape), name='encoder_input')
+
+        x = Flatten(name='encoder_flatten_1')(input_encoder)
+        x = Dense(512, activation='relu', name='encoder_dense_1')(x)
+        z = Dense(latent_size, activation='relu', name='encoder_dense_3')(x)
+
+        '''
+        Decoder
+        '''
+        input_decoder = Input(shape=(latent_size,), name='decoder_input')
+
+        x = Dense(512, activation='relu', name='decoder_dense_2')(input_decoder)
+        x = Dense(input_size, name='decoder_dense_3')(x)
+        x = Reshape(self.input_shape)(x)
+
+        '''
+        For parent class
+        '''
+        self.encoder = Model(input_encoder, z)
+        self.decoder = Model(input_decoder, x)
+        self.model = Model(input_encoder, self.decoder(self.encoder(input_encoder)))
 
 
 if __name__ == '__main__':
