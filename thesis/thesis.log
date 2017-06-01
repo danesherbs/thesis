@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  1 JUN 2017 14:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  1 JUN 2017 18:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -311,16 +311,26 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 ] [8
 
-] (./thesis.lof [9
+] (./thesis.lof
+
+LaTeX Warning: Citation `Rosen2012' on page ix undefined on input line 2.
+
+
+LaTeX Warning: Citation `Ormerod2016' on page ix undefined on input line 3.
+
+
+LaTeX Warning: Citation `Garnelo2016' on page ix undefined on input line 4.
+
+[9
 
 ]
 
-Package caption Warning: \label without proper reference on input line 91.
-See the caption package documentation for explanation.
-
-
 LaTeX Warning: Reference `tab:fully_connected_autoencoder_architecture' on page
- x undefined on input line 12.
+ 13 undefined on input line 12.
+
+
+LaTeX Warning: Reference `tab:convolutional_autoencoder_architecture' on page 1
+4 undefined on input line 13.
 
 )
 \tf@lof=\write5
@@ -328,10 +338,32 @@ LaTeX Warning: Reference `tab:fully_connected_autoencoder_architecture' on page
 
  [10] (./introduction/introduction.tex
 Chapter 1.
+
+LaTeX Warning: Citation `Knight2016' on page 1 undefined on input line 5.
+
+
+LaTeX Warning: Citation `Darrach' on page 1 undefined on input line 5.
+
+
+LaTeX Warning: Citation `Reingold2001' on page 1 undefined on input line 14.
+
+
+LaTeX Warning: Citation `Garnelo2016' on page 1 undefined on input line 14.
+
 [1
 
 
 ]
+
+LaTeX Warning: Citation `Hutter2005' on page 2 undefined on input line 18.
+
+
+LaTeX Warning: Citation `Mnih2015' on page 2 undefined on input line 18.
+
+
+LaTeX Warning: Citation `Silver2016' on page 2 undefined on input line 18.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
@@ -344,6 +376,13 @@ Package pdftex.def Info: ./figures/introduction/deep_blue_kasparov.jpg used on
 input line 24.
 (pdftex.def)             Requested size: 217.66211pt x 150.8909pt.
 
+
+LaTeX Warning: Citation `Rosen2012' on page 2 undefined on input line 25.
+
+
+LaTeX Warning: Citation `Rosen2012' on page 2 undefined on input line 25.
+
+
 <./figures/introduction/alpha_go_first_move_game_three.png, id=52, 901.3675pt x
  625.33624pt>
 File: ./figures/introduction/alpha_go_first_move_game_three.png Graphic file (t
@@ -353,8 +392,20 @@ Package pdftex.def Info: ./figures/introduction/alpha_go_first_move_game_three.
 png used on input line 31.
 (pdftex.def)             Requested size: 217.66211pt x 150.99977pt.
 
+
+LaTeX Warning: Citation `Ormerod2016' on page 2 undefined on input line 32.
+
+
+LaTeX Warning: Citation `Ormerod2016' on page 2 undefined on input line 32.
+
+
+LaTeX Warning: Citation `Garnelo2016' on page 2 undefined on input line 37.
+
 [2 <./figures/introduction/deep_blue_kasparov.jpg> <./figures/introduction/alph
 a_go_first_move_game_three.png>]
+
+LaTeX Warning: Citation `Garnelo2016' on page 3 undefined on input line 48.
+
 Package epstopdf Info: Source file: <./figures/introduction/DSRL_architecture.e
 ps>
 (epstopdf)                    date: 2017-05-22 19:16:50
@@ -378,6 +429,12 @@ e (type pdf)
 Package pdftex.def Info: ./figures/introduction/DSRL_architecture-eps-converted
 -to.pdf used on input line 60.
 (pdftex.def)             Requested size: 483.69687pt x 171.41066pt.
+
+
+LaTeX Warning: Citation `Garnelo2016' on page 3 undefined on input line 61.
+
+
+LaTeX Warning: Citation `Garnelo2016' on page 3 undefined on input line 61.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -411,6 +468,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [6
 
 ]
+
+LaTeX Warning: Citation `Doersch2016' on page 7 undefined on input line 32.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
@@ -441,6 +502,9 @@ input line 48.
 (pdftex.def)             Requested size: 123.82968pt x 123.84416pt.
  [8 <./figures/background/eucledian_distance_a.png> <./figures/background/eucle
 dian_distance_c.png> <./figures/background/eucledian_distance_b.png>]
+
+LaTeX Warning: Citation `Liou2008' on page 9 undefined on input line 64.
+
 Package epstopdf Info: Source file: <./figures/background/autoencoder_black_box
 _architecture.eps>
 (epstopdf)                    date: 2017-05-26 19:00:41
@@ -452,7 +516,7 @@ _architecture-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/autoe
 ncoder_black_box_architecture-eps-converted-to.pdf ./figures/background/autoenc
 oder_black_box_architecture.eps>
-(epstopdf)             \includegraphics on input line 69.
+(epstopdf)             \includegraphics on input line 71.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/autoencoder_black_box_architecture-eps-converted-to.pdf, 
@@ -463,11 +527,8 @@ pdf Graphic file (type pdf)
 <use ./figures/background/autoencoder_black_box_architecture-eps-converted-to.p
 df>
 Package pdftex.def Info: ./figures/background/autoencoder_black_box_architectur
-e-eps-converted-to.pdf used on input line 69.
+e-eps-converted-to.pdf used on input line 71.
 (pdftex.def)             Requested size: 452.18723pt x 80.86171pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [9 <./figures/background/autoencoder_black_box_architecture-eps-converted-to.p
 df>]
 Package epstopdf Info: Source file: <./figures/background/autoencoder_architect
@@ -481,7 +542,7 @@ ure-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/autoe
 ncoder_architecture-eps-converted-to.pdf ./figures/background/autoencoder_archi
 tecture.eps>
-(epstopdf)             \includegraphics on input line 81.
+(epstopdf)             \includegraphics on input line 83.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/autoencoder_architecture-eps-converted-to.pdf, id=108, 47
@@ -491,20 +552,19 @@ c file (type pdf)
 
 <use ./figures/background/autoencoder_architecture-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/background/autoencoder_architecture-eps-conv
-erted-to.pdf used on input line 81.
+erted-to.pdf used on input line 83.
 (pdftex.def)             Requested size: 335.14984pt x 352.71535pt.
 
 
-Package caption Warning: \label without proper reference on input line 91.
+Package caption Warning: \label without proper reference on input line 93.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `tab:fully_connected_autoencoder_architecture' on page
- 10 undefined on input line 86.
+ 10 undefined on input line 88.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 88.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 <./figures/background/fully_connected_autoencoder_mnist.png, id=109, 380.1402pt
@@ -513,55 +573,143 @@ File: ./figures/background/fully_connected_autoencoder_mnist.png Graphic file (
 type png)
  <use ./figures/background/fully_connected_autoencoder_mnist.png>
 Package pdftex.def Info: ./figures/background/fully_connected_autoencoder_mnist
-.png used on input line 104.
+.png used on input line 109.
 (pdftex.def)             Requested size: 361.13112pt x 679.69551pt.
 
 
-Package caption Warning: \label without proper reference on input line 91.
+Package caption Warning: \label without proper reference on input line 93.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `tab:fully_connected_autoencoder_architecture' on page
- 10 undefined on input line 105.
+ 10 undefined on input line 110.
 
 
-Package caption Warning: \label without proper reference on input line 91.
+Package caption Warning: \label without proper reference on input line 93.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `tab:fully_connected_autoencoder_architecture' on page
- 10 undefined on input line 105.
+ 10 undefined on input line 110.
 
 
-LaTeX Warning: Float too large for page by 30.41241pt on input line 107.
+LaTeX Warning: Float too large for page by 30.41241pt on input line 112.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+Package caption Warning: \label without proper reference on input line 121.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:convolutional_autoencoder_architecture' on page 1
+0 undefined on input line 116.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10 <./figures/background/autoencoder_architecture-eps-converted-to.pdf>])
-(./conclusion/conclusion.tex [11] [12 <./figures/background/fully_connected_aut
-oencoder_mnist.png>]
+ [10 <./figures/background/autoencoder_architecture-eps-converted-to.pdf>]
+File: ./figures/background/fully_connected_autoencoder_mnist.png Graphic file (
+type png)
+
+<use ./figures/background/fully_connected_autoencoder_mnist.png>
+Package pdftex.def Info: ./figures/background/fully_connected_autoencoder_mnist
+.png used on input line 141.
+(pdftex.def)             Requested size: 361.13112pt x 679.69551pt.
+
+
+Package caption Warning: \label without proper reference on input line 121.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:convolutional_autoencoder_architecture' on page 1
+1 undefined on input line 142.
+
+
+Package caption Warning: \label without proper reference on input line 121.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:convolutional_autoencoder_architecture' on page 1
+1 undefined on input line 142.
+
+
+LaTeX Warning: Float too large for page by 30.41241pt on input line 144.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Package epstopdf Info: Source file: <./figures/background/convolutional_autoenc
+oder_architecture.eps>
+(epstopdf)                    date: 2017-06-01 15:29:14
+(epstopdf)                    size: 4378851 bytes
+(epstopdf)             Output file: <./figures/background/convolutional_autoenc
+oder_architecture-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-06-01 15:29:18
+(epstopdf)                    size: 867378 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figures/background/convo
+lutional_autoencoder_architecture-eps-converted-to.pdf ./figures/background/con
+volutional_autoencoder_architecture.eps>
+(epstopdf)             \includegraphics on input line 149.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figures/background/convolutional_autoencoder_architecture-eps-converted-to.p
+df, id=120, 853.1875pt x 188.705pt>
+File: ./figures/background/convolutional_autoencoder_architecture-eps-converted
+-to.pdf Graphic file (type pdf)
+
+<use ./figures/background/convolutional_autoencoder_architecture-eps-converted-
+to.pdf>
+Package pdftex.def Info: ./figures/background/convolutional_autoencoder_archite
+cture-eps-converted-to.pdf used on input line 149.
+(pdftex.def)             Requested size: 511.91646pt x 113.22386pt.
+
+Overfull \hbox (28.21959pt too wide) in paragraph at lines 149--150
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Citation `Krizhevsky2012' on page 11 undefined on input line 154
+.
+
+
+LaTeX Warning: Citation `Zeiler2014' on page 11 undefined on input line 154.
+
+
+LaTeX Warning: Citation `Szegedy2015' on page 11 undefined on input line 154.
+
+) (./conclusion/conclusion.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+[12] [13 <./figures/background/fully_connected_autoencoder_mnist.png>] [14]
+[15 <./figures/background/convolutional_autoencoder_architecture-eps-converted-
+to.pdf>]
 Chapter 3.
-) (./thesis.bbl [13
+) (./thesis.bbl [16
 
-] [14
+] [17
 
-]) [15] (./thesis.aux)
+]) [18] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 3473 strings out of 494902
- 55380 string characters out of 6179891
- 115999 words of memory out of 5000000
- 6676 multiletter control sequences out of 15000+600000
+ 3481 strings out of 494902
+ 55886 string characters out of 6179891
+ 118047 words of memory out of 5000000
+ 6683 multiletter control sequences out of 15000+600000
  10592 words of font info for 39 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 40i,8n,40p,908b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,8n,40p,908b,352s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
@@ -573,10 +721,10 @@ blic/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb>
-Output written on thesis.pdf (27 pages, 2133455 bytes).
+Output written on thesis.pdf (30 pages, 3001621 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
+ 188 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
