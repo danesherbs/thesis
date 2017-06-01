@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  26 MAY 2017 18:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  1 JUN 2017 14:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -120,9 +120,25 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \@thisruleclass=\count94
 \@lastruleclass=\count95
 \@thisrulewidth=\dimen125
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen126
+\captionmargin@=\dimen127
+\captionwidth=\dimen128
+\caption@tempdima=\dimen129
+\caption@indent=\dimen130
+\caption@parindent=\dimen131
+\caption@hangindent=\dimen132
+)
+\c@ContinuedFloat=\count96
 ) (./blocked.sty) (./uhead.sty) (./boxit.sty) (./icthesis.sty)
-\c@definition=\count96
-\c@theorem=\count97
+\c@definition=\count97
+\c@theorem=\count98
 ) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
@@ -175,16 +191,16 @@ LaTeX Font Info:    ... okay on input line 8.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count98
-\scratchdimen=\dimen126
+\scratchcounter=\count99
+\scratchdimen=\dimen133
 \scratchbox=\box26
-\nofMPsegments=\count99
-\nofMParguments=\count100
+\nofMPsegments=\count100
+\nofMParguments=\count101
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count101
-\MPscratchDim=\dimen127
-\MPnumerator=\count102
-\makeMPintoPDFobject=\count103
+\MPscratchCnt=\count102
+\MPscratchDim=\dimen134
+\MPnumerator=\count103
+\makeMPintoPDFobject=\count104
 \everyMPtoPDFconversion=\toks19
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
@@ -232,6 +248,9 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
 Overfull \vbox (84.67899pt too high) detected at line 18
  []
 
@@ -292,18 +311,25 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 ] [8
 
-] (./thesis.lof)
+] (./thesis.lof [9
+
+]
+
+Package caption Warning: \label without proper reference on input line 91.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:fully_connected_autoencoder_architecture' on page
+ x undefined on input line 12.
+
+)
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
- [9
-
-] [10
-
-]
-(./introduction/introduction.tex
+ [10] (./introduction/introduction.tex
 Chapter 1.
 [1
+
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 18--19
@@ -311,14 +337,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
  []
 
 
-<./figures/introduction/deep_blue_kasparov.jpg, id=50, 721.2251pt x 499.9904pt>
+<./figures/introduction/deep_blue_kasparov.jpg, id=51, 721.2251pt x 499.9904pt>
 File: ./figures/introduction/deep_blue_kasparov.jpg Graphic file (type jpg)
 <use ./figures/introduction/deep_blue_kasparov.jpg>
 Package pdftex.def Info: ./figures/introduction/deep_blue_kasparov.jpg used on 
 input line 24.
 (pdftex.def)             Requested size: 217.66211pt x 150.8909pt.
 
-<./figures/introduction/alpha_go_first_move_game_three.png, id=51, 901.3675pt x
+<./figures/introduction/alpha_go_first_move_game_three.png, id=52, 901.3675pt x
  625.33624pt>
 File: ./figures/introduction/alpha_go_first_move_game_three.png Graphic file (t
 ype png)
@@ -343,7 +369,7 @@ s>
 (epstopdf)             \includegraphics on input line 60.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/introduction/DSRL_architecture-eps-converted-to.pdf, id=58, 413.545p
+<./figures/introduction/DSRL_architecture-eps-converted-to.pdf, id=59, 413.545p
 t x 146.5475pt>
 File: ./figures/introduction/DSRL_architecture-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -356,7 +382,15 @@ Package pdftex.def Info: ./figures/introduction/DSRL_architecture-eps-converted
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3] <./figures/introduction/DSRL_raw_input.png, id=62, 570.933pt x 570.933pt>
+
+Package caption Warning: \label without proper reference on input line 84.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:dsrl_symbolic_representation' on page 3 undefined
+ on input line 71.
+
+[3] <./figures/introduction/DSRL_raw_input.png, id=63, 570.933pt x 570.933pt>
 File: ./figures/introduction/DSRL_raw_input.png Graphic file (type png)
 
 <use ./figures/introduction/DSRL_raw_input.png>
@@ -371,9 +405,71 @@ LaTeX Warning: No positions in optional float specifier.
 [4 <./figures/introduction/DSRL_architecture-eps-converted-to.pdf> <./figures/i
 ntroduction/DSRL_raw_input.png>]) (./background/background.tex [5]
 Chapter 2.
-[6
 
-] [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+
+ []
+
+[7]
+<./figures/background/eucledian_distance_a.png, id=91, 28.105pt x 28.105pt>
+File: ./figures/background/eucledian_distance_a.png Graphic file (type png)
+
+<use ./figures/background/eucledian_distance_a.png>
+Package pdftex.def Info: ./figures/background/eucledian_distance_a.png used on 
+input line 38.
+(pdftex.def)             Requested size: 123.82968pt x 123.84416pt.
+
+<./figures/background/eucledian_distance_c.png, id=92, 28.105pt x 28.105pt>
+File: ./figures/background/eucledian_distance_c.png Graphic file (type png)
+
+<use ./figures/background/eucledian_distance_c.png>
+Package pdftex.def Info: ./figures/background/eucledian_distance_c.png used on 
+input line 43.
+(pdftex.def)             Requested size: 123.82968pt x 123.84416pt.
+
+<./figures/background/eucledian_distance_b.png, id=93, 28.105pt x 28.105pt>
+File: ./figures/background/eucledian_distance_b.png Graphic file (type png)
+
+<use ./figures/background/eucledian_distance_b.png>
+Package pdftex.def Info: ./figures/background/eucledian_distance_b.png used on 
+input line 48.
+(pdftex.def)             Requested size: 123.82968pt x 123.84416pt.
+ [8 <./figures/background/eucledian_distance_a.png> <./figures/background/eucle
+dian_distance_c.png> <./figures/background/eucledian_distance_b.png>]
+Package epstopdf Info: Source file: <./figures/background/autoencoder_black_box
+_architecture.eps>
+(epstopdf)                    date: 2017-05-26 19:00:41
+(epstopdf)                    size: 2011323 bytes
+(epstopdf)             Output file: <./figures/background/autoencoder_black_box
+_architecture-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-05-26 19:01:17
+(epstopdf)                    size: 323151 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figures/background/autoe
+ncoder_black_box_architecture-eps-converted-to.pdf ./figures/background/autoenc
+oder_black_box_architecture.eps>
+(epstopdf)             \includegraphics on input line 69.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figures/background/autoencoder_black_box_architecture-eps-converted-to.pdf, 
+id=97, 853.1875pt x 152.57pt>
+File: ./figures/background/autoencoder_black_box_architecture-eps-converted-to.
+pdf Graphic file (type pdf)
+
+<use ./figures/background/autoencoder_black_box_architecture-eps-converted-to.p
+df>
+Package pdftex.def Info: ./figures/background/autoencoder_black_box_architectur
+e-eps-converted-to.pdf used on input line 69.
+(pdftex.def)             Requested size: 452.18723pt x 80.86171pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9 <./figures/background/autoencoder_black_box_architecture-eps-converted-to.p
+df>]
 Package epstopdf Info: Source file: <./figures/background/autoencoder_architect
 ure.eps>
 (epstopdf)                    date: 2017-05-24 19:58:15
@@ -385,53 +481,102 @@ ure-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/autoe
 ncoder_architecture-eps-converted-to.pdf ./figures/background/autoencoder_archi
 tecture.eps>
-(epstopdf)             \includegraphics on input line 39.
+(epstopdf)             \includegraphics on input line 81.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/background/autoencoder_architecture-eps-converted-to.pdf, id=91, 478
-.78876pt x 503.8825pt>
+<./figures/background/autoencoder_architecture-eps-converted-to.pdf, id=108, 47
+8.78876pt x 503.8825pt>
 File: ./figures/background/autoencoder_architecture-eps-converted-to.pdf Graphi
 c file (type pdf)
 
 <use ./figures/background/autoencoder_architecture-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/background/autoencoder_architecture-eps-conv
-erted-to.pdf used on input line 39.
+erted-to.pdf used on input line 81.
 (pdftex.def)             Requested size: 335.14984pt x 352.71535pt.
+
+
+Package caption Warning: \label without proper reference on input line 91.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:fully_connected_autoencoder_architecture' on page
+ 10 undefined on input line 86.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 88.
+
+
+<./figures/background/fully_connected_autoencoder_mnist.png, id=109, 380.1402pt
+ x 715.473pt>
+File: ./figures/background/fully_connected_autoencoder_mnist.png Graphic file (
+type png)
+ <use ./figures/background/fully_connected_autoencoder_mnist.png>
+Package pdftex.def Info: ./figures/background/fully_connected_autoencoder_mnist
+.png used on input line 104.
+(pdftex.def)             Requested size: 361.13112pt x 679.69551pt.
+
+
+Package caption Warning: \label without proper reference on input line 91.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:fully_connected_autoencoder_architecture' on page
+ 10 undefined on input line 105.
+
+
+Package caption Warning: \label without proper reference on input line 91.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:fully_connected_autoencoder_architecture' on page
+ 10 undefined on input line 105.
+
+
+LaTeX Warning: Float too large for page by 30.41241pt on input line 107.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./conclusion/conclusion.tex [8] [9 <./figures/background/autoencoder_archite
-cture-eps-converted-to.pdf>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <./figures/background/autoencoder_architecture-eps-converted-to.pdf>])
+(./conclusion/conclusion.tex [11] [12 <./figures/background/fully_connected_aut
+oencoder_mnist.png>]
 Chapter 3.
-) (./thesis.bbl [10
+) (./thesis.bbl [13
 
-]) [11
+] [14
 
-] (./thesis.aux) ) 
+]) [15] (./thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2372 strings out of 494902
- 34460 string characters out of 6179891
- 95813 words of memory out of 5000000
- 5586 multiletter control sequences out of 15000+600000
+ 3473 strings out of 494902
+ 55380 string characters out of 6179891
+ 115999 words of memory out of 5000000
+ 6676 multiletter control sequences out of 15000+600000
  10592 words of font info for 39 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 40i,8n,25p,908b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmtt12.pfb>
-Output written on thesis.pdf (23 pages, 1742794 bytes).
+ 40i,8n,40p,908b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mtt12.pfb>
+Output written on thesis.pdf (27 pages, 2133455 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 174 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

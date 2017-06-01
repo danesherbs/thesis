@@ -5,6 +5,11 @@ B.~Darrach.
 \newblock {Meet Shakey, the First Electronic Person}.
 \newblock {\em Life}, pages 58--68, 1970.
 
+\bibitem{Doersch2016}
+C.~Doersch.
+\newblock {Tutorial on Variational Autoencoders}.
+\newblock {\em arXiv}, pages 1--23, 2016.
+
 \bibitem{Garnelo2016}
 M.~Garnelo, K.~Arulkumaran, and M.~Shanahan.
 \newblock {Towards Deep Symbolic Reinforcement Learning}.
@@ -19,6 +24,12 @@ M.~Hutter.
 W.~Knight.
 \newblock {AI Winter Isn't Coming}.
 \newblock {\em MIT Technology Review}, 2016.
+
+\bibitem{Krizhevsky2012}
+A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton.
+\newblock {ImageNet Classification with Deep Convolutional Neural Networks}.
+\newblock {\em Advances In Neural Information Processing Systems}, pages 1--9,
+  2012.
 
 \bibitem{Liou2008}
 C.~Y. Liou, J.~C. Huang, and W.~C. Yang.
@@ -52,5 +63,20 @@ D.~Silver, A.~Huang, C.~J. Maddison, A.~Guez, L.~Sifre, G.~van~den Driessche,
   K.~Kavukcuoglu, T.~Graepel, and D.~Hassabis.
 \newblock {Mastering the game of Go with deep neural networks and tree search}.
 \newblock {\em Nature}, 529(7587):484--489, 2016.
+
+\bibitem{Szegedy2015}
+C.~Szegedy, W.~Liu, Y.~Jia, P.~Sermanet, S.~Reed, D.~Anguelov, D.~Erhan,
+  V.~Vanhoucke, and A.~Rabinovich.
+\newblock {Going deeper with convolutions}.
+\newblock In {\em Proceedings of the IEEE Computer Society Conference on
+  Computer Vision and Pattern Recognition}, volume 07-12-June, pages 1--9,
+  2015.
+
+\bibitem{Zeiler2014}
+M.~D. Zeiler and R.~Fergus.
+\newblock {Visualizing and understanding convolutional networks}.
+\newblock In {\em Lecture Notes in Computer Science (including subseries
+  Lecture Notes in Artificial Intelligence and Lecture Notes in
+  Bioinformatics)}, volume 8689 LNCS, pages 818--833, 2014.
 
 \end{thebibliography}

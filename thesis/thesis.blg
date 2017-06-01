@@ -6,45 +6,46 @@ Database file #1: library.bib
 Warning--can't use both volume and number fields in Hutter2005
 Warning--empty publisher in Hutter2005
 Warning--can't use both volume and number fields in Liou2008
-You've used 10 entries,
+Warning--can't use both volume and number fields in Zeiler2014
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            563 strings with 5536 characters,
-and the built_in function-call counts, 4074 in all, are:
-= -- 364
-> -- 279
-< -- 5
-+ -- 112
-- -- 102
-* -- 317
-:= -- 689
-add.period$ -- 27
-call.type$ -- 10
-change.case$ -- 80
+            590 strings with 6423 characters,
+and the built_in function-call counts, 5844 in all, are:
+= -- 538
+> -- 365
+< -- 11
++ -- 146
+- -- 132
+* -- 439
+:= -- 960
+add.period$ -- 39
+call.type$ -- 14
+change.case$ -- 107
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 124
-empty$ -- 260
-format.name$ -- 102
-if$ -- 816
+cite$ -- 18
+duplicate$ -- 198
+empty$ -- 389
+format.name$ -- 132
+if$ -- 1201
 int.to.chr$ -- 0
-int.to.str$ -- 10
-missing$ -- 8
-newline$ -- 50
-num.names$ -- 20
-pop$ -- 96
+int.to.str$ -- 14
+missing$ -- 12
+newline$ -- 70
+num.names$ -- 28
+pop$ -- 126
 preamble$ -- 1
-purify$ -- 71
+purify$ -- 94
 quote$ -- 0
-skip$ -- 104
+skip$ -- 167
 stack$ -- 0
-substring$ -- 183
-swap$ -- 38
-text.length$ -- 5
+substring$ -- 286
+swap$ -- 71
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 38
-warning$ -- 3
-while$ -- 33
-width$ -- 12
-write$ -- 102
-(There were 3 warnings)
+type$ -- 54
+warning$ -- 4
+while$ -- 53
+width$ -- 16
+write$ -- 148
+(There were 4 warnings)

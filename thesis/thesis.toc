@@ -5,16 +5,23 @@
 \contentsline {section}{\numberline {1.3}Contributions}{5}
 \contentsline {chapter}{\numberline {2}Background Theory}{6}
 \contentsline {section}{\numberline {2.1}Introduction}{6}
-\contentsline {section}{\numberline {2.2}Loss functions}{6}
-\contentsline {subsection}{\numberline {2.2.1}Euclidean Distance}{7}
-\contentsline {subsection}{\numberline {2.2.2}Mean Squared Error}{7}
-\contentsline {subsection}{\numberline {2.2.3}Binary Cross-Entropy}{7}
-\contentsline {section}{\numberline {2.3}Autoencoders}{8}
-\contentsline {subsection}{\numberline {2.3.1}Fully-Connected Autoencoders}{8}
-\contentsline {subsection}{\numberline {2.3.2}Convolutional Autoencoders}{8}
-\contentsline {subsection}{\numberline {2.3.3}Variational Autoencoders}{8}
-\contentsline {chapter}{\numberline {3}Conclusion}{10}
-\contentsline {section}{\numberline {3.1}Summary of Thesis Achievements}{10}
-\contentsline {section}{\numberline {3.2}Applications}{10}
-\contentsline {section}{\numberline {3.3}Future Work}{10}
-\contentsline {chapter}{Bibliography}{10}
+\contentsline {section}{\numberline {2.2}Arithmetic in Neural Networks}{7}
+\contentsline {subsection}{\numberline {2.2.1}Neurons}{7}
+\contentsline {subsection}{\numberline {2.2.2}Activation Functions}{7}
+\contentsline {subsection}{\numberline {2.2.3}Convolutions}{7}
+\contentsline {subsection}{\numberline {2.2.4}Deconvolutions}{7}
+\contentsline {subsection}{\numberline {2.2.5}Pooling and Up-Sampling}{7}
+\contentsline {section}{\numberline {2.3}Loss functions}{7}
+\contentsline {subsection}{\numberline {2.3.1}Euclidean Distance}{7}
+\contentsline {subsection}{\numberline {2.3.2}Binary Cross-Entropy}{8}
+\contentsline {section}{\numberline {2.4}Autoencoders}{9}
+\contentsline {subsection}{\numberline {2.4.1}Fully-Connected Autoencoders}{10}
+\contentsline {subsection}{\numberline {2.4.2}Convolutional Autoencoders}{11}
+\contentsline {subsubsection}{Dense Latent Space}{11}
+\contentsline {subsubsection}{Convolutional Latent Space}{11}
+\contentsline {subsection}{\numberline {2.4.3}Variational Autoencoders}{11}
+\contentsline {chapter}{\numberline {3}Conclusion}{13}
+\contentsline {section}{\numberline {3.1}Summary of Thesis Achievements}{13}
+\contentsline {section}{\numberline {3.2}Applications}{13}
+\contentsline {section}{\numberline {3.3}Future Work}{13}
+\contentsline {chapter}{Bibliography}{13}
