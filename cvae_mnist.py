@@ -2,7 +2,7 @@ from vae import VAE
 from autoencoder import Autoencoder
 import numpy as np
 from keras import initializers
-from keras.layers import Input, Conv2D, Flatten, Dense, Lambda, Reshape, Conv2DTranspose
+from keras.layers import Input, Conv2D, Flatten, Dense, Lambda, Reshape, Conv2DTranspose, MaxPooling2D, UpSampling2D
 from keras.models import Model
 
 
@@ -136,6 +136,68 @@ class DenseAutoencoder(Autoencoder):
         self.encoder = Model(input_encoder, z)
         self.decoder = Model(input_decoder, x)
         self.model = Model(input_encoder, self.decoder(self.encoder(input_encoder)))
+
+
+
+class ConvolutionalAutoencoder(Autoencoder):
+    def __init__(self, input_shape, log_dir):
+        self.input_shape = input_shape
+        self.log_dir = log_dir
+        Autoencoder.__init__(self, input_shape, log_dir)
+
+    def set_model(self):
+        '''
+        Constants
+        '''
+        input_size = np.prod(self.input_shape)
+        intermediate_filters = 32
+        latent_filters = 4
+        kernel_size = 2
+
+        '''
+        Encoder
+        '''
+        input_encoder = Input(shape=(self.input_shape), name='encoder_input')
+
+        x = Conv2D(intermediate_filters,
+                kernel_size=kernel_size,
+                padding='same',
+                activation='relu')(input_encoder)
+        x = MaxPooling2D(pool_size=(2, 2),
+                strides=None,
+                padding='valid')(x)
+        x = Conv2D(latent_filters,
+                kernel_size=kernel_size,
+                padding='same',
+                activation='relu')(x)
+        z = MaxPooling2D(pool_size=(2, 2),
+                strides=None,
+                padding='valid')(x)
+
+        '''
+        Decoder
+        '''
+        input_decoder = Input(shape=(latent_filters, 7, 7), name='decoder_input')
+
+        x = UpSampling2D(size=(2, 2))(input_decoder)
+        x = Conv2DTranspose(intermediate_filters,
+                kernel_size=kernel_size,
+                padding='same',
+                activation='relu')(x)
+        x = UpSampling2D(size=(2, 2))(x)        
+        x = Conv2DTranspose(1,
+                kernel_size=kernel_size,
+                padding='same',
+                activation='sigmoid')(x)
+
+        '''
+        For parent class
+        '''
+        self.encoder = Model(input_encoder, z)
+        self.decoder = Model(input_decoder, x)
+        self.model = Model(input_encoder, self.decoder(self.encoder(input_encoder)))
+
+
 
 
 if __name__ == '__main__':
