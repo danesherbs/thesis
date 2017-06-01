@@ -63,8 +63,6 @@ For images larger than $1 \times 1$, we may take the component-wise binary cross
 
 An autoencoder is a neural network that learns a compression algorithm for its input data in an unsupervised manner \cite{Liou2008}. This is achieved by placing constraints on a hidden layer, called the latent space, and setting the target values to the input values, effectively learning the identity function. Since the network is trying to reconstruct the original input from the constrained latent space, over time the latent space corresponds to a meaningful compression of the network's input.
 
-As before, we will use the MNIST data set to compare architectures. Unless specified in the example, the Adam optimiser is used with a learning rate of $1e-4$, the batch size is 1 and the loss function is binary cross-entropy.
-
 \begin{figure}[h!]
 \centering
 \captionsetup{justification=centering}
@@ -72,6 +70,8 @@ As before, we will use the MNIST data set to compare architectures. Unless speci
 \caption{A black-box description of an autoencoder. The autoencoder learns the identity function, and in turn, the encoder and decoder learn suitable encoding and decoding algorithms respectively.}
 \label{fig:autoencoder_black_box_architecture}
 \end{figure}
+
+As before, we will use the MNIST data set to compare architectures. Unless specified in the example, the Adam optimiser is used with a learning rate of $1e-4$, the batch size is 1 and the loss function is binary cross-entropy. Intermediate layers use the ReLU activation function, while the final layer uses sigmoid.
 
 \subsection{Fully-Connected Autoencoders}
 
@@ -81,7 +81,7 @@ In dense feed-forward neural networks we may place a constraint on the latent sp
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.7]{background/autoencoder_architecture.eps}
-\caption{The architecture of a fully-connected autoencoder. The latent space is constrained by having fewer neurons than the input and output layers.}
+\caption{An example architecture of a fully-connected autoencoder. The latent space is constrained by having fewer neurons than the input and output layers.}
 \label{fig:autoencoder_architecture}
 \end{figure}
 
@@ -90,7 +90,6 @@ An example architecture is given in Table \ref{tab:fully_connected_autoencoder_a
 \begin{table}[h!]
 \centering
 \captionsetup{justification=centering}
-\label{tab:fully_connected_autoencoder_architecture}
 \begin{tabular}{@{}ll@{}}
 \toprule
 \textbf{Layer Type} & \textbf{Output Shape} \\ \midrule
@@ -101,6 +100,7 @@ Dense & (784,) \\
 Reshape & (1, 28, 28) \\ \bottomrule
 \end{tabular}
 \caption{A simple fully-connected autoencoder with one hidden layer. After 15 epochs, the validation score was recorded to be $71.94$.}
+\label{tab:fully_connected_autoencoder_architecture}
 \end{table}
 
 \begin{figure}[h!]
@@ -113,12 +113,11 @@ Reshape & (1, 28, 28) \\ \bottomrule
 
 \subsection{Convolutional Autoencoders}
 
-In fully-convolutional feed-forward neural networks, we may place a constraint on the latent space by reducing the number and/or size of the filters, as shown in Figure \ref{fig:convolutional_autoencoder_architecture}. To compare the fully-convolutional autoencoder to the fully-connected, we'll train a simple network on MNIST. We'll use architecture given in Table \ref{tab:convolutional_autoencoder_architecture}. As before, we'll compare the reconstructions to the originals, which can be found in Figure \ref{fig:convolutional_autoencoder_mnist}.
+In fully-convolutional feed-forward neural networks, we may place a constraint on the latent space by reducing the number and/or size of the filters, as shown in Figure \ref{fig:convolutional_autoencoder_architecture}. To compare the fully-convolutional autoencoder to the fully-connected, we'll train the architecture in Table \ref{tab:convolutional_autoencoder_architecture} on MNIST. As before, we'll compare the reconstructions to the originals, which can be found in Figure \ref{fig:convolutional_autoencoder_mnist}.
 
 \begin{table}[h!]
 \centering
 \captionsetup{justification=centering}
-\label{tab:convolutional_autoencoder_architecture}
 \begin{tabular}{@{}ll@{}}
 \toprule
 \textbf{Layer Type} & \textbf{Output Shape} \\ \midrule
@@ -132,13 +131,14 @@ Conv2DTranspose & (32, 14, 14) \\
 UpSampling2D & (32, 28, 28) \\
 Conv2DTranspose & (1, 28, 28) \\ \bottomrule
 \end{tabular}
-\caption{A simple fully-convolutional autoencoder with two 2D convolutions and max pooling, plus the corresponding deconvolutional layers. After 15 epochs, the validation score was recorded to be $71.94$.}
+\caption{A simple fully-convolutional autoencoder with 2D convolutions and max pooling, plus the corresponding deconvolutional layers. After 15 epochs, the validation score was recorded to be $64.89$.}
+\label{tab:convolutional_autoencoder_architecture}
 \end{table}
 
 \begin{figure}[h!]
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.95]{background/fully_connected_autoencoder_mnist.png}
+\includegraphics[scale=0.95]{background/fully_convolutional_autoencoder_mnist.png}
 \caption{A collection of images from the MNIST data set and their respective reconstructions using the fully-convolutional autoencoder specified in Table \ref{tab:convolutional_autoencoder_architecture}. The original MNIST images are in odd columns, and their reconstructions to their immediate right.}
 \label{fig:convolutional_autoencoder_mnist}
 \end{figure}
@@ -151,10 +151,8 @@ Conv2DTranspose & (1, 28, 28) \\ \bottomrule
 \label{fig:convolutional_autoencoder_architecture}
 \end{figure}
 
-Convolutional layers have been shown to be effective in tasks with images as input \cite{Krizhevsky2012, Zeiler2014, Szegedy2015}. This is because spatial information is preserved in convolutional layers, and the number of trainable parameters is far less in a convolutional layer than it is in a fully connected layer.
-
-\subsubsection{Dense Latent Space}
-
-\subsubsection{Convolutional Latent Space}
+Convolutional layers have been shown to be effective in tasks with images as input \cite{Krizhevsky2012, Zeiler2014, Szegedy2015}. This is because spatial information is preserved in convolutional layers, and the number of trainable parameters is far less in a convolutional layer than it is in a fully connected layer. Convolutional layers will be used from here on as we'll be using images as input exclusively.
 
 \subsection{Variational Autoencoders}
+
+\subsubsection{Loss function}

@@ -17,9 +17,8 @@
 \contentsline {section}{\numberline {2.4}Autoencoders}{9}
 \contentsline {subsection}{\numberline {2.4.1}Fully-Connected Autoencoders}{10}
 \contentsline {subsection}{\numberline {2.4.2}Convolutional Autoencoders}{11}
-\contentsline {subsubsection}{Dense Latent Space}{12}
-\contentsline {subsubsection}{Convolutional Latent Space}{12}
 \contentsline {subsection}{\numberline {2.4.3}Variational Autoencoders}{12}
+\contentsline {subsubsection}{Loss function}{12}
 \contentsline {chapter}{\numberline {3}Conclusion}{16}
 \contentsline {section}{\numberline {3.1}Summary of Thesis Achievements}{16}
 \contentsline {section}{\numberline {3.2}Applications}{16}
