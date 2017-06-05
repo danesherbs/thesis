@@ -1,51 +1,52 @@
-This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: abbrv.bst
 Database file #1: library.bib
+Warning--empty publisher in Burnham2002
 Warning--can't use both volume and number fields in Hutter2005
 Warning--empty publisher in Hutter2005
 Warning--can't use both volume and number fields in Liou2008
 Warning--can't use both volume and number fields in Zeiler2014
-You've used 14 entries,
+You've used 15 entries,
             2118 wiz_defined-function locations,
-            590 strings with 6423 characters,
-and the built_in function-call counts, 5844 in all, are:
-= -- 538
-> -- 365
-< -- 11
-+ -- 146
-- -- 132
-* -- 439
-:= -- 960
-add.period$ -- 39
-call.type$ -- 14
-change.case$ -- 107
+            598 strings with 6602 characters,
+and the built_in function-call counts, 6107 in all, are:
+= -- 560
+> -- 378
+< -- 12
++ -- 151
+- -- 136
+* -- 456
+:= -- 1004
+add.period$ -- 42
+call.type$ -- 15
+change.case$ -- 111
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 198
-empty$ -- 389
-format.name$ -- 132
-if$ -- 1201
+cite$ -- 20
+duplicate$ -- 210
+empty$ -- 411
+format.name$ -- 136
+if$ -- 1255
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 12
-newline$ -- 70
-num.names$ -- 28
-pop$ -- 126
+int.to.str$ -- 15
+missing$ -- 14
+newline$ -- 75
+num.names$ -- 30
+pop$ -- 135
 preamble$ -- 1
-purify$ -- 94
+purify$ -- 98
 quote$ -- 0
-skip$ -- 167
+skip$ -- 175
 stack$ -- 0
-substring$ -- 286
-swap$ -- 71
-text.length$ -- 11
+substring$ -- 291
+swap$ -- 73
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 54
-warning$ -- 4
-while$ -- 53
-width$ -- 16
-write$ -- 148
-(There were 4 warnings)
+type$ -- 56
+warning$ -- 5
+while$ -- 55
+width$ -- 17
+write$ -- 158
+(There were 5 warnings)

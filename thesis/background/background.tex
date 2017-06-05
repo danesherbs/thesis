@@ -172,7 +172,7 @@ Let $X = \{\vec{x}^{(i)}\}_{i=1}^{N}$ be the data set of $N$ independent and ide
 
 Let us also assume that the prior $p_{\vec{\theta^*}}(\vec{z})$ and likelihood $p_{\vec{\theta^*}}(\vec{x}|\vec{z})$ are parameterised by the distributions $p_{\vec{\theta}}(\vec{z})$ and $p_{\vec{\theta}}(\vec{x}|\vec{z})$ respectively. The true parameters $\vec{\theta}^*$ and latent variables $\vec{z}^{(i)}$ that produced $X$ are completely unknown to us; we only observe the samples in $X$.
 
-We'd like to be able to infer the latent variable of a given data point, or more precisely, we'd like to be able to calculate the posterior $p(\vec{z}|\vec{x})$. By Bayes' theorem, the posterior is given by
+We'd like to be able to infer the latent variable of a given data point, or more precisely, we'd like to be able to calculate the posterior $p_{\vec{\theta}}(\vec{z}|\vec{x})$. By Bayes' theorem, the posterior is given by
 \[
 p_{\vec{\theta}}(\vec{z}|\vec{x}) = \frac{p_{\vec{\theta}}(\vec{x}|\vec{z})p_{\vec{\theta}}(\vec{z})}{p_{\vec{\theta}}(\vec{x})}
 \]
@@ -182,6 +182,21 @@ p_{\vec{\theta}}(\vec{x}) = \int p_{\vec{\theta}}(\vec{z})p_{\vec{\theta}}(\vec{
 \]
 being intractable, we may not calculate $p_{\vec{\theta}}(\vec{z}|\vec{x})$ analytically. Instead, we define an approximation $q_{\vec{\phi}}(\vec{z}|\vec{x})$ to the intractable posterior $p_{\vec{\theta}}(\vec{z}|\vec{x})$. We will come to see how the variational autoencoder will jointly learn the parameters $\vec{\phi}$ and $\vec{\theta}$. With these alone, we are able to encode a given sample with $q_{\vec{\phi}}(\vec{z}|\vec{x})$, called the probabilistic encoder, and decode a given latent variable with $p_{\vec{\theta}}(\vec{x}|\vec{z})$, called the probabilistic decoder.
 
+\subsubsection{The Evidence Lower Bound (ELBO)}
+
+So far we've decided that we'll use $q_{\vec{\phi}}(\vec{z}|\vec{x})$ to approximate the intractable posterior $p_{\vec{\theta}}(\vec{z}|\vec{x})$. To quantify how closely $q$ approximates $p$, we use the KL-divergence
+\[
+KL(q_{\vec{\phi}}(\vec{z}|\vec{x})||p_{\vec{\theta}}(\vec{z}|\vec{x})) = \mathbf{E}_q\bigg[\log_{e}\frac{q_{\vec{\phi}}(\vec{z})}{p_{\vec{\theta}}(\vec{z}|\vec{x})}\bigg]
+\]
+which measures how much information is lost when we represent $p$ with $q$ \cite{Burnham2002}. Our problem now amounts to the optimisation problem
+
+\[
+q_{\phi^*}(\vec{z}|\vec{x}) = \arg\min_{q_{\vec{\phi}}} KL(q(\vec{z}|\vec{x})||p(\vec{z}|\vec{x}))
+\]
+We'll start by rewriting the KL divergence
+\[
+KL(q_{\vec{\phi}}(\vec{z}|\vec{x})||p_{\vec{\theta}}(\vec{z}|\vec{x})) = \mathbf{E}_q\big[\log_{e}q_{\vec{\phi}}(\vec{z})\big] - \mathbf{E}_q\big[{p_{\vec{\theta}}(\vec{z}|\vec{x})}\big]
+\]
 
 \begin{figure}[h!]
 \centering

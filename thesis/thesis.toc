@@ -20,6 +20,7 @@
 \contentsline {subsection}{\numberline {2.4.3}Variational Autoencoders}{12}
 \contentsline {subsubsection}{Introduction}{12}
 \contentsline {subsubsection}{Probabilistic Perspective}{12}
+\contentsline {subsubsection}{The Evidence Lower Bound (ELBO)}{13}
 \contentsline {chapter}{\numberline {3}Conclusion}{17}
 \contentsline {section}{\numberline {3.1}Summary of Thesis Achievements}{17}
 \contentsline {section}{\numberline {3.2}Applications}{17}

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  4 JUN 2017 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.24)  5 JUN 2017 13:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **thesis.tex
 (./thesis.tex
-LaTeX2e <2016/03/31> patch level 3
-Babel <3.9r> and hyphenation patterns for 5 language(s) loaded.
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 17 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -32,10 +32,11 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
 (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
@@ -62,24 +63,24 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 95.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count91
 ))
@@ -102,7 +103,7 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2016/04/27 v1.618033 publication quality tables
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen113
 \lightrulewidth=\dimen114
 \cmidrulewidth=\dimen115
@@ -125,7 +126,7 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen126
 \captionmargin@=\dimen127
@@ -189,7 +190,7 @@ LaTeX Font Info:    ... okay on input line 8.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count99
 \scratchdimen=\dimen133
@@ -203,11 +204,11 @@ LaTeX Font Info:    ... okay on input line 8.
 \makeMPintoPDFobject=\count104
 \everyMPtoPDFconversion=\toks19
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -216,33 +217,31 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+(grfext)             \AppendGraphicsExtensions on input line 452.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -349,11 +348,11 @@ png used on input line 31.
 a_go_first_move_game_three.png>]
 Package epstopdf Info: Source file: <./figures/introduction/DSRL_architecture.e
 ps>
-(epstopdf)                    date: 2017-05-22 19:16:50
+(epstopdf)                    date: 2017-06-05 11:10:57
 (epstopdf)                    size: 26889 bytes
 (epstopdf)             Output file: <./figures/introduction/DSRL_architecture-e
 ps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-22 19:17:13
+(epstopdf)                    date: 2017-06-05 11:10:57
 (epstopdf)                    size: 12714 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/introduction/DSR
 L_architecture-eps-converted-to.pdf ./figures/introduction/DSRL_architecture.ep
@@ -435,11 +434,11 @@ input line 48.
 dian_distance_c.png> <./figures/background/eucledian_distance_b.png>]
 Package epstopdf Info: Source file: <./figures/background/autoencoder_black_box
 _architecture.eps>
-(epstopdf)                    date: 2017-05-26 19:00:41
+(epstopdf)                    date: 2017-06-05 11:10:57
 (epstopdf)                    size: 2011323 bytes
 (epstopdf)             Output file: <./figures/background/autoencoder_black_box
 _architecture-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-26 19:01:17
+(epstopdf)                    date: 2017-06-05 11:10:57
 (epstopdf)                    size: 323151 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/autoe
 ncoder_black_box_architecture-eps-converted-to.pdf ./figures/background/autoenc
@@ -461,11 +460,11 @@ e-eps-converted-to.pdf used on input line 69.
 df>]
 Package epstopdf Info: Source file: <./figures/background/autoencoder_architect
 ure.eps>
-(epstopdf)                    date: 2017-05-24 19:58:15
+(epstopdf)                    date: 2017-06-05 11:10:57
 (epstopdf)                    size: 102424 bytes
 (epstopdf)             Output file: <./figures/background/autoencoder_architect
 ure-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-24 19:58:17
+(epstopdf)                    date: 2017-06-05 11:10:57
 (epstopdf)                    size: 93731 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/autoe
 ncoder_architecture-eps-converted-to.pdf ./figures/background/autoencoder_archi
@@ -525,11 +524,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Package epstopdf Info: Source file: <./figures/background/convolutional_autoenc
 oder_architecture.eps>
-(epstopdf)                    date: 2017-06-01 15:29:14
+(epstopdf)                    date: 2017-06-05 11:10:57
 (epstopdf)                    size: 4378851 bytes
 (epstopdf)             Output file: <./figures/background/convolutional_autoenc
 oder_architecture-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-01 15:29:18
+(epstopdf)                    date: 2017-06-05 11:10:57
 (epstopdf)                    size: 867378 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/convo
 lutional_autoencoder_architecture-eps-converted-to.pdf ./figures/background/con
@@ -562,16 +561,16 @@ Underfull \vbox (badness 7558) has occurred while \output is active []
 [12]
 Package epstopdf Info: Source file: <./figures/background/variational_autoencod
 ers_plate_model.eps>
-(epstopdf)                    date: 2017-06-03 15:24:06
+(epstopdf)                    date: 2017-06-05 11:10:57
 (epstopdf)                    size: 6633 bytes
 (epstopdf)             Output file: <./figures/background/variational_autoencod
 ers_plate_model-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-03 15:25:18
+(epstopdf)                    date: 2017-06-05 11:10:57
 (epstopdf)                    size: 3993 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
 tional_autoencoders_plate_model-eps-converted-to.pdf ./figures/background/varia
 tional_autoencoders_plate_model.eps>
-(epstopdf)             \includegraphics on input line 189.
+(epstopdf)             \includegraphics on input line 204.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/variational_autoencoders_plate_model-eps-converted-to.pdf
@@ -582,7 +581,7 @@ o.pdf Graphic file (type pdf)
 <use ./figures/background/variational_autoencoders_plate_model-eps-converted-to
 .pdf>
 Package pdftex.def Info: ./figures/background/variational_autoencoders_plate_mo
-del-eps-converted-to.pdf used on input line 189.
+del-eps-converted-to.pdf used on input line 204.
 (pdftex.def)             Requested size: 97.56358pt x 167.57451pt.
 
 
@@ -602,31 +601,35 @@ Chapter 3.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 3496 strings out of 494902
- 56644 string characters out of 6179891
- 117978 words of memory out of 5000000
- 6694 multiletter control sequences out of 15000+600000
+ 3488 strings out of 494353
+ 56423 string characters out of 6170043
+ 119023 words of memory out of 5000000
+ 6703 multiletter control sequences out of 15000+600000
  11213 words of font info for 41 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
+ 452 hyphenation exceptions out of 8191
  40i,9n,40p,908b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on thesis.pdf (31 pages, 3078086 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on thesis.pdf (31 pages, 3609665 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
+ 212 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
