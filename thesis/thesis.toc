@@ -16,11 +16,12 @@
 \contentsline {subsection}{\numberline {2.3.2}Binary Cross-Entropy}{8}
 \contentsline {section}{\numberline {2.4}Autoencoders}{9}
 \contentsline {subsection}{\numberline {2.4.1}Fully-Connected Autoencoders}{10}
-\contentsline {subsection}{\numberline {2.4.2}Convolutional Autoencoders}{11}
+\contentsline {subsection}{\numberline {2.4.2}Fully-Convolutional Autoencoders}{11}
 \contentsline {subsection}{\numberline {2.4.3}Variational Autoencoders}{12}
-\contentsline {subsubsection}{Loss function}{12}
-\contentsline {chapter}{\numberline {3}Conclusion}{16}
-\contentsline {section}{\numberline {3.1}Summary of Thesis Achievements}{16}
-\contentsline {section}{\numberline {3.2}Applications}{16}
-\contentsline {section}{\numberline {3.3}Future Work}{16}
-\contentsline {chapter}{Bibliography}{16}
+\contentsline {subsubsection}{Introduction}{12}
+\contentsline {subsubsection}{Probabilistic Perspective}{12}
+\contentsline {chapter}{\numberline {3}Conclusion}{17}
+\contentsline {section}{\numberline {3.1}Summary of Thesis Achievements}{17}
+\contentsline {section}{\numberline {3.2}Applications}{17}
+\contentsline {section}{\numberline {3.3}Future Work}{17}
+\contentsline {chapter}{Bibliography}{17}
