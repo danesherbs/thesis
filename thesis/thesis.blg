@@ -3,50 +3,52 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: abbrv.bst
 Database file #1: library.bib
+Warning--empty journal in Blei2016
 Warning--empty publisher in Burnham2002
 Warning--can't use both volume and number fields in Hutter2005
 Warning--empty publisher in Hutter2005
+Warning--there's a number but no volume in Kingma2014
 Warning--can't use both volume and number fields in Liou2008
 Warning--can't use both volume and number fields in Zeiler2014
-You've used 15 entries,
+You've used 18 entries,
             2118 wiz_defined-function locations,
-            598 strings with 6602 characters,
-and the built_in function-call counts, 6107 in all, are:
-= -- 560
-> -- 378
+            614 strings with 6904 characters,
+and the built_in function-call counts, 6884 in all, are:
+= -- 633
+> -- 416
 < -- 12
-+ -- 151
-- -- 136
-* -- 456
-:= -- 1004
-add.period$ -- 42
-call.type$ -- 15
-change.case$ -- 111
++ -- 166
+- -- 148
+* -- 505
+:= -- 1138
+add.period$ -- 50
+call.type$ -- 18
+change.case$ -- 126
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 210
-empty$ -- 411
-format.name$ -- 136
-if$ -- 1255
+cite$ -- 25
+duplicate$ -- 238
+empty$ -- 474
+format.name$ -- 148
+if$ -- 1412
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 14
-newline$ -- 75
-num.names$ -- 30
-pop$ -- 135
+int.to.str$ -- 18
+missing$ -- 16
+newline$ -- 89
+num.names$ -- 36
+pop$ -- 156
 preamble$ -- 1
-purify$ -- 98
+purify$ -- 110
 quote$ -- 0
-skip$ -- 175
+skip$ -- 196
 stack$ -- 0
-substring$ -- 291
-swap$ -- 73
+substring$ -- 322
+swap$ -- 75
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
-warning$ -- 5
-while$ -- 55
-width$ -- 17
-write$ -- 158
-(There were 5 warnings)
+type$ -- 68
+warning$ -- 7
+while$ -- 63
+width$ -- 20
+write$ -- 186
+(There were 7 warnings)

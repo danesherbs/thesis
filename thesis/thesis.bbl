@@ -1,5 +1,14 @@
 \begin{thebibliography}{10}
 
+\bibitem{Blei2016}
+D.~M. Blei, A.~Kucukelbir, and J.~D. McAuliffe.
+\newblock {Variational Inference: A Review for Statisticians}.
+\newblock jan 2016.
+
+\bibitem{Blei2011}
+D.~M. P.~U. Blei.
+\newblock {Variational Inference}, 2011.
+
 \bibitem{Burnham2002}
 K.~Burnham and D.~Anderson.
 \newblock {\em {Model Selection and Multimodel Inference: A Practical
@@ -25,6 +34,11 @@ M.~Garnelo, K.~Arulkumaran, and M.~Shanahan.
 M.~Hutter.
 \newblock {\em {Universal Artificial Intelligence}}, volume~1.
 \newblock 2005.
+
+\bibitem{Kingma2014}
+D.~P. Kingma and M.~Welling.
+\newblock {Auto-Encoding Variational Bayes}.
+\newblock {\em Iclr}, (Ml):1--14, 2014.
 
 \bibitem{Knight2016}
 W.~Knight.
