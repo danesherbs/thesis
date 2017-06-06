@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.24)  6 JUN 2017 21:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.24)  6 JUN 2017 22:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -686,6 +686,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 161--162
  []
 
 [12]
+
+LaTeX Warning: Citation `Li2016' on page 13 undefined on input line 199.
+
+
 Overfull \hbox (1.83945pt too wide) in paragraph at lines 211--211
 [] 
  []
@@ -706,7 +710,7 @@ ers_plate_model-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
 tional_autoencoders_plate_model-eps-converted-to.pdf ./figures/background/varia
 tional_autoencoders_plate_model.eps>
-(epstopdf)             \includegraphics on input line 275.
+(epstopdf)             \includegraphics on input line 287.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/variational_autoencoders_plate_model-eps-converted-to.pdf
@@ -717,7 +721,7 @@ o.pdf Graphic file (type pdf)
 <use ./figures/background/variational_autoencoders_plate_model-eps-converted-to
 .pdf>
 Package pdftex.def Info: ./figures/background/variational_autoencoders_plate_mo
-del-eps-converted-to.pdf used on input line 275.
+del-eps-converted-to.pdf used on input line 287.
 (pdftex.def)             Requested size: 97.56358pt x 167.57451pt.
 
 
@@ -737,12 +741,15 @@ Chapter 3.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 5067 strings out of 494353
- 76039 string characters out of 6170043
+ 5068 strings out of 494353
+ 76047 string characters out of 6170043
  144204 words of memory out of 5000000
- 8218 multiletter control sequences out of 15000+600000
+ 8219 multiletter control sequences out of 15000+600000
  15405 words of font info for 59 fonts, out of 8000000 for 9000
  452 hyphenation exceptions out of 8191
  40i,12n,40p,908b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -767,7 +774,7 @@ ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on thesis.pdf (34 pages, 3678232 bytes).
+Output written on thesis.pdf (34 pages, 3679209 bytes).
 PDF statistics:
  253 PDF objects out of 1000 (max. 8388607)
  163 compressed objects within 2 object streams

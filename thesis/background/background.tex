@@ -196,9 +196,9 @@ The variational autoencoers's ability to learn the generative parameters $\vec{\
 \[
 D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x})||p_{\vec{\theta}}(\vec{z}|\vec{x})) = \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[\log_{e}\frac{q_{\vec{\phi}}(\vec{z}|\vec{x})}{p_{\vec{\theta}}(\vec{z}|\vec{x})}\bigg]
 \]
-which measures how much information is lost when we represent $p_{\vec{\theta}}(\vec{z}|\vec{x})$ with $q_{\vec{\phi}}(\vec{z}|\vec{x})$ (measured in nats) \cite{Burnham2002}. Using the KL divergence, our problem now amounts to the optimisation problem \cite{Blei2016}:
+which measures how much information is lost when we represent $p_{\vec{\theta}}(\vec{z}|\vec{x})$ with $q_{\vec{\phi}}(\vec{z}|\vec{x})$ (measured in nats) \cite{Burnham2002}. Using the KL divergence, our problem now amounts to the optimisation problem \cite{Li2016}:
 \begin{align}
-q_{\vec{\phi}^*}(\vec{z}|\vec{x}) = \arg\min_{q_{\vec{\phi}}(\vec{z}|\vec{x})} D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x})||p_{\vec{\theta}}(\vec{z}|\vec{x}))
+\vec{\theta}^*, \vec{\phi}^* = \arg\min_{\vec{\theta}^*, \vec{\phi}^*} D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x})||p_{\vec{\theta}}(\vec{z}|\vec{x}))
 \label{eq:kl_divergence_optimisation_problem}
 \end{align}
 To see how we can start to minimise the KL divergence, we'll start by rewriting it in a different form:
@@ -234,9 +234,12 @@ Writing this in terms of the $ELBO$ we have:
 \[
 D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x})||p_{\vec{\theta}}(\vec{z}|\vec{x})) = -\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}) + \log_ep_{\vec{\theta}}(\vec{x})
 \]
-Since the KL divergence is the negative of the $ELBO$ up to an additive constant (with respect to $q$), minimising the KL divergence is equivalent to maximising the $ELBO$ \cite{Blei2016}.
+Since the KL divergence is the negative of the $ELBO$ up to an additive constant (with respect to $q$), minimising the KL divergence is equivalent to maximising the $ELBO$ \cite{Blei2016}. Now we may make a revision to our original optimisaiton problem (\ref{eq:kl_divergence_optimisation_problem}). Our problem is now written as:
+\begin{align}
+\vec{\theta}^*, \vec{\phi}^* = \arg\max_{\vec{\theta}^*, \vec{\phi}^*} \mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x})
+\end{align}
 
-\subsubsection{Learning the Generative Parameters with a Neural Network}
+\subsubsection{Writing the ELBO in Closed-Form}
 We've found that we can maximise the $ELBO$ to minimise the KL divergence between the approximation $q_{\vec{\phi}}(\vec{z}|\vec{x})$ and the intractable posterior $p_{\vec{\theta}}(\vec{z}|\vec{x})$. The $ELBO$ may be written as follows:
 \begin{align}
 \mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}) &= \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[  \log_e\frac{p_{\vec{\theta}}(\vec{x}, \vec{z})}{q_{\vec{\phi}}(\vec{z}|\vec{x})} \bigg] \\
@@ -247,16 +250,16 @@ We've found that we can maximise the $ELBO$ to minimise the KL divergence betwee
 \label{eq:elbo_reconstruction_kl_divergence}
 \end{align}
 
-Thus for a single data point $\vec{x}^{(i)}$, the $ELBO$ becomes
+Thus for a single data point $\vec{x}^{(i)}$, the $ELBO$ becomes:
 \begin{equation}
 \mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}^{(i)}) = -D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)}) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)})}\big[\log p_{\vec{\theta}}(\vec{x}^{(i)} | \vec{z}) \big]
 \end{equation}
 
-The first term is the KL divergence between the probabilistic encoder and the prior. To make our lives simpler, we can choose the prior to be the isotropic multivariate Gaussian:
+With some assumptions and a bit of work, we're finally in a position to write the $ELBO$ in closed-form. The first term is the KL divergence between the probabilistic encoder and the prior. To make our lives simpler, we can choose the prior to be the isotropic multivariate Gaussian:
 \begin{align}
 p_{\vec{\theta}}(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})
 \end{align}
-We will also assume that the posterior is a multivariate Gaussian with diagonal covariance:
+We will also assume that the posterior is a $k$-dimensional Gaussian with diagonal covariance
 \begin{align}
 p_{\vec{\theta}}(\vec{z} | \vec{x}^{(i)}) = \mathcal{N}(\vec{\mu}^{(i)}, \vec{\sigma}^{2(i)}\vec{I})
 \end{align}
@@ -268,6 +271,15 @@ we may write the first term in closed form:
 \begin{align}
 D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)}) || p_{\vec{\theta}}(\vec{z})) &= \frac{1}{2}\bigg[ \sum_{j=1}^k \sigma^{2(i)}_j + \sum_{j=1}^k\mu^{2(i)}_j - k - \ln\prod_{j=1}^k\sigma^{2(i)}_j \bigg]
 \end{align}
+Now we turn our attention to the second term of the $ELBO$:
+\begin{align}
+\mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)})}\big[\log p_{\vec{\theta}}(\vec{x}^{(i)} | \vec{z}) \big]
+\end{align}
+Luckily maximising terms like this is encountered regularly in statistics, and is known as maximum likelihood estimation. This can be taken to be the reconstruction loss as we defined it in the non-variational autoencoders earlier.
+
+\subsubsection{Implementing the Variational Autoencoder}
+
+In summary, to solve the original problems specified in the introduction, we 
 
 \begin{figure}[h!]
 \centering
