@@ -18,10 +18,10 @@
 \contentsline {subsection}{\numberline {2.4.1}Fully-Connected Autoencoders}{10}
 \contentsline {subsection}{\numberline {2.4.2}Fully-Convolutional Autoencoders}{11}
 \contentsline {subsection}{\numberline {2.4.3}Variational Autoencoders}{12}
-\contentsline {subsubsection}{Introduction}{12}
-\contentsline {subsubsection}{A Probabilistic Perspective}{12}
+\contentsline {subsubsection}{Introduction: A Probabilistic Perspective}{12}
+\contentsline {subsubsection}{Overcoming the Intractable Posterior}{13}
 \contentsline {subsubsection}{Finding a Suitable Loss Function: the ELBO}{13}
-\contentsline {subsubsection}{Maximising the ELBO in a Neural Network}{15}
+\contentsline {subsubsection}{Learning the Generative Parameters with a Neural Network}{15}
 \contentsline {chapter}{\numberline {3}Conclusion}{20}
 \contentsline {section}{\numberline {3.1}Summary of Thesis Achievements}{20}
 \contentsline {section}{\numberline {3.2}Applications}{20}

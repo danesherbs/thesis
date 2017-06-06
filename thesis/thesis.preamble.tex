@@ -12,6 +12,12 @@
 \usepackage{amssymb}
 \newcommand{\LineComment}[1]{\Statex \hfill\textit{#1}}
 
+% for vector style
+\usepackage{bm}
+
+% for trace operator
+\DeclareMathOperator{\Tr}{tr}
+
 \input{blocked.sty}
 \input{uhead.sty}
 \input{boxit.sty}
@@ -25,7 +31,8 @@
 \newcommand{\Int}{\bbbz}
 \newcommand{\Nat}{\bbbn}
 
-\renewcommand{\vec}[1]{\mathbf{#1}}  % Vectors
+% for vector style
+\renewcommand{\vec}[1]{\bm{#1}}
 
 \newcommand{\NN}{{\sf I\kern-0.14emN}}   % Natural numbers
 \newcommand{\ZZ}{{\sf Z\kern-0.45emZ}}   % Integers
