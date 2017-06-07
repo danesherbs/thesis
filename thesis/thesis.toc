@@ -16,15 +16,16 @@
 \contentsline {subsection}{\numberline {2.3.2}Binary Cross-Entropy}{8}
 \contentsline {section}{\numberline {2.4}Autoencoders}{9}
 \contentsline {subsection}{\numberline {2.4.1}Fully-Connected Autoencoders}{10}
-\contentsline {subsection}{\numberline {2.4.2}Fully-Convolutional Autoencoders}{11}
-\contentsline {subsection}{\numberline {2.4.3}Variational Autoencoders}{12}
-\contentsline {subsubsection}{Introduction: A Probabilistic Perspective}{12}
-\contentsline {subsubsection}{Overcoming the Intractable Posterior}{13}
-\contentsline {subsubsection}{Finding a Suitable Loss Function: the ELBO}{13}
-\contentsline {subsubsection}{Writing the ELBO in Closed-Form}{15}
-\contentsline {subsubsection}{Implementing the Variational Autoencoder}{16}
-\contentsline {chapter}{\numberline {3}Conclusion}{20}
-\contentsline {section}{\numberline {3.1}Summary of Thesis Achievements}{20}
-\contentsline {section}{\numberline {3.2}Applications}{20}
-\contentsline {section}{\numberline {3.3}Future Work}{20}
-\contentsline {chapter}{Bibliography}{20}
+\contentsline {subsection}{\numberline {2.4.2}Fully-Convolutional Autoencoders}{12}
+\contentsline {subsection}{\numberline {2.4.3}Variational Autoencoders}{14}
+\contentsline {subsubsection}{A Probabilistic Perspective}{14}
+\contentsline {subsubsection}{Overcoming the Intractable Posterior}{15}
+\contentsline {subsubsection}{Finding a Suitable Loss Function: the ELBO}{15}
+\contentsline {subsubsection}{Writing the ELBO in Closed-Form}{17}
+\contentsline {subsubsection}{Implementing the Variational Autoencoder}{19}
+\contentsline {subsubsection}{Intuition Behind the Variational Autoencoder}{20}
+\contentsline {chapter}{\numberline {3}Conclusion}{21}
+\contentsline {section}{\numberline {3.1}Summary of Thesis Achievements}{21}
+\contentsline {section}{\numberline {3.2}Applications}{21}
+\contentsline {section}{\numberline {3.3}Future Work}{21}
+\contentsline {chapter}{Bibliography}{21}

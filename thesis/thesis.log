@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.24)  6 JUN 2017 22:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.24)  7 JUN 2017 17:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -451,14 +451,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
  []
 
 
-<./figures/introduction/deep_blue_kasparov.jpg, id=51, 721.2251pt x 499.9904pt>
+<./figures/introduction/deep_blue_kasparov.jpg, id=54, 721.2251pt x 499.9904pt>
 File: ./figures/introduction/deep_blue_kasparov.jpg Graphic file (type jpg)
 <use ./figures/introduction/deep_blue_kasparov.jpg>
 Package pdftex.def Info: ./figures/introduction/deep_blue_kasparov.jpg used on 
 input line 24.
 (pdftex.def)             Requested size: 217.66211pt x 150.8909pt.
 
-<./figures/introduction/alpha_go_first_move_game_three.png, id=52, 901.3675pt x
+<./figures/introduction/alpha_go_first_move_game_three.png, id=55, 901.3675pt x
  625.33624pt>
 File: ./figures/introduction/alpha_go_first_move_game_three.png Graphic file (t
 ype png)
@@ -483,7 +483,7 @@ s>
 (epstopdf)             \includegraphics on input line 60.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/introduction/DSRL_architecture-eps-converted-to.pdf, id=59, 413.545p
+<./figures/introduction/DSRL_architecture-eps-converted-to.pdf, id=62, 413.545p
 t x 146.5475pt>
 File: ./figures/introduction/DSRL_architecture-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -504,7 +504,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `tab:dsrl_symbolic_representation' on page 3 undefined
  on input line 71.
 
-[3] <./figures/introduction/DSRL_raw_input.png, id=63, 570.933pt x 570.933pt>
+[3] <./figures/introduction/DSRL_raw_input.png, id=66, 570.933pt x 570.933pt>
 File: ./figures/introduction/DSRL_raw_input.png Graphic file (type png)
 
 <use ./figures/introduction/DSRL_raw_input.png>
@@ -530,7 +530,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
  []
 
 [7]
-<./figures/background/eucledian_distance_a.png, id=92, 28.105pt x 28.105pt>
+<./figures/background/eucledian_distance_a.png, id=93, 28.105pt x 28.105pt>
 File: ./figures/background/eucledian_distance_a.png Graphic file (type png)
 
 <use ./figures/background/eucledian_distance_a.png>
@@ -538,7 +538,7 @@ Package pdftex.def Info: ./figures/background/eucledian_distance_a.png used on
 input line 38.
 (pdftex.def)             Requested size: 123.82968pt x 123.84416pt.
 
-<./figures/background/eucledian_distance_c.png, id=93, 28.105pt x 28.105pt>
+<./figures/background/eucledian_distance_c.png, id=94, 28.105pt x 28.105pt>
 File: ./figures/background/eucledian_distance_c.png Graphic file (type png)
 
 <use ./figures/background/eucledian_distance_c.png>
@@ -546,7 +546,7 @@ Package pdftex.def Info: ./figures/background/eucledian_distance_c.png used on
 input line 43.
 (pdftex.def)             Requested size: 123.82968pt x 123.84416pt.
 
-<./figures/background/eucledian_distance_b.png, id=94, 28.105pt x 28.105pt>
+<./figures/background/eucledian_distance_b.png, id=95, 28.105pt x 28.105pt>
 File: ./figures/background/eucledian_distance_b.png Graphic file (type png)
 
 <use ./figures/background/eucledian_distance_b.png>
@@ -570,7 +570,7 @@ oder_black_box_architecture.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/autoencoder_black_box_architecture-eps-converted-to.pdf, 
-id=98, 853.1875pt x 152.57pt>
+id=99, 853.1875pt x 152.57pt>
 File: ./figures/background/autoencoder_black_box_architecture-eps-converted-to.
 pdf Graphic file (type pdf)
 
@@ -595,7 +595,7 @@ tecture.eps>
 (epstopdf)             \includegraphics on input line 83.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/background/autoencoder_architecture-eps-converted-to.pdf, id=109, 47
+<./figures/background/autoencoder_architecture-eps-converted-to.pdf, id=110, 47
 8.78876pt x 503.8825pt>
 File: ./figures/background/autoencoder_architecture-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -603,13 +603,9 @@ c file (type pdf)
 <use ./figures/background/autoencoder_architecture-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/background/autoencoder_architecture-eps-conv
 erted-to.pdf used on input line 83.
-(pdftex.def)             Requested size: 335.14984pt x 352.71535pt.
+(pdftex.def)             Requested size: 239.39378pt x 251.94063pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<./figures/background/fully_connected_autoencoder_mnist.png, id=110, 380.8629pt
+<./figures/background/fully_connected_autoencoder_mnist.png, id=111, 380.8629pt
  x 712.5822pt>
 File: ./figures/background/fully_connected_autoencoder_mnist.png Graphic file (
 type png)
@@ -618,33 +614,11 @@ type png)
 Package pdftex.def Info: ./figures/background/fully_connected_autoencoder_mnist
 .png used on input line 109.
 (pdftex.def)             Requested size: 361.81769pt x 676.94925pt.
-
-
-LaTeX Warning: Float too large for page by 27.66615pt on input line 112.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [10 <./figures/background/autoencoder_architecture-eps-converted-to.pdf>]
-<./figures/background/fully_convolutional_autoencoder_mnist.png, id=121, 380.86
-29pt x 715.473pt>
-File: ./figures/background/fully_convolutional_autoencoder_mnist.png Graphic fi
-le (type png)
-
-<use ./figures/background/fully_convolutional_autoencoder_mnist.png>
-Package pdftex.def Info: ./figures/background/fully_convolutional_autoencoder_m
-nist.png used on input line 141.
-(pdftex.def)             Requested size: 361.81769pt x 679.69551pt.
+Overfull \vbox (27.66615pt too high) has occurred while \output is active []
 
 
-LaTeX Warning: Float too large for page by 30.41241pt on input line 144.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+[11 <./figures/background/fully_connected_autoencoder_mnist.png>]
 Package epstopdf Info: Source file: <./figures/background/convolutional_autoenc
 oder_architecture.eps>
 (epstopdf)                    date: 2017-06-05 11:10:57
@@ -656,100 +630,144 @@ oder_architecture-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/convo
 lutional_autoencoder_architecture-eps-converted-to.pdf ./figures/background/con
 volutional_autoencoder_architecture.eps>
-(epstopdf)             \includegraphics on input line 149.
+(epstopdf)             \includegraphics on input line 143.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/convolutional_autoencoder_architecture-eps-converted-to.p
-df, id=122, 853.1875pt x 188.705pt>
+df, id=126, 853.1875pt x 188.705pt>
 File: ./figures/background/convolutional_autoencoder_architecture-eps-converted
 -to.pdf Graphic file (type pdf)
 
 <use ./figures/background/convolutional_autoencoder_architecture-eps-converted-
 to.pdf>
 Package pdftex.def Info: ./figures/background/convolutional_autoencoder_archite
-cture-eps-converted-to.pdf used on input line 149.
+cture-eps-converted-to.pdf used on input line 143.
 (pdftex.def)             Requested size: 511.91646pt x 113.22386pt.
 
-Overfull \hbox (28.21959pt too wide) in paragraph at lines 149--150
+Overfull \hbox (28.21959pt too wide) in paragraph at lines 143--144
  [][] 
  []
 
+[12 <./figures/background/convolutional_autoencoder_architecture-eps-converted-
+to.pdf>]
+<./figures/background/fully_convolutional_autoencoder_mnist.png, id=134, 380.86
+29pt x 715.473pt>
+File: ./figures/background/fully_convolutional_autoencoder_mnist.png Graphic fi
+le (type png)
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+<use ./figures/background/fully_convolutional_autoencoder_mnist.png>
+Package pdftex.def Info: ./figures/background/fully_convolutional_autoencoder_m
+nist.png used on input line 154.
+(pdftex.def)             Requested size: 361.81769pt x 679.69551pt.
+
+Overfull \vbox (30.41241pt too high) has occurred while \output is active []
 
 
-Underfull \vbox (badness 7558) has occurred while \output is active []
-
- [11]
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
+[13 <./figures/background/fully_convolutional_autoencoder_mnist.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
-[12]
+[14]
 
-LaTeX Warning: Citation `Li2016' on page 13 undefined on input line 199.
+LaTeX Warning: Citation `Li2016' on page 15 undefined on input line 204.
 
-
-Overfull \hbox (1.83945pt too wide) in paragraph at lines 211--211
-[] 
- []
-
-[13]
+[15]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14]
-[15]
+ [16]
+
+LaTeX Warning: Citation `Li2016' on page 17 undefined on input line 242.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+
+LaTeX Warning: Citation `Li2016' on page 18 undefined on input line 287.
+
+
+Underfull \vbox (badness 2073) has occurred while \output is active []
+
+ [18]
+
+LaTeX Warning: Citation `Li2016' on page 19 undefined on input line 302.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--303
+
+ []
+
 Package epstopdf Info: Source file: <./figures/background/variational_autoencod
-ers_plate_model.eps>
-(epstopdf)                    date: 2017-06-05 11:10:57
-(epstopdf)                    size: 6633 bytes
+er_naive.eps>
+(epstopdf)                    date: 2017-06-07 15:36:18
+(epstopdf)                    size: 29669 bytes
 (epstopdf)             Output file: <./figures/background/variational_autoencod
-ers_plate_model-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-05 11:10:57
-(epstopdf)                    size: 3993 bytes
+er_naive-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-06-07 15:37:06
+(epstopdf)                    size: 7668 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
-tional_autoencoders_plate_model-eps-converted-to.pdf ./figures/background/varia
-tional_autoencoders_plate_model.eps>
-(epstopdf)             \includegraphics on input line 287.
+tional_autoencoder_naive-eps-converted-to.pdf ./figures/background/variational_
+autoencoder_naive.eps>
+(epstopdf)             \includegraphics on input line 307.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/background/variational_autoencoders_plate_model-eps-converted-to.pdf
-, id=148, 216.81pt x 372.39125pt>
-File: ./figures/background/variational_autoencoders_plate_model-eps-converted-t
-o.pdf Graphic file (type pdf)
+<./figures/background/variational_autoencoder_naive-eps-converted-to.pdf, id=16
+4, 244.915pt x 360.34625pt>
+File: ./figures/background/variational_autoencoder_naive-eps-converted-to.pdf G
+raphic file (type pdf)
 
-<use ./figures/background/variational_autoencoders_plate_model-eps-converted-to
-.pdf>
-Package pdftex.def Info: ./figures/background/variational_autoencoders_plate_mo
-del-eps-converted-to.pdf used on input line 287.
-(pdftex.def)             Requested size: 97.56358pt x 167.57451pt.
+<use ./figures/background/variational_autoencoder_naive-eps-converted-to.pdf>
+Package pdftex.def Info: ./figures/background/variational_autoencoder_naive-eps
+-converted-to.pdf used on input line 307.
+(pdftex.def)             Requested size: 110.21072pt x 162.15431pt.
 
+[19 <./figures/background/variational_autoencoder_naive-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 317--319
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+ []
 
-) (./conclusion/conclusion.tex [16] [17 <./figures/background/fully_connected_a
-utoencoder_mnist.png>] [18 <./figures/background/fully_convolutional_autoencode
-r_mnist.png>] [19 <./figures/background/convolutional_autoencoder_architecture-
-eps-converted-to.pdf> <./figures/background/variational_autoencoders_plate_mode
-l-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <./figures/background/variational_autoencod
+er_reparameterisation_trick.eps>
+(epstopdf)                    date: 2017-06-07 16:44:48
+(epstopdf)                    size: 31214 bytes
+(epstopdf)             Output file: <./figures/background/variational_autoencod
+er_reparameterisation_trick-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-06-07 16:45:13
+(epstopdf)                    size: 8107 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
+tional_autoencoder_reparameterisation_trick-eps-converted-to.pdf ./figures/back
+ground/variational_autoencoder_reparameterisation_trick.eps>
+(epstopdf)             \includegraphics on input line 323.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figures/background/variational_autoencoder_reparameterisation_trick-eps-conv
+erted-to.pdf, id=174, 244.915pt x 360.34625pt>
+File: ./figures/background/variational_autoencoder_reparameterisation_trick-eps
+-converted-to.pdf Graphic file (type pdf)
+
+<use ./figures/background/variational_autoencoder_reparameterisation_trick-eps-
+converted-to.pdf>
+Package pdftex.def Info: ./figures/background/variational_autoencoder_reparamet
+erisation_trick-eps-converted-to.pdf used on input line 323.
+(pdftex.def)             Requested size: 110.21072pt x 162.15431pt.
+) (./conclusion/conclusion.tex [20 <./figures/background/variational_autoencode
+r_reparameterisation_trick-eps-converted-to.pdf>]
 Chapter 3.
-) (./thesis.bbl [20
+) (./thesis.bbl [21
 
-] [21
+] [22
 
-]) [22] (./thesis.aux)
+]) [23] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 5068 strings out of 494353
- 76047 string characters out of 6170043
- 144204 words of memory out of 5000000
- 8219 multiletter control sequences out of 15000+600000
+ 5078 strings out of 494353
+ 76575 string characters out of 6170043
+ 143242 words of memory out of 5000000
+ 8228 multiletter control sequences out of 15000+600000
  15405 words of font info for 59 fonts, out of 8000000 for 9000
  452 hyphenation exceptions out of 8191
  40i,12n,40p,908b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -774,10 +792,10 @@ ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on thesis.pdf (34 pages, 3679209 bytes).
+Output written on thesis.pdf (35 pages, 3346708 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 163 compressed objects within 2 object streams
+ 262 PDF objects out of 1000 (max. 8388607)
+ 169 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
