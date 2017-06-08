@@ -57,7 +57,7 @@ Consider a single black-and-white pixel with probability $p(0) = c$ of being $0$
 
 This is done by computing the binary cross-entropy between $p$ and $q$, which is defined by $$H(p,q) = -c\log\hat{c} - (1-c)\log(1-\hat{c})$$ To see how we may use this as a similarity measure among images, consider a $1\times1$ image. Normalising this image yields a pixel value in the interval $[0, 1]$, which may now be interpreted as a probability, corresponding to $c$ above. In the normalised reconstructed image, the pixel value corresponds to $\hat{c}$. We simply compute the binary cross-entropy to measure the similarity of these two distributions, and in turn, the similarity of the images themselves! (Note: we could have also assigned the probabilities to $1-y$ and $1-\hat{y}$ by symmetry of binary cross-entropy).
 
-For images larger than $1 \times 1$, we may take the component-wise binary cross-entropy, then, for example, average the components. How the component-wise binary cross-entropies are combined to give a score single floating point number is the choice of the designer and will vary from problem to problem.
+For images larger than $1 \times 1$, we may take the component-wise binary cross-entropy, then, for example, average the components. How the component-wise binary cross-entropies are suitably combined to give a single floating point number will vary from problem to problem.
 
 \section{Autoencoders}
 
@@ -80,7 +80,7 @@ In dense feed-forward neural networks we may place a constraint on the latent sp
 \begin{figure}[h!]
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.7]{background/autoencoder_architecture.eps}
+\includegraphics[scale=0.5]{background/autoencoder_architecture.eps}
 \caption{An example architecture of a fully-connected autoencoder. The latent space is constrained by having fewer neurons than the input and output layers.}
 \label{fig:autoencoder_architecture}
 \end{figure}
@@ -103,7 +103,7 @@ Reshape & (1, 28, 28) \\ \bottomrule
 \label{tab:fully_connected_autoencoder_architecture}
 \end{table}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.95]{background/fully_connected_autoencoder_mnist.png}
@@ -135,13 +135,7 @@ Conv2DTranspose & (1, 28, 28) \\ \bottomrule
 \label{tab:convolutional_autoencoder_architecture}
 \end{table}
 
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\includegraphics[scale=0.95]{background/fully_convolutional_autoencoder_mnist.png}
-\caption{A collection of images from the MNIST data set and their respective reconstructions using the fully-convolutional autoencoder specified in Table \ref{tab:convolutional_autoencoder_architecture}. The original MNIST images are in odd columns, and their reconstructions to their immediate right.}
-\label{fig:convolutional_autoencoder_mnist}
-\end{figure}
+\vspace{8mm}
 
 \begin{figure}[h!]
 \centering
@@ -153,40 +147,210 @@ Conv2DTranspose & (1, 28, 28) \\ \bottomrule
 
 Convolutional layers have been shown to be effective in tasks with images as input \cite{Krizhevsky2012, Zeiler2014, Szegedy2015}. This is because spatial information is preserved in convolutional layers, and the number of trainable parameters is far less in a convolutional layer than it is in a fully connected layer. Convolutional layers will be used from here on as we'll be using images as input.
 
+\newpage
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.95]{background/fully_convolutional_autoencoder_mnist.png}
+\caption{A collection of images from the MNIST data set and their respective reconstructions using the fully-convolutional autoencoder specified in Table \ref{tab:convolutional_autoencoder_architecture}. The original MNIST images are in odd columns, and their reconstructions to their immediate right.}
+\label{fig:convolutional_autoencoder_mnist}
+\end{figure}
+
 \subsection{Variational Autoencoders}
 
-The variational autoencoder is central to this project, and we'll therefore dedicate a considerable amount of time exploring it. First we'll relate the variational autoencoder to ones seen earlier. This will lead us to formalise the proposed approach, after which we can develop an intuition about its implementation by way of concrete examples.
+The variational autoencoder is central to this project, and we'll therefore dedicate a considerable amount of time exploring it. First we'll precisely define the problems the variational autoencoder solves, after which we may develop its loss function and detail its implementation. This section will conclude by developing an intution of the theory covered by way of examples.
 
-\subsubsection{Introduction}
-So far we've seen autoencoders that take an input $\vec{x}$ and output a reconstruction $\vec{\tilde{x}}$, after mapping the input to a lower-dimensional representation $\vec{z}$. Putting our probabilistic hat on gives an entirely new and exciting idea: each of the inputs $\vec{x}$ are actually samples from an unknown probability distribution $p(\vec{x})$ \cite{Doersch2016}. The variational autoencoder's aim is to learn $p(\vec{x})$ in an unsupervised manner, and consequently be able to generate new samples never seen in the original data set.
+\subsubsection{A Probabilistic Perspective}
+We'll begin by making necessary definitions and describe the input data as samples from a generative process.. This sets the context to detail the problems the variational autoencoder solves.
 
-Let's formalise this probabilistic perspective, then see how we may implement such a model.
+Let $X = \{\vec{x}^{(i)}\}_{i=1}^{N}$ be the data set of $N$ independent and identically distributed samples of the variable $\vec{x}$. ($X$ may be a data set of images, for instance). Let us assume that these samples are generated by a random process with parameters $\vec{\theta^*}$ involving an unobserved latent variable $\vec{z}$ in the following way:\\
 
-\subsubsection{Probabilistic Perspective}
-Let $X = \{\vec{x}^{(i)}\}_{i=1}^{N}$ be the data set of $N$ independent and identically distributed samples of the variable $\vec{x}$. Let us assume that these samples are generated by a random process with parameters $\vec{\theta^*}$ involving an unobserved latent variable $\vec{z}$ in the following way:
+\begin{algorithm}
+  \caption{Generate data set $X$}
+  \begin{algorithmic}[1]
+  \For{$i = 1 \to N$}
+      \State $\vec{z}^{(i)} \sim p_{\vec{\theta}^*}(\vec{z})$ \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad // Sample from true prior
+      \State $\vec{x}^{(i)} \sim p_{\vec{\theta}^*}(\vec{x} | \vec{z}^{(i)})$ \quad\quad\quad\quad\quad\quad\quad\enspace\enspace\thinspace // Sample from true conditional
+      \State Append $\vec{x}^{(i)}$ to $X$
+  \EndFor
+  \end{algorithmic}
+  \label{alg:generate_data_set_x}
+\end{algorithm}
+
+We only observe the data set $X$ in this process. The parameters $\vec{\theta}^*$ and latent variables $Z = \{ \vec{z}^{(i)} \}_{i=1}^{N}$ are unknown to us. Let us assume that the prior $p_{\vec{\theta^*}}(\vec{z})$ and conditional $p_{\vec{\theta^*}}(\vec{x}|\vec{z})$ are parameterised by the distributions $p_{\vec{\theta}}(\vec{z})$ and $p_{\vec{\theta}}(\vec{x}|\vec{z})$ respectively. In this context, the variational autoencoder provides \cite{Kingma2014}:
 
 \begin{enumerate}
-\item A latent variable $\vec{z}^{(i)}$ is drawn from the prior: $\vec{z}^{(i)} \sim p_{\vec{\theta^*}}(\vec{z})$
-\item A new data point $\vec{x}^{(i)}$ is drawn from a conditional distribution: $\vec{x}^{(i)} \sim p_{\vec{\theta^*}}(\vec{x}|\vec{z})$
+\item ML or MAP estimation for the parameters $\vec{\theta}$
+\item An approximation of the latent variable $\vec{z}^{(i)}$ given $\vec{x}^{(i)}$ and set of parameters $\vec{\theta}$
+\item Approximate marginal inference of the variable $\vec{x}$
 \end{enumerate}
 
-Let us also assume that the prior $p_{\vec{\theta^*}}(\vec{z})$ and likelihood $p_{\vec{\theta^*}}(\vec{x}|\vec{z})$ are parameterised by the distributions $p_{\vec{\theta}}(\vec{z})$ and $p_{\vec{\theta}}(\vec{x}|\vec{z})$ respectively. The true parameters $\vec{\theta}^*$ and latent variables $\vec{z}^{(i)}$ that produced $X$ are completely unknown to us; we only observe the samples in $X$.
-
-We'd like to be able to infer the latent variable of a given data point, or more precisely, we'd like to be able to calculate the posterior $p(\vec{z}|\vec{x})$. By Bayes' theorem, the posterior is given by
-\[
+\subsubsection{Overcoming the Intractable Posterior}
+The variational autoencoder solves the problems above by approximate inference of the latent variable $\vec{z}$. Exact inference is not possible, and to see this we may use Bayes' theorem to find an expression for the posterior:
+\begin{align}
 p_{\vec{\theta}}(\vec{z}|\vec{x}) = \frac{p_{\vec{\theta}}(\vec{x}|\vec{z})p_{\vec{\theta}}(\vec{z})}{p_{\vec{\theta}}(\vec{x})}
-\]
-However, due to the marginal likelihood
-\[
+\end{align}
+The marginal likelihood
+\begin{align}
 p_{\vec{\theta}}(\vec{x}) = \int p_{\vec{\theta}}(\vec{z})p_{\vec{\theta}}(\vec{x}|\vec{z})d\vec{z}
-\]
-being intractable, we may not calculate $p_{\vec{\theta}}(\vec{z}|\vec{x})$ analytically. Instead, we define an approximation $q_{\vec{\phi}}(\vec{z}|\vec{x})$ to the intractable posterior $p_{\vec{\theta}}(\vec{z}|\vec{x})$. We will come to see how the variational autoencoder will jointly learn the parameters $\vec{\phi}$ and $\vec{\theta}$. With these alone, we are able to encode a given sample with $q_{\vec{\phi}}(\vec{z}|\vec{x})$, called the probabilistic encoder, and decode a given latent variable with $p_{\vec{\theta}}(\vec{x}|\vec{z})$, called the probabilistic decoder.
+\end{align}
+involves an exponential-time integral over every combination of the latent variable $\vec{z}$, and is therefore computationally intractable \cite{Kingma2014}. Instead, we define an approximation $q_{\vec{\phi}}(\vec{z}|\vec{x})$ to the intractable posterior. Since $q_{\vec{\phi}}(\vec{z}|\vec{x})$ gives a distribution over the possible latent variables $\vec{z}$ that generated the given data point $\vec{x}$, it is known as the probabilistic decoder. By the same reasoning, $p_{\vec{\theta}}(\vec{x}|\vec{z})$ is known as the probabilistic decoder.
 
+\subsubsection{Finding a Suitable Loss Function: the ELBO}
+The variational autoencoers's ability to learn the generative parameters $\vec{\theta}^*$ relies on how closley $q_{\vec{\phi}}(\vec{z}|\vec{x})$ approximates $p_{\vec{\theta}}(\vec{z}|\vec{x})$. In the interest of training a model, this difference will be quantified. For this we use the KL divergence
+\begin{align}
+D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x})||p_{\vec{\theta}}(\vec{z}|\vec{x})) = \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[\log_{e}\frac{q_{\vec{\phi}}(\vec{z}|\vec{x})}{p_{\vec{\theta}}(\vec{z}|\vec{x})}\bigg]
+\end{align}
+which measures how much information is lost when we represent $p_{\vec{\theta}}(\vec{z}|\vec{x})$ with $q_{\vec{\phi}}(\vec{z}|\vec{x})$ (measured in nats) \cite{Burnham2002}. Using the KL divergence, our problem now amounts to the optimisation problem \cite{Li2016}:
+\begin{align}
+\vec{\theta}^*, \vec{\phi}^* = \arg\min_{\vec{\theta}^*, \vec{\phi}^*} D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x})||p_{\vec{\theta}}(\vec{z}|\vec{x}))
+\label{eq:kl_divergence_optimisation_problem}
+\end{align}
+To see how we can start to minimise the KL divergence, we'll start by rewriting it in a different form:
+\begin{align}
+D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x})||p_{\vec{\theta}}(\vec{z}|\vec{x})) &= \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[\log_{e}\frac{q_{\vec{\phi}}(\vec{z}|\vec{x})}{p_{\vec{\theta}}(\vec{z}|\vec{x})}\bigg] \\
+&= \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log_{e}q_{\vec{\phi}}(\vec{z}|\vec{x})\big] - \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[{\log_ep_{\vec{\theta}}(\vec{z}|\vec{x})}\big] \\
+&= \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log_{e}q_{\vec{\phi}}(\vec{z}|\vec{x})\big] - \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[\log_e\frac{p_{\vec{\theta}}(\vec{z},\vec{x})}{p_{\vec{\theta}}(\vec{x})}\bigg] \\
+&= \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[\log_{e}\frac{q_{\vec{\phi}}(\vec{z}|\vec{x})}{{p_{\vec{\theta}}(\vec{z},\vec{x})}}\bigg] + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}[\log_ep_{\vec{\theta}}(\vec{x})] \\
+&= \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[\log_{e}\frac{q_{\vec{\phi}}(\vec{z}|\vec{x})}{{p_{\vec{\theta}}(\vec{z},\vec{x})}}\bigg] + \log_ep_{\vec{\theta}}(\vec{x})
+\label{eq:kl_divergence}
+\end{align}
+Here we see that the KL divergence depends on the intractable marginal likelihood $p_{\vec{\theta}}(\vec{x})$! There's no way we can minimise it if we can't write down $p_{\vec{\theta}}(\vec{x})$. However, we can get around this: we'll minimise the KL divergence, but not directly. Instead, we try to find a quantity which we can maximise, and show that in turn this minimises the KL divergence. The trick is not obvious, but is simply done by finding a lower bound on the log marginal likelihood.
+
+Using Jensen's inequality
+\begin{align}
+f(\mathbf{E}\big[X\big]) \geq \mathbf{E}\big[ f(X) \big]
+\end{align}
+we can write down a lower bound on the log marginal likelihood:
+\begin{align}
+\log_ep_{\vec{\theta}}(\vec{x}) &= \log_e\int p_{\vec{\vec{\theta}}}(\vec{x}, \vec{z})d\vec{z} \\
+&= \log_e\int p_{\vec{\theta}}(\vec{x}, \vec{z}) \frac{q_{\vec{\phi}}(\vec{z}|\vec{x})}{q_{\vec{\phi}}(\vec{z}|\vec{x})} d\vec{z} \\
+&= \log_e\mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[  \frac{p_{\vec{\theta}}(\vec{x}, \vec{z})}{q_{\vec{\phi}}(\vec{z}|\vec{x})} \bigg] \\
+&\geq \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[  \log_e\frac{p_{\vec{\theta}}(\vec{x}, \vec{z})}{q_{\vec{\phi}}(\vec{z}|\vec{x})} \bigg] \label{eq:elbo}\\
+&:= \mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x})
+\end{align}
+Expression (\ref{eq:elbo}) is called the $ELBO$ (short for expected lower bound) \cite{Blei2011, Kingma2014}.
+
+How does the $ELBO$ help us with minimising the KL divergence? First recall the alternative form of the KL divergence written in Equation (\ref{eq:kl_divergence}):
+\[
+D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x})||p_{\vec{\theta}}(\vec{z}|\vec{x})) = \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[\log_{e}\frac{q_{\vec{\phi}}(\vec{z}|\vec{x})}{{p_{\vec{\theta}}(\vec{z},\vec{x})}}\bigg] + \log_ep_{\vec{\theta}}(\vec{x})
+\]
+Writing this in terms of the $ELBO$ we have:
+\begin{align}
+D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x})||p_{\vec{\theta}}(\vec{z}|\vec{x})) = -\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}) + \log_ep_{\vec{\theta}}(\vec{x})
+\end{align}
+Since the KL divergence is the negative of the $ELBO$ up to an additive constant (with respect to $q$), minimising the KL divergence is equivalent to maximising the $ELBO$ \cite{Blei2016}. Now we may make a revision to our original optimisaiton problem (\ref{eq:kl_divergence_optimisation_problem}). Our problem is written as \cite{Li2016}:
+\begin{align}
+\vec{\theta}^*, \vec{\phi}^* = \arg\max_{\vec{\theta}^*, \vec{\phi}^*} \mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x})
+\label{eq:elbo_optimisation_problem}
+\end{align}
+
+\subsubsection{Writing the ELBO in Closed-Form}
+We've found that we can maximise the $ELBO$ to minimise the KL divergence between the approximation $q_{\vec{\phi}}(\vec{z}|\vec{x})$ and the intractable posterior $p_{\vec{\theta}}(\vec{z}|\vec{x})$. Now we will seek to write the $ELBO$ in closed-form, after which we will be able to implement the variational autoencoder.
+
+To write the $ELBO$ in closed-form, we'll start with a useful manipulation:
+\begin{align}
+\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}) &= \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[  \log_e\frac{p_{\vec{\theta}}(\vec{x}, \vec{z})}{q_{\vec{\phi}}(\vec{z}|\vec{x})} \bigg] \\
+&= -\mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[ \log_e\frac{q_{\vec{\phi}}(\vec{z}|\vec{x})}{p_{\vec{\theta}}(\vec{x}, \vec{z})} \bigg] \\
+&= -\mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[ \log_e\frac{q_{\vec{\phi}}(\vec{z}|\vec{x})}{p_{\vec{\theta}}(\vec{x} | \vec{z}) p_{\vec{\theta}}(\vec{z})} \bigg] \\
+&= -\mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\bigg[ \log_e\frac{q_{\vec{\phi}}(\vec{z}|\vec{x})}{p_{\vec{\theta}}(\vec{z})} \bigg] +  \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log_e p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]\\
+&= -D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
+\label{eq:elbo_reconstruction_kl_divergence}
+\end{align}
+
+Thus for a single data point $\vec{x}^{(i)}$, the $ELBO$ becomes:
+\begin{equation}
+\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}^{(i)}) = -D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)}) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)})}\big[\log p_{\vec{\theta}}(\vec{x}^{(i)} | \vec{z}) \big]
+\end{equation}
+
+With some assumptions and a bit of work, we're finally in a position to write the $ELBO$ in closed-form. The first term is the KL divergence between the probabilistic encoder and the prior. To make our lives simpler, we can choose the prior to be the isotropic multivariate Gaussian:
+\begin{align}
+p_{\vec{\theta}}(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})
+\end{align}
+We will also assume that the posterior is a $k$-dimensional Gaussian with diagonal covariance. It follows that the approximate posterior should take the same form. That is,
+\begin{align}
+q_{\vec{\phi}}(\vec{z} | \vec{x}^{(i)}) = \mathcal{N}(\vec{\mu}^{(i)}, \vec{\sigma}^{2(i)}\vec{I})
+\label{eq:approximate_posterior_gaussian}
+\end{align}
+where $\vec{\mu}^{(i)}$ and $\vec{\sigma}^{(i)}$ are the mean and standard deviation (respectively) for data point $\vec{x}^{(i)}$. With these two assumptions, and the KL divergence for $k$-dimensional Gaussians,
+\begin{align}
+D_{KL}(\mathcal{N}_0 || \mathcal{N}_1) = \frac{1}{2}\bigg[\Tr(\vec{\Sigma_1}^{-1}\vec{\Sigma_0}) + (\vec{\mu}_1 - \vec{\mu}_0)^T\vec{\Sigma_1}^{-1}(\vec{\mu}_1-\vec{\mu}_0) - k + \ln\bigg(\frac{\det\vec{\Sigma_1}}{\det\vec{\Sigma_0}}\bigg) \bigg]
+\end{align}
+we may write the first term in closed-form:
+\begin{align}
+D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)}) || p_{\vec{\theta}}(\vec{z})) &= \frac{1}{2}\bigg[ \sum_{j=1}^k \sigma^{2(i)}_j + \sum_{j=1}^k\mu^{2(i)}_j - k - \ln\prod_{j=1}^k\sigma^{2(i)}_j \bigg]
+\end{align}
+Now we turn our attention to the second term of the $ELBO$:
+\begin{align}
+\mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)})}\big[\log p_{\vec{\theta}}(\vec{x}^{(i)} | \vec{z}) \big]
+\end{align}
+Luckily, maximising terms like this is encountered regularly in statistics, and is known as maximum likelihood estimation. This can be taken to be the reconstruction loss (defined it earlier) \cite{Li2016}.
+
+Therefore, using an unspecified reconstruction loss, the $ELBO$ is:
+\begin{align}
+\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}) = \frac{1}{2}\bigg[ \sum_{j=1}^k \sigma^{2(i)}_j + \sum_{j=1}^k\mu^{2(i)}_j - k - \ln\prod_{j=1}^k\sigma^{2(i)}_j \bigg] + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)})}\big[\log p_{\vec{\theta}}(\vec{x}^{(i)} | \vec{z}) \big]
+\end{align}
+
+\subsubsection{Implementing the Variational Autoencoder}
+
+The variational autoencoder uses a neural network for the probabilistic encoder $q_{\vec{\phi}}(\vec{z}|\vec{x})$ \cite{Kingma2014}. First a na\"{i}ve implementation of the variational autoencoder will be proposed. As we shall see, this implementation needs one adjustment, known as the ``reparameterisatoin trick". This will lead to the final implementation of the variational autoencoder, and conclude our formal study.
+
+The probabilistic encoder (\ref{eq:approximate_posterior_gaussian})
+\[
+q_{\vec{\phi}}(\vec{z} | \vec{x}^{(i)}) = \mathcal{N}(\vec{\mu}^{(i)}, \vec{\sigma}^{2(i)}\vec{I})
+\]
+requires the mean $\vec{\mu}^{(i)}$ and standard deviation $\vec{\sigma}^{(i)}$ for a given data point $\vec{x}^{(i)}$. These two vectors will be represented by distinct layers in the latent space of a neural network, as shown in Figure (\ref{fig:variational_autoencoder_naive}) \cite{Li2016}.\\
 
 \begin{figure}[h!]
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.45]{background/variational_autoencoder_latent_space_colour_0.png}
-\caption{An example architecture of a fully-convolutional autoencoder. The latent space is constrained by reducing the number and/or size of the filters.}
-\label{fig:variational_autoencoder_plate_model}
+\includegraphics[scale=0.45]{background/variational_autoencoder_naive.eps}
+\caption{A na\"{i}ve implementation of the variational autoencoder. The input $\vec{x}$ is mapped to intermediate layers taking the values of $\vec{\mu}$ and $\vec{\sigma}^2$. The latent variable $\vec{z}$ is then sampled from the probabilistic encoder $\vec{z} \sim q_{\vec{\phi}}(\vec{z} | \vec{x})$. Finally $\vec{z}$ is mapped back to the input dimension to give reconstruction $\vec{\tilde{x}}$.}
+\label{fig:variational_autoencoder_naive}
 \end{figure}
+
+Unfortuntely we cannot perform backpropagation, as it makes no sense to differentiate the the random variable $\vec{z}$ wrt $\vec{\phi}$ ($\vec{z}$ is drawn from a distribution, and not a function of $\vec{\phi}$). To solve this, we introduce an auxillary variable $\vec{\epsilon}$ and vector-valued function $g_{\phi}(\vec{x}, \vec{\epsilon})$ parameterised by $\vec{\phi}$ \cite{Kingma2014}. The auxillary variable $\vec{\epsilon}$ is governed by a parameterless distribution, which we will take to be the multivariate isotropic Gaussian.
+
+The sampling step can now be written as
+\begin{align}
+\vec{z} = g_{\vec{\phi}}(\vec{x}, \vec{\epsilon}) = \vec{\mu} + \vec{\sigma} \odot \vec{\epsilon} \quad\quad\quad \vec{\epsilon} \sim \mathcal{N}(\vec{0}, \vec{I})
+\end{align}
+where $\odot$ represents the element-wise product. This is a reparameterisation of the random variable $\vec{z}\sim q_{\vec{\phi}}(\vec{z}|\vec{x})$ with a differentiable function $g_{\vec{\phi}}(\vec{x}, \vec{\epsilon})$, and is suitable known as the ``reparameterisation trick" \cite{Kingma2014}. The reparameterisation trick allows backpropagation to be used, and thus completes our method of solving optimisation problem (\ref{eq:elbo_optimisation_problem}).\\
+
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.45]{background/variational_autoencoder_reparameterisation_trick.eps}
+\caption{A viable implementation of the variational autoencoder. Sampling from the probabilistic encoder $q_{\vec{\phi}}(\vec{z} | \vec{x})$ is simulated by evaluating $\vec{z} = g_{\vec{\phi}}(\vec{x}, \vec{\epsilon}) = \vec{\mu} + \vec{\sigma} \odot \vec{\epsilon}$.}
+\label{fig:variational_autoencoder_reparameterisation_trick}
+\end{figure}
+
+\newpage
+\subsubsection{Intuition Behind the Variational Autoencoder}
+In this section we'll develop the intuition behind the variational autoencoder.\\
+
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.7]{background/variational_autoencoder_latent_space_colour_0_with_mnist.eps}
+\caption{A viable implementation of the variational autoencoder. Sampling from the probabilistic encoder $q_{\vec{\phi}}(\vec{z} | \vec{x})$ is simulated by evaluating $\vec{z} = g_{\vec{\phi}}(\vec{x}, \vec{\epsilon}) = \vec{\mu} + \vec{\sigma} \odot \vec{\epsilon}$.}
+\label{fig:variational_autoencoder_latent_space_colour_0_with_mnist}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.7]{background/variational_autoencoder_latent_space_unit_gaussian_with_mnist.eps}
+\caption{A viable implementation of the variational autoencoder. Sampling from the probabilistic encoder $q_{\vec{\phi}}(\vec{z} | \vec{x})$ is simulated by evaluating $\vec{z} = g_{\vec{\phi}}(\vec{x}, \vec{\epsilon}) = \vec{\mu} + \vec{\sigma} \odot \vec{\epsilon}$.}
+\label{fig:variational_autoencoder_latent_space_unit_gaussian_with_mnist}
+\end{figure}
+
+\begin{landscape}
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.45]{background/variational_autoencoder_latent_space_adding_latent_spaces.eps}
+\caption{\vspace*{-20mm}The sum over the latent space distributions of digits $0, 1, \dots, 9$ approximates the multivariate isotropic Gaussian.}
+\label{fig:variational_autoencoder_latent_space_adding_latent_spaces}
+\end{figure}
+\end{landscape}

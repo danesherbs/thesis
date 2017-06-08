@@ -23,9 +23,9 @@
 \contentsline {subsubsection}{Finding a Suitable Loss Function: the ELBO}{15}
 \contentsline {subsubsection}{Writing the ELBO in Closed-Form}{17}
 \contentsline {subsubsection}{Implementing the Variational Autoencoder}{19}
-\contentsline {subsubsection}{Intuition Behind the Variational Autoencoder}{20}
-\contentsline {chapter}{\numberline {3}Conclusion}{21}
-\contentsline {section}{\numberline {3.1}Summary of Thesis Achievements}{21}
-\contentsline {section}{\numberline {3.2}Applications}{21}
-\contentsline {section}{\numberline {3.3}Future Work}{21}
-\contentsline {chapter}{Bibliography}{21}
+\contentsline {subsubsection}{Intuition Behind the Variational Autoencoder}{21}
+\contentsline {chapter}{\numberline {3}Conclusion}{25}
+\contentsline {section}{\numberline {3.1}Summary of Thesis Achievements}{25}
+\contentsline {section}{\numberline {3.2}Applications}{25}
+\contentsline {section}{\numberline {3.3}Future Work}{25}
+\contentsline {chapter}{Bibliography}{25}
