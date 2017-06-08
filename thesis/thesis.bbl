@@ -51,6 +51,10 @@ A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton.
 \newblock {\em Advances In Neural Information Processing Systems}, pages 1--9,
   2012.
 
+\bibitem{Li2016}
+F.-F. S.~U. Li, J.~S.~U. Johnson, and S.~S.~U. Yeung.
+\newblock {Convolutional Neural Networks for Visual Recognition}, 2016.
+
 \bibitem{Liou2008}
 C.~Y. Liou, J.~C. Huang, and W.~C. Yang.
 \newblock {Modeling word perception using the Elman network}.
