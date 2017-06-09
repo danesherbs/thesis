@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.24)  9 JUN 2017 10:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.24)  9 JUN 2017 19:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -258,10 +258,14 @@ Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count118
 ) (./blocked.sty)
 (./uhead.sty) (./boxit.sty) (./icthesis.sty)
-\c@definition=\count118
-\c@theorem=\count119
+\c@definition=\count119
+\c@theorem=\count120
 ) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
@@ -314,16 +318,16 @@ LaTeX Font Info:    ... okay on input line 8.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count120
+\scratchcounter=\count121
 \scratchdimen=\dimen142
 \scratchbox=\box30
-\nofMPsegments=\count121
-\nofMParguments=\count122
+\nofMPsegments=\count122
+\nofMParguments=\count123
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count123
+\MPscratchCnt=\count124
 \MPscratchDim=\dimen143
-\MPnumerator=\count124
-\makeMPintoPDFobject=\count125
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
 \everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -446,13 +450,13 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 
 ]
 
-LaTeX Warning: Citation `Dykeman2016' on page x undefined on input line 17.
-
-
 LaTeX Warning: Citation `Dykeman2016' on page x undefined on input line 18.
 
 
 LaTeX Warning: Citation `Dykeman2016' on page x undefined on input line 19.
+
+
+LaTeX Warning: Citation `Dykeman2016' on page x undefined on input line 20.
 
 )
 \tf@lof=\write5
@@ -537,42 +541,41 @@ LaTeX Warning: No positions in optional float specifier.
 [4 <./figures/introduction/DSRL_architecture-eps-converted-to.pdf> <./figures/i
 ntroduction/DSRL_raw_input.png>]) (./background/background.tex [5]
 Chapter 2.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6
+[6
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-[7]
-<./figures/background/eucledian_distance_a.png, id=93, 28.105pt x 28.105pt>
+<./figures/background/eucledian_distance_a.png, id=87, 28.105pt x 28.105pt>
 File: ./figures/background/eucledian_distance_a.png Graphic file (type png)
 
 <use ./figures/background/eucledian_distance_a.png>
 Package pdftex.def Info: ./figures/background/eucledian_distance_a.png used on 
-input line 38.
+input line 25.
 (pdftex.def)             Requested size: 123.82968pt x 123.84416pt.
 
-<./figures/background/eucledian_distance_c.png, id=94, 28.105pt x 28.105pt>
+<./figures/background/eucledian_distance_c.png, id=88, 28.105pt x 28.105pt>
 File: ./figures/background/eucledian_distance_c.png Graphic file (type png)
 
 <use ./figures/background/eucledian_distance_c.png>
 Package pdftex.def Info: ./figures/background/eucledian_distance_c.png used on 
-input line 43.
+input line 30.
 (pdftex.def)             Requested size: 123.82968pt x 123.84416pt.
 
-<./figures/background/eucledian_distance_b.png, id=95, 28.105pt x 28.105pt>
+<./figures/background/eucledian_distance_b.png, id=89, 28.105pt x 28.105pt>
 File: ./figures/background/eucledian_distance_b.png Graphic file (type png)
 
 <use ./figures/background/eucledian_distance_b.png>
 Package pdftex.def Info: ./figures/background/eucledian_distance_b.png used on 
-input line 48.
+input line 35.
 (pdftex.def)             Requested size: 123.82968pt x 123.84416pt.
- [8 <./figures/background/eucledian_distance_a.png> <./figures/background/eucle
-dian_distance_c.png> <./figures/background/eucledian_distance_b.png>]
+ [7 <./figures/background/eucledian_distance_a.png> <./figures/background/eucle
+dian_distance_c.png> <./figures/background/eucledian_distance_b.png>]) (./relat
+ed_work/related_work.tex
+[8]
+Chapter 3.
 Package epstopdf Info: Source file: <./figures/background/autoencoder_black_box
 _architecture.eps>
 (epstopdf)                    date: 2017-06-05 11:10:57
@@ -584,7 +587,7 @@ _architecture-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/autoe
 ncoder_black_box_architecture-eps-converted-to.pdf ./figures/background/autoenc
 oder_black_box_architecture.eps>
-(epstopdf)             \includegraphics on input line 69.
+(epstopdf)             \includegraphics on input line 17.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/autoencoder_black_box_architecture-eps-converted-to.pdf, 
@@ -595,10 +598,12 @@ pdf Graphic file (type pdf)
 <use ./figures/background/autoencoder_black_box_architecture-eps-converted-to.p
 df>
 Package pdftex.def Info: ./figures/background/autoencoder_black_box_architectur
-e-eps-converted-to.pdf used on input line 69.
+e-eps-converted-to.pdf used on input line 17.
 (pdftex.def)             Requested size: 452.18723pt x 80.86171pt.
- [9 <./figures/background/autoencoder_black_box_architecture-eps-converted-to.p
-df>]
+ [9
+
+ <./figures/background/autoencoder_black_box_architecture-eps-converted-to.pdf>
+]
 Package epstopdf Info: Source file: <./figures/background/autoencoder_architect
 ure.eps>
 (epstopdf)                    date: 2017-06-05 11:10:57
@@ -610,7 +615,7 @@ ure-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/autoe
 ncoder_architecture-eps-converted-to.pdf ./figures/background/autoencoder_archi
 tecture.eps>
-(epstopdf)             \includegraphics on input line 83.
+(epstopdf)             \includegraphics on input line 31.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/autoencoder_architecture-eps-converted-to.pdf, id=110, 47
@@ -620,7 +625,7 @@ c file (type pdf)
 
 <use ./figures/background/autoencoder_architecture-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/background/autoencoder_architecture-eps-conv
-erted-to.pdf used on input line 83.
+erted-to.pdf used on input line 31.
 (pdftex.def)             Requested size: 239.39378pt x 251.94063pt.
 
 <./figures/background/fully_connected_autoencoder_mnist.png, id=111, 380.8629pt
@@ -630,14 +635,14 @@ type png)
 
 <use ./figures/background/fully_connected_autoencoder_mnist.png>
 Package pdftex.def Info: ./figures/background/fully_connected_autoencoder_mnist
-.png used on input line 109.
+.png used on input line 57.
 (pdftex.def)             Requested size: 361.81769pt x 676.94925pt.
  [10 <./figures/background/autoencoder_architecture-eps-converted-to.pdf>]
 Overfull \vbox (27.66615pt too high) has occurred while \output is active []
 
 
 [11 <./figures/background/fully_connected_autoencoder_mnist.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
@@ -652,7 +657,7 @@ oder_architecture-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/convo
 lutional_autoencoder_architecture-eps-converted-to.pdf ./figures/background/con
 volutional_autoencoder_architecture.eps>
-(epstopdf)             \includegraphics on input line 121.
+(epstopdf)             \includegraphics on input line 69.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/convolutional_autoencoder_architecture-eps-converted-to.p
@@ -663,10 +668,10 @@ File: ./figures/background/convolutional_autoencoder_architecture-eps-converted
 <use ./figures/background/convolutional_autoencoder_architecture-eps-converted-
 to.pdf>
 Package pdftex.def Info: ./figures/background/convolutional_autoencoder_archite
-cture-eps-converted-to.pdf used on input line 121.
+cture-eps-converted-to.pdf used on input line 69.
 (pdftex.def)             Requested size: 511.91646pt x 113.22386pt.
 
-Overfull \hbox (28.21959pt too wide) in paragraph at lines 121--122
+Overfull \hbox (28.21959pt too wide) in paragraph at lines 69--70
  [][] 
  []
 
@@ -679,14 +684,14 @@ le (type png)
 
 <use ./figures/background/fully_convolutional_autoencoder_mnist.png>
 Package pdftex.def Info: ./figures/background/fully_convolutional_autoencoder_m
-nist.png used on input line 154.
+nist.png used on input line 102.
 (pdftex.def)             Requested size: 361.81769pt x 679.69551pt.
 
 Overfull \vbox (30.41241pt too high) has occurred while \output is active []
 
 
 [13 <./figures/background/fully_convolutional_autoencoder_mnist.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
@@ -694,13 +699,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
-Underfull \vbox (badness 2073) has occurred while \output is active []
+[17]
+Underfull \vbox (badness 1675) has occurred while \output is active []
 
  [18]
-Underfull \hbox (badness 10000) in paragraph at lines 301--303
+Underfull \hbox (badness 10000) in paragraph at lines 260--262
 
  []
 
@@ -715,7 +718,7 @@ er_naive-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
 tional_autoencoder_naive-eps-converted-to.pdf ./figures/background/variational_
 autoencoder_naive.eps>
-(epstopdf)             \includegraphics on input line 307.
+(epstopdf)             \includegraphics on input line 266.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/variational_autoencoder_naive-eps-converted-to.pdf, id=16
@@ -725,11 +728,14 @@ raphic file (type pdf)
 
 <use ./figures/background/variational_autoencoder_naive-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/background/variational_autoencoder_naive-eps
--converted-to.pdf used on input line 307.
+-converted-to.pdf used on input line 266.
 (pdftex.def)             Requested size: 110.21072pt x 162.15431pt.
 
-[19 <./figures/background/variational_autoencoder_naive-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 317--319
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 276--278
 
  []
 
@@ -744,20 +750,27 @@ er_reparameterisation_trick-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
 tional_autoencoder_reparameterisation_trick-eps-converted-to.pdf ./figures/back
 ground/variational_autoencoder_reparameterisation_trick.eps>
-(epstopdf)             \includegraphics on input line 323.
+(epstopdf)             \includegraphics on input line 282.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/variational_autoencoder_reparameterisation_trick-eps-conv
-erted-to.pdf, id=174, 244.915pt x 360.34625pt>
+erted-to.pdf, id=169, 244.915pt x 360.34625pt>
 File: ./figures/background/variational_autoencoder_reparameterisation_trick-eps
 -converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/background/variational_autoencoder_reparameterisation_trick-eps-
 converted-to.pdf>
 Package pdftex.def Info: ./figures/background/variational_autoencoder_reparamet
-erisation_trick-eps-converted-to.pdf used on input line 323.
+erisation_trick-eps-converted-to.pdf used on input line 282.
 (pdftex.def)             Requested size: 110.21072pt x 162.15431pt.
- [20 <./figures/background/variational_autoencoder_reparameterisation_trick-eps
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[20 <./figures/background/variational_autoencoder_naive-eps-converted-to.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21 <./figures/background/variational_autoencoder_reparameterisation_trick-eps
 -converted-to.pdf>]
 Package epstopdf Info: Source file: <./figures/background/variational_autoencod
 er_latent_space_colour_0_with_mnist_updated.eps>
@@ -771,25 +784,25 @@ er_latent_space_colour_0_with_mnist_updated-eps-converted-to.pdf>
 tional_autoencoder_latent_space_colour_0_with_mnist_updated-eps-converted-to.pd
 f ./figures/background/variational_autoencoder_latent_space_colour_0_with_mnist
 _updated.eps>
-(epstopdf)             \includegraphics on input line 341.
+(epstopdf)             \includegraphics on input line 318.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/variational_autoencoder_latent_space_colour_0_with_mnist_
-updated-eps-converted-to.pdf, id=183, 336.25626pt x 833.1125pt>
+updated-eps-converted-to.pdf, id=186, 336.25626pt x 833.1125pt>
 File: ./figures/background/variational_autoencoder_latent_space_colour_0_with_m
 nist_updated-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/background/variational_autoencoder_latent_space_colour_0_with_mn
 ist_updated-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/background/variational_autoencoder_latent_sp
-ace_colour_0_with_mnist_updated-eps-converted-to.pdf used on input line 341.
+ace_colour_0_with_mnist_updated-eps-converted-to.pdf used on input line 318.
 (pdftex.def)             Requested size: 235.37776pt x 583.17477pt.
 
 
-LaTeX Warning: Citation `Dykeman2016' on page 21 undefined on input line 342.
+LaTeX Warning: Citation `Dykeman2016' on page 22 undefined on input line 319.
 
 
-LaTeX Warning: Citation `Dykeman2016' on page 21 undefined on input line 342.
+LaTeX Warning: Citation `Dykeman2016' on page 22 undefined on input line 319.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -806,93 +819,108 @@ er_latent_space_unit_gaussian_with_mnist-eps-converted-to.pdf>
 tional_autoencoder_latent_space_unit_gaussian_with_mnist-eps-converted-to.pdf .
 /figures/background/variational_autoencoder_latent_space_unit_gaussian_with_mni
 st.eps>
-(epstopdf)             \includegraphics on input line 349.
+(epstopdf)             \includegraphics on input line 326.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/variational_autoencoder_latent_space_unit_gaussian_with_m
-nist-eps-converted-to.pdf, id=184, 342.27875pt x 593.21625pt>
+nist-eps-converted-to.pdf, id=187, 342.27875pt x 593.21625pt>
 File: ./figures/background/variational_autoencoder_latent_space_unit_gaussian_w
 ith_mnist-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/background/variational_autoencoder_latent_space_unit_gaussian_wi
 th_mnist-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/background/variational_autoencoder_latent_sp
-ace_unit_gaussian_with_mnist-eps-converted-to.pdf used on input line 349.
+ace_unit_gaussian_with_mnist-eps-converted-to.pdf used on input line 326.
 (pdftex.def)             Requested size: 239.59348pt x 415.24854pt.
 
 
-LaTeX Warning: Citation `Dykeman2016' on page 21 undefined on input line 350.
+LaTeX Warning: Citation `Dykeman2016' on page 22 undefined on input line 327.
 
 
-LaTeX Warning: Citation `Dykeman2016' on page 21 undefined on input line 350.
+LaTeX Warning: Citation `Dykeman2016' on page 22 undefined on input line 327.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[21] [22 <./figures/background/variational_autoencoder_latent_space_colour_0_wi
-th_mnist_updated-eps-converted-to.pdf>] [23 <./figures/background/variational_a
+[22] [23 <./figures/background/variational_autoencoder_latent_space_colour_0_wi
+th_mnist_updated-eps-converted-to.pdf>] [24 <./figures/background/variational_a
 utoencoder_latent_space_unit_gaussian_with_mnist-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./figures/background/variational_autoencod
 er_latent_space_adding_latent_spaces_updated.eps>
-(epstopdf)                    date: 2017-06-09 10:33:32
-(epstopdf)                    size: 878955 bytes
+(epstopdf)                    date: 2017-06-09 11:13:12
+(epstopdf)                    size: 878772 bytes
 (epstopdf)             Output file: <./figures/background/variational_autoencod
 er_latent_space_adding_latent_spaces_updated-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-06-09 11:13:17
+(epstopdf)                    size: 1140232 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
 tional_autoencoder_latent_space_adding_latent_spaces_updated-eps-converted-to.p
 df ./figures/background/variational_autoencoder_latent_space_adding_latent_spac
 es_updated.eps>
-(epstopdf)             \includegraphics on input line 358.
-runsystem(repstopdf --outfile=./figures/background/variational_autoencoder_late
-nt_space_adding_latent_spaces_updated-eps-converted-to.pdf ./figures/background
-/variational_autoencoder_latent_space_adding_latent_spaces_updated.eps)...execu
-ted safely (allowed).
-
-Package epstopdf Info: Result file: <./figures/background/variational_autoencod
-er_latent_space_adding_latent_spaces_updated-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-09 10:33:51
-(epstopdf)                    size: 1139582 bytes.
+(epstopdf)             \includegraphics on input line 335.
+Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/variational_autoencoder_latent_space_adding_latent_spaces
-_updated-eps-converted-to.pdf, id=217, 1390.19376pt x 830.10126pt>
+_updated-eps-converted-to.pdf, id=220, 1390.19376pt x 830.10126pt>
 File: ./figures/background/variational_autoencoder_latent_space_adding_latent_s
 paces_updated-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/background/variational_autoencoder_latent_space_adding_latent_sp
 aces_updated-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/background/variational_autoencoder_latent_sp
-ace_adding_latent_spaces_updated-eps-converted-to.pdf used on input line 358.
+ace_adding_latent_spaces_updated-eps-converted-to.pdf used on input line 335.
 (pdftex.def)             Requested size: 625.58142pt x 373.54211pt.
 
 
-LaTeX Warning: Citation `Dykeman2016' on page 24 undefined on input line 359.
+LaTeX Warning: Citation `Dykeman2016' on page 25 undefined on input line 336.
 
 
-LaTeX Warning: Citation `Dykeman2016' on page 24 undefined on input line 359.
+LaTeX Warning: Citation `Dykeman2016' on page 25 undefined on input line 336.
 
-[24
+[25
 
  <./figures/background/variational_autoencoder_latent_space_adding_latent_space
-s_updated-eps-converted-to.pdf>]) (./conclusion/conclusion.tex
-Chapter 3.
-) (./thesis.bbl [25
+s_updated-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `Higgins2016' on page 26 undefined on input line 349.
 
 
-] [26
+LaTeX Warning: Citation `Creswell2016' on page 26 undefined on input line 365.
 
-]) [27] (./thesis.aux)
+
+LaTeX Warning: Citation `Rodriguez2016' on page 26 undefined on input line 373.
+
+
+) (./method/method.tex [26
+
+]
+Chapter 4.
+) (./results/results.tex [27
+
+]
+Chapter 5.
+) (./discussion/discussion.tex [28
+
+]
+Chapter 6.
+) (./conclusion/conclusion.tex [29
+
+]
+Chapter 7.
+) (./thesis.bbl [30
+
+] [31
+
+]) [32] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 5126 strings out of 494353
- 78924 string characters out of 6170043
- 143828 words of memory out of 5000000
- 8267 multiletter control sequences out of 15000+600000
+ 5341 strings out of 494353
+ 81580 string characters out of 6170043
+ 245725 words of memory out of 5000000
+ 8462 multiletter control sequences out of 15000+600000
  15405 words of font info for 59 fonts, out of 8000000 for 9000
  452 hyphenation exceptions out of 8191
  40i,12n,40p,908b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -917,10 +945,10 @@ ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on thesis.pdf (39 pages, 5262830 bytes).
+Output written on thesis.pdf (44 pages, 5271544 bytes).
 PDF statistics:
- 313 PDF objects out of 1000 (max. 8388607)
- 198 compressed objects within 2 object streams
+ 330 PDF objects out of 1000 (max. 8388607)
+ 209 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,17 +4,21 @@
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Overview of deep symbolic reinforcement learning system architecture. \textbf {A}: The neural back end maps high-dimensional raw input data to a compositionally structured symbolic representation. \textbf {B}: The compositionally structured symbolic representation. \textbf {C}: Reinforcement learning of mapping from symbolic representation to action with maximum expected reward over time. \textit {Source: Garnelo et al.} \cite {Garnelo2016}.\relax }}{4}
 \contentsline {figure}{\numberline {1.4}{\ignorespaces A toy example of a raw high-dimensional input.\relax }}{4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces \relax }}{8}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces \relax }}{8}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces \relax }}{8}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces A black-box description of an autoencoder. The autoencoder learns the identity function, and in turn, the encoder and decoder learn suitable encoding and decoding algorithms respectively.\relax }}{9}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces An example architecture of a fully-connected autoencoder. The latent space is constrained by having fewer neurons than the input and output layers.\relax }}{10}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces A collection of images from the MNIST data set and their respective reconstructions using the fully-connected autoencoder specified in Table 2.1\hbox {}. The original MNIST images are in odd columns, and their reconstructions to their immediate right.\relax }}{11}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces An example architecture of a fully-convolutional autoencoder. The latent space is constrained by reducing the number and/or size of the filters.\relax }}{12}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces A collection of images from the MNIST data set and their respective reconstructions using the fully-convolutional autoencoder specified in Table 2.2\hbox {}. The original MNIST images are in odd columns, and their reconstructions to their immediate right.\relax }}{13}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces A na\"{i}ve implementation of the variational autoencoder. The input $\bm {x}$ is mapped to intermediate layers taking the values of $\bm {\mu }$ and $\bm {\sigma }^2$. The latent variable $\bm {z}$ is then sampled from the probabilistic encoder $\bm {z} \sim q_{\bm {\phi }}(\bm {z} | \bm {x})$. Finally $\bm {z}$ is mapped back to the input dimension to give reconstruction $\bm {\mathaccentV {tilde}07E{x}}$.\relax }}{19}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces A viable implementation of the variational autoencoder. Sampling from the probabilistic encoder $q_{\bm {\phi }}(\bm {z} | \bm {x})$ is simulated by evaluating $\bm {z} = g_{\bm {\phi }}(\bm {x}, \bm {\epsilon }) = \bm {\mu } + \bm {\sigma } \odot \bm {\epsilon }$.\relax }}{20}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces The encoder takes a data point and returns a normal distribution (orange); some samples of which are shown (blue). A sample is drawn from the normal distribution (red) and decoded. \cite {Dykeman2016}\relax }}{22}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Caption. \cite {Dykeman2016}\relax }}{23}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces \vspace *{-20mm}The sum over the latent space distributions of digits $0, 1, \dots , 9$ approximates the multivariate isotropic Gaussian. \cite {Dykeman2016}\relax }}{24}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \relax }}{7}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \relax }}{7}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \relax }}{7}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A black-box description of an autoencoder. The autoencoder learns the identity function, and in turn, the encoder and decoder learn suitable encoding and decoding algorithms respectively.\relax }}{9}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces An example architecture of a fully-connected autoencoder. The latent space is constrained by having fewer neurons than the input and output layers.\relax }}{10}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces A collection of images from the MNIST data set and their respective reconstructions using the fully-connected autoencoder specified in Table 3.1\hbox {}. The original MNIST images are in odd columns, and their reconstructions to their immediate right.\relax }}{11}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces An example architecture of a fully-convolutional autoencoder. The latent space is constrained by reducing the number and/or size of the filters.\relax }}{12}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces A collection of images from the MNIST data set and their respective reconstructions using the fully-convolutional autoencoder specified in Table 3.2\hbox {}. The original MNIST images are in odd columns, and their reconstructions to their immediate right.\relax }}{13}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces A na\"{i}ve implementation of the variational autoencoder. The input $\bm {x}$ is mapped to intermediate layers taking the values of $\bm {\mu }$ and $\bm {\sigma }^2$. The latent variable $\bm {z}$ is then sampled from the probabilistic encoder $\bm {z} \sim q_{\bm {\phi }}(\bm {z} | \bm {x})$. Finally $\bm {z}$ is mapped back to the input dimension to give reconstruction $\bm {\mathaccentV {tilde}07E{x}}$.\relax }}{20}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces A viable implementation of the variational autoencoder. Sampling from the probabilistic encoder $q_{\bm {\phi }}(\bm {z} | \bm {x})$ is simulated by evaluating $\bm {z} = g_{\bm {\phi }}(\bm {x}, \bm {\epsilon }) = \bm {\mu } + \bm {\sigma } \odot \bm {\epsilon }$.\relax }}{21}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces The encoder takes a data point and returns a normal distribution (orange); some samples of which are shown (blue). A sample is drawn from the normal distribution (red) and decoded. \cite {Dykeman2016}\relax }}{23}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces The prior distribution should approximate the standard multivariate Gaussian $\mathcal {N}(\bm {0}, \bm {I})$. Samples of the prior are shown (yellow); two of which are decoded (red and blue). \cite {Dykeman2016}\relax }}{24}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces \vspace *{-20mm}The sum over the latent space distributions of digits $0, 1, \dots , 9$ approximates the multivariate isotropic Gaussian. \cite {Dykeman2016}\relax }}{25}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
