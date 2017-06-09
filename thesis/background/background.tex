@@ -327,16 +327,20 @@ where $\odot$ represents the element-wise product. This is a reparameterisation 
 
 \newpage
 \subsubsection{Intuition Behind the Variational Autoencoder}
-In this section we'll develop the intuition behind the variational autoencoder.
+In this section we'll develop the intuition behind the variational autoencoder. We've been considering the data set $X = \{ \vec{x}^{(i)} \}_{i=1}^{N}$. In this section we'll take $X$ to be the MNIST data set (the vector $\vec{x^{(i)}}$ now corresponds to a flattened MNIST image). For visualisatoin purposes, we'll also take the latent space dimension $k = 2$, that is, $\vec{z} = (z_1, z_2)$.
 
-We've been considering the data set $X = \{ \vec{x}^{(i)} \}_{i=1}^{N}$. In this section we'll take $X$ to be the MNIST data set (the vector $\vec{x^{(i)}}$ now corresponds to a flattened MNIST image). 
+The probabilistic encoder (\ref{eq:approximate_posterior_gaussian})
+\[
+q_{\vec{\phi}}(\vec{z} | \vec{x}^{(i)}) = \mathcal{N}(\vec{\mu}^{(i)}, \vec{\sigma}^{2(i)}\vec{I})
+\]
+describes where the latent variable $\vec{z}$ lies for data point $\vec{x}^{(i)}$. In Figure (\ref{fig:variational_autoencoder_latent_space_colour_0_with_mnist_updated}), two mappings are shown from 
 
 \begin{figure}[h!]
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.7]{background/variational_autoencoder_latent_space_colour_0_with_mnist.eps}
-\caption{Caption. \cite{Dykeman2016}}
-\label{fig:variational_autoencoder_latent_space_colour_0_with_mnist}
+\includegraphics[scale=0.7]{background/variational_autoencoder_latent_space_colour_0_with_mnist_updated.eps}
+\caption{The encoder takes a data point and returns a normal distribution (orange); some samples of which are shown (blue). A sample is drawn from the normal distribution (red) and decoded. \cite{Dykeman2016}}
+\label{fig:variational_autoencoder_latent_space_colour_0_with_mnist_updated}
 \end{figure}
 
 \begin{figure}[h!]
@@ -351,8 +355,8 @@ We've been considering the data set $X = \{ \vec{x}^{(i)} \}_{i=1}^{N}$. In this
 \begin{figure}[h!]
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.45]{background/variational_autoencoder_latent_space_adding_latent_spaces.eps}
+\includegraphics[scale=0.45]{background/variational_autoencoder_latent_space_adding_latent_spaces_updated.eps}
 \caption{\vspace*{-20mm}The sum over the latent space distributions of digits $0, 1, \dots, 9$ approximates the multivariate isotropic Gaussian. \cite{Dykeman2016}}
-\label{fig:variational_autoencoder_latent_space_adding_latent_spaces}
+\label{fig:variational_autoencoder_latent_space_adding_latent_spaces_updated}
 \end{figure}
 \end{landscape}
