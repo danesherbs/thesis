@@ -113,7 +113,17 @@ Reshape & (1, 28, 28) \\ \bottomrule
 
 \subsection{Fully-Convolutional Autoencoders}
 
-In fully-convolutional feed-forward neural networks, we may place a constraint on the latent space by reducing the number and/or size of the filters, as shown in Figure \ref{fig:convolutional_autoencoder_architecture}. To compare the fully-convolutional autoencoder to the fully-connected, we'll train the architecture in Table \ref{tab:convolutional_autoencoder_architecture} on MNIST. As before, we'll compare the reconstructions to the originals, which can be found in Figure \ref{fig:convolutional_autoencoder_mnist}.
+In fully-convolutional feed-forward neural networks, we may place a constraint on the latent space by reducing the number and/or size of the filters, as shown in Figure \ref{fig:convolutional_autoencoder_architecture}. To compare the fully-convolutional autoencoder to the fully-connected, we'll train the architecture in Table \ref{tab:convolutional_autoencoder_architecture} on MNIST. As before, we'll compare the reconstructions to the originals, which can be found in Figure \ref{fig:convolutional_autoencoder_mnist}.\\
+
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.6]{background/convolutional_autoencoder_architecture.eps}
+\caption{An example architecture of a fully-convolutional autoencoder. The latent space is constrained by reducing the number and/or size of the filters.}
+\label{fig:convolutional_autoencoder_architecture}
+\end{figure}
+
+\vspace{8mm}
 
 \begin{table}[h!]
 \centering
@@ -134,16 +144,6 @@ Conv2DTranspose & (1, 28, 28) \\ \bottomrule
 \caption{A simple fully-convolutional autoencoder with 2D convolutions and max pooling, plus the corresponding deconvolutional layers. After 15 epochs, the validation score was recorded to be $64.89$.}
 \label{tab:convolutional_autoencoder_architecture}
 \end{table}
-
-\vspace{8mm}
-
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\includegraphics[scale=0.6]{background/convolutional_autoencoder_architecture.eps}
-\caption{An example architecture of a fully-convolutional autoencoder. The latent space is constrained by reducing the number and/or size of the filters.}
-\label{fig:convolutional_autoencoder_architecture}
-\end{figure}
 
 Convolutional layers have been shown to be effective in tasks with images as input \cite{Krizhevsky2012, Zeiler2014, Szegedy2015}. This is because spatial information is preserved in convolutional layers, and the number of trainable parameters is far less in a convolutional layer than it is in a fully connected layer. Convolutional layers will be used from here on as we'll be using images as input.
 
@@ -327,13 +327,15 @@ where $\odot$ represents the element-wise product. This is a reparameterisation 
 
 \newpage
 \subsubsection{Intuition Behind the Variational Autoencoder}
-In this section we'll develop the intuition behind the variational autoencoder.\\
+In this section we'll develop the intuition behind the variational autoencoder.
+
+We've been considering the data set $X = \{ \vec{x}^{(i)} \}_{i=1}^{N}$. In this section we'll take $X$ to be the MNIST data set (the vector $\vec{x^{(i)}}$ now corresponds to a flattened MNIST image). 
 
 \begin{figure}[h!]
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.7]{background/variational_autoencoder_latent_space_colour_0_with_mnist.eps}
-\caption{A viable implementation of the variational autoencoder. Sampling from the probabilistic encoder $q_{\vec{\phi}}(\vec{z} | \vec{x})$ is simulated by evaluating $\vec{z} = g_{\vec{\phi}}(\vec{x}, \vec{\epsilon}) = \vec{\mu} + \vec{\sigma} \odot \vec{\epsilon}$.}
+\caption{Caption. \cite{Dykeman2016}}
 \label{fig:variational_autoencoder_latent_space_colour_0_with_mnist}
 \end{figure}
 
@@ -341,7 +343,7 @@ In this section we'll develop the intuition behind the variational autoencoder.\
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.7]{background/variational_autoencoder_latent_space_unit_gaussian_with_mnist.eps}
-\caption{A viable implementation of the variational autoencoder. Sampling from the probabilistic encoder $q_{\vec{\phi}}(\vec{z} | \vec{x})$ is simulated by evaluating $\vec{z} = g_{\vec{\phi}}(\vec{x}, \vec{\epsilon}) = \vec{\mu} + \vec{\sigma} \odot \vec{\epsilon}$.}
+\caption{Caption. \cite{Dykeman2016}}
 \label{fig:variational_autoencoder_latent_space_unit_gaussian_with_mnist}
 \end{figure}
 
@@ -350,7 +352,7 @@ In this section we'll develop the intuition behind the variational autoencoder.\
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.45]{background/variational_autoencoder_latent_space_adding_latent_spaces.eps}
-\caption{\vspace*{-20mm}The sum over the latent space distributions of digits $0, 1, \dots, 9$ approximates the multivariate isotropic Gaussian.}
+\caption{\vspace*{-20mm}The sum over the latent space distributions of digits $0, 1, \dots, 9$ approximates the multivariate isotropic Gaussian. \cite{Dykeman2016}}
 \label{fig:variational_autoencoder_latent_space_adding_latent_spaces}
 \end{figure}
 \end{landscape}
