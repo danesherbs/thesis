@@ -435,7 +435,7 @@ Deep reinforcement learning has been remarkably successful in mastering tasks to
 \subsection{Pre-processing Stella Frames}
 
 \subsubsection{Sprite Rendering in Stella}
-Stella generates Atari frames of size $210 \times 160$ with a 128 colour palette. Atari 2600 games can only store a limited number of sprites in the game at once due to the limitations in hardware during its development \cite{Mnih2015}. This is an issue as some objects that appear in one frame fail to appear in the next. To solve this lack of object persistence, even and odd frames are combined by taking the maximum over each channel (RGB). By taking the maximum, we ensure that any object present in one frame is also present in the other. 
+Stella generates Atari frames of size $210 \times 160$ with a 128 colour palette. Atari 2600 games can only store a limited number of sprites per frame due to the limitations in hardware during its development \cite{Mnih2015}. This is an issue as some objects that appear in one frame fail to appear in the next. To solve this lack of object persistence, even and odd frames are combined by taking the maximum over each channel (RGB). By taking the maximum, we ensure that any object present in one frame is also present in the other. 
 
 \begin{figure*}
 \centering
