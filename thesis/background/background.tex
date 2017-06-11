@@ -2,10 +2,13 @@
 
 \label{ch:background}
 
-\section{Introduction}
-
 We will cover how deep symbolic reinforcement learning extracts symbolic representations from raw input data, which will motivate a discussion of loss functions and the introduction of autoencoders. Seeing the limitations of the current approach in extracting symbolic representations, we can appreciate the recent development of $\beta$-VAE, a variant of the variational autoencoder used to learn disentangled representations. Finally, we can conclude by mentioning less technical matters, such as libraries and hardware used.
 
+%
+%
+%
+%
+%
 \section{Loss functions}
 
 The idea of image reconstruction plays a vital role throughout this project. Although it's possible to qualitatively compare the original to its reconstruction, it's important to be able to quantify the difference, which lends itself to automation. The loss function will quantify how similar two images are.
@@ -45,3 +48,31 @@ Consider a single black-and-white pixel with probability $p(0) = c$ of being $0$
 This is done by computing the binary cross-entropy between $p$ and $q$, which is defined by $$H(p,q) = -c\log\hat{c} - (1-c)\log(1-\hat{c})$$ To see how we may use this as a similarity measure among images, consider a $1\times1$ image. Normalising this image yields a pixel value in the interval $[0, 1]$, which may now be interpreted as a probability, corresponding to $c$ above. In the normalised reconstructed image, the pixel value corresponds to $\hat{c}$. We simply compute the binary cross-entropy to measure the similarity of these two distributions, and in turn, the similarity of the images themselves! (Note: we could have also assigned the probabilities to $1-y$ and $1-\hat{y}$ by symmetry of binary cross-entropy).
 
 For images larger than $1 \times 1$, we may take the component-wise binary cross-entropy, then, for example, average the components. How the component-wise binary cross-entropies are suitably combined to give a single floating point number will vary from problem to problem.
+
+
+
+%
+%
+%
+%
+%
+\section{Stella}
+Video games are becoming increasingly popular in the generation of data sets for machine learning purposes. One reason for this is that they do not inherit many operational drawbacks from real world data, such as noise, the stability of the camera or the observation of rare circumstances (the video game may just be queried for rare cases) \cite{Zsolnai-Feher2016, Richter2016}.
+
+
+%
+%
+%
+%
+%
+\section{Arcade Learning Environment}
+
+
+
+
+%
+%
+%
+%
+%
+\section{Keras}

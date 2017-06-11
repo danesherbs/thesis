@@ -6,6 +6,8 @@
 \citation{Dykeman2016}
 \citation{Dykeman2016}
 \citation{Dykeman2016}
+\citation{Chen2016}
+\citation{Thiagarajan2016}
 \citation{Knight2016}
 \citation{Darrach}
 \citation{Reingold2001}
@@ -42,17 +44,21 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{ch:background}{{2}{6}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Introduction}{6}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Loss functions}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Loss functions}{6}}
 \citation{Doersch2016}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Euclidean Distance}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Euclidean Distance}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces \relax }}{7}}
 \newlabel{fig:eucledian_distance_a}{{2.1}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces \relax }}{7}}
 \newlabel{fig:eucledian_distance_c}{{2.2}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces \relax }}{7}}
 \newlabel{fig:eucledian_distance_b}{{2.3}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Binary Cross-Entropy}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Binary Cross-Entropy}{7}}
+\citation{Zsolnai-Feher2016}
+\citation{Richter2016}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Stella}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Arcade Learning Environment}{8}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Keras}{8}}
 \citation{Liou2008}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Related Work}{9}}
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -123,54 +129,103 @@
 \newlabel{fig:variational_autoencoder_latent_space_unit_gaussian_with_mnist}{{3.9}{24}}
 \citation{Dykeman2016}
 \citation{Dykeman2016}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces \vspace  *{-20mm}The sum over the latent space distributions of digits $0, 1, \dots  , 9$ approximates the multivariate isotropic Gaussian. \cite  {Dykeman2016}\relax }}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces \vspace  *{-20mm}The sum over the latent space distributions of all data points $\bm  {x}^{(i)}$ approximates the multivariate isotropic Gaussian. \cite  {Dykeman2016}\relax }}{25}}
 \newlabel{fig:variational_autoencoder_latent_space_adding_latent_spaces_updated}{{3.10}{25}}
 \citation{Higgins2016}
+\citation{Thiagarajan2016}
+\citation{Thiagarajan2016}
+\citation{Schmidhuber1992}
+\citation{Desjardins2012}
+\citation{Tang2013}
+\citation{Cohen2014}
+\citation{Chen2016}
+\citation{Thiagarajan2016}
+\citation{Chen2016}
+\citation{Chen2016}
+\citation{Chen2016}
+\citation{Thiagarajan2016}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Disentangled Representations}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Unsupervised Learning of Generative Factors}{26}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}InfoGAN}{26}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}$\beta $-VAE}{26}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces InfoGAN convincingly learns the underlying generative factors in the 3D face data set. Rows correspond to a data point and columns the value of the latent variable (varied from $-1$ to $1$). Each section (a), (b), (c) and (d) consider a different latent variable. \cite  {Chen2016}\relax }}{27}}
+\newlabel{fig:info_gan_3d_face_dataset}{{3.11}{27}}
+\@writefile{toc}{\contentsline {subsubsection}{Derivation}{27}}
+\newlabel{eq:beta_vae_optimisation_problem}{{3.35}{28}}
+\citation{Thiagarajan2016}
+\citation{Thiagarajan2016}
+\citation{Mnih2015}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces A comparison between InfoGAN, $\beta $-VAE and VAE on the 3D face data set for $\beta = 20$. Different latent variables are varied for sections (a), (b) and (c). All models learnt lighting and elevation, but only InfoGAN and $\beta $-VAE managed to continuously vary the azimuth. \cite  {Thiagarajan2016}\relax }}{29}}
+\newlabel{fig:beta_vae_3d_face_dataset_comparison}{{3.12}{29}}
 \citation{Mnih2015}
 \citation{Creswell2016}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Human-Level Control Through Deep Reinforcement Learning}{30}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Pre-processing Stella Frames}{30}}
+\@writefile{toc}{\contentsline {subsubsection}{Sprite Rendering in Stella}{30}}
+\@writefile{toc}{\contentsline {subsubsection}{Extracting Luminescence}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces A collection of frames captured from Space Invaders emulated on Stella. \textbf  {Left column:} an even frame. \textbf  {Middle column:} the (odd) frame following. \textbf  {Right column:} Combining the even and odd frames by taking the maximal value over each channel (RGB). Clearly the bullets visible in one frame fail to persist in the next. As discussed, this is due to the limited number of sprites Atari 2600 can load in a single frame.\relax }}{31}}
+\newlabel{fig:even_and_odd_frames_space_invaders}{{3.13}{31}}
 \citation{Rodriguez2016}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Early Visual Concept Learning with Unsupervised Deep Learning}{26}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Human-Level Control Through Deep Reinforcement Learning}{26}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Improving Sampling from Generative Autoencoders with Markov Chains}{26}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Regularizing CNNs with Locally Constrained Decorrelations}{26}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Method}{27}}
+\@writefile{toc}{\contentsline {subsubsection}{Cropping}{32}}
+\@writefile{toc}{\contentsline {subsubsection}{File Formats}{32}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Improving Sampling from Generative Autoencoders with Markov Chains}{32}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Regularizing CNNs with Locally Constrained Decorrelations}{32}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Method}{33}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:method}{{4}{27}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Results}{28}}
+\newlabel{ch:method}{{4}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Psuedo-Dense Latent Space}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Latent Image}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Winner Takes All}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Orthogonal Convolutions}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Separating Colour Spaces}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Average Filters}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.7}Average-Weighted Filters}{33}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Results}{34}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:Results}{{5}{28}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{29}}
+\newlabel{ch:Results}{{5}{34}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{35}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:Discussion}{{6}{29}}
+\newlabel{ch:Discussion}{{6}{35}}
 \bibstyle{abbrv}
 \bibdata{library}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{30}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{36}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:conclusions}{{7}{30}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{30}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Applications}{30}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Future Work}{30}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{30}}
-\bibcite{Blei2016}{1}
-\bibcite{Blei2011}{2}
+\newlabel{ch:conclusions}{{7}{36}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{36}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Applications}{36}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Future Work}{36}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{36}}
+\bibcite{Blei2011}{1}
+\bibcite{Blei2016}{2}
 \bibcite{Burnham2002}{3}
-\bibcite{Darrach}{4}
-\bibcite{Doersch2016}{5}
-\bibcite{Garnelo2016}{6}
-\bibcite{Hutter2005}{7}
-\bibcite{Kingma2014}{8}
-\bibcite{Knight2016}{9}
-\bibcite{Krizhevsky2012}{10}
-\bibcite{Li2016}{11}
-\bibcite{Liou2008}{12}
-\bibcite{Mnih2015}{13}
-\bibcite{Ormerod2016}{14}
-\bibcite{Reingold2001}{15}
-\bibcite{Rosen2012}{16}
-\bibcite{Silver2016}{17}
-\bibcite{Szegedy2015}{18}
-\bibcite{Zeiler2014}{19}
+\bibcite{Chen2016}{4}
+\bibcite{Cohen2014}{5}
+\bibcite{Creswell2016}{6}
+\bibcite{Darrach}{7}
+\bibcite{Desjardins2012}{8}
+\bibcite{Doersch2016}{9}
+\bibcite{Dykeman2016}{10}
+\bibcite{Garnelo2016}{11}
+\bibcite{Higgins2016}{12}
+\bibcite{Hutter2005}{13}
+\bibcite{Kingma2014}{14}
+\bibcite{Knight2016}{15}
+\bibcite{Krizhevsky2012}{16}
+\bibcite{Li2016}{17}
+\bibcite{Liou2008}{18}
+\bibcite{Mnih2015}{19}
+\bibcite{Ormerod2016}{20}
+\bibcite{Reingold2001}{21}
+\bibcite{Richter2016}{22}
+\bibcite{Rosen2012}{23}
+\bibcite{Schmidhuber1992}{24}
+\bibcite{Silver2016}{25}
+\bibcite{Szegedy2015}{26}
+\bibcite{Tang2013}{27}
+\bibcite{Thiagarajan2016}{28}
+\bibcite{Zeiler2014}{29}
+\bibcite{Zsolnai-Feher2016}{30}
