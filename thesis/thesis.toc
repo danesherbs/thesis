@@ -9,43 +9,60 @@
 \contentsline {subsection}{\numberline {2.1.2}Binary Cross-Entropy}{7}
 \contentsline {section}{\numberline {2.2}Stella}{8}
 \contentsline {section}{\numberline {2.3}Arcade Learning Environment}{8}
-\contentsline {section}{\numberline {2.4}Keras}{8}
-\contentsline {chapter}{\numberline {3}Related Work}{9}
-\contentsline {section}{\numberline {3.1}Autoencoders}{9}
-\contentsline {subsection}{\numberline {3.1.1}Fully-Connected Autoencoders}{10}
-\contentsline {subsection}{\numberline {3.1.2}Fully-Convolutional Autoencoders}{12}
-\contentsline {section}{\numberline {3.2}Variational Autoencoders}{14}
-\contentsline {subsection}{\numberline {3.2.1}A Probabilistic Perspective}{14}
-\contentsline {subsection}{\numberline {3.2.2}Overcoming the Intractable Posterior}{15}
-\contentsline {subsection}{\numberline {3.2.3}Finding a Suitable Loss Function: the ELBO}{15}
-\contentsline {subsection}{\numberline {3.2.4}Writing the ELBO in Closed-Form}{17}
-\contentsline {subsection}{\numberline {3.2.5}Implementing the Variational Autoencoder}{19}
-\contentsline {subsection}{\numberline {3.2.6}Intuition Behind the Variational Autoencoder}{21}
-\contentsline {section}{\numberline {3.3}Disentangled Representations}{26}
-\contentsline {section}{\numberline {3.4}Unsupervised Learning of Generative Factors}{26}
-\contentsline {subsection}{\numberline {3.4.1}InfoGAN}{26}
-\contentsline {subsection}{\numberline {3.4.2}$\beta $-VAE}{26}
-\contentsline {subsubsection}{Derivation}{27}
-\contentsline {section}{\numberline {3.5}Human-Level Control Through Deep Reinforcement Learning}{30}
-\contentsline {subsection}{\numberline {3.5.1}Pre-processing Stella Frames}{30}
-\contentsline {subsubsection}{Sprite Rendering in Stella}{30}
-\contentsline {subsubsection}{Extracting Luminescence}{30}
-\contentsline {subsubsection}{Cropping}{32}
-\contentsline {subsubsection}{File Formats}{32}
-\contentsline {section}{\numberline {3.6}Improving Sampling from Generative Autoencoders with Markov Chains}{32}
-\contentsline {section}{\numberline {3.7}Regularizing CNNs with Locally Constrained Decorrelations}{32}
-\contentsline {chapter}{\numberline {4}Method}{33}
-\contentsline {section}{\numberline {4.1}Psuedo-Dense Latent Space}{33}
-\contentsline {section}{\numberline {4.2}Latent Image}{33}
-\contentsline {section}{\numberline {4.3}Winner Takes All}{33}
-\contentsline {section}{\numberline {4.4}Orthogonal Convolutions}{33}
-\contentsline {section}{\numberline {4.5}Separating Colour Spaces}{33}
-\contentsline {section}{\numberline {4.6}Average Filters}{33}
-\contentsline {section}{\numberline {4.7}Average-Weighted Filters}{33}
-\contentsline {chapter}{\numberline {5}Results}{34}
-\contentsline {chapter}{\numberline {6}Discussion}{35}
-\contentsline {chapter}{\numberline {7}Conclusion}{36}
-\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{36}
-\contentsline {section}{\numberline {7.2}Applications}{36}
-\contentsline {section}{\numberline {7.3}Future Work}{36}
-\contentsline {chapter}{Bibliography}{36}
+\contentsline {section}{\numberline {2.4}Keras}{9}
+\contentsline {section}{\numberline {2.5}TensorBoard}{9}
+\contentsline {chapter}{\numberline {3}Related Work}{10}
+\contentsline {section}{\numberline {3.1}Autoencoders}{10}
+\contentsline {subsection}{\numberline {3.1.1}Fully-Connected Autoencoders}{11}
+\contentsline {subsection}{\numberline {3.1.2}Fully-Convolutional Autoencoders}{13}
+\contentsline {section}{\numberline {3.2}Variational Autoencoders}{15}
+\contentsline {subsection}{\numberline {3.2.1}A Probabilistic Perspective}{15}
+\contentsline {subsection}{\numberline {3.2.2}Overcoming the Intractable Posterior}{16}
+\contentsline {subsection}{\numberline {3.2.3}Finding a Suitable Loss Function: the ELBO}{16}
+\contentsline {subsection}{\numberline {3.2.4}Writing the ELBO in Closed-Form}{18}
+\contentsline {subsection}{\numberline {3.2.5}Implementing the Variational Autoencoder}{20}
+\contentsline {subsection}{\numberline {3.2.6}Intuition Behind the Variational Autoencoder}{22}
+\contentsline {section}{\numberline {3.3}Disentangled Representations}{27}
+\contentsline {section}{\numberline {3.4}Unsupervised Learning of Generative Factors}{27}
+\contentsline {subsection}{\numberline {3.4.1}InfoGAN}{27}
+\contentsline {subsection}{\numberline {3.4.2}$\beta $-VAE}{27}
+\contentsline {subsubsection}{Derivation}{28}
+\contentsline {section}{\numberline {3.5}Human-Level Control Through Deep Reinforcement Learning}{31}
+\contentsline {subsection}{\numberline {3.5.1}Pre-processing Stella Frames}{31}
+\contentsline {subsubsection}{Sprite Rendering in Stella}{31}
+\contentsline {subsubsection}{Dimensionality Reduction}{31}
+\contentsline {subsubsection}{File Formats}{33}
+\contentsline {section}{\numberline {3.6}Improving Sampling from Generative Autoencoders with Markov Chains}{33}
+\contentsline {section}{\numberline {3.7}Regularizing CNNs with Locally Constrained Decorrelations}{36}
+\contentsline {chapter}{\numberline {4}Method}{37}
+\contentsline {section}{\numberline {4.1}Latent Image}{37}
+\contentsline {subsection}{\numberline {4.1.1}Architecture}{37}
+\contentsline {subsection}{\numberline {4.1.2}Derivation}{37}
+\contentsline {section}{\numberline {4.2}Decoupling Latent Variables Indiscriminately}{37}
+\contentsline {subsection}{\numberline {4.2.1}Architecture}{38}
+\contentsline {subsection}{\numberline {4.2.2}Derivation}{38}
+\contentsline {section}{\numberline {4.3}Decoupling Latent Filters Using Averages}{38}
+\contentsline {subsection}{\numberline {4.3.1}Architecture}{38}
+\contentsline {subsection}{\numberline {4.3.2}Derivation}{38}
+\contentsline {section}{\numberline {4.4}Average-Weighted Filters}{38}
+\contentsline {subsection}{\numberline {4.4.1}Architecture}{39}
+\contentsline {subsection}{\numberline {4.4.2}Derivation}{39}
+\contentsline {section}{\numberline {4.5}Separating Colour Spaces}{39}
+\contentsline {subsection}{\numberline {4.5.1}Architecture}{39}
+\contentsline {subsection}{\numberline {4.5.2}Derivation}{39}
+\contentsline {section}{\numberline {4.6}Orthogonal Convolutions}{39}
+\contentsline {subsection}{\numberline {4.6.1}Architecture}{40}
+\contentsline {subsection}{\numberline {4.6.2}Derivation}{40}
+\contentsline {section}{\numberline {4.7}Winner Takes All}{40}
+\contentsline {subsection}{\numberline {4.7.1}Architecture}{40}
+\contentsline {subsection}{\numberline {4.7.2}Derivation}{40}
+\contentsline {section}{\numberline {4.8}Psuedo-Dense Latent Space}{40}
+\contentsline {subsection}{\numberline {4.8.1}Architecture}{41}
+\contentsline {subsection}{\numberline {4.8.2}Derivation}{41}
+\contentsline {chapter}{\numberline {5}Results}{42}
+\contentsline {chapter}{\numberline {6}Discussion}{43}
+\contentsline {chapter}{\numberline {7}Conclusion}{44}
+\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{44}
+\contentsline {section}{\numberline {7.2}Applications}{44}
+\contentsline {section}{\numberline {7.3}Future Work}{44}
+\contentsline {chapter}{Bibliography}{44}

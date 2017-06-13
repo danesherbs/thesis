@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{Bellemare2015}
+M.~G. Bellemare, Y.~Naddaf, J.~Veness, and M.~Bowling.
+\newblock {The arcade learning environment: An evaluation platform for general
+  agents}.
+\newblock In {\em IJCAI International Joint Conference on Artificial
+  Intelligence}, volume 2015-Janua, pages 4148--4152, 2015.
+
 \bibitem{Blei2011}
 D.~M. Blei.
 \newblock {Variational Inference}, 2011.
@@ -20,6 +27,10 @@ X.~Chen, Y.~Duan, R.~Houthooft, J.~Schulman, I.~Sutskever, and P.~Abbeel.
 \newblock {InfoGAN: Interpretable Representation Learning by Information
   Maximizing Generative Adversarial Nets}.
 \newblock {\em arXiv:1606.03657 [cs.LG]}, pages 1--14, 2016.
+
+\bibitem{Chollet2015}
+F.~Chollet.
+\newblock {Keras: Deep Learning library for Theano and TensorFlow}, 2015.
 
 \bibitem{Cohen2014}
 T.~S. Cohen and M.~Welling.
@@ -114,6 +125,11 @@ S.~R. Richter, V.~Vineet, S.~Roth, and V.~Koltun.
   Lecture Notes in Artificial Intelligence and Lecture Notes in
   Bioinformatics)}, volume 9906 LNCS, pages 102--118, 2016.
 
+\bibitem{Rodriguez2016}
+P.~Rodr{\'{i}}guez, J.~Gonz{\`{a}}lez, G.~Cucurull, J.~M. Gonfaus, and X.~Roca.
+\newblock {Regularizing CNNs with Locally Constrained Decorrelations}.
+\newblock nov 2016.
+
 \bibitem{Rosen2012}
 R.~Rosen.
 \newblock {IBM's Deep Blue vs Gary Kasparov}, 2012.
@@ -130,6 +146,10 @@ D.~Silver, A.~Huang, C.~J. Maddison, A.~Guez, L.~Sifre, G.~van~den Driessche,
   K.~Kavukcuoglu, T.~Graepel, and D.~Hassabis.
 \newblock {Mastering the game of Go with deep neural networks and tree search}.
 \newblock {\em Nature}, 529(7587):484--489, 2016.
+
+\bibitem{Stokes1996}
+M.~Stokes, M.~Anderson, S.~Chandrasekar, and R.~Motta.
+\newblock {A Standard Default Color Space for the Internet - sRGB}, 1996.
 
 \bibitem{Szegedy2015}
 C.~Szegedy, W.~Liu, Y.~Jia, P.~Sermanet, S.~Reed, D.~Anguelov, D.~Erhan,

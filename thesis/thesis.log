@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  11 JUN 2017 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  13 JUN 2017 22:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -314,7 +314,11 @@ Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
 (./uhead.sty) (./boxit.sty) (./icthesis.sty)
 \c@definition=\count128
 \c@theorem=\count129
-) (./thesis.aux)
+) (./thesis.aux
+
+LaTeX Warning: Label `fig:mcmc_sampling' multiply defined.
+
+)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -482,18 +486,17 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
  [5
 
 
-] [6])
+] [6] [7])
 \tf@toc=\write3
 \openout3 = `thesis.toc'.
 
- [7]
-[8
 
-] (./thesis.lot)
+[8] (./thesis.lot)
 \tf@lot=\write4
 \openout4 = `thesis.lot'.
 
  [9
+
 
 ] [10
 
@@ -615,9 +618,8 @@ Package pdftex.def Info: ./figures/background/eucledian_distance_b.png used on
 input line 38.
 (pdftex.def)             Requested size: 123.82968pt x 123.84416pt.
  [7 <./figures/background/eucledian_distance_a.png> <./figures/background/eucle
-dian_distance_c.png> <./figures/background/eucledian_distance_b.png>]) (./relat
-ed_work/related_work.tex
-[8]
+dian_distance_c.png> <./figures/background/eucledian_distance_b.png>] [8]) (./r
+elated_work/related_work.tex [9]
 Chapter 3.
 Package epstopdf Info: Source file: <./figures/background/autoencoder_black_box
 _architecture.eps>
@@ -634,7 +636,7 @@ oder_black_box_architecture.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/autoencoder_black_box_architecture-eps-converted-to.pdf, 
-id=111, 853.1875pt x 152.57pt>
+id=115, 853.1875pt x 152.57pt>
 File: ./figures/background/autoencoder_black_box_architecture-eps-converted-to.
 pdf Graphic file (type pdf)
 
@@ -643,7 +645,7 @@ df>
 Package pdftex.def Info: ./figures/background/autoencoder_black_box_architectur
 e-eps-converted-to.pdf used on input line 17.
 (pdftex.def)             Requested size: 452.18723pt x 80.86171pt.
- [9
+ [10
 
  <./figures/background/autoencoder_black_box_architecture-eps-converted-to.pdf>
 ]
@@ -661,7 +663,7 @@ tecture.eps>
 (epstopdf)             \includegraphics on input line 31.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/background/autoencoder_architecture-eps-converted-to.pdf, id=123, 47
+<./figures/background/autoencoder_architecture-eps-converted-to.pdf, id=126, 47
 8.78876pt x 503.8825pt>
 File: ./figures/background/autoencoder_architecture-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -671,7 +673,7 @@ Package pdftex.def Info: ./figures/background/autoencoder_architecture-eps-conv
 erted-to.pdf used on input line 31.
 (pdftex.def)             Requested size: 239.39378pt x 251.94063pt.
 
-<./figures/background/fully_connected_autoencoder_mnist.png, id=124, 380.8629pt
+<./figures/background/fully_connected_autoencoder_mnist.png, id=127, 380.8629pt
  x 712.5822pt>
 File: ./figures/background/fully_connected_autoencoder_mnist.png Graphic file (
 type png)
@@ -680,11 +682,11 @@ type png)
 Package pdftex.def Info: ./figures/background/fully_connected_autoencoder_mnist
 .png used on input line 57.
 (pdftex.def)             Requested size: 361.81769pt x 676.94925pt.
- [10 <./figures/background/autoencoder_architecture-eps-converted-to.pdf>]
+ [11 <./figures/background/autoencoder_architecture-eps-converted-to.pdf>]
 Overfull \vbox (27.66615pt too high) has occurred while \output is active []
 
 
-[11 <./figures/background/fully_connected_autoencoder_mnist.png>]
+[12 <./figures/background/fully_connected_autoencoder_mnist.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
@@ -704,7 +706,7 @@ volutional_autoencoder_architecture.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/convolutional_autoencoder_architecture-eps-converted-to.p
-df, id=139, 853.1875pt x 188.705pt>
+df, id=142, 853.1875pt x 188.705pt>
 File: ./figures/background/convolutional_autoencoder_architecture-eps-converted
 -to.pdf Graphic file (type pdf)
 
@@ -718,9 +720,9 @@ Overfull \hbox (28.21959pt too wide) in paragraph at lines 69--70
  [][] 
  []
 
-[12 <./figures/background/convolutional_autoencoder_architecture-eps-converted-
+[13 <./figures/background/convolutional_autoencoder_architecture-eps-converted-
 to.pdf>]
-<./figures/background/fully_convolutional_autoencoder_mnist.png, id=147, 380.86
+<./figures/background/fully_convolutional_autoencoder_mnist.png, id=150, 380.86
 29pt x 715.473pt>
 File: ./figures/background/fully_convolutional_autoencoder_mnist.png Graphic fi
 le (type png)
@@ -733,20 +735,20 @@ nist.png used on input line 102.
 Overfull \vbox (30.41241pt too high) has occurred while \output is active []
 
 
-[13 <./figures/background/fully_convolutional_autoencoder_mnist.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+[14 <./figures/background/fully_convolutional_autoencoder_mnist.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
-[14] [15]
+[15] [16]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
-[17]
+ [17]
+[18]
 Underfull \vbox (badness 1675) has occurred while \output is active []
 
- [18]
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
+ [19]
+Underfull \hbox (badness 10000) in paragraph at lines 261--263
 
  []
 
@@ -761,24 +763,24 @@ er_naive-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
 tional_autoencoder_naive-eps-converted-to.pdf ./figures/background/variational_
 autoencoder_naive.eps>
-(epstopdf)             \includegraphics on input line 266.
+(epstopdf)             \includegraphics on input line 267.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/background/variational_autoencoder_naive-eps-converted-to.pdf, id=17
-7, 244.915pt x 360.34625pt>
+<./figures/background/variational_autoencoder_naive-eps-converted-to.pdf, id=18
+0, 244.915pt x 360.34625pt>
 File: ./figures/background/variational_autoencoder_naive-eps-converted-to.pdf G
 raphic file (type pdf)
 
 <use ./figures/background/variational_autoencoder_naive-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/background/variational_autoencoder_naive-eps
--converted-to.pdf used on input line 266.
+-converted-to.pdf used on input line 267.
 (pdftex.def)             Requested size: 110.21072pt x 162.15431pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 276--278
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 277--279
 
  []
 
@@ -793,27 +795,27 @@ er_reparameterisation_trick-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
 tional_autoencoder_reparameterisation_trick-eps-converted-to.pdf ./figures/back
 ground/variational_autoencoder_reparameterisation_trick.eps>
-(epstopdf)             \includegraphics on input line 282.
+(epstopdf)             \includegraphics on input line 283.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/variational_autoencoder_reparameterisation_trick-eps-conv
-erted-to.pdf, id=181, 244.915pt x 360.34625pt>
+erted-to.pdf, id=184, 244.915pt x 360.34625pt>
 File: ./figures/background/variational_autoencoder_reparameterisation_trick-eps
 -converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/background/variational_autoencoder_reparameterisation_trick-eps-
 converted-to.pdf>
 Package pdftex.def Info: ./figures/background/variational_autoencoder_reparamet
-erisation_trick-eps-converted-to.pdf used on input line 282.
+erisation_trick-eps-converted-to.pdf used on input line 283.
 (pdftex.def)             Requested size: 110.21072pt x 162.15431pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20 <./figures/background/variational_autoencoder_naive-eps-converted-to.pdf>]
+[21 <./figures/background/variational_autoencoder_naive-eps-converted-to.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21 <./figures/background/variational_autoencoder_reparameterisation_trick-eps
+ [22 <./figures/background/variational_autoencoder_reparameterisation_trick-eps
 -converted-to.pdf>]
 Package epstopdf Info: Source file: <./figures/background/variational_autoencod
 er_latent_space_colour_0_with_mnist_updated.eps>
@@ -827,18 +829,18 @@ er_latent_space_colour_0_with_mnist_updated-eps-converted-to.pdf>
 tional_autoencoder_latent_space_colour_0_with_mnist_updated-eps-converted-to.pd
 f ./figures/background/variational_autoencoder_latent_space_colour_0_with_mnist
 _updated.eps>
-(epstopdf)             \includegraphics on input line 320.
+(epstopdf)             \includegraphics on input line 321.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/variational_autoencoder_latent_space_colour_0_with_mnist_
-updated-eps-converted-to.pdf, id=199, 336.25626pt x 833.1125pt>
+updated-eps-converted-to.pdf, id=203, 336.25626pt x 833.1125pt>
 File: ./figures/background/variational_autoencoder_latent_space_colour_0_with_m
 nist_updated-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/background/variational_autoencoder_latent_space_colour_0_with_mn
 ist_updated-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/background/variational_autoencoder_latent_sp
-ace_colour_0_with_mnist_updated-eps-converted-to.pdf used on input line 320.
+ace_colour_0_with_mnist_updated-eps-converted-to.pdf used on input line 321.
 (pdftex.def)             Requested size: 235.37776pt x 583.17477pt.
 
 
@@ -856,25 +858,25 @@ er_latent_space_unit_gaussian_with_mnist-eps-converted-to.pdf>
 tional_autoencoder_latent_space_unit_gaussian_with_mnist-eps-converted-to.pdf .
 /figures/background/variational_autoencoder_latent_space_unit_gaussian_with_mni
 st.eps>
-(epstopdf)             \includegraphics on input line 328.
+(epstopdf)             \includegraphics on input line 329.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/variational_autoencoder_latent_space_unit_gaussian_with_m
-nist-eps-converted-to.pdf, id=200, 342.27875pt x 593.21625pt>
+nist-eps-converted-to.pdf, id=204, 342.27875pt x 593.21625pt>
 File: ./figures/background/variational_autoencoder_latent_space_unit_gaussian_w
 ith_mnist-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/background/variational_autoencoder_latent_space_unit_gaussian_wi
 th_mnist-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/background/variational_autoencoder_latent_sp
-ace_unit_gaussian_with_mnist-eps-converted-to.pdf used on input line 328.
+ace_unit_gaussian_with_mnist-eps-converted-to.pdf used on input line 329.
 (pdftex.def)             Requested size: 239.59348pt x 415.24854pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[22] [23 <./figures/background/variational_autoencoder_latent_space_colour_0_wi
-th_mnist_updated-eps-converted-to.pdf>] [24 <./figures/background/variational_a
+[23] [24 <./figures/background/variational_autoencoder_latent_space_colour_0_wi
+th_mnist_updated-eps-converted-to.pdf>] [25 <./figures/background/variational_a
 utoencoder_latent_space_unit_gaussian_with_mnist-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./figures/background/variational_autoencod
 er_latent_space_adding_latent_spaces_updated.eps>
@@ -888,214 +890,291 @@ er_latent_space_adding_latent_spaces_updated-eps-converted-to.pdf>
 tional_autoencoder_latent_space_adding_latent_spaces_updated-eps-converted-to.p
 df ./figures/background/variational_autoencoder_latent_space_adding_latent_spac
 es_updated.eps>
-(epstopdf)             \includegraphics on input line 337.
+(epstopdf)             \includegraphics on input line 338.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/background/variational_autoencoder_latent_space_adding_latent_spaces
-_updated-eps-converted-to.pdf, id=233, 1390.19376pt x 830.10126pt>
+_updated-eps-converted-to.pdf, id=236, 1390.19376pt x 830.10126pt>
 File: ./figures/background/variational_autoencoder_latent_space_adding_latent_s
 paces_updated-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figures/background/variational_autoencoder_latent_space_adding_latent_sp
 aces_updated-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/background/variational_autoencoder_latent_sp
-ace_adding_latent_spaces_updated-eps-converted-to.pdf used on input line 337.
+ace_adding_latent_spaces_updated-eps-converted-to.pdf used on input line 338.
 (pdftex.def)             Requested size: 625.58142pt x 373.54211pt.
- [25
+ [26
 
  <./figures/background/variational_autoencoder_latent_space_adding_latent_space
 s_updated-eps-converted-to.pdf>]
-<./figures/related_work/info_gan_3d_face_dataset.png, id=248, 1342.01375pt x 81
+<./figures/related_work/info_gan_3d_face_dataset.png, id=251, 1342.01375pt x 81
 1.03pt>
 File: ./figures/related_work/info_gan_3d_face_dataset.png Graphic file (type pn
 g)
  <use ./figures/related_work/info_gan_3d_face_dataset.png>
 Package pdftex.def Info: ./figures/related_work/info_gan_3d_face_dataset.png us
-ed on input line 371.
+ed on input line 372.
 (pdftex.def)             Requested size: 483.12459pt x 291.97057pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 378.
-[26
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 379.
+[27
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27 <./figures/related_work/info_gan_3d_face_dataset.png>] [28]
-<./figures/related_work/beta_vae_3d_face_dataset_comparison.png, id=261, 860.21
+ [28 <./figures/related_work/info_gan_3d_face_dataset.png>] [29]
+<./figures/related_work/beta_vae_3d_face_dataset_comparison.png, id=264, 860.21
 375pt x 878.28125pt>
 File: ./figures/related_work/beta_vae_3d_face_dataset_comparison.png Graphic fi
 le (type png)
 
 <use ./figures/related_work/beta_vae_3d_face_dataset_comparison.png>
 Package pdftex.def Info: ./figures/related_work/beta_vae_3d_face_dataset_compar
-ison.png used on input line 421.
+ison.png used on input line 422.
 (pdftex.def)             Requested size: 378.49521pt x 386.44495pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29 <./figures/related_work/beta_vae_3d_face_dataset_comparison.png (PNG copy)
+ [30 <./figures/related_work/beta_vae_3d_face_dataset_comparison.png (PNG copy)
 >]
-<figures/related_work/space_invaders_341_rgb_even.png, id=265, 160.6pt x 210.78
+<figures/related_work/space_invaders_341_rgb_even.png, id=268, 160.6pt x 210.78
 75pt>
 File: figures/related_work/space_invaders_341_rgb_even.png Graphic file (type p
 ng)
  <use figures/related_work/space_invaders_341_rgb_even.png>
 Package pdftex.def Info: figures/related_work/space_invaders_341_rgb_even.png u
-sed on input line 444.
+sed on input line 445.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
-<figures/related_work/space_invaders_341_rgb_odd.png, id=266, 160.6pt x 210.787
+<figures/related_work/space_invaders_341_rgb_odd.png, id=269, 160.6pt x 210.787
 5pt>
 File: figures/related_work/space_invaders_341_rgb_odd.png Graphic file (type pn
 g)
  <use figures/related_work/space_invaders_341_rgb_odd.png>
 Package pdftex.def Info: figures/related_work/space_invaders_341_rgb_odd.png us
-ed on input line 445.
+ed on input line 446.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
-<figures/related_work/space_invaders_341_rgb_maximum_of_even_odd.png, id=267, 1
+<figures/related_work/space_invaders_341_rgb_maximum_of_even_odd.png, id=270, 1
 60.6pt x 210.7875pt>
 File: figures/related_work/space_invaders_341_rgb_maximum_of_even_odd.png Graph
 ic file (type png)
 
 <use figures/related_work/space_invaders_341_rgb_maximum_of_even_odd.png>
 Package pdftex.def Info: figures/related_work/space_invaders_341_rgb_maximum_of
-_even_odd.png used on input line 446.
+_even_odd.png used on input line 447.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
-<figures/related_work/space_invaders_831_rgb_even.png, id=268, 160.6pt x 210.78
+<figures/related_work/space_invaders_831_rgb_even.png, id=271, 160.6pt x 210.78
 75pt>
 File: figures/related_work/space_invaders_831_rgb_even.png Graphic file (type p
 ng)
  <use figures/related_work/space_invaders_831_rgb_even.png>
 Package pdftex.def Info: figures/related_work/space_invaders_831_rgb_even.png u
-sed on input line 449.
+sed on input line 450.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
-<figures/related_work/space_invaders_831_rgb_odd.png, id=269, 160.6pt x 210.787
+<figures/related_work/space_invaders_831_rgb_odd.png, id=272, 160.6pt x 210.787
 5pt>
 File: figures/related_work/space_invaders_831_rgb_odd.png Graphic file (type pn
 g)
  <use figures/related_work/space_invaders_831_rgb_odd.png>
 Package pdftex.def Info: figures/related_work/space_invaders_831_rgb_odd.png us
-ed on input line 450.
+ed on input line 451.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
-<figures/related_work/space_invaders_831_rgb_maximum_of_even_odd.png, id=270, 1
+<figures/related_work/space_invaders_831_rgb_maximum_of_even_odd.png, id=273, 1
 60.6pt x 210.7875pt>
 File: figures/related_work/space_invaders_831_rgb_maximum_of_even_odd.png Graph
 ic file (type png)
 
 <use figures/related_work/space_invaders_831_rgb_maximum_of_even_odd.png>
 Package pdftex.def Info: figures/related_work/space_invaders_831_rgb_maximum_of
-_even_odd.png used on input line 451.
+_even_odd.png used on input line 452.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
-<figures/related_work/space_invaders_1044_rgb_even.png, id=271, 160.6pt x 210.7
+<figures/related_work/space_invaders_1044_rgb_even.png, id=274, 160.6pt x 210.7
 875pt>
 File: figures/related_work/space_invaders_1044_rgb_even.png Graphic file (type 
 png)
  <use figures/related_work/space_invaders_1044_rgb_even.png>
 Package pdftex.def Info: figures/related_work/space_invaders_1044_rgb_even.png 
-used on input line 454.
+used on input line 455.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
-<figures/related_work/space_invaders_1044_rgb_odd.png, id=272, 160.6pt x 210.78
+<figures/related_work/space_invaders_1044_rgb_odd.png, id=275, 160.6pt x 210.78
 75pt>
 File: figures/related_work/space_invaders_1044_rgb_odd.png Graphic file (type p
 ng)
  <use figures/related_work/space_invaders_1044_rgb_odd.png>
 Package pdftex.def Info: figures/related_work/space_invaders_1044_rgb_odd.png u
-sed on input line 455.
+sed on input line 456.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
-<figures/related_work/space_invaders_1044_rgb_maximum_of_even_odd.png, id=273, 
+<figures/related_work/space_invaders_1044_rgb_maximum_of_even_odd.png, id=276, 
 160.6pt x 210.7875pt>
 File: figures/related_work/space_invaders_1044_rgb_maximum_of_even_odd.png Grap
 hic file (type png)
 
 <use figures/related_work/space_invaders_1044_rgb_maximum_of_even_odd.png>
 Package pdftex.def Info: figures/related_work/space_invaders_1044_rgb_maximum_o
-f_even_odd.png used on input line 456.
+f_even_odd.png used on input line 457.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
-Underfull \vbox (badness 2351) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
 
- [30]
-[31 <./figures/related_work/space_invaders_341_rgb_even.png (PNG copy)> <./figu
-res/related_work/space_invaders_341_rgb_odd.png (PNG copy)> <./figures/related_
-work/space_invaders_341_rgb_maximum_of_even_odd.png (PNG copy)> <./figures/rela
-ted_work/space_invaders_831_rgb_even.png (PNG copy)> <./figures/related_work/sp
-ace_invaders_831_rgb_odd.png (PNG copy)> <./figures/related_work/space_invaders
-_831_rgb_maximum_of_even_odd.png (PNG copy)> <./figures/related_work/space_inva
-ders_1044_rgb_even.png (PNG copy)> <./figures/related_work/space_invaders_1044_
-rgb_odd.png (PNG copy)> <./figures/related_work/space_invaders_1044_rgb_maximum
-_of_even_odd.png (PNG copy)>]
+ []
 
-LaTeX Warning: Citation `Rodriguez2016' on page 32 undefined on input line 483.
+[31] [32 <./figures/related_work/space_invaders_341_rgb_even.png (PNG copy)> <.
+/figures/related_work/space_invaders_341_rgb_odd.png (PNG copy)> <./figures/rel
+ated_work/space_invaders_341_rgb_maximum_of_even_odd.png (PNG copy)> <./figures
+/related_work/space_invaders_831_rgb_even.png (PNG copy)> <./figures/related_wo
+rk/space_invaders_831_rgb_odd.png (PNG copy)> <./figures/related_work/space_inv
+aders_831_rgb_maximum_of_even_odd.png (PNG copy)> <./figures/related_work/space
+_invaders_1044_rgb_even.png (PNG copy)> <./figures/related_work/space_invaders_
+1044_rgb_odd.png (PNG copy)> <./figures/related_work/space_invaders_1044_rgb_ma
+ximum_of_even_odd.png (PNG copy)>]
+
+Package multicol Warning: Using `1' columns doesn't seem a good idea.
+ I therefore use two columns instead on input line 476.
 
 
-) (./method/method.tex [32]
+<figures/related_work/pong_729_pre_processed.jpeg, id=283, 84.315pt x 84.315pt>
+File: figures/related_work/pong_729_pre_processed.jpeg Graphic file (type jpg)
+<use figures/related_work/pong_729_pre_processed.jpeg>
+Package pdftex.def Info: figures/related_work/pong_729_pre_processed.jpeg used 
+on input line 477.
+(pdftex.def)             Requested size: 168.62955pt x 168.62955pt.
+
+<figures/related_work/pong_729_pre_processed.png, id=284, 84.315pt x 84.315pt>
+File: figures/related_work/pong_729_pre_processed.png Graphic file (type png)
+
+<use figures/related_work/pong_729_pre_processed.png>
+Package pdftex.def Info: figures/related_work/pong_729_pre_processed.png used o
+n input line 478.
+(pdftex.def)             Requested size: 168.62955pt x 168.62955pt.
+
+Underfull \vbox (badness 3068) has occurred while \output is active []
+
+ [33 <./figures/related_work/pong_729_pre_processed.jpeg> <./figures/related_wo
+rk/pong_729_pre_processed.png (PNG copy)>]
+Package epstopdf Info: Source file: <./figures/related_work/mcmc_sampling.eps>
+(epstopdf)                    date: 2017-06-13 19:08:03
+(epstopdf)                    size: 63596 bytes
+(epstopdf)             Output file: <./figures/related_work/mcmc_sampling-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2017-06-13 19:08:06
+(epstopdf)                    size: 23265 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figures/related_work/mcm
+c_sampling-eps-converted-to.pdf ./figures/related_work/mcmc_sampling.eps>
+(epstopdf)             \includegraphics on input line 530.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figures/related_work/mcmc_sampling-eps-converted-to.pdf, id=289, 479.7925pt 
+x 406.51875pt>
+File: ./figures/related_work/mcmc_sampling-eps-converted-to.pdf Graphic file (t
+ype pdf)
+ <use ./figures/related_work/mcmc_sampling-eps-converted-to.pdf>
+Package pdftex.def Info: ./figures/related_work/mcmc_sampling-eps-converted-to.
+pdf used on input line 530.
+(pdftex.def)             Requested size: 287.8777pt x 243.91312pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 6094) has occurred while \output is active []
+
+ [34]
+<./figures/related_work/celeb_a_vae_mcmc.png, id=294, 1624.0675pt x 425.59pt>
+File: ./figures/related_work/celeb_a_vae_mcmc.png Graphic file (type png)
+
+<use ./figures/related_work/celeb_a_vae_mcmc.png>
+Package pdftex.def Info: ./figures/related_work/celeb_a_vae_mcmc.png used on in
+put line 545.
+(pdftex.def)             Requested size: 487.22401pt x 127.67798pt.
+
+Overfull \hbox (3.52715pt too wide) in paragraph at lines 545--546
+ [][] 
+ []
+
+) (./method/method.tex
+Underfull \vbox (badness 6927) has occurred while \output is active []
+
+ [35 <./figures/related_work/mcmc_sampling-eps-converted-to.pdf> <./figures/rel
+ated_work/celeb_a_vae_mcmc.png>] [36]
 Chapter 4.
-) (./results/results.tex [33
+[37
 
-]
+] [38]
+Underfull \vbox (badness 3536) has occurred while \output is active []
+
+ [39])
+(./results/results.tex
+Underfull \vbox (badness 3536) has occurred while \output is active []
+
+ [40]
+[41]
 Chapter 5.
-) (./discussion/discussion.tex [34
+) (./discussion/discussion.tex [42
 
 ]
 Chapter 6.
-) (./conclusion/conclusion.tex [35
+) (./conclusion/conclusion.tex [43
 
 ]
 Chapter 7.
-) (./thesis.bbl [36
+) (./thesis.bbl [44
 
-] [37
+] [45
 
-] [38]) [39] (./thesis.aux)
+] [46] [47]) [48] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 5566 strings out of 494902
- 87339 string characters out of 6179891
- 249332 words of memory out of 5000000
- 8649 multiletter control sequences out of 15000+600000
+ 5597 strings out of 494902
+ 88474 string characters out of 6179891
+ 250460 words of memory out of 5000000
+ 8676 multiletter control sequences out of 15000+600000
  20690 words of font info for 82 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  40i,12n,40p,908b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy6.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (55 pages, 6335236 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy6.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/symbols/msbm10.pfb>
+Output written on thesis.pdf (64 pages, 7276618 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
- 236 compressed objects within 3 object streams
+ 420 PDF objects out of 1000 (max. 8388607)
+ 260 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
