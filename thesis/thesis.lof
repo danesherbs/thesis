@@ -25,11 +25,11 @@
 \contentsline {figure}{\numberline {3.15}{\ignorespaces The probabilistic encoder $q_{\bm {\phi }}(\bm {z} | \bm {x})$ maps a given data point $\bm {x}$ to the unknown distribution $\mathaccentV {hat}05E{p}(\bm {z})$. The probabilistic decoder $p_{\bm {\theta }}(\bm {x} | \bm {z})$ is trained to map samples from $\mathaccentV {hat}05E{p}(\bm {z})$ back to $p(\bm {x})$, since its inputs are drawn from the probabilistic encoder $q_{\bm {\phi }}(\bm {z} | \bm {x})$. A sample from the prior $p(\bm {z})$ will not be mapped back by $p_{\bm {\theta }}(\bm {x} | \bm {z})$ to $p(\bm {x})$ exactly if $p(\bm {z}) \not =\mathaccentV {hat}05E{p}(\bm {z})$. \cite {Creswell2016}\relax }}{35}
 \contentsline {figure}{\numberline {3.16}{\ignorespaces Samples from a variational autoencoder trained on the CelebA data set after $t = 0, 1, 5$ and $10$ steps of the generative procedure (3.46\hbox {}). The MCMC chain was initialised with a sample from the prior $\bm {z}_{t=0} \sim p(\bm {z})$, which often improves the quality of the samples. \cite {Creswell2016}\relax }}{35}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Caption.\relax }}{37}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Caption.\relax }}{38}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Caption.\relax }}{38}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Caption.\relax }}{39}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Caption.\relax }}{39}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Caption.\relax }}{38}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Caption.\relax }}{39}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Caption.\relax }}{39}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Caption.\relax }}{40}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Caption.\relax }}{40}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

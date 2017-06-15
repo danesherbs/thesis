@@ -36,33 +36,33 @@
 \contentsline {section}{\numberline {3.7}Regularizing CNNs with Locally Constrained Decorrelations}{36}
 \contentsline {chapter}{\numberline {4}Method}{37}
 \contentsline {section}{\numberline {4.1}Latent Image}{37}
-\contentsline {subsection}{\numberline {4.1.1}Architecture}{37}
-\contentsline {subsection}{\numberline {4.1.2}Derivation}{38}
-\contentsline {section}{\numberline {4.2}Decoupling Latent Variables Indiscriminately}{38}
-\contentsline {subsection}{\numberline {4.2.1}Architecture}{38}
-\contentsline {subsection}{\numberline {4.2.2}Derivation}{39}
-\contentsline {section}{\numberline {4.3}Decoupling Latent Filters Using Averages}{39}
-\contentsline {subsection}{\numberline {4.3.1}Architecture}{39}
-\contentsline {subsection}{\numberline {4.3.2}Derivation}{40}
-\contentsline {section}{\numberline {4.4}Decoupling Latent Filters Using Weighted-Averages}{40}
-\contentsline {subsection}{\numberline {4.4.1}Architecture}{40}
-\contentsline {subsection}{\numberline {4.4.2}Derivation}{40}
-\contentsline {section}{\numberline {4.5}Separating Colour Spaces}{40}
-\contentsline {subsection}{\numberline {4.5.1}Architecture}{41}
-\contentsline {subsection}{\numberline {4.5.2}Derivation}{41}
-\contentsline {section}{\numberline {4.6}Orthogonal Convolutions}{41}
-\contentsline {subsection}{\numberline {4.6.1}Architecture}{41}
-\contentsline {subsection}{\numberline {4.6.2}Derivation}{41}
-\contentsline {section}{\numberline {4.7}Winner Takes All}{41}
-\contentsline {subsection}{\numberline {4.7.1}Architecture}{42}
-\contentsline {subsection}{\numberline {4.7.2}Derivation}{42}
-\contentsline {section}{\numberline {4.8}Psuedo-Dense Latent Space}{42}
-\contentsline {subsection}{\numberline {4.8.1}Architecture}{42}
-\contentsline {subsection}{\numberline {4.8.2}Derivation}{42}
-\contentsline {chapter}{\numberline {5}Results}{43}
-\contentsline {chapter}{\numberline {6}Discussion}{44}
-\contentsline {chapter}{\numberline {7}Conclusion}{45}
-\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{45}
-\contentsline {section}{\numberline {7.2}Applications}{45}
-\contentsline {section}{\numberline {7.3}Future Work}{45}
-\contentsline {chapter}{Bibliography}{45}
+\contentsline {subsection}{\numberline {4.1.1}Architecture}{38}
+\contentsline {subsection}{\numberline {4.1.2}Derivation}{39}
+\contentsline {section}{\numberline {4.2}Decoupling Latent Variables Indiscriminately}{39}
+\contentsline {subsection}{\numberline {4.2.1}Architecture}{39}
+\contentsline {subsection}{\numberline {4.2.2}Derivation}{40}
+\contentsline {section}{\numberline {4.3}Decoupling Latent Filters Using Averages}{40}
+\contentsline {subsection}{\numberline {4.3.1}Architecture}{40}
+\contentsline {subsection}{\numberline {4.3.2}Derivation}{41}
+\contentsline {section}{\numberline {4.4}Decoupling Latent Filters Using Weighted-Averages}{41}
+\contentsline {subsection}{\numberline {4.4.1}Architecture}{41}
+\contentsline {subsection}{\numberline {4.4.2}Derivation}{41}
+\contentsline {section}{\numberline {4.5}Separating Colour Spaces}{41}
+\contentsline {subsection}{\numberline {4.5.1}Architecture}{42}
+\contentsline {subsection}{\numberline {4.5.2}Derivation}{42}
+\contentsline {section}{\numberline {4.6}Orthogonal Convolutions}{42}
+\contentsline {subsection}{\numberline {4.6.1}Architecture}{42}
+\contentsline {subsection}{\numberline {4.6.2}Derivation}{42}
+\contentsline {section}{\numberline {4.7}Winner Takes All}{42}
+\contentsline {subsection}{\numberline {4.7.1}Architecture}{43}
+\contentsline {subsection}{\numberline {4.7.2}Derivation}{43}
+\contentsline {section}{\numberline {4.8}Psuedo-Dense Latent Space}{43}
+\contentsline {subsection}{\numberline {4.8.1}Architecture}{43}
+\contentsline {subsection}{\numberline {4.8.2}Derivation}{43}
+\contentsline {chapter}{\numberline {5}Results}{44}
+\contentsline {chapter}{\numberline {6}Discussion}{45}
+\contentsline {chapter}{\numberline {7}Conclusion}{46}
+\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{46}
+\contentsline {section}{\numberline {7.2}Applications}{46}
+\contentsline {section}{\numberline {7.3}Future Work}{46}
+\contentsline {chapter}{Bibliography}{46}
