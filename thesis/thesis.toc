@@ -27,42 +27,42 @@
 \contentsline {subsection}{\numberline {3.4.1}InfoGAN}{27}
 \contentsline {subsection}{\numberline {3.4.2}$\beta $-VAE}{27}
 \contentsline {subsubsection}{Derivation}{28}
-\contentsline {section}{\numberline {3.5}Human-Level Control Through Deep Reinforcement Learning}{31}
-\contentsline {subsection}{\numberline {3.5.1}Pre-processing Stella Frames}{31}
-\contentsline {subsubsection}{Sprite Rendering in Stella}{31}
-\contentsline {subsubsection}{Dimensionality Reduction}{31}
-\contentsline {subsubsection}{File Formats}{33}
-\contentsline {section}{\numberline {3.6}Improving Sampling from Generative Autoencoders with Markov Chains}{33}
-\contentsline {section}{\numberline {3.7}Regularizing CNNs with Locally Constrained Decorrelations}{36}
-\contentsline {chapter}{\numberline {4}Method}{37}
-\contentsline {section}{\numberline {4.1}Latent Image}{37}
-\contentsline {subsection}{\numberline {4.1.1}Architecture}{38}
-\contentsline {subsection}{\numberline {4.1.2}Derivation}{39}
-\contentsline {section}{\numberline {4.2}Decoupling Latent Variables Indiscriminately}{39}
-\contentsline {subsection}{\numberline {4.2.1}Architecture}{39}
-\contentsline {subsection}{\numberline {4.2.2}Derivation}{40}
-\contentsline {section}{\numberline {4.3}Decoupling Latent Filters Using Averages}{40}
-\contentsline {subsection}{\numberline {4.3.1}Architecture}{40}
-\contentsline {subsection}{\numberline {4.3.2}Derivation}{41}
-\contentsline {section}{\numberline {4.4}Decoupling Latent Filters Using Weighted-Averages}{41}
-\contentsline {subsection}{\numberline {4.4.1}Architecture}{41}
-\contentsline {subsection}{\numberline {4.4.2}Derivation}{41}
-\contentsline {section}{\numberline {4.5}Separating Colour Spaces}{41}
-\contentsline {subsection}{\numberline {4.5.1}Architecture}{42}
-\contentsline {subsection}{\numberline {4.5.2}Derivation}{42}
-\contentsline {section}{\numberline {4.6}Orthogonal Convolutions}{42}
-\contentsline {subsection}{\numberline {4.6.1}Architecture}{42}
-\contentsline {subsection}{\numberline {4.6.2}Derivation}{42}
-\contentsline {section}{\numberline {4.7}Winner Takes All}{42}
-\contentsline {subsection}{\numberline {4.7.1}Architecture}{43}
-\contentsline {subsection}{\numberline {4.7.2}Derivation}{43}
-\contentsline {section}{\numberline {4.8}Psuedo-Dense Latent Space}{43}
-\contentsline {subsection}{\numberline {4.8.1}Architecture}{43}
-\contentsline {subsection}{\numberline {4.8.2}Derivation}{43}
+\contentsline {section}{\numberline {3.5}Improving Sampling from Generative Autoencoders with Markov Chains}{31}
+\contentsline {section}{\numberline {3.6}Regularizing CNNs with Locally Constrained Decorrelations}{33}
+\contentsline {chapter}{\numberline {4}Methods}{34}
+\contentsline {section}{\numberline {4.1}Dimensionality Reduction}{34}
+\contentsline {subsection}{\numberline {4.1.1}Pre-processing Stella Frames}{35}
+\contentsline {subsubsection}{Sprite Rendering in Stella}{35}
+\contentsline {subsubsection}{Dimensionality Reduction}{36}
+\contentsline {subsubsection}{File Formats}{36}
+\contentsline {section}{\numberline {4.2}Qualitative Assessment Using GUIs}{36}
+\contentsline {section}{\numberline {4.3}Latent Image}{36}
+\contentsline {subsection}{\numberline {4.3.1}Architecture}{38}
+\contentsline {subsection}{\numberline {4.3.2}Derivation}{38}
+\contentsline {section}{\numberline {4.4}Disentangling Latent Neurons}{38}
+\contentsline {subsection}{\numberline {4.4.1}Architecture}{39}
+\contentsline {subsection}{\numberline {4.4.2}Derivation}{40}
+\contentsline {section}{\numberline {4.5}Disentangling Latent Filters Using Averages}{40}
+\contentsline {subsection}{\numberline {4.5.1}Architecture}{40}
+\contentsline {subsection}{\numberline {4.5.2}Derivation}{41}
+\contentsline {section}{\numberline {4.6}Decoupling Latent Filters Using Weighted-Averages}{41}
+\contentsline {subsection}{\numberline {4.6.1}Architecture}{41}
+\contentsline {subsection}{\numberline {4.6.2}Derivation}{41}
+\contentsline {section}{\numberline {4.7}Separating Colour Spaces}{41}
+\contentsline {subsection}{\numberline {4.7.1}Architecture}{42}
+\contentsline {subsection}{\numberline {4.7.2}Derivation}{42}
+\contentsline {section}{\numberline {4.8}Orthogonal Convolutions}{42}
+\contentsline {subsection}{\numberline {4.8.1}Architecture}{42}
+\contentsline {subsection}{\numberline {4.8.2}Derivation}{42}
+\contentsline {section}{\numberline {4.9}Winner Takes All}{42}
+\contentsline {subsection}{\numberline {4.9.1}Architecture}{43}
+\contentsline {subsection}{\numberline {4.9.2}Derivation}{43}
 \contentsline {chapter}{\numberline {5}Results}{44}
-\contentsline {chapter}{\numberline {6}Discussion}{45}
-\contentsline {chapter}{\numberline {7}Conclusion}{46}
-\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{46}
-\contentsline {section}{\numberline {7.2}Applications}{46}
-\contentsline {section}{\numberline {7.3}Future Work}{46}
+\contentsline {section}{\numberline {5.1}Relationship Between Reconstruction Loss and KL Divergence}{44}
+\contentsline {section}{\numberline {5.2}Using Batch Normalisation With Convolutional Variational Latent Spaces}{44}
+\contentsline {section}{\numberline {5.3}Using Batch Normalisation With Convolutional Variational Latent Spaces}{44}
+\contentsline {chapter}{\numberline {6}Conclusion}{46}
+\contentsline {section}{\numberline {6.1}Summary of Thesis Achievements}{46}
+\contentsline {section}{\numberline {6.2}Applications}{46}
+\contentsline {section}{\numberline {6.3}Future Work}{46}
 \contentsline {chapter}{Bibliography}{46}

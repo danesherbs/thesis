@@ -160,93 +160,93 @@
 \newlabel{eq:beta_vae_optimisation_problem}{{3.35}{29}}
 \citation{Thiagarajan2016}
 \citation{Thiagarajan2016}
-\citation{Mnih2015}
+\citation{Creswell2016}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces A comparison of InfoGAN, $\beta $-VAE ($\beta = 20$) and VAE on the 3D face data set. Different latent variables are varied for sections (a), (b) and (c). All models learnt lighting and elevation, but only InfoGAN and $\beta $-VAE managed to continuously vary the azimuth. \cite  {Thiagarajan2016}\relax }}{30}}
 \newlabel{fig:beta_vae_3d_face_dataset_comparison}{{3.12}{30}}
-\citation{Mnih2015}
-\citation{Stokes1996}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Human-Level Control Through Deep Reinforcement Learning}{31}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Pre-processing Stella Frames}{31}}
-\@writefile{toc}{\contentsline {subsubsection}{Sprite Rendering in Stella}{31}}
-\@writefile{toc}{\contentsline {subsubsection}{Dimensionality Reduction}{31}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces A collection of frames captured from Space Invaders emulated on Stella. \textbf  {Left column:} an even frame. \textbf  {Middle column:} the (odd) frame following. \textbf  {Right column:} Combining the even and odd frames by taking the maximal value over each channel (RGB). Clearly the bullets visible in one frame fail to persist in the next. As discussed, this is due to the limited number of sprites Atari 2600 can load in a single frame.\relax }}{32}}
-\newlabel{fig:even_and_odd_frames_space_invaders}{{3.13}{32}}
 \citation{Creswell2016}
-\@writefile{toc}{\contentsline {subsubsection}{File Formats}{33}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Pre-processed frames captured from Pong emulated on Stella. These frames were originally $84\times 84$, but are printed here as $168\times 168$ to emphasise distortions. \textbf  {Left:} The JPEG format distorts the ball, paddle and score sprites. \textbf  {Right:} The PNG format displays the frame without such distortions.\relax }}{33}}
-\newlabel{fig:pong_729_pre_processed}{{3.14}{33}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Improving Sampling from Generative Autoencoders with Markov Chains}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Improving Sampling from Generative Autoencoders with Markov Chains}{31}}
+\newlabel{eq:sampling_procedure_naive}{{3.40}{31}}
 \citation{Creswell2016}
 \citation{Creswell2016}
 \citation{Creswell2016}
 \citation{Creswell2016}
 \citation{Creswell2016}
-\newlabel{eq:sampling_procedure_naive}{{3.41}{34}}
-\newlabel{eq:updated_sampling_mcmc}{{3.45}{34}}
 \citation{Creswell2016}
-\citation{Creswell2016}
+\newlabel{eq:updated_sampling_mcmc}{{3.44}{32}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces The probabilistic encoder $q_{\bm  {\phi }}(\bm  {z} | \bm  {x})$ maps a given data point $\bm  {x}$ to the unknown distribution $\mathaccentV {hat}05E{p}(\bm  {z})$. The probabilistic decoder $p_{\bm  {\theta }}(\bm  {x} | \bm  {z})$ is trained to map samples from $\mathaccentV {hat}05E{p}(\bm  {z})$ back to $p(\bm  {x})$, since its inputs are drawn from the probabilistic encoder $q_{\bm  {\phi }}(\bm  {z} | \bm  {x})$. A sample from the prior $p(\bm  {z})$ will not be mapped back by $p_{\bm  {\theta }}(\bm  {x} | \bm  {z})$ to $p(\bm  {x})$ exactly if $p(\bm  {z}) \not =\mathaccentV {hat}05E{p}(\bm  {z})$. \cite  {Creswell2016}\relax }}{32}}
+\newlabel{fig:mcmc_sampling}{{3.13}{32}}
+\newlabel{eq:mcmc_sampling}{{3.45}{32}}
 \citation{Rodriguez2016}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces The probabilistic encoder $q_{\bm  {\phi }}(\bm  {z} | \bm  {x})$ maps a given data point $\bm  {x}$ to the unknown distribution $\mathaccentV {hat}05E{p}(\bm  {z})$. The probabilistic decoder $p_{\bm  {\theta }}(\bm  {x} | \bm  {z})$ is trained to map samples from $\mathaccentV {hat}05E{p}(\bm  {z})$ back to $p(\bm  {x})$, since its inputs are drawn from the probabilistic encoder $q_{\bm  {\phi }}(\bm  {z} | \bm  {x})$. A sample from the prior $p(\bm  {z})$ will not be mapped back by $p_{\bm  {\theta }}(\bm  {x} | \bm  {z})$ to $p(\bm  {x})$ exactly if $p(\bm  {z}) \not =\mathaccentV {hat}05E{p}(\bm  {z})$. \cite  {Creswell2016}\relax }}{35}}
-\newlabel{fig:mcmc_sampling}{{3.15}{35}}
-\newlabel{eq:mcmc_sampling}{{3.46}{35}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces Samples from a variational autoencoder trained on the CelebA data set after $t = 0, 1, 5$ and $10$ steps of the generative procedure (3.46\hbox {}). The MCMC chain was initialised with a sample from the prior $\bm  {z}_{t=0} \sim p(\bm  {z})$, which often improves the quality of the samples. \cite  {Creswell2016}\relax }}{35}}
-\newlabel{fig:mcmc_sampling}{{3.16}{35}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Regularizing CNNs with Locally Constrained Decorrelations}{36}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Method}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Samples from a variational autoencoder trained on the CelebA data set after $t = 0, 1, 5$ and $10$ steps of the generative procedure (3.45\hbox {}). The MCMC chain was initialised with a sample from the prior $\bm  {z}_{t=0} \sim p(\bm  {z})$, which often improves the quality of the samples. \cite  {Creswell2016}\relax }}{33}}
+\newlabel{fig:mcmc_sampling}{{3.14}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Regularizing CNNs with Locally Constrained Decorrelations}{33}}
+\citation{Mnih2015}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Methods}{34}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:method}{{4}{37}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Latent Image}{37}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Architecture}{38}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Caption.\relax }}{38}}
-\newlabel{fig:latent_image_architecture}{{4.1}{38}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Derivation}{39}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Decoupling Latent Variables Indiscriminately}{39}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Architecture}{39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Caption.\relax }}{39}}
-\newlabel{fig:decoupling_indiscriminately}{{4.2}{39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Caption.\relax }}{39}}
-\newlabel{fig:decoupling_indiscriminately_flattening_latent_space}{{4.3}{39}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Derivation}{40}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Decoupling Latent Filters Using Averages}{40}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Architecture}{40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Caption.\relax }}{40}}
-\newlabel{fig:decoupling_indiscriminately}{{4.4}{40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Caption.\relax }}{40}}
-\newlabel{fig:decoupling_averages_latent_space}{{4.5}{40}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Derivation}{41}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Decoupling Latent Filters Using Weighted-Averages}{41}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Architecture}{41}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Derivation}{41}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Separating Colour Spaces}{41}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Architecture}{42}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Derivation}{42}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}Orthogonal Convolutions}{42}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Architecture}{42}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.2}Derivation}{42}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.7}Winner Takes All}{42}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.7.1}Architecture}{43}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.7.2}Derivation}{43}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.8}Psuedo-Dense Latent Space}{43}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.8.1}Architecture}{43}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.8.2}Derivation}{43}}
+\newlabel{ch:methods}{{4}{34}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Dimensionality Reduction}{34}}
+\citation{Mnih2015}
+\citation{Mnih2015}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Pre-processing Stella Frames}{35}}
+\@writefile{toc}{\contentsline {subsubsection}{Sprite Rendering in Stella}{35}}
+\citation{Stokes1996}
+\@writefile{toc}{\contentsline {subsubsection}{Dimensionality Reduction}{36}}
+\@writefile{toc}{\contentsline {subsubsection}{File Formats}{36}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Qualitative Assessment Using GUIs}{36}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Latent Image}{36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces A collection of frames captured from Space Invaders emulated on Stella. \textbf  {Left column:} an even frame. \textbf  {Middle column:} the (odd) frame following. \textbf  {Right column:} Combining the even and odd frames by taking the maximal value over each channel (RGB). Clearly the bullets visible in one frame fail to persist in the next. As discussed, this is due to the limited number of sprites Atari 2600 can load in a single frame.\relax }}{37}}
+\newlabel{fig:even_and_odd_frames_space_invaders}{{4.1}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Pre-processed frames captured from Pong emulated on Stella. These frames were originally $84\times 84$, but are printed here as $168\times 168$ to emphasise distortions. \textbf  {Left:} The JPEG format distorts the ball, paddle and score sprites. \textbf  {Right:} The PNG format displays the frame without such distortions.\relax }}{38}}
+\newlabel{fig:pong_729_pre_processed}{{4.2}{38}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Architecture}{38}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Caption.\relax }}{38}}
+\newlabel{fig:latent_image_architecture}{{4.3}{38}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Derivation}{38}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Disentangling Latent Neurons}{38}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Architecture}{39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Caption.\relax }}{39}}
+\newlabel{fig:decoupling_indiscriminately_horizontal}{{4.4}{39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Caption.\relax }}{39}}
+\newlabel{fig:decoupling_indiscriminately_flattening_latent_space}{{4.5}{39}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Derivation}{40}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Disentangling Latent Filters Using Averages}{40}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Architecture}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Caption.\relax }}{40}}
+\newlabel{fig:decoupling_indiscriminately_horizontal}{{4.6}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Caption.\relax }}{40}}
+\newlabel{fig:decoupling_averages_latent_space}{{4.7}{40}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Derivation}{41}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Decoupling Latent Filters Using Weighted-Averages}{41}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Architecture}{41}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.2}Derivation}{41}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.7}Separating Colour Spaces}{41}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7.1}Architecture}{42}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7.2}Derivation}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.8}Orthogonal Convolutions}{42}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.8.1}Architecture}{42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Caption.\relax }}{42}}
+\newlabel{fig:orthogonal_convolutions_archiecture}{{4.8}{42}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.8.2}Derivation}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.9}Winner Takes All}{42}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.9.1}Architecture}{43}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.9.2}Derivation}{43}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Results}{44}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{ch:Results}{{5}{44}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{45}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:Discussion}{{6}{45}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Relationship Between Reconstruction Loss and KL Divergence}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Using Batch Normalisation With Convolutional Variational Latent Spaces}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Using Batch Normalisation With Convolutional Variational Latent Spaces}{44}}
 \bibstyle{abbrv}
 \bibdata{library}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{46}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusion}{46}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:conclusions}{{7}{46}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{46}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Applications}{46}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Future Work}{46}}
+\newlabel{ch:conclusions}{{6}{46}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Summary of Thesis Achievements}{46}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Applications}{46}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Future Work}{46}}
 \@writefile{toc}{\contentsline {chapter}{Bibliography}{46}}
 \bibcite{Bellemare2015}{1}
 \bibcite{Blei2011}{2}

@@ -30,15 +30,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="517.10612"
-     inkscape:cy="198.77896"
+     inkscape:cx="552.19215"
+     inkscape:cy="201.24891"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1055"
+     inkscape:window-height="1124"
      inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-y="24"
      inkscape:window-maximized="1" />
   <defs
      id="defs4">
@@ -157,7 +157,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -169,42 +169,39 @@
      inkscape:label="Layer 1">
     <g
        id="g13135"
-       transform="translate(-478.60836,-58)">
+       transform="translate(-478.60836,-58)"
+       style="fill:#ffb380;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
       <g
-         id="g13110">
+         id="g8569"
+         style="stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke:#000000;stroke-opacity:1;fill:#ffb380">
         <rect
            y="841.45892"
            x="549.54022"
            height="82.638107"
            width="82.638107"
            id="rect4266-2-9"
-           style="fill:#999999;fill-opacity:1;stroke:none;stroke-width:1.39600003;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.396, 2.792;stroke-dashoffset:0;stroke-opacity:1" />
+           style="fill:#ffb380;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;opacity:0.693" />
         <rect
            y="857.79944"
            x="564.18781"
            height="82.638107"
            width="82.638107"
            id="rect4266-2-9-6"
-           style="display:inline;fill:#808080;fill-opacity:1;stroke:none;stroke-width:1.39600003;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.396, 2.792;stroke-dashoffset:0;stroke-opacity:1;enable-background:new" />
-      </g>
-      <g
-         id="g13110-2"
-         style="display:inline;enable-background:new"
-         transform="translate(29.567465,33.708346)">
+           style="display:inline;fill:#ffb380;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new;opacity:0.693" />
         <rect
-           y="841.45892"
-           x="549.54022"
+           y="875.1673"
+           x="579.10767"
            height="82.638107"
            width="82.638107"
            id="rect4266-2-9-61"
-           style="fill:#999999;fill-opacity:1;stroke:none;stroke-width:1.39600003;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.396, 2.792;stroke-dashoffset:0;stroke-opacity:1" />
+           style="fill:#ffb380;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;opacity:0.693" />
         <rect
-           y="857.79944"
-           x="564.18781"
+           y="891.50781"
+           x="593.75525"
            height="82.638107"
            width="82.638107"
            id="rect4266-2-9-6-8"
-           style="display:inline;fill:#808080;fill-opacity:1;stroke:none;stroke-width:1.39600003;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.396, 2.792;stroke-dashoffset:0;stroke-opacity:1;enable-background:new" />
+           style="display:inline;fill:#ffb380;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new;opacity:0.693" />
       </g>
     </g>
     <text
@@ -239,13 +236,13 @@
        id="g13689"
        transform="translate(6,-6.9372165)">
       <circle
-         style="opacity:1;fill:#808080;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
+         style="opacity:1;fill:#ffb380;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
          id="path13562"
          cx="381.83755"
          cy="856.73962"
          r="13.131983" />
       <circle
-         style="display:inline;opacity:1;fill:#808080;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:1;fill:#ffb380;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
          id="path13562-7"
          cx="416.18271"
          cy="856.73962"
@@ -279,7 +276,7 @@
              d="m 509.23,418.65 0,0.14 -0.01,0.13 -0.02,0.13 -0.02,0.13 -0.03,0.13 -0.04,0.13 -0.04,0.12 -0.04,0.12 -0.06,0.11 -0.06,0.12 -0.06,0.11 -0.07,0.11 -0.07,0.1 -0.08,0.1 -0.08,0.1 -0.09,0.09 -0.09,0.08 -0.1,0.09 -0.1,0.08 -0.1,0.07 -0.11,0.07 -0.11,0.06 -0.11,0.06 -0.12,0.05 -0.12,0.05 -0.12,0.04 -0.13,0.04 -0.13,0.03 -0.13,0.02 -0.13,0.02 -0.13,0.01 -0.14,0 c -1.43,0 -2.64,-1.18 -2.64,-2.64 0,-1.44 1.21,-2.64 2.64,-2.64 1.46,0 2.64,1.2 2.64,2.64 z"
              id="path13630" /></g>      </g>
       <circle
-         style="display:inline;opacity:1;fill:#808080;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:1;fill:#ffb380;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
          id="path13562-7-9"
          cx="493.14273"
          cy="856.73962"
@@ -400,22 +397,22 @@
     <path
        inkscape:connector-curvature="0"
        id="path13192-7"
-       d="m 577.76563,850.01465 77.78174,0"
+       d="m 567.76563,850.01465 77.78174,0"
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend-2);enable-background:new" />
     <text
        sodipodi:linespacing="0%"
        id="text13558-5"
        y="822.24207"
-       x="575.86719"
+       x="565.86719"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.75px;line-height:0%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
        xml:space="preserve"><tspan
          y="822.24207"
-         x="575.86719"
+         x="565.86719"
          id="tspan13560-9"
          sodipodi:role="line">Decouple</tspan></text>
     <g
        id="g14427"
-       transform="translate(567.50268,199.92899)">
+       transform="translate(549.50268,199.92899)">
       <g
          word-spacing="normal"
          letter-spacing="normal"
@@ -505,14 +502,14 @@
        sodipodi:linespacing="100%"
        id="text11455-6-3-2-2"
        y="980.66803"
-       x="667.3689"
+       x="719.3689"
        style="font-style:normal;font-weight:normal;font-size:25px;line-height:100%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:100%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee"
          y="980.66803"
-         x="667.3689"
+         x="719.3689"
          sodipodi:role="line"
-         id="tspan14571">Indiscriminant decoupling term</tspan></text>
+         id="tspan14571">Decoupling term</tspan></text>
   </g>
   <g
      transform="translate(0,-354.33071)"
