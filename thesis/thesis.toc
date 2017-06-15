@@ -39,6 +39,7 @@
 \contentsline {section}{\numberline {4.2}Qualitative Assessment Using GUIs}{35}
 \contentsline {section}{\numberline {4.3}Ensuring Numerical Stability in the Latent Space}{37}
 \contentsline {section}{\numberline {4.4}Activation Functions in the Latent Space}{37}
+\contentsline {section}{\numberline {4.5}Keras Callbacks}{38}
 \contentsline {chapter}{\numberline {5}Methods}{39}
 \contentsline {section}{\numberline {5.1}Single Latent Filter}{39}
 \contentsline {subsection}{\numberline {5.1.1}Architecture}{40}
@@ -47,26 +48,32 @@
 \contentsline {subsection}{\numberline {5.2.1}Architecture}{41}
 \contentsline {subsection}{\numberline {5.2.2}Derivation}{42}
 \contentsline {section}{\numberline {5.3}Disentangling Latent Filters Using Averages}{42}
-\contentsline {subsection}{\numberline {5.3.1}Architecture}{42}
+\contentsline {subsection}{\numberline {5.3.1}Architecture}{43}
 \contentsline {subsection}{\numberline {5.3.2}Derivation}{43}
 \contentsline {section}{\numberline {5.4}Decoupling Latent Filters Using Weighted-Averages}{43}
-\contentsline {subsection}{\numberline {5.4.1}Architecture}{43}
-\contentsline {subsection}{\numberline {5.4.2}Derivation}{43}
-\contentsline {section}{\numberline {5.5}Separating Colour Spaces}{43}
+\contentsline {subsection}{\numberline {5.4.1}Architecture}{44}
+\contentsline {subsection}{\numberline {5.4.2}Derivation}{44}
+\contentsline {section}{\numberline {5.5}Separating Colour Spaces}{44}
 \contentsline {subsection}{\numberline {5.5.1}Architecture}{44}
 \contentsline {subsection}{\numberline {5.5.2}Derivation}{44}
 \contentsline {section}{\numberline {5.6}Orthogonal Convolutions}{44}
-\contentsline {subsection}{\numberline {5.6.1}Architecture}{44}
-\contentsline {subsection}{\numberline {5.6.2}Derivation}{44}
-\contentsline {section}{\numberline {5.7}Winner Takes All}{44}
+\contentsline {subsection}{\numberline {5.6.1}Architecture}{45}
+\contentsline {subsection}{\numberline {5.6.2}Derivation}{45}
+\contentsline {section}{\numberline {5.7}Winner Takes All}{45}
 \contentsline {subsection}{\numberline {5.7.1}Architecture}{45}
 \contentsline {subsection}{\numberline {5.7.2}Derivation}{45}
 \contentsline {chapter}{\numberline {6}Results}{46}
 \contentsline {section}{\numberline {6.1}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{46}
 \contentsline {section}{\numberline {6.2}Using Batch Normalisation With Convolutional Variational Latent Spaces}{46}
-\contentsline {section}{\numberline {6.3}Using Batch Normalisation With Convolutional Variational Latent Spaces}{46}
-\contentsline {chapter}{\numberline {7}Conclusion}{48}
-\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{48}
-\contentsline {section}{\numberline {7.2}Applications}{48}
-\contentsline {section}{\numberline {7.3}Future Work}{48}
-\contentsline {chapter}{Bibliography}{48}
+\contentsline {section}{\numberline {6.3}Single Latent Filter}{47}
+\contentsline {section}{\numberline {6.4}Disentangling Latent Neurons}{47}
+\contentsline {section}{\numberline {6.5}Disentangling Latent Filters Using Averages}{47}
+\contentsline {section}{\numberline {6.6}Decoupling Latent Filters Using Weighted-Averages}{48}
+\contentsline {section}{\numberline {6.7}Separating Colour Spaces}{48}
+\contentsline {section}{\numberline {6.8}Orthogonal Convolutions}{48}
+\contentsline {section}{\numberline {6.9}Winner Takes All}{49}
+\contentsline {chapter}{\numberline {7}Conclusion}{50}
+\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{50}
+\contentsline {section}{\numberline {7.2}Applications}{50}
+\contentsline {section}{\numberline {7.3}Future Work}{50}
+\contentsline {chapter}{Bibliography}{50}
