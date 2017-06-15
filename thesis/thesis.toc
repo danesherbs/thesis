@@ -29,14 +29,15 @@
 \contentsline {subsubsection}{Derivation}{28}
 \contentsline {section}{\numberline {3.5}Improving Sampling from Generative Autoencoders with Markov Chains}{31}
 \contentsline {section}{\numberline {3.6}Regularizing CNNs with Locally Constrained Decorrelations}{33}
+\contentsline {section}{\numberline {3.7}Batch Normalisation}{33}
 \contentsline {chapter}{\numberline {4}Methods}{34}
 \contentsline {section}{\numberline {4.1}Dimensionality Reduction}{34}
-\contentsline {subsection}{\numberline {4.1.1}Pre-processing Stella Frames}{35}
-\contentsline {subsubsection}{Sprite Rendering in Stella}{35}
-\contentsline {subsubsection}{Dimensionality Reduction}{36}
-\contentsline {subsubsection}{File Formats}{36}
-\contentsline {section}{\numberline {4.2}Qualitative Assessment Using GUIs}{36}
-\contentsline {section}{\numberline {4.3}Latent Image}{36}
+\contentsline {subsection}{\numberline {4.1.1}Pre-processing Pipeline}{35}
+\contentsline {subsubsection}{Ensuring Object Persistence}{35}
+\contentsline {subsubsection}{Extracting Luminance and Cropping}{35}
+\contentsline {subsubsection}{File Formats}{35}
+\contentsline {section}{\numberline {4.2}Qualitative Assessment Using GUIs}{37}
+\contentsline {section}{\numberline {4.3}Latent Image}{37}
 \contentsline {subsection}{\numberline {4.3.1}Architecture}{38}
 \contentsline {subsection}{\numberline {4.3.2}Derivation}{38}
 \contentsline {section}{\numberline {4.4}Disentangling Latent Neurons}{38}
@@ -58,7 +59,7 @@
 \contentsline {subsection}{\numberline {4.9.1}Architecture}{43}
 \contentsline {subsection}{\numberline {4.9.2}Derivation}{43}
 \contentsline {chapter}{\numberline {5}Results}{44}
-\contentsline {section}{\numberline {5.1}Relationship Between Reconstruction Loss and KL Divergence}{44}
+\contentsline {section}{\numberline {5.1}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{44}
 \contentsline {section}{\numberline {5.2}Using Batch Normalisation With Convolutional Variational Latent Spaces}{44}
 \contentsline {section}{\numberline {5.3}Using Batch Normalisation With Convolutional Variational Latent Spaces}{44}
 \contentsline {chapter}{\numberline {6}Conclusion}{46}

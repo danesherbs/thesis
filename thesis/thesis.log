@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.24)  15 JUN 2017 18:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.24)  15 JUN 2017 19:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -995,7 +995,7 @@ File: figures/related_work/space_invaders_341_rgb_even.png Graphic file (type p
 ng)
  <use figures/related_work/space_invaders_341_rgb_even.png>
 Package pdftex.def Info: figures/related_work/space_invaders_341_rgb_even.png u
-sed on input line 41.
+sed on input line 31.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
 <figures/related_work/space_invaders_341_rgb_odd.png, id=288, 160.6pt x 210.787
@@ -1004,7 +1004,7 @@ File: figures/related_work/space_invaders_341_rgb_odd.png Graphic file (type pn
 g)
  <use figures/related_work/space_invaders_341_rgb_odd.png>
 Package pdftex.def Info: figures/related_work/space_invaders_341_rgb_odd.png us
-ed on input line 42.
+ed on input line 32.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
 <figures/related_work/space_invaders_341_rgb_maximum_of_even_odd.png, id=289, 1
@@ -1014,7 +1014,7 @@ ic file (type png)
 
 <use figures/related_work/space_invaders_341_rgb_maximum_of_even_odd.png>
 Package pdftex.def Info: figures/related_work/space_invaders_341_rgb_maximum_of
-_even_odd.png used on input line 43.
+_even_odd.png used on input line 33.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
 <figures/related_work/space_invaders_831_rgb_even.png, id=290, 160.6pt x 210.78
@@ -1023,7 +1023,7 @@ File: figures/related_work/space_invaders_831_rgb_even.png Graphic file (type p
 ng)
  <use figures/related_work/space_invaders_831_rgb_even.png>
 Package pdftex.def Info: figures/related_work/space_invaders_831_rgb_even.png u
-sed on input line 46.
+sed on input line 36.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
 <figures/related_work/space_invaders_831_rgb_odd.png, id=291, 160.6pt x 210.787
@@ -1032,7 +1032,7 @@ File: figures/related_work/space_invaders_831_rgb_odd.png Graphic file (type pn
 g)
  <use figures/related_work/space_invaders_831_rgb_odd.png>
 Package pdftex.def Info: figures/related_work/space_invaders_831_rgb_odd.png us
-ed on input line 47.
+ed on input line 37.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
 <figures/related_work/space_invaders_831_rgb_maximum_of_even_odd.png, id=292, 1
@@ -1042,7 +1042,7 @@ ic file (type png)
 
 <use figures/related_work/space_invaders_831_rgb_maximum_of_even_odd.png>
 Package pdftex.def Info: figures/related_work/space_invaders_831_rgb_maximum_of
-_even_odd.png used on input line 48.
+_even_odd.png used on input line 38.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
 <figures/related_work/space_invaders_1044_rgb_even.png, id=293, 160.6pt x 210.7
@@ -1051,7 +1051,7 @@ File: figures/related_work/space_invaders_1044_rgb_even.png Graphic file (type
 png)
  <use figures/related_work/space_invaders_1044_rgb_even.png>
 Package pdftex.def Info: figures/related_work/space_invaders_1044_rgb_even.png 
-used on input line 51.
+used on input line 41.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
 <figures/related_work/space_invaders_1044_rgb_odd.png, id=294, 160.6pt x 210.78
@@ -1060,7 +1060,7 @@ File: figures/related_work/space_invaders_1044_rgb_odd.png Graphic file (type p
 ng)
  <use figures/related_work/space_invaders_1044_rgb_odd.png>
 Package pdftex.def Info: figures/related_work/space_invaders_1044_rgb_odd.png u
-sed on input line 52.
+sed on input line 42.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
 <figures/related_work/space_invaders_1044_rgb_maximum_of_even_odd.png, id=295, 
@@ -1070,37 +1070,45 @@ hic file (type png)
 
 <use figures/related_work/space_invaders_1044_rgb_maximum_of_even_odd.png>
 Package pdftex.def Info: figures/related_work/space_invaders_1044_rgb_maximum_o
-f_even_odd.png used on input line 53.
+f_even_odd.png used on input line 43.
 (pdftex.def)             Requested size: 128.48016pt x 168.63022pt.
 
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
 
 Package multicol Warning: Using `1' columns doesn't seem a good idea.
- I therefore use two columns instead on input line 72.
+ I therefore use two columns instead on input line 62.
 
 
-<figures/related_work/pong_729_pre_processed.jpeg, id=299, 84.315pt x 84.315pt>
+<figures/related_work/pong_729_pre_processed.jpeg, id=296, 84.315pt x 84.315pt>
 File: figures/related_work/pong_729_pre_processed.jpeg Graphic file (type jpg)
 <use figures/related_work/pong_729_pre_processed.jpeg>
 Package pdftex.def Info: figures/related_work/pong_729_pre_processed.jpeg used 
-on input line 73.
+on input line 63.
 (pdftex.def)             Requested size: 168.62955pt x 168.62955pt.
 
-<figures/related_work/pong_729_pre_processed.png, id=300, 84.315pt x 84.315pt>
+<figures/related_work/pong_729_pre_processed.png, id=297, 84.315pt x 84.315pt>
 File: figures/related_work/pong_729_pre_processed.png Graphic file (type png)
 
 <use figures/related_work/pong_729_pre_processed.png>
 Package pdftex.def Info: figures/related_work/pong_729_pre_processed.png used o
-n input line 74.
+n input line 64.
 (pdftex.def)             Requested size: 168.62955pt x 168.62955pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[35] [36 <./figures/related_work/space_invaders_341_rgb_even.png (PNG copy)> <.
+/figures/related_work/space_invaders_341_rgb_odd.png (PNG copy)> <./figures/rel
+ated_work/space_invaders_341_rgb_maximum_of_even_odd.png (PNG copy)> <./figures
+/related_work/space_invaders_831_rgb_even.png (PNG copy)> <./figures/related_wo
+rk/space_invaders_831_rgb_odd.png (PNG copy)> <./figures/related_work/space_inv
+aders_831_rgb_maximum_of_even_odd.png (PNG copy)> <./figures/related_work/space
+_invaders_1044_rgb_even.png (PNG copy)> <./figures/related_work/space_invaders_
+1044_rgb_odd.png (PNG copy)> <./figures/related_work/space_invaders_1044_rgb_ma
+ximum_of_even_odd.png (PNG copy)>]
 Package epstopdf Info: Source file: <./figures/methods/latent_image_architectur
 e.eps>
 (epstopdf)                    date: 2017-06-15 16:33:27
@@ -1112,34 +1120,25 @@ e-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/latent_i
 mage_architecture-eps-converted-to.pdf ./figures/methods/latent_image_architect
 ure.eps>
-(epstopdf)             \includegraphics on input line 100.
+(epstopdf)             \includegraphics on input line 95.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figures/methods/latent_image_architecture-eps-converted-to.pdf, id=301, 843.
+<./figures/methods/latent_image_architecture-eps-converted-to.pdf, id=304, 843.
 15pt x 299.1175pt>
 File: ./figures/methods/latent_image_architecture-eps-converted-to.pdf Graphic 
 file (type pdf)
 
 <use ./figures/methods/latent_image_architecture-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/methods/latent_image_architecture-eps-conver
-ted-to.pdf used on input line 100.
+ted-to.pdf used on input line 95.
 (pdftex.def)             Requested size: 489.02734pt x 173.48827pt.
 
-Overfull \hbox (5.33047pt too wide) in paragraph at lines 100--101
+Overfull \hbox (5.33047pt too wide) in paragraph at lines 95--96
  [][] 
  []
 
-[36] [37 <./figures/related_work/space_invaders_341_rgb_even.png (PNG copy)> <.
-/figures/related_work/space_invaders_341_rgb_odd.png (PNG copy)> <./figures/rel
-ated_work/space_invaders_341_rgb_maximum_of_even_odd.png (PNG copy)> <./figures
-/related_work/space_invaders_831_rgb_even.png (PNG copy)> <./figures/related_wo
-rk/space_invaders_831_rgb_odd.png (PNG copy)> <./figures/related_work/space_inv
-aders_831_rgb_maximum_of_even_odd.png (PNG copy)> <./figures/related_work/space
-_invaders_1044_rgb_even.png (PNG copy)> <./figures/related_work/space_invaders_
-1044_rgb_odd.png (PNG copy)> <./figures/related_work/space_invaders_1044_rgb_ma
-ximum_of_even_odd.png (PNG copy)>] [38 <./figures/related_work/pong_729_pre_pro
-cessed.jpeg> <./figures/related_work/pong_729_pre_processed.png (PNG copy)> <./
-figures/methods/latent_image_architecture-eps-converted-to.pdf>]
+[37 <./figures/related_work/pong_729_pre_processed.jpeg> <./figures/related_wor
+k/pong_729_pre_processed.png (PNG copy)>]
 Package epstopdf Info: Source file: <./figures/methods/decoupling_indiscriminat
 ely_horizontal.eps>
 (epstopdf)                    date: 2017-06-15 15:50:36
@@ -1151,24 +1150,28 @@ ely_horizontal-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/decoupli
 ng_indiscriminately_horizontal-eps-converted-to.pdf ./figures/methods/decouplin
 g_indiscriminately_horizontal.eps>
-(epstopdf)             \includegraphics on input line 118.
+(epstopdf)             \includegraphics on input line 113.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/methods/decoupling_indiscriminately_horizontal-eps-converted-to.pdf,
- id=315, 917.4275pt x 299.1175pt>
+ id=308, 917.4275pt x 299.1175pt>
 File: ./figures/methods/decoupling_indiscriminately_horizontal-eps-converted-to
 .pdf Graphic file (type pdf)
 
 <use ./figures/methods/decoupling_indiscriminately_horizontal-eps-converted-to.
 pdf>
 Package pdftex.def Info: ./figures/methods/decoupling_indiscriminately_horizont
-al-eps-converted-to.pdf used on input line 118.
+al-eps-converted-to.pdf used on input line 113.
 (pdftex.def)             Requested size: 504.5867pt x 164.51512pt.
 
-Overfull \hbox (20.88983pt too wide) in paragraph at lines 118--119
+Overfull \hbox (20.88983pt too wide) in paragraph at lines 113--114
  [][] 
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38 <./figures/methods/latent_image_architecture-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./figures/methods/decoupling_indiscriminat
 ely_flattening_latent_space.eps>
 (epstopdf)                    date: 2017-06-15 16:49:58
@@ -1180,7 +1183,7 @@ ely_flattening_latent_space-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/decoupli
 ng_indiscriminately_flattening_latent_space-eps-converted-to.pdf ./figures/meth
 ods/decoupling_indiscriminately_flattening_latent_space.eps>
-(epstopdf)             \includegraphics on input line 126.
+(epstopdf)             \includegraphics on input line 121.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/methods/decoupling_indiscriminately_flattening_latent_space-eps-conv
@@ -1191,8 +1194,11 @@ File: ./figures/methods/decoupling_indiscriminately_flattening_latent_space-eps
 <use ./figures/methods/decoupling_indiscriminately_flattening_latent_space-eps-
 converted-to.pdf>
 Package pdftex.def Info: ./figures/methods/decoupling_indiscriminately_flatteni
-ng_latent_space-eps-converted-to.pdf used on input line 126.
+ng_latent_space-eps-converted-to.pdf used on input line 121.
 (pdftex.def)             Requested size: 434.2256pt x 324.61525pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [39 <./figures/methods/decoupling_indiscriminately_horizontal-eps-converted-to
 .pdf> <./figures/methods/decoupling_indiscriminately_flattening_latent_space-ep
 s-converted-to.pdf>]
@@ -1207,7 +1213,7 @@ ely_horizontal-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/decoupli
 ng_indiscriminately_horizontal-eps-converted-to.pdf ./figures/methods/decouplin
 g_indiscriminately_horizontal.eps>
-(epstopdf)             \includegraphics on input line 146.
+(epstopdf)             \includegraphics on input line 141.
 Package epstopdf Info: Output file is already uptodate.
 File: ./figures/methods/decoupling_indiscriminately_horizontal-eps-converted-to
 .pdf Graphic file (type pdf)
@@ -1215,10 +1221,10 @@ File: ./figures/methods/decoupling_indiscriminately_horizontal-eps-converted-to
 <use ./figures/methods/decoupling_indiscriminately_horizontal-eps-converted-to.
 pdf>
 Package pdftex.def Info: ./figures/methods/decoupling_indiscriminately_horizont
-al-eps-converted-to.pdf used on input line 146.
+al-eps-converted-to.pdf used on input line 141.
 (pdftex.def)             Requested size: 504.5867pt x 164.51512pt.
 
-Overfull \hbox (20.88983pt too wide) in paragraph at lines 146--147
+Overfull \hbox (20.88983pt too wide) in paragraph at lines 141--142
  [][] 
  []
 
@@ -1233,7 +1239,7 @@ nt_space-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/decoupli
 ng_averages_latent_space-eps-converted-to.pdf ./figures/methods/decoupling_aver
 ages_latent_space.eps>
-(epstopdf)             \includegraphics on input line 154.
+(epstopdf)             \includegraphics on input line 149.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/methods/decoupling_averages_latent_space-eps-converted-to.pdf, id=32
@@ -1243,7 +1249,7 @@ raphic file (type pdf)
 
 <use ./figures/methods/decoupling_averages_latent_space-eps-converted-to.pdf>
 Package pdftex.def Info: ./figures/methods/decoupling_averages_latent_space-eps
--converted-to.pdf used on input line 154.
+-converted-to.pdf used on input line 149.
 (pdftex.def)             Requested size: 424.58952pt x 127.07571pt.
 
 [40 <./figures/methods/decoupling_averages_latent_space-eps-converted-to.pdf>]
@@ -1261,7 +1267,7 @@ archiecture-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/orthogon
 al_convolutions_archiecture-eps-converted-to.pdf ./figures/methods/orthogonal_c
 onvolutions_archiecture.eps>
-(epstopdf)             \includegraphics on input line 192.
+(epstopdf)             \includegraphics on input line 187.
 Package epstopdf Info: Output file is already uptodate.
 
 <./figures/methods/orthogonal_convolutions_archiecture-eps-converted-to.pdf, id
@@ -1272,10 +1278,10 @@ f Graphic file (type pdf)
 <use ./figures/methods/orthogonal_convolutions_archiecture-eps-converted-to.pdf
 >
 Package pdftex.def Info: ./figures/methods/orthogonal_convolutions_archiecture-
-eps-converted-to.pdf used on input line 192.
+eps-converted-to.pdf used on input line 187.
 (pdftex.def)             Requested size: 485.65698pt x 86.00174pt.
 
-Overfull \hbox (1.96011pt too wide) in paragraph at lines 192--193
+Overfull \hbox (1.96011pt too wide) in paragraph at lines 187--188
  [][] 
  []
 
@@ -1317,7 +1323,7 @@ Here is how much of TeX's memory you used:
  8705 multiletter control sequences out of 15000+600000
  20690 words of font info for 82 fonts, out of 8000000 for 9000
  452 hyphenation exceptions out of 8191
- 40i,12n,40p,1040b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,12n,40p,1047b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy6.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb></usr
@@ -1341,7 +1347,7 @@ st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (66 pages, 8004911 bytes).
+Output written on thesis.pdf (66 pages, 8004703 bytes).
 PDF statistics:
  455 PDF objects out of 1000 (max. 8388607)
  278 compressed objects within 3 object streams

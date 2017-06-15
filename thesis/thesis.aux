@@ -180,6 +180,7 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces Samples from a variational autoencoder trained on the CelebA data set after $t = 0, 1, 5$ and $10$ steps of the generative procedure (3.45\hbox {}). The MCMC chain was initialised with a sample from the prior $\bm  {z}_{t=0} \sim p(\bm  {z})$, which often improves the quality of the samples. \cite  {Creswell2016}\relax }}{33}}
 \newlabel{fig:mcmc_sampling}{{3.14}{33}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.6}Regularizing CNNs with Locally Constrained Decorrelations}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Batch Normalisation}{33}}
 \citation{Mnih2015}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Methods}{34}}
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -187,18 +188,17 @@
 \newlabel{ch:methods}{{4}{34}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Dimensionality Reduction}{34}}
 \citation{Mnih2015}
-\citation{Mnih2015}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Pre-processing Stella Frames}{35}}
-\@writefile{toc}{\contentsline {subsubsection}{Sprite Rendering in Stella}{35}}
 \citation{Stokes1996}
-\@writefile{toc}{\contentsline {subsubsection}{Dimensionality Reduction}{36}}
-\@writefile{toc}{\contentsline {subsubsection}{File Formats}{36}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Qualitative Assessment Using GUIs}{36}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Latent Image}{36}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces A collection of frames captured from Space Invaders emulated on Stella. \textbf  {Left column:} an even frame. \textbf  {Middle column:} the (odd) frame following. \textbf  {Right column:} Combining the even and odd frames by taking the maximal value over each channel (RGB). Clearly the bullets visible in one frame fail to persist in the next. As discussed, this is due to the limited number of sprites Atari 2600 can load in a single frame.\relax }}{37}}
-\newlabel{fig:even_and_odd_frames_space_invaders}{{4.1}{37}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Pre-processed frames captured from Pong emulated on Stella. These frames were originally $84\times 84$, but are printed here as $168\times 168$ to emphasise distortions. \textbf  {Left:} The JPEG format distorts the ball, paddle and score sprites. \textbf  {Right:} The PNG format displays the frame without such distortions.\relax }}{38}}
-\newlabel{fig:pong_729_pre_processed}{{4.2}{38}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Pre-processing Pipeline}{35}}
+\@writefile{toc}{\contentsline {subsubsection}{Ensuring Object Persistence}{35}}
+\@writefile{toc}{\contentsline {subsubsection}{Extracting Luminance and Cropping}{35}}
+\@writefile{toc}{\contentsline {subsubsection}{File Formats}{35}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces A collection of frames captured from Space Invaders emulated on Stella. \textbf  {Left column:} an even frame. \textbf  {Middle column:} the (odd) frame following. \textbf  {Right column:} Combining the even and odd frames by taking the maximal value over each channel (RGB). Clearly the bullets visible in one frame fail to persist in the next. As discussed, this is due to the limited number of sprites Atari 2600 can load in a single frame.\relax }}{36}}
+\newlabel{fig:even_and_odd_frames_space_invaders}{{4.1}{36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Pre-processed frames captured from Pong emulated on Stella. These frames were originally $84\times 84$, but are printed here as $168\times 168$ to emphasise distortions. \textbf  {Left:} The JPEG format distorts the ball, paddle and score sprites. \textbf  {Right:} The PNG format displays the frame without such distortions.\relax }}{37}}
+\newlabel{fig:pong_729_pre_processed}{{4.2}{37}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Qualitative Assessment Using GUIs}{37}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Latent Image}{37}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Architecture}{38}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Caption.\relax }}{38}}
 \newlabel{fig:latent_image_architecture}{{4.3}{38}}
@@ -235,7 +235,7 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{ch:Results}{{5}{44}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Relationship Between Reconstruction Loss and KL Divergence}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{44}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.2}Using Batch Normalisation With Convolutional Variational Latent Spaces}{44}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.3}Using Batch Normalisation With Convolutional Variational Latent Spaces}{44}}
 \bibstyle{abbrv}
