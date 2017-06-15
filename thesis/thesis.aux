@@ -182,72 +182,78 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.6}Regularizing CNNs with Locally Constrained Decorrelations}{33}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.7}Batch Normalisation}{33}}
 \citation{Mnih2015}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Methods}{34}}
+\citation{Mnih2015}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Implementation}{34}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:methods}{{4}{34}}
+\newlabel{ch:implementation}{{4}{34}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Dimensionality Reduction}{34}}
-\citation{Mnih2015}
 \citation{Stokes1996}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Pre-processing Pipeline}{35}}
 \@writefile{toc}{\contentsline {subsubsection}{Ensuring Object Persistence}{35}}
 \@writefile{toc}{\contentsline {subsubsection}{Extracting Luminance and Cropping}{35}}
 \@writefile{toc}{\contentsline {subsubsection}{File Formats}{35}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces A collection of frames captured from Space Invaders emulated on Stella. \textbf  {Left column:} an even frame. \textbf  {Middle column:} the (odd) frame following. \textbf  {Right column:} Combining the even and odd frames by taking the maximal value over each channel (RGB). Clearly the bullets visible in one frame fail to persist in the next. As discussed, this is due to the limited number of sprites Atari 2600 can load in a single frame.\relax }}{36}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Qualitative Assessment Using GUIs}{35}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces A collection of frames captured from Space Invaders emulated on Stella. \textbf  {Left column:} an even frame. \textbf  {Middle column:} the (odd) frame following. \textbf  {Right column:} Combining the even and odd frames by taking the maximal value over each channel (RGB). Clearly the bullets visible in one frame fail to persist in the next. As mentioned, this is due to the limited number of sprites Atari 2600 can load in a single frame.\relax }}{36}}
 \newlabel{fig:even_and_odd_frames_space_invaders}{{4.1}{36}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Pre-processed frames captured from Pong emulated on Stella. These frames were originally $84\times 84$, but are printed here as $168\times 168$ to emphasise distortions. \textbf  {Left:} The JPEG format distorts the ball, paddle and score sprites. \textbf  {Right:} The PNG format displays the frame without such distortions.\relax }}{37}}
 \newlabel{fig:pong_729_pre_processed}{{4.2}{37}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Qualitative Assessment Using GUIs}{37}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Latent Image}{37}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Architecture}{38}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Caption.\relax }}{38}}
-\newlabel{fig:latent_image_architecture}{{4.3}{38}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Derivation}{38}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Disentangling Latent Neurons}{38}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Architecture}{39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Caption.\relax }}{39}}
-\newlabel{fig:decoupling_indiscriminately_horizontal}{{4.4}{39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Caption.\relax }}{39}}
-\newlabel{fig:decoupling_indiscriminately_flattening_latent_space}{{4.5}{39}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Derivation}{40}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Disentangling Latent Filters Using Averages}{40}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Architecture}{40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Caption.\relax }}{40}}
-\newlabel{fig:decoupling_indiscriminately_horizontal}{{4.6}{40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Caption.\relax }}{40}}
-\newlabel{fig:decoupling_averages_latent_space}{{4.7}{40}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Derivation}{41}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}Decoupling Latent Filters Using Weighted-Averages}{41}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Architecture}{41}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.2}Derivation}{41}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.7}Separating Colour Spaces}{41}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.7.1}Architecture}{42}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.7.2}Derivation}{42}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.8}Orthogonal Convolutions}{42}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.8.1}Architecture}{42}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Caption.\relax }}{42}}
-\newlabel{fig:orthogonal_convolutions_archiecture}{{4.8}{42}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.8.2}Derivation}{42}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.9}Winner Takes All}{42}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.9.1}Architecture}{43}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.9.2}Derivation}{43}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Results}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Ensuring Numerical Stability in the Latent Space}{37}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Activation Functions in the Latent Space}{37}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Methods}{39}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:Results}{{5}{44}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{44}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Using Batch Normalisation With Convolutional Variational Latent Spaces}{44}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Using Batch Normalisation With Convolutional Variational Latent Spaces}{44}}
+\newlabel{ch:methods}{{5}{39}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Single Latent Filter}{39}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Architecture}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Caption.\relax }}{40}}
+\newlabel{fig:latent_image_architecture}{{5.1}{40}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Derivation}{40}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Disentangling Latent Neurons}{40}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Architecture}{41}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Caption.\relax }}{41}}
+\newlabel{fig:decoupling_indiscriminately_horizontal}{{5.2}{41}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Caption.\relax }}{41}}
+\newlabel{fig:decoupling_indiscriminately_flattening_latent_space}{{5.3}{41}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Derivation}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Disentangling Latent Filters Using Averages}{42}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Architecture}{42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Caption.\relax }}{42}}
+\newlabel{fig:decoupling_indiscriminately_horizontal}{{5.4}{42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Caption.\relax }}{42}}
+\newlabel{fig:decoupling_averages_latent_space}{{5.5}{42}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Derivation}{43}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Decoupling Latent Filters Using Weighted-Averages}{43}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Architecture}{43}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Derivation}{43}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Separating Colour Spaces}{43}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Architecture}{44}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Derivation}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.6}Orthogonal Convolutions}{44}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.1}Architecture}{44}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Caption.\relax }}{44}}
+\newlabel{fig:orthogonal_convolutions_archiecture}{{5.6}{44}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.2}Derivation}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.7}Winner Takes All}{44}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7.1}Architecture}{45}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7.2}Derivation}{45}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Results}{46}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:Results}{{6}{46}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{46}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Using Batch Normalisation With Convolutional Variational Latent Spaces}{46}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Using Batch Normalisation With Convolutional Variational Latent Spaces}{46}}
 \bibstyle{abbrv}
 \bibdata{library}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusion}{46}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{48}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:conclusions}{{6}{46}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Summary of Thesis Achievements}{46}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Applications}{46}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Future Work}{46}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{46}}
+\newlabel{ch:conclusions}{{7}{48}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{48}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Applications}{48}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Future Work}{48}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{48}}
 \bibcite{Bellemare2015}{1}
 \bibcite{Blei2011}{2}
 \bibcite{Blei2016}{3}
