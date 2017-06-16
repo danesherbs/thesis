@@ -17,7 +17,7 @@
 \contentsline {figure}{\numberline {3.7}{\ignorespaces A viable implementation of the variational autoencoder. Sampling from the probabilistic encoder $q_{\bm {\phi }}(\bm {z} | \bm {x})$ is simulated by evaluating $\bm {z} = g_{\bm {\phi }}(\bm {x}, \bm {\epsilon }) = \bm {\mu } + \bm {\sigma } \odot \bm {\epsilon }$.\relax }}{22}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces The encoder takes a data point and returns a normal distribution (orange); some samples of which are shown (blue). A sample is drawn from the normal distribution (red) and decoded. \cite {Dykeman2016}\relax }}{24}
 \contentsline {figure}{\numberline {3.9}{\ignorespaces The prior distribution should approximate the standard multivariate Gaussian $\mathcal {N}(\bm {0}, \bm {I})$. Samples of the prior are shown (yellow); two of which are decoded (red and blue). \cite {Dykeman2016}\relax }}{25}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces \vspace *{-20mm}The sum over the latent space distributions of all data points $\bm {x}^{(i)}$ approximates the multivariate isotropic Gaussian. \cite {Dykeman2016}\relax }}{26}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces The sum over the latent space distributions of all data points $\bm {x}^{(i)}$ approximates the multivariate isotropic Gaussian. \cite {Dykeman2016}\relax }}{26}
 \contentsline {figure}{\numberline {3.11}{\ignorespaces InfoGAN convincingly learns the underlying generative factors in the 3D face data set. Rows correspond to a data point and columns the value of the latent variable (varied from $-1$ to $1$). Each section (a), (b), (c) and (d) consider a different latent variable. \cite {Chen2016}\relax }}{28}
 \contentsline {figure}{\numberline {3.12}{\ignorespaces A comparison of InfoGAN, $\beta $-VAE ($\beta = 20$) and VAE on the 3D face data set. Different latent variables are varied for sections (a), (b) and (c). All models learnt lighting and elevation, but only InfoGAN and $\beta $-VAE managed to continuously vary the azimuth. \cite {Thiagarajan2016}\relax }}{30}
 \contentsline {figure}{\numberline {3.13}{\ignorespaces The probabilistic encoder $q_{\bm {\phi }}(\bm {z} | \bm {x})$ maps a given data point $\bm {x}$ to the unknown distribution $\mathaccentV {hat}05E{p}(\bm {z})$. The probabilistic decoder $p_{\bm {\theta }}(\bm {x} | \bm {z})$ is trained to map samples from $\mathaccentV {hat}05E{p}(\bm {z})$ back to $p(\bm {x})$, since its inputs are drawn from the probabilistic encoder $q_{\bm {\phi }}(\bm {z} | \bm {x})$. A sample from the prior $p(\bm {z})$ will not be mapped back by $p_{\bm {\theta }}(\bm {x} | \bm {z})$ to $p(\bm {x})$ exactly if $p(\bm {z}) \not =\mathaccentV {hat}05E{p}(\bm {z})$. \cite {Creswell2016}\relax }}{32}
@@ -26,12 +26,18 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces A collection of frames captured from Space Invaders emulated on Stella. \textbf {Left column:} an even frame. \textbf {Middle column:} the (odd) frame following. \textbf {Right column:} Combining the even and odd frames by taking the maximal value over each channel (RGB). Clearly the bullets visible in one frame fail to persist in the next. As mentioned, this is due to the limited number of sprites Atari 2600 can load in a single frame.\relax }}{36}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Pre-processed frames captured from Pong emulated on Stella. These frames were originally $84\times 84$, but are printed here as $168\times 168$ to emphasise distortions. \textbf {Left:} The JPEG format distorts the ball, paddle and score sprites. \textbf {Right:} The PNG format displays the frame without such distortions.\relax }}{37}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The single latent filter architecture. \textbf {Blue:} An arbitrary amount of convolutional layers. \textbf {Green:} The latent mean $\bm {\mu }$ and variance $\bm {\sigma }^2$, which are both volumes of shape $(k, m, n)$. \textbf {Orange:} A single latent filter of shape $(1, m, n)$ sampled component-wise from $\bm {\mu }$ and $\bm {\sigma }^2$. \textbf {Red:} The corresponding deconvolutional layers.\relax }}{40}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Caption.\relax }}{41}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Caption.\relax }}{41}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Caption.\relax }}{42}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Caption.\relax }}{43}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Caption.\relax }}{43}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Caption.\relax }}{45}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The fully-convolutional single latent filter architecture. \textbf {Blue:} An arbitrary amount of convolutional layers. \textbf {Green:} The latent mean $\bm {\mu }$ and variance $\bm {\sigma }^2$, which are both single filters of shape $(1, m, n)$. \textbf {Orange:} A single latent filter of shape $(1, m, n)$ sampled component-wise from $\bm {\mu }$ and $\bm {\sigma }^2$. \textbf {Red:} The corresponding deconvolutional layers.\relax }}{40}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Caption.\relax }}{42}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The fully-convolutional multiple latent filter architecture. \textbf {Blue:} Unchanged. \textbf {Green:} The latent mean $\bm {\mu }$ and variance $\bm {\sigma }^2$, which are both single filters of shape $(k, m, n)$. \textbf {Orange:} A single latent filter of shape $(k, m, n)$ sampled component-wise from $\bm {\mu }$ and $\bm {\sigma }^2$. \textbf {Red:} Unchanged.\relax }}{43}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Caption.\relax }}{44}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Caption.\relax }}{45}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Caption.\relax }}{45}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Caption.\relax }}{46}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Original\relax }}{46}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Red\relax }}{46}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Green\relax }}{46}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Blue\relax }}{46}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces A comparison of a $210 \times 160$ RGB frame from Space Invaders and its individual channels. The bullet is clearly separated from other sprites in the blue channel. The barriers TODO: Finish description.\relax }}{46}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Caption.\relax }}{47}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

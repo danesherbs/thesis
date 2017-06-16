@@ -135,7 +135,7 @@
 \newlabel{fig:variational_autoencoder_latent_space_unit_gaussian_with_mnist}{{3.9}{25}}
 \citation{Dykeman2016}
 \citation{Dykeman2016}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces \vspace  *{-20mm}The sum over the latent space distributions of all data points $\bm  {x}^{(i)}$ approximates the multivariate isotropic Gaussian. \cite  {Dykeman2016}\relax }}{26}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces The sum over the latent space distributions of all data points $\bm  {x}^{(i)}$ approximates the multivariate isotropic Gaussian. \cite  {Dykeman2016}\relax }}{26}}
 \newlabel{fig:variational_autoencoder_latent_space_adding_latent_spaces_updated}{{3.10}{26}}
 \citation{Higgins2016}
 \citation{Thiagarajan2016}
@@ -205,64 +205,69 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{ch:methods}{{5}{39}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Single Latent Filter}{39}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Single Latent Filter}{40}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Architecture}{40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces The single latent filter architecture. \textbf  {Blue:} An arbitrary amount of convolutional layers. \textbf  {Green:} The latent mean $\bm  {\mu }$ and variance $\bm  {\sigma }^2$, which are both volumes of shape $(k, m, n)$. \textbf  {Orange:} A single latent filter of shape $(1, m, n)$ sampled component-wise from $\bm  {\mu }$ and $\bm  {\sigma }^2$. \textbf  {Red:} The corresponding deconvolutional layers.\relax }}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces The fully-convolutional single latent filter architecture. \textbf  {Blue:} An arbitrary amount of convolutional layers. \textbf  {Green:} The latent mean $\bm  {\mu }$ and variance $\bm  {\sigma }^2$, which are both single filters of shape $(1, m, n)$. \textbf  {Orange:} A single latent filter of shape $(1, m, n)$ sampled component-wise from $\bm  {\mu }$ and $\bm  {\sigma }^2$. \textbf  {Red:} The corresponding deconvolutional layers.\relax }}{40}}
 \newlabel{fig:latent_image_architecture}{{5.1}{40}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Derivation}{40}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Disentangling Latent Neurons}{40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Caption.\relax }}{41}}
-\newlabel{fig:latent_image_flattening_latent_space}{{5.2}{41}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Architecture}{41}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Caption.\relax }}{41}}
-\newlabel{fig:decoupling_indiscriminately_horizontal}{{5.3}{41}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Caption.\relax }}{42}}
-\newlabel{fig:decoupling_indiscriminately_flattening_latent_space}{{5.4}{42}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Derivation}{42}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Disentangling Latent Filters Using Averages}{42}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Architecture}{43}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Caption.\relax }}{43}}
-\newlabel{fig:decoupling_indiscriminately_horizontal}{{5.5}{43}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Caption.\relax }}{43}}
-\newlabel{fig:decoupling_averages_latent_space}{{5.6}{43}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Derivation}{43}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Decoupling Latent Filters Using Weighted-Averages}{43}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Architecture}{44}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Derivation}{44}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Separating Colour Spaces}{44}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Architecture}{44}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Derivation}{44}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.6}Orthogonal Convolutions}{44}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Caption.\relax }}{45}}
-\newlabel{fig:orthogonal_convolutions_archiecture}{{5.7}{45}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.1}Architecture}{45}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.2}Derivation}{45}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.7}Winner Takes All}{45}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7.1}Architecture}{45}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7.2}Derivation}{45}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Results}{46}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Derivation}{41}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Caption.\relax }}{42}}
+\newlabel{fig:latent_image_flattening_latent_space}{{5.2}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Multiple Latent Filters}{42}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Architecture}{42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces The fully-convolutional multiple latent filter architecture. \textbf  {Blue:} Unchanged. \textbf  {Green:} The latent mean $\bm  {\mu }$ and variance $\bm  {\sigma }^2$, which are both single filters of shape $(k, m, n)$. \textbf  {Orange:} A single latent filter of shape $(k, m, n)$ sampled component-wise from $\bm  {\mu }$ and $\bm  {\sigma }^2$. \textbf  {Red:} Unchanged.\relax }}{43}}
+\newlabel{fig:decoupling_indiscriminately_horizontal}{{5.3}{43}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Constructing a Suitable Loss Function}{43}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Neuron-Level Decoupling}{44}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Caption.\relax }}{44}}
+\newlabel{fig:decoupling_indiscriminately_flattening_latent_space}{{5.4}{44}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}Na{\"i}ve Filter-Level Decoupling}{44}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Caption.\relax }}{45}}
+\newlabel{fig:decoupling_averages_latent_space}{{5.5}{45}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.5}Weighted Filter-Level Decoupling}{45}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Caption.\relax }}{45}}
+\newlabel{fig:decoupling_averages_latent_space}{{5.6}{45}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Separating Colour Spaces}{46}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Architecture}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Caption.\relax }}{46}}
+\newlabel{fig:separating_colour_spaces_architecture}{{5.7}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Original\relax }}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Red\relax }}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Green\relax }}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Blue\relax }}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces A comparison of a $210 \times 160$ RGB frame from Space Invaders and its individual channels. The bullet is clearly separated from other sprites in the blue channel. The barriers TODO: Finish description.\relax }}{46}}
+\newlabel{fig:even_and_odd_frames_space_invaders}{{5.12}{46}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Derivation}{46}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Orthogonal Convolutions}{47}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Architecture}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Caption.\relax }}{47}}
+\newlabel{fig:orthogonal_convolutions_archiecture}{{5.13}{47}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Derivation}{47}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Winner Takes All}{47}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Architecture}{48}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Derivation}{48}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Results}{49}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:Results}{{6}{46}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{46}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Using Batch Normalisation With Convolutional Variational Latent Spaces}{46}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Single Latent Filter}{47}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Disentangling Latent Neurons}{47}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}Disentangling Latent Filters Using Averages}{47}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.6}Decoupling Latent Filters Using Weighted-Averages}{48}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.7}Separating Colour Spaces}{48}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.8}Orthogonal Convolutions}{48}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.9}Winner Takes All}{49}}
+\newlabel{ch:Results}{{6}{49}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{49}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Using Batch Normalisation With Convolutional Variational Latent Spaces}{49}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Single Latent Filter}{50}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Disentangling Latent Neurons}{50}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}Disentangling Latent Filters Using Averages}{50}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.6}Decoupling Latent Filters Using Weighted-Averages}{51}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.7}Separating Colour Spaces}{51}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.8}Orthogonal Convolutions}{51}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.9}Winner Takes All}{52}}
 \bibstyle{abbrv}
 \bibdata{library}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{50}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{53}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:conclusions}{{7}{50}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{50}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Applications}{50}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Future Work}{50}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{50}}
+\newlabel{ch:conclusions}{{7}{53}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{53}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Applications}{53}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Future Work}{53}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{53}}
 \bibcite{Bellemare2015}{1}
 \bibcite{Blei2011}{2}
 \bibcite{Blei2016}{3}
