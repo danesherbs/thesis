@@ -27,42 +27,53 @@
 \contentsline {subsection}{\numberline {3.4.1}InfoGAN}{27}
 \contentsline {subsection}{\numberline {3.4.2}$\beta $-VAE}{27}
 \contentsline {subsubsection}{Derivation}{28}
-\contentsline {section}{\numberline {3.5}Human-Level Control Through Deep Reinforcement Learning}{31}
-\contentsline {subsection}{\numberline {3.5.1}Pre-processing Stella Frames}{31}
-\contentsline {subsubsection}{Sprite Rendering in Stella}{31}
-\contentsline {subsubsection}{Dimensionality Reduction}{31}
-\contentsline {subsubsection}{File Formats}{33}
-\contentsline {section}{\numberline {3.6}Improving Sampling from Generative Autoencoders with Markov Chains}{33}
-\contentsline {section}{\numberline {3.7}Regularizing CNNs with Locally Constrained Decorrelations}{36}
-\contentsline {chapter}{\numberline {4}Method}{37}
-\contentsline {section}{\numberline {4.1}Latent Image}{37}
-\contentsline {subsection}{\numberline {4.1.1}Architecture}{38}
-\contentsline {subsection}{\numberline {4.1.2}Derivation}{39}
-\contentsline {section}{\numberline {4.2}Decoupling Latent Variables Indiscriminately}{39}
-\contentsline {subsection}{\numberline {4.2.1}Architecture}{39}
-\contentsline {subsection}{\numberline {4.2.2}Derivation}{40}
-\contentsline {section}{\numberline {4.3}Decoupling Latent Filters Using Averages}{40}
-\contentsline {subsection}{\numberline {4.3.1}Architecture}{40}
-\contentsline {subsection}{\numberline {4.3.2}Derivation}{41}
-\contentsline {section}{\numberline {4.4}Decoupling Latent Filters Using Weighted-Averages}{41}
-\contentsline {subsection}{\numberline {4.4.1}Architecture}{41}
-\contentsline {subsection}{\numberline {4.4.2}Derivation}{41}
-\contentsline {section}{\numberline {4.5}Separating Colour Spaces}{41}
-\contentsline {subsection}{\numberline {4.5.1}Architecture}{42}
-\contentsline {subsection}{\numberline {4.5.2}Derivation}{42}
-\contentsline {section}{\numberline {4.6}Orthogonal Convolutions}{42}
-\contentsline {subsection}{\numberline {4.6.1}Architecture}{42}
-\contentsline {subsection}{\numberline {4.6.2}Derivation}{42}
-\contentsline {section}{\numberline {4.7}Winner Takes All}{42}
-\contentsline {subsection}{\numberline {4.7.1}Architecture}{43}
-\contentsline {subsection}{\numberline {4.7.2}Derivation}{43}
-\contentsline {section}{\numberline {4.8}Psuedo-Dense Latent Space}{43}
-\contentsline {subsection}{\numberline {4.8.1}Architecture}{43}
-\contentsline {subsection}{\numberline {4.8.2}Derivation}{43}
-\contentsline {chapter}{\numberline {5}Results}{44}
-\contentsline {chapter}{\numberline {6}Discussion}{45}
-\contentsline {chapter}{\numberline {7}Conclusion}{46}
-\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{46}
-\contentsline {section}{\numberline {7.2}Applications}{46}
-\contentsline {section}{\numberline {7.3}Future Work}{46}
-\contentsline {chapter}{Bibliography}{46}
+\contentsline {section}{\numberline {3.5}Improving Sampling from Generative Autoencoders with Markov Chains}{31}
+\contentsline {section}{\numberline {3.6}Regularizing CNNs with Locally Constrained Decorrelations}{33}
+\contentsline {section}{\numberline {3.7}Batch Normalisation}{33}
+\contentsline {chapter}{\numberline {4}Implementation}{34}
+\contentsline {section}{\numberline {4.1}Dimensionality Reduction}{34}
+\contentsline {subsection}{\numberline {4.1.1}Pre-processing Pipeline}{35}
+\contentsline {subsubsection}{Ensuring Object Persistence}{35}
+\contentsline {subsubsection}{Extracting Luminance and Cropping}{35}
+\contentsline {subsubsection}{File Formats}{35}
+\contentsline {section}{\numberline {4.2}Qualitative Assessment Using GUIs}{35}
+\contentsline {section}{\numberline {4.3}Ensuring Numerical Stability in the Latent Space}{37}
+\contentsline {section}{\numberline {4.4}Activation Functions in the Latent Space}{37}
+\contentsline {section}{\numberline {4.5}Keras Callbacks}{38}
+\contentsline {chapter}{\numberline {5}Methods}{39}
+\contentsline {section}{\numberline {5.1}Single Latent Filter}{39}
+\contentsline {subsection}{\numberline {5.1.1}Architecture}{40}
+\contentsline {subsection}{\numberline {5.1.2}Derivation}{40}
+\contentsline {section}{\numberline {5.2}Disentangling Latent Neurons}{40}
+\contentsline {subsection}{\numberline {5.2.1}Architecture}{41}
+\contentsline {subsection}{\numberline {5.2.2}Derivation}{42}
+\contentsline {section}{\numberline {5.3}Disentangling Latent Filters Using Averages}{42}
+\contentsline {subsection}{\numberline {5.3.1}Architecture}{43}
+\contentsline {subsection}{\numberline {5.3.2}Derivation}{43}
+\contentsline {section}{\numberline {5.4}Decoupling Latent Filters Using Weighted-Averages}{43}
+\contentsline {subsection}{\numberline {5.4.1}Architecture}{44}
+\contentsline {subsection}{\numberline {5.4.2}Derivation}{44}
+\contentsline {section}{\numberline {5.5}Separating Colour Spaces}{44}
+\contentsline {subsection}{\numberline {5.5.1}Architecture}{44}
+\contentsline {subsection}{\numberline {5.5.2}Derivation}{44}
+\contentsline {section}{\numberline {5.6}Orthogonal Convolutions}{44}
+\contentsline {subsection}{\numberline {5.6.1}Architecture}{45}
+\contentsline {subsection}{\numberline {5.6.2}Derivation}{45}
+\contentsline {section}{\numberline {5.7}Winner Takes All}{45}
+\contentsline {subsection}{\numberline {5.7.1}Architecture}{45}
+\contentsline {subsection}{\numberline {5.7.2}Derivation}{45}
+\contentsline {chapter}{\numberline {6}Results}{46}
+\contentsline {section}{\numberline {6.1}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{46}
+\contentsline {section}{\numberline {6.2}Using Batch Normalisation With Convolutional Variational Latent Spaces}{46}
+\contentsline {section}{\numberline {6.3}Single Latent Filter}{47}
+\contentsline {section}{\numberline {6.4}Disentangling Latent Neurons}{47}
+\contentsline {section}{\numberline {6.5}Disentangling Latent Filters Using Averages}{47}
+\contentsline {section}{\numberline {6.6}Decoupling Latent Filters Using Weighted-Averages}{48}
+\contentsline {section}{\numberline {6.7}Separating Colour Spaces}{48}
+\contentsline {section}{\numberline {6.8}Orthogonal Convolutions}{48}
+\contentsline {section}{\numberline {6.9}Winner Takes All}{49}
+\contentsline {chapter}{\numberline {7}Conclusion}{50}
+\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{50}
+\contentsline {section}{\numberline {7.2}Applications}{50}
+\contentsline {section}{\numberline {7.3}Future Work}{50}
+\contentsline {chapter}{Bibliography}{50}

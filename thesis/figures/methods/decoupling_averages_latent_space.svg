@@ -30,15 +30,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="509.67593"
+     inkscape:cx="481.39166"
      inkscape:cy="267.75649"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1055"
+     inkscape:window-height="1124"
      inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-y="24"
      inkscape:window-maximized="1" />
   <defs
      id="defs4">
@@ -350,22 +350,22 @@
            style="fill:#000000;stroke-width:0" /></g>    </g>
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend-2);enable-background:new"
-       d="m 652.91788,824.01465 77.78174,0"
+       d="m 640.91788,824.01465 77.78174,0"
        id="path13192-7"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.75px;line-height:0%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-       x="651.01917"
+       x="639.01917"
        y="804.24207"
        id="text13558-5"
        sodipodi:linespacing="0%"><tspan
          sodipodi:role="line"
          id="tspan13560-9"
-         x="651.01917"
+         x="639.01917"
          y="804.24207">Decouple</tspan></text>
     <g
-       transform="translate(642.65493,173.92899)"
+       transform="translate(622.65493,173.92899)"
        id="g14427">
       <g
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -455,17 +455,17 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:25px;line-height:100%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-       x="890.78149"
+       x="870.78149"
        y="954.66803"
        id="text11455-6-3-2-2"
        sodipodi:linespacing="100%"><tspan
          id="tspan14630"
          sodipodi:role="line"
-         x="890.78149"
+         x="870.78149"
          y="954.66803"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:100%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;text-align:center;text-anchor:middle">Decouple average</tspan><tspan
          sodipodi:role="line"
-         x="890.78149"
+         x="870.78149"
          y="977.16803"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:100%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;text-align:center;text-anchor:middle"
          id="tspan14966">filter term</tspan></text>
