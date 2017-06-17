@@ -31,13 +31,16 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces The fully-convolutional multiple latent filter architecture. \textbf {Blue:} Unchanged. \textbf {Green:} The latent mean $\bm {\mu }$ and variance $\bm {\sigma }^2$, which are both single filters of shape $(k, m, n)$. \textbf {Orange:} A single latent filter of shape $(k, m, n)$ sampled component-wise from $\bm {\mu }$ and $\bm {\sigma }^2$. \textbf {Red:} Unchanged.\relax }}{43}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Caption.\relax }}{44}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Caption.\relax }}{45}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Caption.\relax }}{45}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Caption.\relax }}{46}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Caption.\relax }}{46}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Original\relax }}{46}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Red\relax }}{46}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Green\relax }}{46}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Blue\relax }}{46}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces A comparison of a $210 \times 160$ RGB frame from Space Invaders and its individual channels. The bullet is clearly separated from other sprites in the blue channel. The barriers TODO: Finish description.\relax }}{46}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Caption.\relax }}{47}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Original\relax }}{47}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Red\relax }}{47}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Green\relax }}{47}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Blue\relax }}{47}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces A comparison of a $210 \times 160$ RGB frame from Space Invaders and its red, green and blue channels. The bullet is clearly separated from other sprites in the blue channel. The red and green channels separate collections of sprites. The red channel excludes the gunship and players score, while the green partially excludes the barriers.\relax }}{47}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Multiple types of objects recognised in same position.\relax }}{48}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces At most one object recognised in a given position.\relax }}{48}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Caption.\relax }}{48}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Caption.\relax }}{49}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
