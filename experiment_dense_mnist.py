@@ -17,7 +17,7 @@ experiment = 'experiment_dense_mnist'
 def train_deep(beta):
     # inputs
     input_shape = (1, 28, 28)
-    epochs = 50
+    epochs = 20
     batch_size = 1
     filters = 32
     kernel_size = 6
@@ -79,7 +79,7 @@ def train_deep(beta):
 def train_shallow(beta):
     # inputs
     input_shape = (1, 28, 28)
-    epochs = 50
+    epochs = 30
     batch_size = 1
     filters = 32
     kernel_size = 6
@@ -140,7 +140,7 @@ def train_shallow(beta):
 def train_deep_two_latent_variables(beta):
     # inputs
     input_shape = (1, 28, 28)
-    epochs = 50
+    epochs = 20
     batch_size = 1
     filters = 32
     kernel_size = 6
@@ -201,7 +201,7 @@ def train_deep_two_latent_variables(beta):
 
 
 def main():
-    for beta in range(6):
+    for beta in range(4):
         train_deep(beta)
         train_shallow(beta)
     train_deep_two_latent_variables(1)
