@@ -8,49 +8,55 @@ from keras.models import Model
 
 class CholletVAE(VAE):
 
-    def __init__(self, input_shape, log_dir):
-        VAE.__init__(self, input_shape, log_dir)
+    def __init__(self,
+                input_shape,
+                log_dir,
+                filters=32,
+                pool_size=(2,2),
+                kernel_size=6,
+                pre_latent_size=128,
+                latent_size=32,
+                beta=1.0):
+        self.input_shape = input_shape
+        self.filters = filters
+        self.pool_size = pool_size
+        self.kernel_size = kernel_size
+        self.pre_latent_size = pre_latent_size
+        self.latent_size = latent_size
+        VAE.__init__(self, input_shape, log_dir, beta=beta)
 
     def set_model(self):
-        # constants
-        batch_size = 32
-        epochs = 1
-        filters = 32
-        latent_filters = 4
-        kernel_size = (6, 6)
-        pool_size = (2, 2)
-        beta = 1.0
 
         '''
         Encoder
         '''
         # define input with 'channels_first'
-        input_encoder = Input(shape=input_shape, name='encoder_input')
+        input_encoder = Input(shape=self.input_shape, name='encoder_input')
 
         conv_1 = Conv2D(1,
-                        kernel_size=kernel_size,
+                        kernel_size=self.kernel_size,
                         padding='same',
                         activation='relu')(input_encoder)
-        conv_2 = Conv2D(filters,
-                        kernel_size=kernel_size,
+        conv_2 = Conv2D(self.filters,
+                        kernel_size=self.kernel_size,
                         padding='same',
                         activation='relu')(conv_1)
-        conv_3 = Conv2D(filters,
-                        kernel_size=kernel_size,
+        conv_3 = Conv2D(self.filters,
+                        kernel_size=self.kernel_size,
                         padding='same',
                         activation='relu',
                         strides=1)(conv_2)
-        conv_4 = Conv2D(filters,
-                        kernel_size=kernel_size,
+        conv_4 = Conv2D(self.filters,
+                        kernel_size=self.kernel_size,
                         padding='same',
                         activation='relu')(conv_3)
         conv4_out_shape = tuple(conv_4.get_shape().as_list())
         flat = Flatten()(conv_4)
 
-        hidden = Dense(128, activation='relu')(flat)
+        hidden = Dense(self.pre_latent_size, activation='relu')(flat)
 
-        z_mean = Dense(16)(hidden)
-        z_log_var = Dense(16)(hidden)
+        z_mean = Dense(self.latent_size)(hidden)
+        z_log_var = Dense(self.latent_size)(hidden)
 
         # sample from normal with z_mean and z_log_var
         z = Lambda(self.sampling, name='latent_space')([z_mean, z_log_var])
@@ -58,28 +64,26 @@ class CholletVAE(VAE):
 
         # we instantiate these layers separately so as to reuse them later
         input_decoder = Input(shape=encoder_out_shape[1:])
-        decoder_hid = Dense(128, activation='relu')
-        print(conv4_out_shape)
+        decoder_hid = Dense(self.pre_latent_size, activation='relu')
         decoder_upsample = Dense(np.prod(conv4_out_shape[1:]), activation='relu')
-        output_shape = (batch_size, filters, conv4_out_shape[2], conv4_out_shape[3])
+        output_shape = (self.filters, conv4_out_shape[2], conv4_out_shape[3])
 
-        print(output_shape[1:])
-        decoder_reshape = Reshape(output_shape[1:])
-        decoder_deconv_1 = Conv2DTranspose(filters,
-                                           kernel_size=kernel_size,
+        decoder_reshape = Reshape(output_shape)
+        decoder_deconv_1 = Conv2DTranspose(self.filters,
+                                           kernel_size=self.kernel_size,
                                            padding='same',
                                            activation='relu')
-        decoder_deconv_2 = Conv2DTranspose(filters,
-                                           kernel_size=kernel_size,
+        decoder_deconv_2 = Conv2DTranspose(self.filters,
+                                           kernel_size=self.kernel_size,
                                            padding='same',
                                            activation='relu')
 
-        decoder_deconv_3_upsamp = Conv2DTranspose(filters,
-                                                  kernel_size=kernel_size,
+        decoder_deconv_3_upsamp = Conv2DTranspose(self.filters,
+                                                  kernel_size=self.kernel_size,
                                                   padding='same',
                                                   activation='relu')
         decoder_mean_squash = Conv2D(1,
-                                     kernel_size=kernel_size,
+                                     kernel_size=self.kernel_size,
                                      padding='same',
                                      activation='sigmoid')
 
@@ -99,6 +103,89 @@ class CholletVAE(VAE):
         self.z_mean = z_mean
         self.z_log_var = z_log_var
         self.z = z
+
+
+
+
+class ShallowDenseMNIST(VAE):
+
+    def __init__(self,
+                input_shape,
+                log_dir,
+                filters=32,
+                pool_size=(2,2),
+                kernel_size=6,
+                pre_latent_size=128,
+                latent_size=32,
+                beta=1.0):
+        self.input_shape = input_shape
+        self.filters = filters
+        self.pool_size = pool_size
+        self.kernel_size = kernel_size
+        self.pre_latent_size = pre_latent_size
+        self.latent_size = latent_size
+        VAE.__init__(self, input_shape, log_dir, beta=beta)
+
+    def set_model(self):
+
+        '''
+        Encoder
+        '''
+        # define input with 'channels_first'
+        input_encoder = Input(shape=self.input_shape, name='encoder_input')
+
+        conv_1 = Conv2D(1,
+                        kernel_size=self.kernel_size,
+                        padding='same',
+                        activation='relu')(input_encoder)
+        conv_2 = Conv2D(self.filters,
+                        kernel_size=self.kernel_size,
+                        padding='same',
+                        activation='relu')(conv_1)
+        conv2_out_shape = tuple(conv_2.get_shape().as_list())
+        flat = Flatten()(conv_2)
+
+        hidden = Dense(self.pre_latent_size, activation='relu')(flat)
+
+        z_mean = Dense(self.latent_size)(hidden)
+        z_log_var = Dense(self.latent_size)(hidden)
+
+        # sample from normal with z_mean and z_log_var
+        z = Lambda(self.sampling, name='latent_space')([z_mean, z_log_var])
+        encoder_out_shape = tuple(z.get_shape().as_list())
+
+        # we instantiate these layers separately so as to reuse them later
+        input_decoder = Input(shape=encoder_out_shape[1:])
+        decoder_hid = Dense(self.pre_latent_size, activation='relu')
+        decoder_upsample = Dense(np.prod(conv2_out_shape[1:]), activation='relu')
+        output_shape = (self.filters, conv2_out_shape[2], conv2_out_shape[3])
+
+        decoder_reshape = Reshape(output_shape)
+        decoder_deconv_1 = Conv2DTranspose(self.filters,
+                                           kernel_size=self.kernel_size,
+                                           padding='same',
+                                           activation='relu')
+        decoder_mean_squash = Conv2D(1,
+                                     kernel_size=self.kernel_size,
+                                     padding='same',
+                                     activation='sigmoid')
+
+        hid_decoded = decoder_hid(input_decoder)
+        up_decoded = decoder_upsample(hid_decoded)
+        reshape_decoded = decoder_reshape(up_decoded)
+        deconv_1_decoded = decoder_deconv_1(reshape_decoded)
+        x_decoded_mean = decoder_mean_squash(deconv_1_decoded)
+
+        # For parent fitting function
+        self.encoder = Model(input_encoder, z)
+        self.decoder = Model(input_decoder, x_decoded_mean)
+        self.model = Model(input_encoder, self.decoder(self.encoder(input_encoder)))
+        # For parent loss function
+        self.z_mean = z_mean
+        self.z_log_var = z_log_var
+        self.z = z
+
+
 
 
 class DenseAutoencoder(Autoencoder):
