@@ -6,11 +6,9 @@ This is done so that we may see if objects may be recognised by the existing met
 Dataset: 300,000 screenshots of Pong, 10% used for validation.
 '''
 
-from cvae_atari import ConvolutionalLatentAverageFilterShallowVAE, WeightedAverageFilters
-import sampling
+from cvae_atari import ConvolutionalLatentNoBatchNormVAE, ConvolutionalLatentAverageFilterShallowVAE, WeightedAverageFilters
 import utils
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 experiment = 'experiment_separating_colour_spaces'
@@ -20,15 +18,14 @@ def train_latent_image(beta):
     # inputs
     input_shape = (1, 84, 84)
     filters = 32
-    latent_filters = 8
+    latent_filters = 1
     kernel_size = 6
     epochs = 10
     batch_size = 1
     lr = 1e-4
-    img_channels = 1
 
     # define filename
-    name = 'cvae_atari_average_filter'
+    name = 'latent_image'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
@@ -38,7 +35,6 @@ def train_latent_image(beta):
         'filters': filters,
         'latent_filters': latent_filters,
         'kernel_size': kernel_size,
-        'img_channels': img_channels,
         'lr': lr,
         'loss': 'vae_loss',
         'optimizer': 'adam'
@@ -48,13 +44,12 @@ def train_latent_image(beta):
     log_dir = './summaries/' + experiment + '/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
-    vae = WeightedAverageFilters(input_shape, 
-                                log_dir,
-                                filters=filters,
-                                latent_filters=latent_filters,
-                                kernel_size=kernel_size,
-                                img_channels=img_channels,
-                                beta=beta)
+    vae = ConvolutionalLatentNoBatchNormVAE(input_shape, 
+                                            log_dir,
+                                            filters=filters,
+                                            latent_filters=latent_filters,
+                                            kernel_size=kernel_size,
+                                            beta=beta)
 
     # compile VAE
     from keras import optimizers
@@ -64,8 +59,8 @@ def train_latent_image(beta):
     # get dataset
     train_directory = './atari_agents/record/train/'
     test_directory = './atari_agents/record/test/'
-    train_generator = utils.atari_generator(train_directory, batch_size=batch_size, img_channels=img_channels)
-    test_generator = utils.atari_generator(test_directory, batch_size=batch_size, img_channels=img_channels)
+    train_generator = utils.atari_generator(train_directory, batch_size=batch_size)
+    test_generator = utils.atari_generator(test_directory, batch_size=batch_size)
     train_size = utils.count_images(train_directory)
     test_size = utils.count_images(test_directory)
 
@@ -84,6 +79,7 @@ def train_latent_image(beta):
 
 
 
+
 def train_naive_average(beta):
     # inputs
     input_shape = (1, 84, 84)
@@ -96,7 +92,7 @@ def train_naive_average(beta):
     img_channels = 1
 
     # define filename
-    name = 'cvae_atari_average_filter'
+    name = 'naive_average_filter'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
@@ -116,13 +112,13 @@ def train_naive_average(beta):
     log_dir = './summaries/' + experiment + '/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
-    vae = WeightedAverageFilters(input_shape, 
-                                log_dir,
-                                filters=filters,
-                                latent_filters=latent_filters,
-                                kernel_size=kernel_size,
-                                img_channels=img_channels,
-                                beta=beta)
+    vae = ConvolutionalLatentAverageFilterShallowVAE(input_shape, 
+                                                log_dir,
+                                                filters=filters,
+                                                latent_filters=latent_filters,
+                                                kernel_size=kernel_size,
+                                                img_channels=img_channels,
+                                                beta=beta)
 
     # compile VAE
     from keras import optimizers
@@ -165,7 +161,7 @@ def train_weighted_average(beta):
     img_channels = 1
 
     # define filename
-    name = 'cvae_atari_average_filter'
+    name = 'weighted_average_filter'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
