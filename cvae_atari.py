@@ -1534,6 +1534,71 @@ class WeightedAverageFilters(VAE):
 
 
 
+
+
+class LatentImage(VAE):
+
+    def __init__(self, input_shape, log_dir, filters=32, kernel_size=2, img_channels=1, beta=1.0):
+        # initialise HigginsVAE specific variables
+        self.filters = filters
+        self.latent_filters = 1
+        self.kernel_size = kernel_size
+        self.img_channels = img_channels
+        # call parent constructor
+        VAE.__init__(self, input_shape, log_dir, beta=beta)
+
+    def set_model(self):
+        '''
+        Initialisers
+        '''
+        weight_seed = None
+        kernel_initializer = initializers.glorot_uniform(seed = weight_seed)
+        bias_initializer = initializers.glorot_uniform(seed = weight_seed)
+
+        '''
+        Encoder
+        '''
+        # define input with 'channels_first'
+        input_encoder = Input(shape=self.input_shape, name='encoder_input')
+        x = Conv2D(self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
+        x = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
+
+        # separate dense layers for mu and log(sigma), both of size latent_dim
+        z_mean = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
+        z_log_var = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
+
+        # sample from normal with z_mean and z_log_var
+        z = Lambda(self.sampling, name='encoder_z')([z_mean, z_log_var])
+
+        '''
+        Decoder
+        '''
+        # take encoder output shape
+        encoder_out_shape = tuple(z.get_shape().as_list())
+
+        input_decoder = Input(shape=encoder_out_shape[1:], name='decoder_input')
+        x = Conv2DTranspose(2*self.filters, self.kernel_size, strides=(2, 2), padding='valid', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_1')(input_decoder)
+        x = Conv2DTranspose(self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
+        x = Conv2DTranspose(self.img_channels, self.kernel_size, strides=(2, 2), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_4')(x)
+        decoded_img = Activation('sigmoid')(x)
+
+        '''
+        Necessary definitions
+        '''
+        # For parent fitting function
+        self.encoder = Model(input_encoder, z)
+        self.decoder = Model(input_decoder, decoded_img)
+        self.model = Model(input_encoder, self.decoder(self.encoder(input_encoder)))
+        # For parent loss function
+        self.z_mean = z_mean
+        self.z_log_var = z_log_var
+        self.z = z
+
+
+
+
+
+
 '''
 Main
 '''
