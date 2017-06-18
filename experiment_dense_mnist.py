@@ -79,7 +79,7 @@ def train_deep(beta):
 def train_shallow(beta):
     # inputs
     input_shape = (1, 28, 28)
-    epochs = 30
+    epochs = 20
     batch_size = 1
     filters = 32
     kernel_size = 6
