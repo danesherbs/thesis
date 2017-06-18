@@ -202,7 +202,7 @@ def train_deep_two_latent_variables(beta):
 
 def main():
     for beta in range(1, 4):
-        train_deep(beta)
+        # train_deep(beta)
         train_shallow(beta)
     train_deep_two_latent_variables(1)
 
