@@ -48,7 +48,7 @@ def train_indiscriminate_decoupling(beta):
     log_dir = './summaries/' + experiment + '/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
-    vae = WeightedAverageFilters(input_shape, 
+    vae = IndiscriminateDecoupling(input_shape, 
                                 log_dir,
                                 filters=filters,
                                 latent_filters=latent_filters,
