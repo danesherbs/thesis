@@ -6,7 +6,7 @@ This is done so that we may see if objects may be recognised by the existing met
 Dataset: 300,000 screenshots of Pong, 10% used for validation.
 '''
 
-from cvae_atari import ConvolutionalLatentNoBatchNormVAE, ConvolutionalLatentAverageFilterShallowVAE, WeightedAverageFilters
+from cvae_atari import LatentImage, ConvolutionalLatentAverageFilterShallowVAE, WeightedAverageFilters
 import utils
 import numpy as np
 
@@ -44,12 +44,11 @@ def train_latent_image(beta):
     log_dir = './summaries/' + experiment + '/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
-    vae = ConvolutionalLatentNoBatchNormVAE(input_shape, 
-                                            log_dir,
-                                            filters=filters,
-                                            latent_filters=latent_filters,
-                                            kernel_size=kernel_size,
-                                            beta=beta)
+    vae = LatentImage(input_shape, 
+                    log_dir,
+                    filters=filters,
+                    kernel_size=kernel_size,
+                    beta=beta)
 
     # compile VAE
     from keras import optimizers
