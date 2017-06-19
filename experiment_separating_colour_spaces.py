@@ -56,7 +56,7 @@ def train_latent_image(beta):
     vae.compile(optimizer=optimizer)
 
     # get dataset
-    train_directory = './atari_agents/record/train/', img_channels=img_channels
+    train_directory = './atari_agents/record/train/'
     test_directory = './atari_agents/record/test/'
     train_generator = utils.atari_generator(train_directory, batch_size=batch_size, img_channels=img_channels)
     test_generator = utils.atari_generator(test_directory, batch_size=batch_size, img_channels=img_channels)
