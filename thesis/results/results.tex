@@ -2,31 +2,20 @@
 
 \label{ch:Results}
 
-%
-%
-%
-%
-%
-\section{The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}
-\lipsum[2]
-
 
 %
 %
 %
 %
 %
-\section{Using Batch Normalisation With Convolutional Variational Latent Spaces}
-\lipsum[2]
+\section{Learning Generative Factors in Dense Latent Spaces}
 
-
-%
-%
-%
-%
-%
-\section{Comparing Reconstruction and KL Loss}
-\lipsum[2]
+\begin{itemize}
+\item Reconstruction 
+\item Sampling
+\item MNIST, Frey, Pong, Space Invaders and Breakout
+\item We wish to be able to achieve a similar result with altering activations of specific filters
+\end{itemize}
 
 
 %
@@ -35,7 +24,82 @@
 %
 %
 \section{Single Latent Filter}
-\lipsum[2]
+
+\begin{itemize}
+\item Consider two architectures: shallow and deep
+\item Consider Pong, Space Invaders (in progress) and Breakout
+\item Plot reconstruction loss and KL divergence
+\item Show reconstructions and convolutional layers of each
+\item Show mean activations of filters
+\item Alter latent space variable and show reconstruction
+\end{itemize}
+
+\begin{figure*}[h!]
+\centering
+\captionsetup{justification=centering}
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_0_original.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_1_original.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_2_original.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_3_original.png}
+\end{multicols}
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_0_reconstructed.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_1_reconstructed.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_2_reconstructed.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_3_reconstructed.png}
+\end{multicols}
+\caption{\textbf{Top row:} Original frames from Space Invaders. \textbf{Bottom row:} Corresponding reconstructions.}
+\label{fig:latent_image_originals_and_reconstructions}
+\end{figure*}
+
+
+\begin{figure*}[h!]
+\centering
+\captionsetup{justification=centering}
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_10_original.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_30_original.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_70_original.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_90_original.png}
+\end{multicols}
+\begin{multicols}{4}
+    \includegraphics[scale=0.3]{figures/results/latent_image/beta_1_sample_10_latent.png}
+    \includegraphics[scale=0.3]{figures/results/latent_image/beta_1_sample_30_latent.png}
+    \includegraphics[scale=0.3]{figures/results/latent_image/beta_1_sample_70_latent.png}
+    \includegraphics[scale=0.3]{figures/results/latent_image/beta_1_sample_90_latent.png}
+\end{multicols}
+\caption{\textbf{Top row:} Original frames from Space Invaders. \textbf{Bottom row:} Corresponding latent images.}
+\label{fig:latent_image_originals_and_latent_spaces}
+\end{figure*}
+
+
+\begin{figure*}[h!]
+\centering
+\captionsetup{justification=centering}
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_prior_sample_0.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_prior_sample_1.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_prior_sample_2.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_prior_sample_3.png}
+\end{multicols}
+\caption{Samples from prior.}
+\label{fig:latent_image_originals_prior_samples}
+\end{figure*}
+
+
+\begin{figure*}[h!]
+\centering
+\captionsetup{justification=centering}
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_posterior_sample_original.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_posterior_sample_0.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_posterior_sample_5.png}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_posterior_sample_10.png}
+\end{multicols}
+\caption{Samples from posterior.}
+\label{fig:latent_image_originals_posterior_samples}
+\end{figure*}
 
 
 %
@@ -44,7 +108,15 @@
 %
 %
 \section{Disentangling Latent Neurons}
-\lipsum[2]
+\begin{itemize}
+\item Consider two architectures: shallow and deep
+\item Consider Pong, Space Invaders (in progress) and Breakout
+\item Plot reconstruction loss and KL divergence
+\item Show reconstructions and convolutional layers of each
+\item Show mean activations of filters
+\item Alter latent space variable and show reconstruction
+\item Add noise to filters
+\end{itemize}
 
 
 %
@@ -53,7 +125,15 @@
 %
 %
 \section{Disentangling Latent Filters Using Averages}
-\lipsum[2]
+\begin{itemize}
+\item Consider two architectures: shallow and deep
+\item Consider Pong, Space Invaders (done) and Breakout
+\item Plot reconstruction loss and KL divergence
+\item Show reconstructions and convolutional layers of each
+\item Show mean activations of filters
+\item Alter latent space variable and show reconstruction
+\item Add noise to filters
+\end{itemize}
 
 
 %
@@ -62,7 +142,15 @@
 %
 %
 \section{Decoupling Latent Filters Using Weighted-Averages}
-\lipsum[2]
+\begin{itemize}
+\item Consider two architectures: shallow and deep
+\item Consider Pong, Space Invaders (done) and Breakout
+\item Plot reconstruction loss and KL divergence
+\item Show reconstructions and convolutional layers of each
+\item Show mean activations of filters
+\item Alter latent space variable and show reconstruction
+\item Add noise to filters
+\end{itemize}
 
 
 %
@@ -71,11 +159,16 @@
 %
 %
 \section{Separating Colour Spaces}
-\lipsum[2]
-
 \begin{itemize}
-\item Drawback of colour separated: RGB can only separate at most three sprites.
+\item Consider two architectures: shallow and deep
+\item Consider Pong, Space Invaders (in progress) and Breakout
+\item Plot reconstruction loss and KL divergence
+\item Show reconstructions and convolutional layers of each
+\item Show mean activations of filters
+\item Alter latent space variable and show reconstruction
+\item Add noise to filters
 \end{itemize}
+
 
 %
 %
@@ -83,7 +176,14 @@
 %
 %
 \section{Orthogonal Convolutions}
-\lipsum[2]
+\begin{itemize}
+\item Consider two architectures: shallow and deep
+\item Consider Pong, Space Invaders and Breakout
+\item Plot reconstruction loss and KL divergence
+\item Show reconstructions and convolutional layers of each
+\item Alter latent space variable and show reconstruction
+\item Add noise to filters
+\end{itemize}
 
 
 %
@@ -92,4 +192,39 @@
 %
 %
 \section{Winner Takes All}
-\lipsum[2]
+\begin{itemize}
+\item Consider two architectures: shallow and deep
+\item Consider Pong, Space Invaders and Breakout
+\item Plot reconstruction loss and KL divergence
+\item Show reconstructions and convolutional layers of each
+\item Show mean activations of filters
+\item Alter latent space variable and show reconstruction
+\item Show samples from prior and posterior
+\item Add noise to filters
+\end{itemize}
+
+
+%
+%
+%
+%
+%
+\section{The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}
+
+\begin{itemize}
+\item Vary $\beta$ and plot BCE and KL
+\item Show example images for different $\beta$
+\item Consider Space Invaders, Pong and Breakout
+\end{itemize}
+
+%
+%
+%
+%
+%
+\section{Using Batch Normalisation With Convolutional Variational Latent Spaces}
+
+\begin{itemize}
+\item Consider single architecture 
+\item Batch norm before, after, both, and none
+\end{itemize}

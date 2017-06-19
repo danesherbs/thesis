@@ -43,4 +43,8 @@
 \contentsline {figure}{\numberline {5.15}{\ignorespaces Caption.\relax }}{48}
 \contentsline {figure}{\numberline {5.16}{\ignorespaces Caption.\relax }}{49}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \textbf {Top row:} Original frames from Space Invaders. \textbf {Bottom row:} Corresponding reconstructions.\relax }}{51}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \textbf {Top row:} Original frames from Space Invaders. \textbf {Bottom row:} Corresponding latent images.\relax }}{51}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Samples from prior.\relax }}{52}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Samples from posterior.\relax }}{52}
 \addvspace {10\p@ }
