@@ -16,9 +16,8 @@ experiment = 'experiment_separating_colour_spaces'
 
 def train_latent_image(beta):
     # inputs
-    input_shape = (1, 84, 84)
+    input_shape = (3, 84, 84)
     filters = 32
-    latent_filters = 1
     kernel_size = 6
     epochs = 10
     batch_size = 1
@@ -81,14 +80,14 @@ def train_latent_image(beta):
 
 def train_naive_average(beta):
     # inputs
-    input_shape = (1, 84, 84)
+    input_shape = (3, 84, 84)
     filters = 32
     latent_filters = 8
     kernel_size = 6
     epochs = 10
     batch_size = 1
     lr = 1e-4
-    img_channels = 1
+    img_channels = 3
 
     # define filename
     name = 'naive_average_filter'
@@ -150,14 +149,14 @@ def train_naive_average(beta):
 
 def train_weighted_average(beta):
     # inputs
-    input_shape = (1, 84, 84)
+    input_shape = (3, 84, 84)
     filters = 32
     latent_filters = 8
     kernel_size = 6
     epochs = 10
     batch_size = 1
     lr = 1e-4
-    img_channels = 1
+    img_channels = 3
 
     # define filename
     name = 'weighted_average_filter'
