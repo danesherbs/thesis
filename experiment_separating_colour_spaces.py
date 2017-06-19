@@ -32,7 +32,6 @@ def train_latent_image(beta):
         'batch_size': batch_size,
         'beta': beta,
         'filters': filters,
-        'latent_filters': latent_filters,
         'kernel_size': kernel_size,
         'lr': lr,
         'loss': 'vae_loss',
