@@ -59,7 +59,7 @@ def train_latent_image(beta):
     train_directory = './atari_agents/record/train/', img_channels=img_channels
     test_directory = './atari_agents/record/test/'
     train_generator = utils.atari_generator(train_directory, batch_size=batch_size, img_channels=img_channels)
-    test_generator = utils.atari_generator(test_directory, batch_size=batc, img_channels=img_channelsh_size, img_channels=img_channels)
+    test_generator = utils.atari_generator(test_directory, batch_size=batch_size, img_channels=img_channels)
     train_size = utils.count_images(train_directory)
     test_size = utils.count_images(test_directory)
 
