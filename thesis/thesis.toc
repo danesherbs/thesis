@@ -1,4 +1,5 @@
-\contentsline {chapter}{Acknowledgements}{i}
+\contentsline {chapter}{Abstract}{i}
+\contentsline {chapter}{Acknowledgements}{iii}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Motivation}{1}
 \contentsline {section}{\numberline {1.2}Objectives}{4}
@@ -37,9 +38,10 @@
 \contentsline {subsubsection}{Extracting Luminance and Cropping}{35}
 \contentsline {subsubsection}{File Formats}{35}
 \contentsline {section}{\numberline {4.2}Qualitative Assessment Using GUIs}{35}
-\contentsline {section}{\numberline {4.3}Ensuring Numerical Stability in the Latent Space}{37}
-\contentsline {section}{\numberline {4.4}Activation Functions in the Latent Space}{37}
-\contentsline {section}{\numberline {4.5}Keras Callbacks}{38}
+\contentsline {section}{\numberline {4.3}Training and Validation Data Generators}{37}
+\contentsline {section}{\numberline {4.4}Ensuring Numerical Stability in the Latent Space}{37}
+\contentsline {section}{\numberline {4.5}Activation Functions in the Latent Space}{38}
+\contentsline {section}{\numberline {4.6}Keras Callbacks}{38}
 \contentsline {chapter}{\numberline {5}Methods}{39}
 \contentsline {section}{\numberline {5.1}Single Latent Filter}{40}
 \contentsline {subsection}{\numberline {5.1.1}Architecture}{40}
@@ -56,18 +58,18 @@
 \contentsline {subsection}{\numberline {5.5.1}Architecture}{49}
 \contentsline {subsection}{\numberline {5.5.2}Derivation}{49}
 \contentsline {chapter}{\numberline {6}Results}{50}
-\contentsline {section}{\numberline {6.1}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{50}
-\contentsline {section}{\numberline {6.2}Using Batch Normalisation With Convolutional Variational Latent Spaces}{50}
-\contentsline {section}{\numberline {6.3}Comparing Reconstruction and KL Loss}{51}
-\contentsline {section}{\numberline {6.4}Single Latent Filter}{51}
-\contentsline {section}{\numberline {6.5}Disentangling Latent Neurons}{51}
-\contentsline {section}{\numberline {6.6}Disentangling Latent Filters Using Averages}{52}
-\contentsline {section}{\numberline {6.7}Decoupling Latent Filters Using Weighted-Averages}{52}
-\contentsline {section}{\numberline {6.8}Separating Colour Spaces}{52}
-\contentsline {section}{\numberline {6.9}Orthogonal Convolutions}{53}
-\contentsline {section}{\numberline {6.10}Winner Takes All}{53}
-\contentsline {chapter}{\numberline {7}Conclusion}{54}
-\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{54}
-\contentsline {section}{\numberline {7.2}Applications}{54}
-\contentsline {section}{\numberline {7.3}Future Work}{54}
-\contentsline {chapter}{Bibliography}{54}
+\contentsline {section}{\numberline {6.1}Learning Generative Factors in Dense Latent Spaces}{50}
+\contentsline {section}{\numberline {6.2}Single Latent Filter}{50}
+\contentsline {section}{\numberline {6.3}Disentangling Latent Neurons}{51}
+\contentsline {section}{\numberline {6.4}Disentangling Latent Filters Using Averages}{52}
+\contentsline {section}{\numberline {6.5}Decoupling Latent Filters Using Weighted-Averages}{53}
+\contentsline {section}{\numberline {6.6}Separating Colour Spaces}{53}
+\contentsline {section}{\numberline {6.7}Orthogonal Convolutions}{54}
+\contentsline {section}{\numberline {6.8}Winner Takes All}{54}
+\contentsline {section}{\numberline {6.9}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{54}
+\contentsline {section}{\numberline {6.10}Using Batch Normalisation With Convolutional Variational Latent Spaces}{55}
+\contentsline {chapter}{\numberline {7}Conclusion}{56}
+\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{56}
+\contentsline {section}{\numberline {7.2}Applications}{56}
+\contentsline {section}{\numberline {7.3}Future Work}{56}
+\contentsline {chapter}{Bibliography}{56}

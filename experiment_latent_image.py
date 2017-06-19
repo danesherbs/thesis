@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 experiment = 'experiment_latent_image'
 
 
-def train_average_filter(beta):
+def train_latent_image(beta):
     # inputs
     input_shape = (1, 84, 84)
     filters = 32
@@ -28,7 +28,7 @@ def train_average_filter(beta):
     img_channels = 1
 
     # define filename
-    name = 'cvae_atari_average_filter'
+    name = 'cvae_atari_latent_image'
 
     # builder hyperparameter dictionary
     hp_dictionary = {
@@ -94,7 +94,7 @@ def main():
     beta = 1.0
 
     # log directory
-    run = 'cvae_atari_average_filter_18_Jun_15_40_50_batch_size_1_beta_1_epochs_10_filters_32_img_channels_1_kernel_size_6_latent_filters_8_loss_vae_loss_lr_0.0001_optimizer_adam'
+    run = 'cvae_atari_average_filter_19_Jun_05_05_40_batch_size_1_beta_4_epochs_10_filters_32_img_channels_1_kernel_size_6_latent_filters_8_loss_vae_loss_lr_0.0001_optimizer_adam'
     log_dir = './summaries/' + experiment + '/' + run + '/'
 
     # make VAE
@@ -115,25 +115,41 @@ def main():
 
     # load testing data
     test_directory = './atari_agents/record/test/'
-    test_generator = utils.atari_generator(test_directory, batch_size=1)
+    test_generator = utils.atari_generator(test_directory, batch_size=1, shuffle=False)
     X_test_size = 1000
     X_test = np.asarray([next(test_generator)[0][0] for i in range(X_test_size)])
 
     # show original and reconstruction
-    sampling.encode_decode_sample(X_test, model)
-    plt.show()
+    for sample_number in range(4):
+        sampling.encode_decode_sample(X_test, model, sample_number=sample_number, save=True, save_path='/home/dane/Documents/Thesis/thesis/figures/results/latent_image/', base='beta_4_')
+    # plt.show()
 
     # plot filters
-    # sampling.show_convolutional_layers(X_test, encoder, 4, 2)
+    # for sample_number in [30, 70, 10, 90]:
+    #     plt.figure(1)
+    #     plt.xticks([], [])
+    #     plt.yticks([], [])
+    #     plt.imshow(X_test[sample_number][0])
+    #     plt.gray()
+    #     plt.savefig('/home/dane/Documents/Thesis/thesis/figures/results/latent_image/beta_' + str(int(beta)) + '_sample_' + str(sample_number) + '_original.png', bbox_inches='tight')
+    #     # plt.show()
+    #     x_encoded = encoder.predict(np.asarray([X_test[sample_number]]))  # shape (1, num_filters, width, height)
+    #     x_encoded = x_encoded[0]  # shape (num_filters, width, height)
+    #     plt.figure(2)
+    #     plt.xticks([], [])
+    #     plt.yticks([], [])
+    #     plt.imshow(x_encoded[0])
+    #     plt.gray()
+    #     plt.savefig('/home/dane/Documents/Thesis/thesis/figures/results/latent_image/beta_' + str(int(beta)) + '_sample_' + str(sample_number) + '_latent.png', bbox_inches='tight')
     # plt.show()
 
     # sample from prior
-    # sampling.decode_prior_samples(5, decoder, latent_shape=(1, 8, 8, 8))
+    # sampling.decode_prior_samples(4, decoder, latent_shape=(1, 1, 8, 8), save=True, save_path='/home/dane/Documents/Thesis/thesis/figures/results/latent_image/', base='beta_1_')
     # plt.show()
 
     # sample from posterior
     # num_iter = 1000
-    # sampling.sample_posterior(X_test, model, num_iter, show_every=1)
+    # sampling.sample_posterior(X_test, model, num_iter, show_every=1, save=True, save_path='/home/dane/Documents/Thesis/thesis/figures/results/latent_image/', base='beta_1_')
 
     # change latent variable
     # latent_shape = (1, 8, 8, 8)
@@ -150,9 +166,10 @@ def main():
     #                             mean=0.0)
 
     # plot mean activation over latent space
-    # sampling.plot_mean_latent_activation(X_test, encoder, 4, 2)
-    # plt.show()
+    sampling.plot_mean_latent_activation(X_test, encoder, 1, 1)
+    plt.savefig('/home/dane/Documents/Thesis/thesis/figures/results/latent_image/' + 'beta_1_' + 'average_activation' + '.png', bbox_inches='tight')
 
+    # plt.show()
 
 
 '''
@@ -160,5 +177,6 @@ Main
 '''
 if __name__ == '__main__':
     # main()
-    for beta in 2**np.arange(3):
-        train_average_filter(beta)
+    
+    for beta in 2**np.arange(3,5):
+        train_latent_image(beta)

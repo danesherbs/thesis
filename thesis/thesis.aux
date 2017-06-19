@@ -1,5 +1,6 @@
 \relax 
-\@writefile{toc}{\contentsline {chapter}{Acknowledgements}{i}}
+\@writefile{toc}{\contentsline {chapter}{Abstract}{i}}
+\@writefile{toc}{\contentsline {chapter}{Acknowledgements}{iii}}
 \citation{Rosen2012}
 \citation{Ormerod2016}
 \citation{Garnelo2016}
@@ -198,9 +199,10 @@
 \newlabel{fig:even_and_odd_frames_space_invaders}{{4.1}{36}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Pre-processed frames captured from Pong emulated on Stella. These frames were originally $84\times 84$, but are printed here as $168\times 168$ to emphasise distortions. \textbf  {Left:} The JPEG format distorts the ball, paddle and score sprites. \textbf  {Right:} The PNG format displays the frame without such distortions.\relax }}{37}}
 \newlabel{fig:pong_729_pre_processed}{{4.2}{37}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Ensuring Numerical Stability in the Latent Space}{37}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Activation Functions in the Latent Space}{37}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Keras Callbacks}{38}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Training and Validation Data Generators}{37}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Ensuring Numerical Stability in the Latent Space}{37}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Activation Functions in the Latent Space}{38}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Keras Callbacks}{38}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Methods}{39}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -250,28 +252,36 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{ch:Results}{{6}{50}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{50}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Using Batch Normalisation With Convolutional Variational Latent Spaces}{50}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Comparing Reconstruction and KL Loss}{51}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Single Latent Filter}{51}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}Disentangling Latent Neurons}{51}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.6}Disentangling Latent Filters Using Averages}{52}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.7}Decoupling Latent Filters Using Weighted-Averages}{52}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.8}Separating Colour Spaces}{52}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.9}Orthogonal Convolutions}{53}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.10}Winner Takes All}{53}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Learning Generative Factors in Dense Latent Spaces}{50}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Single Latent Filter}{50}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces \textbf  {Top row:} Original frames from Space Invaders. \textbf  {Bottom row:} Corresponding reconstructions.\relax }}{51}}
+\newlabel{fig:latent_image_originals_and_reconstructions}{{6.1}{51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces \textbf  {Top row:} Original frames from Space Invaders. \textbf  {Bottom row:} Corresponding latent images.\relax }}{51}}
+\newlabel{fig:latent_image_originals_and_latent_spaces}{{6.2}{51}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Disentangling Latent Neurons}{51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Samples from prior.\relax }}{52}}
+\newlabel{fig:latent_image_originals_prior_samples}{{6.3}{52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Samples from posterior.\relax }}{52}}
+\newlabel{fig:latent_image_originals_posterior_samples}{{6.4}{52}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Disentangling Latent Filters Using Averages}{52}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}Decoupling Latent Filters Using Weighted-Averages}{53}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.6}Separating Colour Spaces}{53}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.7}Orthogonal Convolutions}{54}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.8}Winner Takes All}{54}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.9}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{54}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.10}Using Batch Normalisation With Convolutional Variational Latent Spaces}{55}}
 \citation{Rodriguez2016}
 \citation{Le2012}
 \bibstyle{abbrv}
 \bibdata{library}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{54}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{56}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:conclusions}{{7}{54}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{54}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Applications}{54}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Future Work}{54}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{54}}
+\newlabel{ch:conclusions}{{7}{56}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{56}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Applications}{56}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Future Work}{56}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{56}}
 \bibcite{Bellemare2015}{1}
 \bibcite{Blei2011}{2}
 \bibcite{Blei2016}{3}
@@ -290,19 +300,20 @@
 \bibcite{Kingma2014}{16}
 \bibcite{Knight2016}{17}
 \bibcite{Krizhevsky2012}{18}
-\bibcite{Li2016}{19}
-\bibcite{Liou2008}{20}
-\bibcite{Mnih2015}{21}
-\bibcite{Ormerod2016}{22}
-\bibcite{Reingold2001}{23}
-\bibcite{Richter2016}{24}
-\bibcite{Rodriguez2016}{25}
-\bibcite{Rosen2012}{26}
-\bibcite{Schmidhuber1992}{27}
-\bibcite{Silver2016}{28}
-\bibcite{Stokes1996}{29}
-\bibcite{Szegedy2015}{30}
-\bibcite{Tang2013}{31}
-\bibcite{Thiagarajan2016}{32}
-\bibcite{Zeiler2014}{33}
-\bibcite{Zsolnai-Feher2016}{34}
+\bibcite{Le2012}{19}
+\bibcite{Li2016}{20}
+\bibcite{Liou2008}{21}
+\bibcite{Mnih2015}{22}
+\bibcite{Ormerod2016}{23}
+\bibcite{Reingold2001}{24}
+\bibcite{Richter2016}{25}
+\bibcite{Rodriguez2016}{26}
+\bibcite{Rosen2012}{27}
+\bibcite{Schmidhuber1992}{28}
+\bibcite{Silver2016}{29}
+\bibcite{Stokes1996}{30}
+\bibcite{Szegedy2015}{31}
+\bibcite{Tang2013}{32}
+\bibcite{Thiagarajan2016}{33}
+\bibcite{Zeiler2014}{34}
+\bibcite{Zsolnai-Feher2016}{35}
