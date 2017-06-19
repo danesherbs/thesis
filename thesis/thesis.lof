@@ -117,4 +117,26 @@
 \contentsline {figure}{\numberline {6.72}{\ignorespaces $\beta =4\hskip 1em\relax $ (7 steps)\relax }}{56}
 \contentsline {figure}{\numberline {6.73}{\ignorespaces $\beta =4\hskip 1em\relax $ (98 steps)\relax }}{56}
 \contentsline {figure}{\numberline {6.74}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{56}
+\contentsline {figure}{\numberline {6.75}{\ignorespaces $\beta =1$\relax }}{57}
+\contentsline {figure}{\numberline {6.76}{\ignorespaces $\beta =2$\relax }}{57}
+\contentsline {figure}{\numberline {6.77}{\ignorespaces $\beta =4$\relax }}{57}
+\contentsline {figure}{\numberline {6.78}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{57}
+\contentsline {figure}{\numberline {6.79}{\ignorespaces Original\relax }}{58}
+\contentsline {figure}{\numberline {6.80}{\ignorespaces $\beta = 1$\relax }}{58}
+\contentsline {figure}{\numberline {6.81}{\ignorespaces $\beta = 2$\relax }}{58}
+\contentsline {figure}{\numberline {6.82}{\ignorespaces $\beta = 4$\relax }}{58}
+\contentsline {figure}{\numberline {6.83}{\ignorespaces Original\relax }}{58}
+\contentsline {figure}{\numberline {6.84}{\ignorespaces $\beta = 1$\relax }}{58}
+\contentsline {figure}{\numberline {6.85}{\ignorespaces $\beta = 2$\relax }}{58}
+\contentsline {figure}{\numberline {6.86}{\ignorespaces $\beta = 4$\relax }}{58}
+\contentsline {figure}{\numberline {6.87}{\ignorespaces Original\relax }}{58}
+\contentsline {figure}{\numberline {6.88}{\ignorespaces $\beta = 1$\relax }}{58}
+\contentsline {figure}{\numberline {6.89}{\ignorespaces $\beta = 2$\relax }}{58}
+\contentsline {figure}{\numberline {6.90}{\ignorespaces $\beta = 4$\relax }}{58}
+\contentsline {figure}{\numberline {6.91}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{58}
+\contentsline {figure}{\numberline {6.92}{\ignorespaces Original\relax }}{59}
+\contentsline {figure}{\numberline {6.93}{\ignorespaces $\beta = 1$\relax }}{59}
+\contentsline {figure}{\numberline {6.94}{\ignorespaces $\beta = 2$\relax }}{59}
+\contentsline {figure}{\numberline {6.95}{\ignorespaces $\beta = 4$\relax }}{59}
+\contentsline {figure}{\numberline {6.96}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{59}
 \addvspace {10\p@ }
