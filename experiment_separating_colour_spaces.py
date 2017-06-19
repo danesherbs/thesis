@@ -16,13 +16,13 @@ experiment = 'experiment_separating_colour_spaces'
 
 def train_latent_image(beta):
     # inputs
-    input_shape = (1, 84, 84)
+    input_shape = (3, 84, 84)
     filters = 32
-    latent_filters = 1
     kernel_size = 6
     epochs = 10
     batch_size = 1
     lr = 1e-4
+    img_channels = 3
 
     # define filename
     name = 'latent_image'
@@ -33,7 +33,6 @@ def train_latent_image(beta):
         'batch_size': batch_size,
         'beta': beta,
         'filters': filters,
-        'latent_filters': latent_filters,
         'kernel_size': kernel_size,
         'lr': lr,
         'loss': 'vae_loss',
@@ -48,6 +47,7 @@ def train_latent_image(beta):
                     log_dir,
                     filters=filters,
                     kernel_size=kernel_size,
+                    img_channels=img_channels,
                     beta=beta)
 
     # compile VAE
@@ -58,8 +58,8 @@ def train_latent_image(beta):
     # get dataset
     train_directory = './atari_agents/record/train/'
     test_directory = './atari_agents/record/test/'
-    train_generator = utils.atari_generator(train_directory, batch_size=batch_size)
-    test_generator = utils.atari_generator(test_directory, batch_size=batch_size)
+    train_generator = utils.atari_generator(train_directory, batch_size=batch_size, img_channels=img_channels)
+    test_generator = utils.atari_generator(test_directory, batch_size=batch_size, img_channels=img_channels)
     train_size = utils.count_images(train_directory)
     test_size = utils.count_images(test_directory)
 
@@ -81,14 +81,14 @@ def train_latent_image(beta):
 
 def train_naive_average(beta):
     # inputs
-    input_shape = (1, 84, 84)
+    input_shape = (3, 84, 84)
     filters = 32
     latent_filters = 8
     kernel_size = 6
     epochs = 10
     batch_size = 1
     lr = 1e-4
-    img_channels = 1
+    img_channels = 3
 
     # define filename
     name = 'naive_average_filter'
@@ -150,14 +150,14 @@ def train_naive_average(beta):
 
 def train_weighted_average(beta):
     # inputs
-    input_shape = (1, 84, 84)
+    input_shape = (3, 84, 84)
     filters = 32
     latent_filters = 8
     kernel_size = 6
     epochs = 10
     batch_size = 1
     lr = 1e-4
-    img_channels = 1
+    img_channels = 3
 
     # define filename
     name = 'weighted_average_filter'
