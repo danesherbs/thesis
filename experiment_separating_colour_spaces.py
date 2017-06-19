@@ -22,6 +22,7 @@ def train_latent_image(beta):
     epochs = 10
     batch_size = 1
     lr = 1e-4
+    img_channels = 3
 
     # define filename
     name = 'latent_image'
@@ -46,6 +47,7 @@ def train_latent_image(beta):
                     log_dir,
                     filters=filters,
                     kernel_size=kernel_size,
+                    img_channels=img_channels,
                     beta=beta)
 
     # compile VAE
