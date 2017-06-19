@@ -38,33 +38,33 @@
 \centering
 \captionsetup{justification=centering}
 \begin{multicols}{4}
-    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_0_original.png}
+    \includegraphics[scale=0.4]{figures/results/colour_separated/beta_1_sample_0_original.png}
     \caption{Original}
-    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_0_reconstructed.png}
+    \includegraphics[scale=0.4]{figures/results/colour_separated/beta_1_sample_0_reconstructed.png}
     \caption{$\beta = 1$}    
-    \includegraphics[scale=0.4]{figures/results/latent_image/beta_2_sample_0_reconstructed.png}
+    \includegraphics[scale=0.4]{figures/results/colour_separated/beta_2_sample_0_reconstructed.png}
     \caption{$\beta = 2$}
-    \includegraphics[scale=0.4]{figures/results/latent_image/beta_4_sample_0_reconstructed.png}
+    \includegraphics[scale=0.4]{figures/results/colour_separated/beta_4_sample_0_reconstructed.png}
     \caption{$\beta = 4$}
 \end{multicols}
 \begin{multicols}{4}
-    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_2_original.png}
+    \includegraphics[scale=0.4]{figures/results/colour_separated/beta_1_sample_2_original.png}
     \caption{Original}
-    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_2_reconstructed.png}
+    \includegraphics[scale=0.4]{figures/results/colour_separated/beta_1_sample_2_reconstructed.png}
     \caption{$\beta = 1$}    
-    \includegraphics[scale=0.4]{figures/results/latent_image/beta_2_sample_2_reconstructed.png}
+    \includegraphics[scale=0.4]{figures/results/colour_separated/beta_2_sample_2_reconstructed.png}
     \caption{$\beta = 2$}
-    \includegraphics[scale=0.4]{figures/results/latent_image/beta_4_sample_2_reconstructed.png}
+    \includegraphics[scale=0.4]{figures/results/colour_separated/beta_4_sample_2_reconstructed.png}
     \caption{$\beta = 4$}
 \end{multicols}
 \begin{multicols}{4}
-    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_3_original.png}
+    \includegraphics[scale=0.4]{figures/results/colour_separated/beta_1_sample_3_original.png}
     \caption{Original}
-    \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_sample_3_reconstructed.png}
+    \includegraphics[scale=0.4]{figures/results/colour_separated/beta_1_sample_3_reconstructed.png}
     \caption{$\beta = 1$}    
-    \includegraphics[scale=0.4]{figures/results/latent_image/beta_2_sample_3_reconstructed.png}
+    \includegraphics[scale=0.4]{figures/results/colour_separated/beta_2_sample_3_reconstructed.png}
     \caption{$\beta = 2$}
-    \includegraphics[scale=0.4]{figures/results/latent_image/beta_4_sample_3_reconstructed.png}
+    \includegraphics[scale=0.4]{figures/results/colour_separated/beta_4_sample_3_reconstructed.png}
     \caption{$\beta = 4$}
 \end{multicols}
 \caption{A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta$.}
@@ -465,6 +465,137 @@
 \end{itemize}
 
 
+
+
+\begin{figure*}[h!]
+\centering
+\captionsetup{justification=centering}
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_sample_0_original.png}
+    \caption{Original}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_sample_0_reconstructed.png}
+    \caption{$\beta = 1$}    
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_sample_0_reconstructed.png}
+    \caption{$\beta = 2$}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_sample_0_reconstructed.png}
+    \caption{$\beta = 4$}
+\end{multicols}
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_sample_2_original.png}
+    \caption{Original}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_sample_2_reconstructed.png}
+    \caption{$\beta = 1$}    
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_sample_2_reconstructed.png}
+    \caption{$\beta = 2$}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_sample_2_reconstructed.png}
+    \caption{$\beta = 4$}
+\end{multicols}
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_sample_3_original.png}
+    \caption{Original}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_sample_3_reconstructed.png}
+    \caption{$\beta = 1$}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_sample_3_reconstructed.png}
+    \caption{$\beta = 2$}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_sample_3_reconstructed.png}
+    \caption{$\beta = 4$}
+\end{multicols}
+\caption{A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta$.}
+\label{fig:weighted_average_originals_and_reconstructions}
+\end{figure*}
+
+
+
+
+\begin{figure*}[h!]
+\centering
+\captionsetup{justification=centering}
+\begin{minipage}{0.4\textwidth}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_sample_3_original.png}
+\caption{Original}
+\end{minipage}
+\begin{minipage}{0.55\textwidth}
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.42]{figures/results/weighted_average/beta_1_convolutional_layers_sample_3.png}
+\caption{$\beta = 1$}
+\includegraphics[scale=0.42]{figures/results/weighted_average/beta_2_convolutional_layers_sample_3.png}
+\caption{$\beta = 2$}
+\includegraphics[scale=0.42]{figures/results/weighted_average/beta_4_convolutional_layers_sample_3.png}
+\caption{$\beta = 4$}
+\end{minipage}
+\caption{A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta$.}
+\label{fig:weighted_average_originals_and_latent_filters}
+\end{figure*}
+
+\begin{itemize}
+\item Sampling from prior makes no sense (explained earlier)
+\item We observe the same result, which wont be included
+\end{itemize}
+
+
+
+\begin{figure*}[h!]
+\centering
+\captionsetup{justification=centering}
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_posterior_sample_original.png}
+    \caption{$\beta=1\quad$ (original)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_posterior_sample_18.png}
+    \caption{$\beta=1\quad$ (18 steps)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_posterior_sample_26.png}
+    \caption{$\beta=1\quad$ (26 steps)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_posterior_sample_39.png}
+    \caption{$\beta=1\quad$ (39 steps)}
+\end{multicols}
+
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_posterior_sample_original.png}
+    \caption{$\beta=2\quad$ (original)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_posterior_sample_17.png}
+    \caption{$\beta=2\quad$ (17 steps)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_posterior_sample_26.png}
+    \caption{$\beta=2\quad$ (26 steps)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_posterior_sample_30.png}
+    \caption{$\beta=2\quad$ (30 steps)}
+\end{multicols}
+
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_posterior_sample_original.png}
+    \caption{$\beta=4\quad$ (original)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_posterior_sample_7.png}
+    \caption{$\beta=4\quad$ (7 steps)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_posterior_sample_24.png}
+    \caption{$\beta=4\quad$ (24 steps)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_posterior_sample_32.png}
+    \caption{$\beta=4\quad$ (32 steps)}
+\end{multicols}
+
+\caption{An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
+\label{fig:weighted_average_posterior_samples}
+\end{figure*}
+
+
+
+\begin{figure*}[h!]
+\centering
+\captionsetup{justification=centering}
+
+    \includegraphics[scale=0.42]{figures/results/weighted_average/beta_1_average_activation.png}
+    \caption{$\beta=1$}
+    \includegraphics[scale=0.42]{figures/results/weighted_average/beta_2_average_activation.png}
+    \caption{$\beta=2$}
+    \includegraphics[scale=0.42]{figures/results/weighted_average/beta_4_average_activation.png}
+    \caption{$\beta=4$}
+
+\caption{An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
+\label{fig:weighted_average_originals_posterior_samples}
+\end{figure*}
+
+
+
 %
 %
 %
@@ -480,6 +611,11 @@
 \item Alter latent space variable and show reconstruction
 \item Add noise to filters
 \end{itemize}
+
+
+
+
+
 
 
 %
