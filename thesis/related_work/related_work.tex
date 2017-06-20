@@ -274,6 +274,7 @@ Unfortuntely we cannot perform backpropagation, as it makes no sense to differen
 The sampling step can now be written as
 \begin{align}
 \vec{z} = g_{\vec{\phi}}(\vec{x}, \vec{\epsilon}) = \vec{\mu} + \vec{\sigma} \odot \vec{\epsilon} \quad\quad\quad \vec{\epsilon} \sim \mathcal{N}(\vec{0}, \vec{I})
+\label{eq:reparameterisation_trick}
 \end{align}
 where $\odot$ represents the element-wise product. This is a reparameterisation of the random variable $\vec{z}\sim q_{\vec{\phi}}(\vec{z}|\vec{x})$ with a differentiable function $g_{\vec{\phi}}(\vec{x}, \vec{\epsilon})$, and is suitable known as the ``reparameterisation trick" \cite{Kingma2014}. The reparameterisation trick allows backpropagation to be used, and thus completes our method of solving optimisation problem (\ref{eq:elbo_optimisation_problem}).\\
 
