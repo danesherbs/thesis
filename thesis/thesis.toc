@@ -58,18 +58,19 @@
 \contentsline {subsection}{\numberline {5.5.1}Architecture}{49}
 \contentsline {subsection}{\numberline {5.5.2}Derivation}{49}
 \contentsline {chapter}{\numberline {6}Results}{50}
-\contentsline {section}{\numberline {6.1}Learning Generative Factors in Dense Latent Spaces}{50}
-\contentsline {section}{\numberline {6.2}Single Latent Filter}{50}
-\contentsline {section}{\numberline {6.3}Disentangling Latent Neurons}{51}
-\contentsline {section}{\numberline {6.4}Disentangling Latent Filters Using Averages}{53}
-\contentsline {section}{\numberline {6.5}Decoupling Latent Filters Using Weighted-Averages}{54}
-\contentsline {section}{\numberline {6.6}Separating Colour Spaces}{57}
-\contentsline {section}{\numberline {6.7}Orthogonal Convolutions}{58}
-\contentsline {section}{\numberline {6.8}Winner Takes All}{61}
-\contentsline {section}{\numberline {6.9}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{63}
-\contentsline {section}{\numberline {6.10}Using Batch Normalisation With Convolutional Variational Latent Spaces}{64}
-\contentsline {chapter}{\numberline {7}Conclusion}{69}
-\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{69}
-\contentsline {section}{\numberline {7.2}Applications}{69}
-\contentsline {section}{\numberline {7.3}Future Work}{69}
-\contentsline {chapter}{Bibliography}{69}
+\contentsline {section}{\numberline {6.1}Architectures}{50}
+\contentsline {section}{\numberline {6.2}Learning Generative Factors in Dense Latent Spaces}{52}
+\contentsline {section}{\numberline {6.3}Single Latent Filter}{52}
+\contentsline {section}{\numberline {6.4}Disentangling Latent Neurons}{52}
+\contentsline {section}{\numberline {6.5}Disentangling Latent Filters Using Averages}{53}
+\contentsline {section}{\numberline {6.6}Decoupling Latent Filters Using Weighted-Averages}{55}
+\contentsline {section}{\numberline {6.7}Separating Colour Spaces}{58}
+\contentsline {section}{\numberline {6.8}Orthogonal Convolutions}{59}
+\contentsline {section}{\numberline {6.9}Winner Takes All}{61}
+\contentsline {section}{\numberline {6.10}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{65}
+\contentsline {section}{\numberline {6.11}Using Batch Normalisation With Convolutional Variational Latent Spaces}{66}
+\contentsline {chapter}{\numberline {7}Conclusion}{72}
+\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{72}
+\contentsline {section}{\numberline {7.2}Applications}{72}
+\contentsline {section}{\numberline {7.3}Future Work}{72}
+\contentsline {chapter}{Bibliography}{72}

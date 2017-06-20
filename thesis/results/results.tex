@@ -8,6 +8,82 @@
 %
 %
 %
+\section{Architectures}
+
+\begin{itemize}
+\item $\beta$-VAE used this archiecture 
+\item It captured generative factors well
+\item Since we know this network can, we use something similar with a 
+\item MNIST, Frey, Pong, Space Invaders and Breakout
+\item We wish to be able to achieve a similar result with altering activations of specific filters
+\end{itemize}
+
+
+\begin{table}[]
+\centering
+\label{my-label}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Layer} & \textbf{Output shape} & \textbf{Connected to}  \\ \midrule
+InputLayer     & (1, 84, 84)           &                        \\
+Conv2D\_1      & (32, 42, 42)          & InputLayer             \\
+Conv2D\_2      & (64, 21, 21)          & Conv2D\_1              \\
+Conv2D\_3      & (1, 8, 8)             & Conv2D\_2              \\
+Conv2D\_4      & (1, 8, 8)             & Conv2D\_2              \\
+Sampling       & (1, 8, 8)             & Conv2D\_3 \& Conv2D\_4 \\
+Deconv2D\_1    & (64, 20, 20)          & Sampling               \\
+Deconv2D\_2    & (32, 40, 40)          & Deconv2D\_1            \\
+Deconv2D\_3    & (1, 84, 84)           & Deconv2D\_2           
+\end{tabular}
+\caption{Fully-convolutional single-filter variational autoencoder.}
+\end{table}
+
+
+\begin{table}[]
+\centering
+\label{my-label}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Layer} & \textbf{Output shape} & \textbf{Connected to}  \\ \midrule
+InputLayer     & (1, 84, 84)           &                        \\
+Conv2D\_1      & (32, 42, 42)          & InputLayer             \\
+Conv2D\_2      & (64, 21, 21)          & Conv2D\_1              \\
+Conv2D\_3      & (8, 8, 8)             & Conv2D\_2              \\
+Conv2D\_4      & (8, 8, 8)             & Conv2D\_2              \\
+Sampling       & (8, 8, 8)             & Conv2D\_3 \& Conv2D\_4 \\
+Deconv2D\_1    & (64, 20, 20)          & Sampling               \\
+Deconv2D\_2    & (32, 40, 40)          & Deconv2D\_1            \\
+Deconv2D\_3    & (1, 84, 84)           & Deconv2D\_2           
+\end{tabular}
+\caption{Fully-convolutional multi-filter variational autoencoder.}
+\end{table}
+
+
+\begin{table}[]
+\centering
+\label{my-label}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Layer} & \textbf{Output shape} & \textbf{Connected to}  \\ \midrule
+InputLayer     & (3, 84, 84)           &                        \\
+Conv2D\_1      & (32, 42, 42)          & InputLayer             \\
+Conv2D\_2      & (64, 21, 21)          & Conv2D\_1              \\
+Conv2D\_3      & (8, 8, 8)             & Conv2D\_2              \\
+Conv2D\_4      & (8, 8, 8)             & Conv2D\_2              \\
+Sampling       & (8, 8, 8)             & Conv2D\_3 \& Conv2D\_4 \\
+Deconv2D\_1    & (64, 20, 20)          & Sampling               \\
+Deconv2D\_2    & (32, 40, 40)          & Deconv2D\_1            \\
+Deconv2D\_3    & (3, 84, 84)           & Deconv2D\_2           
+\end{tabular}
+\caption{Fully-convolutional single-filter variational autoencoder for RGB images.}
+\end{table}
+
+
+%
+%
+%
+%
+%
 \section{Learning Generative Factors in Dense Latent Spaces}
 
 \begin{itemize}
@@ -463,6 +539,18 @@
 \item Alter latent space variable and show reconstruction
 \item Add noise to filters
 \end{itemize}
+
+
+
+\begin{figure*}[h!]
+\centering
+\captionsetup{justification=centering}
+    \includegraphics[scale=0.5]{figures/results/weighted_average/val_loss.png}
+    \includegraphics[scale=0.5]{figures/results/weighted_average/val_kl_loss.png}
+    \includegraphics[scale=0.5]{figures/results/weighted_average/val_reconstruction_loss.png}
+\caption{Caption.}
+\label{fig:weighted_average_graphs}
+\end{figure*}
 
 
 
