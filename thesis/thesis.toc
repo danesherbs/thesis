@@ -60,17 +60,16 @@
 \contentsline {chapter}{\numberline {6}Results}{49}
 \contentsline {section}{\numberline {6.1}Architectures}{49}
 \contentsline {section}{\numberline {6.2}Single Latent Filter}{51}
-\contentsline {subsubsection}{Latent Representations of Scenes}{52}
-\contentsline {subsection}{\numberline {6.2.1}Strengths}{52}
-\contentsline {subsection}{\numberline {6.2.2}Drawbacks}{52}
-\contentsline {section}{\numberline {6.3}Disentangling Latent Neurons}{52}
-\contentsline {section}{\numberline {6.4}Disentangling Latent Filters Using Averages}{53}
-\contentsline {section}{\numberline {6.5}Decoupling Latent Filters Using Weighted-Averages}{56}
-\contentsline {section}{\numberline {6.6}Separating Colour Spaces}{57}
-\contentsline {section}{\numberline {6.7}Orthogonal Convolutions}{59}
-\contentsline {section}{\numberline {6.8}Winner Takes All}{61}
-\contentsline {section}{\numberline {6.9}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{63}
-\contentsline {section}{\numberline {6.10}Using Batch Normalisation With Convolutional Variational Latent Spaces}{64}
+\contentsline {subsection}{\numberline {6.2.1}Results}{51}
+\contentsline {subsection}{\numberline {6.2.2}Summary}{51}
+\contentsline {section}{\numberline {6.3}Disentangling Latent Neurons}{56}
+\contentsline {section}{\numberline {6.4}Disentangling Latent Filters Using Averages}{56}
+\contentsline {section}{\numberline {6.5}Decoupling Latent Filters Using Weighted-Averages}{57}
+\contentsline {section}{\numberline {6.6}Separating Colour Spaces}{59}
+\contentsline {section}{\numberline {6.7}Orthogonal Convolutions}{61}
+\contentsline {section}{\numberline {6.8}Winner Takes All}{63}
+\contentsline {section}{\numberline {6.9}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{67}
+\contentsline {section}{\numberline {6.10}Using Batch Normalisation With Convolutional Variational Latent Spaces}{68}
 \contentsline {chapter}{\numberline {7}Conclusion}{75}
 \contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{75}
 \contentsline {section}{\numberline {7.2}Applications}{75}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  20 JUN 2017 23:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  21 JUN 2017 00:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1496,44 +1496,130 @@ LaTeX Warning: No positions in optional float specifier.
 [49
 
 ] [50]
-Underfull \vbox (badness 7869) has occurred while \output is active []
-
- [51]
-<figures/results/latent_image/val_loss.png, id=453, 509.5035pt x 354.8457pt>
+<figures/results/latent_image/val_loss.png, id=449, 509.5035pt x 354.8457pt>
 File: figures/results/latent_image/val_loss.png Graphic file (type png)
 
 <use figures/results/latent_image/val_loss.png>
 Package pdftex.def Info: figures/results/latent_image/val_loss.png used on inpu
-t line 122.
+t line 108.
 (pdftex.def)             Requested size: 254.75111pt x 177.42241pt.
 
-<figures/results/latent_image/val_kl_loss.png, id=454, 497.9403pt x 354.8457pt>
+<figures/results/latent_image/val_kl_loss.png, id=450, 497.9403pt x 354.8457pt>
 File: figures/results/latent_image/val_kl_loss.png Graphic file (type png)
 <use figures/results/latent_image/val_kl_loss.png>
 Package pdftex.def Info: figures/results/latent_image/val_kl_loss.png used on i
-nput line 123.
+nput line 109.
 (pdftex.def)             Requested size: 248.96954pt x 177.42241pt.
 
-<figures/results/latent_image/val_reconstruction_loss.png, id=455, 509.5035pt x
+<figures/results/latent_image/val_reconstruction_loss.png, id=451, 509.5035pt x
  354.8457pt>
 File: figures/results/latent_image/val_reconstruction_loss.png Graphic file (ty
 pe png)
  <use figures/results/latent_image/val_reconstruction_loss.png>
 Package pdftex.def Info: figures/results/latent_image/val_reconstruction_loss.p
-ng used on input line 124.
+ng used on input line 110.
 (pdftex.def)             Requested size: 254.75111pt x 177.42241pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/latent_image/beta_1_sample_0_original.png, id=456, 286.1892pt 
+<figures/results/latent_image/beta_1_sample_0_original.png, id=452, 286.1892pt 
 x 286.1892pt>
 File: figures/results/latent_image/beta_1_sample_0_original.png Graphic file (t
 ype png)
  <use figures/results/latent_image/beta_1_sample_0_original.png>
 Package pdftex.def Info: figures/results/latent_image/beta_1_sample_0_original.
-png used on input line 135.
+png used on input line 121.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 121--122
+ [][] 
+ []
+
+
+<figures/results/latent_image/beta_1_sample_0_reconstructed.png, id=453, 286.18
+92pt x 286.1892pt>
+File: figures/results/latent_image/beta_1_sample_0_reconstructed.png Graphic fi
+le (type png)
+
+<use figures/results/latent_image/beta_1_sample_0_reconstructed.png>
+Package pdftex.def Info: figures/results/latent_image/beta_1_sample_0_reconstru
+cted.png used on input line 123.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 123--124
+ [][] 
+ []
+
+
+<figures/results/latent_image/beta_4_sample_0_reconstructed.png, id=454, 286.18
+92pt x 286.1892pt>
+File: figures/results/latent_image/beta_4_sample_0_reconstructed.png Graphic fi
+le (type png)
+
+<use figures/results/latent_image/beta_4_sample_0_reconstructed.png>
+Package pdftex.def Info: figures/results/latent_image/beta_4_sample_0_reconstru
+cted.png used on input line 125.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 125--126
+ [][] 
+ []
+
+
+<figures/results/latent_image/beta_16_sample_0_reconstructed.png, id=455, 286.1
+892pt x 286.1892pt>
+File: figures/results/latent_image/beta_16_sample_0_reconstructed.png Graphic f
+ile (type png)
+
+<use figures/results/latent_image/beta_16_sample_0_reconstructed.png>
+Package pdftex.def Info: figures/results/latent_image/beta_16_sample_0_reconstr
+ucted.png used on input line 127.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 127--128
+ [][] 
+ []
+
+
+<figures/results/latent_image/beta_1_sample_2_original.png, id=456, 286.1892pt 
+x 286.1892pt>
+File: figures/results/latent_image/beta_1_sample_2_original.png Graphic file (t
+ype png)
+ <use figures/results/latent_image/beta_1_sample_2_original.png>
+Package pdftex.def Info: figures/results/latent_image/beta_1_sample_2_original.
+png used on input line 131.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 131--132
+ [][] 
+ []
+
+
+<figures/results/latent_image/beta_1_sample_2_reconstructed.png, id=457, 286.18
+92pt x 286.1892pt>
+File: figures/results/latent_image/beta_1_sample_2_reconstructed.png Graphic fi
+le (type png)
+
+<use figures/results/latent_image/beta_1_sample_2_reconstructed.png>
+Package pdftex.def Info: figures/results/latent_image/beta_1_sample_2_reconstru
+cted.png used on input line 133.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 133--134
+ [][] 
+ []
+
+
+<figures/results/latent_image/beta_4_sample_2_reconstructed.png, id=458, 286.18
+92pt x 286.1892pt>
+File: figures/results/latent_image/beta_4_sample_2_reconstructed.png Graphic fi
+le (type png)
+
+<use figures/results/latent_image/beta_4_sample_2_reconstructed.png>
+Package pdftex.def Info: figures/results/latent_image/beta_4_sample_2_reconstru
+cted.png used on input line 135.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 135--136
@@ -1541,14 +1627,14 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 135--136
  []
 
 
-<figures/results/latent_image/beta_1_sample_0_reconstructed.png, id=457, 286.18
-92pt x 286.1892pt>
-File: figures/results/latent_image/beta_1_sample_0_reconstructed.png Graphic fi
-le (type png)
+<figures/results/latent_image/beta_16_sample_2_reconstructed.png, id=459, 286.1
+892pt x 286.1892pt>
+File: figures/results/latent_image/beta_16_sample_2_reconstructed.png Graphic f
+ile (type png)
 
-<use figures/results/latent_image/beta_1_sample_0_reconstructed.png>
-Package pdftex.def Info: figures/results/latent_image/beta_1_sample_0_reconstru
-cted.png used on input line 137.
+<use figures/results/latent_image/beta_16_sample_2_reconstructed.png>
+Package pdftex.def Info: figures/results/latent_image/beta_16_sample_2_reconstr
+ucted.png used on input line 137.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 137--138
@@ -1556,29 +1642,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 137--138
  []
 
 
-<figures/results/latent_image/beta_4_sample_0_reconstructed.png, id=458, 286.18
-92pt x 286.1892pt>
-File: figures/results/latent_image/beta_4_sample_0_reconstructed.png Graphic fi
-le (type png)
-
-<use figures/results/latent_image/beta_4_sample_0_reconstructed.png>
-Package pdftex.def Info: figures/results/latent_image/beta_4_sample_0_reconstru
-cted.png used on input line 139.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 139--140
- [][] 
- []
-
-
-<figures/results/latent_image/beta_16_sample_0_reconstructed.png, id=459, 286.1
-892pt x 286.1892pt>
-File: figures/results/latent_image/beta_16_sample_0_reconstructed.png Graphic f
-ile (type png)
-
-<use figures/results/latent_image/beta_16_sample_0_reconstructed.png>
-Package pdftex.def Info: figures/results/latent_image/beta_16_sample_0_reconstr
-ucted.png used on input line 141.
+<figures/results/latent_image/beta_1_sample_3_original.png, id=460, 286.1892pt 
+x 286.1892pt>
+File: figures/results/latent_image/beta_1_sample_3_original.png Graphic file (t
+ype png)
+ <use figures/results/latent_image/beta_1_sample_3_original.png>
+Package pdftex.def Info: figures/results/latent_image/beta_1_sample_3_original.
+png used on input line 141.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 141--142
@@ -1586,13 +1656,29 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 141--142
  []
 
 
-<figures/results/latent_image/beta_1_sample_2_original.png, id=460, 286.1892pt 
-x 286.1892pt>
-File: figures/results/latent_image/beta_1_sample_2_original.png Graphic file (t
-ype png)
- <use figures/results/latent_image/beta_1_sample_2_original.png>
-Package pdftex.def Info: figures/results/latent_image/beta_1_sample_2_original.
-png used on input line 145.
+<figures/results/latent_image/beta_1_sample_3_reconstructed.png, id=461, 286.18
+92pt x 286.1892pt>
+File: figures/results/latent_image/beta_1_sample_3_reconstructed.png Graphic fi
+le (type png)
+
+<use figures/results/latent_image/beta_1_sample_3_reconstructed.png>
+Package pdftex.def Info: figures/results/latent_image/beta_1_sample_3_reconstru
+cted.png used on input line 143.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 143--144
+ [][] 
+ []
+
+
+<figures/results/latent_image/beta_4_sample_3_reconstructed.png, id=462, 286.18
+92pt x 286.1892pt>
+File: figures/results/latent_image/beta_4_sample_3_reconstructed.png Graphic fi
+le (type png)
+
+<use figures/results/latent_image/beta_4_sample_3_reconstructed.png>
+Package pdftex.def Info: figures/results/latent_image/beta_4_sample_3_reconstru
+cted.png used on input line 145.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 145--146
@@ -1600,14 +1686,14 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 145--146
  []
 
 
-<figures/results/latent_image/beta_1_sample_2_reconstructed.png, id=461, 286.18
-92pt x 286.1892pt>
-File: figures/results/latent_image/beta_1_sample_2_reconstructed.png Graphic fi
-le (type png)
+<figures/results/latent_image/beta_16_sample_3_reconstructed.png, id=463, 286.1
+892pt x 286.1892pt>
+File: figures/results/latent_image/beta_16_sample_3_reconstructed.png Graphic f
+ile (type png)
 
-<use figures/results/latent_image/beta_1_sample_2_reconstructed.png>
-Package pdftex.def Info: figures/results/latent_image/beta_1_sample_2_reconstru
-cted.png used on input line 147.
+<use figures/results/latent_image/beta_16_sample_3_reconstructed.png>
+Package pdftex.def Info: figures/results/latent_image/beta_16_sample_3_reconstr
+ucted.png used on input line 147.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 147--148
@@ -1615,73 +1701,17 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 147--148
  []
 
 
-<figures/results/latent_image/beta_4_sample_2_reconstructed.png, id=462, 286.18
-92pt x 286.1892pt>
-File: figures/results/latent_image/beta_4_sample_2_reconstructed.png Graphic fi
-le (type png)
-
-<use figures/results/latent_image/beta_4_sample_2_reconstructed.png>
-Package pdftex.def Info: figures/results/latent_image/beta_4_sample_2_reconstru
-cted.png used on input line 149.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 149--150
- [][] 
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/latent_image/beta_16_sample_2_reconstructed.png, id=463, 286.1
-892pt x 286.1892pt>
-File: figures/results/latent_image/beta_16_sample_2_reconstructed.png Graphic f
-ile (type png)
+<figures/results/latent_image/beta_1_sample_10_original.png, id=464, 286.1892pt
+ x 286.1892pt>
+File: figures/results/latent_image/beta_1_sample_10_original.png Graphic file (
+type png)
 
-<use figures/results/latent_image/beta_16_sample_2_reconstructed.png>
-Package pdftex.def Info: figures/results/latent_image/beta_16_sample_2_reconstr
-ucted.png used on input line 151.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 151--152
- [][] 
- []
-
-
-<figures/results/latent_image/beta_1_sample_3_original.png, id=464, 286.1892pt 
-x 286.1892pt>
-File: figures/results/latent_image/beta_1_sample_3_original.png Graphic file (t
-ype png)
- <use figures/results/latent_image/beta_1_sample_3_original.png>
-Package pdftex.def Info: figures/results/latent_image/beta_1_sample_3_original.
-png used on input line 155.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 155--156
- [][] 
- []
-
-
-<figures/results/latent_image/beta_1_sample_3_reconstructed.png, id=465, 286.18
-92pt x 286.1892pt>
-File: figures/results/latent_image/beta_1_sample_3_reconstructed.png Graphic fi
-le (type png)
-
-<use figures/results/latent_image/beta_1_sample_3_reconstructed.png>
-Package pdftex.def Info: figures/results/latent_image/beta_1_sample_3_reconstru
-cted.png used on input line 157.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 157--158
- [][] 
- []
-
-
-<figures/results/latent_image/beta_4_sample_3_reconstructed.png, id=466, 286.18
-92pt x 286.1892pt>
-File: figures/results/latent_image/beta_4_sample_3_reconstructed.png Graphic fi
-le (type png)
-
-<use figures/results/latent_image/beta_4_sample_3_reconstructed.png>
-Package pdftex.def Info: figures/results/latent_image/beta_4_sample_3_reconstru
-cted.png used on input line 159.
+<use figures/results/latent_image/beta_1_sample_10_original.png>
+Package pdftex.def Info: figures/results/latent_image/beta_1_sample_10_original
+.png used on input line 159.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 159--160
@@ -1689,14 +1719,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 159--160
  []
 
 
-<figures/results/latent_image/beta_16_sample_3_reconstructed.png, id=467, 286.1
-892pt x 286.1892pt>
-File: figures/results/latent_image/beta_16_sample_3_reconstructed.png Graphic f
-ile (type png)
-
-<use figures/results/latent_image/beta_16_sample_3_reconstructed.png>
-Package pdftex.def Info: figures/results/latent_image/beta_16_sample_3_reconstr
-ucted.png used on input line 161.
+<figures/results/latent_image/beta_1_sample_10_latent.png, id=465, 286.1892pt x
+ 286.1892pt>
+File: figures/results/latent_image/beta_1_sample_10_latent.png Graphic file (ty
+pe png)
+ <use figures/results/latent_image/beta_1_sample_10_latent.png>
+Package pdftex.def Info: figures/results/latent_image/beta_1_sample_10_latent.p
+ng used on input line 161.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 161--162
@@ -1704,17 +1733,70 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 161--162
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+<figures/results/latent_image/beta_4_sample_10_latent.png, id=466, 286.1892pt x
+ 286.1892pt>
+File: figures/results/latent_image/beta_4_sample_10_latent.png Graphic file (ty
+pe png)
+ <use figures/results/latent_image/beta_4_sample_10_latent.png>
+Package pdftex.def Info: figures/results/latent_image/beta_4_sample_10_latent.p
+ng used on input line 163.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 163--164
+ [][] 
+ []
 
 
-<figures/results/latent_image/beta_1_sample_10_original.png, id=468, 286.1892pt
+<figures/results/latent_image/beta_16_sample_10_latent.png, id=467, 286.1892pt 
+x 286.1892pt>
+File: figures/results/latent_image/beta_16_sample_10_latent.png Graphic file (t
+ype png)
+ <use figures/results/latent_image/beta_16_sample_10_latent.png>
+Package pdftex.def Info: figures/results/latent_image/beta_16_sample_10_latent.
+png used on input line 165.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 165--166
+ [][] 
+ []
+
+
+<figures/results/latent_image/beta_1_sample_30_original.png, id=468, 286.1892pt
  x 286.1892pt>
-File: figures/results/latent_image/beta_1_sample_10_original.png Graphic file (
+File: figures/results/latent_image/beta_1_sample_30_original.png Graphic file (
 type png)
 
-<use figures/results/latent_image/beta_1_sample_10_original.png>
-Package pdftex.def Info: figures/results/latent_image/beta_1_sample_10_original
-.png used on input line 173.
+<use figures/results/latent_image/beta_1_sample_30_original.png>
+Package pdftex.def Info: figures/results/latent_image/beta_1_sample_30_original
+.png used on input line 169.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 169--170
+ [][] 
+ []
+
+
+<figures/results/latent_image/beta_1_sample_30_latent.png, id=469, 286.1892pt x
+ 286.1892pt>
+File: figures/results/latent_image/beta_1_sample_30_latent.png Graphic file (ty
+pe png)
+ <use figures/results/latent_image/beta_1_sample_30_latent.png>
+Package pdftex.def Info: figures/results/latent_image/beta_1_sample_30_latent.p
+ng used on input line 171.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 171--172
+ [][] 
+ []
+
+
+<figures/results/latent_image/beta_4_sample_30_latent.png, id=470, 286.1892pt x
+ 286.1892pt>
+File: figures/results/latent_image/beta_4_sample_30_latent.png Graphic file (ty
+pe png)
+ <use figures/results/latent_image/beta_4_sample_30_latent.png>
+Package pdftex.def Info: figures/results/latent_image/beta_4_sample_30_latent.p
+ng used on input line 173.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 173--174
@@ -1722,13 +1804,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 173--174
  []
 
 
-<figures/results/latent_image/beta_1_sample_10_latent.png, id=469, 286.1892pt x
- 286.1892pt>
-File: figures/results/latent_image/beta_1_sample_10_latent.png Graphic file (ty
-pe png)
- <use figures/results/latent_image/beta_1_sample_10_latent.png>
-Package pdftex.def Info: figures/results/latent_image/beta_1_sample_10_latent.p
-ng used on input line 175.
+<figures/results/latent_image/beta_16_sample_30_latent.png, id=471, 286.1892pt 
+x 286.1892pt>
+File: figures/results/latent_image/beta_16_sample_30_latent.png Graphic file (t
+ype png)
+ <use figures/results/latent_image/beta_16_sample_30_latent.png>
+Package pdftex.def Info: figures/results/latent_image/beta_16_sample_30_latent.
+png used on input line 175.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 175--176
@@ -1736,27 +1818,14 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 175--176
  []
 
 
-<figures/results/latent_image/beta_4_sample_10_latent.png, id=470, 286.1892pt x
- 286.1892pt>
-File: figures/results/latent_image/beta_4_sample_10_latent.png Graphic file (ty
-pe png)
- <use figures/results/latent_image/beta_4_sample_10_latent.png>
-Package pdftex.def Info: figures/results/latent_image/beta_4_sample_10_latent.p
-ng used on input line 177.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+<figures/results/latent_image/beta_1_sample_90_original.png, id=472, 286.1892pt
+ x 286.1892pt>
+File: figures/results/latent_image/beta_1_sample_90_original.png Graphic file (
+type png)
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 177--178
- [][] 
- []
-
-
-<figures/results/latent_image/beta_16_sample_10_latent.png, id=471, 286.1892pt 
-x 286.1892pt>
-File: figures/results/latent_image/beta_16_sample_10_latent.png Graphic file (t
-ype png)
- <use figures/results/latent_image/beta_16_sample_10_latent.png>
-Package pdftex.def Info: figures/results/latent_image/beta_16_sample_10_latent.
-png used on input line 179.
+<use figures/results/latent_image/beta_1_sample_90_original.png>
+Package pdftex.def Info: figures/results/latent_image/beta_1_sample_90_original
+.png used on input line 179.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 179--180
@@ -1764,14 +1833,27 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 179--180
  []
 
 
-<figures/results/latent_image/beta_1_sample_30_original.png, id=472, 286.1892pt
- x 286.1892pt>
-File: figures/results/latent_image/beta_1_sample_30_original.png Graphic file (
-type png)
+<figures/results/latent_image/beta_1_sample_90_latent.png, id=473, 286.1892pt x
+ 286.1892pt>
+File: figures/results/latent_image/beta_1_sample_90_latent.png Graphic file (ty
+pe png)
+ <use figures/results/latent_image/beta_1_sample_90_latent.png>
+Package pdftex.def Info: figures/results/latent_image/beta_1_sample_90_latent.p
+ng used on input line 181.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-<use figures/results/latent_image/beta_1_sample_30_original.png>
-Package pdftex.def Info: figures/results/latent_image/beta_1_sample_30_original
-.png used on input line 183.
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 181--182
+ [][] 
+ []
+
+
+<figures/results/latent_image/beta_4_sample_90_latent.png, id=474, 286.1892pt x
+ 286.1892pt>
+File: figures/results/latent_image/beta_4_sample_90_latent.png Graphic file (ty
+pe png)
+ <use figures/results/latent_image/beta_4_sample_90_latent.png>
+Package pdftex.def Info: figures/results/latent_image/beta_4_sample_90_latent.p
+ng used on input line 183.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 183--184
@@ -1779,13 +1861,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 183--184
  []
 
 
-<figures/results/latent_image/beta_1_sample_30_latent.png, id=473, 286.1892pt x
- 286.1892pt>
-File: figures/results/latent_image/beta_1_sample_30_latent.png Graphic file (ty
-pe png)
- <use figures/results/latent_image/beta_1_sample_30_latent.png>
-Package pdftex.def Info: figures/results/latent_image/beta_1_sample_30_latent.p
-ng used on input line 185.
+<figures/results/latent_image/beta_16_sample_90_latent.png, id=475, 286.1892pt 
+x 286.1892pt>
+File: figures/results/latent_image/beta_16_sample_90_latent.png Graphic file (t
+ype png)
+ <use figures/results/latent_image/beta_16_sample_90_latent.png>
+Package pdftex.def Info: figures/results/latent_image/beta_16_sample_90_latent.
+png used on input line 185.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 185--186
@@ -1793,181 +1875,96 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 185--186
  []
 
 
-<figures/results/latent_image/beta_4_sample_30_latent.png, id=474, 286.1892pt x
- 286.1892pt>
-File: figures/results/latent_image/beta_4_sample_30_latent.png Graphic file (ty
-pe png)
- <use figures/results/latent_image/beta_4_sample_30_latent.png>
-Package pdftex.def Info: figures/results/latent_image/beta_4_sample_30_latent.p
-ng used on input line 187.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 187--188
- [][] 
- []
-
-
-<figures/results/latent_image/beta_16_sample_30_latent.png, id=475, 286.1892pt 
-x 286.1892pt>
-File: figures/results/latent_image/beta_16_sample_30_latent.png Graphic file (t
-ype png)
- <use figures/results/latent_image/beta_16_sample_30_latent.png>
-Package pdftex.def Info: figures/results/latent_image/beta_16_sample_30_latent.
-png used on input line 189.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 189--190
- [][] 
- []
-
-
-<figures/results/latent_image/beta_1_sample_90_original.png, id=476, 286.1892pt
- x 286.1892pt>
-File: figures/results/latent_image/beta_1_sample_90_original.png Graphic file (
-type png)
-
-<use figures/results/latent_image/beta_1_sample_90_original.png>
-Package pdftex.def Info: figures/results/latent_image/beta_1_sample_90_original
-.png used on input line 193.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 193--194
- [][] 
- []
-
-
-<figures/results/latent_image/beta_1_sample_90_latent.png, id=477, 286.1892pt x
- 286.1892pt>
-File: figures/results/latent_image/beta_1_sample_90_latent.png Graphic file (ty
-pe png)
- <use figures/results/latent_image/beta_1_sample_90_latent.png>
-Package pdftex.def Info: figures/results/latent_image/beta_1_sample_90_latent.p
-ng used on input line 195.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 195--196
- [][] 
- []
-
-
-<figures/results/latent_image/beta_4_sample_90_latent.png, id=478, 286.1892pt x
- 286.1892pt>
-File: figures/results/latent_image/beta_4_sample_90_latent.png Graphic file (ty
-pe png)
- <use figures/results/latent_image/beta_4_sample_90_latent.png>
-Package pdftex.def Info: figures/results/latent_image/beta_4_sample_90_latent.p
-ng used on input line 197.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 197--198
- [][] 
- []
-
-
-<figures/results/latent_image/beta_16_sample_90_latent.png, id=479, 286.1892pt 
-x 286.1892pt>
-File: figures/results/latent_image/beta_16_sample_90_latent.png Graphic file (t
-ype png)
- <use figures/results/latent_image/beta_16_sample_90_latent.png>
-Package pdftex.def Info: figures/results/latent_image/beta_16_sample_90_latent.
-png used on input line 199.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 199--200
- [][] 
- []
-
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/latent_image/beta_1_prior_sample_1.png, id=480, 286.1892pt x 2
+<figures/results/latent_image/beta_1_prior_sample_1.png, id=476, 286.1892pt x 2
 86.1892pt>
 File: figures/results/latent_image/beta_1_prior_sample_1.png Graphic file (type
  png)
  <use figures/results/latent_image/beta_1_prior_sample_1.png>
 Package pdftex.def Info: figures/results/latent_image/beta_1_prior_sample_1.png
- used on input line 211.
+ used on input line 197.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-<figures/results/latent_image/beta_4_prior_sample_2.png, id=481, 286.1892pt x 2
+<figures/results/latent_image/beta_4_prior_sample_2.png, id=477, 286.1892pt x 2
 86.1892pt>
 File: figures/results/latent_image/beta_4_prior_sample_2.png Graphic file (type
  png)
  <use figures/results/latent_image/beta_4_prior_sample_2.png>
 Package pdftex.def Info: figures/results/latent_image/beta_4_prior_sample_2.png
- used on input line 213.
+ used on input line 199.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-<figures/results/latent_image/beta_16_prior_sample_1.png, id=482, 286.1892pt x 
+<figures/results/latent_image/beta_16_prior_sample_1.png, id=478, 286.1892pt x 
 286.1892pt>
 File: figures/results/latent_image/beta_16_prior_sample_1.png Graphic file (typ
 e png)
  <use figures/results/latent_image/beta_16_prior_sample_1.png>
 Package pdftex.def Info: figures/results/latent_image/beta_16_prior_sample_1.pn
-g used on input line 215.
+g used on input line 201.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/latent_image/beta_1_posterior_sample_original.png, id=483, 286
+<figures/results/latent_image/beta_1_posterior_sample_original.png, id=479, 286
 .1892pt x 286.1892pt>
 File: figures/results/latent_image/beta_1_posterior_sample_original.png Graphic
  file (type png)
 
 <use figures/results/latent_image/beta_1_posterior_sample_original.png>
 Package pdftex.def Info: figures/results/latent_image/beta_1_posterior_sample_o
-riginal.png used on input line 227.
+riginal.png used on input line 213.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 227--228
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 213--214
  [][] 
  []
 
 
-<figures/results/latent_image/beta_1_posterior_sample_0.png, id=484, 286.1892pt
+<figures/results/latent_image/beta_1_posterior_sample_0.png, id=480, 286.1892pt
  x 286.1892pt>
 File: figures/results/latent_image/beta_1_posterior_sample_0.png Graphic file (
 type png)
 
 <use figures/results/latent_image/beta_1_posterior_sample_0.png>
 Package pdftex.def Info: figures/results/latent_image/beta_1_posterior_sample_0
-.png used on input line 229.
+.png used on input line 215.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 229--230
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 215--216
  [][] 
  []
 
 
-<figures/results/latent_image/beta_4_posterior_sample_0.png, id=485, 286.1892pt
+<figures/results/latent_image/beta_4_posterior_sample_0.png, id=481, 286.1892pt
  x 286.1892pt>
 File: figures/results/latent_image/beta_4_posterior_sample_0.png Graphic file (
 type png)
 
 <use figures/results/latent_image/beta_4_posterior_sample_0.png>
 Package pdftex.def Info: figures/results/latent_image/beta_4_posterior_sample_0
-.png used on input line 231.
+.png used on input line 217.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 231--232
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 217--218
  [][] 
  []
 
 
-<figures/results/latent_image/beta_16_posterior_sample_11.png, id=486, 286.1892
+<figures/results/latent_image/beta_16_posterior_sample_11.png, id=482, 286.1892
 pt x 286.1892pt>
 File: figures/results/latent_image/beta_16_posterior_sample_11.png Graphic file
  (type png)
 
 <use figures/results/latent_image/beta_16_posterior_sample_11.png>
 Package pdftex.def Info: figures/results/latent_image/beta_16_posterior_sample_
-11.png used on input line 233.
+11.png used on input line 219.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 233--234
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 219--220
  [][] 
  []
 
@@ -1975,80 +1972,172 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 233--234
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/latent_image/beta_1_average_activation.png, id=487, 286.1892pt
+<figures/results/latent_image/beta_1_average_activation.png, id=483, 286.1892pt
  x 286.1892pt>
 File: figures/results/latent_image/beta_1_average_activation.png Graphic file (
 type png)
 
 <use figures/results/latent_image/beta_1_average_activation.png>
 Package pdftex.def Info: figures/results/latent_image/beta_1_average_activation
-.png used on input line 245.
+.png used on input line 231.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-<figures/results/latent_image/beta_2_average_activation.png, id=488, 286.1892pt
+<figures/results/latent_image/beta_2_average_activation.png, id=484, 286.1892pt
  x 286.1892pt>
 File: figures/results/latent_image/beta_2_average_activation.png Graphic file (
 type png)
 
 <use figures/results/latent_image/beta_2_average_activation.png>
 Package pdftex.def Info: figures/results/latent_image/beta_2_average_activation
-.png used on input line 247.
+.png used on input line 233.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-<figures/results/latent_image/beta_4_average_activation.png, id=489, 286.1892pt
+<figures/results/latent_image/beta_4_average_activation.png, id=485, 286.1892pt
  x 286.1892pt>
 File: figures/results/latent_image/beta_4_average_activation.png Graphic file (
 type png)
 
 <use figures/results/latent_image/beta_4_average_activation.png>
 Package pdftex.def Info: figures/results/latent_image/beta_4_average_activation
-.png used on input line 249.
+.png used on input line 235.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-<figures/results/indiscriminate_decoupling/val_loss.png, id=490, 509.5035pt x 3
+[51] [52 <./figures/results/latent_image/val_loss.png> <./figures/results/laten
+t_image/val_kl_loss.png> <./figures/results/latent_image/val_reconstruction_los
+s.png>] [53 <./figures/results/latent_image/beta_1_sample_0_original.png> <./fi
+gures/results/latent_image/beta_1_sample_0_reconstructed.png> <./figures/result
+s/latent_image/beta_4_sample_0_reconstructed.png> <./figures/results/latent_ima
+ge/beta_16_sample_0_reconstructed.png> <./figures/results/latent_image/beta_1_s
+ample_2_original.png> <./figures/results/latent_image/beta_1_sample_2_reconstru
+cted.png> <./figures/results/latent_image/beta_4_sample_2_reconstructed.png> <.
+/figures/results/latent_image/beta_16_sample_2_reconstructed.png> <./figures/re
+sults/latent_image/beta_1_sample_3_original.png> <./figures/results/latent_imag
+e/beta_1_sample_3_reconstructed.png> <./figures/results/latent_image/beta_4_sam
+ple_3_reconstructed.png> <./figures/results/latent_image/beta_16_sample_3_recon
+structed.png>] [54 <./figures/results/latent_image/beta_1_sample_10_original.pn
+g> <./figures/results/latent_image/beta_1_sample_10_latent.png> <./figures/resu
+lts/latent_image/beta_4_sample_10_latent.png> <./figures/results/latent_image/b
+eta_16_sample_10_latent.png> <./figures/results/latent_image/beta_1_sample_30_o
+riginal.png> <./figures/results/latent_image/beta_1_sample_30_latent.png> <./fi
+gures/results/latent_image/beta_4_sample_30_latent.png> <./figures/results/late
+nt_image/beta_16_sample_30_latent.png> <./figures/results/latent_image/beta_1_s
+ample_90_original.png> <./figures/results/latent_image/beta_1_sample_90_latent.
+png> <./figures/results/latent_image/beta_4_sample_90_latent.png> <./figures/re
+sults/latent_image/beta_16_sample_90_latent.png> <./figures/results/latent_imag
+e/beta_1_prior_sample_1.png> <./figures/results/latent_image/beta_4_prior_sampl
+e_2.png> <./figures/results/latent_image/beta_16_prior_sample_1.png>] [55 <./fi
+gures/results/latent_image/beta_1_posterior_sample_original.png> <./figures/res
+ults/latent_image/beta_1_posterior_sample_0.png> <./figures/results/latent_imag
+e/beta_4_posterior_sample_0.png> <./figures/results/latent_image/beta_16_poster
+ior_sample_11.png> <./figures/results/latent_image/beta_1_average_activation.pn
+g> <./figures/results/latent_image/beta_2_average_activation.png> <./figures/re
+sults/latent_image/beta_4_average_activation.png>]
+<figures/results/indiscriminate_decoupling/val_loss.png, id=539, 509.5035pt x 3
 58.4592pt>
 File: figures/results/indiscriminate_decoupling/val_loss.png Graphic file (type
  png)
  <use figures/results/indiscriminate_decoupling/val_loss.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/val_loss.png
- used on input line 277.
+ used on input line 267.
 (pdftex.def)             Requested size: 254.75111pt x 179.22916pt.
 
-<figures/results/indiscriminate_decoupling/val_kl_loss.png, id=491, 497.9403pt 
+<figures/results/indiscriminate_decoupling/val_kl_loss.png, id=540, 497.9403pt 
 x 354.8457pt>
 File: figures/results/indiscriminate_decoupling/val_kl_loss.png Graphic file (t
 ype png)
  <use figures/results/indiscriminate_decoupling/val_kl_loss.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/val_kl_loss.
-png used on input line 278.
+png used on input line 268.
 (pdftex.def)             Requested size: 248.96954pt x 177.42241pt.
 
-<figures/results/indiscriminate_decoupling/val_reconstruction_loss.png, id=492,
+<figures/results/indiscriminate_decoupling/val_reconstruction_loss.png, id=541,
  509.5035pt x 354.8457pt>
 File: figures/results/indiscriminate_decoupling/val_reconstruction_loss.png Gra
 phic file (type png)
 
 <use figures/results/indiscriminate_decoupling/val_reconstruction_loss.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/val_reconstr
-uction_loss.png used on input line 279.
+uction_loss.png used on input line 269.
 (pdftex.def)             Requested size: 254.75111pt x 177.42241pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/indiscriminate_decoupling/beta_1_sample_0_original.png, id=493
+<figures/results/indiscriminate_decoupling/beta_1_sample_0_original.png, id=542
 , 286.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_1_sample_0_original.png Gr
 aphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_1_sample_0_original.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_sampl
-e_0_original.png used on input line 290.
+e_0_original.png used on input line 280.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 280--281
+ [][] 
+ []
+
+
+<figures/results/indiscriminate_decoupling/beta_1_sample_0_reconstructed.png, i
+d=543, 286.1892pt x 286.1892pt>
+File: figures/results/indiscriminate_decoupling/beta_1_sample_0_reconstructed.p
+ng Graphic file (type png)
+
+<use figures/results/indiscriminate_decoupling/beta_1_sample_0_reconstructed.pn
+g>
+Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_sampl
+e_0_reconstructed.png used on input line 282.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 282--283
+ [][] 
+ []
+
+
+<figures/results/indiscriminate_decoupling/beta_2_sample_0_reconstructed.png, i
+d=544, 286.1892pt x 286.1892pt>
+File: figures/results/indiscriminate_decoupling/beta_2_sample_0_reconstructed.p
+ng Graphic file (type png)
+
+<use figures/results/indiscriminate_decoupling/beta_2_sample_0_reconstructed.pn
+g>
+Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_2_sampl
+e_0_reconstructed.png used on input line 284.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 284--285
+ [][] 
+ []
+
+
+<figures/results/indiscriminate_decoupling/beta_4_sample_0_reconstructed.png, i
+d=545, 286.1892pt x 286.1892pt>
+File: figures/results/indiscriminate_decoupling/beta_4_sample_0_reconstructed.p
+ng Graphic file (type png)
+
+<use figures/results/indiscriminate_decoupling/beta_4_sample_0_reconstructed.pn
+g>
+Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_4_sampl
+e_0_reconstructed.png used on input line 286.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 286--287
+ [][] 
+ []
+
+
+<figures/results/indiscriminate_decoupling/beta_1_sample_2_original.png, id=546
+, 286.1892pt x 286.1892pt>
+File: figures/results/indiscriminate_decoupling/beta_1_sample_2_original.png Gr
+aphic file (type png)
+
+<use figures/results/indiscriminate_decoupling/beta_1_sample_2_original.png>
+Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_sampl
+e_2_original.png used on input line 290.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 290--291
@@ -2056,15 +2145,15 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 290--291
  []
 
 
-<figures/results/indiscriminate_decoupling/beta_1_sample_0_reconstructed.png, i
-d=494, 286.1892pt x 286.1892pt>
-File: figures/results/indiscriminate_decoupling/beta_1_sample_0_reconstructed.p
+<figures/results/indiscriminate_decoupling/beta_1_sample_2_reconstructed.png, i
+d=547, 286.1892pt x 286.1892pt>
+File: figures/results/indiscriminate_decoupling/beta_1_sample_2_reconstructed.p
 ng Graphic file (type png)
 
-<use figures/results/indiscriminate_decoupling/beta_1_sample_0_reconstructed.pn
+<use figures/results/indiscriminate_decoupling/beta_1_sample_2_reconstructed.pn
 g>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_sampl
-e_0_reconstructed.png used on input line 292.
+e_2_reconstructed.png used on input line 292.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 292--293
@@ -2072,15 +2161,15 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 292--293
  []
 
 
-<figures/results/indiscriminate_decoupling/beta_2_sample_0_reconstructed.png, i
-d=495, 286.1892pt x 286.1892pt>
-File: figures/results/indiscriminate_decoupling/beta_2_sample_0_reconstructed.p
+<figures/results/indiscriminate_decoupling/beta_2_sample_2_reconstructed.png, i
+d=548, 286.1892pt x 286.1892pt>
+File: figures/results/indiscriminate_decoupling/beta_2_sample_2_reconstructed.p
 ng Graphic file (type png)
 
-<use figures/results/indiscriminate_decoupling/beta_2_sample_0_reconstructed.pn
+<use figures/results/indiscriminate_decoupling/beta_2_sample_2_reconstructed.pn
 g>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_2_sampl
-e_0_reconstructed.png used on input line 294.
+e_2_reconstructed.png used on input line 294.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 294--295
@@ -2088,15 +2177,15 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 294--295
  []
 
 
-<figures/results/indiscriminate_decoupling/beta_4_sample_0_reconstructed.png, i
-d=496, 286.1892pt x 286.1892pt>
-File: figures/results/indiscriminate_decoupling/beta_4_sample_0_reconstructed.p
+<figures/results/indiscriminate_decoupling/beta_4_sample_2_reconstructed.png, i
+d=549, 286.1892pt x 286.1892pt>
+File: figures/results/indiscriminate_decoupling/beta_4_sample_2_reconstructed.p
 ng Graphic file (type png)
 
-<use figures/results/indiscriminate_decoupling/beta_4_sample_0_reconstructed.pn
+<use figures/results/indiscriminate_decoupling/beta_4_sample_2_reconstructed.pn
 g>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_4_sampl
-e_0_reconstructed.png used on input line 296.
+e_2_reconstructed.png used on input line 296.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 296--297
@@ -2104,14 +2193,14 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 296--297
  []
 
 
-<figures/results/indiscriminate_decoupling/beta_1_sample_2_original.png, id=497
+<figures/results/indiscriminate_decoupling/beta_1_sample_3_original.png, id=550
 , 286.1892pt x 286.1892pt>
-File: figures/results/indiscriminate_decoupling/beta_1_sample_2_original.png Gr
+File: figures/results/indiscriminate_decoupling/beta_1_sample_3_original.png Gr
 aphic file (type png)
 
-<use figures/results/indiscriminate_decoupling/beta_1_sample_2_original.png>
+<use figures/results/indiscriminate_decoupling/beta_1_sample_3_original.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_sampl
-e_2_original.png used on input line 300.
+e_3_original.png used on input line 300.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 300--301
@@ -2119,15 +2208,15 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 300--301
  []
 
 
-<figures/results/indiscriminate_decoupling/beta_1_sample_2_reconstructed.png, i
-d=498, 286.1892pt x 286.1892pt>
-File: figures/results/indiscriminate_decoupling/beta_1_sample_2_reconstructed.p
+<figures/results/indiscriminate_decoupling/beta_1_sample_3_reconstructed.png, i
+d=551, 286.1892pt x 286.1892pt>
+File: figures/results/indiscriminate_decoupling/beta_1_sample_3_reconstructed.p
 ng Graphic file (type png)
 
-<use figures/results/indiscriminate_decoupling/beta_1_sample_2_reconstructed.pn
+<use figures/results/indiscriminate_decoupling/beta_1_sample_3_reconstructed.pn
 g>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_sampl
-e_2_reconstructed.png used on input line 302.
+e_3_reconstructed.png used on input line 302.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 302--303
@@ -2135,15 +2224,15 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 302--303
  []
 
 
-<figures/results/indiscriminate_decoupling/beta_2_sample_2_reconstructed.png, i
-d=499, 286.1892pt x 286.1892pt>
-File: figures/results/indiscriminate_decoupling/beta_2_sample_2_reconstructed.p
+<figures/results/indiscriminate_decoupling/beta_2_sample_3_reconstructed.png, i
+d=552, 286.1892pt x 286.1892pt>
+File: figures/results/indiscriminate_decoupling/beta_2_sample_3_reconstructed.p
 ng Graphic file (type png)
 
-<use figures/results/indiscriminate_decoupling/beta_2_sample_2_reconstructed.pn
+<use figures/results/indiscriminate_decoupling/beta_2_sample_3_reconstructed.pn
 g>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_2_sampl
-e_2_reconstructed.png used on input line 304.
+e_3_reconstructed.png used on input line 304.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 304--305
@@ -2151,15 +2240,15 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 304--305
  []
 
 
-<figures/results/indiscriminate_decoupling/beta_4_sample_2_reconstructed.png, i
-d=500, 286.1892pt x 286.1892pt>
-File: figures/results/indiscriminate_decoupling/beta_4_sample_2_reconstructed.p
+<figures/results/indiscriminate_decoupling/beta_4_sample_3_reconstructed.png, i
+d=553, 286.1892pt x 286.1892pt>
+File: figures/results/indiscriminate_decoupling/beta_4_sample_3_reconstructed.p
 ng Graphic file (type png)
 
-<use figures/results/indiscriminate_decoupling/beta_4_sample_2_reconstructed.pn
+<use figures/results/indiscriminate_decoupling/beta_4_sample_3_reconstructed.pn
 g>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_4_sampl
-e_2_reconstructed.png used on input line 306.
+e_3_reconstructed.png used on input line 306.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 Overfull \hbox (1.04942pt too wide) in paragraph at lines 306--307
@@ -2167,143 +2256,80 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 306--307
  []
 
 
-<figures/results/indiscriminate_decoupling/beta_1_sample_3_original.png, id=501
-, 286.1892pt x 286.1892pt>
-File: figures/results/indiscriminate_decoupling/beta_1_sample_3_original.png Gr
-aphic file (type png)
-
-<use figures/results/indiscriminate_decoupling/beta_1_sample_3_original.png>
-Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_sampl
-e_3_original.png used on input line 310.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 310--311
- [][] 
- []
-
-
-<figures/results/indiscriminate_decoupling/beta_1_sample_3_reconstructed.png, i
-d=502, 286.1892pt x 286.1892pt>
-File: figures/results/indiscriminate_decoupling/beta_1_sample_3_reconstructed.p
-ng Graphic file (type png)
-
-<use figures/results/indiscriminate_decoupling/beta_1_sample_3_reconstructed.pn
-g>
-Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_sampl
-e_3_reconstructed.png used on input line 312.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 312--313
- [][] 
- []
-
-
-<figures/results/indiscriminate_decoupling/beta_2_sample_3_reconstructed.png, i
-d=503, 286.1892pt x 286.1892pt>
-File: figures/results/indiscriminate_decoupling/beta_2_sample_3_reconstructed.p
-ng Graphic file (type png)
-
-<use figures/results/indiscriminate_decoupling/beta_2_sample_3_reconstructed.pn
-g>
-Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_2_sampl
-e_3_reconstructed.png used on input line 314.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 314--315
- [][] 
- []
-
-
-<figures/results/indiscriminate_decoupling/beta_4_sample_3_reconstructed.png, i
-d=504, 286.1892pt x 286.1892pt>
-File: figures/results/indiscriminate_decoupling/beta_4_sample_3_reconstructed.p
-ng Graphic file (type png)
-
-<use figures/results/indiscriminate_decoupling/beta_4_sample_3_reconstructed.pn
-g>
-Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_4_sampl
-e_3_reconstructed.png used on input line 316.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 316--317
- [][] 
- []
-
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: figures/results/indiscriminate_decoupling/beta_1_sample_3_original.png Gr
 aphic file (type png)
 <use figures/results/indiscriminate_decoupling/beta_1_sample_3_original.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_sampl
-e_3_original.png used on input line 330.
+e_3_original.png used on input line 320.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 <figures/results/indiscriminate_decoupling/beta_1_convolutional_layers_sample_3
-.png, id=505, 539.8569pt x 270.2898pt>
+.png, id=554, 539.8569pt x 270.2898pt>
 File: figures/results/indiscriminate_decoupling/beta_1_convolutional_layers_sam
 ple_3.png Graphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_1_convolutional_layers_samp
 le_3.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_convo
-lutional_layers_sample_3.png used on input line 336.
+lutional_layers_sample_3.png used on input line 326.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 <figures/results/indiscriminate_decoupling/beta_2_convolutional_layers_sample_3
-.png, id=506, 539.8569pt x 270.2898pt>
+.png, id=555, 539.8569pt x 270.2898pt>
 File: figures/results/indiscriminate_decoupling/beta_2_convolutional_layers_sam
 ple_3.png Graphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_2_convolutional_layers_samp
 le_3.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_2_convo
-lutional_layers_sample_3.png used on input line 338.
+lutional_layers_sample_3.png used on input line 328.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 <figures/results/indiscriminate_decoupling/beta_4_convolutional_layers_sample_3
-.png, id=507, 539.8569pt x 270.2898pt>
+.png, id=556, 539.8569pt x 270.2898pt>
 File: figures/results/indiscriminate_decoupling/beta_4_convolutional_layers_sam
 ple_3.png Graphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_4_convolutional_layers_samp
 le_3.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_4_convo
-lutional_layers_sample_3.png used on input line 340.
+lutional_layers_sample_3.png used on input line 330.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/indiscriminate_decoupling/beta_1_prior_sample_2.png, id=508, 2
+<figures/results/indiscriminate_decoupling/beta_1_prior_sample_2.png, id=557, 2
 86.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_1_prior_sample_2.png Graph
 ic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_1_prior_sample_2.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_prior
-_sample_2.png used on input line 352.
+_sample_2.png used on input line 342.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-<figures/results/indiscriminate_decoupling/beta_2_prior_sample_0.png, id=509, 2
+<figures/results/indiscriminate_decoupling/beta_2_prior_sample_0.png, id=558, 2
 86.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_2_prior_sample_0.png Graph
 ic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_2_prior_sample_0.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_2_prior
-_sample_0.png used on input line 354.
+_sample_0.png used on input line 344.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-<figures/results/indiscriminate_decoupling/beta_4_prior_sample_3.png, id=510, 2
+<figures/results/indiscriminate_decoupling/beta_4_prior_sample_3.png, id=559, 2
 86.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_4_prior_sample_3.png Graph
 ic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_4_prior_sample_3.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_4_prior
-_sample_3.png used on input line 356.
+_sample_3.png used on input line 346.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 
@@ -2311,184 +2337,184 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 <figures/results/indiscriminate_decoupling/beta_1_posterior_sample_original.png
-, id=511, 286.1892pt x 286.1892pt>
+, id=560, 286.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_1_posterior_sample_origina
 l.png Graphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_1_posterior_sample_original
 .png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_poste
-rior_sample_original.png used on input line 368.
+rior_sample_original.png used on input line 358.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 368--369
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 358--359
  [][] 
  []
 
 
 <figures/results/indiscriminate_decoupling/beta_1_posterior_sample_10.png, id=5
-12, 286.1892pt x 286.1892pt>
+61, 286.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_1_posterior_sample_10.png 
 Graphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_1_posterior_sample_10.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_poste
-rior_sample_10.png used on input line 370.
+rior_sample_10.png used on input line 360.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 370--371
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 360--361
  [][] 
  []
 
 
 <figures/results/indiscriminate_decoupling/beta_1_posterior_sample_26.png, id=5
-13, 286.1892pt x 286.1892pt>
+62, 286.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_1_posterior_sample_26.png 
 Graphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_1_posterior_sample_26.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_poste
-rior_sample_26.png used on input line 372.
+rior_sample_26.png used on input line 362.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 372--373
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 362--363
  [][] 
  []
 
 
 <figures/results/indiscriminate_decoupling/beta_1_posterior_sample_60.png, id=5
-14, 286.1892pt x 286.1892pt>
+63, 286.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_1_posterior_sample_60.png 
 Graphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_1_posterior_sample_60.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_poste
-rior_sample_60.png used on input line 374.
+rior_sample_60.png used on input line 364.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 374--375
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 364--365
  [][] 
  []
 
 
 <figures/results/indiscriminate_decoupling/beta_2_posterior_sample_original.png
-, id=515, 286.1892pt x 286.1892pt>
+, id=564, 286.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_2_posterior_sample_origina
 l.png Graphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_2_posterior_sample_original
 .png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_2_poste
-rior_sample_original.png used on input line 379.
+rior_sample_original.png used on input line 369.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 379--380
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 369--370
  [][] 
  []
 
 
-<figures/results/indiscriminate_decoupling/beta_2_posterior_sample_0.png, id=51
-6, 286.1892pt x 286.1892pt>
+<figures/results/indiscriminate_decoupling/beta_2_posterior_sample_0.png, id=56
+5, 286.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_2_posterior_sample_0.png G
 raphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_2_posterior_sample_0.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_2_poste
-rior_sample_0.png used on input line 381.
+rior_sample_0.png used on input line 371.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 381--382
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 371--372
  [][] 
  []
 
 
-<figures/results/indiscriminate_decoupling/beta_2_posterior_sample_1.png, id=51
-7, 286.1892pt x 286.1892pt>
+<figures/results/indiscriminate_decoupling/beta_2_posterior_sample_1.png, id=56
+6, 286.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_2_posterior_sample_1.png G
 raphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_2_posterior_sample_1.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_2_poste
-rior_sample_1.png used on input line 383.
+rior_sample_1.png used on input line 373.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 383--384
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 373--374
  [][] 
  []
 
 
 <figures/results/indiscriminate_decoupling/beta_2_posterior_sample_90.png, id=5
-18, 286.1892pt x 286.1892pt>
+67, 286.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_2_posterior_sample_90.png 
 Graphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_2_posterior_sample_90.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_2_poste
-rior_sample_90.png used on input line 385.
+rior_sample_90.png used on input line 375.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 385--386
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 375--376
  [][] 
  []
 
 
 <figures/results/indiscriminate_decoupling/beta_4_posterior_sample_original.png
-, id=519, 286.1892pt x 286.1892pt>
+, id=568, 286.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_4_posterior_sample_origina
 l.png Graphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_4_posterior_sample_original
 .png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_4_poste
-rior_sample_original.png used on input line 390.
+rior_sample_original.png used on input line 380.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 390--391
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 380--381
  [][] 
  []
 
 
-<figures/results/indiscriminate_decoupling/beta_4_posterior_sample_0.png, id=52
-0, 286.1892pt x 286.1892pt>
+<figures/results/indiscriminate_decoupling/beta_4_posterior_sample_0.png, id=56
+9, 286.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_4_posterior_sample_0.png G
 raphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_4_posterior_sample_0.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_4_poste
-rior_sample_0.png used on input line 392.
+rior_sample_0.png used on input line 382.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 392--393
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 382--383
  [][] 
  []
 
 
-<figures/results/indiscriminate_decoupling/beta_4_posterior_sample_7.png, id=52
-1, 286.1892pt x 286.1892pt>
+<figures/results/indiscriminate_decoupling/beta_4_posterior_sample_7.png, id=57
+0, 286.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_4_posterior_sample_7.png G
 raphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_4_posterior_sample_7.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_4_poste
-rior_sample_7.png used on input line 394.
+rior_sample_7.png used on input line 384.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 394--395
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 384--385
  [][] 
  []
 
 
 <figures/results/indiscriminate_decoupling/beta_4_posterior_sample_98.png, id=5
-22, 286.1892pt x 286.1892pt>
+71, 286.1892pt x 286.1892pt>
 File: figures/results/indiscriminate_decoupling/beta_4_posterior_sample_98.png 
 Graphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_4_posterior_sample_98.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_4_poste
-rior_sample_98.png used on input line 396.
+rior_sample_98.png used on input line 386.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 396--397
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 386--387
  [][] 
  []
 
@@ -2496,78 +2522,135 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 396--397
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/indiscriminate_decoupling/beta_1_average_activation.png, id=52
-3, 749.80125pt x 375.4025pt>
+<figures/results/indiscriminate_decoupling/beta_1_average_activation.png, id=57
+2, 749.80125pt x 375.4025pt>
 File: figures/results/indiscriminate_decoupling/beta_1_average_activation.png G
 raphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_1_average_activation.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_1_avera
-ge_activation.png used on input line 409.
+ge_activation.png used on input line 399.
 (pdftex.def)             Requested size: 224.94211pt x 112.62161pt.
 
-<figures/results/indiscriminate_decoupling/beta_2_average_activation.png, id=52
-4, 749.80125pt x 375.4025pt>
+<figures/results/indiscriminate_decoupling/beta_2_average_activation.png, id=57
+3, 749.80125pt x 375.4025pt>
 File: figures/results/indiscriminate_decoupling/beta_2_average_activation.png G
 raphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_2_average_activation.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_2_avera
-ge_activation.png used on input line 411.
+ge_activation.png used on input line 401.
 (pdftex.def)             Requested size: 224.94211pt x 112.62161pt.
 
-<figures/results/indiscriminate_decoupling/beta_4_average_activation.png, id=52
-5, 749.80125pt x 375.4025pt>
+<figures/results/indiscriminate_decoupling/beta_4_average_activation.png, id=57
+4, 749.80125pt x 375.4025pt>
 File: figures/results/indiscriminate_decoupling/beta_4_average_activation.png G
 raphic file (type png)
 
 <use figures/results/indiscriminate_decoupling/beta_4_average_activation.png>
 Package pdftex.def Info: figures/results/indiscriminate_decoupling/beta_4_avera
-ge_activation.png used on input line 413.
+ge_activation.png used on input line 403.
 (pdftex.def)             Requested size: 224.94211pt x 112.62161pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[52] [53 <./figures/results/latent_image/val_loss.png> <./figures/results/laten
-t_image/val_kl_loss.png> <./figures/results/latent_image/val_reconstruction_los
-s.png>]
-<figures/results/naive_average/val_loss.png, id=535, 503.7219pt x 354.8457pt>
+<figures/results/naive_average/val_loss.png, id=575, 503.7219pt x 354.8457pt>
 File: figures/results/naive_average/val_loss.png Graphic file (type png)
 
 <use figures/results/naive_average/val_loss.png>
 Package pdftex.def Info: figures/results/naive_average/val_loss.png used on inp
-ut line 444.
+ut line 434.
 (pdftex.def)             Requested size: 251.86032pt x 177.42241pt.
 
-<figures/results/naive_average/val_kl_loss.png, id=536, 500.8311pt x 354.8457pt
+<figures/results/naive_average/val_kl_loss.png, id=576, 500.8311pt x 354.8457pt
 >
 File: figures/results/naive_average/val_kl_loss.png Graphic file (type png)
  <use figures/results/naive_average/val_kl_loss.png>
 Package pdftex.def Info: figures/results/naive_average/val_kl_loss.png used on 
-input line 445.
+input line 435.
 (pdftex.def)             Requested size: 250.41493pt x 177.42241pt.
 
-<figures/results/naive_average/val_reconstruction_loss.png, id=537, 503.7219pt 
+<figures/results/naive_average/val_reconstruction_loss.png, id=577, 503.7219pt 
 x 354.8457pt>
 File: figures/results/naive_average/val_reconstruction_loss.png Graphic file (t
 ype png)
  <use figures/results/naive_average/val_reconstruction_loss.png>
 Package pdftex.def Info: figures/results/naive_average/val_reconstruction_loss.
-png used on input line 446.
+png used on input line 436.
 (pdftex.def)             Requested size: 251.86032pt x 177.42241pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/naive_average/beta_1_sample_0_original.png, id=538, 286.1892pt
+<figures/results/naive_average/beta_1_sample_0_original.png, id=578, 286.1892pt
  x 286.1892pt>
 File: figures/results/naive_average/beta_1_sample_0_original.png Graphic file (
 type png)
 
 <use figures/results/naive_average/beta_1_sample_0_original.png>
 Package pdftex.def Info: figures/results/naive_average/beta_1_sample_0_original
+.png used on input line 446.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 446--447
+ [][] 
+ []
+
+
+<figures/results/naive_average/beta_1_sample_0_reconstructed.png, id=579, 286.1
+892pt x 286.1892pt>
+File: figures/results/naive_average/beta_1_sample_0_reconstructed.png Graphic f
+ile (type png)
+
+<use figures/results/naive_average/beta_1_sample_0_reconstructed.png>
+Package pdftex.def Info: figures/results/naive_average/beta_1_sample_0_reconstr
+ucted.png used on input line 448.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 448--449
+ [][] 
+ []
+
+
+<figures/results/naive_average/beta_2_sample_0_reconstructed.png, id=580, 286.1
+892pt x 286.1892pt>
+File: figures/results/naive_average/beta_2_sample_0_reconstructed.png Graphic f
+ile (type png)
+
+<use figures/results/naive_average/beta_2_sample_0_reconstructed.png>
+Package pdftex.def Info: figures/results/naive_average/beta_2_sample_0_reconstr
+ucted.png used on input line 450.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 450--451
+ [][] 
+ []
+
+
+<figures/results/naive_average/beta_4_sample_0_reconstructed.png, id=581, 286.1
+892pt x 286.1892pt>
+File: figures/results/naive_average/beta_4_sample_0_reconstructed.png Graphic f
+ile (type png)
+
+<use figures/results/naive_average/beta_4_sample_0_reconstructed.png>
+Package pdftex.def Info: figures/results/naive_average/beta_4_sample_0_reconstr
+ucted.png used on input line 452.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 452--453
+ [][] 
+ []
+
+
+<figures/results/naive_average/beta_1_sample_2_original.png, id=582, 286.1892pt
+ x 286.1892pt>
+File: figures/results/naive_average/beta_1_sample_2_original.png Graphic file (
+type png)
+
+<use figures/results/naive_average/beta_1_sample_2_original.png>
+Package pdftex.def Info: figures/results/naive_average/beta_1_sample_2_original
 .png used on input line 456.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -2576,13 +2659,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 456--457
  []
 
 
-<figures/results/naive_average/beta_1_sample_0_reconstructed.png, id=539, 286.1
+<figures/results/naive_average/beta_1_sample_2_reconstructed.png, id=583, 286.1
 892pt x 286.1892pt>
-File: figures/results/naive_average/beta_1_sample_0_reconstructed.png Graphic f
+File: figures/results/naive_average/beta_1_sample_2_reconstructed.png Graphic f
 ile (type png)
 
-<use figures/results/naive_average/beta_1_sample_0_reconstructed.png>
-Package pdftex.def Info: figures/results/naive_average/beta_1_sample_0_reconstr
+<use figures/results/naive_average/beta_1_sample_2_reconstructed.png>
+Package pdftex.def Info: figures/results/naive_average/beta_1_sample_2_reconstr
 ucted.png used on input line 458.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -2591,13 +2674,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 458--459
  []
 
 
-<figures/results/naive_average/beta_2_sample_0_reconstructed.png, id=540, 286.1
+<figures/results/naive_average/beta_2_sample_2_reconstructed.png, id=584, 286.1
 892pt x 286.1892pt>
-File: figures/results/naive_average/beta_2_sample_0_reconstructed.png Graphic f
+File: figures/results/naive_average/beta_2_sample_2_reconstructed.png Graphic f
 ile (type png)
 
-<use figures/results/naive_average/beta_2_sample_0_reconstructed.png>
-Package pdftex.def Info: figures/results/naive_average/beta_2_sample_0_reconstr
+<use figures/results/naive_average/beta_2_sample_2_reconstructed.png>
+Package pdftex.def Info: figures/results/naive_average/beta_2_sample_2_reconstr
 ucted.png used on input line 460.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -2606,13 +2689,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 460--461
  []
 
 
-<figures/results/naive_average/beta_4_sample_0_reconstructed.png, id=541, 286.1
+<figures/results/naive_average/beta_4_sample_2_reconstructed.png, id=585, 286.1
 892pt x 286.1892pt>
-File: figures/results/naive_average/beta_4_sample_0_reconstructed.png Graphic f
+File: figures/results/naive_average/beta_4_sample_2_reconstructed.png Graphic f
 ile (type png)
 
-<use figures/results/naive_average/beta_4_sample_0_reconstructed.png>
-Package pdftex.def Info: figures/results/naive_average/beta_4_sample_0_reconstr
+<use figures/results/naive_average/beta_4_sample_2_reconstructed.png>
+Package pdftex.def Info: figures/results/naive_average/beta_4_sample_2_reconstr
 ucted.png used on input line 462.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -2621,13 +2704,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 462--463
  []
 
 
-<figures/results/naive_average/beta_1_sample_2_original.png, id=542, 286.1892pt
+<figures/results/naive_average/beta_1_sample_3_original.png, id=586, 286.1892pt
  x 286.1892pt>
-File: figures/results/naive_average/beta_1_sample_2_original.png Graphic file (
+File: figures/results/naive_average/beta_1_sample_3_original.png Graphic file (
 type png)
 
-<use figures/results/naive_average/beta_1_sample_2_original.png>
-Package pdftex.def Info: figures/results/naive_average/beta_1_sample_2_original
+<use figures/results/naive_average/beta_1_sample_3_original.png>
+Package pdftex.def Info: figures/results/naive_average/beta_1_sample_3_original
 .png used on input line 466.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -2636,13 +2719,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 466--467
  []
 
 
-<figures/results/naive_average/beta_1_sample_2_reconstructed.png, id=543, 286.1
+<figures/results/naive_average/beta_1_sample_3_reconstructed.png, id=587, 286.1
 892pt x 286.1892pt>
-File: figures/results/naive_average/beta_1_sample_2_reconstructed.png Graphic f
+File: figures/results/naive_average/beta_1_sample_3_reconstructed.png Graphic f
 ile (type png)
 
-<use figures/results/naive_average/beta_1_sample_2_reconstructed.png>
-Package pdftex.def Info: figures/results/naive_average/beta_1_sample_2_reconstr
+<use figures/results/naive_average/beta_1_sample_3_reconstructed.png>
+Package pdftex.def Info: figures/results/naive_average/beta_1_sample_3_reconstr
 ucted.png used on input line 468.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -2651,13 +2734,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 468--469
  []
 
 
-<figures/results/naive_average/beta_2_sample_2_reconstructed.png, id=544, 286.1
+<figures/results/naive_average/beta_2_sample_3_reconstructed.png, id=588, 286.1
 892pt x 286.1892pt>
-File: figures/results/naive_average/beta_2_sample_2_reconstructed.png Graphic f
+File: figures/results/naive_average/beta_2_sample_3_reconstructed.png Graphic f
 ile (type png)
 
-<use figures/results/naive_average/beta_2_sample_2_reconstructed.png>
-Package pdftex.def Info: figures/results/naive_average/beta_2_sample_2_reconstr
+<use figures/results/naive_average/beta_2_sample_3_reconstructed.png>
+Package pdftex.def Info: figures/results/naive_average/beta_2_sample_3_reconstr
 ucted.png used on input line 470.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -2666,13 +2749,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 470--471
  []
 
 
-<figures/results/naive_average/beta_4_sample_2_reconstructed.png, id=545, 286.1
+<figures/results/naive_average/beta_4_sample_3_reconstructed.png, id=589, 286.1
 892pt x 286.1892pt>
-File: figures/results/naive_average/beta_4_sample_2_reconstructed.png Graphic f
+File: figures/results/naive_average/beta_4_sample_3_reconstructed.png Graphic f
 ile (type png)
 
-<use figures/results/naive_average/beta_4_sample_2_reconstructed.png>
-Package pdftex.def Info: figures/results/naive_average/beta_4_sample_2_reconstr
+<use figures/results/naive_average/beta_4_sample_3_reconstructed.png>
+Package pdftex.def Info: figures/results/naive_average/beta_4_sample_3_reconstr
 ucted.png used on input line 472.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -2681,196 +2764,136 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 472--473
  []
 
 
-<figures/results/naive_average/beta_1_sample_3_original.png, id=546, 286.1892pt
- x 286.1892pt>
-File: figures/results/naive_average/beta_1_sample_3_original.png Graphic file (
-type png)
-
-<use figures/results/naive_average/beta_1_sample_3_original.png>
-Package pdftex.def Info: figures/results/naive_average/beta_1_sample_3_original
-.png used on input line 476.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 476--477
- [][] 
- []
-
-
-<figures/results/naive_average/beta_1_sample_3_reconstructed.png, id=547, 286.1
-892pt x 286.1892pt>
-File: figures/results/naive_average/beta_1_sample_3_reconstructed.png Graphic f
-ile (type png)
-
-<use figures/results/naive_average/beta_1_sample_3_reconstructed.png>
-Package pdftex.def Info: figures/results/naive_average/beta_1_sample_3_reconstr
-ucted.png used on input line 478.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 478--479
- [][] 
- []
-
-
-<figures/results/naive_average/beta_2_sample_3_reconstructed.png, id=548, 286.1
-892pt x 286.1892pt>
-File: figures/results/naive_average/beta_2_sample_3_reconstructed.png Graphic f
-ile (type png)
-
-<use figures/results/naive_average/beta_2_sample_3_reconstructed.png>
-Package pdftex.def Info: figures/results/naive_average/beta_2_sample_3_reconstr
-ucted.png used on input line 480.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 480--481
- [][] 
- []
-
-
-<figures/results/naive_average/beta_4_sample_3_reconstructed.png, id=549, 286.1
-892pt x 286.1892pt>
-File: figures/results/naive_average/beta_4_sample_3_reconstructed.png Graphic f
-ile (type png)
-
-<use figures/results/naive_average/beta_4_sample_3_reconstructed.png>
-Package pdftex.def Info: figures/results/naive_average/beta_4_sample_3_reconstr
-ucted.png used on input line 482.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 482--483
- [][] 
- []
-
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: figures/results/naive_average/beta_1_sample_3_original.png Graphic file (
 type png)
 <use figures/results/naive_average/beta_1_sample_3_original.png>
 Package pdftex.def Info: figures/results/naive_average/beta_1_sample_3_original
-.png used on input line 497.
+.png used on input line 487.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-<figures/results/naive_average/beta_1_convolutional_layers_sample_3.png, id=550
+<figures/results/naive_average/beta_1_convolutional_layers_sample_3.png, id=590
 , 539.8569pt x 270.2898pt>
 File: figures/results/naive_average/beta_1_convolutional_layers_sample_3.png Gr
 aphic file (type png)
 
 <use figures/results/naive_average/beta_1_convolutional_layers_sample_3.png>
 Package pdftex.def Info: figures/results/naive_average/beta_1_convolutional_lay
-ers_sample_3.png used on input line 503.
+ers_sample_3.png used on input line 493.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
-<figures/results/naive_average/beta_2_convolutional_layers_sample_3.png, id=551
+<figures/results/naive_average/beta_2_convolutional_layers_sample_3.png, id=591
 , 539.8569pt x 270.2898pt>
 File: figures/results/naive_average/beta_2_convolutional_layers_sample_3.png Gr
 aphic file (type png)
 
 <use figures/results/naive_average/beta_2_convolutional_layers_sample_3.png>
 Package pdftex.def Info: figures/results/naive_average/beta_2_convolutional_lay
-ers_sample_3.png used on input line 505.
+ers_sample_3.png used on input line 495.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
-<figures/results/naive_average/beta_4_convolutional_layers_sample_3.png, id=552
+<figures/results/naive_average/beta_4_convolutional_layers_sample_3.png, id=592
 , 539.8569pt x 270.2898pt>
 File: figures/results/naive_average/beta_4_convolutional_layers_sample_3.png Gr
 aphic file (type png)
 
 <use figures/results/naive_average/beta_4_convolutional_layers_sample_3.png>
 Package pdftex.def Info: figures/results/naive_average/beta_4_convolutional_lay
-ers_sample_3.png used on input line 507.
+ers_sample_3.png used on input line 497.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/naive_average/beta_1_prior_sample_2.png, id=553, 286.1892pt x 
+<figures/results/naive_average/beta_1_prior_sample_2.png, id=593, 286.1892pt x 
 286.1892pt>
 File: figures/results/naive_average/beta_1_prior_sample_2.png Graphic file (typ
 e png)
  <use figures/results/naive_average/beta_1_prior_sample_2.png>
 Package pdftex.def Info: figures/results/naive_average/beta_1_prior_sample_2.pn
-g used on input line 520.
+g used on input line 510.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-<figures/results/naive_average/beta_2_prior_sample_0.png, id=554, 286.1892pt x 
+<figures/results/naive_average/beta_2_prior_sample_0.png, id=594, 286.1892pt x 
 286.1892pt>
 File: figures/results/naive_average/beta_2_prior_sample_0.png Graphic file (typ
 e png)
  <use figures/results/naive_average/beta_2_prior_sample_0.png>
 Package pdftex.def Info: figures/results/naive_average/beta_2_prior_sample_0.pn
-g used on input line 522.
+g used on input line 512.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-<figures/results/naive_average/beta_4_prior_sample_3.png, id=555, 286.1892pt x 
+<figures/results/naive_average/beta_4_prior_sample_3.png, id=595, 286.1892pt x 
 286.1892pt>
 File: figures/results/naive_average/beta_4_prior_sample_3.png Graphic file (typ
 e png)
  <use figures/results/naive_average/beta_4_prior_sample_3.png>
 Package pdftex.def Info: figures/results/naive_average/beta_4_prior_sample_3.pn
-g used on input line 524.
+g used on input line 514.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/naive_average/beta_1_posterior_sample_original.png, id=556, 28
+<figures/results/naive_average/beta_1_posterior_sample_original.png, id=596, 28
 6.1892pt x 286.1892pt>
 File: figures/results/naive_average/beta_1_posterior_sample_original.png Graphi
 c file (type png)
 
 <use figures/results/naive_average/beta_1_posterior_sample_original.png>
 Package pdftex.def Info: figures/results/naive_average/beta_1_posterior_sample_
-original.png used on input line 536.
+original.png used on input line 526.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 536--537
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 526--527
  [][] 
  []
 
 
-<figures/results/naive_average/beta_1_posterior_sample_0.png, id=557, 286.1892p
+<figures/results/naive_average/beta_1_posterior_sample_0.png, id=597, 286.1892p
 t x 286.1892pt>
 File: figures/results/naive_average/beta_1_posterior_sample_0.png Graphic file 
 (type png)
 
 <use figures/results/naive_average/beta_1_posterior_sample_0.png>
 Package pdftex.def Info: figures/results/naive_average/beta_1_posterior_sample_
-0.png used on input line 538.
+0.png used on input line 528.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 538--539
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 528--529
  [][] 
  []
 
 
-<figures/results/naive_average/beta_2_posterior_sample_0.png, id=558, 286.1892p
+<figures/results/naive_average/beta_2_posterior_sample_0.png, id=598, 286.1892p
 t x 286.1892pt>
 File: figures/results/naive_average/beta_2_posterior_sample_0.png Graphic file 
 (type png)
 
 <use figures/results/naive_average/beta_2_posterior_sample_0.png>
 Package pdftex.def Info: figures/results/naive_average/beta_2_posterior_sample_
-0.png used on input line 540.
+0.png used on input line 530.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 540--541
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 530--531
  [][] 
  []
 
 
-<figures/results/naive_average/beta_4_posterior_sample_0.png, id=559, 286.1892p
+<figures/results/naive_average/beta_4_posterior_sample_0.png, id=599, 286.1892p
 t x 286.1892pt>
 File: figures/results/naive_average/beta_4_posterior_sample_0.png Graphic file 
 (type png)
 
 <use figures/results/naive_average/beta_4_posterior_sample_0.png>
 Package pdftex.def Info: figures/results/naive_average/beta_4_posterior_sample_
-0.png used on input line 542.
+0.png used on input line 532.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 542--543
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 532--533
  [][] 
  []
 
@@ -2878,102 +2901,141 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 542--543
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/naive_average/beta_1_average_activation.png, id=560, 749.80125
+<figures/results/naive_average/beta_1_average_activation.png, id=600, 749.80125
 pt x 375.4025pt>
 File: figures/results/naive_average/beta_1_average_activation.png Graphic file 
 (type png)
 
 <use figures/results/naive_average/beta_1_average_activation.png>
 Package pdftex.def Info: figures/results/naive_average/beta_1_average_activatio
-n.png used on input line 555.
+n.png used on input line 545.
 (pdftex.def)             Requested size: 224.94211pt x 112.62161pt.
 
-<figures/results/naive_average/beta_2_average_activation.png, id=561, 749.80125
+<figures/results/naive_average/beta_2_average_activation.png, id=601, 749.80125
 pt x 375.4025pt>
 File: figures/results/naive_average/beta_2_average_activation.png Graphic file 
 (type png)
 
 <use figures/results/naive_average/beta_2_average_activation.png>
 Package pdftex.def Info: figures/results/naive_average/beta_2_average_activatio
-n.png used on input line 557.
+n.png used on input line 547.
 (pdftex.def)             Requested size: 224.94211pt x 112.62161pt.
 
-<figures/results/naive_average/beta_4_average_activation.png, id=562, 749.80125
+<figures/results/naive_average/beta_4_average_activation.png, id=602, 749.80125
 pt x 375.4025pt>
 File: figures/results/naive_average/beta_4_average_activation.png Graphic file 
 (type png)
 
 <use figures/results/naive_average/beta_4_average_activation.png>
 Package pdftex.def Info: figures/results/naive_average/beta_4_average_activatio
-n.png used on input line 559.
+n.png used on input line 549.
 (pdftex.def)             Requested size: 224.94211pt x 112.62161pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[54 <./figures/results/latent_image/beta_1_sample_0_original.png> <./figures/re
-sults/latent_image/beta_1_sample_0_reconstructed.png> <./figures/results/latent
-_image/beta_4_sample_0_reconstructed.png> <./figures/results/latent_image/beta_
-16_sample_0_reconstructed.png> <./figures/results/latent_image/beta_1_sample_2_
-original.png> <./figures/results/latent_image/beta_1_sample_2_reconstructed.png
-> <./figures/results/latent_image/beta_4_sample_2_reconstructed.png> <./figures
-/results/latent_image/beta_16_sample_2_reconstructed.png> <./figures/results/la
-tent_image/beta_1_sample_3_original.png> <./figures/results/latent_image/beta_1
-_sample_3_reconstructed.png> <./figures/results/latent_image/beta_4_sample_3_re
-constructed.png> <./figures/results/latent_image/beta_16_sample_3_reconstructed
-.png>]
+[56
 
-LaTeX Warning: Text page 55 contains only floats.
-
-[55 <./figures/results/latent_image/beta_1_sample_10_original.png> <./figures/r
-esults/latent_image/beta_1_sample_10_latent.png> <./figures/results/latent_imag
-e/beta_4_sample_10_latent.png> <./figures/results/latent_image/beta_16_sample_1
-0_latent.png> <./figures/results/latent_image/beta_1_sample_30_original.png> <.
-/figures/results/latent_image/beta_1_sample_30_latent.png> <./figures/results/l
-atent_image/beta_4_sample_30_latent.png> <./figures/results/latent_image/beta_1
-6_sample_30_latent.png> <./figures/results/latent_image/beta_1_sample_90_origin
-al.png> <./figures/results/latent_image/beta_1_sample_90_latent.png> <./figures
-/results/latent_image/beta_4_sample_90_latent.png> <./figures/results/latent_im
-age/beta_16_sample_90_latent.png> <./figures/results/latent_image/beta_1_prior_
-sample_1.png> <./figures/results/latent_image/beta_4_prior_sample_2.png> <./fig
-ures/results/latent_image/beta_16_prior_sample_1.png>]
-<figures/results/weighted_average/val_loss.png, id=596, 512.3943pt x 354.8457pt
+] [57 <./figures/results/indiscriminate_decoupling/val_loss.png> <./figures/res
+ults/indiscriminate_decoupling/val_kl_loss.png> <./figures/results/indiscrimina
+te_decoupling/val_reconstruction_loss.png>]
+<figures/results/weighted_average/val_loss.png, id=613, 512.3943pt x 354.8457pt
 >
 File: figures/results/weighted_average/val_loss.png Graphic file (type png)
  <use figures/results/weighted_average/val_loss.png>
 Package pdftex.def Info: figures/results/weighted_average/val_loss.png used on 
-input line 589.
+input line 579.
 (pdftex.def)             Requested size: 256.19652pt x 177.42241pt.
 
-<figures/results/weighted_average/val_kl_loss.png, id=597, 500.8311pt x 354.845
+<figures/results/weighted_average/val_kl_loss.png, id=614, 500.8311pt x 354.845
 7pt>
 File: figures/results/weighted_average/val_kl_loss.png Graphic file (type png)
  <use figures/results/weighted_average/val_kl_loss.png>
 Package pdftex.def Info: figures/results/weighted_average/val_kl_loss.png used 
-on input line 590.
+on input line 580.
 (pdftex.def)             Requested size: 250.41493pt x 177.42241pt.
 
-<figures/results/weighted_average/val_reconstruction_loss.png, id=598, 512.3943
+<figures/results/weighted_average/val_reconstruction_loss.png, id=615, 512.3943
 pt x 354.8457pt>
 File: figures/results/weighted_average/val_reconstruction_loss.png Graphic file
  (type png)
 
 <use figures/results/weighted_average/val_reconstruction_loss.png>
 Package pdftex.def Info: figures/results/weighted_average/val_reconstruction_lo
-ss.png used on input line 591.
+ss.png used on input line 581.
 (pdftex.def)             Requested size: 256.19652pt x 177.42241pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/weighted_average/beta_1_sample_0_original.png, id=599, 286.189
+<figures/results/weighted_average/beta_1_sample_0_original.png, id=616, 286.189
 2pt x 286.1892pt>
 File: figures/results/weighted_average/beta_1_sample_0_original.png Graphic fil
 e (type png)
 
 <use figures/results/weighted_average/beta_1_sample_0_original.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_1_sample_0_origi
+nal.png used on input line 593.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 593--594
+ [][] 
+ []
+
+
+<figures/results/weighted_average/beta_1_sample_0_reconstructed.png, id=617, 28
+6.1892pt x 286.1892pt>
+File: figures/results/weighted_average/beta_1_sample_0_reconstructed.png Graphi
+c file (type png)
+
+<use figures/results/weighted_average/beta_1_sample_0_reconstructed.png>
+Package pdftex.def Info: figures/results/weighted_average/beta_1_sample_0_recon
+structed.png used on input line 595.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 595--596
+ [][] 
+ []
+
+
+<figures/results/weighted_average/beta_2_sample_0_reconstructed.png, id=618, 28
+6.1892pt x 286.1892pt>
+File: figures/results/weighted_average/beta_2_sample_0_reconstructed.png Graphi
+c file (type png)
+
+<use figures/results/weighted_average/beta_2_sample_0_reconstructed.png>
+Package pdftex.def Info: figures/results/weighted_average/beta_2_sample_0_recon
+structed.png used on input line 597.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 597--598
+ [][] 
+ []
+
+
+<figures/results/weighted_average/beta_4_sample_0_reconstructed.png, id=619, 28
+6.1892pt x 286.1892pt>
+File: figures/results/weighted_average/beta_4_sample_0_reconstructed.png Graphi
+c file (type png)
+
+<use figures/results/weighted_average/beta_4_sample_0_reconstructed.png>
+Package pdftex.def Info: figures/results/weighted_average/beta_4_sample_0_recon
+structed.png used on input line 599.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 599--600
+ [][] 
+ []
+
+
+<figures/results/weighted_average/beta_1_sample_2_original.png, id=620, 286.189
+2pt x 286.1892pt>
+File: figures/results/weighted_average/beta_1_sample_2_original.png Graphic fil
+e (type png)
+
+<use figures/results/weighted_average/beta_1_sample_2_original.png>
+Package pdftex.def Info: figures/results/weighted_average/beta_1_sample_2_origi
 nal.png used on input line 603.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -2982,13 +3044,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 603--604
  []
 
 
-<figures/results/weighted_average/beta_1_sample_0_reconstructed.png, id=600, 28
+<figures/results/weighted_average/beta_1_sample_2_reconstructed.png, id=621, 28
 6.1892pt x 286.1892pt>
-File: figures/results/weighted_average/beta_1_sample_0_reconstructed.png Graphi
+File: figures/results/weighted_average/beta_1_sample_2_reconstructed.png Graphi
 c file (type png)
 
-<use figures/results/weighted_average/beta_1_sample_0_reconstructed.png>
-Package pdftex.def Info: figures/results/weighted_average/beta_1_sample_0_recon
+<use figures/results/weighted_average/beta_1_sample_2_reconstructed.png>
+Package pdftex.def Info: figures/results/weighted_average/beta_1_sample_2_recon
 structed.png used on input line 605.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -2997,13 +3059,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 605--606
  []
 
 
-<figures/results/weighted_average/beta_2_sample_0_reconstructed.png, id=601, 28
+<figures/results/weighted_average/beta_2_sample_2_reconstructed.png, id=622, 28
 6.1892pt x 286.1892pt>
-File: figures/results/weighted_average/beta_2_sample_0_reconstructed.png Graphi
+File: figures/results/weighted_average/beta_2_sample_2_reconstructed.png Graphi
 c file (type png)
 
-<use figures/results/weighted_average/beta_2_sample_0_reconstructed.png>
-Package pdftex.def Info: figures/results/weighted_average/beta_2_sample_0_recon
+<use figures/results/weighted_average/beta_2_sample_2_reconstructed.png>
+Package pdftex.def Info: figures/results/weighted_average/beta_2_sample_2_recon
 structed.png used on input line 607.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -3012,13 +3074,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 607--608
  []
 
 
-<figures/results/weighted_average/beta_4_sample_0_reconstructed.png, id=602, 28
+<figures/results/weighted_average/beta_4_sample_2_reconstructed.png, id=623, 28
 6.1892pt x 286.1892pt>
-File: figures/results/weighted_average/beta_4_sample_0_reconstructed.png Graphi
+File: figures/results/weighted_average/beta_4_sample_2_reconstructed.png Graphi
 c file (type png)
 
-<use figures/results/weighted_average/beta_4_sample_0_reconstructed.png>
-Package pdftex.def Info: figures/results/weighted_average/beta_4_sample_0_recon
+<use figures/results/weighted_average/beta_4_sample_2_reconstructed.png>
+Package pdftex.def Info: figures/results/weighted_average/beta_4_sample_2_recon
 structed.png used on input line 609.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -3027,13 +3089,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 609--610
  []
 
 
-<figures/results/weighted_average/beta_1_sample_2_original.png, id=603, 286.189
+<figures/results/weighted_average/beta_1_sample_3_original.png, id=624, 286.189
 2pt x 286.1892pt>
-File: figures/results/weighted_average/beta_1_sample_2_original.png Graphic fil
+File: figures/results/weighted_average/beta_1_sample_3_original.png Graphic fil
 e (type png)
 
-<use figures/results/weighted_average/beta_1_sample_2_original.png>
-Package pdftex.def Info: figures/results/weighted_average/beta_1_sample_2_origi
+<use figures/results/weighted_average/beta_1_sample_3_original.png>
+Package pdftex.def Info: figures/results/weighted_average/beta_1_sample_3_origi
 nal.png used on input line 613.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -3042,13 +3104,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 613--614
  []
 
 
-<figures/results/weighted_average/beta_1_sample_2_reconstructed.png, id=604, 28
+<figures/results/weighted_average/beta_1_sample_3_reconstructed.png, id=625, 28
 6.1892pt x 286.1892pt>
-File: figures/results/weighted_average/beta_1_sample_2_reconstructed.png Graphi
+File: figures/results/weighted_average/beta_1_sample_3_reconstructed.png Graphi
 c file (type png)
 
-<use figures/results/weighted_average/beta_1_sample_2_reconstructed.png>
-Package pdftex.def Info: figures/results/weighted_average/beta_1_sample_2_recon
+<use figures/results/weighted_average/beta_1_sample_3_reconstructed.png>
+Package pdftex.def Info: figures/results/weighted_average/beta_1_sample_3_recon
 structed.png used on input line 615.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -3057,13 +3119,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 615--616
  []
 
 
-<figures/results/weighted_average/beta_2_sample_2_reconstructed.png, id=605, 28
+<figures/results/weighted_average/beta_2_sample_3_reconstructed.png, id=626, 28
 6.1892pt x 286.1892pt>
-File: figures/results/weighted_average/beta_2_sample_2_reconstructed.png Graphi
+File: figures/results/weighted_average/beta_2_sample_3_reconstructed.png Graphi
 c file (type png)
 
-<use figures/results/weighted_average/beta_2_sample_2_reconstructed.png>
-Package pdftex.def Info: figures/results/weighted_average/beta_2_sample_2_recon
+<use figures/results/weighted_average/beta_2_sample_3_reconstructed.png>
+Package pdftex.def Info: figures/results/weighted_average/beta_2_sample_3_recon
 structed.png used on input line 617.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -3072,13 +3134,13 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 617--618
  []
 
 
-<figures/results/weighted_average/beta_4_sample_2_reconstructed.png, id=606, 28
+<figures/results/weighted_average/beta_4_sample_3_reconstructed.png, id=627, 28
 6.1892pt x 286.1892pt>
-File: figures/results/weighted_average/beta_4_sample_2_reconstructed.png Graphi
+File: figures/results/weighted_average/beta_4_sample_3_reconstructed.png Graphi
 c file (type png)
 
-<use figures/results/weighted_average/beta_4_sample_2_reconstructed.png>
-Package pdftex.def Info: figures/results/weighted_average/beta_4_sample_2_recon
+<use figures/results/weighted_average/beta_4_sample_3_reconstructed.png>
+Package pdftex.def Info: figures/results/weighted_average/beta_4_sample_3_recon
 structed.png used on input line 619.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
@@ -3087,289 +3149,224 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 619--620
  []
 
 
-<figures/results/weighted_average/beta_1_sample_3_original.png, id=607, 286.189
-2pt x 286.1892pt>
-File: figures/results/weighted_average/beta_1_sample_3_original.png Graphic fil
-e (type png)
-
-<use figures/results/weighted_average/beta_1_sample_3_original.png>
-Package pdftex.def Info: figures/results/weighted_average/beta_1_sample_3_origi
-nal.png used on input line 623.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 623--624
- [][] 
- []
-
-
-<figures/results/weighted_average/beta_1_sample_3_reconstructed.png, id=608, 28
-6.1892pt x 286.1892pt>
-File: figures/results/weighted_average/beta_1_sample_3_reconstructed.png Graphi
-c file (type png)
-
-<use figures/results/weighted_average/beta_1_sample_3_reconstructed.png>
-Package pdftex.def Info: figures/results/weighted_average/beta_1_sample_3_recon
-structed.png used on input line 625.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 625--626
- [][] 
- []
-
-
-<figures/results/weighted_average/beta_2_sample_3_reconstructed.png, id=609, 28
-6.1892pt x 286.1892pt>
-File: figures/results/weighted_average/beta_2_sample_3_reconstructed.png Graphi
-c file (type png)
-
-<use figures/results/weighted_average/beta_2_sample_3_reconstructed.png>
-Package pdftex.def Info: figures/results/weighted_average/beta_2_sample_3_recon
-structed.png used on input line 627.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 627--628
- [][] 
- []
-
-
-<figures/results/weighted_average/beta_4_sample_3_reconstructed.png, id=610, 28
-6.1892pt x 286.1892pt>
-File: figures/results/weighted_average/beta_4_sample_3_reconstructed.png Graphi
-c file (type png)
-
-<use figures/results/weighted_average/beta_4_sample_3_reconstructed.png>
-Package pdftex.def Info: figures/results/weighted_average/beta_4_sample_3_recon
-structed.png used on input line 629.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 629--630
- [][] 
- []
-
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: figures/results/weighted_average/beta_1_sample_3_original.png Graphic fil
 e (type png)
 <use figures/results/weighted_average/beta_1_sample_3_original.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_1_sample_3_origi
-nal.png used on input line 645.
+nal.png used on input line 635.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 <figures/results/weighted_average/beta_1_convolutional_layers_sample_3.png, id=
-611, 539.8569pt x 270.2898pt>
+628, 539.8569pt x 270.2898pt>
 File: figures/results/weighted_average/beta_1_convolutional_layers_sample_3.png
  Graphic file (type png)
 
 <use figures/results/weighted_average/beta_1_convolutional_layers_sample_3.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_1_convolutional_
-layers_sample_3.png used on input line 651.
+layers_sample_3.png used on input line 641.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 <figures/results/weighted_average/beta_2_convolutional_layers_sample_3.png, id=
-612, 539.8569pt x 270.2898pt>
+629, 539.8569pt x 270.2898pt>
 File: figures/results/weighted_average/beta_2_convolutional_layers_sample_3.png
  Graphic file (type png)
 
 <use figures/results/weighted_average/beta_2_convolutional_layers_sample_3.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_2_convolutional_
-layers_sample_3.png used on input line 653.
+layers_sample_3.png used on input line 643.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 <figures/results/weighted_average/beta_4_convolutional_layers_sample_3.png, id=
-613, 539.8569pt x 270.2898pt>
+630, 539.8569pt x 270.2898pt>
 File: figures/results/weighted_average/beta_4_convolutional_layers_sample_3.png
  Graphic file (type png)
 
 <use figures/results/weighted_average/beta_4_convolutional_layers_sample_3.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_4_convolutional_
-layers_sample_3.png used on input line 655.
+layers_sample_3.png used on input line 645.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[56 <./figures/results/latent_image/beta_1_posterior_sample_original.png> <./fi
-gures/results/latent_image/beta_1_posterior_sample_0.png> <./figures/results/la
-tent_image/beta_4_posterior_sample_0.png> <./figures/results/latent_image/beta_
-16_posterior_sample_11.png> <./figures/results/latent_image/beta_1_average_acti
-vation.png> <./figures/results/latent_image/beta_2_average_activation.png> <./f
-igures/results/latent_image/beta_4_average_activation.png>]
-<figures/results/weighted_average/beta_1_posterior_sample_original.png, id=624,
+
+<figures/results/weighted_average/beta_1_posterior_sample_original.png, id=631,
  286.1892pt x 286.1892pt>
 File: figures/results/weighted_average/beta_1_posterior_sample_original.png Gra
 phic file (type png)
 
 <use figures/results/weighted_average/beta_1_posterior_sample_original.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_1_posterior_samp
-le_original.png used on input line 673.
+le_original.png used on input line 663.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 673--674
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 663--664
  [][] 
  []
 
 
-<figures/results/weighted_average/beta_1_posterior_sample_18.png, id=625, 286.1
+<figures/results/weighted_average/beta_1_posterior_sample_18.png, id=632, 286.1
 892pt x 286.1892pt>
 File: figures/results/weighted_average/beta_1_posterior_sample_18.png Graphic f
 ile (type png)
 
 <use figures/results/weighted_average/beta_1_posterior_sample_18.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_1_posterior_samp
-le_18.png used on input line 675.
+le_18.png used on input line 665.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 675--676
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 665--666
  [][] 
  []
 
 
-<figures/results/weighted_average/beta_1_posterior_sample_26.png, id=626, 286.1
+<figures/results/weighted_average/beta_1_posterior_sample_26.png, id=633, 286.1
 892pt x 286.1892pt>
 File: figures/results/weighted_average/beta_1_posterior_sample_26.png Graphic f
 ile (type png)
 
 <use figures/results/weighted_average/beta_1_posterior_sample_26.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_1_posterior_samp
-le_26.png used on input line 677.
+le_26.png used on input line 667.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 677--678
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 667--668
  [][] 
  []
 
 
-<figures/results/weighted_average/beta_1_posterior_sample_39.png, id=627, 286.1
+<figures/results/weighted_average/beta_1_posterior_sample_39.png, id=634, 286.1
 892pt x 286.1892pt>
 File: figures/results/weighted_average/beta_1_posterior_sample_39.png Graphic f
 ile (type png)
 
 <use figures/results/weighted_average/beta_1_posterior_sample_39.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_1_posterior_samp
-le_39.png used on input line 679.
+le_39.png used on input line 669.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 679--680
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 669--670
  [][] 
  []
 
 
-<figures/results/weighted_average/beta_2_posterior_sample_original.png, id=628,
+<figures/results/weighted_average/beta_2_posterior_sample_original.png, id=635,
  286.1892pt x 286.1892pt>
 File: figures/results/weighted_average/beta_2_posterior_sample_original.png Gra
 phic file (type png)
 
 <use figures/results/weighted_average/beta_2_posterior_sample_original.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_2_posterior_samp
-le_original.png used on input line 684.
+le_original.png used on input line 674.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 684--685
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 674--675
  [][] 
  []
 
 
-<figures/results/weighted_average/beta_2_posterior_sample_17.png, id=629, 286.1
+<figures/results/weighted_average/beta_2_posterior_sample_17.png, id=636, 286.1
 892pt x 286.1892pt>
 File: figures/results/weighted_average/beta_2_posterior_sample_17.png Graphic f
 ile (type png)
 
 <use figures/results/weighted_average/beta_2_posterior_sample_17.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_2_posterior_samp
-le_17.png used on input line 686.
+le_17.png used on input line 676.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 686--687
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 676--677
  [][] 
  []
 
 
-<figures/results/weighted_average/beta_2_posterior_sample_26.png, id=630, 286.1
+<figures/results/weighted_average/beta_2_posterior_sample_26.png, id=637, 286.1
 892pt x 286.1892pt>
 File: figures/results/weighted_average/beta_2_posterior_sample_26.png Graphic f
 ile (type png)
 
 <use figures/results/weighted_average/beta_2_posterior_sample_26.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_2_posterior_samp
-le_26.png used on input line 688.
+le_26.png used on input line 678.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 688--689
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 678--679
  [][] 
  []
 
 
-<figures/results/weighted_average/beta_2_posterior_sample_30.png, id=631, 286.1
+<figures/results/weighted_average/beta_2_posterior_sample_30.png, id=638, 286.1
 892pt x 286.1892pt>
 File: figures/results/weighted_average/beta_2_posterior_sample_30.png Graphic f
 ile (type png)
 
 <use figures/results/weighted_average/beta_2_posterior_sample_30.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_2_posterior_samp
-le_30.png used on input line 690.
+le_30.png used on input line 680.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 690--691
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 680--681
  [][] 
  []
 
 
-<figures/results/weighted_average/beta_4_posterior_sample_original.png, id=632,
+<figures/results/weighted_average/beta_4_posterior_sample_original.png, id=639,
  286.1892pt x 286.1892pt>
 File: figures/results/weighted_average/beta_4_posterior_sample_original.png Gra
 phic file (type png)
 
 <use figures/results/weighted_average/beta_4_posterior_sample_original.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_4_posterior_samp
-le_original.png used on input line 695.
+le_original.png used on input line 685.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 695--696
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 685--686
  [][] 
  []
 
 
-<figures/results/weighted_average/beta_4_posterior_sample_7.png, id=633, 286.18
+<figures/results/weighted_average/beta_4_posterior_sample_7.png, id=640, 286.18
 92pt x 286.1892pt>
 File: figures/results/weighted_average/beta_4_posterior_sample_7.png Graphic fi
 le (type png)
 
 <use figures/results/weighted_average/beta_4_posterior_sample_7.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_4_posterior_samp
-le_7.png used on input line 697.
+le_7.png used on input line 687.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 697--698
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 687--688
  [][] 
  []
 
 
-<figures/results/weighted_average/beta_4_posterior_sample_24.png, id=634, 286.1
+<figures/results/weighted_average/beta_4_posterior_sample_24.png, id=641, 286.1
 892pt x 286.1892pt>
 File: figures/results/weighted_average/beta_4_posterior_sample_24.png Graphic f
 ile (type png)
 
 <use figures/results/weighted_average/beta_4_posterior_sample_24.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_4_posterior_samp
-le_24.png used on input line 699.
+le_24.png used on input line 689.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 699--700
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 689--690
  [][] 
  []
 
 
-<figures/results/weighted_average/beta_4_posterior_sample_32.png, id=635, 286.1
+<figures/results/weighted_average/beta_4_posterior_sample_32.png, id=642, 286.1
 892pt x 286.1892pt>
 File: figures/results/weighted_average/beta_4_posterior_sample_32.png Graphic f
 ile (type png)
 
 <use figures/results/weighted_average/beta_4_posterior_sample_32.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_4_posterior_samp
-le_32.png used on input line 701.
+le_32.png used on input line 691.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 701--702
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 691--692
  [][] 
  []
 
@@ -3377,475 +3374,34 @@ Overfull \hbox (1.04942pt too wide) in paragraph at lines 701--702
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<figures/results/weighted_average/beta_1_average_activation.png, id=636, 539.85
+<figures/results/weighted_average/beta_1_average_activation.png, id=643, 539.85
 69pt x 270.2898pt>
 File: figures/results/weighted_average/beta_1_average_activation.png Graphic fi
 le (type png)
 
 <use figures/results/weighted_average/beta_1_average_activation.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_1_average_activa
-tion.png used on input line 715.
+tion.png used on input line 705.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
-<figures/results/weighted_average/beta_2_average_activation.png, id=637, 539.85
+<figures/results/weighted_average/beta_2_average_activation.png, id=644, 539.85
 69pt x 270.2898pt>
 File: figures/results/weighted_average/beta_2_average_activation.png Graphic fi
 le (type png)
 
 <use figures/results/weighted_average/beta_2_average_activation.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_2_average_activa
-tion.png used on input line 717.
+tion.png used on input line 707.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
-<figures/results/weighted_average/beta_4_average_activation.png, id=638, 539.85
+<figures/results/weighted_average/beta_4_average_activation.png, id=645, 539.85
 69pt x 270.2898pt>
 File: figures/results/weighted_average/beta_4_average_activation.png Graphic fi
 le (type png)
 
 <use figures/results/weighted_average/beta_4_average_activation.png>
 Package pdftex.def Info: figures/results/weighted_average/beta_4_average_activa
-tion.png used on input line 719.
-(pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[57 <./figures/results/indiscriminate_decoupling/val_loss.png> <./figures/resul
-ts/indiscriminate_decoupling/val_kl_loss.png> <./figures/results/indiscriminate
-_decoupling/val_reconstruction_loss.png>]
-<figures/results/colour_separated/beta_1_sample_0_original.png, id=646, 286.189
-2pt x 286.1892pt>
-File: figures/results/colour_separated/beta_1_sample_0_original.png Graphic fil
-e (type png)
-
-<use figures/results/colour_separated/beta_1_sample_0_original.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_0_origi
-nal.png used on input line 751.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 751--752
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_1_sample_0_reconstructed.png, id=647, 28
-6.1892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_1_sample_0_reconstructed.png Graphi
-c file (type png)
-
-<use figures/results/colour_separated/beta_1_sample_0_reconstructed.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_0_recon
-structed.png used on input line 753.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 753--754
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_2_sample_0_reconstructed.png, id=648, 28
-6.1892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_2_sample_0_reconstructed.png Graphi
-c file (type png)
-
-<use figures/results/colour_separated/beta_2_sample_0_reconstructed.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_2_sample_0_recon
-structed.png used on input line 755.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 755--756
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_4_sample_0_reconstructed.png, id=649, 28
-6.1892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_4_sample_0_reconstructed.png Graphi
-c file (type png)
-
-<use figures/results/colour_separated/beta_4_sample_0_reconstructed.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_4_sample_0_recon
-structed.png used on input line 757.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 757--758
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_1_sample_2_original.png, id=650, 286.189
-2pt x 286.1892pt>
-File: figures/results/colour_separated/beta_1_sample_2_original.png Graphic fil
-e (type png)
-
-<use figures/results/colour_separated/beta_1_sample_2_original.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_2_origi
-nal.png used on input line 761.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 761--762
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_1_sample_2_reconstructed.png, id=651, 28
-6.1892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_1_sample_2_reconstructed.png Graphi
-c file (type png)
-
-<use figures/results/colour_separated/beta_1_sample_2_reconstructed.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_2_recon
-structed.png used on input line 763.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 763--764
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_2_sample_2_reconstructed.png, id=652, 28
-6.1892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_2_sample_2_reconstructed.png Graphi
-c file (type png)
-
-<use figures/results/colour_separated/beta_2_sample_2_reconstructed.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_2_sample_2_recon
-structed.png used on input line 765.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 765--766
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_4_sample_2_reconstructed.png, id=653, 28
-6.1892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_4_sample_2_reconstructed.png Graphi
-c file (type png)
-
-<use figures/results/colour_separated/beta_4_sample_2_reconstructed.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_4_sample_2_recon
-structed.png used on input line 767.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 767--768
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_1_sample_3_original.png, id=654, 286.189
-2pt x 286.1892pt>
-File: figures/results/colour_separated/beta_1_sample_3_original.png Graphic fil
-e (type png)
-
-<use figures/results/colour_separated/beta_1_sample_3_original.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_3_origi
-nal.png used on input line 771.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 771--772
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_1_sample_3_reconstructed.png, id=655, 28
-6.1892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_1_sample_3_reconstructed.png Graphi
-c file (type png)
-
-<use figures/results/colour_separated/beta_1_sample_3_reconstructed.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_3_recon
-structed.png used on input line 773.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 773--774
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_2_sample_3_reconstructed.png, id=656, 28
-6.1892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_2_sample_3_reconstructed.png Graphi
-c file (type png)
-
-<use figures/results/colour_separated/beta_2_sample_3_reconstructed.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_2_sample_3_recon
-structed.png used on input line 775.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 775--776
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_4_sample_3_reconstructed.png, id=657, 28
-6.1892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_4_sample_3_reconstructed.png Graphi
-c file (type png)
-
-<use figures/results/colour_separated/beta_4_sample_3_reconstructed.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_4_sample_3_recon
-structed.png used on input line 777.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 777--778
- [][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-File: figures/results/colour_separated/beta_1_sample_3_original.png Graphic fil
-e (type png)
-<use figures/results/colour_separated/beta_1_sample_3_original.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_3_origi
-nal.png used on input line 792.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-<figures/results/colour_separated/beta_1_convolutional_layers_sample_3.png, id=
-658, 539.8569pt x 270.2898pt>
-File: figures/results/colour_separated/beta_1_convolutional_layers_sample_3.png
- Graphic file (type png)
-
-<use figures/results/colour_separated/beta_1_convolutional_layers_sample_3.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_1_convolutional_
-layers_sample_3.png used on input line 798.
-(pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
-
-<figures/results/colour_separated/beta_2_convolutional_layers_sample_3.png, id=
-659, 539.8569pt x 270.2898pt>
-File: figures/results/colour_separated/beta_2_convolutional_layers_sample_3.png
- Graphic file (type png)
-
-<use figures/results/colour_separated/beta_2_convolutional_layers_sample_3.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_2_convolutional_
-layers_sample_3.png used on input line 800.
-(pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
-
-<figures/results/colour_separated/beta_4_convolutional_layers_sample_3.png, id=
-660, 539.8569pt x 270.2898pt>
-File: figures/results/colour_separated/beta_4_convolutional_layers_sample_3.png
- Graphic file (type png)
-
-<use figures/results/colour_separated/beta_4_convolutional_layers_sample_3.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_4_convolutional_
-layers_sample_3.png used on input line 802.
-(pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<figures/results/colour_separated/beta_1_posterior_sample_original.png, id=661,
- 286.1892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_1_posterior_sample_original.png Gra
-phic file (type png)
-
-<use figures/results/colour_separated/beta_1_posterior_sample_original.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_1_posterior_samp
-le_original.png used on input line 818.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 818--819
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_1_posterior_sample_7.png, id=662, 286.18
-92pt x 286.1892pt>
-File: figures/results/colour_separated/beta_1_posterior_sample_7.png Graphic fi
-le (type png)
-
-<use figures/results/colour_separated/beta_1_posterior_sample_7.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_1_posterior_samp
-le_7.png used on input line 820.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 820--821
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_1_posterior_sample_13.png, id=663, 286.1
-892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_1_posterior_sample_13.png Graphic f
-ile (type png)
-
-<use figures/results/colour_separated/beta_1_posterior_sample_13.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_1_posterior_samp
-le_13.png used on input line 822.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 822--823
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_1_posterior_sample_18.png, id=664, 286.1
-892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_1_posterior_sample_18.png Graphic f
-ile (type png)
-
-<use figures/results/colour_separated/beta_1_posterior_sample_18.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_1_posterior_samp
-le_18.png used on input line 824.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 824--825
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_2_posterior_sample_original.png, id=665,
- 286.1892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_2_posterior_sample_original.png Gra
-phic file (type png)
-
-<use figures/results/colour_separated/beta_2_posterior_sample_original.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_2_posterior_samp
-le_original.png used on input line 829.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 829--830
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_2_posterior_sample_10.png, id=666, 286.1
-892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_2_posterior_sample_10.png Graphic f
-ile (type png)
-
-<use figures/results/colour_separated/beta_2_posterior_sample_10.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_2_posterior_samp
-le_10.png used on input line 831.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 831--832
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_2_posterior_sample_17.png, id=667, 286.1
-892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_2_posterior_sample_17.png Graphic f
-ile (type png)
-
-<use figures/results/colour_separated/beta_2_posterior_sample_17.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_2_posterior_samp
-le_17.png used on input line 833.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 833--834
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_2_posterior_sample_31.png, id=668, 286.1
-892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_2_posterior_sample_31.png Graphic f
-ile (type png)
-
-<use figures/results/colour_separated/beta_2_posterior_sample_31.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_2_posterior_samp
-le_31.png used on input line 835.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 835--836
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_4_posterior_sample_original.png, id=669,
- 286.1892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_4_posterior_sample_original.png Gra
-phic file (type png)
-
-<use figures/results/colour_separated/beta_4_posterior_sample_original.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_4_posterior_samp
-le_original.png used on input line 840.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 840--841
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_4_posterior_sample_1.png, id=670, 286.18
-92pt x 286.1892pt>
-File: figures/results/colour_separated/beta_4_posterior_sample_1.png Graphic fi
-le (type png)
-
-<use figures/results/colour_separated/beta_4_posterior_sample_1.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_4_posterior_samp
-le_1.png used on input line 842.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 842--843
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_4_posterior_sample_4.png, id=671, 286.18
-92pt x 286.1892pt>
-File: figures/results/colour_separated/beta_4_posterior_sample_4.png Graphic fi
-le (type png)
-
-<use figures/results/colour_separated/beta_4_posterior_sample_4.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_4_posterior_samp
-le_4.png used on input line 844.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 844--845
- [][] 
- []
-
-
-<figures/results/colour_separated/beta_4_posterior_sample_20.png, id=672, 286.1
-892pt x 286.1892pt>
-File: figures/results/colour_separated/beta_4_posterior_sample_20.png Graphic f
-ile (type png)
-
-<use figures/results/colour_separated/beta_4_posterior_sample_20.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_4_posterior_samp
-le_20.png used on input line 846.
-(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
-
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 846--847
- [][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<figures/results/colour_separated/beta_1_average_activation.png, id=673, 539.85
-69pt x 270.2898pt>
-File: figures/results/colour_separated/beta_1_average_activation.png Graphic fi
-le (type png)
-
-<use figures/results/colour_separated/beta_1_average_activation.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_1_average_activa
-tion.png used on input line 859.
-(pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
-
-<figures/results/colour_separated/beta_2_average_activation.png, id=674, 539.85
-69pt x 270.2898pt>
-File: figures/results/colour_separated/beta_2_average_activation.png Graphic fi
-le (type png)
-
-<use figures/results/colour_separated/beta_2_average_activation.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_2_average_activa
-tion.png used on input line 861.
-(pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
-
-<figures/results/colour_separated/beta_4_average_activation.png, id=675, 539.85
-69pt x 270.2898pt>
-File: figures/results/colour_separated/beta_4_average_activation.png Graphic fi
-le (type png)
-
-<use figures/results/colour_separated/beta_4_average_activation.png>
-Package pdftex.def Info: figures/results/colour_separated/beta_4_average_activa
-tion.png used on input line 863.
+tion.png used on input line 709.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 
@@ -3881,43 +3437,469 @@ le_1.png> <./figures/results/indiscriminate_decoupling/beta_2_posterior_sample_
 iginal.png> <./figures/results/indiscriminate_decoupling/beta_4_posterior_sampl
 e_0.png> <./figures/results/indiscriminate_decoupling/beta_4_posterior_sample_7
 .png> <./figures/results/indiscriminate_decoupling/beta_4_posterior_sample_98.p
-ng>] [61 <./figures/results/indiscriminate_decoupling/beta_1_average_activation
-.png> <./figures/results/indiscriminate_decoupling/beta_2_average_activation.pn
-g> <./figures/results/indiscriminate_decoupling/beta_4_average_activation.png>]
+ng>]
+<figures/results/colour_separated/beta_1_sample_0_original.png, id=685, 286.189
+2pt x 286.1892pt>
+File: figures/results/colour_separated/beta_1_sample_0_original.png Graphic fil
+e (type png)
 
+<use figures/results/colour_separated/beta_1_sample_0_original.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_0_origi
+nal.png used on input line 741.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 741--742
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_1_sample_0_reconstructed.png, id=686, 28
+6.1892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_1_sample_0_reconstructed.png Graphi
+c file (type png)
+
+<use figures/results/colour_separated/beta_1_sample_0_reconstructed.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_0_recon
+structed.png used on input line 743.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 743--744
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_2_sample_0_reconstructed.png, id=687, 28
+6.1892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_2_sample_0_reconstructed.png Graphi
+c file (type png)
+
+<use figures/results/colour_separated/beta_2_sample_0_reconstructed.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_2_sample_0_recon
+structed.png used on input line 745.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 745--746
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_4_sample_0_reconstructed.png, id=688, 28
+6.1892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_4_sample_0_reconstructed.png Graphi
+c file (type png)
+
+<use figures/results/colour_separated/beta_4_sample_0_reconstructed.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_4_sample_0_recon
+structed.png used on input line 747.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 747--748
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_1_sample_2_original.png, id=689, 286.189
+2pt x 286.1892pt>
+File: figures/results/colour_separated/beta_1_sample_2_original.png Graphic fil
+e (type png)
+
+<use figures/results/colour_separated/beta_1_sample_2_original.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_2_origi
+nal.png used on input line 751.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 751--752
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_1_sample_2_reconstructed.png, id=690, 28
+6.1892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_1_sample_2_reconstructed.png Graphi
+c file (type png)
+
+<use figures/results/colour_separated/beta_1_sample_2_reconstructed.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_2_recon
+structed.png used on input line 753.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 753--754
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_2_sample_2_reconstructed.png, id=691, 28
+6.1892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_2_sample_2_reconstructed.png Graphi
+c file (type png)
+
+<use figures/results/colour_separated/beta_2_sample_2_reconstructed.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_2_sample_2_recon
+structed.png used on input line 755.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 755--756
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_4_sample_2_reconstructed.png, id=692, 28
+6.1892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_4_sample_2_reconstructed.png Graphi
+c file (type png)
+
+<use figures/results/colour_separated/beta_4_sample_2_reconstructed.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_4_sample_2_recon
+structed.png used on input line 757.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 757--758
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_1_sample_3_original.png, id=693, 286.189
+2pt x 286.1892pt>
+File: figures/results/colour_separated/beta_1_sample_3_original.png Graphic fil
+e (type png)
+
+<use figures/results/colour_separated/beta_1_sample_3_original.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_3_origi
+nal.png used on input line 761.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 761--762
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_1_sample_3_reconstructed.png, id=694, 28
+6.1892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_1_sample_3_reconstructed.png Graphi
+c file (type png)
+
+<use figures/results/colour_separated/beta_1_sample_3_reconstructed.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_3_recon
+structed.png used on input line 763.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 763--764
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_2_sample_3_reconstructed.png, id=695, 28
+6.1892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_2_sample_3_reconstructed.png Graphi
+c file (type png)
+
+<use figures/results/colour_separated/beta_2_sample_3_reconstructed.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_2_sample_3_recon
+structed.png used on input line 765.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 765--766
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_4_sample_3_reconstructed.png, id=696, 28
+6.1892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_4_sample_3_reconstructed.png Graphi
+c file (type png)
+
+<use figures/results/colour_separated/beta_4_sample_3_reconstructed.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_4_sample_3_recon
+structed.png used on input line 767.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 767--768
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: figures/results/colour_separated/beta_1_sample_3_original.png Graphic fil
+e (type png)
+<use figures/results/colour_separated/beta_1_sample_3_original.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_3_origi
+nal.png used on input line 782.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+<figures/results/colour_separated/beta_1_convolutional_layers_sample_3.png, id=
+697, 539.8569pt x 270.2898pt>
+File: figures/results/colour_separated/beta_1_convolutional_layers_sample_3.png
+ Graphic file (type png)
+
+<use figures/results/colour_separated/beta_1_convolutional_layers_sample_3.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_1_convolutional_
+layers_sample_3.png used on input line 788.
+(pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
+
+<figures/results/colour_separated/beta_2_convolutional_layers_sample_3.png, id=
+698, 539.8569pt x 270.2898pt>
+File: figures/results/colour_separated/beta_2_convolutional_layers_sample_3.png
+ Graphic file (type png)
+
+<use figures/results/colour_separated/beta_2_convolutional_layers_sample_3.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_2_convolutional_
+layers_sample_3.png used on input line 790.
+(pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
+
+<figures/results/colour_separated/beta_4_convolutional_layers_sample_3.png, id=
+699, 539.8569pt x 270.2898pt>
+File: figures/results/colour_separated/beta_4_convolutional_layers_sample_3.png
+ Graphic file (type png)
+
+<use figures/results/colour_separated/beta_4_convolutional_layers_sample_3.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_4_convolutional_
+layers_sample_3.png used on input line 792.
+(pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<figures/results/colour_separated/beta_1_posterior_sample_original.png, id=700,
+ 286.1892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_1_posterior_sample_original.png Gra
+phic file (type png)
+
+<use figures/results/colour_separated/beta_1_posterior_sample_original.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_1_posterior_samp
+le_original.png used on input line 808.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 808--809
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_1_posterior_sample_7.png, id=701, 286.18
+92pt x 286.1892pt>
+File: figures/results/colour_separated/beta_1_posterior_sample_7.png Graphic fi
+le (type png)
+
+<use figures/results/colour_separated/beta_1_posterior_sample_7.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_1_posterior_samp
+le_7.png used on input line 810.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 810--811
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_1_posterior_sample_13.png, id=702, 286.1
+892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_1_posterior_sample_13.png Graphic f
+ile (type png)
+
+<use figures/results/colour_separated/beta_1_posterior_sample_13.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_1_posterior_samp
+le_13.png used on input line 812.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 812--813
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_1_posterior_sample_18.png, id=703, 286.1
+892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_1_posterior_sample_18.png Graphic f
+ile (type png)
+
+<use figures/results/colour_separated/beta_1_posterior_sample_18.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_1_posterior_samp
+le_18.png used on input line 814.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 814--815
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_2_posterior_sample_original.png, id=704,
+ 286.1892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_2_posterior_sample_original.png Gra
+phic file (type png)
+
+<use figures/results/colour_separated/beta_2_posterior_sample_original.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_2_posterior_samp
+le_original.png used on input line 819.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 819--820
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_2_posterior_sample_10.png, id=705, 286.1
+892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_2_posterior_sample_10.png Graphic f
+ile (type png)
+
+<use figures/results/colour_separated/beta_2_posterior_sample_10.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_2_posterior_samp
+le_10.png used on input line 821.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 821--822
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_2_posterior_sample_17.png, id=706, 286.1
+892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_2_posterior_sample_17.png Graphic f
+ile (type png)
+
+<use figures/results/colour_separated/beta_2_posterior_sample_17.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_2_posterior_samp
+le_17.png used on input line 823.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 823--824
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_2_posterior_sample_31.png, id=707, 286.1
+892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_2_posterior_sample_31.png Graphic f
+ile (type png)
+
+<use figures/results/colour_separated/beta_2_posterior_sample_31.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_2_posterior_samp
+le_31.png used on input line 825.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 825--826
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_4_posterior_sample_original.png, id=708,
+ 286.1892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_4_posterior_sample_original.png Gra
+phic file (type png)
+
+<use figures/results/colour_separated/beta_4_posterior_sample_original.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_4_posterior_samp
+le_original.png used on input line 830.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 830--831
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_4_posterior_sample_1.png, id=709, 286.18
+92pt x 286.1892pt>
+File: figures/results/colour_separated/beta_4_posterior_sample_1.png Graphic fi
+le (type png)
+
+<use figures/results/colour_separated/beta_4_posterior_sample_1.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_4_posterior_samp
+le_1.png used on input line 832.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 832--833
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_4_posterior_sample_4.png, id=710, 286.18
+92pt x 286.1892pt>
+File: figures/results/colour_separated/beta_4_posterior_sample_4.png Graphic fi
+le (type png)
+
+<use figures/results/colour_separated/beta_4_posterior_sample_4.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_4_posterior_samp
+le_4.png used on input line 834.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 834--835
+ [][] 
+ []
+
+
+<figures/results/colour_separated/beta_4_posterior_sample_20.png, id=711, 286.1
+892pt x 286.1892pt>
+File: figures/results/colour_separated/beta_4_posterior_sample_20.png Graphic f
+ile (type png)
+
+<use figures/results/colour_separated/beta_4_posterior_sample_20.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_4_posterior_samp
+le_20.png used on input line 836.
+(pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
+
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 836--837
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<figures/results/colour_separated/beta_1_average_activation.png, id=712, 539.85
+69pt x 270.2898pt>
+File: figures/results/colour_separated/beta_1_average_activation.png Graphic fi
+le (type png)
+
+<use figures/results/colour_separated/beta_1_average_activation.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_1_average_activa
+tion.png used on input line 849.
+(pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
+
+<figures/results/colour_separated/beta_2_average_activation.png, id=713, 539.85
+69pt x 270.2898pt>
+File: figures/results/colour_separated/beta_2_average_activation.png Graphic fi
+le (type png)
+
+<use figures/results/colour_separated/beta_2_average_activation.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_2_average_activa
+tion.png used on input line 851.
+(pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
+
+<figures/results/colour_separated/beta_4_average_activation.png, id=714, 539.85
+69pt x 270.2898pt>
+File: figures/results/colour_separated/beta_4_average_activation.png Graphic fi
+le (type png)
+
+<use figures/results/colour_separated/beta_4_average_activation.png>
+Package pdftex.def Info: figures/results/colour_separated/beta_4_average_activa
+tion.png used on input line 853.
+(pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[61 <./figures/results/indiscriminate_decoupling/beta_1_average_activation.png>
+ <./figures/results/indiscriminate_decoupling/beta_2_average_activation.png> <.
+/figures/results/indiscriminate_decoupling/beta_4_average_activation.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [62 <./figures/results/naive_average/val_loss.png> <./figures/results/naive_av
 erage/val_kl_loss.png> <./figures/results/naive_average/val_reconstruction_loss
 .png>]
-Overfull \hbox (14.22888pt too wide) in paragraph at lines 924--924
-[]\OT1/cmr/bx/n/17.28 Using Batch Nor-mal-i-sa-tion With Con-vo-lu-tional Vari-
-
- []
-
-
-Underfull \vbox (badness 1917) has occurred while \output is active []
-
- [63 <./figures/results/naive_average/beta_1_sample_0_original.png> <./figures/
-results/naive_average/beta_1_sample_0_reconstructed.png> <./figures/results/nai
-ve_average/beta_2_sample_0_reconstructed.png> <./figures/results/naive_average/
-beta_4_sample_0_reconstructed.png> <./figures/results/naive_average/beta_1_samp
-le_2_original.png> <./figures/results/naive_average/beta_1_sample_2_reconstruct
-ed.png> <./figures/results/naive_average/beta_2_sample_2_reconstructed.png> <./
-figures/results/naive_average/beta_4_sample_2_reconstructed.png> <./figures/res
-ults/naive_average/beta_1_sample_3_original.png> <./figures/results/naive_avera
-ge/beta_1_sample_3_reconstructed.png> <./figures/results/naive_average/beta_2_s
-ample_3_reconstructed.png> <./figures/results/naive_average/beta_4_sample_3_rec
-onstructed.png>]
-Overfull \vbox (35.69403pt too high) has occurred while \output is active []
-
-
-[64 <./figures/results/naive_average/beta_1_convolutional_layers_sample_3.png> 
-<./figures/results/naive_average/beta_2_convolutional_layers_sample_3.png> <./f
-igures/results/naive_average/beta_4_convolutional_layers_sample_3.png> <./figur
-es/results/naive_average/beta_1_prior_sample_2.png> <./figures/results/naive_av
-erage/beta_2_prior_sample_0.png> <./figures/results/naive_average/beta_4_prior_
-sample_3.png>]
+[63 <./figures/results/naive_average/beta_1_sample_0_original.png> <./figures/r
+esults/naive_average/beta_1_sample_0_reconstructed.png> <./figures/results/naiv
+e_average/beta_2_sample_0_reconstructed.png> <./figures/results/naive_average/b
+eta_4_sample_0_reconstructed.png> <./figures/results/naive_average/beta_1_sampl
+e_2_original.png> <./figures/results/naive_average/beta_1_sample_2_reconstructe
+d.png> <./figures/results/naive_average/beta_2_sample_2_reconstructed.png> <./f
+igures/results/naive_average/beta_4_sample_2_reconstructed.png> <./figures/resu
+lts/naive_average/beta_1_sample_3_original.png> <./figures/results/naive_averag
+e/beta_1_sample_3_reconstructed.png> <./figures/results/naive_average/beta_2_sa
+mple_3_reconstructed.png> <./figures/results/naive_average/beta_4_sample_3_reco
+nstructed.png>] [64 <./figures/results/naive_average/beta_1_convolutional_layer
+s_sample_3.png> <./figures/results/naive_average/beta_2_convolutional_layers_sa
+mple_3.png> <./figures/results/naive_average/beta_4_convolutional_layers_sample
+_3.png> <./figures/results/naive_average/beta_1_prior_sample_2.png> <./figures/
+results/naive_average/beta_2_prior_sample_0.png> <./figures/results/naive_avera
+ge/beta_4_prior_sample_3.png>]
 
 LaTeX Warning: Text page 65 contains only floats.
 
@@ -3926,64 +3908,76 @@ igures/results/naive_average/beta_1_posterior_sample_0.png> <./figures/results/
 naive_average/beta_2_posterior_sample_0.png> <./figures/results/naive_average/b
 eta_4_posterior_sample_0.png> <./figures/results/naive_average/beta_1_average_a
 ctivation.png> <./figures/results/naive_average/beta_2_average_activation.png> 
-<./figures/results/naive_average/beta_4_average_activation.png>])
-(./conclusion/conclusion.tex [66 <./figures/results/weighted_average/val_loss.p
-ng> <./figures/results/weighted_average/val_kl_loss.png> <./figures/results/wei
-ghted_average/val_reconstruction_loss.png>] [67 <./figures/results/weighted_ave
-rage/beta_1_sample_0_original.png> <./figures/results/weighted_average/beta_1_s
-ample_0_reconstructed.png> <./figures/results/weighted_average/beta_2_sample_0_
-reconstructed.png> <./figures/results/weighted_average/beta_4_sample_0_reconstr
-ucted.png> <./figures/results/weighted_average/beta_1_sample_2_original.png> <.
-/figures/results/weighted_average/beta_1_sample_2_reconstructed.png> <./figures
-/results/weighted_average/beta_2_sample_2_reconstructed.png> <./figures/results
-/weighted_average/beta_4_sample_2_reconstructed.png> <./figures/results/weighte
-d_average/beta_1_sample_3_original.png> <./figures/results/weighted_average/bet
-a_1_sample_3_reconstructed.png> <./figures/results/weighted_average/beta_2_samp
-le_3_reconstructed.png> <./figures/results/weighted_average/beta_4_sample_3_rec
-onstructed.png>] [68 <./figures/results/weighted_average/beta_1_convolutional_l
-ayers_sample_3.png> <./figures/results/weighted_average/beta_2_convolutional_la
-yers_sample_3.png> <./figures/results/weighted_average/beta_4_convolutional_lay
-ers_sample_3.png>] [69 <./figures/results/weighted_average/beta_1_posterior_sam
-ple_original.png> <./figures/results/weighted_average/beta_1_posterior_sample_1
-8.png> <./figures/results/weighted_average/beta_1_posterior_sample_26.png> <./f
-igures/results/weighted_average/beta_1_posterior_sample_39.png> <./figures/resu
-lts/weighted_average/beta_2_posterior_sample_original.png> <./figures/results/w
-eighted_average/beta_2_posterior_sample_17.png> <./figures/results/weighted_ave
-rage/beta_2_posterior_sample_26.png> <./figures/results/weighted_average/beta_2
-_posterior_sample_30.png> <./figures/results/weighted_average/beta_4_posterior_
-sample_original.png> <./figures/results/weighted_average/beta_4_posterior_sampl
-e_7.png> <./figures/results/weighted_average/beta_4_posterior_sample_24.png> <.
-/figures/results/weighted_average/beta_4_posterior_sample_32.png>] [70 <./figur
-es/results/weighted_average/beta_1_average_activation.png> <./figures/results/w
-eighted_average/beta_2_average_activation.png> <./figures/results/weighted_aver
-age/beta_4_average_activation.png>] [71 <./figures/results/colour_separated/bet
-a_1_sample_0_original.png> <./figures/results/colour_separated/beta_1_sample_0_
-reconstructed.png> <./figures/results/colour_separated/beta_2_sample_0_reconstr
-ucted.png> <./figures/results/colour_separated/beta_4_sample_0_reconstructed.pn
-g> <./figures/results/colour_separated/beta_1_sample_2_original.png> <./figures
-/results/colour_separated/beta_1_sample_2_reconstructed.png> <./figures/results
-/colour_separated/beta_2_sample_2_reconstructed.png> <./figures/results/colour_
-separated/beta_4_sample_2_reconstructed.png> <./figures/results/colour_separate
-d/beta_1_sample_3_original.png> <./figures/results/colour_separated/beta_1_samp
-le_3_reconstructed.png> <./figures/results/colour_separated/beta_2_sample_3_rec
-onstructed.png> <./figures/results/colour_separated/beta_4_sample_3_reconstruct
-ed.png>] [72 <./figures/results/colour_separated/beta_1_convolutional_layers_sa
-mple_3.png> <./figures/results/colour_separated/beta_2_convolutional_layers_sam
-ple_3.png> <./figures/results/colour_separated/beta_4_convolutional_layers_samp
-le_3.png>] [73 <./figures/results/colour_separated/beta_1_posterior_sample_orig
-inal.png> <./figures/results/colour_separated/beta_1_posterior_sample_7.png> <.
-/figures/results/colour_separated/beta_1_posterior_sample_13.png> <./figures/re
-sults/colour_separated/beta_1_posterior_sample_18.png> <./figures/results/colou
-r_separated/beta_2_posterior_sample_original.png> <./figures/results/colour_sep
-arated/beta_2_posterior_sample_10.png> <./figures/results/colour_separated/beta
-_2_posterior_sample_17.png> <./figures/results/colour_separated/beta_2_posterio
-r_sample_31.png> <./figures/results/colour_separated/beta_4_posterior_sample_or
-iginal.png> <./figures/results/colour_separated/beta_4_posterior_sample_1.png> 
-<./figures/results/colour_separated/beta_4_posterior_sample_4.png> <./figures/r
-esults/colour_separated/beta_4_posterior_sample_20.png>] [74 <./figures/results
-/colour_separated/beta_1_average_activation.png> <./figures/results/colour_sepa
-rated/beta_2_average_activation.png> <./figures/results/colour_separated/beta_4
-_average_activation.png>]
+<./figures/results/naive_average/beta_4_average_activation.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [66 <./figures/results/weighted_average/val_loss.png> <./figures/results/weigh
+ted_average/val_kl_loss.png> <./figures/results/weighted_average/val_reconstruc
+tion_loss.png>]
+Overfull \hbox (14.22888pt too wide) in paragraph at lines 914--914
+[]\OT1/cmr/bx/n/17.28 Using Batch Nor-mal-i-sa-tion With Con-vo-lu-tional Vari-
+
+ []
+
+
+Underfull \vbox (badness 1917) has occurred while \output is active []
+
+ [67 <./figures/results/weighted_average/beta_1_sample_0_original.png> <./figur
+es/results/weighted_average/beta_1_sample_0_reconstructed.png> <./figures/resul
+ts/weighted_average/beta_2_sample_0_reconstructed.png> <./figures/results/weigh
+ted_average/beta_4_sample_0_reconstructed.png> <./figures/results/weighted_aver
+age/beta_1_sample_2_original.png> <./figures/results/weighted_average/beta_1_sa
+mple_2_reconstructed.png> <./figures/results/weighted_average/beta_2_sample_2_r
+econstructed.png> <./figures/results/weighted_average/beta_4_sample_2_reconstru
+cted.png> <./figures/results/weighted_average/beta_1_sample_3_original.png> <./
+figures/results/weighted_average/beta_1_sample_3_reconstructed.png> <./figures/
+results/weighted_average/beta_2_sample_3_reconstructed.png> <./figures/results/
+weighted_average/beta_4_sample_3_reconstructed.png>]) (./conclusion/conclusion.
+tex [68 <./figures/results/weighted_average/beta_1_convolutional_layers_sample_
+3.png> <./figures/results/weighted_average/beta_2_convolutional_layers_sample_3
+.png> <./figures/results/weighted_average/beta_4_convolutional_layers_sample_3.
+png>]
+[69 <./figures/results/weighted_average/beta_1_posterior_sample_original.png> <
+./figures/results/weighted_average/beta_1_posterior_sample_18.png> <./figures/r
+esults/weighted_average/beta_1_posterior_sample_26.png> <./figures/results/weig
+hted_average/beta_1_posterior_sample_39.png> <./figures/results/weighted_averag
+e/beta_2_posterior_sample_original.png> <./figures/results/weighted_average/bet
+a_2_posterior_sample_17.png> <./figures/results/weighted_average/beta_2_posteri
+or_sample_26.png> <./figures/results/weighted_average/beta_2_posterior_sample_3
+0.png> <./figures/results/weighted_average/beta_4_posterior_sample_original.png
+> <./figures/results/weighted_average/beta_4_posterior_sample_7.png> <./figures
+/results/weighted_average/beta_4_posterior_sample_24.png> <./figures/results/we
+ighted_average/beta_4_posterior_sample_32.png>] [70 <./figures/results/weighted
+_average/beta_1_average_activation.png> <./figures/results/weighted_average/bet
+a_2_average_activation.png> <./figures/results/weighted_average/beta_4_average_
+activation.png>] [71 <./figures/results/colour_separated/beta_1_sample_0_origin
+al.png> <./figures/results/colour_separated/beta_1_sample_0_reconstructed.png> 
+<./figures/results/colour_separated/beta_2_sample_0_reconstructed.png> <./figur
+es/results/colour_separated/beta_4_sample_0_reconstructed.png> <./figures/resul
+ts/colour_separated/beta_1_sample_2_original.png> <./figures/results/colour_sep
+arated/beta_1_sample_2_reconstructed.png> <./figures/results/colour_separated/b
+eta_2_sample_2_reconstructed.png> <./figures/results/colour_separated/beta_4_sa
+mple_2_reconstructed.png> <./figures/results/colour_separated/beta_1_sample_3_o
+riginal.png> <./figures/results/colour_separated/beta_1_sample_3_reconstructed.
+png> <./figures/results/colour_separated/beta_2_sample_3_reconstructed.png> <./
+figures/results/colour_separated/beta_4_sample_3_reconstructed.png>] [72 <./fig
+ures/results/colour_separated/beta_1_convolutional_layers_sample_3.png> <./figu
+res/results/colour_separated/beta_2_convolutional_layers_sample_3.png> <./figur
+es/results/colour_separated/beta_4_convolutional_layers_sample_3.png>] [73 <./f
+igures/results/colour_separated/beta_1_posterior_sample_original.png> <./figure
+s/results/colour_separated/beta_1_posterior_sample_7.png> <./figures/results/co
+lour_separated/beta_1_posterior_sample_13.png> <./figures/results/colour_separa
+ted/beta_1_posterior_sample_18.png> <./figures/results/colour_separated/beta_2_
+posterior_sample_original.png> <./figures/results/colour_separated/beta_2_poste
+rior_sample_10.png> <./figures/results/colour_separated/beta_2_posterior_sample
+_17.png> <./figures/results/colour_separated/beta_2_posterior_sample_31.png> <.
+/figures/results/colour_separated/beta_4_posterior_sample_original.png> <./figu
+res/results/colour_separated/beta_4_posterior_sample_1.png> <./figures/results/
+colour_separated/beta_4_posterior_sample_4.png> <./figures/results/colour_separ
+ated/beta_4_posterior_sample_20.png>] [74 <./figures/results/colour_separated/b
+eta_1_average_activation.png> <./figures/results/colour_separated/beta_2_averag
+e_activation.png> <./figures/results/colour_separated/beta_4_average_activation
+.png>]
 Chapter 7.
 ) (./thesis.bbl [75
 
@@ -4000,7 +3994,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  6500 strings out of 494902
  143518 string characters out of 6179891
- 300526 words of memory out of 5000000
+ 284336 words of memory out of 5000000
  9479 multiletter control sequences out of 15000+600000
  23417 words of font info for 93 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
@@ -4029,7 +4023,7 @@ s/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (107 pages, 10442638 bytes).
+Output written on thesis.pdf (107 pages, 10461449 bytes).
 PDF statistics:
  951 PDF objects out of 1000 (max. 8388607)
  387 compressed objects within 4 object streams

@@ -85,34 +85,20 @@ Deconv2D\_3    & (3, 84, 84)           & Deconv2D\_2
 %
 \section{Single Latent Filter}
 
-The single latent architecture, found in Table (\ref{tab:fully_convolutional_single_filter}), was trained for $10$ epochs, and the validation, validation KL and validation reconstruction loss recorded. The results are shown in Figure (\ref{fig:latent_image_graphs}).
+\subsection{Results}
+The single latent architecture, found in Table (\ref{tab:fully_convolutional_single_filter}), was trained for $10$ epochs, and the validation, validation KL and validation reconstruction loss recorded. The results are shown in Figure (\ref{fig:latent_image_graphs}). The single latent image method is clearly capable of achieving reasonable reconstruction and KL loss on unseen data.
 
-We see that the reconstructions of several inputs, shown in Figure (\ref{fig:latent_image_originals_and_reconstructions}), are qualitatively perfect. For each value of $\beta$, the reconstruction is indistinguishable from its input. This comes as quite a surprise.
+We see that the reconstructions of several inputs, shown in Figure (\ref{fig:latent_image_originals_and_reconstructions}), are qualitatively perfect. For each value of $\beta$, the reconstruction is indistinguishable from its input. This comes as quite a surprise, as we initially suspected this method is too restrained in the latent space.
 
 The latent representations of scenes, shown in Figure (\ref{fig:latent_image_originals_and_latent_spaces}), do not meaningfully correspond to their original scene. Even for high $\beta$, the scenes do not seem to become anything more interpretable than noise. We further took the average of the latent filters over the test set of $10,000$ data points, and achieved similar results, which are shown in Figure (\ref{fig:latent_image_average_filters}).
 
-Likewise, the decoded samples from the prior and posterior, shown in Figures (\ref{fig:latent_image_originals_prior_samples}) and (\ref{fig:latent_image_originals_posterior_samples}) respectively, do not have any meaningful relation to the original scene. This is true for all values of $\beta$ tested. This tells us that even for large pressures on the probabilistic encoder $q_{\vec{\phi}}(\vec{z} | \vec{x})$ to match the prior $p(\vec{z})$, the latent image is far from a well-behaved standard normal Gaussian.
+Likewise, the decoded samples from the prior and posterior, shown in Figures (\ref{fig:latent_image_originals_prior_samples}) and (\ref{fig:latent_image_originals_posterior_samples}) respectively, do not have any meaningful relation to the original scene. This is true for all values of $\beta$ tested. This tells us that even for reasonable values of the KL loss term, the latent image method struggles to generate realistic samples.
 
-In summary:
+\subsection{Summary}
 \begin{itemize}
 \item The latent image method is capable of qualitatively perfect reconstruction of its input.
 \item Despite the perfect reconstruction, the method seems to struggle with learning interpretable latent representations of high-level concepts in the scene for all values of $\beta$.
-\item The latent image method also seemed to struggle to produce meaningful generative samples from the prior and posterior, suggesting 
-\end{itemize}
-
-\subsubsection{Latent Representations of Scenes}
-
-\subsection{Strengths}
-
-\subsection{Drawbacks}
-
-\begin{itemize}
-\item Consider two architectures: shallow and deep
-\item Consider Pong, Space Invaders (in progress) and Breakout
-\item Plot reconstruction loss and KL divergence
-\item Show reconstructions and convolutional layers of each
-\item Show mean activations of filters
-\item Alter latent space variable and show reconstruction
+\item The latent image method also seemed to struggle to produce meaningful generative samples from the prior and posterior despite reasonable values irrespective of the value of the KL loss term.
 \end{itemize}
 
 
@@ -253,6 +239,10 @@ In summary:
 \label{fig:latent_image_average_filters}
 \end{figure*}
 
+
+
+
+\clearpage
 %
 %
 %
