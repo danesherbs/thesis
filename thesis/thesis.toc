@@ -68,8 +68,8 @@
 \contentsline {section}{\numberline {6.8}Winner Takes All}{61}
 \contentsline {section}{\numberline {6.9}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{63}
 \contentsline {section}{\numberline {6.10}Using Batch Normalisation With Convolutional Variational Latent Spaces}{64}
-\contentsline {chapter}{\numberline {7}Conclusion}{66}
-\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{66}
-\contentsline {section}{\numberline {7.2}Applications}{66}
-\contentsline {section}{\numberline {7.3}Future Work}{66}
-\contentsline {chapter}{Bibliography}{66}
+\contentsline {chapter}{\numberline {7}Conclusion}{69}
+\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{69}
+\contentsline {section}{\numberline {7.2}Applications}{69}
+\contentsline {section}{\numberline {7.3}Future Work}{69}
+\contentsline {chapter}{Bibliography}{69}
