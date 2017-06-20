@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="324mm"
-   height="100mm"
-   viewBox="0 0 1148.0313 354.33071"
+   width="230mm"
+   height="65mm"
+   viewBox="0 0 814.96057 230.31486"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -20,8 +20,7 @@
    inkscape:export-filename="/home/dane/Documents/Thesis/thesis/figures/background/convolutional_autoencoder_architecture.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
-   style="enable-background:new"
-   enable-background="new">
+   style="enable-background:new">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -30,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="402.68957"
-     inkscape:cy="201.24891"
+     inkscape:cx="473.68578"
+     inkscape:cy="230.26604"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -44,17 +43,18 @@
      id="defs4">
     <marker
        inkscape:isstock="true"
-       style="overflow:visible;"
+       style="overflow:visible"
        id="Arrow2Lend"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow2Lend">
       <path
-         transform="scale(1.1) rotate(180) translate(1,0)"
-         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
-         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         id="path13219" />
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path13219"
+         inkscape:connector-curvature="0" />
     </marker>
     <pattern
        patternUnits="userSpaceOnUse"
@@ -163,13 +163,13 @@
   </metadata>
   <g
      style="display:inline"
-     transform="translate(0,-698.0315)"
+     transform="translate(0,-822.04735)"
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1">
     <g
        id="g13135"
-       transform="translate(-468.50686,-58)"
+       transform="translate(-562.50686,-22.000004)"
        style="fill:#ffb380;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none">
       <g
          id="g8569"
@@ -186,34 +186,34 @@
     <text
        sodipodi:linespacing="0%"
        id="text11455-6-3"
-       y="978.32538"
-       x="99.833488"
+       y="1014.3254"
+       x="5.8334885"
        style="font-style:normal;font-weight:normal;font-size:25px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
        xml:space="preserve"><tspan
          id="tspan11459-5-5"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:Sawasdee;-inkscape-font-specification:Sawasdee"
-         y="978.32538"
-         x="99.833488"
+         y="1014.3254"
+         x="5.8334885"
          sodipodi:role="line">Latent filter</tspan></text>
     <path
        inkscape:connector-curvature="0"
        id="path13192"
-       d="m 244.4568,849.82002 77.78174,0"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)" />
+       d="m 150.4568,885.82002 77.78174,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <text
        sodipodi:linespacing="0%"
        id="text13558"
-       y="822.04742"
-       x="254.55832"
+       y="858.04742"
+       x="160.55832"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.75px;line-height:0%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         y="822.04742"
-         x="254.55832"
+         y="858.04742"
+         x="160.55832"
          id="tspan13560"
          sodipodi:role="line">Flatten</tspan></text>
     <g
        id="g13689"
-       transform="translate(6,-6.9372165)">
+       transform="translate(-88,29.062774)">
       <circle
          style="opacity:1;fill:#ffb380;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
          id="path13562"
@@ -262,7 +262,7 @@
          r="13.131983" />
     </g>
     <g
-       transform="matrix(1.5290782,0,0,1.5290782,219.30015,-190.86891)"
+       transform="matrix(1.5290782,0,0,1.5290782,125.30015,-154.86891)"
        id="g13753">
       <g
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -284,34 +284,34 @@
     <text
        sodipodi:linespacing="0%"
        id="text11455-6-3-2"
-       y="980.32538"
-       x="378.96585"
+       y="1016.3254"
+       x="284.96585"
        style="font-style:normal;font-weight:normal;font-size:25px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
        xml:space="preserve"><tspan
          id="tspan11459-5-5-0"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:Sawasdee;-inkscape-font-specification:Sawasdee"
-         y="980.32538"
-         x="378.96585"
+         y="1016.3254"
+         x="284.96585"
          sodipodi:role="line">Latent vector</tspan></text>
     <path
        inkscape:connector-curvature="0"
        id="path13192-7"
-       d="m 567.76563,850.01465 77.78174,0"
-       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend-2);enable-background:new" />
+       d="m 473.76563,886.01465 77.78174,0"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new" />
     <text
        sodipodi:linespacing="0%"
        id="text13558-5"
-       y="822.24207"
-       x="565.86719"
+       y="858.24207"
+       x="471.86719"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.75px;line-height:0%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
        xml:space="preserve"><tspan
-         y="822.24207"
-         x="565.86719"
+         y="858.24207"
+         x="471.86719"
          id="tspan13560-9"
          sodipodi:role="line">Decouple</tspan></text>
     <g
        id="g14427"
-       transform="translate(549.50268,199.92899)">
+       transform="translate(455.50268,235.92899)">
       <g
          word-spacing="normal"
          letter-spacing="normal"
@@ -400,18 +400,18 @@
     <text
        sodipodi:linespacing="100%"
        id="text11455-6-3-2-2"
-       y="980.66803"
-       x="719.3689"
+       y="1016.668"
+       x="625.3689"
        style="font-style:normal;font-weight:normal;font-size:25px;line-height:100%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;line-height:100%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee"
-         y="980.66803"
-         x="719.3689"
+         y="1016.668"
+         x="625.3689"
          sodipodi:role="line"
          id="tspan14571">Decoupling term</tspan></text>
     <g
        id="g10498"
-       transform="translate(-34.345183,350.52293)">
+       transform="translate(-128.34518,386.52293)">
       <g
          id="g10500"
          transform="matrix(0.50618673,0,0,-0.50618673,-88.582677,861.02362)"
@@ -455,7 +455,7 @@
            style="fill:#000000;stroke-width:0" /></g>    </g>
     <g
        id="g10700"
-       transform="translate(270.72088,347.49248)">
+       transform="translate(176.72088,383.49248)">
       <g
          word-spacing="normal"
          letter-spacing="normal"
@@ -483,13 +483,13 @@
            style="fill:#000000;stroke-width:0" /></g>    </g>
   </g>
   <g
-     transform="translate(0,-354.33071)"
+     transform="translate(0,-478.34656)"
      style="opacity:1"
      inkscape:label="img"
      id="layer3"
      inkscape:groupmode="layer" />
   <g
-     transform="translate(0,-354.33071)"
+     transform="translate(0,-478.34656)"
      style="display:inline;filter:url(#filter6954)"
      inkscape:label="Noise"
      id="layer2"
