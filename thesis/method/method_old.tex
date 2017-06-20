@@ -38,32 +38,36 @@ so we may use backpropagation. The corresponding deconvolutional layers are appl
 
 %
 %
-\subsection{Neuron-Level Redundancy Reduction}
-As with all autoencoders, a reconstruction loss term must appear in the loss function as to learn the identity function, which ensures a meaningful lower-dimensional representation is learnt in the latent space. Hence we also include the reconstruction loss term 
+\subsection{Neuron-Level Decoupling}
+As with all autoencoders, a reconstruction loss term must appear in the loss function as to learn the identity function, which ensures a meaningful lower-dimensional representation is learnt in the latent space. Hence we also include this term in the final loss function for this architecture.
+
+We also saw in $\beta$-VAE that the multiplicative factor on the KL loss term varies the pressure of redundancy reduction on the latent space. As we seek to have non-zero activations in the latent space if and only if an object is present, it's in our interest to reduce the number of unnecessarily activated neurons. Therefore the application of a redundancy pressure term seems suitable, and is therefore included in the loss function. However, as we no longer have a one-dimensional latent space, we must decide on how this term will appropriately reduce redundancy in a two-dimensional latent space.
+
+To reduce the redundancy in a two-dimensional latent space, we choose to flatten the $(1, m, n)$-dimensional single latent filter to an $m \times n$ vector, which is then matched to an isotropic Gaussian. We choose this isotropic Gaussian to be $\mathcal{N}(\vec{0}, \vec{I})$ for convenience.
+
 \begin{align}
-\mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
+\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}) = -D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
+\tag{\ref{eq:elbo_kl_loss_plus_expectation}}
 \end{align}
-in the final loss function for this architecture.
 
-We also saw in $\beta$-VAE that the multiplicative factor on the KL loss term 
-\begin{align}
--\beta D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}) || p_{\vec{\theta}}(\vec{z}))
-\end{align}
-varies the pressure of redundancy reduction on the latent space. As we seek to have non-zero activations in the latent space if and only if an object is present, it's in our interest to reduce the number of unnecessarily activated neurons. Therefore the application of a redundancy pressure term seems suitable, and is therefore included in the loss function. However, as we no longer have a one-dimensional latent space, we must decide on how this term will appropriately reduce redundancy in a two-dimensional latent space.
 
-To reduce the redundancy in a two-dimensional latent space, we choose to flatten the $(1, m, n)$-dimensional single latent filter to an $m \times n$ vector $\vec{z}$, which is then matched to the prior $p(\vec{z})$, an isotropic Gaussian. We choose the prior to be $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$ for convenience.\\
+\begin{itemize}
+\item As with the variational autoencoders seen earlier, we have a reconstruction loss term in the loss function
+\item Learning the identity function ensures a meaningful lower-dimensional representation is learnt in the latent space
+\item However, as we only want values of high magnitude where there are objects, we need to reduce the reundancy in the latent space
+\item Therefore we need to decide on the appropriate term in the loss function to reduce redundancy
+\item The latent filter of shape $(1, m, n)$ is flattened to a $m \times n$ vector
+\item This flattened representation of the single latent filter is used then pressured to be close to an isotropic Gaussian with KL divergence ...equation here...
+\item This pressuring reduces redundancy in the latent space as if neighbouring pixels 
+\end{itemize}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.6]{methods/latent_image_flattening_latent_space.eps}
+\caption{Caption.}
 \label{fig:latent_image_flattening_latent_space}
 \end{figure}
-
-By reducing the two-dimensional latent space to one dimension, we arrive at the same loss function as in the $\beta$-VAE case:
-\begin{align}
-\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}) = -\beta D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
-\end{align}
 
 
 %
@@ -72,18 +76,21 @@ By reducing the two-dimensional latent space to one dimension, we arrive at the 
 %
 %
 \section{Multiple Latent Filters}
-
-Although it's conceivable that a single latent filter could represent types and locations of objects in the scene, it seems unlikely to do so. It's well known that filters may learn a set of weights to recognise information-rich features in the scene, like edges or corners. Perhaps this property could be leveraged by using multiple filters in the latent space, where any given latent filter is not responsible for representing multiple types of objects, but one specific object.
-
+\begin{itemize}
+\item As mentioned, a single latent filter seems unlikely to be able to represent a types of objects in the original scene
+\item This leads to the idea of pressuring filters to learn at most one object type
+\item For scenes with more than one object type, the latent space must have multiple features
+\end{itemize}
 %
 %
 \subsection{Architecture}
-The architecture is the same as the fully-convolutional single lantent filter architecture, but with strictly more than one filter in the latent space. The convolutional mean $\vec{\mu}$ and variance $\vec{\sigma}^2$, both of shape $(k, m, n)$, are sampled using the reparameterisation trick
-\begin{align}
-\vec{z} = g_{\vec{\phi}}(\vec{x}, \vec{\epsilon}) = \vec{\mu} + \vec{\sigma} \odot \vec{\epsilon} \quad\quad\quad \vec{\epsilon} \sim \mathcal{N}(\vec{0}, \vec{I})
-\tag{\ref{eq:reparameterisation_trick}}
-\end{align}
-so we may use backpropagation. The corresponding deconvolutional layers are applied to reconstruct the original image.\\
+TODO: Finish subsection
+
+\begin{itemize}
+\item The architecture is the same as the fully-convolutional single lantent filter architecture, but with one difference in the latent space.
+\item The convolutional mean $\vec{\mu}$ and variance $\vec{\sigma}^2$, both of shape $(k, m, n)$, are sampled using ... cite reparameterisation trick here... (so we may use backpropagation) to give the latent space of shape $(k, m, n)$. 
+\item The proposed architecture is shown in Figure (\ref{fig:decoupling_indiscriminately_horizontal})
+\end{itemize}
 
 \begin{figure}[h!]
 \centering
@@ -92,6 +99,7 @@ so we may use backpropagation. The corresponding deconvolutional layers are appl
 \caption{The fully-convolutional multiple latent filter architecture. \textbf{Blue:} Unchanged. \textbf{Green:} The latent mean $\vec{\mu}$ and variance $\vec{\sigma}^2$, which are both single filters of shape $(k, m, n)$. \textbf{Orange:} A single latent filter of shape $(k, m, n)$ sampled component-wise from $\vec{\mu}$ and $\vec{\sigma}^2$. \textbf{Red:} Unchanged.}
 \label{fig:decoupling_indiscriminately_horizontal}
 \end{figure}
+
 
 \begin{itemize}
 \item By the same reasoning for the previous architecture, we keep the reconstruction loss term. 
@@ -102,29 +110,21 @@ so we may use backpropagation. The corresponding deconvolutional layers are appl
 
 %
 %
-\subsection{Neuron-Level Redundancy Reduction}
+\subsection{Neuron-Level Decoupling}
+\begin{itemize}
+\item The latent filter of shape $(k, m, n)$ is flattened to a $k \times m \times n$ vector
+\item This flattened representation of the single latent filter is used then pressured to be close to an isotropic Gaussian with KL divergence ...equation here...
+\item This pressuring reduces redundancy among all pixels in the latent volume
+\item The loss function can therefore be written as ...loss function...
+\end{itemize}
 
-By the same reasoning for the single latent filter architecture, we keep the reconstruction loss 
-\begin{align}
-\mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
-\end{align}
-to learn a meaningful low-dimensional representation in the latent space.
-
-To reduce the redundancy of activated neurons across the whole $(k, m, n)$-dimensional latent space, so that neurons are only activated when necessary, we apply neuron-level redundancy reduction. The latent filter of shape $(k, m, n)$ is flattened to a $k \times m \times n$ vector $\vec{z}$, which is then pressured to match the prior $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$.\\
-
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.6]{methods/decoupling_indiscriminately_flattening_latent_space.eps}
+\caption{Caption.}
 \label{fig:decoupling_indiscriminately_flattening_latent_space}
 \end{figure}
-
-The loss function is therefore written as 
-\begin{align}
-\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}) = -\beta D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
-\end{align}
-where $\vec{z} \in \mathbb{R}^{k \times m \times n}$ is the flattened $(k, m, n)$-dimensional latent space.
-
 
 %
 %
