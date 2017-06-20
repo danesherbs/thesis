@@ -27,201 +27,199 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Pre-processed frames captured from Pong emulated on Stella. These frames were originally $84\times 84$, but are printed here as $168\times 168$ to emphasise distortions. \textbf {Left:} The JPEG format distorts the ball, paddle and score sprites. \textbf {Right:} The PNG format displays the frame without such distortions.\relax }}{37}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces The fully-convolutional single latent filter architecture. \textbf {Blue:} An arbitrary amount of convolutional layers. \textbf {Green:} The latent mean $\bm {\mu }$ and variance $\bm {\sigma }^2$, which are both single filters of shape $(1, m, n)$. \textbf {Orange:} A single latent filter of shape $(1, m, n)$ sampled component-wise from $\bm {\mu }$ and $\bm {\sigma }^2$. \textbf {Red:} The corresponding deconvolutional layers.\relax }}{40}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces The fully-convolutional multiple latent filter architecture. \textbf {Blue:} Unchanged. \textbf {Green:} The latent mean $\bm {\mu }$ and variance $\bm {\sigma }^2$, which are both single filters of shape $(k, m, n)$. \textbf {Orange:} A single latent filter of shape $(k, m, n)$ sampled component-wise from $\bm {\mu }$ and $\bm {\sigma }^2$. \textbf {Red:} Unchanged.\relax }}{42}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Caption.\relax }}{44}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Caption.\relax }}{45}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Caption.\relax }}{46}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Original\relax }}{46}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Red\relax }}{46}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Green\relax }}{46}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Blue\relax }}{46}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces A comparison of a $210 \times 160$ RGB frame from Space Invaders and its red, green and blue channels. The bullet is clearly separated from other sprites in the blue channel. The red and green channels separate collections of sprites. The red channel excludes the gunship and players score, while the green partially excludes the barriers.\relax }}{46}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Multiple types of objects recognised in same position.\relax }}{47}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces At most one object recognised in a given position.\relax }}{47}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Caption.\relax }}{47}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Caption.\relax }}{49}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The fully-convolutional multiple latent filter architecture. \textbf {Blue:} Unchanged. \textbf {Green:} The latent mean $\bm {\mu }$ and variance $\bm {\sigma }^2$, which are both single filters of shape $(k, m, n)$. \textbf {Orange:} A single latent filter of shape $(k, m, n)$ sampled component-wise from $\bm {\mu }$ and $\bm {\sigma }^2$. \textbf {Red:} Unchanged.\relax }}{43}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Caption.\relax }}{45}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Original\relax }}{46}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Red\relax }}{46}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Green\relax }}{46}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Blue\relax }}{46}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces A comparison of a $210 \times 160$ RGB frame from Space Invaders and its red, green and blue channels. The bullet is clearly separated from other sprites in the blue channel. The red and green channels separate collections of sprites. The red channel excludes the gunship and players score, while the green partially excludes the barriers.\relax }}{46}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Multiple types of objects recognised in same position.\relax }}{47}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces At most one object recognised in a given position.\relax }}{47}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Caption.\relax }}{47}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Caption.\relax }}{48}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Latent image.\relax }}{53}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Original\relax }}{54}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces $\beta = 1$\relax }}{54}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces $\beta = 2$\relax }}{54}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces $\beta = 4$\relax }}{54}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Original\relax }}{54}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces $\beta = 1$\relax }}{54}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces $\beta = 2$\relax }}{54}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces $\beta = 4$\relax }}{54}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Original\relax }}{54}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces $\beta = 1$\relax }}{54}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces $\beta = 2$\relax }}{54}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces $\beta = 4$\relax }}{54}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{54}
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Original\relax }}{55}
-\contentsline {figure}{\numberline {6.16}{\ignorespaces $\beta =1$\relax }}{55}
-\contentsline {figure}{\numberline {6.17}{\ignorespaces $\beta =2$\relax }}{55}
-\contentsline {figure}{\numberline {6.18}{\ignorespaces $\beta =4$\relax }}{55}
-\contentsline {figure}{\numberline {6.19}{\ignorespaces Original\relax }}{55}
-\contentsline {figure}{\numberline {6.20}{\ignorespaces $\beta =1$\relax }}{55}
-\contentsline {figure}{\numberline {6.21}{\ignorespaces $\beta =2$\relax }}{55}
-\contentsline {figure}{\numberline {6.22}{\ignorespaces $\beta =4$\relax }}{55}
-\contentsline {figure}{\numberline {6.23}{\ignorespaces Original\relax }}{55}
-\contentsline {figure}{\numberline {6.24}{\ignorespaces $\beta =1$\relax }}{55}
-\contentsline {figure}{\numberline {6.25}{\ignorespaces $\beta =2$\relax }}{55}
-\contentsline {figure}{\numberline {6.26}{\ignorespaces $\beta =4$\relax }}{55}
-\contentsline {figure}{\numberline {6.27}{\ignorespaces Frames from Space Invaders and their corresponding latent images for different values of $\beta $.\relax }}{55}
-\contentsline {figure}{\numberline {6.28}{\ignorespaces $\beta =1$\relax }}{55}
-\contentsline {figure}{\numberline {6.29}{\ignorespaces $\beta =2$\relax }}{55}
-\contentsline {figure}{\numberline {6.30}{\ignorespaces $\beta =4$\relax }}{55}
-\contentsline {figure}{\numberline {6.31}{\ignorespaces The best of $10$ samples from the prior $p(\bm {z}) = \mathcal {N}(\bm {0}, \bm {I})$ for different values of $\beta $.\relax }}{55}
-\contentsline {figure}{\numberline {6.32}{\ignorespaces Original\relax }}{56}
-\contentsline {figure}{\numberline {6.33}{\ignorespaces $\beta =1$\relax }}{56}
-\contentsline {figure}{\numberline {6.34}{\ignorespaces $\beta =2$\relax }}{56}
-\contentsline {figure}{\numberline {6.35}{\ignorespaces $\beta =4$\relax }}{56}
-\contentsline {figure}{\numberline {6.36}{\ignorespaces Samples from posterior after one step of MCMC for different values of $\beta $. Samples for subsequent steps did not improve, hence we only include the first for each value of $\beta $.\relax }}{56}
-\contentsline {figure}{\numberline {6.37}{\ignorespaces $\beta =1$\relax }}{56}
-\contentsline {figure}{\numberline {6.38}{\ignorespaces $\beta =2$\relax }}{56}
-\contentsline {figure}{\numberline {6.39}{\ignorespaces $\beta =4$\relax }}{56}
-\contentsline {figure}{\numberline {6.40}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{56}
-\contentsline {figure}{\numberline {6.41}{\ignorespaces Disentangling latent neurons.\relax }}{57}
-\contentsline {figure}{\numberline {6.42}{\ignorespaces Original\relax }}{58}
-\contentsline {figure}{\numberline {6.43}{\ignorespaces $\beta = 1$\relax }}{58}
-\contentsline {figure}{\numberline {6.44}{\ignorespaces $\beta = 2$\relax }}{58}
-\contentsline {figure}{\numberline {6.45}{\ignorespaces $\beta = 4$\relax }}{58}
-\contentsline {figure}{\numberline {6.46}{\ignorespaces Original\relax }}{58}
-\contentsline {figure}{\numberline {6.47}{\ignorespaces $\beta = 1$\relax }}{58}
-\contentsline {figure}{\numberline {6.48}{\ignorespaces $\beta = 2$\relax }}{58}
-\contentsline {figure}{\numberline {6.49}{\ignorespaces $\beta = 4$\relax }}{58}
-\contentsline {figure}{\numberline {6.50}{\ignorespaces Original\relax }}{58}
-\contentsline {figure}{\numberline {6.51}{\ignorespaces $\beta = 1$\relax }}{58}
-\contentsline {figure}{\numberline {6.52}{\ignorespaces $\beta = 2$\relax }}{58}
-\contentsline {figure}{\numberline {6.53}{\ignorespaces $\beta = 4$\relax }}{58}
-\contentsline {figure}{\numberline {6.54}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{58}
-\contentsline {figure}{\numberline {6.55}{\ignorespaces Original\relax }}{59}
-\contentsline {figure}{\numberline {6.56}{\ignorespaces $\beta = 1$\relax }}{59}
-\contentsline {figure}{\numberline {6.57}{\ignorespaces $\beta = 2$\relax }}{59}
-\contentsline {figure}{\numberline {6.58}{\ignorespaces $\beta = 4$\relax }}{59}
-\contentsline {figure}{\numberline {6.59}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{59}
-\contentsline {figure}{\numberline {6.60}{\ignorespaces $\beta =1$\relax }}{59}
-\contentsline {figure}{\numberline {6.61}{\ignorespaces $\beta =2$\relax }}{59}
-\contentsline {figure}{\numberline {6.62}{\ignorespaces $\beta =4$\relax }}{59}
-\contentsline {figure}{\numberline {6.63}{\ignorespaces The best of $10$ samples from the prior $p(\bm {z}) = \mathcal {N}(\bm {0}, \bm {I})$ for different values of $\beta $.\relax }}{59}
-\contentsline {figure}{\numberline {6.64}{\ignorespaces $\beta =1\hskip 1em\relax $ (original)\relax }}{60}
-\contentsline {figure}{\numberline {6.65}{\ignorespaces $\beta =1\hskip 1em\relax $ (19 steps)\relax }}{60}
-\contentsline {figure}{\numberline {6.66}{\ignorespaces $\beta =1\hskip 1em\relax $ (26 steps)\relax }}{60}
-\contentsline {figure}{\numberline {6.67}{\ignorespaces $\beta =1\hskip 1em\relax $ (60 steps)\relax }}{60}
-\contentsline {figure}{\numberline {6.68}{\ignorespaces $\beta =2\hskip 1em\relax $ (original)\relax }}{60}
-\contentsline {figure}{\numberline {6.69}{\ignorespaces $\beta =2\hskip 1em\relax $ (1 step)\relax }}{60}
-\contentsline {figure}{\numberline {6.70}{\ignorespaces $\beta =2\hskip 1em\relax $ (2 steps)\relax }}{60}
-\contentsline {figure}{\numberline {6.71}{\ignorespaces $\beta =2\hskip 1em\relax $ (90 steps)\relax }}{60}
-\contentsline {figure}{\numberline {6.72}{\ignorespaces $\beta =4\hskip 1em\relax $ (original)\relax }}{60}
-\contentsline {figure}{\numberline {6.73}{\ignorespaces $\beta =4\hskip 1em\relax $ (1 step)\relax }}{60}
-\contentsline {figure}{\numberline {6.74}{\ignorespaces $\beta =4\hskip 1em\relax $ (7 steps)\relax }}{60}
-\contentsline {figure}{\numberline {6.75}{\ignorespaces $\beta =4\hskip 1em\relax $ (98 steps)\relax }}{60}
-\contentsline {figure}{\numberline {6.76}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{60}
-\contentsline {figure}{\numberline {6.77}{\ignorespaces $\beta =1$\relax }}{61}
-\contentsline {figure}{\numberline {6.78}{\ignorespaces $\beta =2$\relax }}{61}
-\contentsline {figure}{\numberline {6.79}{\ignorespaces $\beta =4$\relax }}{61}
-\contentsline {figure}{\numberline {6.80}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{61}
-\contentsline {figure}{\numberline {6.81}{\ignorespaces Naive average.\relax }}{62}
-\contentsline {figure}{\numberline {6.82}{\ignorespaces Original\relax }}{63}
-\contentsline {figure}{\numberline {6.83}{\ignorespaces $\beta = 1$\relax }}{63}
-\contentsline {figure}{\numberline {6.84}{\ignorespaces $\beta = 2$\relax }}{63}
-\contentsline {figure}{\numberline {6.85}{\ignorespaces $\beta = 4$\relax }}{63}
-\contentsline {figure}{\numberline {6.86}{\ignorespaces Original\relax }}{63}
-\contentsline {figure}{\numberline {6.87}{\ignorespaces $\beta = 1$\relax }}{63}
-\contentsline {figure}{\numberline {6.88}{\ignorespaces $\beta = 2$\relax }}{63}
-\contentsline {figure}{\numberline {6.89}{\ignorespaces $\beta = 4$\relax }}{63}
-\contentsline {figure}{\numberline {6.90}{\ignorespaces Original\relax }}{63}
-\contentsline {figure}{\numberline {6.91}{\ignorespaces $\beta = 1$\relax }}{63}
-\contentsline {figure}{\numberline {6.92}{\ignorespaces $\beta = 2$\relax }}{63}
-\contentsline {figure}{\numberline {6.93}{\ignorespaces $\beta = 4$\relax }}{63}
-\contentsline {figure}{\numberline {6.94}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{63}
-\contentsline {figure}{\numberline {6.95}{\ignorespaces Original\relax }}{64}
-\contentsline {figure}{\numberline {6.96}{\ignorespaces $\beta = 1$\relax }}{64}
-\contentsline {figure}{\numberline {6.97}{\ignorespaces $\beta = 2$\relax }}{64}
-\contentsline {figure}{\numberline {6.98}{\ignorespaces $\beta = 4$\relax }}{64}
-\contentsline {figure}{\numberline {6.99}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{64}
-\contentsline {figure}{\numberline {6.100}{\ignorespaces $\beta =1$\relax }}{64}
-\contentsline {figure}{\numberline {6.101}{\ignorespaces $\beta =2$\relax }}{64}
-\contentsline {figure}{\numberline {6.102}{\ignorespaces $\beta =4$\relax }}{64}
-\contentsline {figure}{\numberline {6.103}{\ignorespaces The best of $10$ samples from the prior $p(\bm {z}) = \mathcal {N}(\bm {0}, \bm {I})$ for different values of $\beta $.\relax }}{64}
-\contentsline {figure}{\numberline {6.104}{\ignorespaces Original\relax }}{65}
-\contentsline {figure}{\numberline {6.105}{\ignorespaces $\beta =1$\relax }}{65}
-\contentsline {figure}{\numberline {6.106}{\ignorespaces $\beta =2$\relax }}{65}
-\contentsline {figure}{\numberline {6.107}{\ignorespaces $\beta =4$\relax }}{65}
-\contentsline {figure}{\numberline {6.108}{\ignorespaces Samples from posterior after one step of MCMC for different values of $\beta $. Samples for subsequent steps did not improve, hence we only include the first for each value of $\beta $.\relax }}{65}
-\contentsline {figure}{\numberline {6.109}{\ignorespaces $\beta =1$\relax }}{65}
-\contentsline {figure}{\numberline {6.110}{\ignorespaces $\beta =2$\relax }}{65}
-\contentsline {figure}{\numberline {6.111}{\ignorespaces $\beta =4$\relax }}{65}
-\contentsline {figure}{\numberline {6.112}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{65}
-\contentsline {figure}{\numberline {6.113}{\ignorespaces Caption.\relax }}{66}
-\contentsline {figure}{\numberline {6.114}{\ignorespaces Original\relax }}{67}
-\contentsline {figure}{\numberline {6.115}{\ignorespaces $\beta = 1$\relax }}{67}
-\contentsline {figure}{\numberline {6.116}{\ignorespaces $\beta = 2$\relax }}{67}
-\contentsline {figure}{\numberline {6.117}{\ignorespaces $\beta = 4$\relax }}{67}
-\contentsline {figure}{\numberline {6.118}{\ignorespaces Original\relax }}{67}
-\contentsline {figure}{\numberline {6.119}{\ignorespaces $\beta = 1$\relax }}{67}
-\contentsline {figure}{\numberline {6.120}{\ignorespaces $\beta = 2$\relax }}{67}
-\contentsline {figure}{\numberline {6.121}{\ignorespaces $\beta = 4$\relax }}{67}
-\contentsline {figure}{\numberline {6.122}{\ignorespaces Original\relax }}{67}
-\contentsline {figure}{\numberline {6.123}{\ignorespaces $\beta = 1$\relax }}{67}
-\contentsline {figure}{\numberline {6.124}{\ignorespaces $\beta = 2$\relax }}{67}
-\contentsline {figure}{\numberline {6.125}{\ignorespaces $\beta = 4$\relax }}{67}
-\contentsline {figure}{\numberline {6.126}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{67}
-\contentsline {figure}{\numberline {6.127}{\ignorespaces Original\relax }}{68}
-\contentsline {figure}{\numberline {6.128}{\ignorespaces $\beta = 1$\relax }}{68}
-\contentsline {figure}{\numberline {6.129}{\ignorespaces $\beta = 2$\relax }}{68}
-\contentsline {figure}{\numberline {6.130}{\ignorespaces $\beta = 4$\relax }}{68}
-\contentsline {figure}{\numberline {6.131}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{68}
-\contentsline {figure}{\numberline {6.132}{\ignorespaces $\beta =1\hskip 1em\relax $ (original)\relax }}{69}
-\contentsline {figure}{\numberline {6.133}{\ignorespaces $\beta =1\hskip 1em\relax $ (18 steps)\relax }}{69}
-\contentsline {figure}{\numberline {6.134}{\ignorespaces $\beta =1\hskip 1em\relax $ (26 steps)\relax }}{69}
-\contentsline {figure}{\numberline {6.135}{\ignorespaces $\beta =1\hskip 1em\relax $ (39 steps)\relax }}{69}
-\contentsline {figure}{\numberline {6.136}{\ignorespaces $\beta =2\hskip 1em\relax $ (original)\relax }}{69}
-\contentsline {figure}{\numberline {6.137}{\ignorespaces $\beta =2\hskip 1em\relax $ (17 steps)\relax }}{69}
-\contentsline {figure}{\numberline {6.138}{\ignorespaces $\beta =2\hskip 1em\relax $ (26 steps)\relax }}{69}
-\contentsline {figure}{\numberline {6.139}{\ignorespaces $\beta =2\hskip 1em\relax $ (30 steps)\relax }}{69}
-\contentsline {figure}{\numberline {6.140}{\ignorespaces $\beta =4\hskip 1em\relax $ (original)\relax }}{69}
-\contentsline {figure}{\numberline {6.141}{\ignorespaces $\beta =4\hskip 1em\relax $ (7 steps)\relax }}{69}
-\contentsline {figure}{\numberline {6.142}{\ignorespaces $\beta =4\hskip 1em\relax $ (24 steps)\relax }}{69}
-\contentsline {figure}{\numberline {6.143}{\ignorespaces $\beta =4\hskip 1em\relax $ (32 steps)\relax }}{69}
-\contentsline {figure}{\numberline {6.144}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{69}
-\contentsline {figure}{\numberline {6.145}{\ignorespaces $\beta =1$\relax }}{70}
-\contentsline {figure}{\numberline {6.146}{\ignorespaces $\beta =2$\relax }}{70}
-\contentsline {figure}{\numberline {6.147}{\ignorespaces $\beta =4$\relax }}{70}
-\contentsline {figure}{\numberline {6.148}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{70}
-\contentsline {figure}{\numberline {6.149}{\ignorespaces Original\relax }}{71}
-\contentsline {figure}{\numberline {6.150}{\ignorespaces $\beta = 1$\relax }}{71}
-\contentsline {figure}{\numberline {6.151}{\ignorespaces $\beta = 2$\relax }}{71}
-\contentsline {figure}{\numberline {6.152}{\ignorespaces $\beta = 4$\relax }}{71}
-\contentsline {figure}{\numberline {6.153}{\ignorespaces Original\relax }}{71}
-\contentsline {figure}{\numberline {6.154}{\ignorespaces $\beta = 1$\relax }}{71}
-\contentsline {figure}{\numberline {6.155}{\ignorespaces $\beta = 2$\relax }}{71}
-\contentsline {figure}{\numberline {6.156}{\ignorespaces $\beta = 4$\relax }}{71}
-\contentsline {figure}{\numberline {6.157}{\ignorespaces Original\relax }}{71}
-\contentsline {figure}{\numberline {6.158}{\ignorespaces $\beta = 1$\relax }}{71}
-\contentsline {figure}{\numberline {6.159}{\ignorespaces $\beta = 2$\relax }}{71}
-\contentsline {figure}{\numberline {6.160}{\ignorespaces $\beta = 4$\relax }}{71}
-\contentsline {figure}{\numberline {6.161}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{71}
-\contentsline {figure}{\numberline {6.162}{\ignorespaces Original\relax }}{72}
-\contentsline {figure}{\numberline {6.163}{\ignorespaces $\beta = 1$\relax }}{72}
-\contentsline {figure}{\numberline {6.164}{\ignorespaces $\beta = 2$\relax }}{72}
-\contentsline {figure}{\numberline {6.165}{\ignorespaces $\beta = 4$\relax }}{72}
-\contentsline {figure}{\numberline {6.166}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{72}
-\contentsline {figure}{\numberline {6.167}{\ignorespaces $\beta =1\hskip 1em\relax $ (original)\relax }}{73}
-\contentsline {figure}{\numberline {6.168}{\ignorespaces $\beta =1\hskip 1em\relax $ (7 steps)\relax }}{73}
-\contentsline {figure}{\numberline {6.169}{\ignorespaces $\beta =1\hskip 1em\relax $ (17 steps)\relax }}{73}
-\contentsline {figure}{\numberline {6.170}{\ignorespaces $\beta =1\hskip 1em\relax $ (18 steps)\relax }}{73}
-\contentsline {figure}{\numberline {6.171}{\ignorespaces $\beta =2\hskip 1em\relax $ (original)\relax }}{73}
-\contentsline {figure}{\numberline {6.172}{\ignorespaces $\beta =2\hskip 1em\relax $ (10 steps)\relax }}{73}
-\contentsline {figure}{\numberline {6.173}{\ignorespaces $\beta =2\hskip 1em\relax $ (17 steps)\relax }}{73}
-\contentsline {figure}{\numberline {6.174}{\ignorespaces $\beta =2\hskip 1em\relax $ (31 steps)\relax }}{73}
-\contentsline {figure}{\numberline {6.175}{\ignorespaces $\beta =4\hskip 1em\relax $ (original)\relax }}{73}
-\contentsline {figure}{\numberline {6.176}{\ignorespaces $\beta =4\hskip 1em\relax $ (1 step)\relax }}{73}
-\contentsline {figure}{\numberline {6.177}{\ignorespaces $\beta =4\hskip 1em\relax $ (3 steps)\relax }}{73}
-\contentsline {figure}{\numberline {6.178}{\ignorespaces $\beta =4\hskip 1em\relax $ (20 steps)\relax }}{73}
-\contentsline {figure}{\numberline {6.179}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{73}
-\contentsline {figure}{\numberline {6.180}{\ignorespaces $\beta =1$\relax }}{74}
-\contentsline {figure}{\numberline {6.181}{\ignorespaces $\beta =2$\relax }}{74}
-\contentsline {figure}{\numberline {6.182}{\ignorespaces $\beta =4$\relax }}{74}
-\contentsline {figure}{\numberline {6.183}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{74}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Latent image.\relax }}{52}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Original\relax }}{53}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces $\beta = 1$\relax }}{53}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces $\beta = 2$\relax }}{53}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces $\beta = 4$\relax }}{53}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Original\relax }}{53}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces $\beta = 1$\relax }}{53}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces $\beta = 2$\relax }}{53}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces $\beta = 4$\relax }}{53}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Original\relax }}{53}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces $\beta = 1$\relax }}{53}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces $\beta = 2$\relax }}{53}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces $\beta = 4$\relax }}{53}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{53}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Original\relax }}{54}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces $\beta =1$\relax }}{54}
+\contentsline {figure}{\numberline {6.17}{\ignorespaces $\beta =2$\relax }}{54}
+\contentsline {figure}{\numberline {6.18}{\ignorespaces $\beta =4$\relax }}{54}
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Original\relax }}{54}
+\contentsline {figure}{\numberline {6.20}{\ignorespaces $\beta =1$\relax }}{54}
+\contentsline {figure}{\numberline {6.21}{\ignorespaces $\beta =2$\relax }}{54}
+\contentsline {figure}{\numberline {6.22}{\ignorespaces $\beta =4$\relax }}{54}
+\contentsline {figure}{\numberline {6.23}{\ignorespaces Original\relax }}{54}
+\contentsline {figure}{\numberline {6.24}{\ignorespaces $\beta =1$\relax }}{54}
+\contentsline {figure}{\numberline {6.25}{\ignorespaces $\beta =2$\relax }}{54}
+\contentsline {figure}{\numberline {6.26}{\ignorespaces $\beta =4$\relax }}{54}
+\contentsline {figure}{\numberline {6.27}{\ignorespaces Frames from Space Invaders and their corresponding latent images for different values of $\beta $.\relax }}{54}
+\contentsline {figure}{\numberline {6.28}{\ignorespaces $\beta =1$\relax }}{54}
+\contentsline {figure}{\numberline {6.29}{\ignorespaces $\beta =2$\relax }}{54}
+\contentsline {figure}{\numberline {6.30}{\ignorespaces $\beta =4$\relax }}{54}
+\contentsline {figure}{\numberline {6.31}{\ignorespaces The best of $10$ samples from the prior $p(\bm {z}) = \mathcal {N}(\bm {0}, \bm {I})$ for different values of $\beta $.\relax }}{54}
+\contentsline {figure}{\numberline {6.32}{\ignorespaces Original\relax }}{55}
+\contentsline {figure}{\numberline {6.33}{\ignorespaces $\beta =1$\relax }}{55}
+\contentsline {figure}{\numberline {6.34}{\ignorespaces $\beta =2$\relax }}{55}
+\contentsline {figure}{\numberline {6.35}{\ignorespaces $\beta =4$\relax }}{55}
+\contentsline {figure}{\numberline {6.36}{\ignorespaces Samples from posterior after one step of MCMC for different values of $\beta $. Samples for subsequent steps did not improve, hence we only include the first for each value of $\beta $.\relax }}{55}
+\contentsline {figure}{\numberline {6.37}{\ignorespaces $\beta =1$\relax }}{55}
+\contentsline {figure}{\numberline {6.38}{\ignorespaces $\beta =2$\relax }}{55}
+\contentsline {figure}{\numberline {6.39}{\ignorespaces $\beta =4$\relax }}{55}
+\contentsline {figure}{\numberline {6.40}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{55}
+\contentsline {figure}{\numberline {6.41}{\ignorespaces Disentangling latent neurons.\relax }}{56}
+\contentsline {figure}{\numberline {6.42}{\ignorespaces Original\relax }}{57}
+\contentsline {figure}{\numberline {6.43}{\ignorespaces $\beta = 1$\relax }}{57}
+\contentsline {figure}{\numberline {6.44}{\ignorespaces $\beta = 2$\relax }}{57}
+\contentsline {figure}{\numberline {6.45}{\ignorespaces $\beta = 4$\relax }}{57}
+\contentsline {figure}{\numberline {6.46}{\ignorespaces Original\relax }}{57}
+\contentsline {figure}{\numberline {6.47}{\ignorespaces $\beta = 1$\relax }}{57}
+\contentsline {figure}{\numberline {6.48}{\ignorespaces $\beta = 2$\relax }}{57}
+\contentsline {figure}{\numberline {6.49}{\ignorespaces $\beta = 4$\relax }}{57}
+\contentsline {figure}{\numberline {6.50}{\ignorespaces Original\relax }}{57}
+\contentsline {figure}{\numberline {6.51}{\ignorespaces $\beta = 1$\relax }}{57}
+\contentsline {figure}{\numberline {6.52}{\ignorespaces $\beta = 2$\relax }}{57}
+\contentsline {figure}{\numberline {6.53}{\ignorespaces $\beta = 4$\relax }}{57}
+\contentsline {figure}{\numberline {6.54}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{57}
+\contentsline {figure}{\numberline {6.55}{\ignorespaces Original\relax }}{58}
+\contentsline {figure}{\numberline {6.56}{\ignorespaces $\beta = 1$\relax }}{58}
+\contentsline {figure}{\numberline {6.57}{\ignorespaces $\beta = 2$\relax }}{58}
+\contentsline {figure}{\numberline {6.58}{\ignorespaces $\beta = 4$\relax }}{58}
+\contentsline {figure}{\numberline {6.59}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{58}
+\contentsline {figure}{\numberline {6.60}{\ignorespaces $\beta =1$\relax }}{58}
+\contentsline {figure}{\numberline {6.61}{\ignorespaces $\beta =2$\relax }}{58}
+\contentsline {figure}{\numberline {6.62}{\ignorespaces $\beta =4$\relax }}{58}
+\contentsline {figure}{\numberline {6.63}{\ignorespaces The best of $10$ samples from the prior $p(\bm {z}) = \mathcal {N}(\bm {0}, \bm {I})$ for different values of $\beta $.\relax }}{58}
+\contentsline {figure}{\numberline {6.64}{\ignorespaces $\beta =1\hskip 1em\relax $ (original)\relax }}{59}
+\contentsline {figure}{\numberline {6.65}{\ignorespaces $\beta =1\hskip 1em\relax $ (19 steps)\relax }}{59}
+\contentsline {figure}{\numberline {6.66}{\ignorespaces $\beta =1\hskip 1em\relax $ (26 steps)\relax }}{59}
+\contentsline {figure}{\numberline {6.67}{\ignorespaces $\beta =1\hskip 1em\relax $ (60 steps)\relax }}{59}
+\contentsline {figure}{\numberline {6.68}{\ignorespaces $\beta =2\hskip 1em\relax $ (original)\relax }}{59}
+\contentsline {figure}{\numberline {6.69}{\ignorespaces $\beta =2\hskip 1em\relax $ (1 step)\relax }}{59}
+\contentsline {figure}{\numberline {6.70}{\ignorespaces $\beta =2\hskip 1em\relax $ (2 steps)\relax }}{59}
+\contentsline {figure}{\numberline {6.71}{\ignorespaces $\beta =2\hskip 1em\relax $ (90 steps)\relax }}{59}
+\contentsline {figure}{\numberline {6.72}{\ignorespaces $\beta =4\hskip 1em\relax $ (original)\relax }}{59}
+\contentsline {figure}{\numberline {6.73}{\ignorespaces $\beta =4\hskip 1em\relax $ (1 step)\relax }}{59}
+\contentsline {figure}{\numberline {6.74}{\ignorespaces $\beta =4\hskip 1em\relax $ (7 steps)\relax }}{59}
+\contentsline {figure}{\numberline {6.75}{\ignorespaces $\beta =4\hskip 1em\relax $ (98 steps)\relax }}{59}
+\contentsline {figure}{\numberline {6.76}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{59}
+\contentsline {figure}{\numberline {6.77}{\ignorespaces $\beta =1$\relax }}{60}
+\contentsline {figure}{\numberline {6.78}{\ignorespaces $\beta =2$\relax }}{60}
+\contentsline {figure}{\numberline {6.79}{\ignorespaces $\beta =4$\relax }}{60}
+\contentsline {figure}{\numberline {6.80}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{60}
+\contentsline {figure}{\numberline {6.81}{\ignorespaces Naive average.\relax }}{61}
+\contentsline {figure}{\numberline {6.82}{\ignorespaces Original\relax }}{62}
+\contentsline {figure}{\numberline {6.83}{\ignorespaces $\beta = 1$\relax }}{62}
+\contentsline {figure}{\numberline {6.84}{\ignorespaces $\beta = 2$\relax }}{62}
+\contentsline {figure}{\numberline {6.85}{\ignorespaces $\beta = 4$\relax }}{62}
+\contentsline {figure}{\numberline {6.86}{\ignorespaces Original\relax }}{62}
+\contentsline {figure}{\numberline {6.87}{\ignorespaces $\beta = 1$\relax }}{62}
+\contentsline {figure}{\numberline {6.88}{\ignorespaces $\beta = 2$\relax }}{62}
+\contentsline {figure}{\numberline {6.89}{\ignorespaces $\beta = 4$\relax }}{62}
+\contentsline {figure}{\numberline {6.90}{\ignorespaces Original\relax }}{62}
+\contentsline {figure}{\numberline {6.91}{\ignorespaces $\beta = 1$\relax }}{62}
+\contentsline {figure}{\numberline {6.92}{\ignorespaces $\beta = 2$\relax }}{62}
+\contentsline {figure}{\numberline {6.93}{\ignorespaces $\beta = 4$\relax }}{62}
+\contentsline {figure}{\numberline {6.94}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{62}
+\contentsline {figure}{\numberline {6.95}{\ignorespaces Original\relax }}{63}
+\contentsline {figure}{\numberline {6.96}{\ignorespaces $\beta = 1$\relax }}{63}
+\contentsline {figure}{\numberline {6.97}{\ignorespaces $\beta = 2$\relax }}{63}
+\contentsline {figure}{\numberline {6.98}{\ignorespaces $\beta = 4$\relax }}{63}
+\contentsline {figure}{\numberline {6.99}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{63}
+\contentsline {figure}{\numberline {6.100}{\ignorespaces $\beta =1$\relax }}{63}
+\contentsline {figure}{\numberline {6.101}{\ignorespaces $\beta =2$\relax }}{63}
+\contentsline {figure}{\numberline {6.102}{\ignorespaces $\beta =4$\relax }}{63}
+\contentsline {figure}{\numberline {6.103}{\ignorespaces The best of $10$ samples from the prior $p(\bm {z}) = \mathcal {N}(\bm {0}, \bm {I})$ for different values of $\beta $.\relax }}{63}
+\contentsline {figure}{\numberline {6.104}{\ignorespaces Original\relax }}{64}
+\contentsline {figure}{\numberline {6.105}{\ignorespaces $\beta =1$\relax }}{64}
+\contentsline {figure}{\numberline {6.106}{\ignorespaces $\beta =2$\relax }}{64}
+\contentsline {figure}{\numberline {6.107}{\ignorespaces $\beta =4$\relax }}{64}
+\contentsline {figure}{\numberline {6.108}{\ignorespaces Samples from posterior after one step of MCMC for different values of $\beta $. Samples for subsequent steps did not improve, hence we only include the first for each value of $\beta $.\relax }}{64}
+\contentsline {figure}{\numberline {6.109}{\ignorespaces $\beta =1$\relax }}{64}
+\contentsline {figure}{\numberline {6.110}{\ignorespaces $\beta =2$\relax }}{64}
+\contentsline {figure}{\numberline {6.111}{\ignorespaces $\beta =4$\relax }}{64}
+\contentsline {figure}{\numberline {6.112}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{64}
+\contentsline {figure}{\numberline {6.113}{\ignorespaces Caption.\relax }}{65}
+\contentsline {figure}{\numberline {6.114}{\ignorespaces Original\relax }}{66}
+\contentsline {figure}{\numberline {6.115}{\ignorespaces $\beta = 1$\relax }}{66}
+\contentsline {figure}{\numberline {6.116}{\ignorespaces $\beta = 2$\relax }}{66}
+\contentsline {figure}{\numberline {6.117}{\ignorespaces $\beta = 4$\relax }}{66}
+\contentsline {figure}{\numberline {6.118}{\ignorespaces Original\relax }}{66}
+\contentsline {figure}{\numberline {6.119}{\ignorespaces $\beta = 1$\relax }}{66}
+\contentsline {figure}{\numberline {6.120}{\ignorespaces $\beta = 2$\relax }}{66}
+\contentsline {figure}{\numberline {6.121}{\ignorespaces $\beta = 4$\relax }}{66}
+\contentsline {figure}{\numberline {6.122}{\ignorespaces Original\relax }}{66}
+\contentsline {figure}{\numberline {6.123}{\ignorespaces $\beta = 1$\relax }}{66}
+\contentsline {figure}{\numberline {6.124}{\ignorespaces $\beta = 2$\relax }}{66}
+\contentsline {figure}{\numberline {6.125}{\ignorespaces $\beta = 4$\relax }}{66}
+\contentsline {figure}{\numberline {6.126}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{66}
+\contentsline {figure}{\numberline {6.127}{\ignorespaces Original\relax }}{67}
+\contentsline {figure}{\numberline {6.128}{\ignorespaces $\beta = 1$\relax }}{67}
+\contentsline {figure}{\numberline {6.129}{\ignorespaces $\beta = 2$\relax }}{67}
+\contentsline {figure}{\numberline {6.130}{\ignorespaces $\beta = 4$\relax }}{67}
+\contentsline {figure}{\numberline {6.131}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{67}
+\contentsline {figure}{\numberline {6.132}{\ignorespaces $\beta =1\hskip 1em\relax $ (original)\relax }}{68}
+\contentsline {figure}{\numberline {6.133}{\ignorespaces $\beta =1\hskip 1em\relax $ (18 steps)\relax }}{68}
+\contentsline {figure}{\numberline {6.134}{\ignorespaces $\beta =1\hskip 1em\relax $ (26 steps)\relax }}{68}
+\contentsline {figure}{\numberline {6.135}{\ignorespaces $\beta =1\hskip 1em\relax $ (39 steps)\relax }}{68}
+\contentsline {figure}{\numberline {6.136}{\ignorespaces $\beta =2\hskip 1em\relax $ (original)\relax }}{68}
+\contentsline {figure}{\numberline {6.137}{\ignorespaces $\beta =2\hskip 1em\relax $ (17 steps)\relax }}{68}
+\contentsline {figure}{\numberline {6.138}{\ignorespaces $\beta =2\hskip 1em\relax $ (26 steps)\relax }}{68}
+\contentsline {figure}{\numberline {6.139}{\ignorespaces $\beta =2\hskip 1em\relax $ (30 steps)\relax }}{68}
+\contentsline {figure}{\numberline {6.140}{\ignorespaces $\beta =4\hskip 1em\relax $ (original)\relax }}{68}
+\contentsline {figure}{\numberline {6.141}{\ignorespaces $\beta =4\hskip 1em\relax $ (7 steps)\relax }}{68}
+\contentsline {figure}{\numberline {6.142}{\ignorespaces $\beta =4\hskip 1em\relax $ (24 steps)\relax }}{68}
+\contentsline {figure}{\numberline {6.143}{\ignorespaces $\beta =4\hskip 1em\relax $ (32 steps)\relax }}{68}
+\contentsline {figure}{\numberline {6.144}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{68}
+\contentsline {figure}{\numberline {6.145}{\ignorespaces $\beta =1$\relax }}{69}
+\contentsline {figure}{\numberline {6.146}{\ignorespaces $\beta =2$\relax }}{69}
+\contentsline {figure}{\numberline {6.147}{\ignorespaces $\beta =4$\relax }}{69}
+\contentsline {figure}{\numberline {6.148}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{69}
+\contentsline {figure}{\numberline {6.149}{\ignorespaces Original\relax }}{70}
+\contentsline {figure}{\numberline {6.150}{\ignorespaces $\beta = 1$\relax }}{70}
+\contentsline {figure}{\numberline {6.151}{\ignorespaces $\beta = 2$\relax }}{70}
+\contentsline {figure}{\numberline {6.152}{\ignorespaces $\beta = 4$\relax }}{70}
+\contentsline {figure}{\numberline {6.153}{\ignorespaces Original\relax }}{70}
+\contentsline {figure}{\numberline {6.154}{\ignorespaces $\beta = 1$\relax }}{70}
+\contentsline {figure}{\numberline {6.155}{\ignorespaces $\beta = 2$\relax }}{70}
+\contentsline {figure}{\numberline {6.156}{\ignorespaces $\beta = 4$\relax }}{70}
+\contentsline {figure}{\numberline {6.157}{\ignorespaces Original\relax }}{70}
+\contentsline {figure}{\numberline {6.158}{\ignorespaces $\beta = 1$\relax }}{70}
+\contentsline {figure}{\numberline {6.159}{\ignorespaces $\beta = 2$\relax }}{70}
+\contentsline {figure}{\numberline {6.160}{\ignorespaces $\beta = 4$\relax }}{70}
+\contentsline {figure}{\numberline {6.161}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{70}
+\contentsline {figure}{\numberline {6.162}{\ignorespaces Original\relax }}{71}
+\contentsline {figure}{\numberline {6.163}{\ignorespaces $\beta = 1$\relax }}{71}
+\contentsline {figure}{\numberline {6.164}{\ignorespaces $\beta = 2$\relax }}{71}
+\contentsline {figure}{\numberline {6.165}{\ignorespaces $\beta = 4$\relax }}{71}
+\contentsline {figure}{\numberline {6.166}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{71}
+\contentsline {figure}{\numberline {6.167}{\ignorespaces $\beta =1\hskip 1em\relax $ (original)\relax }}{72}
+\contentsline {figure}{\numberline {6.168}{\ignorespaces $\beta =1\hskip 1em\relax $ (7 steps)\relax }}{72}
+\contentsline {figure}{\numberline {6.169}{\ignorespaces $\beta =1\hskip 1em\relax $ (17 steps)\relax }}{72}
+\contentsline {figure}{\numberline {6.170}{\ignorespaces $\beta =1\hskip 1em\relax $ (18 steps)\relax }}{72}
+\contentsline {figure}{\numberline {6.171}{\ignorespaces $\beta =2\hskip 1em\relax $ (original)\relax }}{72}
+\contentsline {figure}{\numberline {6.172}{\ignorespaces $\beta =2\hskip 1em\relax $ (10 steps)\relax }}{72}
+\contentsline {figure}{\numberline {6.173}{\ignorespaces $\beta =2\hskip 1em\relax $ (17 steps)\relax }}{72}
+\contentsline {figure}{\numberline {6.174}{\ignorespaces $\beta =2\hskip 1em\relax $ (31 steps)\relax }}{72}
+\contentsline {figure}{\numberline {6.175}{\ignorespaces $\beta =4\hskip 1em\relax $ (original)\relax }}{72}
+\contentsline {figure}{\numberline {6.176}{\ignorespaces $\beta =4\hskip 1em\relax $ (1 step)\relax }}{72}
+\contentsline {figure}{\numberline {6.177}{\ignorespaces $\beta =4\hskip 1em\relax $ (3 steps)\relax }}{72}
+\contentsline {figure}{\numberline {6.178}{\ignorespaces $\beta =4\hskip 1em\relax $ (20 steps)\relax }}{72}
+\contentsline {figure}{\numberline {6.179}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{72}
+\contentsline {figure}{\numberline {6.180}{\ignorespaces $\beta =1$\relax }}{73}
+\contentsline {figure}{\numberline {6.181}{\ignorespaces $\beta =2$\relax }}{73}
+\contentsline {figure}{\numberline {6.182}{\ignorespaces $\beta =4$\relax }}{73}
+\contentsline {figure}{\numberline {6.183}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{73}
 \addvspace {10\p@ }

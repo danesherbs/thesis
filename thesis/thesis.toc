@@ -49,28 +49,28 @@
 \contentsline {section}{\numberline {5.2}Multiple Latent Filters}{42}
 \contentsline {subsection}{\numberline {5.2.1}Architecture}{42}
 \contentsline {subsection}{\numberline {5.2.2}Neuron-Level Redundancy Reduction}{43}
-\contentsline {subsection}{\numberline {5.2.3}Na{\"i}ve Filter-Level Decoupling}{44}
-\contentsline {subsection}{\numberline {5.2.4}Weighted Filter-Level Decoupling}{44}
+\contentsline {subsection}{\numberline {5.2.3}Na{\"i}ve Filter-Level Redundancy Reduction}{44}
+\contentsline {subsection}{\numberline {5.2.4}Weighted Filter-Level Redundancy Reduction}{44}
 \contentsline {section}{\numberline {5.3}Separating Colour Spaces}{45}
 \contentsline {section}{\numberline {5.4}Winner Takes All}{46}
 \contentsline {subsection}{\numberline {5.4.1}Derivation}{47}
 \contentsline {section}{\numberline {5.5}Orthogonal Convolutions}{48}
 \contentsline {subsection}{\numberline {5.5.1}Architecture}{48}
 \contentsline {subsection}{\numberline {5.5.2}Derivation}{48}
-\contentsline {chapter}{\numberline {6}Results}{50}
-\contentsline {section}{\numberline {6.1}Architectures}{50}
-\contentsline {section}{\numberline {6.2}Learning Generative Factors in Dense Latent Spaces}{52}
-\contentsline {section}{\numberline {6.3}Single Latent Filter}{52}
-\contentsline {section}{\numberline {6.4}Disentangling Latent Neurons}{52}
-\contentsline {section}{\numberline {6.5}Disentangling Latent Filters Using Averages}{54}
-\contentsline {section}{\numberline {6.6}Decoupling Latent Filters Using Weighted-Averages}{56}
-\contentsline {section}{\numberline {6.7}Separating Colour Spaces}{58}
-\contentsline {section}{\numberline {6.8}Orthogonal Convolutions}{60}
-\contentsline {section}{\numberline {6.9}Winner Takes All}{62}
-\contentsline {section}{\numberline {6.10}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{64}
-\contentsline {section}{\numberline {6.11}Using Batch Normalisation With Convolutional Variational Latent Spaces}{67}
-\contentsline {chapter}{\numberline {7}Conclusion}{75}
-\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{75}
-\contentsline {section}{\numberline {7.2}Applications}{75}
-\contentsline {section}{\numberline {7.3}Future Work}{75}
-\contentsline {chapter}{Bibliography}{75}
+\contentsline {chapter}{\numberline {6}Results}{49}
+\contentsline {section}{\numberline {6.1}Architectures}{49}
+\contentsline {section}{\numberline {6.2}Learning Generative Factors in Dense Latent Spaces}{51}
+\contentsline {section}{\numberline {6.3}Single Latent Filter}{51}
+\contentsline {section}{\numberline {6.4}Disentangling Latent Neurons}{51}
+\contentsline {section}{\numberline {6.5}Disentangling Latent Filters Using Averages}{53}
+\contentsline {section}{\numberline {6.6}Decoupling Latent Filters Using Weighted-Averages}{55}
+\contentsline {section}{\numberline {6.7}Separating Colour Spaces}{57}
+\contentsline {section}{\numberline {6.8}Orthogonal Convolutions}{59}
+\contentsline {section}{\numberline {6.9}Winner Takes All}{61}
+\contentsline {section}{\numberline {6.10}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{63}
+\contentsline {section}{\numberline {6.11}Using Batch Normalisation With Convolutional Variational Latent Spaces}{66}
+\contentsline {chapter}{\numberline {7}Conclusion}{74}
+\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{74}
+\contentsline {section}{\numberline {7.2}Applications}{74}
+\contentsline {section}{\numberline {7.3}Future Work}{74}
+\contentsline {chapter}{Bibliography}{74}

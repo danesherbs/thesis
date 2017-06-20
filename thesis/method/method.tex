@@ -75,6 +75,17 @@ By reducing the two-dimensional latent space to one dimension, we arrive at the 
 
 Although it's conceivable that a single latent filter could represent types and locations of objects in the scene, it seems unlikely to do so. It's well known that filters may learn a set of weights to recognise information-rich features in the scene, like edges or corners. Perhaps this property could be leveraged by using multiple filters in the latent space, where any given latent filter is not responsible for representing multiple types of objects, but one specific object.
 
+By the same reasoning for the single latent filter architecture, we keep the reconstruction loss 
+\begin{align}
+\mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
+\end{align}
+to learn a meaningful low-dimensional representation in the latent space. However, we propose three techniques of redundancy reduction in the latent space to achieve our desiderata:
+\begin{itemize}
+\item Neuron-level redundancy reduction
+\item Na\"{i}ve filter-level redundancy reduction
+\item Weighted filter-level redundancy reduction
+\end{itemize}
+
 %
 %
 \subsection{Architecture}
@@ -93,23 +104,9 @@ so we may use backpropagation. The corresponding deconvolutional layers are appl
 \label{fig:decoupling_indiscriminately_horizontal}
 \end{figure}
 
-\begin{itemize}
-\item By the same reasoning for the previous architecture, we keep the reconstruction loss term. 
-\item Need to decide on the appropriate term in the loss function to reduce redundancy
-\item Here some creativity is needed on how to reduce redundancy over the filters
-\item We present three methods of decoupling the latent volume: ...list...
-\end{itemize}
-
 %
 %
 \subsection{Neuron-Level Redundancy Reduction}
-
-By the same reasoning for the single latent filter architecture, we keep the reconstruction loss 
-\begin{align}
-\mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
-\end{align}
-to learn a meaningful low-dimensional representation in the latent space.
-
 To reduce the redundancy of activated neurons across the whole $(k, m, n)$-dimensional latent space, so that neurons are only activated when necessary, we apply neuron-level redundancy reduction. The latent filter of shape $(k, m, n)$ is flattened to a $k \times m \times n$ vector $\vec{z}$, which is then pressured to match the prior $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$.\\
 
 \begin{figure}[h!]
@@ -128,15 +125,32 @@ where $\vec{z} \in \mathbb{R}^{k \times m \times n}$ is the flattened $(k, m, n)
 
 %
 %
-\subsection{Na{\"i}ve Filter-Level Decoupling}
-\begin{itemize}
-\item The $k$ filters of the $(k, m, n)$-dimensional latent space are averaged across their activations and stored in a vector $\bar{\vec{z}}$
-\item We've reduced our problem to one solved in $\beta$-VAE!
-\item To disentangle the average activations over filters, we pressure the vector $\bar{\vec{z}}$ to be close to an isotropic Gaussian
-\item This pressuring reduces redundancy the average activations among filters
-\item This achieves the desired outcome because: - if two filters that have learnt the same object type, one may be pressured to match the prior (or ``forgotten"), as the same information about the original scene is encoded in the latent space
-\item The loss function then can be written as ...loss function...
-\end{itemize}
+\subsection{Na{\"i}ve Filter-Level Redundancy Reduction}
+
+$\beta$-VAE sought to factorise the latent space into independent and dependent generative factors of the scene, in effect ``disentangling" the latent space. By similar reasoning, we'd like the activation of filters to clearly correspond to independent object types, with no two filters active for the same object. Hence we seek a factorisation over the activity of latent filters with no redundancy.
+
+To achieve this, the $k$ filters of the $(k, m, n)$-dimensional latent space are averaged across their activations and stored in a vector $\vec{z}$. We then pressure the vector $\vec{z}$ to match the prior $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$.\\
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.6]{methods/decoupling_averages_latent_space.eps}
+\label{fig:decoupling_averages_latent_space}
+\end{figure}
+
+The loss function is therefore written as 
+\begin{align}
+\mathcal{L}_{NF}(\vec{\theta}, \vec{\phi}; \vec{x}) = -\beta D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
+\end{align}
+where $\vec{z} \in \mathbb{R}^{k}$ is the vector of averaged activations for each latent filter.
+
+
+%
+%
+\subsection{Weighted Filter-Level Redundancy Reduction}
+It's a subtle but necessary point that we should be careful to evaluate loss terms in a comparable way. For example, taking the sum of one and comparing it to the average of another (which is always less than the sum) serves to bias the loss function. This leads to the possibility that the average filter activation KL loss term in the naive filter-level redundancy technique is significantly under-represented when taking the sum reconstruction loss. (For simplicity, assume that we will take the sum reconstruction loss from here on.)
+
+When evaluating the average filter activations, we get a single floating point number for $m \times n$ pixels, where $m$ and $n$ are the width and height of the latent filter respectively. Hence, when calculating the KL loss term, we may multiply by $m \times n$ so that the KL loss and reconstruction loss are of comparable size.\\
 
 \begin{figure}[H]
 \centering
@@ -146,25 +160,12 @@ where $\vec{z} \in \mathbb{R}^{k \times m \times n}$ is the flattened $(k, m, n)
 \label{fig:decoupling_averages_latent_space}
 \end{figure}
 
-%
-%
-\subsection{Weighted Filter-Level Decoupling}
+The loss function is therefore written as 
+\begin{align}
+\mathcal{L}_{WF}(\vec{\theta}, \vec{\phi}; \vec{x}) = -mn\beta D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
+\end{align}
+where $\vec{z} \in \mathbb{R}^{k}$ is the vector of averaged activations for each latent filter, and $m$ and $n$ are the width and height of the latent filters respectively.
 
-\begin{itemize}
-\item Before we have taken the sum of the pixel-wise loss using binary cross entropy and the sum of the average activations  over latent filters
-\item This may be a bad design choice, as the KL loss is extremely small compared to the reconstruction loss
-\item For example, suppose we use an input image of $28 \times 28$ and $16$ latent filters. Further assume that, on average, the reconstruction loss of one pixel is $0.5$ and the average activation is $4$ (both are reasonable for the MNIST data set). Then the reconstruction loss is 28 * 28 * 0.5 = 392 compared to the KL loss of 16 * 2 = 32 - approximately an order of magnitude difference.
-\item Instead, if we weight the average binary cross entropy and average filter activations by the number of pixels taking in the respective averages, we may get a more balanced loss function 
-\item Therefore our final loss function is ...
-\end{itemize}
-
-\begin{figure}[H]
-\centering
-\captionsetup{justification=centering}
-\includegraphics[scale=0.6]{methods/decoupling_averages_latent_space.eps}
-\caption{Caption.}
-\label{fig:decoupling_averages_latent_space}
-\end{figure}
 
 
 %
@@ -174,20 +175,15 @@ where $\vec{z} \in \mathbb{R}^{k \times m \times n}$ is the flattened $(k, m, n)
 %
 \section{Separating Colour Spaces}
 
-\begin{itemize}
-\item As the task of unsupervised object recognition in fully-convolutional variational autoencoders is an open problem, it's reasonable to start by solving easy recognition tasks
-\item Since sprites are of different colours in Atari games, maybe we could leverage this property by including the colour channels of the frame as input to make the separation of objects easier
-\item An example for a frame of Space Invaders is shown in Figure (\ref{fig:separating_colour_spaces})
-\item This technique may be applied to all architectures listed here.
-\end{itemize}
+As the task of unsupervised object recognition in fully-convolutional variational autoencoders is an open problem, it's reasonable to start by solving easy recognition tasks. Since sprites in Atari games are of different colours, we can use these colour channels to make the separation of objects easier. An example for a frame of Space Invaders is shown in Figure (\ref{fig:separating_colour_spaces}). Since this technique is independent of architecture, it applies to all mentioned in the chapter.
 
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\includegraphics[scale=0.55]{methods/separating_colour_spaces_architecture.eps}
-\caption{Caption.}
-\label{fig:separating_colour_spaces_architecture}
-\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\captionsetup{justification=centering}
+%\includegraphics[scale=0.55]{methods/separating_colour_spaces_architecture.eps}
+%\caption{Caption.}
+%\label{fig:separating_colour_spaces_architecture}
+%\end{figure}
 
 \begin{figure*}[h!]
 \centering
@@ -206,10 +202,8 @@ where $\vec{z} \in \mathbb{R}^{k \times m \times n}$ is the flattened $(k, m, n)
 \label{fig:separating_colour_spaces}
 \end{figure*}
 
-\begin{itemize}
 
-\item Even if we saw perfect separation of sprites in colour spaces, we'd only be able to exclusively separate at most three object types
-\end{itemize}
+One obvious limitation of this method is that the number of sprites separated is limited by the number of colour channels.
 
 
 

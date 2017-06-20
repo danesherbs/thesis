@@ -7,7 +7,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Fully-convolutional single-filter variational autoencoder.\relax }}{50}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Fully-convolutional multi-filter variational autoencoder.\relax }}{51}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Fully-convolutional single-filter variational autoencoder for RGB images.\relax }}{51}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Fully-convolutional single-filter variational autoencoder.\relax }}{49}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Fully-convolutional multi-filter variational autoencoder.\relax }}{50}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Fully-convolutional single-filter variational autoencoder for RGB images.\relax }}{50}
 \addvspace {10\p@ }
