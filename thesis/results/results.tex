@@ -4,7 +4,7 @@
 
 In this chapter we will perform a number of experiments to assess the proposed methods from last chapter. We wish to keep the architectures fixed and vary the method, which is done to accurately assess its feasibility. Of course, some methods require a change in architecture, in which case we make the smallest possible change. First we will mention the architectures used, after which we will explore each proposed method in detail.
 
-Unless specified otherwise, the Adam optimiser was used with a learning rate of $1e-3$. We also use a data set of $100,000$ pre-processed frames of Space Invaders (generated with the Arcade Learning Environment), with a $90$-$10$ training-test split.
+Unless specified otherwise, the Adam optimiser was used with a learning rate of $1e-3$. We also use a data set of $100,000$ pre-processed frames of Space Invaders (generated with the Arcade Learning Environment), with a $90$-$10$ training-test split. With such a large data set of high-dimensional data, we train the models with early stopping (until the gains are no longer qualitatively different) to ensure a breadth of parameters are explored.
 
 %
 %
@@ -85,6 +85,10 @@ Deconv2D\_3    & (3, 84, 84)           & Deconv2D\_2
 %
 \section{Single Latent Filter}
 
+The single latent architecture, found in Table (\ref{tab:fully_convolutional_single_filter}), was trained for $10$ epochs, and the validation, validation KL and validation reconstruction loss recorded. The results are shown in Figure (\ref{fig:latent_image_graphs}). The hyper-parameter $\beta$ clearly toggles the pressure applied to the model to reduce the KL loss term, as expected.
+
+Next we see that the reconstructions of its input is qualitatively perfect. 
+
 \begin{itemize}
 \item Consider two architectures: shallow and deep
 \item Consider Pong, Space Invaders (in progress) and Breakout
@@ -101,7 +105,7 @@ Deconv2D\_3    & (3, 84, 84)           & Deconv2D\_2
     \includegraphics[scale=0.5]{figures/results/latent_image/val_loss.png}
     \includegraphics[scale=0.5]{figures/results/latent_image/val_kl_loss.png}
     \includegraphics[scale=0.5]{figures/results/latent_image/val_reconstruction_loss.png}
-\caption{Latent image.}
+\caption{The validation, validation KL and validation reconstruction loss for the latent image architecture and different values of $\beta$.}
 \label{fig:latent_image_graphs}
 \end{figure*}
 

@@ -37,7 +37,7 @@
 \contentsline {figure}{\numberline {5.9}{\ignorespaces At most one object recognised in a given position.\relax }}{46}
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Caption.\relax }}{48}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Latent image.\relax }}{52}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces The validation, validation KL and validation reconstruction loss for the latent image architecture and different values of $\beta $.\relax }}{52}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Original\relax }}{53}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces $\beta = 1$\relax }}{53}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces $\beta = 2$\relax }}{53}
