@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  20 JUN 2017 14:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  20 JUN 2017 15:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1252,6 +1252,10 @@ Overfull \hbox (20.88983pt too wide) in paragraph at lines 91--92
 
 [42 <./figures/methods/decoupling_indiscriminately_horizontal-eps-converted-to.
 pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
 Package epstopdf Info: Source file: <./figures/methods/decoupling_indiscriminat
 ely_flattening_latent_space.eps>
 (epstopdf)                    date: 2017-06-20 14:31:53
@@ -4032,7 +4036,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  6492 strings out of 494902
  143167 string characters out of 6179891
- 290596 words of memory out of 5000000
+ 290730 words of memory out of 5000000
  9476 multiletter control sequences out of 15000+600000
  23417 words of font info for 93 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
@@ -4061,7 +4065,7 @@ s/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (107 pages, 10621207 bytes).
+Output written on thesis.pdf (107 pages, 10621619 bytes).
 PDF statistics:
  945 PDF objects out of 1000 (max. 8388607)
  383 compressed objects within 4 object streams

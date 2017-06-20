@@ -110,13 +110,12 @@ By the same reasoning for the single latent filter architecture, we keep the rec
 \end{align}
 to learn a meaningful low-dimensional representation in the latent space.
 
-To reduce the redundancy of activated neurons across the whole $(k, m, n)$-dimensional latent space, so that neurons are only activated when necessary, we apply neuron-level redundancy reduction. The latent filter of shape $(k, m, n)$ is flattened to a $k \times m \times n$ vector $z\vec{z}$, which is then pressured to match $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$.
+To reduce the redundancy of activated neurons across the whole $(k, m, n)$-dimensional latent space, so that neurons are only activated when necessary, we apply neuron-level redundancy reduction. The latent filter of shape $(k, m, n)$ is flattened to a $k \times m \times n$ vector $\vec{z}$, which is then pressured to match the prior $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$.\\
 
 \begin{figure}[h!]
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.6]{methods/decoupling_indiscriminately_flattening_latent_space.eps}
-\caption{Caption.}
 \label{fig:decoupling_indiscriminately_flattening_latent_space}
 \end{figure}
 
@@ -124,6 +123,7 @@ The loss function is therefore written as
 \begin{align}
 \mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}) = -\beta D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
 \end{align}
+where $\vec{z} \in \mathbb{R}^{k \times m \times n}$ is the flattened $(k, m, n)$-dimensional latent space.
 
 
 %
