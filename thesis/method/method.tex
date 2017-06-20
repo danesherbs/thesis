@@ -165,6 +165,56 @@ The loss function is therefore written as
 \end{align}
 where $\bar{\vec{\mu}} \in \mathbb{R}^{k}$ and $\bar{\vec{\sigma}}^2 \in \mathbb{R}^{k}$ are the averages of $\vec{\mu} \in \mathbb{R}^{k\times m\times n}$ and $\vec{\sigma}^2\in \mathbb{R}^{k\times m\times n}$.
 
+
+
+%
+%
+%
+%
+%
+\section{Winner Takes All}
+As mentioned, we'd like the activation of filters to clearly correspond to independent object types, with no two filters active for the same object. Assuming the latent space takes this structure, we would expect no more than one filter to be activated in any given position. (Objects must have distinct types: a sprite cannot be a gunship and a number at the same time.) This leads to the Winner Takes All method, where we apply a position-wise pressure to the latent space so that no more than one filter has a high activation in any given position.
+
+\begin{figure*}[h!]
+\centering
+\captionsetup{justification=centering}
+\begin{multicols}{2}
+    \includegraphics[scale=0.4]{figures/methods/winner_takes_all_object_on_every_filter.eps}
+    \caption{Multiple types of objects recognised in same position.}
+    \includegraphics[scale=0.4]{figures/methods/winner_takes_all_object_on_one_filter.eps}
+    \caption{At most one object recognised in a given position.}
+\end{multicols}
+\label{fig:winner_takes_all_activations_on_layers}
+\end{figure*}
+
+
+\subsection{Position-Wise Redundancy Reduction}
+
+Consider a convolutional latent space $\vec{z}$ of shape $(k, m, n)$. Let $\vec{z}^{i,j} \in \mathbb{R}^k$ be the vector storing the activations over the $k$ filters at position $(i, j)$. Naturally, we also let $q_{\vec{\phi}}^{i, j}(\vec{z} | \vec{x})$ represent the probabilistic encoder for $\vec{z}^{i,j}\in \mathbb{R}^k$. By matching the probabilistic encoder to an isotropic Gaussian we may reduce the redundancy, as argued previously. We choose to include the following term in our loss function:
+
+\begin{align}
+\sum_{i=1}^m \sum_{j=1}^n D_{KL}(q_{\vec{\phi}}^{i, j}(\vec{z} | \vec{x}) || p^{i,j}(\vec{z}))  \quad \textup{ where } \quad p^{i,j}(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})
+\end{align}
+
+As shown with $\beta$-VAE, the multiplicative $\beta$ controls the redundancy pressure. We will include this also and see if we observe a similar effect later.
+
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\includegraphics[scale=0.3]{methods/winner_takes_all_line_through_object_on_every_filter_flow_chart.eps}
+\label{fig:winner_takes_all_line_through_object_on_every_filter}
+\end{figure}
+
+Therefore the final loss function is given as:
+
+\begin{align}
+\mathcal{L}_{WTA}(\vec{\theta}, \vec{\phi}; \vec{x}) = \mathbf{E}_{q_{\vec{\phi}}(\vec{z} | \vec{x})} \big[ \log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big] - \beta \sum_{i=1}^m \sum_{j=1}^n D_{KL}(q_{\vec{\phi}}^{i, j}(\vec{z} | \vec{x}) || p^{i,j}(\vec{z})) 
+\end{align}
+
+
+
+
+
 %
 %
 %
@@ -201,52 +251,6 @@ As the task of unsupervised object recognition in fully-convolutional variationa
 
 
 One obvious limitation of this method is that the number of sprites separated is limited by the number of colour channels.
-
-
-
-%
-%
-%
-%
-%
-\section{Winner Takes All}
-As mentioned, we'd like the activation of filters to clearly correspond to independent object types, with no two filters active for the same object. Assuming the latent space takes this structure, we would expect no more than one filter to be activated in any given position. (Objects must have distinct types: a sprite cannot be a gunship and a number at the same time.) This leads to the Winner Takes All method, where we apply a position-wise pressure to the latent space so that no more than one filter has a high activation in any given position.
-
-\begin{figure*}[h!]
-\centering
-\captionsetup{justification=centering}
-\begin{multicols}{2}
-    \includegraphics[scale=0.4]{figures/methods/winner_takes_all_object_on_every_filter.eps}
-    \caption{Multiple types of objects recognised in same position.}
-    \includegraphics[scale=0.4]{figures/methods/winner_takes_all_object_on_one_filter.eps}
-    \caption{At most one object recognised in a given position.}
-\end{multicols}
-\label{fig:winner_takes_all_activations_on_layers}
-\end{figure*}
-
-
-\subsection{Derivation}
-
-Consider a convolutional latent space $\vec{z}$ of shape $(k, m, n)$. Let $\vec{z}^{i,j} \in \mathbb{R}^k$ be the vector storing the activations over the $k$ filters at position $(i, j)$. Naturally, we also let $q_{\vec{\phi}}^{i, j}(\vec{z} | \vec{x})$ represent the probabilistic encoder for $\vec{z}^{i,j}\in \mathbb{R}^k$. By matching the probabilistic encoder to an isotropic Gaussian we may reduce the redundancy, as argued previously. We choose to include the following term in our loss function:
-
-\begin{align}
-\sum_{i=1}^m \sum_{j=1}^n D_{KL}(q_{\vec{\phi}}^{i, j}(\vec{z} | \vec{x}) || p^{i,j}(\vec{z}))  \quad \textup{ where } \quad p^{i,j}(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})
-\end{align}
-
-As shown with $\beta$-VAE, the multiplicative $\beta$ controls the redundancy pressure. We will include this also and see if we observe a similar effect later.
-
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\includegraphics[scale=0.3]{methods/winner_takes_all_line_through_object_on_every_filter_flow_chart.eps}
-\label{fig:winner_takes_all_line_through_object_on_every_filter}
-\end{figure}
-
-Therefore the final loss function is given as:
-
-\begin{align}
-\mathcal{L}_{WTA}(\vec{\theta}, \vec{\phi}; \vec{x}) = \mathbf{E}_{q_{\vec{\phi}}(\vec{z} | \vec{x})} \big[ \log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big] - \beta \sum_{i=1}^m \sum_{j=1}^n D_{KL}(q_{\vec{\phi}}^{i, j}(\vec{z} | \vec{x}) || p^{i,j}(\vec{z})) 
-\end{align}
 
 
 %

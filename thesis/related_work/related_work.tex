@@ -265,7 +265,7 @@ requires the mean $\vec{\mu}^{(i)}$ and standard deviation $\vec{\sigma}^{(i)}$ 
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.45]{background/variational_autoencoder_naive.eps}
-\caption{A na\"{i}ve implementation of the variational autoencoder. The input $\vec{x}$ is mapped to intermediate layers taking the values of $\vec{\mu}$ and $\vec{\sigma}^2$. The latent variable $\vec{z}$ is then sampled from the probabilistic encoder $\vec{z} \sim q_{\vec{\phi}}(\vec{z} | \vec{x})$. Finally $\vec{z}$ is mapped back to the input dimension to give reconstruction $\vec{\tilde{x}}$.}
+\caption{A na\"{i}ve implementation of the variational autoencoder. The input $\vec{x}$ is mapped to intermediate layers taking the values of $\vec{\mu}$ and $\vec{\sigma}^2$. The latent variable $\vec{z}$ is then sampled from the probabilistic encoder $\vec{z} \sim q_{\vec{\phi}}(\vec{z} | \vec{x})$. Finally $\vec{z}$ is mapped back to the input dimension to give reconstruction $\vec{\tilde{x}}$. \textit{Adapted from} \cite{Li2016}.}
 \label{fig:variational_autoencoder_naive}
 \end{figure}
 
@@ -282,7 +282,7 @@ where $\odot$ represents the element-wise product. This is a reparameterisation 
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.45]{background/variational_autoencoder_reparameterisation_trick.eps}
-\caption{A viable implementation of the variational autoencoder. Sampling from the probabilistic encoder $q_{\vec{\phi}}(\vec{z} | \vec{x})$ is simulated by evaluating $\vec{z} = g_{\vec{\phi}}(\vec{x}, \vec{\epsilon}) = \vec{\mu} + \vec{\sigma} \odot \vec{\epsilon}$.}
+\caption{A viable implementation of the variational autoencoder. Sampling from the probabilistic encoder $q_{\vec{\phi}}(\vec{z} | \vec{x})$ is simulated by evaluating $\vec{z} = g_{\vec{\phi}}(\vec{x}, \vec{\epsilon}) = \vec{\mu} + \vec{\sigma} \odot \vec{\epsilon}$.\\ \textit{Adapted from} \cite{Li2016}.}
 \label{fig:variational_autoencoder_reparameterisation_trick}
 \end{figure}
 
@@ -320,7 +320,7 @@ TODO: FINISH
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.7]{background/variational_autoencoder_latent_space_colour_0_with_mnist_updated.eps}
-\caption{The encoder takes a data point and returns a normal distribution (orange); some samples of which are shown (blue). A sample is drawn from the normal distribution (red) and decoded. \cite{Dykeman2016}}
+\caption{The encoder takes a data point and returns a normal distribution (orange); some samples of which are shown (blue). A sample is drawn from the normal distribution (red) and decoded. \textit{Adapted from:} \cite{Dykeman2016}.}
 \label{fig:variational_autoencoder_latent_space_colour_0_with_mnist_updated}
 \end{figure}
 
@@ -328,7 +328,7 @@ TODO: FINISH
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.7]{background/variational_autoencoder_latent_space_unit_gaussian_with_mnist.eps}
-\caption{The prior distribution should approximate the standard multivariate Gaussian $\mathcal{N}(\vec{0}, \vec{I})$. Samples of the prior are shown (yellow); two of which are decoded (red and blue). \cite{Dykeman2016}}
+\caption{The prior distribution should approximate the standard multivariate Gaussian $\mathcal{N}(\vec{0}, \vec{I})$. Samples of the prior are shown (yellow); two of which are decoded (red and blue).\\ \textit{Adapted from:} \cite{Dykeman2016}.}
 \label{fig:variational_autoencoder_latent_space_unit_gaussian_with_mnist}
 \end{figure}
 
@@ -337,7 +337,7 @@ TODO: FINISH
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.45]{background/variational_autoencoder_latent_space_adding_latent_spaces_updated.eps}
-\caption{The sum over the latent space distributions of all data points $\vec{x}^{(i)}$ approximates the multivariate isotropic Gaussian. \cite{Dykeman2016}}
+\caption{The sum over the latent space distributions of all data points $\vec{x}^{(i)}$ approximates the multivariate isotropic Gaussian. \\ \textit{Adapted from:} \cite{Dykeman2016}.}
 \label{fig:variational_autoencoder_latent_space_adding_latent_spaces_updated}
 \end{figure}
 \end{landscape}
@@ -371,7 +371,7 @@ InfoGAN is an information theoretic extension of the Generative Adversarial Netw
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.36]{related_work/info_gan_3d_face_dataset.png}
-\caption{InfoGAN convincingly learns the underlying generative factors in the 3D face data set. Rows correspond to a data point and columns the value of the latent variable (varied from $-1$ to $1$). Each section (a), (b), (c) and (d) consider a different latent variable. \cite{Chen2016}}
+\caption{InfoGAN convincingly learns the underlying generative factors in the 3D face data set. Rows correspond to a data point and columns the value of the latent variable (varied from $-1$ to $1$). Each section (a), (b), (c) and (d) consider a different latent variable. \textit{Source:} \cite{Chen2016}.}
 \label{fig:info_gan_3d_face_dataset}
 \end{figure}
 
@@ -421,7 +421,7 @@ p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.44]{related_work/beta_vae_3d_face_dataset_comparison.png}
-\caption{A comparison of InfoGAN, $\beta$-VAE ($\beta = 20$) and VAE on the 3D face data set. Different latent variables are varied for sections (a), (b) and (c). All models learnt lighting and elevation, but only InfoGAN and $\beta$-VAE managed to continuously vary the azimuth. \cite{Thiagarajan2016}}
+\caption{A comparison of InfoGAN, $\beta$-VAE ($\beta = 20$) and VAE on the 3D face data set. Different latent variables are varied for sections (a), (b) and (c). All models learnt lighting and elevation, but only InfoGAN and $\beta$-VAE managed to continuously vary the azimuth.\\ \textit{Source:} \cite{Thiagarajan2016}.}
 \label{fig:beta_vae_3d_face_dataset_comparison}
 \end{figure}
 
@@ -471,7 +471,7 @@ which suggests that the generative procedure (\ref{eq:sampling_procedure_naive})
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.6]{related_work/mcmc_sampling.eps}
-\caption{The probabilistic encoder $q_{\vec{\phi}}(\vec{z} | \vec{x})$ maps a given data point $\vec{x}$ to the unknown distribution $\hat{p}(\vec{z})$. The probabilistic decoder $p_{\vec{\theta}}(\vec{x} | \vec{z})$ is trained to map samples from $\hat{p}(\vec{z})$ back to $p(\vec{x})$, since its inputs are drawn from the probabilistic encoder $q_{\vec{\phi}}(\vec{z} | \vec{x})$. A sample from the prior $p(\vec{z})$ will not be mapped back by $p_{\vec{\theta}}(\vec{x} | \vec{z})$ to $p(\vec{x})$ exactly if $p(\vec{z}) \neq \hat{p}(\vec{z})$. \cite{Creswell2016}}
+\caption{The probabilistic encoder $q_{\vec{\phi}}(\vec{z} | \vec{x})$ maps a given data point $\vec{x}$ to the unknown distribution $\hat{p}(\vec{z})$. The probabilistic decoder $p_{\vec{\theta}}(\vec{x} | \vec{z})$ is trained to map samples from $\hat{p}(\vec{z})$ back to $p(\vec{x})$, since its inputs are drawn from the probabilistic encoder $q_{\vec{\phi}}(\vec{z} | \vec{x})$. A sample from the prior $p(\vec{z})$ will not be mapped back by $p_{\vec{\theta}}(\vec{x} | \vec{z})$ to $p(\vec{x})$ exactly if $p(\vec{z}) \neq \hat{p}(\vec{z})$.\\ \textit{Adapted from:} \cite{Creswell2016}.}
 \label{fig:mcmc_sampling}
 \end{figure}
 
@@ -486,7 +486,7 @@ where $\vec{z}_{t=0}$ is arbitrarily chosen.
 \centering
 \captionsetup{justification=centering}
 \includegraphics[scale=0.30]{related_work/celeb_a_vae_mcmc.png}
-\caption{Samples from a variational autoencoder trained on the CelebA data set after $t = 0, 1, 5$ and $10$ steps of the generative procedure (\ref{eq:mcmc_sampling}). The MCMC chain was initialised with a sample from the prior $\vec{z}_{t=0} \sim p(\vec{z})$, which often improves the quality of the samples. \cite{Creswell2016}}
+\caption{Samples from a variational autoencoder trained on the CelebA data set after $t = 0, 1, 5$ and $10$ steps of the generative procedure (\ref{eq:mcmc_sampling}). The MCMC chain was initialised with a sample from the prior $\vec{z}_{t=0} \sim p(\vec{z})$, which often improves the quality of the samples.\\ \textit{Source:} \cite{Creswell2016}.}
 \label{fig:mcmc_sampling}
 \end{figure}
 
