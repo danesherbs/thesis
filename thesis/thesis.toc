@@ -50,13 +50,13 @@
 \contentsline {subsection}{\numberline {5.2.1}Architecture}{42}
 \contentsline {subsection}{\numberline {5.2.2}Neuron-Level Decoupling}{43}
 \contentsline {subsection}{\numberline {5.2.3}Na{\"i}ve Filter-Level Decoupling}{44}
-\contentsline {subsection}{\numberline {5.2.4}Weighted Filter-Level Decoupling}{44}
-\contentsline {section}{\numberline {5.3}Separating Colour Spaces}{45}
-\contentsline {section}{\numberline {5.4}Winner Takes All}{46}
+\contentsline {subsection}{\numberline {5.2.4}Weighted Filter-Level Decoupling}{45}
+\contentsline {section}{\numberline {5.3}Separating Colour Spaces}{46}
+\contentsline {section}{\numberline {5.4}Winner Takes All}{47}
 \contentsline {subsection}{\numberline {5.4.1}Derivation}{47}
-\contentsline {section}{\numberline {5.5}Orthogonal Convolutions}{48}
-\contentsline {subsection}{\numberline {5.5.1}Architecture}{48}
-\contentsline {subsection}{\numberline {5.5.2}Derivation}{48}
+\contentsline {section}{\numberline {5.5}Orthogonal Convolutions}{49}
+\contentsline {subsection}{\numberline {5.5.1}Architecture}{49}
+\contentsline {subsection}{\numberline {5.5.2}Derivation}{49}
 \contentsline {chapter}{\numberline {6}Results}{50}
 \contentsline {section}{\numberline {6.1}Architectures}{50}
 \contentsline {section}{\numberline {6.2}Learning Generative Factors in Dense Latent Spaces}{52}

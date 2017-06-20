@@ -39,7 +39,17 @@ so we may use backpropagation. The corresponding deconvolutional layers are appl
 %
 %
 \subsection{Neuron-Level Decoupling}
-As with all autoencoders, a reconstruction loss term must appear in the loss function as to learn the identity function, which ensures a meaningful lower-dimensional representation is learnt in the latent space. We saw in the variational autoencoder that the KL loss term 
+As with all autoencoders, a reconstruction loss term must appear in the loss function as to learn the identity function, which ensures a meaningful lower-dimensional representation is learnt in the latent space. Hence we also include this term in the final loss function for this architecture.
+
+We also saw in $\beta$-VAE that the multiplicative factor on the KL loss term varies the pressure of redundancy reduction on the latent space. As we seek to have non-zero activations in the latent space if and only if an object is present, it's in our interest to reduce the number of unnecessarily activated neurons. Therefore the application of a redundancy pressure term seems suitable, and is therefore included in the loss function. However, as we no longer have a one-dimensional latent space, we must decide on how this term will appropriately reduce redundancy in a two-dimensional latent space.
+
+To reduce the redundancy in a two-dimensional latent space, we choose to flatten the $(1, m, n)$-dimensional single latent filter to an $m \times n$ vector, which is then matched to an isotropic Gaussian. We choose this isotropic Gaussian to be $\mathcal{N}(\vec{0}, \vec{I})$ for convenience.
+
+\begin{align}
+\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}) = -D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
+\tag{\ref{eq:elbo_kl_loss_plus_expectation}}
+\end{align}
+
 
 \begin{itemize}
 \item As with the variational autoencoders seen earlier, we have a reconstruction loss term in the loss function
