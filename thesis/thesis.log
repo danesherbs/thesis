@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.24)  20 JUN 2017 14:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  20 JUN 2017 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **thesis.tex
 (./thesis.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 17 language(s) loaded.
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 5 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -32,11 +32,10 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
 (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
@@ -63,24 +62,24 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 95.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count91
 ))
@@ -103,7 +102,7 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2005/04/14 v1.61803 publication quality tables
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \heavyrulewidth=\dimen113
 \lightrulewidth=\dimen114
 \cmidrulewidth=\dimen115
@@ -126,7 +125,7 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen126
 \captionmargin@=\dimen127
@@ -139,7 +138,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \c@ContinuedFloat=\count96
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/03/03 v2.15a AMS math features
+Package: amsmath 2016/06/28 v2.15d AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
@@ -156,7 +155,7 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen134
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 1999/12/14 v2.01 operator names
+Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count97
 LaTeX Info: Redefining \frac on input line 199.
@@ -171,8 +170,8 @@ LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen135
-LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \macc@depth=\count102
 \c@MaxMatrixCols=\count103
 \dotsspace@=\muskip10
@@ -193,8 +192,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks22
-LaTeX Info: Redefining \[ on input line 2735.
-LaTeX Info: Redefining \] on input line 2736.
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
@@ -243,28 +242,28 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty
-Package: bm 2014/10/28 v1.1c Bold Symbol Support (DPC/FMi)
+Package: bm 2016/07/07 v1.2b Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup7
 \symboldletters=\mathgroup8
 \symboldsymbols=\mathgroup9
 \symboldlasy=\mathgroup10
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
-LaTeX Info: Redefining \bm on input line 207.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 142.
+LaTeX Info: Redefining \bm on input line 208.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/pdflscape.sty
-Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count118
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
+Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
 \c@tracingmulticols=\count119
 \mult@box=\box30
 \multicol@leftmargin=\dimen142
@@ -400,7 +399,7 @@ LaTeX Font Info:    ... okay on input line 9.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count130
 \scratchdimen=\dimen151
@@ -414,11 +413,11 @@ LaTeX Font Info:    ... okay on input line 9.
 \makeMPintoPDFobject=\count135
 \everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -427,31 +426,33 @@ Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
+(grfext)             \AppendGraphicsExtensions on input line 456.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -578,11 +579,11 @@ png used on input line 31.
 a_go_first_move_game_three.png>]
 Package epstopdf Info: Source file: <./figures/introduction/DSRL_architecture.e
 ps>
-(epstopdf)                    date: 2017-06-05 11:10:57
+(epstopdf)                    date: 2017-05-22 19:16:50
 (epstopdf)                    size: 26889 bytes
 (epstopdf)             Output file: <./figures/introduction/DSRL_architecture-e
 ps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-05 11:10:57
+(epstopdf)                    date: 2017-05-22 19:17:13
 (epstopdf)                    size: 12714 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/introduction/DSR
 L_architecture-eps-converted-to.pdf ./figures/introduction/DSRL_architecture.ep
@@ -662,11 +663,11 @@ elated_work/related_work.tex [9]
 Chapter 3.
 Package epstopdf Info: Source file: <./figures/background/autoencoder_black_box
 _architecture.eps>
-(epstopdf)                    date: 2017-06-05 11:10:57
+(epstopdf)                    date: 2017-05-26 19:00:41
 (epstopdf)                    size: 2011323 bytes
 (epstopdf)             Output file: <./figures/background/autoencoder_black_box
 _architecture-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-05 11:10:57
+(epstopdf)                    date: 2017-05-26 19:01:17
 (epstopdf)                    size: 323151 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/autoe
 ncoder_black_box_architecture-eps-converted-to.pdf ./figures/background/autoenc
@@ -690,11 +691,11 @@ e-eps-converted-to.pdf used on input line 17.
 ]
 Package epstopdf Info: Source file: <./figures/background/autoencoder_architect
 ure.eps>
-(epstopdf)                    date: 2017-06-05 11:10:57
+(epstopdf)                    date: 2017-05-24 19:58:15
 (epstopdf)                    size: 102424 bytes
 (epstopdf)             Output file: <./figures/background/autoencoder_architect
 ure-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-05 11:10:57
+(epstopdf)                    date: 2017-05-24 19:58:17
 (epstopdf)                    size: 93731 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/autoe
 ncoder_architecture-eps-converted-to.pdf ./figures/background/autoencoder_archi
@@ -732,11 +733,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
 Package epstopdf Info: Source file: <./figures/background/convolutional_autoenc
 oder_architecture.eps>
-(epstopdf)                    date: 2017-06-05 11:10:57
+(epstopdf)                    date: 2017-06-01 15:29:14
 (epstopdf)                    size: 4378851 bytes
 (epstopdf)             Output file: <./figures/background/convolutional_autoenc
 oder_architecture-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-05 11:10:57
+(epstopdf)                    date: 2017-06-01 15:29:18
 (epstopdf)                    size: 867378 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/convo
 lutional_autoencoder_architecture-eps-converted-to.pdf ./figures/background/con
@@ -793,11 +794,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 261--263
 
 Package epstopdf Info: Source file: <./figures/background/variational_autoencod
 er_naive.eps>
-(epstopdf)                    date: 2017-06-07 15:36:18
+(epstopdf)                    date: 2017-06-08 09:54:08
 (epstopdf)                    size: 29669 bytes
 (epstopdf)             Output file: <./figures/background/variational_autoencod
 er_naive-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-07 15:37:06
+(epstopdf)                    date: 2017-06-08 09:54:08
 (epstopdf)                    size: 7668 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
 tional_autoencoder_naive-eps-converted-to.pdf ./figures/background/variational_
@@ -825,11 +826,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 278--280
 
 Package epstopdf Info: Source file: <./figures/background/variational_autoencod
 er_reparameterisation_trick.eps>
-(epstopdf)                    date: 2017-06-07 16:44:48
+(epstopdf)                    date: 2017-06-08 09:54:08
 (epstopdf)                    size: 31214 bytes
 (epstopdf)             Output file: <./figures/background/variational_autoencod
 er_reparameterisation_trick-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-07 16:45:13
+(epstopdf)                    date: 2017-06-08 09:54:08
 (epstopdf)                    size: 8107 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
 tional_autoencoder_reparameterisation_trick-eps-converted-to.pdf ./figures/back
@@ -858,11 +859,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 -converted-to.pdf>]
 Package epstopdf Info: Source file: <./figures/background/variational_autoencod
 er_latent_space_colour_0_with_mnist_updated.eps>
-(epstopdf)                    date: 2017-06-09 10:09:26
+(epstopdf)                    date: 2017-06-10 13:04:36
 (epstopdf)                    size: 410395 bytes
 (epstopdf)             Output file: <./figures/background/variational_autoencod
 er_latent_space_colour_0_with_mnist_updated-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-09 10:09:28
+(epstopdf)                    date: 2017-06-10 13:04:36
 (epstopdf)                    size: 398065 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
 tional_autoencoder_latent_space_colour_0_with_mnist_updated-eps-converted-to.pd
@@ -887,11 +888,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Package epstopdf Info: Source file: <./figures/background/variational_autoencod
 er_latent_space_unit_gaussian_with_mnist.eps>
-(epstopdf)                    date: 2017-06-09 09:09:46
+(epstopdf)                    date: 2017-06-10 13:04:36
 (epstopdf)                    size: 411636 bytes
 (epstopdf)             Output file: <./figures/background/variational_autoencod
 er_latent_space_unit_gaussian_with_mnist-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-09 09:09:50
+(epstopdf)                    date: 2017-06-10 13:04:36
 (epstopdf)                    size: 382617 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
 tional_autoencoder_latent_space_unit_gaussian_with_mnist-eps-converted-to.pdf .
@@ -919,11 +920,11 @@ th_mnist_updated-eps-converted-to.pdf>] [25 <./figures/background/variational_a
 utoencoder_latent_space_unit_gaussian_with_mnist-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./figures/background/variational_autoencod
 er_latent_space_adding_latent_spaces_updated.eps>
-(epstopdf)                    date: 2017-06-09 11:13:12
+(epstopdf)                    date: 2017-06-10 13:04:36
 (epstopdf)                    size: 878772 bytes
 (epstopdf)             Output file: <./figures/background/variational_autoencod
 er_latent_space_adding_latent_spaces_updated-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-09 11:13:17
+(epstopdf)                    date: 2017-06-10 13:04:36
 (epstopdf)                    size: 1140232 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/background/varia
 tional_autoencoder_latent_space_adding_latent_spaces_updated-eps-converted-to.p
@@ -984,11 +985,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [31]
 Package epstopdf Info: Source file: <./figures/related_work/mcmc_sampling.eps>
-(epstopdf)                    date: 2017-06-15 09:56:09
+(epstopdf)                    date: 2017-06-13 19:08:03
 (epstopdf)                    size: 63596 bytes
 (epstopdf)             Output file: <./figures/related_work/mcmc_sampling-eps-c
 onverted-to.pdf>
-(epstopdf)                    date: 2017-06-15 09:56:09
+(epstopdf)                    date: 2017-06-13 19:08:06
 (epstopdf)                    size: 23265 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/related_work/mcm
 c_sampling-eps-converted-to.pdf ./figures/related_work/mcmc_sampling.eps>
@@ -1161,11 +1162,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--30
 
 Package epstopdf Info: Source file: <./figures/methods/latent_image_architectur
 e.eps>
-(epstopdf)                    date: 2017-06-16 10:19:31
+(epstopdf)                    date: 2017-06-16 20:13:01
 (epstopdf)                    size: 92327 bytes
 (epstopdf)             Output file: <./figures/methods/latent_image_architectur
 e-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-16 10:19:35
+(epstopdf)                    date: 2017-06-16 20:13:01
 (epstopdf)                    size: 72800 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/latent_i
 mage_architecture-eps-converted-to.pdf ./figures/methods/latent_image_architect
@@ -1189,11 +1190,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--55
 
 Package epstopdf Info: Source file: <./figures/methods/latent_image_flattening_
 latent_space.eps>
-(epstopdf)                    date: 2017-06-20 13:38:05
+(epstopdf)                    date: 2017-06-20 14:31:53
 (epstopdf)                    size: 86856 bytes
 (epstopdf)             Output file: <./figures/methods/latent_image_flattening_
 latent_space-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-20 13:38:14
+(epstopdf)                    date: 2017-06-20 14:31:53
 (epstopdf)                    size: 88495 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/latent_i
 mage_flattening_latent_space-eps-converted-to.pdf ./figures/methods/latent_imag
@@ -1222,11 +1223,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
 Package epstopdf Info: Source file: <./figures/methods/decoupling_indiscriminat
 ely_horizontal.eps>
-(epstopdf)                    date: 2017-06-15 15:50:36
+(epstopdf)                    date: 2017-06-16 14:22:38
 (epstopdf)                    size: 120701 bytes
 (epstopdf)             Output file: <./figures/methods/decoupling_indiscriminat
 ely_horizontal-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-15 15:50:54
+(epstopdf)                    date: 2017-06-16 14:22:38
 (epstopdf)                    size: 104969 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/decoupli
 ng_indiscriminately_horizontal-eps-converted-to.pdf ./figures/methods/decouplin
@@ -1253,11 +1254,11 @@ Overfull \hbox (20.88983pt too wide) in paragraph at lines 91--92
 pdf>]
 Package epstopdf Info: Source file: <./figures/methods/decoupling_indiscriminat
 ely_flattening_latent_space.eps>
-(epstopdf)                    date: 2017-06-20 13:57:16
+(epstopdf)                    date: 2017-06-20 14:31:53
 (epstopdf)                    size: 94702 bytes
 (epstopdf)             Output file: <./figures/methods/decoupling_indiscriminat
 ely_flattening_latent_space-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-20 13:57:23
+(epstopdf)                    date: 2017-06-20 14:31:53
 (epstopdf)                    size: 157110 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/decoupli
 ng_indiscriminately_flattening_latent_space-eps-converted-to.pdf ./figures/meth
@@ -1279,11 +1280,11 @@ ng_latent_space-eps-converted-to.pdf used on input line 118.
 -converted-to.pdf>]
 Package epstopdf Info: Source file: <./figures/methods/decoupling_averages_late
 nt_space.eps>
-(epstopdf)                    date: 2017-06-15 16:52:18
+(epstopdf)                    date: 2017-06-16 14:22:38
 (epstopdf)                    size: 54791 bytes
 (epstopdf)             Output file: <./figures/methods/decoupling_averages_late
 nt_space-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-15 16:52:21
+(epstopdf)                    date: 2017-06-16 14:22:38
 (epstopdf)                    size: 21461 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/decoupli
 ng_averages_latent_space-eps-converted-to.pdf ./figures/methods/decoupling_aver
@@ -1304,11 +1305,11 @@ Package pdftex.def Info: ./figures/methods/decoupling_averages_latent_space-eps
 [44 <./figures/methods/decoupling_averages_latent_space-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./figures/methods/decoupling_averages_late
 nt_space.eps>
-(epstopdf)                    date: 2017-06-15 16:52:18
+(epstopdf)                    date: 2017-06-16 14:22:38
 (epstopdf)                    size: 54791 bytes
 (epstopdf)             Output file: <./figures/methods/decoupling_averages_late
 nt_space-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-15 16:52:21
+(epstopdf)                    date: 2017-06-16 14:22:38
 (epstopdf)                    size: 21461 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/decoupli
 ng_averages_latent_space-eps-converted-to.pdf ./figures/methods/decoupling_aver
@@ -1324,11 +1325,11 @@ Package pdftex.def Info: ./figures/methods/decoupling_averages_latent_space-eps
 (pdftex.def)             Requested size: 424.58952pt x 127.07571pt.
 Package epstopdf Info: Source file: <./figures/methods/separating_colour_spaces
 _architecture.eps>
-(epstopdf)                    date: 2017-06-16 14:40:55
+(epstopdf)                    date: 2017-06-16 20:13:01
 (epstopdf)                    size: 181975 bytes
 (epstopdf)             Output file: <./figures/methods/separating_colour_spaces
 _architecture-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-16 14:40:58
+(epstopdf)                    date: 2017-06-16 20:13:01
 (epstopdf)                    size: 156052 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/separati
 ng_colour_spaces_architecture-eps-converted-to.pdf ./figures/methods/separating
@@ -1398,11 +1399,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 r_spaces_b.png (PNG copy)>]
 Package epstopdf Info: Source file: <figures/methods/winner_takes_all_object_on
 _every_filter.eps>
-(epstopdf)                    date: 2017-06-17 19:19:49
+(epstopdf)                    date: 2017-06-18 12:15:56
 (epstopdf)                    size: 3409 bytes
 (epstopdf)             Output file: <figures/methods/winner_takes_all_object_on
 _every_filter-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-17 19:19:52
+(epstopdf)                    date: 2017-06-18 12:15:56
 (epstopdf)                    size: 2897 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/methods/winner_tak
 es_all_object_on_every_filter-eps-converted-to.pdf figures/methods/winner_takes
@@ -1422,11 +1423,11 @@ r-eps-converted-to.pdf used on input line 236.
 (pdftex.def)             Requested size: 133.69713pt x 120.44786pt.
 Package epstopdf Info: Source file: <figures/methods/winner_takes_all_object_on
 _one_filter.eps>
-(epstopdf)                    date: 2017-06-17 19:22:32
+(epstopdf)                    date: 2017-06-18 12:15:56
 (epstopdf)                    size: 3305 bytes
 (epstopdf)             Output file: <figures/methods/winner_takes_all_object_on
 _one_filter-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-17 19:22:43
+(epstopdf)                    date: 2017-06-18 12:15:56
 (epstopdf)                    size: 2872 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/methods/winner_tak
 es_all_object_on_one_filter-eps-converted-to.pdf figures/methods/winner_takes_a
@@ -1449,11 +1450,11 @@ o.pdf> <./figures/methods/winner_takes_all_object_on_one_filter-eps-converted-t
 o.pdf>]
 Package epstopdf Info: Source file: <./figures/methods/winner_takes_all_line_th
 rough_object_on_every_filter_flow_chart.eps>
-(epstopdf)                    date: 2017-06-17 22:56:37
+(epstopdf)                    date: 2017-06-18 12:15:56
 (epstopdf)                    size: 118318 bytes
 (epstopdf)             Output file: <./figures/methods/winner_takes_all_line_th
 rough_object_on_every_filter_flow_chart-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-17 22:56:49
+(epstopdf)                    date: 2017-06-18 12:15:56
 (epstopdf)                    size: 198414 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/winner_t
 akes_all_line_through_object_on_every_filter_flow_chart-eps-converted-to.pdf ./
@@ -1474,11 +1475,11 @@ _on_every_filter_flow_chart-eps-converted-to.pdf used on input line 261.
 (pdftex.def)             Requested size: 423.68614pt x 96.36073pt.
 Package epstopdf Info: Source file: <./figures/methods/orthogonal_convolutions_
 archiecture.eps>
-(epstopdf)                    date: 2017-06-15 16:42:16
+(epstopdf)                    date: 2017-06-16 14:22:38
 (epstopdf)                    size: 68648 bytes
 (epstopdf)             Output file: <./figures/methods/orthogonal_convolutions_
 archiecture-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-15 16:43:25
+(epstopdf)                    date: 2017-06-16 14:22:38
 (epstopdf)                    size: 47534 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figures/methods/orthogon
 al_convolutions_archiecture-eps-converted-to.pdf ./figures/methods/orthogonal_c
@@ -4029,12 +4030,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6480 strings out of 494353
- 142896 string characters out of 6170043
- 291708 words of memory out of 5000000
- 9481 multiletter control sequences out of 15000+600000
+ 6492 strings out of 494902
+ 143167 string characters out of 6179891
+ 290596 words of memory out of 5000000
+ 9476 multiletter control sequences out of 15000+600000
  23417 words of font info for 93 fonts, out of 8000000 for 9000
- 452 hyphenation exceptions out of 8191
+ 36 hyphenation exceptions out of 8191
  40i,12n,40p,1313b,405s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy6.pfb></us
@@ -4060,7 +4061,7 @@ s/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (107 pages, 9879539 bytes).
+Output written on thesis.pdf (107 pages, 10621207 bytes).
 PDF statistics:
  945 PDF objects out of 1000 (max. 8388607)
  383 compressed objects within 4 object streams
