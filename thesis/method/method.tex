@@ -129,7 +129,7 @@ where $\vec{z} \in \mathbb{R}^{k \times m \times n}$ is the flattened $(k, m, n)
 
 $\beta$-VAE sought to factorise the latent space into independent and dependent generative factors of the scene, in effect ``disentangling" the latent space. By similar reasoning, we'd like the activation of filters to clearly correspond to independent object types, with no two filters active for the same object. Hence we seek a factorisation over the activity of latent filters with no redundancy.
 
-To achieve this, the $k$ filters of the $(k, m, n)$-dimensional latent space are averaged across their activations and stored in a vector $\vec{z}$. We then pressure the vector $\vec{z}$ to match the prior $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$.\\
+To achieve this, the $k$ filters of the $(k, m, n)$-dimensional latent space are averaged across their activations and stored in a vector $\bar{\vec{z}}$. We then pressure the vector $\bar{\vec{z}}$ to match the prior $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$.\\
 
 \begin{figure}[H]
 \centering
@@ -140,9 +140,9 @@ To achieve this, the $k$ filters of the $(k, m, n)$-dimensional latent space are
 
 The loss function is therefore written as 
 \begin{align}
-\mathcal{L}_{NF}(\vec{\theta}, \vec{\phi}; \vec{x}) = -\beta D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
+\mathcal{L}_{NF}(\vec{\theta}, \vec{\phi}; \vec{x}) = -\beta D_{KL}(\mathcal{N}(\bar{\vec{\mu}}, \bar{\vec{\sigma}}^2) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p(\vec{x} | \vec{z}) \big]
 \end{align}
-where $\vec{z} \in \mathbb{R}^{k}$ is the vector of averaged activations for each latent filter.
+where $\bar{\vec{\mu}} \in \mathbb{R}^{k}$ and $\bar{\vec{\sigma}}^2 \in \mathbb{R}^{k}$ are the averages of $\vec{\mu} \in \mathbb{R}^{k\times m\times n}$ and $\vec{\sigma}^2\in \mathbb{R}^{k\times m\times n}$.
 
 
 %
@@ -155,18 +155,15 @@ When evaluating the average filter activations, we get a single floating point n
 \begin{figure}[H]
 \centering
 \captionsetup{justification=centering}
-\includegraphics[scale=0.6]{methods/decoupling_averages_latent_space.eps}
-\caption{Caption.}
-\label{fig:decoupling_averages_latent_space}
+\includegraphics[scale=0.6]{methods/decoupling_weighted_averages_latent_space.eps}
+\label{fig:decoupling_weighted_averages_latent_space}
 \end{figure}
 
 The loss function is therefore written as 
 \begin{align}
-\mathcal{L}_{WF}(\vec{\theta}, \vec{\phi}; \vec{x}) = -mn\beta D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p_{\vec{\theta}}(\vec{x} | \vec{z}) \big]
+\mathcal{L}_{NF}(\vec{\theta}, \vec{\phi}; \vec{x}) = -\frac{\beta |\vec{z}|}{k} D_{KL}(\mathcal{N}(\bar{\vec{\mu}}, \bar{\vec{\sigma}}^2) || p_{\vec{\theta}}(\vec{z})) + \mathbf{E}_{q_{\vec{\phi}}(\vec{z}|\vec{x})}\big[\log p(\vec{x} | \vec{z}) \big]
 \end{align}
-where $\vec{z} \in \mathbb{R}^{k}$ is the vector of averaged activations for each latent filter, and $m$ and $n$ are the width and height of the latent filters respectively.
-
-
+where $\bar{\vec{\mu}} \in \mathbb{R}^{k}$ and $\bar{\vec{\sigma}}^2 \in \mathbb{R}^{k}$ are the averages of $\vec{\mu} \in \mathbb{R}^{k\times m\times n}$ and $\vec{\sigma}^2\in \mathbb{R}^{k\times m\times n}$.
 
 %
 %
@@ -213,15 +210,7 @@ One obvious limitation of this method is that the number of sprites separated is
 %
 %
 \section{Winner Takes All}
-
-\begin{itemize}
-\item As mentioned, it seems likely that objects may be classified by which latent filter has a high activation in its position
-\item Assuming the latent space takes this structure, we would expect no more than one filter to be activated in any given position.
-\item In other words, objects must have distinct types: a sprite cannot be a gunship and a number at the same time.
-\item This leads to the Winner Takes All method, where we apply a position-wise pressure to the latent space so that no more than one filter has a high activation in any given position.
-\item Naturally this applies to fully-convolutional multiple latent filter architectures.
-\end{itemize}
-
+As mentioned, we'd like the activation of filters to clearly correspond to independent object types, with no two filters active for the same object. Assuming the latent space takes this structure, we would expect no more than one filter to be activated in any given position. (Objects must have distinct types: a sprite cannot be a gunship and a number at the same time.) This leads to the Winner Takes All method, where we apply a position-wise pressure to the latent space so that no more than one filter has a high activation in any given position.
 
 \begin{figure*}[h!]
 \centering
@@ -232,14 +221,11 @@ One obvious limitation of this method is that the number of sprites separated is
     \includegraphics[scale=0.4]{figures/methods/winner_takes_all_object_on_one_filter.eps}
     \caption{At most one object recognised in a given position.}
 \end{multicols}
-\caption{Caption.}
 \label{fig:winner_takes_all_activations_on_layers}
 \end{figure*}
 
 
 \subsection{Derivation}
-
-We wish to include a term in our loss function that ensures no more than one filter has a high activation in any given position.
 
 Consider a convolutional latent space $\vec{z}$ of shape $(k, m, n)$. Let $\vec{z}^{i,j} \in \mathbb{R}^k$ be the vector storing the activations over the $k$ filters at position $(i, j)$. Naturally, we also let $q_{\vec{\phi}}^{i, j}(\vec{z} | \vec{x})$ represent the probabilistic encoder for $\vec{z}^{i,j}\in \mathbb{R}^k$. By matching the probabilistic encoder to an isotropic Gaussian we may reduce the redundancy, as argued previously. We choose to include the following term in our loss function:
 

@@ -28,16 +28,14 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces The fully-convolutional single latent filter architecture. \textbf {Blue:} An arbitrary amount of convolutional layers. \textbf {Green:} The latent mean $\bm {\mu }$ and variance $\bm {\sigma }^2$, which are both single filters of shape $(1, m, n)$. \textbf {Orange:} A single latent filter of shape $(1, m, n)$ sampled component-wise from $\bm {\mu }$ and $\bm {\sigma }^2$. \textbf {Red:} The corresponding deconvolutional layers.\relax }}{40}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces The fully-convolutional multiple latent filter architecture. \textbf {Blue:} Unchanged. \textbf {Green:} The latent mean $\bm {\mu }$ and variance $\bm {\sigma }^2$, which are both single filters of shape $(k, m, n)$. \textbf {Orange:} A single latent filter of shape $(k, m, n)$ sampled component-wise from $\bm {\mu }$ and $\bm {\sigma }^2$. \textbf {Red:} Unchanged.\relax }}{43}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Caption.\relax }}{45}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Original\relax }}{46}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Red\relax }}{46}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Green\relax }}{46}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Blue\relax }}{46}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces A comparison of a $210 \times 160$ RGB frame from Space Invaders and its red, green and blue channels. The bullet is clearly separated from other sprites in the blue channel. The red and green channels separate collections of sprites. The red channel excludes the gunship and players score, while the green partially excludes the barriers.\relax }}{46}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Multiple types of objects recognised in same position.\relax }}{47}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces At most one object recognised in a given position.\relax }}{47}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Caption.\relax }}{47}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Caption.\relax }}{48}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Original\relax }}{46}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Red\relax }}{46}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Green\relax }}{46}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Blue\relax }}{46}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces A comparison of a $210 \times 160$ RGB frame from Space Invaders and its red, green and blue channels. The bullet is clearly separated from other sprites in the blue channel. The red and green channels separate collections of sprites. The red channel excludes the gunship and players score, while the green partially excludes the barriers.\relax }}{46}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Multiple types of objects recognised in same position.\relax }}{46}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces At most one object recognised in a given position.\relax }}{46}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Caption.\relax }}{48}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Latent image.\relax }}{52}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Original\relax }}{53}

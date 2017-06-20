@@ -2,6 +2,9 @@
 
 \label{ch:Results}
 
+In this chapter we will perform a number of experiments to assess the proposed methods from last chapter. We wish to keep the architectures fixed and vary the method, which is done to accurately assess its feasibility. Of course, some methods require a change in architecture, in which case we make the smallest possible change. First we will mention the architectures used, after which we will explore each proposed method in detail.
+
+Unless specified otherwise, the Adam optimiser was used with a learning rate of $1e-3$. We also use a data set of $100,000$ pre-processed frames of Space Invaders (generated with the Arcade Learning Environment), with a $90$-$10$ training-test split.
 
 %
 %
@@ -10,18 +13,13 @@
 %
 \section{Architectures}
 
-\begin{itemize}
-\item $\beta$-VAE used this archiecture 
-\item It captured generative factors well
-\item Since we know this network can, we use something similar with a 
-\item MNIST, Frey, Pong, Space Invaders and Breakout
-\item We wish to be able to achieve a similar result with altering activations of specific filters
-\end{itemize}
+In this section we will use architectures similar to one proven to capture the generative factors in the Atari game \textit{Space Invaders} \cite{Higgins2016}. We do not claim that these architectures are optimal, but simply that they are capable of learning the generative factors in the scene.
+
+The architectures used are specified in Tables (\ref{tab:fully_convolutional_single_filter}), (\ref{tab:fully_convolutional_multiple_filter}) and (\ref{tab:fully_convolutional_multiple_filter_rgb}).
 
 
 \begin{table}[]
 \centering
-\label{my-label}
 \begin{tabular}{@{}lll@{}}
 \toprule
 \textbf{Layer} & \textbf{Output shape} & \textbf{Connected to}  \\ \midrule
@@ -36,12 +34,12 @@ Deconv2D\_2    & (32, 40, 40)          & Deconv2D\_1            \\
 Deconv2D\_3    & (1, 84, 84)           & Deconv2D\_2           
 \end{tabular}
 \caption{Fully-convolutional single-filter variational autoencoder.}
+\label{tab:fully_convolutional_single_filter}
 \end{table}
 
 
 \begin{table}[]
 \centering
-\label{my-label}
 \begin{tabular}{@{}lll@{}}
 \toprule
 \textbf{Layer} & \textbf{Output shape} & \textbf{Connected to}  \\ \midrule
@@ -56,12 +54,12 @@ Deconv2D\_2    & (32, 40, 40)          & Deconv2D\_1            \\
 Deconv2D\_3    & (1, 84, 84)           & Deconv2D\_2           
 \end{tabular}
 \caption{Fully-convolutional multi-filter variational autoencoder.}
+\label{tab:fully_convolutional_multiple_filter}
 \end{table}
 
 
 \begin{table}[]
 \centering
-\label{my-label}
 \begin{tabular}{@{}lll@{}}
 \toprule
 \textbf{Layer} & \textbf{Output shape} & \textbf{Connected to}  \\ \midrule
@@ -75,23 +73,9 @@ Deconv2D\_1    & (64, 20, 20)          & Sampling               \\
 Deconv2D\_2    & (32, 40, 40)          & Deconv2D\_1            \\
 Deconv2D\_3    & (3, 84, 84)           & Deconv2D\_2           
 \end{tabular}
-\caption{Fully-convolutional single-filter variational autoencoder for RGB images.}
+\caption{Fully-convolutional mutli-filter variational autoencoder for RGB images.}
+\label{tab:fully_convolutional_multiple_filter_rgb}
 \end{table}
-
-
-%
-%
-%
-%
-%
-\section{Learning Generative Factors in Dense Latent Spaces}
-
-\begin{itemize}
-\item Reconstruction 
-\item Sampling
-\item MNIST, Frey, Pong, Space Invaders and Breakout
-\item We wish to be able to achieve a similar result with altering activations of specific filters
-\end{itemize}
 
 
 %
