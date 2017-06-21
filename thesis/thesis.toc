@@ -66,7 +66,6 @@
 \contentsline {section}{\numberline {6.6}Separating Colour Spaces}{73}
 \contentsline {subsection}{\numberline {6.6.1}Results}{73}
 \contentsline {subsection}{\numberline {6.6.2}Summary}{73}
-\contentsline {section}{\numberline {6.7}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{73}
 \contentsline {chapter}{\numberline {7}Conclusion}{78}
 \contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{78}
 \contentsline {section}{\numberline {7.2}Future Work}{79}

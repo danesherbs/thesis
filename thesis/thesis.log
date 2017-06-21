@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  21 JUN 2017 09:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.24)  21 JUN 2017 09:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -323,10 +323,6 @@ Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
 ) (./thesis.aux
 
 LaTeX Warning: Label `fig:mcmc_sampling' multiply defined.
-
-
-LaTeX Warning: Label `fig:weighted_average_posterior_samples' multiply defined.
-
 
 )
 \openout1 = `thesis.aux'.
@@ -3578,10 +3574,10 @@ e (type png)
 
 <use figures/results/colour_separated/beta_1_sample_0_original.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_0_origi
-nal.png used on input line 788.
+nal.png used on input line 791.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 788--789
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 791--792
  [][] 
  []
 
@@ -3593,10 +3589,10 @@ c file (type png)
 
 <use figures/results/colour_separated/beta_1_sample_0_reconstructed.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_0_recon
-structed.png used on input line 790.
+structed.png used on input line 793.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 790--791
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 793--794
  [][] 
  []
 
@@ -3608,10 +3604,10 @@ c file (type png)
 
 <use figures/results/colour_separated/beta_2_sample_0_reconstructed.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_2_sample_0_recon
-structed.png used on input line 792.
+structed.png used on input line 795.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 792--793
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 795--796
  [][] 
  []
 
@@ -3623,10 +3619,10 @@ c file (type png)
 
 <use figures/results/colour_separated/beta_4_sample_0_reconstructed.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_4_sample_0_recon
-structed.png used on input line 794.
+structed.png used on input line 797.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 794--795
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 797--798
  [][] 
  []
 
@@ -3638,10 +3634,10 @@ e (type png)
 
 <use figures/results/colour_separated/beta_1_sample_2_original.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_2_origi
-nal.png used on input line 798.
+nal.png used on input line 801.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 798--799
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 801--802
  [][] 
  []
 
@@ -3653,10 +3649,10 @@ c file (type png)
 
 <use figures/results/colour_separated/beta_1_sample_2_reconstructed.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_2_recon
-structed.png used on input line 800.
+structed.png used on input line 803.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 800--801
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 803--804
  [][] 
  []
 
@@ -3668,10 +3664,10 @@ c file (type png)
 
 <use figures/results/colour_separated/beta_2_sample_2_reconstructed.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_2_sample_2_recon
-structed.png used on input line 802.
+structed.png used on input line 805.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 802--803
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 805--806
  [][] 
  []
 
@@ -3683,10 +3679,10 @@ c file (type png)
 
 <use figures/results/colour_separated/beta_4_sample_2_reconstructed.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_4_sample_2_recon
-structed.png used on input line 804.
+structed.png used on input line 807.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 804--805
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 807--808
  [][] 
  []
 
@@ -3698,10 +3694,10 @@ e (type png)
 
 <use figures/results/colour_separated/beta_1_sample_3_original.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_3_origi
-nal.png used on input line 808.
+nal.png used on input line 811.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 808--809
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 811--812
  [][] 
  []
 
@@ -3713,10 +3709,10 @@ c file (type png)
 
 <use figures/results/colour_separated/beta_1_sample_3_reconstructed.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_3_recon
-structed.png used on input line 810.
+structed.png used on input line 813.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 810--811
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 813--814
  [][] 
  []
 
@@ -3728,10 +3724,10 @@ c file (type png)
 
 <use figures/results/colour_separated/beta_2_sample_3_reconstructed.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_2_sample_3_recon
-structed.png used on input line 812.
+structed.png used on input line 815.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 812--813
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 815--816
  [][] 
  []
 
@@ -3743,10 +3739,10 @@ c file (type png)
 
 <use figures/results/colour_separated/beta_4_sample_3_reconstructed.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_4_sample_3_recon
-structed.png used on input line 814.
+structed.png used on input line 817.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 814--815
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 817--818
  [][] 
  []
 
@@ -3757,7 +3753,7 @@ File: figures/results/colour_separated/beta_1_sample_3_original.png Graphic fil
 e (type png)
 <use figures/results/colour_separated/beta_1_sample_3_original.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_1_sample_3_origi
-nal.png used on input line 829.
+nal.png used on input line 832.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
 <figures/results/colour_separated/beta_1_convolutional_layers_sample_3.png, id=
@@ -3767,7 +3763,7 @@ File: figures/results/colour_separated/beta_1_convolutional_layers_sample_3.png
 
 <use figures/results/colour_separated/beta_1_convolutional_layers_sample_3.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_1_convolutional_
-layers_sample_3.png used on input line 835.
+layers_sample_3.png used on input line 838.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 <figures/results/colour_separated/beta_2_convolutional_layers_sample_3.png, id=
@@ -3777,7 +3773,7 @@ File: figures/results/colour_separated/beta_2_convolutional_layers_sample_3.png
 
 <use figures/results/colour_separated/beta_2_convolutional_layers_sample_3.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_2_convolutional_
-layers_sample_3.png used on input line 837.
+layers_sample_3.png used on input line 840.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 <figures/results/colour_separated/beta_4_convolutional_layers_sample_3.png, id=
@@ -3787,7 +3783,7 @@ File: figures/results/colour_separated/beta_4_convolutional_layers_sample_3.png
 
 <use figures/results/colour_separated/beta_4_convolutional_layers_sample_3.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_4_convolutional_
-layers_sample_3.png used on input line 839.
+layers_sample_3.png used on input line 842.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -3800,10 +3796,10 @@ phic file (type png)
 
 <use figures/results/colour_separated/beta_1_posterior_sample_original.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_1_posterior_samp
-le_original.png used on input line 855.
+le_original.png used on input line 858.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 855--856
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 858--859
  [][] 
  []
 
@@ -3815,10 +3811,10 @@ le (type png)
 
 <use figures/results/colour_separated/beta_1_posterior_sample_7.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_1_posterior_samp
-le_7.png used on input line 857.
+le_7.png used on input line 860.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 857--858
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 860--861
  [][] 
  []
 
@@ -3830,10 +3826,10 @@ ile (type png)
 
 <use figures/results/colour_separated/beta_1_posterior_sample_13.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_1_posterior_samp
-le_13.png used on input line 859.
+le_13.png used on input line 862.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 859--860
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 862--863
  [][] 
  []
 
@@ -3845,10 +3841,10 @@ ile (type png)
 
 <use figures/results/colour_separated/beta_1_posterior_sample_18.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_1_posterior_samp
-le_18.png used on input line 861.
+le_18.png used on input line 864.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 861--862
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 864--865
  [][] 
  []
 
@@ -3860,10 +3856,10 @@ phic file (type png)
 
 <use figures/results/colour_separated/beta_2_posterior_sample_original.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_2_posterior_samp
-le_original.png used on input line 866.
+le_original.png used on input line 869.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 866--867
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 869--870
  [][] 
  []
 
@@ -3875,10 +3871,10 @@ ile (type png)
 
 <use figures/results/colour_separated/beta_2_posterior_sample_10.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_2_posterior_samp
-le_10.png used on input line 868.
+le_10.png used on input line 871.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 868--869
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 871--872
  [][] 
  []
 
@@ -3890,10 +3886,10 @@ ile (type png)
 
 <use figures/results/colour_separated/beta_2_posterior_sample_17.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_2_posterior_samp
-le_17.png used on input line 870.
+le_17.png used on input line 873.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 870--871
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 873--874
  [][] 
  []
 
@@ -3905,10 +3901,10 @@ ile (type png)
 
 <use figures/results/colour_separated/beta_2_posterior_sample_31.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_2_posterior_samp
-le_31.png used on input line 872.
+le_31.png used on input line 875.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 872--873
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 875--876
  [][] 
  []
 
@@ -3920,10 +3916,10 @@ phic file (type png)
 
 <use figures/results/colour_separated/beta_4_posterior_sample_original.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_4_posterior_samp
-le_original.png used on input line 877.
+le_original.png used on input line 880.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 877--878
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 880--881
  [][] 
  []
 
@@ -3935,10 +3931,10 @@ le (type png)
 
 <use figures/results/colour_separated/beta_4_posterior_sample_1.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_4_posterior_samp
-le_1.png used on input line 879.
+le_1.png used on input line 882.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 879--880
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 882--883
  [][] 
  []
 
@@ -3950,10 +3946,10 @@ le (type png)
 
 <use figures/results/colour_separated/beta_4_posterior_sample_4.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_4_posterior_samp
-le_4.png used on input line 881.
+le_4.png used on input line 884.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 881--882
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 884--885
  [][] 
  []
 
@@ -3965,10 +3961,10 @@ ile (type png)
 
 <use figures/results/colour_separated/beta_4_posterior_sample_20.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_4_posterior_samp
-le_20.png used on input line 883.
+le_20.png used on input line 886.
 (pdftex.def)             Requested size: 114.47363pt x 114.47363pt.
 
-Overfull \hbox (1.04942pt too wide) in paragraph at lines 883--884
+Overfull \hbox (1.04942pt too wide) in paragraph at lines 886--887
  [][] 
  []
 
@@ -3983,7 +3979,7 @@ le (type png)
 
 <use figures/results/colour_separated/beta_1_average_activation.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_1_average_activa
-tion.png used on input line 896.
+tion.png used on input line 899.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 <figures/results/colour_separated/beta_2_average_activation.png, id=822, 539.85
@@ -3993,7 +3989,7 @@ le (type png)
 
 <use figures/results/colour_separated/beta_2_average_activation.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_2_average_activa
-tion.png used on input line 898.
+tion.png used on input line 901.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 <figures/results/colour_separated/beta_4_average_activation.png, id=823, 539.85
@@ -4003,7 +3999,7 @@ le (type png)
 
 <use figures/results/colour_separated/beta_4_average_activation.png>
 Package pdftex.def Info: figures/results/colour_separated/beta_4_average_activa
-tion.png used on input line 900.
+tion.png used on input line 903.
 (pdftex.def)             Requested size: 226.73836pt x 113.52094pt.
 
 
@@ -4049,10 +4045,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6528 strings out of 494902
- 145194 string characters out of 6179891
- 260251 words of memory out of 5000000
- 9497 multiletter control sequences out of 15000+600000
+ 6529 strings out of 494902
+ 145222 string characters out of 6179891
+ 260264 words of memory out of 5000000
+ 9498 multiletter control sequences out of 15000+600000
  23417 words of font info for 93 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  40i,12n,40p,1063b,403s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4080,7 +4076,7 @@ s/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (111 pages, 9930893 bytes).
+Output written on thesis.pdf (111 pages, 9992348 bytes).
 PDF statistics:
  972 PDF objects out of 1000 (max. 8388607)
  395 compressed objects within 4 object streams

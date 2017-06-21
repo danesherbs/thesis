@@ -729,7 +729,7 @@ When comparing the input to the corresponding latent filters, we find an interes
     \caption{$\beta=32\quad$ (62 steps)}
 \end{multicols}
 
-\caption{\textbf{Multiple latent filter architecture with weighted filter-level redundancy reduction}. An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture with weighted filter-level redundancy reduction}. A selection of Space Invader frames and the following samples from the unknown prior $\hat{p}(\vec{z})$ using MCMC for different values of $\beta$.}
 \label{fig:weighted_average_posterior_samples}
 \end{figure*}
 
@@ -762,20 +762,23 @@ When comparing the input to the corresponding latent filters, we find an interes
 \section{Separating Colour Spaces}
 
 \subsection{Results}
-The multiple latent filter RGB architecture, found in Table (\ref{tab:fully_convolutional_multiple_filter_rgb}), was trained for $10$ epochs, and the validation, validation KL and validation reconstruction loss recorded.
+The multiple latent filter RGB architecture, found in Table (\ref{tab:fully_convolutional_multiple_filter_rgb}), was trained for $15$ epochs, and the validation, validation KL and validation reconstruction loss recorded.
 
+The reconstructions for RGB images were poor compared to their greyscale equivalents. For example, in Figure (\ref{fig:colour_separated_originals_and_reconstructions}), $\beta = 2$ fails to reconstruct individual space invaders, and $\beta = 4$ fails to reconstruct entire columns.
 
+Figure (\ref{fig:colour_separated_originals_and_latent_filters}) shows that the latent filters fail to meaningfully learn an interpretable representation of the original input. However, the average activations have detected the persistent score bar at the top of the frame, shown in Figure (\ref{fig:colour_separated_average_filters}). The value of $\beta$ appears to have no effect on the latent filters.
+
+Samples from the unknown distribution, $\hat{p}(\vec{z})$ shown in Figure (\ref{fig:colour_separated_posterior_samples}), are reasonable for a small number of steps of MCMC. The generative samples quickly begin to look unrealistic with more than $40$ steps. Here the value of $\beta$ seems to encourage the generated images more realistic.
+
+The poor results for this method are likely due to the increase in dimensionality of the input. If left to train for a sufficiently long time, we suspect this would improve the model.
 
 \subsection{Summary}
 
 \begin{itemize}
-\item Consider two architectures: shallow and deep
-\item Consider Pong, Space Invaders (in progress) and Breakout
-\item Plot reconstruction loss and KL divergence
+\item The increase in dimensionality of the input requires a non-trivial amount of more time training. It is likely this method will do at least as well as with greyscale images.
+\item For this particular test, the reconstructions were the worst out of every method
+\item The method struggled to learn interpretable latent representations
 \item Show reconstructions and convolutional layers of each
-\item Show mean activations of filters
-\item Alter latent space variable and show reconstruction
-\item Add noise to filters
 \end{itemize}
 
 
@@ -814,7 +817,7 @@ The multiple latent filter RGB architecture, found in Table (\ref{tab:fully_conv
     \includegraphics[scale=0.4]{figures/results/colour_separated/beta_4_sample_3_reconstructed.png}
     \caption{$\beta = 4$}
 \end{multicols}
-\caption{A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture for RGB with weighted filter-level redundancy reduction}. A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta$.}
 \label{fig:colour_separated_originals_and_reconstructions}
 \end{figure*}
 
@@ -839,7 +842,7 @@ The multiple latent filter RGB architecture, found in Table (\ref{tab:fully_conv
 \includegraphics[scale=0.42]{figures/results/colour_separated/beta_4_convolutional_layers_sample_3.png}
 \caption{$\beta = 4$}
 \end{minipage}
-\caption{A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture for RGB with weighted filter-level redundancy reduction}. A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta$.}
 \label{fig:colour_separated_originals_and_latent_filters}
 \end{figure*}
 
@@ -884,8 +887,8 @@ The multiple latent filter RGB architecture, found in Table (\ref{tab:fully_conv
     \caption{$\beta=4\quad$ (20 steps)}
 \end{multicols}
 
-\caption{An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
-\label{fig:weighted_average_posterior_samples}
+\caption{\textbf{Multiple latent filter architecture for RGB with weighted filter-level redundancy reduction}. A selection of Space Invader frames and the following samples from the unknown prior $\hat{p}(\vec{z})$ using MCMC for different values of $\beta$.}
+\label{fig:colour_separated_posterior_samples}
 \end{figure*}
 
 
@@ -900,20 +903,6 @@ The multiple latent filter RGB architecture, found in Table (\ref{tab:fully_conv
     \includegraphics[scale=0.42]{figures/results/colour_separated/beta_4_average_activation.png}
     \caption{$\beta=4$}
 
-\caption{An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
-\label{fig:weighted_average_originals_posterior_samples}
+\caption{\textbf{Multiple latent filter architecture for RGB with weighted filter-level redundancy reduction}. An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
+\label{fig:colour_separated_average_filters}
 \end{figure*}
-
-
-%
-%
-%
-%
-%
-\section{The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}
-
-\begin{itemize}
-\item Vary $\beta$ and plot BCE and KL
-\item Show example images for different $\beta$
-\item Consider Space Invaders, Pong and Breakout
-\end{itemize}
