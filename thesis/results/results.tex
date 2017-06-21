@@ -585,7 +585,7 @@ Further, we see that the samples from the prior $p(\vec{z})$ are far from resemb
     \includegraphics[scale=0.42]{figures/results/naive_average/beta_32_average_activation.png}
     \caption{$\beta=32$}
 
-\caption{\textbf{Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
 \label{fig:naive_average_average_filters}
 \end{figure*}
 
@@ -601,20 +601,18 @@ Further, we see that the samples from the prior $p(\vec{z})$ are far from resemb
 \section{Weighted Filter-Level Redundancy Reduction}
 
 \subsection{Results}
-The multiple latent filter architecture, found in Table (\ref{tab:fully_convolutional_multiple_filter}), was trained for $10$ epochs with the na{\"i}ve filter-level redundancy reduction loss function, and the validation, validation KL and validation reconstruction loss recorded, which are shown in Figure (\ref{fig:weighted_average_graphs}).
+The multiple latent filter architecture, found in Table (\ref{tab:fully_convolutional_multiple_filter}), was trained for $10$ epochs with the na{\"i}ve filter-level redundancy reduction loss function, and the validation, validation KL and validation reconstruction loss recorded, which are shown in Figure (\ref{fig:weighted_average_graphs}). Despite the large weight on the KL loss term, the image reconstructions are near perfect for all $\beta$, as shown in Figure (\ref{fig:weighted_average_originals_and_reconstructions}). 
 
-Despite the large weight on the KL loss term, the image reconstructions are near perfect for all $\beta$, as shown in Figure (\ref{fig:weighted_average_originals_and_reconstructions}). 
+High-level objects are clearly represented in the latent filters, particularly for $\beta = 4$. The barriers and score are again clearly identified in the latent filters. This does not seem to be the case with $\beta = 32$, which suggests there is an optimal value of $\beta$. Further, the average activations of the latent filters in Figure (\ref{fig:weighted_average_average_filters}) show that, on average, $\beta = 4$ and $\beta = 32$ both detect persistent high-level objects in the scene.
 
 When comparing the input to the corresponding latent filters, we find an interesting result. We can easily spot the barriers and score for $\beta=4$, but not so for $\beta = 32$, as shown in Figure (\ref{fig:weighted_average_originals_and_latent_filters}). Further, the samples from the unknown distribution $\hat{p}(\vec{z})$ are much more interesting for $\beta = 4$ than $\beta = 32$. For $\beta = 32$, the samples do not differ very much from its input, whereas samples for $\beta = 4$ differ widely (bullets disappear and scores change), but in a realistic consistent way. These results are shown in Figure (\ref{fig:weighted_average_posterior_samples}).
-
-High-level objects are clearly seen in the latent filters
 
 \subsection{Summary}
 
 \begin{itemize}
-\item Blah blah
-\item Blah blah
-\item Blah blah
+\item The method is capable of near perfectly reconstructing the original image, despite having a large multiplicative factor on the KL loss term.
+\item Latent representations of persistent high-level objects in the scene are clear for some $\beta$.
+\item Further, values of $\beta$ also have a noticeable effect on the generated samples from the unknown distribution $\hat{p}(\vec{z})$.
 \end{itemize}
 
 
@@ -625,7 +623,7 @@ High-level objects are clearly seen in the latent filters
     \includegraphics[scale=0.5]{figures/results/weighted_average/val_loss.png}
     \includegraphics[scale=0.5]{figures/results/weighted_average/val_kl_loss.png}
     \includegraphics[scale=0.5]{figures/results/weighted_average/val_reconstruction_loss.png}
-\caption{\textbf{Multiple latent filter architecture with weighted filter-level redundancy reduction}.}
+\caption{\textbf{Multiple latent filter architecture with weighted filter-level redundancy reduction}. The validation, validation KL and validation reconstruction loss for the latent image architecture and different values of $\beta$.}
 \label{fig:weighted_average_graphs}
 \end{figure*}
 
@@ -695,13 +693,6 @@ High-level objects are clearly seen in the latent filters
 \label{fig:weighted_average_originals_and_latent_filters}
 \end{figure*}
 
-\begin{itemize}
-\item Sampling from prior makes no sense (explained earlier)
-\item We observe the same result, which wont be included
-\end{itemize}
-
-
-
 \begin{figure*}[h!]
 \centering
 \captionsetup{justification=centering}
@@ -756,7 +747,7 @@ High-level objects are clearly seen in the latent filters
     \caption{$\beta=4$}
 
 \caption{\textbf{Multiple latent filter architecture with weighted filter-level redundancy reduction}. An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
-\label{fig:weighted_average_originals_posterior_samples}
+\label{fig:weighted_average_average_filters}
 \end{figure*}
 
 
@@ -769,6 +760,14 @@ High-level objects are clearly seen in the latent filters
 %
 %
 \section{Separating Colour Spaces}
+
+\subsection{Results}
+The multiple latent filter RGB architecture, found in Table (\ref{tab:fully_convolutional_multiple_filter_rgb}), was trained for $10$ epochs, and the validation, validation KL and validation reconstruction loss recorded.
+
+
+
+\subsection{Summary}
+
 \begin{itemize}
 \item Consider two architectures: shallow and deep
 \item Consider Pong, Space Invaders (in progress) and Breakout
@@ -911,57 +910,10 @@ High-level objects are clearly seen in the latent filters
 %
 %
 %
-\section{Orthogonal Convolutions}
-\begin{itemize}
-\item Consider two architectures: shallow and deep
-\item Consider Pong, Space Invaders and Breakout
-\item Plot reconstruction loss and KL divergence
-\item Show reconstructions and convolutional layers of each
-\item Alter latent space variable and show reconstruction
-\item Add noise to filters
-\end{itemize}
-
-
-
-%
-%
-%
-%
-%
-\section{Winner Takes All}
-\begin{itemize}
-\item Consider two architectures: shallow and deep
-\item Consider Pong, Space Invaders and Breakout
-\item Plot reconstruction loss and KL divergence
-\item Show reconstructions and convolutional layers of each
-\item Show mean activations of filters
-\item Alter latent space variable and show reconstruction
-\item Show samples from prior and posterior
-\item Add noise to filters
-\end{itemize}
-
-
-%
-%
-%
-%
-%
 \section{The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}
 
 \begin{itemize}
 \item Vary $\beta$ and plot BCE and KL
 \item Show example images for different $\beta$
 \item Consider Space Invaders, Pong and Breakout
-\end{itemize}
-
-%
-%
-%
-%
-%
-\section{Using Batch Normalisation With Convolutional Variational Latent Spaces}
-
-\begin{itemize}
-\item Consider single architecture 
-\item Batch norm before, after, both, and none
 \end{itemize}

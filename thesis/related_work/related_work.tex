@@ -312,7 +312,7 @@ which we want to maximise. Since
 \begin{align}
 D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)}) || p_{\vec{\theta}}(\vec{z})) \geq 0
 \end{align}
-maximising the $ELBO$ is eqiuvalent to ruducing the KL divergence between the probabilistic encoder $q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)})$ and the prior $p_{\vec{\theta}}(\vec{z})$. Therefore after training, we expect that the probabilistic encoder should map samples to the standard multivariate Gaussian. (In practice, $\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}^{(i)}) > 0 \quad \forall i$, so we therefore only expect it to be \textit{approximately} mapped to the standard Gaussian). Decoding samples from the prior should correspond to meaningful reconstructions.
+maximising the $ELBO$ is equivalent to reducing the KL divergence between the probabilistic encoder $q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)})$ and the prior $p_{\vec{\theta}}(\vec{z})$. Therefore after training, we expect that the probabilistic encoder should map samples to the standard multivariate Gaussian. (In practice, $\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}^{(i)}) > 0 \quad \forall i$, so we therefore only expect it to be \textit{approximately} mapped to the standard Gaussian). Decoding samples from the prior should correspond to meaningful reconstructions.
 
 TODO: FINISH
 
@@ -341,17 +341,6 @@ TODO: FINISH
 \label{fig:variational_autoencoder_latent_space_adding_latent_spaces_updated}
 \end{figure}
 \end{landscape}
-
-
-
-%
-%
-%
-%
-%
-\section{Disentangled Representations}
-\cite{Higgins2016, Thiagarajan2016}
-
 
 
 

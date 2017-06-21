@@ -1,5 +1,4 @@
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces Low-dimensional symbolic representation\relax }}{5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces A simple fully-connected autoencoder with one hidden layer. After 15 epochs, the validation score was recorded to be $71.94$.\relax }}{11}

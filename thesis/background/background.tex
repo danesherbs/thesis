@@ -66,8 +66,14 @@ Video games are becoming increasingly popular in the generation of data sets for
 %
 %
 \section{Arcade Learning Environment}
-\cite{Bellemare2015}
-
+The Arcade Learning Environment (ALE) is a framework built on top of the Atari
+2600 emulator Stella \cite{Bellemare2015}. This library was a suitable choice because:
+\begin{itemize}
+\item Emulation details are abstracted away from the researcher
+\item The same agent can be used for all games, due to its modular design
+\item Frames can be saved during game play, which is used to collect training data
+\item A Python wrapper for the entire framework is provided, so our agents developed in Keras interact seamlessly
+\end{itemize}
 
 
 %
@@ -76,19 +82,10 @@ Video games are becoming increasingly popular in the generation of data sets for
 %
 %
 \section{Keras}
-
-Keras is a high-level deep learning library which interfaces with a Tensorflow or Theano backend. It provides a simple API which contains \cite{Chollet2015}
-
-
-
-
-%
-%
-%
-%
-%
-\section{TensorBoard}
-
-
-
-
+Keras is a high-level neural network library written in Python \cite{Chollet2016}. It was a suitable choice because it supports:
+\begin{itemize}
+\item Convolutional, deconvolutional and pooling layers
+\item Lambda functions, which is necessary for sampling in variational autoencoders
+\item The creation of custom loss functions, which is necessary when developing new methods
+\item Nividia GPUs
+\end{itemize}

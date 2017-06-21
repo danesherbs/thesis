@@ -64,40 +64,14 @@ training data by using high-level processes like planning or causal reasoning.
 
 An overview of DSRL is shown in Figure \ref{fig:dsrl_archiecture}. The neural back end takes a high-dimensional input and outputs a symbolic representation. This symbolic representation is then fed to the symbolic front end, whose role is action selection. The agent then acts on the environment and obtains a reward and the sensory input of the next time step. As the neural back end learns how to represent the raw input data in a compositionally structured representation in an unsupervised manner, and the symbolic front end learns to select the action with maximum expected reward over time, the system as a whole learns end-to-end.
 
- TODO: Finish description of DSRL
-
-\section{Objectives}
-
-We'll use the image in Figure \ref{fig:dsrl_raw_input} as an example of a high-dimensional input to the neural back end. This world consists of only two shapes (circle and square) and four spaces occupied by at most one shape (top left, top right, bottom left and bottom right). The neural back end maps this raw high-dimensional input to a low-dimensional symbolic representation, shown in Table \ref{tab:dsrl_symbolic_representation}.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.3]{introduction/DSRL_raw_input.png}
-\caption{A toy example of a raw high-dimensional input.}
-\label{fig:dsrl_raw_input}
-\end{figure} 
-
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-\begin{table}[]
-\centering
-\label{tab:dsrl_symbolic_representation}
-\begin{tabular}{@{}ll@{}}
-\toprule
-Type & Location   \\ \midrule
-1    & {[}0, 0{]} \\
-2    & {[}0, 1{]} \\
-2    & {[}1, 1{]} \\ \bottomrule
-\end{tabular}
-\caption{Low-dimensional symbolic representation}
-\end{table}
-
- How this is done will be explained in Chapter \ref{ch:background}, but as for now we can just take it as fact that the current method doesn't scale. That is, for very simple scenes, as in Figure ...,  This is done by passing the high-dimensional input through a series of convolutional layers and extracting the activation spectra in the latent space. These spectra are then used to classify the  
-
- relies on the unsupervised extraction of disentangled features, allowing for transfer learning and high-level cognitive processes. However, the unsupervised extraction of features from a wide range of scenes is still a challenge in AI research [? ]. Fortunately methods are getting better, and the first unsupervised scalable model $\beta$-VAE was developed recently.
- 
- TODO: Finish objectives
+The unsupervised extraction of features from a wide range of scenes is still a challenge in AI research. Since DSRL systems require this extraction in forming the symbolic representation, the current system only works for toy data sets. In order for the system to scale to complex scenes, a scalable method of extracting an object's type and position must be found.
 
 \section{Contributions}
 
-Contributions here.
+With a recent development, $\beta$-VAE, it is possible to learn independent generative factors in complex scenes using variational autoencoders \cite{Higgins2016}. In this thesis, we apply the technique proposed in $\beta$-VAE to the novel fully-convolutional variational autoencoder architecture, and in turn assess the feasibility of this architecture for advancing DSRL. We approach this in the following way:
+\begin{itemize}
+\item \textbf{Propose the novel architecture of the fully-convolutional variational autoencoder.} This is (as far as we know) the first consideration of a fully-convolutional variational autoencoder.
+\item \textbf{Propose a number of novel methods to solve the low-level extraction of objects and their location in fully-convolutional variational autoencoders.} This is done by inventing novel architectures and loss functions, which are inspired by the developments made in $\beta$-VAE. These approaches are shown to be good starting points in solving this open problem.
+\item \textbf{Collect experimental evidence for each proposed method.} Each proposed method is assessed by a range of experiments. These include reconstructing its input, qualitatively examining the latent representation of high-level objects in the scene as well as generating new samples by sampling from the prior and using Markov chain Monte Carlo (MCMC).
+\item \textbf{Assess the feasibility of using fully-convolutional variational autoencoders to advance DSRL.} Upon assessment of the experiments, we may propose a suitable method that (at least) partially solves the problem of latent representation of high-level objects in the scene.
+\end{itemize}

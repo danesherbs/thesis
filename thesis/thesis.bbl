@@ -28,9 +28,9 @@ X.~Chen, Y.~Duan, R.~Houthooft, J.~Schulman, I.~Sutskever, and P.~Abbeel.
   Maximizing Generative Adversarial Nets}.
 \newblock {\em arXiv:1606.03657 [cs.LG]}, pages 1--14, 2016.
 
-\bibitem{Chollet2015}
+\bibitem{Chollet2016}
 F.~Chollet.
-\newblock {Keras: Deep Learning library for Theano and TensorFlow}, 2015.
+\newblock {Building Autoencoders in Keras}, 2016.
 
 \bibitem{Cohen2014}
 T.~S. Cohen and M.~Welling.
