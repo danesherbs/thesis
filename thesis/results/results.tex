@@ -53,7 +53,7 @@ Deconv2D\_1    & (64, 20, 20)          & Sampling               \\
 Deconv2D\_2    & (32, 40, 40)          & Deconv2D\_1            \\
 Deconv2D\_3    & (1, 84, 84)           & Deconv2D\_2           
 \end{tabular}
-\caption{Fully-convolutional multi-filter variational autoencoder.}
+\caption{Fully-convolutional multiple latent filter variational autoencoder.}
 \label{tab:fully_convolutional_multiple_filter}
 \end{table}
 
@@ -73,7 +73,7 @@ Deconv2D\_1    & (64, 20, 20)          & Sampling               \\
 Deconv2D\_2    & (32, 40, 40)          & Deconv2D\_1            \\
 Deconv2D\_3    & (3, 84, 84)           & Deconv2D\_2           
 \end{tabular}
-\caption{Fully-convolutional mutli-filter variational autoencoder for RGB images.}
+\caption{Fully-convolutional multiple latent filter variational autoencoder for RGB images.}
 \label{tab:fully_convolutional_multiple_filter_rgb}
 \end{table}
 
@@ -92,13 +92,13 @@ We see that the reconstructions of several inputs, shown in Figure (\ref{fig:lat
 
 The latent representations of scenes, shown in Figure (\ref{fig:latent_image_originals_and_latent_spaces}), do not meaningfully correspond to their original scene. Even for high $\beta$, the scenes do not seem to become anything more interpretable than noise. We further took the average of the latent filters over the test set of $10,000$ data points, and achieved similar results, which are shown in Figure (\ref{fig:latent_image_average_filters}).
 
-Likewise, the decoded samples from the prior and posterior, shown in Figures (\ref{fig:latent_image_originals_prior_samples}) and (\ref{fig:latent_image_originals_posterior_samples}) respectively, do not have any meaningful relation to the original scene. This is true for all values of $\beta$ tested. This tells us that even for reasonable values of the KL loss term, the latent image method struggles to generate realistic samples.
+Likewise, the decoded samples from the prior $p(\vec{z})$ and unknown distribution $\hat{p}(\vec{z})$, shown in Figures (\ref{fig:latent_image_originals_prior_samples}) and (\ref{fig:latent_image_originals_posterior_samples}) respectively, do not have any meaningful relation to the original scene. This is true for all values of $\beta$ tested. This tells us that even for reasonable values of the KL loss term, the latent image method struggles to generate realistic samples.
 
 \subsection{Summary}
 \begin{itemize}
 \item The latent image method is capable of qualitatively perfect reconstruction of its input.
 \item Despite the perfect reconstruction, the method seems to struggle with learning interpretable latent representations of high-level concepts in the scene for all values of $\beta$.
-\item The latent image method also seemed to struggle to produce meaningful generative samples from the prior and posterior despite reasonable values irrespective of the value of the KL loss term.
+\item The latent image method also seemed to struggle to produce meaningful generative samples from the prior $p(\vec{z})$ and unknown distribution $\hat{p}(\vec{z})$ despite reasonable values of validation KL loss.
 \end{itemize}
 
 
@@ -108,7 +108,7 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \includegraphics[scale=0.5]{figures/results/latent_image/val_loss.png}
     \includegraphics[scale=0.5]{figures/results/latent_image/val_kl_loss.png}
     \includegraphics[scale=0.5]{figures/results/latent_image/val_reconstruction_loss.png}
-\caption{The validation, validation KL and validation reconstruction loss for the latent image architecture and different values of $\beta$.}
+\caption{\textbf{Single latent filter architecture}. The validation, validation KL and validation reconstruction loss for the latent image architecture and different values of $\beta$.}
 \label{fig:latent_image_graphs}
 \end{figure*}
 
@@ -147,7 +147,7 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \includegraphics[scale=0.4]{figures/results/latent_image/beta_16_sample_3_reconstructed.png}
     \caption{$\beta = 16$}
 \end{multicols}
-\caption{A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta$.}
+\caption{\textbf{Single latent filter architecture}. A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta$.}
 \label{fig:latent_image_originals_and_reconstructions}
 \end{figure*}
 
@@ -185,7 +185,7 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \includegraphics[scale=0.4]{figures/results/latent_image/beta_16_sample_90_latent.png}
     \caption{$\beta=16$}
 \end{multicols}
-\caption{Frames from Space Invaders and their corresponding latent images for different values of $\beta$.}
+\caption{\textbf{Single latent filter architecture}. Frames from Space Invaders and their corresponding latent images for different values of $\beta$.}
 \label{fig:latent_image_originals_and_latent_spaces}
 \end{figure*}
 
@@ -201,7 +201,7 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \includegraphics[scale=0.4]{figures/results/latent_image/beta_16_prior_sample_1.png}
     \caption{$\beta=16$}
 \end{multicols}
-\caption{The best of $10$ samples from the prior $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$ for different values of $\beta$.}
+\caption{\textbf{Single latent filter architecture}. The best of $10$ samples from the prior $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$ for different values of $\beta$.}
 \label{fig:latent_image_originals_prior_samples}
 \end{figure*}
 
@@ -219,7 +219,7 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \includegraphics[scale=0.4]{figures/results/latent_image/beta_16_posterior_sample_11.png}
     \caption{$\beta=16$}
 \end{multicols}
-\caption{Samples from posterior after one step of MCMC for different values of $\beta$. Samples for subsequent steps did not improve, hence we only include the first for each value of $\beta$.}
+\caption{\textbf{Single latent filter architecture}. Samples from the unknown distribution $\hat{p}(\vec{z})$ after one step of MCMC for different values of $\beta$. Samples for subsequent steps did not improve, hence we only include the first for each value of $\beta$.}
 \label{fig:latent_image_originals_posterior_samples}
 \end{figure*}
 
@@ -230,12 +230,12 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
 \begin{multicols}{3}
     \includegraphics[scale=0.4]{figures/results/latent_image/beta_1_average_activation.png}
     \caption{$\beta=1$}
-    \includegraphics[scale=0.4]{figures/results/latent_image/beta_2_average_activation.png}
-    \caption{$\beta=2$}
     \includegraphics[scale=0.4]{figures/results/latent_image/beta_4_average_activation.png}
     \caption{$\beta=4$}
+    \includegraphics[scale=0.4]{figures/results/latent_image/beta_16_average_activation.png}
+    \caption{$\beta=16$}
 \end{multicols}
-\caption{An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta$.}
+\caption{\textbf{Single latent filter architecture}. An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
 \label{fig:latent_image_average_filters}
 \end{figure*}
 
@@ -248,15 +248,21 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
 %
 %
 %
-\section{Disentangling Latent Neurons}
+\section{Neuron-Level Redundancy Reduction}
+
+\subsection{Results}
+The multiple latent filter architecture, found in Table (\ref{tab:fully_convolutional_multiple_filter}), was trained for $10$ epochs with the neuron-level redundancy reduction loss function, and the validation, validation KL and validation reconstruction loss recorded. The results are shown in Figure (\ref{fig:indiscriminate_decoupling_graphs}). The multiple latent filter architecture with neuron-level redundancy reduction is clearly capable of achieving reasonable reconstruction and KL loss on unseen data, and achieves similar KL loss values as the single latent filter architecture, but considerably better reconstruction loss values.
+
+Although the method reconstructs its input near perfectly, as shown in Figure (\ref{fig:indiscriminate_decoupling_originals_and_reconstructions}), the latent representations do not represent objects in the scene in an interpretable way. This is true also for the averaging of the latent filters over the $10,000$ test data points for all values of $\beta$. These results are shown in Figures (\ref{fig:indiscriminate_decoupling_originals_and_latent_filters}) and (\ref{fig:indiscriminate_decoupling_average_filters}) respectively.
+
+Surprisingly, the decoded samples from the prior resemble the original scenes, shown in Figure (\ref{fig:indiscriminate_decoupling_prior_samples}). From these results, it's clear that the realism of these generated scenes improves with increasing $\beta$. As expected, the generative samples from the unknown distribution $\hat{p}(\vec{z})$ are more realistic. It's also clear that increasing $\beta$ encourages the samples from $\hat{p}(\vec{z})$ to stray further from the input, but in a statistically consistent way.
+
+\subsection{Summary}
+
 \begin{itemize}
-\item Consider two architectures: shallow and deep
-\item Consider Pong, Space Invaders (in progress) and Breakout
-\item Plot reconstruction loss and KL divergence
-\item Show reconstructions and convolutional layers of each
-\item Show mean activations of filters
-\item Alter latent space variable and show reconstruction
-\item Add noise to filters
+\item The multiple latent filter architecture with neuron-level redundancy reduction is capable of near perfectly reconstructs of its input.
+\item It also fails to learn interpretable latent representations of high-level concepts in the scene for all values of $\beta$.
+\item However, it's capable of generating semi-realistic and statistically consistent samples. Varying $\beta$ has noticeable effects on the realism of the generative samples.
 \end{itemize}
 
 
@@ -267,7 +273,7 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \includegraphics[scale=0.5]{figures/results/indiscriminate_decoupling/val_loss.png}
     \includegraphics[scale=0.5]{figures/results/indiscriminate_decoupling/val_kl_loss.png}
     \includegraphics[scale=0.5]{figures/results/indiscriminate_decoupling/val_reconstruction_loss.png}
-\caption{Disentangling latent neurons.}
+\caption{\textbf{Multiple latent filter archiecture with neuron-level redundancy reduction}. The validation, validation KL and validation reconstruction loss for the latent image architecture and different values of $\beta$.}
 \label{fig:indiscriminate_decoupling_graphs}
 \end{figure*}
 
@@ -281,32 +287,32 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \caption{Original}
     \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_1_sample_0_reconstructed.png}
     \caption{$\beta = 1$}    
-    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_2_sample_0_reconstructed.png}
-    \caption{$\beta = 2$}
     \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_4_sample_0_reconstructed.png}
     \caption{$\beta = 4$}
+    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_32_sample_0_reconstructed.png}
+    \caption{$\beta = 32$}
 \end{multicols}
 \begin{multicols}{4}
     \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_1_sample_2_original.png}
     \caption{Original}
     \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_1_sample_2_reconstructed.png}
     \caption{$\beta = 1$}    
-    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_2_sample_2_reconstructed.png}
-    \caption{$\beta = 2$}
     \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_4_sample_2_reconstructed.png}
     \caption{$\beta = 4$}
+    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_32_sample_2_reconstructed.png}
+    \caption{$\beta = 32$}
 \end{multicols}
 \begin{multicols}{4}
     \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_1_sample_3_original.png}
     \caption{Original}
     \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_1_sample_3_reconstructed.png}
     \caption{$\beta = 1$}
-    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_2_sample_3_reconstructed.png}
-    \caption{$\beta = 2$}
     \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_4_sample_3_reconstructed.png}
     \caption{$\beta = 4$}
+    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_32_sample_3_reconstructed.png}
+    \caption{$\beta = 32$}
 \end{multicols}
-\caption{A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture with neuron-level redundancy reduction}. A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta$.}
 \label{fig:indiscriminate_decoupling_originals_and_reconstructions}
 \end{figure*}
 
@@ -325,12 +331,12 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
 \captionsetup{justification=centering}
 \includegraphics[scale=0.42]{figures/results/indiscriminate_decoupling/beta_1_convolutional_layers_sample_3.png}
 \caption{$\beta = 1$}
-\includegraphics[scale=0.42]{figures/results/indiscriminate_decoupling/beta_2_convolutional_layers_sample_3.png}
-\caption{$\beta = 2$}
 \includegraphics[scale=0.42]{figures/results/indiscriminate_decoupling/beta_4_convolutional_layers_sample_3.png}
 \caption{$\beta = 4$}
+\includegraphics[scale=0.42]{figures/results/indiscriminate_decoupling/beta_32_convolutional_layers_sample_3.png}
+\caption{$\beta = 32$}
 \end{minipage}
-\caption{A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture with neuron-level redundancy reduction}. A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta$.}
 \label{fig:indiscriminate_decoupling_originals_and_latent_filters}
 \end{figure*}
 
@@ -341,12 +347,12 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
 \begin{multicols}{3}
     \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_1_prior_sample_2.png}
     \caption{$\beta=1$}
-    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_2_prior_sample_0.png}
-    \caption{$\beta=2$}
-    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_4_prior_sample_3.png}
+    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_4_prior_sample_0.png}
     \caption{$\beta=4$}
+    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_32_prior_sample_3.png}
+    \caption{$\beta=32$}
 \end{multicols}
-\caption{The best of $10$ samples from the prior $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$ for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture with neuron-level redundancy reduction}. The best of $10$ samples from the prior $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$ for different values of $\beta$.}
 \label{fig:indiscriminate_decoupling_prior_samples}
 \end{figure*}
 
@@ -367,17 +373,6 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
 
 \begin{multicols}{4}
     \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_2_posterior_sample_original.png}
-    \caption{$\beta=2\quad$ (original)}
-    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_2_posterior_sample_0.png}
-    \caption{$\beta=2\quad$ (1 step)}
-    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_2_posterior_sample_1.png}
-    \caption{$\beta=2\quad$ (2 steps)}
-    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_2_posterior_sample_90.png}
-    \caption{$\beta=2\quad$ (90 steps)}
-\end{multicols}
-
-\begin{multicols}{4}
-    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_4_posterior_sample_original.png}
     \caption{$\beta=4\quad$ (original)}
     \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_4_posterior_sample_0.png}
     \caption{$\beta=4\quad$ (1 step)}
@@ -387,7 +382,18 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \caption{$\beta=4\quad$ (98 steps)}
 \end{multicols}
 
-\caption{An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta$.}
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_4_posterior_sample_original.png}
+    \caption{$\beta=32\quad$ (original)}
+    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_32_posterior_sample_0.png}
+    \caption{$\beta=32\quad$ (1 step)}
+    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_32_posterior_sample_16.png}
+    \caption{$\beta=32\quad$ (15 steps)}
+    \includegraphics[scale=0.4]{figures/results/indiscriminate_decoupling/beta_32_posterior_sample_49.png}
+    \caption{$\beta=32\quad$ (48 steps)}
+\end{multicols}
+
+\caption{\textbf{Multiple latent filter architecture with neuron-level redundancy reduction}. A selection of Space Invader frames and the following samples from the unknown prior $\hat{p}(\vec{z})$ using MCMC for different values of $\beta$.}
 \label{fig:indiscriminate_decoupling_posterior_samples}
 \end{figure*}
 
@@ -398,33 +404,41 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
 
     \includegraphics[scale=0.3]{figures/results/indiscriminate_decoupling/beta_1_average_activation.png}
     \caption{$\beta=1$}
-    \includegraphics[scale=0.3]{figures/results/indiscriminate_decoupling/beta_2_average_activation.png}
-    \caption{$\beta=2$}
     \includegraphics[scale=0.3]{figures/results/indiscriminate_decoupling/beta_4_average_activation.png}
     \caption{$\beta=4$}
+    \includegraphics[scale=0.3]{figures/results/indiscriminate_decoupling/beta_4_average_activation.png}
+    \caption{$\beta=32$}
 
-\caption{An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta$.}
-\label{fig:indiscriminate_decoupling_originals_posterior_samples}
+\caption{\textbf{Multiple latent filter architecture with neuron-level redundancy reduction}. An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
+\label{fig:indiscriminate_decoupling_average_filters}
 \end{figure*}
 
 
 
 
 
+
+\clearpage
 %
 %
 %
 %
 %
-\section{Disentangling Latent Filters Using Averages}
+\section{Na{\"i}ve Filter-Level Redundancy Reduction}
+
+\subsection{Results}
+The multiple latent filter architecture, found in Table (\ref{tab:fully_convolutional_multiple_filter}), was trained for $10$ epochs with the na{\"i}ve filter-level redundancy reduction loss function, and the validation, validation KL and validation reconstruction loss recorded, which are shown in Figure (\ref{fig:naive_average_graphs}). As with previous methods, the image reconstructions are near perfect even for high $\beta$, as shown in Figure (\ref{fig:naive_average_originals_and_reconstructions}). 
+
+Interestingly, in Figure (\ref{fig:naive_average_originals_and_latent_filters}), we see the beginnings of high-level objects in the latent filters! It's possible to make out the representation of the score bar for each value of $\beta$. We also see some very promising results on the average activations of the latent filters in Figure (\ref{fig:naive_average_average_filters}). The score bar and ground are recognised in at least one filter, with sometimes noticeable activations on the barriers. The value of $\beta$ does not have a noticeable influence on the latent filters. 
+
+Further, we see that the samples from the prior $p(\vec{z})$ are far from resembling the original scene, but samples from the unknown distribution $\hat{p}(\vec{z})$ are very realistic for high $\beta$! We expect poor samples from the prior as we pressure $\bar{\vec{\mu}}$ and $\bar{\vec{\sigma}}$ to be close to $p(\vec{z})$, not $\vec{\mu}$ and $\vec{\sigma}$ as before.
+
+\subsection{Summary}
 \begin{itemize}
-\item Consider two architectures: shallow and deep
-\item Consider Pong, Space Invaders (done) and Breakout
-\item Plot reconstruction loss and KL divergence
-\item Show reconstructions and convolutional layers of each
-\item Show mean activations of filters
-\item Alter latent space variable and show reconstruction
-\item Add noise to filters
+\item As with the previous methods, the na{\"i}ve filter-level redundancy reduction method near perfectly reconstructs its inputs irrespective of the value of $\beta$.
+\item The method achieves the first signs of latent filter representations of high-level objects in the scene. This is especially obvious in the average activations of latent filters, where the score, floor and barriers are clearly recognised.
+\item However, the generative power of this method is quite strong. Samples from the unknown distribution $\hat{p}(\vec{z})$ resemble the original scene after a threshold value of $\beta$.
+\item We therefore have a method that learns persistent high-level features and may generate realistic novel samples.
 \end{itemize}
 
 
@@ -434,7 +448,7 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \includegraphics[scale=0.5]{figures/results/naive_average/val_loss.png}
     \includegraphics[scale=0.5]{figures/results/naive_average/val_kl_loss.png}
     \includegraphics[scale=0.5]{figures/results/naive_average/val_reconstruction_loss.png}
-\caption{Naive average.}
+\caption{\textbf{Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. The validation, validation KL and validation reconstruction loss for the latent image architecture and different values of $\beta$. The validation reconstruction loss for $\beta = 16, 32$ were $\sim 950$, and are therefore excluded in two plots for readability.}
 \label{fig:naive_average_graphs}
 \end{figure*}
 
@@ -449,8 +463,8 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \caption{$\beta = 1$}    
     \includegraphics[scale=0.4]{figures/results/naive_average/beta_2_sample_0_reconstructed.png}
     \caption{$\beta = 2$}
-    \includegraphics[scale=0.4]{figures/results/naive_average/beta_4_sample_0_reconstructed.png}
-    \caption{$\beta = 4$}
+    \includegraphics[scale=0.4]{figures/results/naive_average/beta_32_sample_0_reconstructed.png}
+    \caption{$\beta = 32$}
 \end{multicols}
 \begin{multicols}{4}
     \includegraphics[scale=0.4]{figures/results/naive_average/beta_1_sample_2_original.png}
@@ -472,7 +486,7 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \includegraphics[scale=0.4]{figures/results/naive_average/beta_4_sample_3_reconstructed.png}
     \caption{$\beta = 4$}
 \end{multicols}
-\caption{A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta$.}
 \label{fig:naive_average_originals_and_reconstructions}
 \end{figure*}
 
@@ -492,12 +506,12 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
 \captionsetup{justification=centering}
 \includegraphics[scale=0.42]{figures/results/naive_average/beta_1_convolutional_layers_sample_3.png}
 \caption{$\beta = 1$}
-\includegraphics[scale=0.42]{figures/results/naive_average/beta_2_convolutional_layers_sample_3.png}
-\caption{$\beta = 2$}
 \includegraphics[scale=0.42]{figures/results/naive_average/beta_4_convolutional_layers_sample_3.png}
 \caption{$\beta = 4$}
+\includegraphics[scale=0.42]{figures/results/naive_average/beta_32_convolutional_layers_sample_3.png}
+\caption{$\beta = 32$}
 \end{minipage}
-\caption{A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta$.}
 \label{fig:naive_average_originals_and_latent_filters}
 \end{figure*}
 
@@ -509,12 +523,12 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
 \begin{multicols}{3}
     \includegraphics[scale=0.4]{figures/results/naive_average/beta_1_prior_sample_2.png}
     \caption{$\beta=1$}
-    \includegraphics[scale=0.4]{figures/results/naive_average/beta_2_prior_sample_0.png}
-    \caption{$\beta=2$}
-    \includegraphics[scale=0.4]{figures/results/naive_average/beta_4_prior_sample_3.png}
+    \includegraphics[scale=0.4]{figures/results/naive_average/beta_4_prior_sample_0.png}
     \caption{$\beta=4$}
+    \includegraphics[scale=0.4]{figures/results/naive_average/beta_32_prior_sample_3.png}
+    \caption{$\beta=32$}
 \end{multicols}
-\caption{The best of $10$ samples from the prior $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$ for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. The best of $10$ samples from the prior $p(\vec{z}) = \mathcal{N}(\vec{0}, \vec{I})$ for different values of $\beta$.}
 \label{fig:naive_average_decoupling_prior_samples}
 \end{figure*}
 
@@ -524,18 +538,40 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
 \captionsetup{justification=centering}
 \begin{multicols}{4}
     \includegraphics[scale=0.4]{figures/results/naive_average/beta_1_posterior_sample_original.png}
-    \caption{Original}
+    \caption{$\beta=1\quad$ (original)}
     \includegraphics[scale=0.4]{figures/results/naive_average/beta_1_posterior_sample_0.png}
-    \caption{$\beta=1$}
-    \includegraphics[scale=0.4]{figures/results/naive_average/beta_2_posterior_sample_0.png}
-    \caption{$\beta=2$}
-    \includegraphics[scale=0.4]{figures/results/naive_average/beta_4_posterior_sample_0.png}
-    \caption{$\beta=4$}
+    \caption{$\beta=1\quad$ (1 step)}
+    \includegraphics[scale=0.4]{figures/results/naive_average/beta_1_posterior_sample_5.png}
+    \caption{$\beta=1\quad$ (5 steps)}
+    \includegraphics[scale=0.4]{figures/results/naive_average/beta_1_posterior_sample_10.png}
+    \caption{$\beta=1\quad$ (10 steps)}
 \end{multicols}
-\caption{Samples from posterior after one step of MCMC for different values of $\beta$. Samples for subsequent steps did not improve, hence we only include the first for each value of $\beta$.}
+
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/naive_average/beta_2_posterior_sample_original.png}
+    \caption{$\beta=4\quad$ (original)}
+    \includegraphics[scale=0.4]{figures/results/naive_average/beta_4_posterior_sample_0.png}
+    \caption{$\beta=4\quad$ (1 step)}
+    \includegraphics[scale=0.4]{figures/results/naive_average/beta_4_posterior_sample_5.png}
+    \caption{$\beta=4\quad$ (5 steps)}
+    \includegraphics[scale=0.4]{figures/results/naive_average/beta_4_posterior_sample_10.png}
+    \caption{$\beta=4\quad$ (10 steps)}
+\end{multicols}
+
+\begin{multicols}{4}
+    \includegraphics[scale=0.4]{figures/results/naive_average/beta_4_posterior_sample_original.png}
+    \caption{$\beta=32\quad$ (original)}
+    \includegraphics[scale=0.4]{figures/results/naive_average/beta_32_posterior_sample_0.png}
+    \caption{$\beta=32\quad$ (1 step)}
+    \includegraphics[scale=0.4]{figures/results/naive_average/beta_32_posterior_sample_5.png}
+    \caption{$\beta=32\quad$ (5 steps)}
+    \includegraphics[scale=0.4]{figures/results/naive_average/beta_32_posterior_sample_10.png}
+    \caption{$\beta=32\quad$ (10 steps)}
+\end{multicols}
+
+\caption{\textbf{Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. A selection of Space Invader frames and the following samples from the unknown prior $\hat{p}(\vec{z})$ using MCMC for different values of $\beta$.}
 \label{fig:naive_average_originals_posterior_samples}
 \end{figure*}
-
 
 
 \begin{figure*}[h!]
@@ -544,31 +580,41 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
 
     \includegraphics[scale=0.3]{figures/results/naive_average/beta_1_average_activation.png}
     \caption{$\beta=1$}
-    \includegraphics[scale=0.3]{figures/results/naive_average/beta_2_average_activation.png}
-    \caption{$\beta=2$}
     \includegraphics[scale=0.3]{figures/results/naive_average/beta_4_average_activation.png}
     \caption{$\beta=4$}
+    \includegraphics[scale=0.42]{figures/results/naive_average/beta_32_average_activation.png}
+    \caption{$\beta=32$}
 
-\caption{An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta$.}
-\label{fig:naive_average_originals_posterior_samples}
+\caption{\textbf{Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta$.}
+\label{fig:naive_average_average_filters}
 \end{figure*}
 
 
 
+
+\clearpage
 %
 %
 %
 %
 %
-\section{Decoupling Latent Filters Using Weighted-Averages}
+\section{Weighted Filter-Level Redundancy Reduction}
+
+\subsection{Results}
+The multiple latent filter architecture, found in Table (\ref{tab:fully_convolutional_multiple_filter}), was trained for $10$ epochs with the na{\"i}ve filter-level redundancy reduction loss function, and the validation, validation KL and validation reconstruction loss recorded, which are shown in Figure (\ref{fig:weighted_average_graphs}).
+
+Despite the large weight on the KL loss term, the image reconstructions are near perfect for all $\beta$, as shown in Figure (\ref{fig:weighted_average_originals_and_reconstructions}). 
+
+When comparing the input to the corresponding latent filters, we find an interesting result. We can easily spot the barriers and score for $\beta=4$, but not so for $\beta = 32$, as shown in Figure (\ref{fig:weighted_average_originals_and_latent_filters}). Further, the samples from the unknown distribution $\hat{p}(\vec{z})$ are much more interesting for $\beta = 4$ than $\beta = 32$. For $\beta = 32$, the samples do not differ very much from its input, whereas samples for $\beta = 4$ differ widely (bullets disappear and scores change), but in a realistic consistent way. These results are shown in Figure (\ref{fig:weighted_average_posterior_samples}).
+
+High-level objects are clearly seen in the latent filters
+
+\subsection{Summary}
+
 \begin{itemize}
-\item Consider two architectures: shallow and deep
-\item Consider Pong, Space Invaders (done) and Breakout
-\item Plot reconstruction loss and KL divergence
-\item Show reconstructions and convolutional layers of each
-\item Show mean activations of filters
-\item Alter latent space variable and show reconstruction
-\item Add noise to filters
+\item Blah blah
+\item Blah blah
+\item Blah blah
 \end{itemize}
 
 
@@ -579,7 +625,7 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \includegraphics[scale=0.5]{figures/results/weighted_average/val_loss.png}
     \includegraphics[scale=0.5]{figures/results/weighted_average/val_kl_loss.png}
     \includegraphics[scale=0.5]{figures/results/weighted_average/val_reconstruction_loss.png}
-\caption{Caption.}
+\caption{\textbf{Multiple latent filter architecture with weighted filter-level redundancy reduction}.}
 \label{fig:weighted_average_graphs}
 \end{figure*}
 
@@ -594,32 +640,32 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \caption{Original}
     \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_sample_0_reconstructed.png}
     \caption{$\beta = 1$}    
-    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_sample_0_reconstructed.png}
-    \caption{$\beta = 2$}
     \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_sample_0_reconstructed.png}
     \caption{$\beta = 4$}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_32_sample_0_reconstructed.png}
+    \caption{$\beta = 32$}
 \end{multicols}
 \begin{multicols}{4}
     \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_sample_2_original.png}
     \caption{Original}
     \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_sample_2_reconstructed.png}
     \caption{$\beta = 1$}    
-    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_sample_2_reconstructed.png}
-    \caption{$\beta = 2$}
     \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_sample_2_reconstructed.png}
     \caption{$\beta = 4$}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_32_sample_2_reconstructed.png}
+    \caption{$\beta = 32$}
 \end{multicols}
 \begin{multicols}{4}
     \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_sample_3_original.png}
     \caption{Original}
     \includegraphics[scale=0.4]{figures/results/weighted_average/beta_1_sample_3_reconstructed.png}
     \caption{$\beta = 1$}
-    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_sample_3_reconstructed.png}
-    \caption{$\beta = 2$}
     \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_sample_3_reconstructed.png}
     \caption{$\beta = 4$}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_32_sample_3_reconstructed.png}
+    \caption{$\beta = 32$}
 \end{multicols}
-\caption{A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture with weighted filter-level redundancy reduction}. A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta$.}
 \label{fig:weighted_average_originals_and_reconstructions}
 \end{figure*}
 
@@ -640,12 +686,12 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
 \captionsetup{justification=centering}
 \includegraphics[scale=0.42]{figures/results/weighted_average/beta_1_convolutional_layers_sample_3.png}
 \caption{$\beta = 1$}
-\includegraphics[scale=0.42]{figures/results/weighted_average/beta_2_convolutional_layers_sample_3.png}
-\caption{$\beta = 2$}
 \includegraphics[scale=0.42]{figures/results/weighted_average/beta_4_convolutional_layers_sample_3.png}
 \caption{$\beta = 4$}
+\includegraphics[scale=0.42]{figures/results/weighted_average/beta_32_convolutional_layers_sample_3.png}
+\caption{$\beta = 32$}
 \end{minipage}
-\caption{A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture with weighted filter-level redundancy reduction}. A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta$.}
 \label{fig:weighted_average_originals_and_latent_filters}
 \end{figure*}
 
@@ -671,28 +717,28 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
 \end{multicols}
 
 \begin{multicols}{4}
-    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_posterior_sample_original.png}
-    \caption{$\beta=2\quad$ (original)}
-    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_posterior_sample_17.png}
-    \caption{$\beta=2\quad$ (17 steps)}
-    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_posterior_sample_26.png}
-    \caption{$\beta=2\quad$ (26 steps)}
-    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_2_posterior_sample_30.png}
-    \caption{$\beta=2\quad$ (30 steps)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_posterior_sample_original.png}
+    \caption{$\beta=4\quad$ (original)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_posterior_sample_0.png}
+    \caption{$\beta=4\quad$ (1 step)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_posterior_sample_7.png}
+    \caption{$\beta=4\quad$ (5 steps)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_posterior_sample_47.png}
+    \caption{$\beta=4\quad$ (40 steps)}
 \end{multicols}
 
 \begin{multicols}{4}
-    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_posterior_sample_original.png}
-    \caption{$\beta=4\quad$ (original)}
-    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_posterior_sample_7.png}
-    \caption{$\beta=4\quad$ (7 steps)}
-    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_posterior_sample_24.png}
-    \caption{$\beta=4\quad$ (24 steps)}
-    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_4_posterior_sample_32.png}
-    \caption{$\beta=4\quad$ (32 steps)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_32_posterior_sample_original.png}
+    \caption{$\beta=32\quad$ (original)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_32_posterior_sample_1.png}
+    \caption{$\beta=32\quad$ (1 step)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_32_posterior_sample_47.png}
+    \caption{$\beta=32\quad$ (47 steps)}
+    \includegraphics[scale=0.4]{figures/results/weighted_average/beta_32_posterior_sample_62.png}
+    \caption{$\beta=32\quad$ (62 steps)}
 \end{multicols}
 
-\caption{An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture with weighted filter-level redundancy reduction}. An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
 \label{fig:weighted_average_posterior_samples}
 \end{figure*}
 
@@ -709,12 +755,14 @@ Likewise, the decoded samples from the prior and posterior, shown in Figures (\r
     \includegraphics[scale=0.42]{figures/results/weighted_average/beta_4_average_activation.png}
     \caption{$\beta=4$}
 
-\caption{An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
+\caption{\textbf{Multiple latent filter architecture with weighted filter-level redundancy reduction}. An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta$.}
 \label{fig:weighted_average_originals_posterior_samples}
 \end{figure*}
 
 
 
+
+\clearpage
 %
 %
 %

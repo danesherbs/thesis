@@ -256,14 +256,14 @@
 \@writefile{toc}{\contentsline {section}{\numberline {6.1}Architectures}{49}}
 \@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Fully-convolutional single-filter variational autoencoder.\relax }}{50}}
 \newlabel{tab:fully_convolutional_single_filter}{{6.1}{50}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Fully-convolutional multi-filter variational autoencoder.\relax }}{50}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Fully-convolutional multiple latent filter variational autoencoder.\relax }}{50}}
 \newlabel{tab:fully_convolutional_multiple_filter}{{6.2}{50}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Fully-convolutional mutli-filter variational autoencoder for RGB images.\relax }}{50}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Fully-convolutional multiple latent filter variational autoencoder for RGB images.\relax }}{50}}
 \newlabel{tab:fully_convolutional_multiple_filter_rgb}{{6.3}{50}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.2}Single Latent Filter}{51}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Results}{51}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Summary}{51}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces The validation, validation KL and validation reconstruction loss for the latent image architecture and different values of $\beta $.\relax }}{52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces \textbf  {Single latent filter architecture}. The validation, validation KL and validation reconstruction loss for the latent image architecture and different values of $\beta $.\relax }}{52}}
 \newlabel{fig:latent_image_graphs}{{6.1}{52}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Original\relax }}{53}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces $\beta = 1$\relax }}{53}}
@@ -277,7 +277,7 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces $\beta = 1$\relax }}{53}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.12}{\ignorespaces $\beta = 4$\relax }}{53}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.13}{\ignorespaces $\beta = 16$\relax }}{53}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.14}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{53}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.14}{\ignorespaces \textbf  {Single latent filter architecture}. A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{53}}
 \newlabel{fig:latent_image_originals_and_reconstructions}{{6.14}{53}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.15}{\ignorespaces Original\relax }}{54}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.16}{\ignorespaces $\beta =1$\relax }}{54}}
@@ -291,208 +291,222 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {6.24}{\ignorespaces $\beta =1$\relax }}{54}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.25}{\ignorespaces $\beta =4$\relax }}{54}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.26}{\ignorespaces $\beta =16$\relax }}{54}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.27}{\ignorespaces Frames from Space Invaders and their corresponding latent images for different values of $\beta $.\relax }}{54}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.27}{\ignorespaces \textbf  {Single latent filter architecture}. Frames from Space Invaders and their corresponding latent images for different values of $\beta $.\relax }}{54}}
 \newlabel{fig:latent_image_originals_and_latent_spaces}{{6.27}{54}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.28}{\ignorespaces $\beta =1$\relax }}{54}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.29}{\ignorespaces $\beta =4$\relax }}{54}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.30}{\ignorespaces $\beta =16$\relax }}{54}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.31}{\ignorespaces The best of $10$ samples from the prior $p(\bm  {z}) = \mathcal  {N}(\bm  {0}, \bm  {I})$ for different values of $\beta $.\relax }}{54}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.31}{\ignorespaces \textbf  {Single latent filter architecture}. The best of $10$ samples from the prior $p(\bm  {z}) = \mathcal  {N}(\bm  {0}, \bm  {I})$ for different values of $\beta $.\relax }}{54}}
 \newlabel{fig:latent_image_originals_prior_samples}{{6.31}{54}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.32}{\ignorespaces Original\relax }}{55}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.33}{\ignorespaces $\beta =1$\relax }}{55}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.34}{\ignorespaces $\beta =4$\relax }}{55}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.35}{\ignorespaces $\beta =16$\relax }}{55}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.36}{\ignorespaces Samples from posterior after one step of MCMC for different values of $\beta $. Samples for subsequent steps did not improve, hence we only include the first for each value of $\beta $.\relax }}{55}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.36}{\ignorespaces \textbf  {Single latent filter architecture}. Samples from the unknown distribution $\mathaccentV {hat}05E{p}(\bm  {z})$ after one step of MCMC for different values of $\beta $. Samples for subsequent steps did not improve, hence we only include the first for each value of $\beta $.\relax }}{55}}
 \newlabel{fig:latent_image_originals_posterior_samples}{{6.36}{55}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.37}{\ignorespaces $\beta =1$\relax }}{55}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.38}{\ignorespaces $\beta =2$\relax }}{55}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.39}{\ignorespaces $\beta =4$\relax }}{55}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.40}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{55}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.38}{\ignorespaces $\beta =4$\relax }}{55}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.39}{\ignorespaces $\beta =16$\relax }}{55}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.40}{\ignorespaces \textbf  {Single latent filter architecture}. An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{55}}
 \newlabel{fig:latent_image_average_filters}{{6.40}{55}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Disentangling Latent Neurons}{56}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Disentangling Latent Filters Using Averages}{56}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.41}{\ignorespaces Disentangling latent neurons.\relax }}{57}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Neuron-Level Redundancy Reduction}{56}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Results}{56}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Summary}{56}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.41}{\ignorespaces \textbf  {Multiple latent filter archiecture with neuron-level redundancy reduction}. The validation, validation KL and validation reconstruction loss for the latent image architecture and different values of $\beta $.\relax }}{57}}
 \newlabel{fig:indiscriminate_decoupling_graphs}{{6.41}{57}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}Decoupling Latent Filters Using Weighted-Averages}{57}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.42}{\ignorespaces Original\relax }}{58}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.43}{\ignorespaces $\beta = 1$\relax }}{58}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.44}{\ignorespaces $\beta = 2$\relax }}{58}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.45}{\ignorespaces $\beta = 4$\relax }}{58}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.44}{\ignorespaces $\beta = 4$\relax }}{58}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.45}{\ignorespaces $\beta = 32$\relax }}{58}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.46}{\ignorespaces Original\relax }}{58}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.47}{\ignorespaces $\beta = 1$\relax }}{58}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.48}{\ignorespaces $\beta = 2$\relax }}{58}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.49}{\ignorespaces $\beta = 4$\relax }}{58}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.48}{\ignorespaces $\beta = 4$\relax }}{58}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.49}{\ignorespaces $\beta = 32$\relax }}{58}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.50}{\ignorespaces Original\relax }}{58}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.51}{\ignorespaces $\beta = 1$\relax }}{58}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.52}{\ignorespaces $\beta = 2$\relax }}{58}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.53}{\ignorespaces $\beta = 4$\relax }}{58}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.54}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{58}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.52}{\ignorespaces $\beta = 4$\relax }}{58}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.53}{\ignorespaces $\beta = 32$\relax }}{58}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.54}{\ignorespaces \textbf  {Multiple latent filter architecture with neuron-level redundancy reduction}. A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{58}}
 \newlabel{fig:indiscriminate_decoupling_originals_and_reconstructions}{{6.54}{58}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.55}{\ignorespaces Original\relax }}{59}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.56}{\ignorespaces $\beta = 1$\relax }}{59}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.57}{\ignorespaces $\beta = 2$\relax }}{59}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.58}{\ignorespaces $\beta = 4$\relax }}{59}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.59}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{59}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.57}{\ignorespaces $\beta = 4$\relax }}{59}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.58}{\ignorespaces $\beta = 32$\relax }}{59}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.59}{\ignorespaces \textbf  {Multiple latent filter architecture with neuron-level redundancy reduction}. A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{59}}
 \newlabel{fig:indiscriminate_decoupling_originals_and_latent_filters}{{6.59}{59}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.60}{\ignorespaces $\beta =1$\relax }}{59}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.61}{\ignorespaces $\beta =2$\relax }}{59}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.62}{\ignorespaces $\beta =4$\relax }}{59}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.63}{\ignorespaces The best of $10$ samples from the prior $p(\bm  {z}) = \mathcal  {N}(\bm  {0}, \bm  {I})$ for different values of $\beta $.\relax }}{59}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.61}{\ignorespaces $\beta =4$\relax }}{59}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.62}{\ignorespaces $\beta =32$\relax }}{59}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.63}{\ignorespaces \textbf  {Multiple latent filter architecture with neuron-level redundancy reduction}. The best of $10$ samples from the prior $p(\bm  {z}) = \mathcal  {N}(\bm  {0}, \bm  {I})$ for different values of $\beta $.\relax }}{59}}
 \newlabel{fig:indiscriminate_decoupling_prior_samples}{{6.63}{59}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.6}Separating Colour Spaces}{59}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.64}{\ignorespaces $\beta =1\hskip 1em\relax $ (original)\relax }}{60}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.65}{\ignorespaces $\beta =1\hskip 1em\relax $ (19 steps)\relax }}{60}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.66}{\ignorespaces $\beta =1\hskip 1em\relax $ (26 steps)\relax }}{60}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.67}{\ignorespaces $\beta =1\hskip 1em\relax $ (60 steps)\relax }}{60}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.68}{\ignorespaces $\beta =2\hskip 1em\relax $ (original)\relax }}{60}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.69}{\ignorespaces $\beta =2\hskip 1em\relax $ (1 step)\relax }}{60}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.70}{\ignorespaces $\beta =2\hskip 1em\relax $ (2 steps)\relax }}{60}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.71}{\ignorespaces $\beta =2\hskip 1em\relax $ (90 steps)\relax }}{60}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.72}{\ignorespaces $\beta =4\hskip 1em\relax $ (original)\relax }}{60}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.73}{\ignorespaces $\beta =4\hskip 1em\relax $ (1 step)\relax }}{60}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.74}{\ignorespaces $\beta =4\hskip 1em\relax $ (7 steps)\relax }}{60}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.75}{\ignorespaces $\beta =4\hskip 1em\relax $ (98 steps)\relax }}{60}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.76}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{60}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.68}{\ignorespaces $\beta =4\hskip 1em\relax $ (original)\relax }}{60}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.69}{\ignorespaces $\beta =4\hskip 1em\relax $ (1 step)\relax }}{60}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.70}{\ignorespaces $\beta =4\hskip 1em\relax $ (7 steps)\relax }}{60}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.71}{\ignorespaces $\beta =4\hskip 1em\relax $ (98 steps)\relax }}{60}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.72}{\ignorespaces $\beta =32\hskip 1em\relax $ (original)\relax }}{60}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.73}{\ignorespaces $\beta =32\hskip 1em\relax $ (1 step)\relax }}{60}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.74}{\ignorespaces $\beta =32\hskip 1em\relax $ (15 steps)\relax }}{60}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.75}{\ignorespaces $\beta =32\hskip 1em\relax $ (48 steps)\relax }}{60}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.76}{\ignorespaces \textbf  {Multiple latent filter architecture with neuron-level redundancy reduction}. A selection of Space Invader frames and the following samples from the unknown prior $\mathaccentV {hat}05E{p}(\bm  {z})$ using MCMC for different values of $\beta $.\relax }}{60}}
 \newlabel{fig:indiscriminate_decoupling_posterior_samples}{{6.76}{60}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.77}{\ignorespaces $\beta =1$\relax }}{61}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.78}{\ignorespaces $\beta =2$\relax }}{61}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.79}{\ignorespaces $\beta =4$\relax }}{61}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.80}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{61}}
-\newlabel{fig:indiscriminate_decoupling_originals_posterior_samples}{{6.80}{61}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.7}Orthogonal Convolutions}{61}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.81}{\ignorespaces Naive average.\relax }}{62}}
-\newlabel{fig:naive_average_graphs}{{6.81}{62}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.82}{\ignorespaces Original\relax }}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.83}{\ignorespaces $\beta = 1$\relax }}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.84}{\ignorespaces $\beta = 2$\relax }}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.85}{\ignorespaces $\beta = 4$\relax }}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.86}{\ignorespaces Original\relax }}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.87}{\ignorespaces $\beta = 1$\relax }}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.88}{\ignorespaces $\beta = 2$\relax }}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.89}{\ignorespaces $\beta = 4$\relax }}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.90}{\ignorespaces Original\relax }}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.91}{\ignorespaces $\beta = 1$\relax }}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.92}{\ignorespaces $\beta = 2$\relax }}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.93}{\ignorespaces $\beta = 4$\relax }}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.94}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{63}}
-\newlabel{fig:naive_average_originals_and_reconstructions}{{6.94}{63}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.8}Winner Takes All}{63}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.95}{\ignorespaces Original\relax }}{64}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.96}{\ignorespaces $\beta = 1$\relax }}{64}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.97}{\ignorespaces $\beta = 2$\relax }}{64}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.98}{\ignorespaces $\beta = 4$\relax }}{64}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.99}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{64}}
-\newlabel{fig:naive_average_originals_and_latent_filters}{{6.99}{64}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.100}{\ignorespaces $\beta =1$\relax }}{64}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.101}{\ignorespaces $\beta =2$\relax }}{64}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.102}{\ignorespaces $\beta =4$\relax }}{64}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.103}{\ignorespaces The best of $10$ samples from the prior $p(\bm  {z}) = \mathcal  {N}(\bm  {0}, \bm  {I})$ for different values of $\beta $.\relax }}{64}}
-\newlabel{fig:naive_average_decoupling_prior_samples}{{6.103}{64}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.104}{\ignorespaces Original\relax }}{65}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.105}{\ignorespaces $\beta =1$\relax }}{65}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.106}{\ignorespaces $\beta =2$\relax }}{65}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.107}{\ignorespaces $\beta =4$\relax }}{65}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.108}{\ignorespaces Samples from posterior after one step of MCMC for different values of $\beta $. Samples for subsequent steps did not improve, hence we only include the first for each value of $\beta $.\relax }}{65}}
-\newlabel{fig:naive_average_originals_posterior_samples}{{6.108}{65}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.109}{\ignorespaces $\beta =1$\relax }}{65}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.110}{\ignorespaces $\beta =2$\relax }}{65}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.111}{\ignorespaces $\beta =4$\relax }}{65}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.112}{\ignorespaces An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{65}}
-\newlabel{fig:naive_average_originals_posterior_samples}{{6.112}{65}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.113}{\ignorespaces Caption.\relax }}{66}}
-\newlabel{fig:weighted_average_graphs}{{6.113}{66}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.114}{\ignorespaces Original\relax }}{67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.115}{\ignorespaces $\beta = 1$\relax }}{67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.116}{\ignorespaces $\beta = 2$\relax }}{67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.117}{\ignorespaces $\beta = 4$\relax }}{67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.118}{\ignorespaces Original\relax }}{67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.119}{\ignorespaces $\beta = 1$\relax }}{67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.120}{\ignorespaces $\beta = 2$\relax }}{67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.121}{\ignorespaces $\beta = 4$\relax }}{67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.122}{\ignorespaces Original\relax }}{67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.123}{\ignorespaces $\beta = 1$\relax }}{67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.124}{\ignorespaces $\beta = 2$\relax }}{67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.125}{\ignorespaces $\beta = 4$\relax }}{67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.126}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{67}}
-\newlabel{fig:weighted_average_originals_and_reconstructions}{{6.126}{67}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.9}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{67}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.127}{\ignorespaces Original\relax }}{68}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.128}{\ignorespaces $\beta = 1$\relax }}{68}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.129}{\ignorespaces $\beta = 2$\relax }}{68}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.130}{\ignorespaces $\beta = 4$\relax }}{68}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.131}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{68}}
-\newlabel{fig:weighted_average_originals_and_latent_filters}{{6.131}{68}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.10}Using Batch Normalisation With Convolutional Variational Latent Spaces}{68}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.132}{\ignorespaces $\beta =1\hskip 1em\relax $ (original)\relax }}{69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.133}{\ignorespaces $\beta =1\hskip 1em\relax $ (18 steps)\relax }}{69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.134}{\ignorespaces $\beta =1\hskip 1em\relax $ (26 steps)\relax }}{69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.135}{\ignorespaces $\beta =1\hskip 1em\relax $ (39 steps)\relax }}{69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.136}{\ignorespaces $\beta =2\hskip 1em\relax $ (original)\relax }}{69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.137}{\ignorespaces $\beta =2\hskip 1em\relax $ (17 steps)\relax }}{69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.138}{\ignorespaces $\beta =2\hskip 1em\relax $ (26 steps)\relax }}{69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.139}{\ignorespaces $\beta =2\hskip 1em\relax $ (30 steps)\relax }}{69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.140}{\ignorespaces $\beta =4\hskip 1em\relax $ (original)\relax }}{69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.141}{\ignorespaces $\beta =4\hskip 1em\relax $ (7 steps)\relax }}{69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.142}{\ignorespaces $\beta =4\hskip 1em\relax $ (24 steps)\relax }}{69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.143}{\ignorespaces $\beta =4\hskip 1em\relax $ (32 steps)\relax }}{69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.144}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{69}}
-\newlabel{fig:weighted_average_posterior_samples}{{6.144}{69}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.145}{\ignorespaces $\beta =1$\relax }}{70}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.146}{\ignorespaces $\beta =2$\relax }}{70}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.147}{\ignorespaces $\beta =4$\relax }}{70}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.148}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{70}}
-\newlabel{fig:weighted_average_originals_posterior_samples}{{6.148}{70}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.149}{\ignorespaces Original\relax }}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.150}{\ignorespaces $\beta = 1$\relax }}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.151}{\ignorespaces $\beta = 2$\relax }}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.152}{\ignorespaces $\beta = 4$\relax }}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.153}{\ignorespaces Original\relax }}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.154}{\ignorespaces $\beta = 1$\relax }}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.155}{\ignorespaces $\beta = 2$\relax }}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.156}{\ignorespaces $\beta = 4$\relax }}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.157}{\ignorespaces Original\relax }}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.158}{\ignorespaces $\beta = 1$\relax }}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.159}{\ignorespaces $\beta = 2$\relax }}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.160}{\ignorespaces $\beta = 4$\relax }}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.161}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{71}}
-\newlabel{fig:colour_separated_originals_and_reconstructions}{{6.161}{71}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.162}{\ignorespaces Original\relax }}{72}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.163}{\ignorespaces $\beta = 1$\relax }}{72}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.164}{\ignorespaces $\beta = 2$\relax }}{72}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.165}{\ignorespaces $\beta = 4$\relax }}{72}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.166}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{72}}
-\newlabel{fig:colour_separated_originals_and_latent_filters}{{6.166}{72}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.167}{\ignorespaces $\beta =1\hskip 1em\relax $ (original)\relax }}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.168}{\ignorespaces $\beta =1\hskip 1em\relax $ (7 steps)\relax }}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.169}{\ignorespaces $\beta =1\hskip 1em\relax $ (17 steps)\relax }}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.170}{\ignorespaces $\beta =1\hskip 1em\relax $ (18 steps)\relax }}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.171}{\ignorespaces $\beta =2\hskip 1em\relax $ (original)\relax }}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.172}{\ignorespaces $\beta =2\hskip 1em\relax $ (10 steps)\relax }}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.173}{\ignorespaces $\beta =2\hskip 1em\relax $ (17 steps)\relax }}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.174}{\ignorespaces $\beta =2\hskip 1em\relax $ (31 steps)\relax }}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.175}{\ignorespaces $\beta =4\hskip 1em\relax $ (original)\relax }}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.176}{\ignorespaces $\beta =4\hskip 1em\relax $ (1 step)\relax }}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.177}{\ignorespaces $\beta =4\hskip 1em\relax $ (3 steps)\relax }}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.178}{\ignorespaces $\beta =4\hskip 1em\relax $ (20 steps)\relax }}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.179}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{73}}
-\newlabel{fig:weighted_average_posterior_samples}{{6.179}{73}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.180}{\ignorespaces $\beta =1$\relax }}{74}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.181}{\ignorespaces $\beta =2$\relax }}{74}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.182}{\ignorespaces $\beta =4$\relax }}{74}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.183}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{74}}
-\newlabel{fig:weighted_average_originals_posterior_samples}{{6.183}{74}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.78}{\ignorespaces $\beta =4$\relax }}{61}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.79}{\ignorespaces $\beta =32$\relax }}{61}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.80}{\ignorespaces \textbf  {Multiple latent filter architecture with neuron-level redundancy reduction}. An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{61}}
+\newlabel{fig:indiscriminate_decoupling_average_filters}{{6.80}{61}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Na{\"i}ve Filter-Level Redundancy Reduction}{62}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.1}Results}{62}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}Summary}{62}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.81}{\ignorespaces \textbf  {Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. The validation, validation KL and validation reconstruction loss for the latent image architecture and different values of $\beta $. The validation reconstruction loss for $\beta = 16, 32$ were $\sim 950$, and are therefore excluded in two plots for readability.\relax }}{63}}
+\newlabel{fig:naive_average_graphs}{{6.81}{63}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.82}{\ignorespaces Original\relax }}{64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.83}{\ignorespaces $\beta = 1$\relax }}{64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.84}{\ignorespaces $\beta = 2$\relax }}{64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.85}{\ignorespaces $\beta = 32$\relax }}{64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.86}{\ignorespaces Original\relax }}{64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.87}{\ignorespaces $\beta = 1$\relax }}{64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.88}{\ignorespaces $\beta = 2$\relax }}{64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.89}{\ignorespaces $\beta = 4$\relax }}{64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.90}{\ignorespaces Original\relax }}{64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.91}{\ignorespaces $\beta = 1$\relax }}{64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.92}{\ignorespaces $\beta = 2$\relax }}{64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.93}{\ignorespaces $\beta = 4$\relax }}{64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.94}{\ignorespaces \textbf  {Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{64}}
+\newlabel{fig:naive_average_originals_and_reconstructions}{{6.94}{64}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.95}{\ignorespaces Original\relax }}{65}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.96}{\ignorespaces $\beta = 1$\relax }}{65}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.97}{\ignorespaces $\beta = 4$\relax }}{65}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.98}{\ignorespaces $\beta = 32$\relax }}{65}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.99}{\ignorespaces \textbf  {Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{65}}
+\newlabel{fig:naive_average_originals_and_latent_filters}{{6.99}{65}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.100}{\ignorespaces $\beta =1$\relax }}{65}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.101}{\ignorespaces $\beta =4$\relax }}{65}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.102}{\ignorespaces $\beta =32$\relax }}{65}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.103}{\ignorespaces \textbf  {Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. The best of $10$ samples from the prior $p(\bm  {z}) = \mathcal  {N}(\bm  {0}, \bm  {I})$ for different values of $\beta $.\relax }}{65}}
+\newlabel{fig:naive_average_decoupling_prior_samples}{{6.103}{65}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.104}{\ignorespaces $\beta =1\hskip 1em\relax $ (original)\relax }}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.105}{\ignorespaces $\beta =1\hskip 1em\relax $ (1 step)\relax }}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.106}{\ignorespaces $\beta =1\hskip 1em\relax $ (5 steps)\relax }}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.107}{\ignorespaces $\beta =1\hskip 1em\relax $ (10 steps)\relax }}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.108}{\ignorespaces $\beta =4\hskip 1em\relax $ (original)\relax }}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.109}{\ignorespaces $\beta =4\hskip 1em\relax $ (1 step)\relax }}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.110}{\ignorespaces $\beta =4\hskip 1em\relax $ (5 steps)\relax }}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.111}{\ignorespaces $\beta =4\hskip 1em\relax $ (10 steps)\relax }}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.112}{\ignorespaces $\beta =32\hskip 1em\relax $ (original)\relax }}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.113}{\ignorespaces $\beta =32\hskip 1em\relax $ (1 step)\relax }}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.114}{\ignorespaces $\beta =32\hskip 1em\relax $ (5 steps)\relax }}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.115}{\ignorespaces $\beta =32\hskip 1em\relax $ (10 steps)\relax }}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.116}{\ignorespaces \textbf  {Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. A selection of Space Invader frames and the following samples from the unknown prior $\mathaccentV {hat}05E{p}(\bm  {z})$ using MCMC for different values of $\beta $.\relax }}{66}}
+\newlabel{fig:naive_average_originals_posterior_samples}{{6.116}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.117}{\ignorespaces $\beta =1$\relax }}{67}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.118}{\ignorespaces $\beta =4$\relax }}{67}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.119}{\ignorespaces $\beta =32$\relax }}{67}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.120}{\ignorespaces \textbf  {Multiple latent filter architecture with na{\"i}ve filter-level redundancy reduction}. An average of the activations in the latent image over $10000$ images from the test set for different values of $\beta $.\relax }}{67}}
+\newlabel{fig:naive_average_average_filters}{{6.120}{67}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.5}Weighted Filter-Level Redundancy Reduction}{68}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.1}Results}{68}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5.2}Summary}{68}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.121}{\ignorespaces \textbf  {Multiple latent filter architecture with weighted filter-level redundancy reduction}.\relax }}{69}}
+\newlabel{fig:weighted_average_graphs}{{6.121}{69}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.122}{\ignorespaces Original\relax }}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.123}{\ignorespaces $\beta = 1$\relax }}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.124}{\ignorespaces $\beta = 4$\relax }}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.125}{\ignorespaces $\beta = 32$\relax }}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.126}{\ignorespaces Original\relax }}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.127}{\ignorespaces $\beta = 1$\relax }}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.128}{\ignorespaces $\beta = 4$\relax }}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.129}{\ignorespaces $\beta = 32$\relax }}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.130}{\ignorespaces Original\relax }}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.131}{\ignorespaces $\beta = 1$\relax }}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.132}{\ignorespaces $\beta = 4$\relax }}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.133}{\ignorespaces $\beta = 32$\relax }}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.134}{\ignorespaces \textbf  {Multiple latent filter architecture with weighted filter-level redundancy reduction}. A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{70}}
+\newlabel{fig:weighted_average_originals_and_reconstructions}{{6.134}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.135}{\ignorespaces Original\relax }}{71}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.136}{\ignorespaces $\beta = 1$\relax }}{71}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.137}{\ignorespaces $\beta = 4$\relax }}{71}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.138}{\ignorespaces $\beta = 32$\relax }}{71}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.139}{\ignorespaces \textbf  {Multiple latent filter architecture with weighted filter-level redundancy reduction}. A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{71}}
+\newlabel{fig:weighted_average_originals_and_latent_filters}{{6.139}{71}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.140}{\ignorespaces $\beta =1\hskip 1em\relax $ (original)\relax }}{72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.141}{\ignorespaces $\beta =1\hskip 1em\relax $ (18 steps)\relax }}{72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.142}{\ignorespaces $\beta =1\hskip 1em\relax $ (26 steps)\relax }}{72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.143}{\ignorespaces $\beta =1\hskip 1em\relax $ (39 steps)\relax }}{72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.144}{\ignorespaces $\beta =4\hskip 1em\relax $ (original)\relax }}{72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.145}{\ignorespaces $\beta =4\hskip 1em\relax $ (1 step)\relax }}{72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.146}{\ignorespaces $\beta =4\hskip 1em\relax $ (5 steps)\relax }}{72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.147}{\ignorespaces $\beta =4\hskip 1em\relax $ (40 steps)\relax }}{72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.148}{\ignorespaces $\beta =32\hskip 1em\relax $ (original)\relax }}{72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.149}{\ignorespaces $\beta =32\hskip 1em\relax $ (1 step)\relax }}{72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.150}{\ignorespaces $\beta =32\hskip 1em\relax $ (47 steps)\relax }}{72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.151}{\ignorespaces $\beta =32\hskip 1em\relax $ (62 steps)\relax }}{72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.152}{\ignorespaces \textbf  {Multiple latent filter architecture with weighted filter-level redundancy reduction}. An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{72}}
+\newlabel{fig:weighted_average_posterior_samples}{{6.152}{72}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.153}{\ignorespaces $\beta =1$\relax }}{73}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.154}{\ignorespaces $\beta =2$\relax }}{73}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.155}{\ignorespaces $\beta =4$\relax }}{73}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.156}{\ignorespaces \textbf  {Multiple latent filter architecture with weighted filter-level redundancy reduction}. An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{73}}
+\newlabel{fig:weighted_average_originals_posterior_samples}{{6.156}{73}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.6}Separating Colour Spaces}{74}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.7}Orthogonal Convolutions}{74}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.8}Winner Takes All}{74}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.157}{\ignorespaces Original\relax }}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.158}{\ignorespaces $\beta = 1$\relax }}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.159}{\ignorespaces $\beta = 2$\relax }}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.160}{\ignorespaces $\beta = 4$\relax }}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.161}{\ignorespaces Original\relax }}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.162}{\ignorespaces $\beta = 1$\relax }}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.163}{\ignorespaces $\beta = 2$\relax }}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.164}{\ignorespaces $\beta = 4$\relax }}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.165}{\ignorespaces Original\relax }}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.166}{\ignorespaces $\beta = 1$\relax }}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.167}{\ignorespaces $\beta = 2$\relax }}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.168}{\ignorespaces $\beta = 4$\relax }}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.169}{\ignorespaces A selection of Space Invader frames and their corresponding reconstructions for different values of $\beta $.\relax }}{75}}
+\newlabel{fig:colour_separated_originals_and_reconstructions}{{6.169}{75}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.170}{\ignorespaces Original\relax }}{76}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.171}{\ignorespaces $\beta = 1$\relax }}{76}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.172}{\ignorespaces $\beta = 2$\relax }}{76}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.173}{\ignorespaces $\beta = 4$\relax }}{76}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.174}{\ignorespaces A Space Invaders frame and the activations over its corresponding latent filters for different values of $\beta $.\relax }}{76}}
+\newlabel{fig:colour_separated_originals_and_latent_filters}{{6.174}{76}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.9}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{76}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.175}{\ignorespaces $\beta =1\hskip 1em\relax $ (original)\relax }}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.176}{\ignorespaces $\beta =1\hskip 1em\relax $ (7 steps)\relax }}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.177}{\ignorespaces $\beta =1\hskip 1em\relax $ (17 steps)\relax }}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.178}{\ignorespaces $\beta =1\hskip 1em\relax $ (18 steps)\relax }}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.179}{\ignorespaces $\beta =2\hskip 1em\relax $ (original)\relax }}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.180}{\ignorespaces $\beta =2\hskip 1em\relax $ (10 steps)\relax }}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.181}{\ignorespaces $\beta =2\hskip 1em\relax $ (17 steps)\relax }}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.182}{\ignorespaces $\beta =2\hskip 1em\relax $ (31 steps)\relax }}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.183}{\ignorespaces $\beta =4\hskip 1em\relax $ (original)\relax }}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.184}{\ignorespaces $\beta =4\hskip 1em\relax $ (1 step)\relax }}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.185}{\ignorespaces $\beta =4\hskip 1em\relax $ (3 steps)\relax }}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.186}{\ignorespaces $\beta =4\hskip 1em\relax $ (20 steps)\relax }}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.187}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{77}}
+\newlabel{fig:weighted_average_posterior_samples}{{6.187}{77}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.10}Using Batch Normalisation With Convolutional Variational Latent Spaces}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.188}{\ignorespaces $\beta =1$\relax }}{78}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.189}{\ignorespaces $\beta =2$\relax }}{78}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.190}{\ignorespaces $\beta =4$\relax }}{78}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.191}{\ignorespaces An average of the activations in the latent image over $10,000$ images from the test set for different values of $\beta $.\relax }}{78}}
+\newlabel{fig:weighted_average_originals_posterior_samples}{{6.191}{78}}
 \citation{Rodriguez2016}
 \citation{Le2012}
 \bibstyle{abbrv}
 \bibdata{library}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{75}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion}{79}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:conclusions}{{7}{75}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{75}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Applications}{75}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Future Work}{75}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{75}}
+\newlabel{ch:conclusions}{{7}{79}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{79}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Applications}{79}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Future Work}{79}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{79}}
 \bibcite{Bellemare2015}{1}
 \bibcite{Blei2011}{2}
 \bibcite{Blei2016}{3}
