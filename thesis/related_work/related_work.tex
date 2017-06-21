@@ -312,7 +312,7 @@ which we want to maximise. Since
 \begin{align}
 D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)}) || p_{\vec{\theta}}(\vec{z})) \geq 0
 \end{align}
-maximising the $ELBO$ is equivalent to reducing the KL divergence between the probabilistic encoder $q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)})$ and the prior $p_{\vec{\theta}}(\vec{z})$. Therefore after training, we expect that the probabilistic encoder should map samples to the standard multivariate Gaussian. (In practice, $\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}^{(i)}) > 0 \quad \forall i$, so we therefore only expect it to be \textit{approximately} mapped to the standard Gaussian). Decoding samples from the prior should correspond to meaningful reconstructions.
+maximising the $ELBO$ is equivalent to reducing the KL divergence between the probabilistic encoder $q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)})$ and the prior $p_{\vec{\theta}}(\vec{z})$. Therefore after training, we expect that the probabilistic encoder should map samples to the standard multivariate Gaussian. (In practice, $\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}^{(i)}) > 0 \quad \forall i$, so we therefore only expect it to be \textit{approximately} mapped to the standard Gaussian). Decoding samples from the prior should correspond to meaningful reconstructions. A visualisation of sampling from the prior is given in Figure (\ref{fig:variational_autoencoder_latent_space_unit_gaussian_with_mnist}).
 
 TODO: FINISH
 
@@ -478,24 +478,3 @@ where $\vec{z}_{t=0}$ is arbitrarily chosen.
 \caption{Samples from a variational autoencoder trained on the CelebA data set after $t = 0, 1, 5$ and $10$ steps of the generative procedure (\ref{eq:mcmc_sampling}). The MCMC chain was initialised with a sample from the prior $\vec{z}_{t=0} \sim p(\vec{z})$, which often improves the quality of the samples.\\ \textit{Source:} \cite{Creswell2016}.}
 \label{fig:mcmc_sampling}
 \end{figure}
-
-
-
-%
-%
-%
-%
-%
-\section{Regularizing CNNs with Locally Constrained Decorrelations}
-\cite{Rodriguez2016}
-
-
-
-
-%
-%
-%
-%
-%
-\section{Batch Normalisation}
-...

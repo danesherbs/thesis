@@ -93,12 +93,6 @@ A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton.
 \newblock {\em Advances In Neural Information Processing Systems}, pages 1--9,
   2012.
 
-\bibitem{Le2012}
-Q.~V. Le, M.~A. Ranzato, M.~Devin, G.~S. Corrado, and A.~Y. Ng.
-\newblock {Building High-level Features Using Large Scale Unsupervised
-  Learning}.
-\newblock {\em Arxiv}, 28(4):61--76, 2012.
-
 \bibitem{Li2016}
 F.-F. S.~U. Li, J.~S.~U. Johnson, and S.~S.~U. Yeung.
 \newblock {Convolutional Neural Networks for Visual Recognition}, 2016.

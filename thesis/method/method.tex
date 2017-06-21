@@ -2,7 +2,7 @@
 
 \epigraph{``It is not unscientific to make a guess, although many people who are not in science think it is."}{\textit{R. P. Feynman}}
 
-In order for symbolic extraction to take place in a DSRL system, the latent space must preserve the types of objects and the spatial information of the original scene. In other words, from the latent space alone, it must be possible to deduce an object's type and location. We explore the feasibility of using fully-convolutional variational autoencoders for this purpose. This is exciting new territory; the fully-convolutional variational autoencoder has (to the best of our knowledge) never been explored. We therefore have many degrees of freedom with how we proceed. In this section, we will make educated guesses of how a working architecture would look and the encoding of desirable properties in loss functions, which will be inspired by the successful techniques developed in $\beta$-VAE.
+In order for symbolic extraction to take place in a DSRL system, the latent space must preserve the types of objects and the spatial information of the original scene. In other words, from the latent space alone, it must be possible to deduce an object's type and location. We explore the feasibility of using fully-convolutional variational autoencoders for this purpose. This is exciting new territory; the fully-convolutional variational autoencoder has (to the best of our knowledge) never been explored. We therefore have many degrees of freedom with how we proceed. In this section, we will make educated guesses of how a working architecture would look and encode desirable properties in loss functions, which will be inspired by the successful techniques developed in $\beta$-VAE.
 
 
 \label{ch:methods}
@@ -249,26 +249,4 @@ As the task of unsupervised object recognition in fully-convolutional variationa
 \label{fig:separating_colour_spaces}
 \end{figure*}
 
-
 One obvious limitation of this method is that the number of sprites separated is limited by the number of colour channels.
-
-
-%
-%
-%
-%
-%
-\section{Orthogonal Convolutions}
-\lipsum[2]
-\subsection{Architecture}
-TODO: Finish subsection
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\includegraphics[scale=0.63]{methods/orthogonal_convolutions_archiecture.eps}
-\caption{Caption.}
-\label{fig:orthogonal_convolutions_archiecture}
-\end{figure}
-
-\subsection{Derivation}
-TODO: Finish subsection

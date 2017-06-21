@@ -26,8 +26,6 @@
 \contentsline {subsection}{\numberline {3.3.2}$\beta $-VAE}{28}
 \contentsline {subsubsection}{Derivation}{28}
 \contentsline {section}{\numberline {3.4}Improving Sampling from Generative Autoencoders with Markov Chains}{30}
-\contentsline {section}{\numberline {3.5}Regularizing CNNs with Locally Constrained Decorrelations}{33}
-\contentsline {section}{\numberline {3.6}Batch Normalisation}{33}
 \contentsline {chapter}{\numberline {4}Implementation}{34}
 \contentsline {section}{\numberline {4.1}Dimensionality Reduction}{34}
 \contentsline {subsection}{\numberline {4.1.1}Pre-processing Pipeline}{35}
@@ -51,29 +49,25 @@
 \contentsline {section}{\numberline {5.3}Winner Takes All}{45}
 \contentsline {subsection}{\numberline {5.3.1}Position-Wise Redundancy Reduction}{46}
 \contentsline {section}{\numberline {5.4}Separating Colour Spaces}{47}
-\contentsline {section}{\numberline {5.5}Orthogonal Convolutions}{48}
-\contentsline {subsection}{\numberline {5.5.1}Architecture}{48}
-\contentsline {subsection}{\numberline {5.5.2}Derivation}{48}
-\contentsline {chapter}{\numberline {6}Results}{49}
-\contentsline {section}{\numberline {6.1}Architectures}{49}
-\contentsline {section}{\numberline {6.2}Single Latent Filter}{51}
-\contentsline {subsection}{\numberline {6.2.1}Results}{51}
-\contentsline {subsection}{\numberline {6.2.2}Summary}{51}
-\contentsline {section}{\numberline {6.3}Neuron-Level Redundancy Reduction}{56}
-\contentsline {subsection}{\numberline {6.3.1}Results}{56}
-\contentsline {subsection}{\numberline {6.3.2}Summary}{56}
-\contentsline {section}{\numberline {6.4}Na{\"i}ve Filter-Level Redundancy Reduction}{62}
-\contentsline {subsection}{\numberline {6.4.1}Results}{62}
-\contentsline {subsection}{\numberline {6.4.2}Summary}{62}
-\contentsline {section}{\numberline {6.5}Weighted Filter-Level Redundancy Reduction}{68}
-\contentsline {subsection}{\numberline {6.5.1}Results}{68}
-\contentsline {subsection}{\numberline {6.5.2}Summary}{68}
-\contentsline {section}{\numberline {6.6}Separating Colour Spaces}{74}
-\contentsline {subsection}{\numberline {6.6.1}Results}{74}
-\contentsline {subsection}{\numberline {6.6.2}Summary}{74}
-\contentsline {section}{\numberline {6.7}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{74}
-\contentsline {chapter}{\numberline {7}Conclusion}{79}
-\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{79}
-\contentsline {section}{\numberline {7.2}Applications}{79}
-\contentsline {section}{\numberline {7.3}Future Work}{79}
+\contentsline {chapter}{\numberline {6}Results}{48}
+\contentsline {section}{\numberline {6.1}Architectures}{48}
+\contentsline {section}{\numberline {6.2}Single Latent Filter}{50}
+\contentsline {subsection}{\numberline {6.2.1}Results}{50}
+\contentsline {subsection}{\numberline {6.2.2}Summary}{50}
+\contentsline {section}{\numberline {6.3}Neuron-Level Redundancy Reduction}{55}
+\contentsline {subsection}{\numberline {6.3.1}Results}{55}
+\contentsline {subsection}{\numberline {6.3.2}Summary}{55}
+\contentsline {section}{\numberline {6.4}Na{\"i}ve Filter-Level Redundancy Reduction}{61}
+\contentsline {subsection}{\numberline {6.4.1}Results}{61}
+\contentsline {subsection}{\numberline {6.4.2}Summary}{61}
+\contentsline {section}{\numberline {6.5}Weighted Filter-Level Redundancy Reduction}{67}
+\contentsline {subsection}{\numberline {6.5.1}Results}{67}
+\contentsline {subsection}{\numberline {6.5.2}Summary}{67}
+\contentsline {section}{\numberline {6.6}Separating Colour Spaces}{73}
+\contentsline {subsection}{\numberline {6.6.1}Results}{73}
+\contentsline {subsection}{\numberline {6.6.2}Summary}{73}
+\contentsline {section}{\numberline {6.7}The No Free Lunch Relationship Between Reconstruction Loss and KL Divergence}{73}
+\contentsline {chapter}{\numberline {7}Conclusion}{78}
+\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{78}
+\contentsline {section}{\numberline {7.2}Future Work}{79}
 \contentsline {chapter}{Bibliography}{79}
