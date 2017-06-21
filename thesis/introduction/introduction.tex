@@ -15,7 +15,7 @@ Symbolic AI was developed during this winter, which encodes knowledge as human-r
 
 However, symbolic AI has a major philosophical problem: the facts and rules are only meaningful to the human writing them; their meaning is not intrinsic to the system itself. This is known as the \textit{symbol grounding problem}.
 
-Today we find ourselves in yet another period of hype and exciting breakthroughs not afflicted by the symbol grounding problem. Reinforcement learning (RL) has become a prominent area of research, with many considering it fundemental for AGI \cite{Hutter2005}, as have deep neural networks. Recently, deep reinforcement learning (DRL) systems have achieved impressive feats, including mastering a wide range of Atari 2600 games to a superhuman level using only raw pixels and score as input, and the board game Go \cite{Mnih2015, Silver2016}.\\
+Today we find ourselves in yet another period of hype and exciting breakthroughs. Reinforcement learning (RL) has become a prominent area of research, with many considering it fundemental for AGI \cite{Hutter2005}, as have deep neural networks. Recently, deep reinforcement learning (DRL) systems have achieved impressive feats, including mastering a wide range of Atari 2600 games to a superhuman level using only raw pixels and score as input, and the board game Go \cite{Mnih2015, Silver2016}.\\
 
 \begin{figure}[h!]
 \centering
@@ -45,24 +45,25 @@ similar to those they have mastered.
 \item \textbf{Hard to reason about}. It's often difficult to extract a comprehensible chain of reasons for why a deep neural network operated in the way it did.
 \end{enumerate}
 
-Deep symbolic reinforcement learning (DSRL) is a marrying of DRL and symbolic AI; a recent advance which overcomes the symbol grounding problem and the drawbacks associated with DRL \cite{Garnelo2016}. That is, DSRL systems overcome the symbol grounding problem, and are:
+Deep symbolic reinforcement learning (DSRL) is the marrying of DRL and symbolic AI; a recent advance which overcomes the symbol grounding problem and the drawbacks associated with DRL \cite{Garnelo2016}. That is, DSRL systems overcome the symbol grounding problem, and are:
 
 \begin{enumerate}
 \item \textbf{Fast to learn}. Large data sets are not necessary.
 \item \textbf{Able to transfer past experience}. Symbolic AI lends itself to multiple processes associated with high-level reasoning, including transfer learning.
 \item \textbf{Able to reason abstractly}. The agent is able to exploit statistical regularities in the
 training data by using high-level processes like planning or causal reasoning.
-\item \textbf{Easy to reason about}. Since the front end uses symbolic AI, its knowledge is encoded as human-readble facts and rules, making the extraction of comprehensible chains of logic much easier.
+\item \textbf{Easy to reason about}. Since the front end uses symbolic AI, its knowledge is encoded as human-readable facts and rules, making the extraction of comprehensible chains of logic much easier.
 \end{enumerate}
 
 \begin{figure}[h!]
 \centering
+\captionsetup{justification=centering}
 \includegraphics[width=\textwidth]{introduction/DSRL_architecture.eps}
 \caption{Overview of deep symbolic reinforcement learning system architecture. \textbf{A}: The neural back end maps high-dimensional raw input data to a compositionally structured symbolic representation. \textbf{B}: The compositionally structured symbolic representation. \textbf{C}: Reinforcement learning of mapping from symbolic representation to action with maximum expected reward over time. \textit{Adapted from: Garnelo et al.} \cite{Garnelo2016}.}
 \label{fig:dsrl_archiecture}
 \end{figure}
 
-An overview of DSRL is shown in Figure \ref{fig:dsrl_archiecture}. The neural back end takes a high-dimensional input and outputs a symbolic representation. This symbolic representation is then fed to the symbolic front end, whose role is action selection. The agent then acts on the environment and obtains a reward and the sensory input of the next time step. As the neural back end learns how to represent the raw input data in a compositionally structured representation in an unsupervised manner, and the symbolic front end learns to select the action with maximum expected reward over time, the system as a whole learns end-to-end.
+The DSRL framework is shown in Figure (\ref{fig:dsrl_archiecture}). The neural back end takes a high-dimensional input and outputs a symbolic representation. This symbolic representation is then fed to the symbolic front end, whose role is action selection. The agent then acts on the environment and obtains a reward and the sensory input of the next time step. As the neural back end learns how to represent the raw input data in a compositionally structured representation in an unsupervised manner, and the symbolic front end learns to select the action with maximum expected reward over time, the system as a whole learns end-to-end.
 
 The unsupervised extraction of features from a wide range of scenes is still a challenge in AI research. Since DSRL systems require this extraction in forming the symbolic representation, the current system only works for toy data sets. In order for the system to scale to complex scenes, a scalable method of extracting an object's type and position must be found.
 
@@ -73,5 +74,5 @@ With a recent development, $\beta$-VAE, it is possible to learn independent gene
 \item \textbf{Propose the novel architecture of the fully-convolutional variational autoencoder.} This is (as far as we know) the first consideration of a fully-convolutional variational autoencoder.
 \item \textbf{Propose a number of novel methods to solve the low-level extraction of objects and their location in fully-convolutional variational autoencoders.} This is done by inventing novel architectures and loss functions, which are inspired by the developments made in $\beta$-VAE. These approaches are shown to be good starting points in solving this open problem.
 \item \textbf{Collect experimental evidence for each proposed method.} Each proposed method is assessed by a range of experiments. These include reconstructing its input, qualitatively examining the latent representation of high-level objects in the scene as well as generating new samples by sampling from the prior and using Markov chain Monte Carlo (MCMC).
-\item \textbf{Assess the feasibility of using fully-convolutional variational autoencoders to advance DSRL.} Upon assessment of the experiments, we may propose a suitable method that (at least) partially solves the problem of latent representation of high-level objects in the scene.
+\item \textbf{Assess the feasibility of using fully-convolutional variational autoencoders to advance DSRL.} Upon assessment of the experiments, we propose a suitable method that (at least) partially solves the problem of latent representation of high-level objects in the scene.
 \end{itemize}

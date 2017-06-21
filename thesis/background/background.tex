@@ -2,7 +2,7 @@
 
 \label{ch:background}
 
-We will cover how deep symbolic reinforcement learning extracts symbolic representations from raw input data, which will motivate a discussion of loss functions and the introduction of autoencoders. Seeing the limitations of the current approach in extracting symbolic representations, we can appreciate the recent development of $\beta$-VAE, a variant of the variational autoencoder used to learn disentangled representations. Finally, we can conclude by mentioning less technical matters, such as libraries and hardware used.
+In this section, we will provide the motivation for using binary cross-entropy for a reconstruction loss term. We will then mention the software used to emulate the Atari games, Stella, and the machine learning framework used to make our data set, the Arcade Learning Environment. Lastly we will mention the motivation for using Keras, a machine learning library.
 
 %
 %
@@ -19,7 +19,7 @@ To compare loss functions, we'll use the MNIST data set. MNIST is a collection o
 
 The Euclidean distance between two vectors $\vec{x}$ and $\vec{y}$ is defined by $$\sqrt{\sum_{i}(x_i - y_i)^2}$$ where $x_i$ and $y_i$ are the $i^{th}$ components of $\vec{x}$ and $\vec{y}$ respectively.
 
-Euclidean distance is an intuitive measure of the distance between two points in space. Unfortunately, this doesn't also translate to visual similarity, as illustrated by Doersch et al. \cite{Doersch2016}. Figure \ref{fig:eucledian_distance_a} is a digit drawn from the MNIST dataset, and Figures \ref{fig:eucledian_distance_b} and \ref{fig:eucledian_distance_c} are attempted reconstructions. Of the reconstructions, Figure \ref{fig:eucledian_distance_c} looks most like the original, but Figure \ref{fig:eucledian_distance_b} is closer in space.\\
+Euclidean distance is an intuitive measure of the distance between two points in space. Unfortunately, this doesn't also translate to visual similarity, as illustrated by Doersch et al. \cite{Doersch2016}. Figure (\ref{fig:eucledian_distance_a}) is a digit drawn from the MNIST dataset, and Figures (\ref{fig:eucledian_distance_b}) and (\ref{fig:eucledian_distance_c}) are attempted reconstructions. Of the reconstructions, Figure (\ref{fig:eucledian_distance_c}) looks most like the original, but Figure (\ref{fig:eucledian_distance_b}) is closer when using Euclidean distance.\\
 
 \begin{figure}[!htb]
 \centering
@@ -38,6 +38,7 @@ Euclidean distance is an intuitive measure of the distance between two points in
   \includegraphics[width=0.8\linewidth]{background/eucledian_distance_b.png}
   \caption{}\label{fig:eucledian_distance_b}
 \endminipage
+\caption{\textit{Reprinted from:} \cite{Doersch2016}}
 \end{figure}
 
 This leads to an alternative measure, binary cross-entropy, which gives a much better quantification of how visually similar two images are.
@@ -57,8 +58,9 @@ For images larger than $1 \times 1$, we may take the component-wise binary cross
 %
 %
 \section{Stella}
-Video games are becoming increasingly popular in the generation of data sets for machine learning purposes. One reason for this is that they do not inherit many operational drawbacks from real world data, such as noise, the stability of the camera or the observation of rare circumstances (the video game may just be queried for rare cases) \cite{Zsolnai-Feher2016, Richter2016}.
+Video games are becoming increasingly popular in the generation of data sets for machine learning purposes. One reason for this is that they do not inherit many operational drawbacks from real world data, such as noise, the stability of the camera or the observation of rare circumstances (the video game may just be queried for rare cases) \cite{Zsolnai-Feher2016, Richter2016}. 
 
+We chose Stella, a popular Atari 2600 emulator, as it supports a wide number of games, and therefore gives us a wide choice of scenes to choose from.
 
 %
 %
@@ -70,9 +72,9 @@ The Arcade Learning Environment (ALE) is a framework built on top of the Atari
 2600 emulator Stella \cite{Bellemare2015}. This library was a suitable choice because:
 \begin{itemize}
 \item Emulation details are abstracted away from the researcher
-\item The same agent can be used for all games, due to its modular design
 \item Frames can be saved during game play, which is used to collect training data
-\item A Python wrapper for the entire framework is provided, so our agents developed in Keras interact seamlessly
+\item Games may be run in headless mode, which speeds up data collection considerably
+\item The module is well documented and widely used by AI researchers
 \end{itemize}
 
 
@@ -84,8 +86,9 @@ The Arcade Learning Environment (ALE) is a framework built on top of the Atari
 \section{Keras}
 Keras is a high-level neural network library written in Python \cite{Chollet2016}. It was a suitable choice because it supports:
 \begin{itemize}
-\item Convolutional, deconvolutional and pooling layers
-\item Lambda functions, which is necessary for sampling in variational autoencoders
+\item A wide range of regularisers and callbacks 
+\item Lambda layers, which is necessary for sampling in variational autoencoders
 \item The creation of custom loss functions, which is necessary when developing new methods
-\item Nividia GPUs
+\item Integration with TensorFlow and TensorBoard
+\item Nividia GPUs support
 \end{itemize}

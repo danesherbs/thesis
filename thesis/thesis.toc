@@ -3,70 +3,70 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Motivation}{1}
 \contentsline {section}{\numberline {1.2}Contributions}{4}
-\contentsline {chapter}{\numberline {2}Background}{6}
-\contentsline {section}{\numberline {2.1}Loss functions}{6}
-\contentsline {subsection}{\numberline {2.1.1}Euclidean Distance}{7}
-\contentsline {subsection}{\numberline {2.1.2}Binary Cross-Entropy}{7}
-\contentsline {section}{\numberline {2.2}Stella}{8}
-\contentsline {section}{\numberline {2.3}Arcade Learning Environment}{8}
-\contentsline {section}{\numberline {2.4}Keras}{9}
-\contentsline {chapter}{\numberline {3}Related Work}{10}
-\contentsline {section}{\numberline {3.1}Autoencoders}{10}
-\contentsline {subsection}{\numberline {3.1.1}Fully-Connected Autoencoders}{11}
-\contentsline {subsection}{\numberline {3.1.2}Fully-Convolutional Autoencoders}{13}
-\contentsline {section}{\numberline {3.2}Variational Autoencoders}{15}
-\contentsline {subsection}{\numberline {3.2.1}A Probabilistic Perspective}{15}
-\contentsline {subsection}{\numberline {3.2.2}Overcoming the Intractable Posterior}{16}
-\contentsline {subsection}{\numberline {3.2.3}Finding a Suitable Loss Function: the ELBO}{16}
-\contentsline {subsection}{\numberline {3.2.4}Writing the ELBO in Closed-Form}{18}
-\contentsline {subsection}{\numberline {3.2.5}Implementing the Variational Autoencoder}{20}
-\contentsline {subsection}{\numberline {3.2.6}Intuition Behind the Variational Autoencoder}{22}
-\contentsline {section}{\numberline {3.3}Unsupervised Learning of Generative Factors}{27}
-\contentsline {subsection}{\numberline {3.3.1}InfoGAN}{27}
-\contentsline {subsection}{\numberline {3.3.2}$\beta $-VAE}{28}
-\contentsline {subsubsection}{Derivation}{28}
-\contentsline {section}{\numberline {3.4}Improving Sampling from Generative Autoencoders with Markov Chains}{30}
-\contentsline {chapter}{\numberline {4}Implementation}{34}
-\contentsline {section}{\numberline {4.1}Dimensionality Reduction}{34}
-\contentsline {subsection}{\numberline {4.1.1}Pre-processing Pipeline}{35}
-\contentsline {subsubsection}{Ensuring Object Persistence}{35}
-\contentsline {subsubsection}{Extracting Luminance and Cropping}{35}
-\contentsline {subsubsection}{File Formats}{35}
-\contentsline {section}{\numberline {4.2}Qualitative Assessment Using GUIs}{35}
-\contentsline {section}{\numberline {4.3}Training and Validation Data Generators}{37}
-\contentsline {section}{\numberline {4.4}Ensuring Numerical Stability in the Latent Space}{37}
-\contentsline {section}{\numberline {4.5}Activation Functions in the Latent Space}{38}
-\contentsline {section}{\numberline {4.6}Keras Callbacks}{38}
-\contentsline {chapter}{\numberline {5}Methods}{39}
-\contentsline {section}{\numberline {5.1}Single Latent Filter}{39}
-\contentsline {subsection}{\numberline {5.1.1}Architecture}{40}
-\contentsline {subsection}{\numberline {5.1.2}Neuron-Level Redundancy Reduction}{40}
-\contentsline {section}{\numberline {5.2}Multiple Latent Filters}{42}
-\contentsline {subsection}{\numberline {5.2.1}Architecture}{42}
-\contentsline {subsection}{\numberline {5.2.2}Neuron-Level Redundancy Reduction}{43}
-\contentsline {subsection}{\numberline {5.2.3}Na{\"i}ve Filter-Level Redundancy Reduction}{44}
-\contentsline {subsection}{\numberline {5.2.4}Weighted Filter-Level Redundancy Reduction}{44}
-\contentsline {section}{\numberline {5.3}Winner Takes All}{45}
-\contentsline {subsection}{\numberline {5.3.1}Position-Wise Redundancy Reduction}{46}
-\contentsline {section}{\numberline {5.4}Separating Colour Spaces}{47}
-\contentsline {chapter}{\numberline {6}Results}{48}
-\contentsline {section}{\numberline {6.1}Architectures}{48}
-\contentsline {section}{\numberline {6.2}Single Latent Filter}{50}
-\contentsline {subsection}{\numberline {6.2.1}Results}{50}
-\contentsline {subsection}{\numberline {6.2.2}Summary}{50}
-\contentsline {section}{\numberline {6.3}Neuron-Level Redundancy Reduction}{55}
-\contentsline {subsection}{\numberline {6.3.1}Results}{55}
-\contentsline {subsection}{\numberline {6.3.2}Summary}{55}
-\contentsline {section}{\numberline {6.4}Na{\"i}ve Filter-Level Redundancy Reduction}{61}
-\contentsline {subsection}{\numberline {6.4.1}Results}{61}
-\contentsline {subsection}{\numberline {6.4.2}Summary}{61}
-\contentsline {section}{\numberline {6.5}Weighted Filter-Level Redundancy Reduction}{67}
-\contentsline {subsection}{\numberline {6.5.1}Results}{67}
-\contentsline {subsection}{\numberline {6.5.2}Summary}{67}
-\contentsline {section}{\numberline {6.6}Separating Colour Spaces}{73}
-\contentsline {subsection}{\numberline {6.6.1}Results}{73}
-\contentsline {subsection}{\numberline {6.6.2}Summary}{73}
-\contentsline {chapter}{\numberline {7}Conclusion}{78}
-\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{78}
-\contentsline {section}{\numberline {7.2}Future Work}{79}
-\contentsline {chapter}{Bibliography}{79}
+\contentsline {chapter}{\numberline {2}Background}{7}
+\contentsline {section}{\numberline {2.1}Loss functions}{7}
+\contentsline {subsection}{\numberline {2.1.1}Euclidean Distance}{8}
+\contentsline {subsection}{\numberline {2.1.2}Binary Cross-Entropy}{8}
+\contentsline {section}{\numberline {2.2}Stella}{9}
+\contentsline {section}{\numberline {2.3}Arcade Learning Environment}{10}
+\contentsline {section}{\numberline {2.4}Keras}{10}
+\contentsline {chapter}{\numberline {3}Related Work}{11}
+\contentsline {section}{\numberline {3.1}Autoencoders}{11}
+\contentsline {subsection}{\numberline {3.1.1}Fully-Connected Autoencoders}{12}
+\contentsline {subsection}{\numberline {3.1.2}Fully-Convolutional Autoencoders}{14}
+\contentsline {section}{\numberline {3.2}Variational Autoencoders}{16}
+\contentsline {subsection}{\numberline {3.2.1}A Probabilistic Perspective}{16}
+\contentsline {subsection}{\numberline {3.2.2}Overcoming the Intractable Posterior}{17}
+\contentsline {subsection}{\numberline {3.2.3}Finding a Suitable Loss Function: the ELBO}{17}
+\contentsline {subsection}{\numberline {3.2.4}Writing the ELBO in Closed-Form}{19}
+\contentsline {subsection}{\numberline {3.2.5}Implementing the Variational Autoencoder}{21}
+\contentsline {subsection}{\numberline {3.2.6}Intuition Behind the Variational Autoencoder}{23}
+\contentsline {section}{\numberline {3.3}Unsupervised Learning of Generative Factors}{28}
+\contentsline {subsection}{\numberline {3.3.1}InfoGAN}{28}
+\contentsline {subsection}{\numberline {3.3.2}$\beta $-VAE}{29}
+\contentsline {subsubsection}{Derivation}{29}
+\contentsline {section}{\numberline {3.4}Improving Sampling from Generative Autoencoders with Markov Chains}{31}
+\contentsline {chapter}{\numberline {4}Implementation}{35}
+\contentsline {section}{\numberline {4.1}Dimensionality Reduction}{35}
+\contentsline {subsection}{\numberline {4.1.1}Pre-processing Pipeline}{36}
+\contentsline {subsubsection}{Ensuring Object Persistence}{36}
+\contentsline {subsubsection}{Extracting Luminance and Cropping}{36}
+\contentsline {subsubsection}{File Formats}{36}
+\contentsline {section}{\numberline {4.2}Qualitative Assessment Using GUIs}{36}
+\contentsline {section}{\numberline {4.3}Training and Validation Data Generators}{38}
+\contentsline {section}{\numberline {4.4}Ensuring Numerical Stability in the Latent Space}{38}
+\contentsline {section}{\numberline {4.5}Activation Functions in the Latent Space}{39}
+\contentsline {section}{\numberline {4.6}Keras Callbacks}{39}
+\contentsline {chapter}{\numberline {5}Methods}{40}
+\contentsline {section}{\numberline {5.1}Single Latent Filter}{40}
+\contentsline {subsection}{\numberline {5.1.1}Architecture}{41}
+\contentsline {subsection}{\numberline {5.1.2}Neuron-Level Redundancy Reduction}{41}
+\contentsline {section}{\numberline {5.2}Multiple Latent Filters}{43}
+\contentsline {subsection}{\numberline {5.2.1}Architecture}{43}
+\contentsline {subsection}{\numberline {5.2.2}Neuron-Level Redundancy Reduction}{44}
+\contentsline {subsection}{\numberline {5.2.3}Na{\"i}ve Filter-Level Redundancy Reduction}{45}
+\contentsline {subsection}{\numberline {5.2.4}Weighted Filter-Level Redundancy Reduction}{45}
+\contentsline {section}{\numberline {5.3}Winner Takes All}{46}
+\contentsline {subsection}{\numberline {5.3.1}Position-Wise Redundancy Reduction}{47}
+\contentsline {section}{\numberline {5.4}Separating Colour Spaces}{48}
+\contentsline {chapter}{\numberline {6}Results}{49}
+\contentsline {section}{\numberline {6.1}Architectures}{49}
+\contentsline {section}{\numberline {6.2}Single Latent Filter}{51}
+\contentsline {subsection}{\numberline {6.2.1}Results}{51}
+\contentsline {subsection}{\numberline {6.2.2}Summary}{51}
+\contentsline {section}{\numberline {6.3}Neuron-Level Redundancy Reduction}{56}
+\contentsline {subsection}{\numberline {6.3.1}Results}{56}
+\contentsline {subsection}{\numberline {6.3.2}Summary}{56}
+\contentsline {section}{\numberline {6.4}Na{\"i}ve Filter-Level Redundancy Reduction}{62}
+\contentsline {subsection}{\numberline {6.4.1}Results}{62}
+\contentsline {subsection}{\numberline {6.4.2}Summary}{62}
+\contentsline {section}{\numberline {6.5}Weighted Filter-Level Redundancy Reduction}{68}
+\contentsline {subsection}{\numberline {6.5.1}Results}{68}
+\contentsline {subsection}{\numberline {6.5.2}Summary}{68}
+\contentsline {section}{\numberline {6.6}Separating Colour Spaces}{74}
+\contentsline {subsection}{\numberline {6.6.1}Results}{74}
+\contentsline {subsection}{\numberline {6.6.2}Summary}{74}
+\contentsline {chapter}{\numberline {7}Conclusion}{79}
+\contentsline {section}{\numberline {7.1}Summary of Thesis Achievements}{79}
+\contentsline {section}{\numberline {7.2}Future Work}{80}
+\contentsline {chapter}{Bibliography}{80}
