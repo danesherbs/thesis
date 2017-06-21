@@ -314,7 +314,19 @@ D_{KL}(q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)}) || p_{\vec{\theta}}(\vec{z})) \geq 
 \end{align}
 maximising the $ELBO$ is equivalent to reducing the KL divergence between the probabilistic encoder $q_{\vec{\phi}}(\vec{z}|\vec{x}^{(i)})$ and the prior $p_{\vec{\theta}}(\vec{z})$. Therefore after training, we expect that the probabilistic encoder should map samples to the standard multivariate Gaussian. (In practice, $\mathcal{L}(\vec{\theta}, \vec{\phi}; \vec{x}^{(i)}) > 0 \quad \forall i$, so we therefore only expect it to be \textit{approximately} mapped to the standard Gaussian). Decoding samples from the prior should correspond to meaningful reconstructions. A visualisation of sampling from the prior is given in Figure (\ref{fig:variational_autoencoder_latent_space_unit_gaussian_with_mnist}).
 
-TODO: FINISH
+We also know that
+\begin{align}
+\mathcal{N}(\mu_1, \sigma_1^2) + \mathcal{N}(\mu_2, \sigma_2^2) = \mathcal{N}(\mu_1+\mu_2, \sigma_1^2 + \sigma_2^2)
+\end{align}
+and therefore, by taking the sum of the distributions of all data points $\vec{x}^{(i)}$, we have
+\begin{align}
+\sum_{i=1}^N q_{\vec{\phi}}(\vec{z} | \vec{x}^{(i)}) = \mathcal{N}(\sum_{i=1}^N \vec{\mu}^{(i)}, \sum_{i=1}^N \vec{\sigma}^{2(i)})
+\end{align}
+Surprisingly, this happens to approximate the prior $p(\vec{z})$! That is,
+\begin{align}
+\sum_{i=1}^N q_{\vec{\phi}}(\vec{z} | \vec{x}^{(i)}) \approx p(\vec{z})
+\end{align}
+A nice visualisation of this result is given in Figure (\ref{fig:variational_autoencoder_latent_space_adding_latent_spaces_updated}).
 
 \begin{figure}[h!]
 \centering
