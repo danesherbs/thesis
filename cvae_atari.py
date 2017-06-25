@@ -1721,7 +1721,7 @@ class WinnerTakesAll(VAE):
         Override KL-loss function to be KL-loss over average activations in each filter
         '''
         batch_size, _, latent_width, latent_height = self.z_mean.shape  # EXTRACT ALL THE GOODIES!
-        kl_loss = K.zeros(shape=(1,))  # KL loss terms for each batch (size = 1, for now)
+        kl_loss = K.zeros(shape=(1,))  # KL loss terms for each batch TODO: don't hardcode batch_size
         for i in range(latent_width):
             for j in range(latent_height):
                 mean_ij = self.z_mean[:,:,i,j]  # (batch_size, num_filters)
