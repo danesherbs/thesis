@@ -41,7 +41,7 @@ def train_winner_takes_all(beta):
     }
 
     # define log directory
-    log_dir = './summaries/' + experiment + '/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
+    log_dir = '/vol/bitbucket/dgs13/summaries/' + experiment + '/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
     vae = WinnerTakesAll(input_shape,
@@ -58,8 +58,8 @@ def train_winner_takes_all(beta):
     vae.compile(optimizer=optimizer)
 
     # get dataset
-    train_directory = './atari_agents/record/train/'
-    test_directory = './atari_agents/record/test/'
+    train_directory = '/vol/bitbucket/dgs13/record/train/'
+    test_directory = '/vol/bitbucket/dgs13/record/test/'
     train_generator = utils.atari_generator(train_directory, batch_size=batch_size, img_channels=img_channels)
     test_generator = utils.atari_generator(test_directory, batch_size=batch_size, img_channels=img_channels)
     train_size = utils.count_images(train_directory)

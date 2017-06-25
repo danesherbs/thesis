@@ -1685,7 +1685,7 @@ class WinnerTakesAll(VAE):
         x = Conv2D(self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
         x = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
 
-        # separate dense layers for mu and log(sigma), both of size latent_dim
+        # separate dense layers for mu and log(sigma^2), both of size latent_dim
         z_mean = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
         z_log_var = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
 
@@ -1707,11 +1707,11 @@ class WinnerTakesAll(VAE):
         '''
         Necessary definitions
         '''
-        # For parent fitting function
+        # for parent fitting function
         self.encoder = Model(input_encoder, z)
         self.decoder = Model(input_decoder, decoded_img)
         self.model = Model(input_encoder, self.decoder(self.encoder(input_encoder)))
-        # For parent loss function
+        # for parent loss function
         self.z_mean = z_mean
         self.z_log_var = z_log_var
         self.z = z
@@ -1720,8 +1720,8 @@ class WinnerTakesAll(VAE):
         '''
         Override KL-loss function to be KL-loss over average activations in each filter
         '''
-        batch_size, _, latent_width, latent_height = self.z_mean.shape
-        kl_loss = np.zeros(batch_size)  # KL loss terms for each batch
+        batch_size, _, latent_width, latent_height = self.z_mean.shape  # EXTRACT ALL THE GOODIES!
+        kl_loss = K.zeros(shape=(1,))  # KL loss terms for each batch TODO: don't hardcode batch_size
         for i in range(latent_width):
             for j in range(latent_height):
                 mean_ij = self.z_mean[:,:,i,j]  # (batch_size, num_filters)
