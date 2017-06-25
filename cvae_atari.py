@@ -1380,7 +1380,7 @@ class ConvolutionalLatentShallowOrthoRegCAE(CAE):
 
     #     # compute product
     #     prod = tf.matmul( K.transpose(w_new), w_new )
-       
+
     #     l = 10
     #     L = tf.log( 1 + tf.exp(l * (prod - 1) ))
     #     diag_mat = tf.diag(tf.diag_part(L))
@@ -1525,12 +1525,13 @@ class WeightedAverageFilters(VAE):
 
     def kl_loss(self, y_true, y_pred):
         '''
-        Override KL-loss function to be KL-loss over average activations in each filter
+        Override KL-loss function to be KL-loss over average activations in each filter with added weight
         '''
+        _, _, latent_width, latent_height = self.z_mean.shape  # for KL weight (used in last line)
         z_mean_average_filters = K.mean(self.z_mean, axis=(2, 3))  # (batch_size, filters)
         z_log_var_average_filters = K.mean(self.z_log_var, axis=(2, 3))  # (batch_size, filters)
         loss = -0.5 * K.sum(1 + z_log_var_average_filters - K.square(z_mean_average_filters) - K.exp(z_log_var_average_filters), axis=1)  # (batch_size,)
-        return K.sum(loss)  # float
+        return K.sum(loss) * latent_width * latent_height  # float
 
 
 
@@ -1657,6 +1658,76 @@ class IndiscriminateDecoupling(VAE):
 
 
 
+class WinnerTakesAll(VAE):
+
+    def __init__(self, input_shape, log_dir, filters=32, latent_filters=8, kernel_size=2, img_channels=1, beta=1.0):
+        # initialise HigginsVAE specific variables
+        self.filters = filters
+        self.latent_filters = latent_filters
+        self.kernel_size = kernel_size
+        self.img_channels = img_channels
+        # call parent constructor
+        VAE.__init__(self, input_shape, log_dir, beta=beta)
+
+    def set_model(self):
+        '''
+        Initialisers
+        '''
+        weight_seed = None
+        kernel_initializer = initializers.glorot_uniform(seed = weight_seed)
+        bias_initializer = initializers.glorot_uniform(seed = weight_seed)
+
+        '''
+        Encoder
+        '''
+        # define input with 'channels_first'
+        input_encoder = Input(shape=self.input_shape, name='encoder_input')
+        x = Conv2D(self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_1')(input_encoder)
+        x = Conv2D(2*self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2D_2')(x)
+
+        # separate dense layers for mu and log(sigma), both of size latent_dim
+        z_mean = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_mean')(x)
+        z_log_var = Conv2D(self.latent_filters, self.kernel_size, strides=(2, 2), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_z_log_var')(x)
+
+        # sample from normal with z_mean and z_log_var
+        z = Lambda(self.sampling, name='encoder_z')([z_mean, z_log_var])
+
+        '''
+        Decoder
+        '''
+        # take encoder output shape
+        encoder_out_shape = tuple(z.get_shape().as_list())
+
+        input_decoder = Input(shape=encoder_out_shape[1:], name='decoder_input')
+        x = Conv2DTranspose(2*self.filters, self.kernel_size, strides=(2, 2), padding='valid', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_1')(input_decoder)
+        x = Conv2DTranspose(self.filters, self.kernel_size, strides=(2, 2), padding='same', activation='relu', kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_3')(x)
+        x = Conv2DTranspose(self.img_channels, self.kernel_size, strides=(2, 2), padding='valid', activation=None, kernel_initializer=kernel_initializer, bias_initializer=bias_initializer, name='encoder_conv2DT_4')(x)
+        decoded_img = Activation('sigmoid')(x)
+
+        '''
+        Necessary definitions
+        '''
+        # For parent fitting function
+        self.encoder = Model(input_encoder, z)
+        self.decoder = Model(input_decoder, decoded_img)
+        self.model = Model(input_encoder, self.decoder(self.encoder(input_encoder)))
+        # For parent loss function
+        self.z_mean = z_mean
+        self.z_log_var = z_log_var
+        self.z = z
+
+    def kl_loss(self, y_true, y_pred):
+        '''
+        Override KL-loss function to be KL-loss over average activations in each filter
+        '''
+        batch_size, _, latent_width, latent_height = self.z_mean.shape
+        kl_loss = np.zeros(batch_size)  # KL loss terms for each batch
+        for i in range(latent_width):
+            for j in range(latent_height):
+                mean_ij = self.z_mean[:,:,i,j]  # (batch_size, num_filters)
+                log_var_ij = self.z_log_var[:,:,i,j]  # (batch_size, num_filters)
+                kl_loss += -0.5 * K.sum(1 + log_var_ij - K.square(mean_ij) - K.exp(log_var_ij), axis=1)  # (batch_size,)
+        return K.sum(kl_loss)  # float
 
 
 '''
@@ -1672,7 +1743,7 @@ if __name__ == '__main__':
     kernel_size = 6
     pre_latent_size = 512
     latent_size = 16
-    
+
     # define filename
     name = 'cvae_atar_higgins'
 
@@ -1693,19 +1764,19 @@ if __name__ == '__main__':
     log_dir = './summaries/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
-    vae = HigginsVAE(input_shape, 
+    vae = HigginsVAE(input_shape,
                 log_dir,
                 filters=filters,
                 kernel_size=kernel_size,
                 pre_latent_size=pre_latent_size,
                 latent_size=latent_size)
-    
-    
+
+
     # compile VAE
     from keras import optimizers
     optimizer = optimizers.Adam(lr=1e-3)
     vae.compile(optimizer=optimizer)
-    
+
     # get dataset
     train_directory = './atari_agents/record/train/'
     test_directory = './atari_agents/record/test/'
@@ -1713,10 +1784,10 @@ if __name__ == '__main__':
     test_generator = utils.atari_generator(test_directory, batch_size=batch_size)
     train_size = utils.count_images(train_directory)
     test_size = utils.count_images(test_directory)
-    
+
     # print summaries
     vae.print_model_summaries()
-    
+
     # fit VAE
     steps_per_epoch = int(train_size / batch_size)
     validation_steps = int(test_size / batch_size)
