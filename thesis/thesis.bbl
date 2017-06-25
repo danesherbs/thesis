@@ -28,9 +28,9 @@ X.~Chen, Y.~Duan, R.~Houthooft, J.~Schulman, I.~Sutskever, and P.~Abbeel.
   Maximizing Generative Adversarial Nets}.
 \newblock {\em arXiv:1606.03657 [cs.LG]}, pages 1--14, 2016.
 
-\bibitem{Chollet2015}
+\bibitem{Chollet2016}
 F.~Chollet.
-\newblock {Keras: Deep Learning library for Theano and TensorFlow}, 2015.
+\newblock {Building Autoencoders in Keras}, 2016.
 
 \bibitem{Cohen2014}
 T.~S. Cohen and M.~Welling.
@@ -92,12 +92,6 @@ A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton.
 \newblock {ImageNet Classification with Deep Convolutional Neural Networks}.
 \newblock {\em Advances In Neural Information Processing Systems}, pages 1--9,
   2012.
-
-\bibitem{Le2012}
-Q.~V. Le, M.~A. Ranzato, M.~Devin, G.~S. Corrado, and A.~Y. Ng.
-\newblock {Building High-level Features Using Large Scale Unsupervised
-  Learning}.
-\newblock {\em Arxiv}, 28(4):61--76, 2012.
 
 \bibitem{Li2016}
 F.-F. S.~U. Li, J.~S.~U. Johnson, and S.~S.~U. Yeung.

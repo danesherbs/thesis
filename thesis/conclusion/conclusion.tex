@@ -4,17 +4,20 @@
 
 \section{Summary of Thesis Achievements}
 
-Summary.
+This thesis has made small novel steps in solving the open problem of the scalable unsupervised extraction of an object's type and location using fully-convolutional variational autoencoders. We have:
 
-
-\section{Applications}
-
-Applications.
+\begin{itemize}
+\item \textbf{Proposed a novel architecture}: the fully-convolutional variational autoencoder. This is an exciting first step in the development of the preservation of spatial information in learning representations of objects in a scene.
+\item \textbf{Proposed a number of novel methods} to solve the low-level extraction of objects and their location in fully-convolutional variational autoencoders. Namely, this was the proposal of the single latent filter architecture, the multiple latent filter architecture, neuron-level redundancy reduction, na\"{i}ve filter-level redundancy reduction and weighted filter-level redundancy reduction.
+\item \textbf{Collected experimental evidence for each proposed method.} Each method's capabilities were tested, including how well they reconstructed their input and if the latent space learnt an interpretable encoding of the original scene.
+\item \textbf{Assessed the feasibility of using fully-convolutional variational autoencoders to advance DSRL.} After examining the experimental data collected, we can confidently say that we have made a small novel step towards solving the problem of scalable unsupervised extraction of an object's type and location. This is achieved with a multiple latent filter architecture using weighted filter-level redundancy reduction.
+\end{itemize}
 
 
 \section{Future Work}
 
-Future Work.
+There are two very promising avenues to explore from here.
 
-\cite{Rodriguez2016}
-\cite{Le2012}
+The first is a step away from the variational autoencoder and back to a deterministic fully-convolutional autoencoder with a regularization technique called \textit{OrthoReg}, introduced in \textit{Regularizing CNNs with Locally Constrained Decorrelations} \cite{Rodriguez2016}. This regularization technique reduces redundancy among the latent filters, which is precisely what we were trying to achieve with the filter-level redundancy techniques developed.
+
+The second is the exploration of the Winner Takes All method. Although this method was originally thought to be equivalent to neuron-level redundancy reduction, it was realised too late that this was not so. Given more time, it would be interesting to see if this method works as intended.

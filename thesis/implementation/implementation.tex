@@ -66,12 +66,7 @@ Image formats were discovered to be more important than originally thought. Empi
 %
 %
 \section{Qualitative Assessment Using GUIs}
-\begin{itemize}
-\item To qualitatively assess the significance of a latent neuron in the final reconstruction, we change its value over a given range and inspect the reconstructions
-\item In order to speed up this process, Tkinter was used to develop a GUI with a sliding bar corresponding to the latent neuron's value
-\item This real-time reconstruction allows for much quicker feedback
-\end{itemize}
-
+To qualitatively assess the significance of a latent neuron in the final reconstruction, we change its value over a given range and inspect the reconstructions. In order to speed up this process, Tkinter was used to develop a GUI with a sliding bar corresponding to the latent neuron's value. This real-time reconstruction allows for much quicker feedback, and hence we were able to explore the reconstruction process much quicker.
 
 %
 %
@@ -79,10 +74,7 @@ Image formats were discovered to be more important than originally thought. Empi
 %
 %
 \section{Training and Validation Data Generators}
-\begin{itemize}
-\item Using generators from directories
-\end{itemize}
-
+Since our data set consists of $\sim 100,000$ high-dimensional data points, it is not possible to load these directly into memory. Instead, a custom data generator was made that pulls data samples from a given directory. In this way, only \texttt{batch\_size}-many data points are loaded at once. Once a data point is pulled, an internal counter is incremented so that no data point is repeated. The data generator then throws an exception when it's queried to return more unique data points than it's given.
 
 %
 %
@@ -90,12 +82,7 @@ Image formats were discovered to be more important than originally thought. Empi
 %
 %
 \section{Ensuring Numerical Stability in the Latent Space}
-\begin{itemize}
-\item Use log variance instead of variance to spread values evenly, which helps with backpropagation, as it's easier to learn with an approximately equal step size between values rather than those that are either clumped or sparse
-\item Since log is monotonic, the value ordering is invariant, which allows back propagation to implicitly optimise the variance $\sigma^2$
-\item State implemented ELBO
-\end{itemize}
-
+In the implementation of the variational autoencoder loss function, we use log variance instead of variance to spread values evenly, which helps with backpropagation. This is because it's easier to learn with an approximately equal step size between values rather than those that are either clumped or sparse. Since log is monotonic, the value ordering is invariant, which allows back propagation to implicitly optimise the variance $\sigma^2$.
 
 
 %
@@ -104,13 +91,7 @@ Image formats were discovered to be more important than originally thought. Empi
 %
 %
 \section{Activation Functions in the Latent Space}
-\begin{itemize}
-\item Conventionally activation functions are used in the hidden layers, such as sigmoid or, more commonly, ReLU.
-\item However, we must be careful not to mindlessly follow this trend.
-\item It makes no sense to use a ReLU activation function on the mean layer of the variational autoencoder. The mean $\mu \in \mathbf{R}$ is unconstrained, and hence a linear activation function is appropriate.
-\item Stuff about log variance - also use linear activation function
-\end{itemize}
-
+Conventionally, activation functions are used in the hidden layers, such as sigmoid or, more commonly, ReLU. However, we must be careful not to mindlessly follow this trend. It makes no sense to use a ReLU activation function on the mean layer of the variational autoencoder. The mean $\mu \in \mathbb{R}$ is unconstrained, and hence a no activation function is appropriate. Likewise, since we use log variance, we also have the property that $\ln \sigma \in \mathbb{R}$. By the same reasoning, we do not apply an activation function to this layer to leave $\ln\sigma$ unbounded.
 
 
 %
@@ -119,9 +100,10 @@ Image formats were discovered to be more important than originally thought. Empi
 %
 %
 \section{Keras Callbacks}
+Throughout the results section we use a number of Keras' features. These are:
 \begin{itemize}
-\item LR annealing
-\item Checkpointing
-\item Reduce LR on plateau
-\item Early stopping
+\item \textbf{Learning rate annealing.} Reducing the learning rate with the number of epochs can be quite beneficial in consistently achieving an optimum.
+\item \textbf{Check-pointing model weights and architecture.} Saving the model after each epoch (if it betters the previous best) is extremely useful. This allows for the continuation of training at a later date and for real time testing.
+\item \textbf{Reduce LR on plateau.} Often it's hard to pick the right factor to reduce the learning rate each epoch when implementing LR annealing. An easier method is reducing the LR on plateau, where the LR is reduced by a given factor when the monitored quantity does not improve.
+\item \textbf{Early stopping.} When training models, sometimes the model starts to make very marginal improvements. Early stopping terminates the training at this point, often significantly reducing training time.
 \end{itemize}

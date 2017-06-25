@@ -1,5 +1,4 @@
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces Low-dimensional symbolic representation\relax }}{5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces A simple fully-connected autoencoder with one hidden layer. After 15 epochs, the validation score was recorded to be $71.94$.\relax }}{11}
@@ -7,4 +6,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Fully-convolutional single-filter variational autoencoder.\relax }}{49}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Fully-convolutional multiple latent filter variational autoencoder.\relax }}{49}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Fully-convolutional multiple latent filter variational autoencoder for RGB images.\relax }}{49}
 \addvspace {10\p@ }
