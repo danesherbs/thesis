@@ -44,13 +44,13 @@ def train_winner_takes_all(beta):
     log_dir = './summaries/' + experiment + '/' + utils.build_hyperparameter_string(name, hp_dictionary) + '/'
 
     # make VAE
-    vae = ConvolutionalLatentAverageFilterShallowVAE(input_shape,
-                                            log_dir,
-                                            filters=filters,
-                                            latent_filters=latent_filters,
-                                            kernel_size=kernel_size,
-                                            img_channels=img_channels,
-                                            beta=beta)
+    vae = WinnerTakesAll(input_shape,
+                        log_dir,
+                        filters=filters,
+                        latent_filters=latent_filters,
+                        kernel_size=kernel_size,
+                        img_channels=img_channels,
+                        beta=beta)
 
     # compile VAE
     from keras import optimizers
